@@ -1,0 +1,21 @@
+------------------ These values were copied from build logs ------------------
+
+
+#### Windows ####
+Algorithm       Hash                                                                   Path
+---------       ----                                                                   ----
+SHA256          C06274B7AB3064844F4D36F9CE943492EC666FA50B97C595A02A54719DC40398       C:\win_x32.zip
+SHA256          64B8DDF2B930210263546D52B796740F689C22D539652EBA0D7FE5E3CD024BAB       C:\optional.zip
+
+Algorithm       Hash                                                                   Path
+---------       ----                                                                   ----
+SHA256          75C085D1625B50E70EE2906227DC9EE3722A8D24377057E7E22B5FE8579E9314       C:\win_x64.zip
+SHA256          8AF77CB39B1D3E05CF6AFC317151F02C7847A61727D868F9EF49471C9BBA75DB       C:\optional.zip
+
+#### Flatpak (sha256sum) ####
+$ sha256sum john.flatpak
+5f330b46f4f40035714678aade47155c58d9eee819adef6951d032552c31813d  john.flatpak
+
+
+#### Docker Image ####
+Digest: sha256:4ea2eb998a335cb1d482ba125fd10862f807e36e96c39e31fa96a2325579e154

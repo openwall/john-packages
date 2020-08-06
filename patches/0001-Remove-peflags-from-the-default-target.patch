@@ -1,0 +1,25 @@
+From 05ed5bb722527609d3b82433917e2cc8e10f9d95 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Claudio=20Andr=C3=A9?= <claudioandre.br@gmail.com>
+Date: Tue, 2 Apr 2019 11:00:02 -0300
+Subject: [PATCH] Remove peflags from the default target
+
+---
+ src/Makefile.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/Makefile.in b/src/Makefile.in
+index af38e216f..ae7f01cb7 100644
+--- a/src/Makefile.in
++++ b/src/Makefile.in
+@@ -191,7 +191,7 @@ default:
+ 		JOHN_OBJS="$(JOHN_OBJS) @CC_ASM_OBJS@" \
+ 		AESNI_ARCH=@AESNI_ARCH@
+ 
+-	@if [ "$(OS)" = "Windows_NT" ]; then \
++	@if [ "$(OS)" = "None-Windows_NT" ]; then \
+ 		$(MAKE) peflags; \
+ 	fi
+ 	@echo
+-- 
+2.19.1
+
