@@ -16,11 +16,13 @@ purpose is to detect weak Unix passwords. Besides several crypt(3) password hash
 types most commonly found on various Unix systems, supported out of the box are
 Windows LM hashes, plus lots of other hashes and ciphers.
 
+Know our [Continuous Integration and Continuous Delivery](https://github.com/openwall/john-packages/tree/master/tests#continuous-integration-and-continuous-delivery) procedures.
+
 ## Snap
 
 > Built and deployed using Launchpad
 
-[**A Snap**](http://snapcraft.io/) is a fancy zip file containing an application
+[**A Snap**](https://snapcraft.io/) is a fancy zip file containing an application
 together with its dependencies, and a description of how it should safely be run
 on your system.
 
