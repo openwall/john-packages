@@ -105,18 +105,24 @@ In the example, to run John type `my-john`.
 
 ### Acessing OpenCL
 
-To run JtR OpenCL version you must install the snap using `developer mode`. It
+As noted at https://forum.snapcraft.io/t/snaps-and-opencl/8509/17, the use of
+OpenCL by snaps is a problem. Support for NVIDIA cards is under development.
+
+As a "general" solution (or in the case of AMD hardware), the user can run john
+out of the sandbox, unconfined (e.g., run `/snap/john-the-ripper/current/run/john`).
+
+~To run JtR OpenCL version you must install the snap using `developer mode`. It
 enables users to install snaps without enforcing security policies. To do this,
-you must install John using (**UNTESTED**):
+you must install John using (**UNTESTED**):~
 
 ```bash
  sudo snap install john-the-ripper --devmode
 ```
 
-When installed this way, snaps behave similarly to traditional *.deb* packages in
-terms of accessing system resources.
+~When installed this way, snaps behave similarly to traditional *.deb* packages in
+terms of accessing system resources.~
 
-To run JtR OpenCL binary:
+~To run JtR OpenCL binary:~
 
 ```bash
  john-the-ripper.opencl -list=build-info
