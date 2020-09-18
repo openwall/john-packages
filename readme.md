@@ -289,10 +289,10 @@ PS C:\john-the-ripper\run> .\john --list=build-info
 Some adjustments may be necessary to allow John the Ripper detect your GPU
 hardware. If you are facing problems, please ask for support.
 
-- That being said, the first advice to be given to anyone facing Windows problems
-would be:
+- That being said, a few advices to anyone facing Windows problems:
   - replacing cygwin's OpenCL library `cygOpenCL-1.dll` in the `run` directory with `OpenCL.dll` installed
-  in the `c:\Windows\System32` folder should make everything _almost_ work. Make a backup of `cygOpenCL-1.dll`, copy in the `OpenCL.dll`, and rename the copied file `cygOpenCL-1.dll`. After this, if you get errors like `Error building kernel /run/kernels/cryptsha512_kernel_GPU.cl` try running john from the subdirectory `kernels` (e.g. from `/run/kernels` run john like `../john.exe`).
+  in the `c:\Windows\System32` folder should make everything _almost_ work. Make a backup of `cygOpenCL-1.dll`, copy in the `OpenCL.dll`, and rename the copied file `cygOpenCL-1.dll`.
+  - if you get errors like `Error building kernel /run/opencl/cryptsha512_kernel_GPU.cl` try running john from the subdirectory `opencl` (e.g. from `JtR\run\opencl` run `..\john.exe`).
 
 Benchmarking:
 
