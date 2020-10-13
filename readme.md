@@ -65,7 +65,7 @@ The highlights:
 it's running on.
 
 ```Text
-John the Ripper snap package achieved 5 thousand active users [*].
+John the Ripper snap package achieved 6 thousand active users [*].
 ```
 
 [*] 7 Day Active Users: the number of unique users who had at least one session within a 7 day period.
