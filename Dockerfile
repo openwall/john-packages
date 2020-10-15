@@ -24,24 +24,24 @@ RUN apt-get update -qq && \
     useradd -U -m JtR && \
     # Build John the Ripper
     cd john/src && \
-      ./configure --disable-native-tests --disable-openmp CPPFLAGS='-msse2'   && make -s clean && make -sj2 && mv ../run/john ../run/john-sse2-no-omp && \
-      ./configure --disable-native-tests                  CPPFLAGS='-msse2'   && make -s clean && make -sj2 && mv ../run/john ../run/john-sse2 && \
-      ./configure --disable-native-tests --disable-openmp CPPFLAGS='-mssse3'  && make -s clean && make -sj2 && mv ../run/john ../run/john-ssse3-no-omp && \
-      ./configure --disable-native-tests                  CPPFLAGS='-mssse3'  && make -s clean && make -sj2 && mv ../run/john ../run/john-ssse3 && \
-      ./configure --disable-native-tests --disable-openmp CPPFLAGS='-msse4.1' && make -s clean && make -sj2 && mv ../run/john ../run/john-sse4.1-no-omp && \
-      ./configure --disable-native-tests                  CPPFLAGS='-msse4.1' && make -s clean && make -sj2 && mv ../run/john ../run/john-sse4.1 && \
-      ./configure --disable-native-tests --disable-openmp CPPFLAGS='-msse4.2' && make -s clean && make -sj2 && mv ../run/john ../run/john-sse4.2-no-omp && \
-      ./configure --disable-native-tests                  CPPFLAGS='-msse4.2' && make -s clean && make -sj2 && mv ../run/john ../run/john-sse4.2 && \
-      ./configure --disable-native-tests --disable-openmp CPPFLAGS='-mavx'    && make -s clean && make -sj2 && mv ../run/john ../run/john-avx-no-omp && \
-      ./configure --disable-native-tests                  CPPFLAGS='-mavx'    && make -s clean && make -sj2 && mv ../run/john ../run/john-avx && \
-      ./configure --disable-native-tests --disable-openmp CPPFLAGS='-mxop'    && make -s clean && make -sj2 && mv ../run/john ../run/john-xop-no-omp && \
-      ./configure --disable-native-tests                  CPPFLAGS='-mxop'    && make -s clean && make -sj2 && mv ../run/john ../run/john-xop && \
-      ./configure --disable-native-tests --disable-openmp CPPFLAGS='-mavx2'   && make -s clean && make -sj2 && mv ../run/john ../run/john-avx2-no-omp && \
-      ./configure --disable-native-tests                  CPPFLAGS='-mavx2'   && make -s clean && make -sj2 && mv ../run/john ../run/john-avx2 && \
-      ./configure --disable-native-tests --disable-openmp CPPFLAGS='-mavx512f'  && make -s clean && make -sj2 && mv ../run/john ../run/john-avx512f-no-omp && \
-      ./configure --disable-native-tests                  CPPFLAGS='-mavx512f'  && make -s clean && make -sj2 && mv ../run/john ../run/john-avx512f && \
-      ./configure --disable-native-tests --disable-openmp CPPFLAGS='-mavx512bw' && make -s clean && make -sj2 && mv ../run/john ../run/john-avx512bw-no-omp && \
-      ./configure --disable-native-tests                  CPPFLAGS='-mavx512bw' && make -s clean && make -sj2 && mv ../run/john ../run/john-avx512bw && \
+      ./configure --disable-native-tests --disable-openmp --enable-simd=sse2   && make -s clean && make -sj2 && mv ../run/john ../run/john-sse2-no-omp && \
+      ./configure --disable-native-tests                  --enable-simd=sse2   && make -s clean && make -sj2 && mv ../run/john ../run/john-sse2 && \
+      ./configure --disable-native-tests --disable-openmp --enable-simd=ssse3  && make -s clean && make -sj2 && mv ../run/john ../run/john-ssse3-no-omp && \
+      ./configure --disable-native-tests                  --enable-simd=ssse3  && make -s clean && make -sj2 && mv ../run/john ../run/john-ssse3 && \
+      ./configure --disable-native-tests --disable-openmp --enable-simd=sse4.1 && make -s clean && make -sj2 && mv ../run/john ../run/john-sse4.1-no-omp && \
+      ./configure --disable-native-tests                  --enable-simd=sse4.1 && make -s clean && make -sj2 && mv ../run/john ../run/john-sse4.1 && \
+      ./configure --disable-native-tests --disable-openmp --enable-simd=sse4.2 && make -s clean && make -sj2 && mv ../run/john ../run/john-sse4.2-no-omp && \
+      ./configure --disable-native-tests                  --enable-simd=sse4.2 && make -s clean && make -sj2 && mv ../run/john ../run/john-sse4.2 && \
+      ./configure --disable-native-tests --disable-openmp --enable-simd=avx    && make -s clean && make -sj2 && mv ../run/john ../run/john-avx-no-omp && \
+      ./configure --disable-native-tests                  --enable-simd=avx    && make -s clean && make -sj2 && mv ../run/john ../run/john-avx && \
+      ./configure --disable-native-tests --disable-openmp --enable-simd=xop    && make -s clean && make -sj2 && mv ../run/john ../run/john-xop-no-omp && \
+      ./configure --disable-native-tests                  --enable-simd=xop    && make -s clean && make -sj2 && mv ../run/john ../run/john-xop && \
+      ./configure --disable-native-tests --disable-openmp --enable-simd=avx2   && make -s clean && make -sj2 && mv ../run/john ../run/john-avx2-no-omp && \
+      ./configure --disable-native-tests                  --enable-simd=avx2   && make -s clean && make -sj2 && mv ../run/john ../run/john-avx2 && \
+      ./configure --disable-native-tests --disable-openmp --enable-simd=avx512f  && make -s clean && make -sj2 && mv ../run/john ../run/john-avx512f-no-omp && \
+      ./configure --disable-native-tests                  --enable-simd=avx512f  && make -s clean && make -sj2 && mv ../run/john ../run/john-avx512f && \
+      ./configure --disable-native-tests --disable-openmp --enable-simd=avx512bw && make -s clean && make -sj2 && mv ../run/john ../run/john-avx512bw-no-omp && \
+      ./configure --disable-native-tests                  --enable-simd=avx512bw && make -s clean && make -sj2 && mv ../run/john ../run/john-avx512bw && \
     #  ./configure --disable-native-tests --enable-ztex --disable-openmp CPPFLAGS='-msse2' && make -s clean && make -sj2 && mv ../run/john ../run/john-ztex-no-omp && \
     #  ./configure --disable-native-tests --enable-ztex                  CPPFLAGS='-msse2' && make -s clean && make -sj2 && mv ../run/john ../run/john-ztex && \
     # Clean the image
