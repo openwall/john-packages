@@ -14,22 +14,23 @@ using:
   - Windows Server 2016 Datacenter (10.0.14393 N/A Build 14393);
   - Windows Server 2019 Datacenter (10.0.17763 N/A Build 17763);
 - Unix®-like BSD:
-  - FreeBSD 11 (11.3-RELEASE);
-  - FreeBSD 12 (12.1-RELEASE);
+  - FreeBSD 11 (11.3-STABLE);
+  - FreeBSD 12 (12.1-STABLE);
 - MacOS:
   - macOS 10.13 (Darwin Kernel Version 17.4.0);
   - macOS 10.14 (Darwin Kernel Version 18.5.0);
+  - macOS Universal Apps (Darwin Kernel Version 19.5.0);
 - Linux:
   - CentOS 6 and Fedora 32;
-  - Ubuntu 12.04, Ubuntu 14.04, Ubuntu 16.04, Ubuntu 18.04, Ubuntu 20.04, and Ubuntu 20.10 (devel);
+  - Ubuntu 12.04, Ubuntu 14.04, Ubuntu 16.04, Ubuntu 18.04, Ubuntu 20.04, and Ubuntu 20.10;
 - Compilers:
-  - gcc 4.6, gcc 4.8, gcc 5.4, gcc 7.5, gcc 8.3, gcc 9.2, gcc 9.3, gcc 10.2, and gcc 11.0;
-  - clang 5.0 and clang 9.0;
+  - gcc 4.4, gcc 4.6, gcc 4.8, gcc 5.4, gcc 5.5, gcc 7.2, gcc 7.4, gcc 7.5, gcc 8.3, gcc 9.2, gcc 9.3, gcc 10.2, and gcc 11.0;
+  - clang 5.0, clang 7.0, and clang 10.0;
   - FreeBSD clang version 8.0.1
   - FreeBSD clang version 10.0.0 
-  - Xcode 9.4; Apple LLVM version 9.1.0 (clang-902.0.39.2);
-  - Xcode 10.2; Apple LLVM version 10.0.1 (clang-1001.0.46.4);
-  - Xcode 11.2; Apple clang version 11.0.0 (clang-1100.0.33.12);
+  - Xcode 10.2.1; Apple LLVM version 10.0.1 (clang-1001.0.46.4);
+  - Xcode 11.2.1; Apple clang version 11.0.0 (clang-1100.0.33.12);
+  - Xcode-12; Apple clang version 12.0.0 (clang-1200.0.22.41)
 - Builds:
   - SIMD and non-SIMD builds;
   - OpenMP and non-OpenMP builds;
