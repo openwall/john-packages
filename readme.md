@@ -362,38 +362,38 @@ To use it:
 
 ```bash
  # CPU only formats
- docker run -it claudioandre/john:v1.9.0J1 <binary id> <john options>
+ docker run -it ghcr.io/openwall/john:v1.9.0J1 <binary id> <john options>
 
  # To run ztex formats
- docker run -it --device=/dev/ttyUSB0 claudioandre/john:v1.9.0J1 ztex <john options>
+ docker run -it --device=/dev/ttyUSB0 ghcr.io/openwall/john:v1.9.0J1 ztex <john options>
 ```
 
 Run John the Ripper and check if it is working:
 
 ```bash
- docker run -it claudioandre/john:v1.9.0J1 # => SSE2
- docker run -it claudioandre/john:v1.9.0J1 best # => uses the best SIMD available
- docker run -it claudioandre/john:v1.9.0J1 ssse3-no-omp -list=build-info
- docker run -it claudioandre/john:v1.9.0J1 avx512bw -test=0 -format=cpu
- docker run -it claudioandre/john:v1.9.0J1 -list=format-tests | cut -f3 > ~/alltests.in
- docker run -it -v "$HOME":/host claudioandre/john:v1.9.0J1 avx -form=SHA512crypt /host/alltests.in --max-run=300
+ docker run -it ghcr.io/openwall/john:v1.9.0J1 # => SSE2
+ docker run -it ghcr.io/openwall/john:v1.9.0J1 best # => uses the best SIMD available
+ docker run -it ghcr.io/openwall/john:v1.9.0J1 ssse3-no-omp -list=build-info
+ docker run -it ghcr.io/openwall/john:v1.9.0J1 avx512bw -test=0 -format=cpu
+ docker run -it ghcr.io/openwall/john:v1.9.0J1 -list=format-tests | cut -f3 > ~/alltests.in
+ docker run -it -v "$HOME":/host ghcr.io/openwall/john:v1.9.0J1 avx -form=SHA512crypt /host/alltests.in --max-run=300
 ```
 
 Compare the performance of SIMD extensions:
 
 ```bash
- docker run -it claudioandre/john:v1.9.0J1 sse2    --test=10 --format=SHA512crypt
- docker run -it claudioandre/john:v1.9.0J1 sse4.1  --test=10 --format=SHA512crypt
- docker run -it claudioandre/john:v1.9.0J1 avx     --test=10 --format=SHA512crypt
- docker run -it claudioandre/john:v1.9.0J1 avx2    --test=10 --format=SHA512crypt
+ docker run -it ghcr.io/openwall/john:v1.9.0J1 sse2    --test=10 --format=SHA512crypt
+ docker run -it ghcr.io/openwall/john:v1.9.0J1 sse4.1  --test=10 --format=SHA512crypt
+ docker run -it ghcr.io/openwall/john:v1.9.0J1 avx     --test=10 --format=SHA512crypt
+ docker run -it ghcr.io/openwall/john:v1.9.0J1 avx2    --test=10 --format=SHA512crypt
 ```
 
 The highlights:
 
 - prince mode available;
-- the stable John 1.9.0 Jumbo 1 (`claudioandre/john:v1.9.0J1`):
+- the stable John 1.9.0 Jumbo 1 (`ghcr.io/openwall/john:v1.9.0J1`):
   - has ztex formats available.
-- the development version (`claudioandre/john:v1.9.0J2`):
+- the development version (`ghcr.io/openwall/john:v1.9.0J2`):
   - has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`.
 
 The available binaries (their IDs are sse2, sse2-no-omp, ssse3, etc) are:
