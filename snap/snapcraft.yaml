@@ -1,0 +1,114 @@
+name: john-the-ripper
+version: edge
+version-script: |
+  ./package_version.sh
+
+confinement: strict
+grade: devel
+assumes: [ snapd2.38 ]
+base: core18
+
+#license: GPL-2.0
+#title: John the Ripper Community Edition
+summary: John the Ripper "Jumbo" password cracker
+description: |
+  John the Ripper is a fast password cracker, currently available for many flavors
+  of Unix, Windows, DOS, BeOS, and OpenVMS. Its primary purpose is to detect weak
+  Unix passwords. Besides several crypt(3) password hash types most commonly found
+  on various Unix systems, supported out of the box are Windows LM hashes, plus lots
+  of other hashes and ciphers.
+
+icon: icon.png
+
+apps:
+  john-the-ripper:
+    command: run/john
+    plugs: [home, removable-media]
+  opencl:
+    command: run/john
+    plugs: [home, removable-media]
+  dmg2john:
+    command: run/dmg2john
+    plugs: [home, removable-media]
+  hccap2john:
+    command: run/hccap2john
+    plugs: [home, removable-media]
+  racf2john:
+    command: run/racf2john
+    plugs: [home, removable-media]
+  vncpcap2john:
+    command: run/vncpcap2john
+    plugs: [home, removable-media]
+  zip2john:
+    command: run/zip2john
+    plugs: [home, removable-media]
+  gpg2john:
+    command: run/gpg2john
+    plugs: [home, removable-media]
+  keepass2john:
+    command: run/keepass2john
+    plugs: [home, removable-media]
+  putty2john:
+    command: run/putty2john
+    plugs: [home, removable-media]
+  rar2john:
+    command: run/rar2john
+    plugs: [home, removable-media]
+  uaf2john:
+    command: run/uaf2john
+    plugs: [home, removable-media]
+  wpapcap2john:
+    command: run/wpapcap2john
+    plugs: [home, removable-media]
+
+parts:
+  john-the-ripper:
+    plugin: nil
+    source: .
+    override-build: |
+      ./build.sh
+      mkdir -p ../install/etc/bash_completion
+      cp run/john.*_completion ../install/etc/bash_completion/
+      mkdir -p ../install/share/icons
+      cp icon.png ../install/share/icons/icon.png
+
+    build-packages:
+      - build-essential
+      - libssl-dev
+      - libgmp-dev
+      - libpcap-dev
+      - libbz2-dev
+      - zlib1g-dev
+      - git
+      - wget
+      - patch
+      # OpenCL stuff is available only in X86 architecture, make it optional
+      - try:
+        - beignet-dev
+        - opencl-headers
+
+    organize:
+      ../build/run/: run/
+      ../build/doc/: doc/
+      ../build/README.md: README.md
+
+  libs:
+    plugin: nil
+
+    stage-packages:
+      - libgomp1
+      - libpcap0.8
+      - ocl-icd-libopencl1
+      # Staged from core18 runtime
+      # openssl
+      # libgmp10
+      # libbz2
+
+    filesets:
+      extras:
+        - -usr/local/man
+        - -usr/share/
+    prime:
+      - $extras
+    stage:
+      - $extras

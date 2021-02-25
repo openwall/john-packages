@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "bleeding"
+		}
+	],
+	"settings": {
+		"C_Cpp.default.defines": [
+			"HAVE_OPENCL=1"
+		],
+		"files.associations": {
+			"cstdio": "c",
+			"arch.h": "c"
+		}
+	}
+}

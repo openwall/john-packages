@@ -1,0 +1,10 @@
+graph TD
+    A[Upstream Commit] -->|check suitability| B(Run a downstream rebase to get the latest changes)
+    B --> C{Run in<br> Parallel}
+    C -->|Appveyor CI| D[fa:fa-desktop <br>Windows]
+    C -->|Circle CI| E[fa:fa-desktop <br>Docker]
+    C -->|Cirrus CI| F[fa:fa-desktop <br>FreeBSD]
+    C -->|TravisCI| G[fa:fa-desktop <br>Mac<br> Linux<br> Other Archs]
+    C -->|Azure DevOPS| H[fa:fa-desktop <br>Fuzzing Test<br>+<br>Inspect Deploy<br>Package]
+    H[fa:fa-desktop <br>Fuzzing Test<br>+<br>Inspection of<br> Deployment<br>Package] -->|manual approval| X(Create a Release)
+
