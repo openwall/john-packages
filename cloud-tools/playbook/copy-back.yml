@@ -1,0 +1,30 @@
+######################################################################
+# Copyright (c) 2021 Claudio André <claudioandre.br at gmail.com>
+#
+# This program comes with ABSOLUTELY NO WARRANTY; express or implied.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, as expressed in version 2, seen at
+# http://www.gnu.org/licenses/gpl-2.0.html
+######################################################################
+
+---
+- hosts: all
+  gather_facts: no
+  remote_user: ubuntu
+  tasks:
+     - name: Copy file(s) from all requested remote servers to local.
+       fetch:
+         src: /home/ubuntu/john/run/john.pot
+         dest: ..
+
+     - name: Copy file(s) from all requested remote servers to local.
+       fetch:
+         src: /home/ubuntu/john/run/john.rec
+         dest: ..
+
+     - name: Copy file(s) from all requested remote servers to local.
+       fetch:
+         src: /home/ubuntu/john/run/john.log
+         dest: ..
