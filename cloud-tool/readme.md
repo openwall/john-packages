@@ -41,8 +41,8 @@ ssh-keygen -t rsa -f jtr-workerKey
 john --list=format-tests 2> /dev/null | cut -f3 1> hashes.txt
 
 # Get the tool
-git clone https://github.com/openwall/john-packages.git cloud-tools
-cd  cloud-tools
+git clone https://github.com/openwall/john-packages.git cloud
+cd  cloud/cloud-tool
 
 # The `-v` is to share content between host and Docker (Bind-mount a directory inside Docker)
 #   Current (project) folder   -v $(pwd):/host/cloud-tools
