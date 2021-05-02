@@ -12,7 +12,7 @@ Windows LM hashes, plus lots of other hashes and ciphers.
 # Table of Contents
 1. [Introduction](#introduction)
    1. [Testing, Continuous Integration, and Continuous Delivery](#testing-and-continuous-integration)
-   2. [Released Packages Build Environments](#packages-build-environments)
+   2. [Package Building Environments](#package-building-environments)
    3. [Packaging and Application Distribution](#packaging-and-application-distribution)
    4. [Releases Feed ![New Releases Feed](https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Feed-icon.svg/16px-Feed-icon.svg.png)](https://github.com/openwall/john-packages/releases.atom)
 2. [Snap Package](#snap)
@@ -30,7 +30,7 @@ Click on the link to learn more about our [Continuous Integration and Continuous
 
 [![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBW1Vwc3RyZWFtIENvbW1pdF0gLS0-fGNoZWNrIHN1aXRhYmlsaXR5fCBCKFJ1biBhIGRvd25zdHJlYW0gcmViYXNlIHRvIGdldCB0aGUgbGF0ZXN0IGNoYW5nZXMpXG4gICAgQiAtLT4gQ3tSdW4gaW48YnI-IFBhcmFsbGVsfVxuICAgIEMgLS0-fEFwcHZleW9yIENJfCBEW2ZhOmZhLWRlc2t0b3AgPGJyPldpbmRvd3NdXG4gICAgQyAtLT58Q2lyY2xlIENJfCBFW2ZhOmZhLWRlc2t0b3AgPGJyPkRvY2tlcl1cbiAgICBDIC0tPnxDaXJydXMgQ0l8IEZbZmE6ZmEtZGVza3RvcCA8YnI-RnJlZUJTRF1cbiAgICBDIC0tPnxUcmF2aXNDSXwgR1tmYTpmYS1kZXNrdG9wIDxicj5NYWM8YnI-IExpbnV4PGJyPiBPdGhlciBBcmNoc11cbiAgICBDIC0tPnxBenVyZSBEZXZPUFN8IEhbZmE6ZmEtZGVza3RvcCA8YnI-RnV6emluZyBUZXN0PGJyPis8YnI-SW5zcGVjdCBEZXBsb3k8YnI-UGFja2FnZV1cbiAgICBIW2ZhOmZhLWRlc2t0b3AgPGJyPkZ1enppbmcgVGVzdDxicj4rPGJyPkluc3BlY3Rpb24gb2Y8YnI-IERlcGxveW1lbnQ8YnI-UGFja2FnZV0gLS0-fG1hbnVhbCBhcHByb3ZhbHwgWChDcmVhdGUgYSBSZWxlYXNlKVxuIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifSwidXBkYXRlRWRpdG9yIjpmYWxzZX0)](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBW1Vwc3RyZWFtIENvbW1pdF0gLS0-fGNoZWNrIHN1aXRhYmlsaXR5fCBCKFJ1biBhIGRvd25zdHJlYW0gcmViYXNlIHRvIGdldCB0aGUgbGF0ZXN0IGNoYW5nZXMpXG4gICAgQiAtLT4gQ3tSdW4gaW48YnI-IFBhcmFsbGVsfVxuICAgIEMgLS0-fEFwcHZleW9yIENJfCBEW2ZhOmZhLWRlc2t0b3AgPGJyPldpbmRvd3NdXG4gICAgQyAtLT58Q2lyY2xlIENJfCBFW2ZhOmZhLWRlc2t0b3AgPGJyPkRvY2tlcl1cbiAgICBDIC0tPnxDaXJydXMgQ0l8IEZbZmE6ZmEtZGVza3RvcCA8YnI-RnJlZUJTRF1cbiAgICBDIC0tPnxUcmF2aXNDSXwgR1tmYTpmYS1kZXNrdG9wIDxicj5NYWM8YnI-IExpbnV4PGJyPiBPdGhlciBBcmNoc11cbiAgICBDIC0tPnxBenVyZSBEZXZPUFN8IEhbZmE6ZmEtZGVza3RvcCA8YnI-RnV6emluZyBUZXN0PGJyPis8YnI-SW5zcGVjdCBEZXBsb3k8YnI-UGFja2FnZV1cbiAgICBIW2ZhOmZhLWRlc2t0b3AgPGJyPkZ1enppbmcgVGVzdDxicj4rPGJyPkluc3BlY3Rpb24gb2Y8YnI-IERlcGxveW1lbnQ8YnI-UGFja2FnZV0gLS0-fG1hbnVhbCBhcHByb3ZhbHwgWChDcmVhdGUgYSBSZWxlYXNlKVxuIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifSwidXBkYXRlRWRpdG9yIjpmYWxzZX0)
 
-### Packages Build Environments
+### Package Building Environments
 
 Click on the link to learn more about our packages [Building Environments](https://github.com/openwall/john-packages/tree/master/deploy#deployments).
 
@@ -46,7 +46,7 @@ When the Docker user runs an image, it becomes one instance (it becomes a contai
 
 ## Snap
 
-> Built and deployed using Launchpad
+> Delivered using Launchpad [ supports up to AVX512BW ]
 
 [**A Snap**](https://snapcraft.io/) is a fancy zip file containing an application
 together with its dependencies, and a description of how it should safely be run
@@ -81,8 +81,8 @@ The highlights:
 - prince mode available;
 - OpenCL available (GPU driver installation is needed);
 - also available via the alias **john**, e.g. `john -list=build-info`;
-- the stable John 1.9.0 Jumbo 2:
-  - is available for X86_64, armhf, arm64, ppc64el, i386, and s390x;
+- ~~the stable John 1.9.0 Jumbo 2:~~
+  - ~~is available for X86_64, armhf, arm64, ppc64el, i386, and s390x;~~
 - the stable John 1.9.0 Jumbo 1:
   - is available for X86_64, armhf, arm64, ppc64el, i386, powerpc, and s390x;
   - has regex mode available;
@@ -160,7 +160,7 @@ If you do so, you will be running the development version available on GitHub.
 
 ## Flatpak
 
-> Built and deployed using FlatHub and GitLab CI
+> Delivered using FlatHub and GitLab CI [ supports up to AVX2 ]
 
 [**Flatpak**](http://flatpak.org//) is a new framework for desktop applications
 on Linux, built to be distribution agnostic and allow deployment on any Linux
@@ -192,8 +192,8 @@ The highlights:
 
 - fallback for CPU[*] and OMP;
 - prince mode available.
-- the stable John 1.9.0 Jumbo 2:
-  - is available for X86_64, arm, aarch64, and i386;
+- ~~the stable John 1.9.0 Jumbo 2:~~
+  - ~~is available for X86_64, arm, aarch64, and i386;~~
 - the stable John 1.9.0 Jumbo 1:
   - is available for X86_64, arm, aarch64, and i386;
   - has regex mode available;
@@ -241,7 +241,7 @@ Run John the Ripper and check if it is working:
 
 ## Windows
 
-> Tested in AppVeyor CI and Azure DevOps. Deployed using Microsoft-hosted Windows 2016 Server in Azure
+> Delivered using Microsoft-hosted Windows 2016 Server in Azure [ supports up to AVX512BW ]
 
 To install John the Ripper by downloading the .zip file and installing manually,
 follow these steps:
@@ -266,8 +266,8 @@ The highlights:
 - generic crypt(3) format available;
 - security feature Address Space Layout Randomisation (ASLR) enabled;
 - security feature Data Execution Prevention (DEP) enabled;
-- the stable John 1.9.0 Jumbo 2:
-  - is available for X86_64 and i386;
+- ~~the stable John 1.9.0 Jumbo 2:~~
+  - ~~is available for X86_64 and i386;~~
 - the stable John 1.9.0 Jumbo 1:
   - is available for X86_64 and i386;
 - a development version:
@@ -281,11 +281,11 @@ it's running on.
 The links below contain all the executables and libraries needed to run a fresh
 John the Ripper installation.
 
-- the stable John 1.9.0 Jumbo 2:
-  - The [32bit version](https://github.com/claudioandre-br/packages/releases/download/1.9.0-jumbo-2/winX32_1_JtR.7z)
-[(logs)](https://github.com/openwall/john-packages/blob/master/1.9.0.J2/x32_log.txt);
-  - The [64bit version](https://github.com/claudioandre-br/packages/releases/download/1.9.0-jumbo-2/winX64_1_JtR.7z)
-[(logs)](https://github.com/openwall/john-packages/blob/master/1.9.0.J2/x64_log.txt);
+- ~~the stable John 1.9.0 Jumbo 2:~~
+  - ~~The [32bit version](https://github.com/claudioandre-br/packages/releases/download/1.9.0-jumbo-2/winX32_1_JtR.7z)
+[(logs)](https://github.com/openwall/john-packages/blob/master/1.9.0.J2/x32_log.txt);~~
+  - ~~The [64bit version](https://github.com/claudioandre-br/packages/releases/download/1.9.0-jumbo-2/winX64_1_JtR.7z)
+[(logs)](https://github.com/openwall/john-packages/blob/master/1.9.0.J2/x64_log.txt);~~
 - the stable John 1.9.0 Jumbo 1:
   - The [32bit version](https://github.com/claudioandre-br/packages/releases/download/1.9.0-jumbo-1/x32_win.zip)
 [(logs)](https://github.com/openwall/john-packages/blob/master/1.9.0.J1/x32_log.txt);
@@ -355,7 +355,7 @@ Session completed
 ```
 ## Docker Image
 
-> Built using Travis CI and deployed using GitHub Packages
+> Delivered using Travis CI [ supports up to AVX512BW ]
 
 For testing and future reference, we have a Docker image of John the Ripper.
 To use it:
@@ -391,11 +391,12 @@ Compare the performance of SIMD extensions:
 The highlights:
 
 - prince mode available;
-- the stable John 1.9.0 Jumbo 2 (`ghcr.io/openwall/john:v1.9.0J2`):
-  - has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`.
+- ~~the stable John 1.9.0 Jumbo 2 (`ghcr.io/openwall/john:v1.9.0J2`):~~
+  - ~~has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`.~~
 - the stable John 1.9.0 Jumbo 1 (`ghcr.io/openwall/john:v1.9.0J1`):
   - has ztex formats available.
-- the development version (`ghcr.io/openwall/john:v1.9.0J2plus`):
+- ~~the development version (`ghcr.io/openwall/john:v1.9.0J2plus`):~~
+- the development version (`ghcr.io/openwall/john:v1.9.0J2`):
   - has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`.
 
 The available binaries (their IDs are sse2, sse2-no-omp, ssse3, etc) are:
@@ -425,11 +426,10 @@ The available binaries (their IDs are sse2, sse2-no-omp, ssse3, etc) are:
 
 > Released packages checksums computed by Build Servers
 
-#### File hash computed by the CI server
-
 File verification is the process of using an algorithm for verifying the integrity
 of a computer file. A popular approach is to store checksums (hashes) of files,
-also known as message digests, for later comparison.
+also known as message digests, for later comparison. All john packages checksums (hashes)
+are computed by the CI servers.
 
 Accessing the build logs, you can view the hashes of all relevant
 files. For your convenience, we provide a file named checksum.txt containing the
@@ -437,7 +437,7 @@ checksums for all packages.
 
 #### John the Ripper 1.9.0 Jumbo 2
 
-The checksums are available in [this file](https://github.com/openwall/john-packages/blob/master/1.9.0.J2/checksum.txt).
+~~The checksums are available in [this file](https://github.com/openwall/john-packages/blob/master/1.9.0.J2/checksum.txt).~~
 
 #### John the Ripper 1.9.0 Jumbo 1
 
