@@ -24,19 +24,20 @@ resource "aws_security_group" "jtrcrackers-sg" {
     }
   }
 
-  dynamic "outgress" {
-    for_each = var.outgress_data
+  dynamic "egress" {
+    for_each = var.egress_data
     content {
-      description = outgress.value["description"]
-      from_port   = outgress.key
-      to_port     = outgress.key
+      description = egress.value["description"]
+      from_port   = egress.key
+      to_port     = egress.key
       protocol    = "tcp"
-      cidr_blocks = outgress.value["cidr_blocks"]
+      cidr_blocks = egress.value["cidr_blocks"]
+      ipv6_cidr_blocks = egress.value["ipv6_cidr_blocks"]
     }
   }
 
   tags = {
-    Name = "JtRCrackerSecurityGroup-sg"
+    Name = "JtRCracker-sg"
     Environment = var.domain
     "Application Role" = var.role
     Owner = var.owner

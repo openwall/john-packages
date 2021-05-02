@@ -41,15 +41,14 @@ ssh-keygen -t rsa -f jtr-workerKey
 john --list=format-tests 2> /dev/null | cut -f3 1> hashes.txt
 
 # Get the tool
-cd ~/jtr-cloud-tools
-cp ~/bin/cloud/cloud-tools/* .
+git clone https://github.com/openwall/john-packages.git cloud-tools
+cd  cloud-tools
 
 # The `-v` is to share content between host and Docker (Bind-mount a directory inside Docker)
 #   Current (project) folder   -v $(pwd):/host/cloud-tools
 #   AWS credentials            -v ~/.aws/:/home/cracker/.aws/:ro
 
-cd ~/jtr-cloud-tools && \
-  docker run -it --rm -v $(pwd):/host/cloud-tools -v ~/.aws/:/home/cracker/.aws/:ro claudioandre/john-cloud-tools
+docker run -it --rm -v $(pwd):/host/cloud-tools -v ~/.aws/:/home/cracker/.aws/:ro claudioandre/john-cloud-tools
 
 # Create disposable SSH credentials (to use inside docker).
 # You will not lose the key, it will be saved on the host machine due to Bind-mount (-v).
@@ -101,5 +100,3 @@ ansible-playbook -i inventory --private-key=jtr-workerKey playbook/copy-back.yml
 # Do some tests then destroy the infrastructure created below (to avoid costs).
 terraform destroy
 ```
-
-Adicionar outbound rules

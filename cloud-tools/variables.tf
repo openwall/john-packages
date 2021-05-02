@@ -19,12 +19,12 @@ variable ingress_data {
   }
 }
 
-variable outgress_data {
+variable egress_data {
   description = "The secutiry groups outbound rules."
-  type = map(object({description = string, cidr_blocks = list(string)}))
+  type = map(object({description = string, cidr_blocks = list(string), ipv6_cidr_blocks = list(string)}))
   default = {
-    80 = { description = "Outbound HTTP rule", cidr_blocks = [ "0.0.0.0/0", "::/0" ] }
-    443 = { description = "Outbound HTTPS rule", cidr_blocks = [ "0.0.0.0/0", "::/0" ] }
+    80 = { description = "Outbound HTTP rule", cidr_blocks = [ "0.0.0.0/0" ], ipv6_cidr_blocks = ["::/0"] }
+    443 = { description = "Outbound HTTPS rule", cidr_blocks = [ "0.0.0.0/0" ], ipv6_cidr_blocks = ["::/0"] }
   }
 }
 # ####################################################################

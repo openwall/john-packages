@@ -1,0 +1,5 @@
+*.diff
+.terraform
+.terraform.*
+terraform.*
+inventory
