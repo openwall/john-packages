@@ -10,17 +10,17 @@
 ######################################################################
 
 # TODO ###############################################################
-# Change the cidr_blocks below to update using your IP address.
+# Update the 'cidr_blocks' below using your IP address.
 variable ingress_data {
-  description = "The secutiry groups inbound rules."
+  description = "The security groups inbound rules."
   type = map(object({description = string, cidr_blocks = list(string)}))
   default = {
-    22 = { description = "Inbound SSH rule", cidr_blocks = [ "45.170.58.160/32" ] }
+    22 = { description = "Inbound SSH rule", cidr_blocks = [ "YOUR_IP_HERE/32" ] }
   }
 }
 
 variable egress_data {
-  description = "The secutiry groups outbound rules."
+  description = "The security groups outbound rules."
   type = map(object({description = string, cidr_blocks = list(string), ipv6_cidr_blocks = list(string)}))
   default = {
     80 = { description = "Outbound HTTP rule", cidr_blocks = [ "0.0.0.0/0" ], ipv6_cidr_blocks = ["::/0"] }
@@ -36,7 +36,7 @@ variable egress_data {
 # $ terraform workspace list
 
 # TODO ###############################################################
-# Set your AWS profile file AND/OR  regions AND/OR the label.
+# Set your AWS profile file AND/OR regions AND/OR the label.
 variable "profile_list" {
   description = "Your section inside the `~/.aws/credentials` profile file."
   type = map(string)
@@ -70,14 +70,14 @@ variable "environment_list" {
 
 # TODO ###############################################################
 # Change SSH information, use your own keys or create a new one.
-# Or run `$ ssh-keygen -t rsa -f jtr-workerKey`
+# Or run `$ ssh-keygen -t rsa -f workerKey`
 variable "private_key" {
-  default = "./jtr-workerKey"
+  default = "./workerKey"
   sensitive = true
 }
 
 variable "public_key" {
-  default = "./jtr-workerKey.pub"
+  default = "./workerKey.pub"
 }
 
 locals {
