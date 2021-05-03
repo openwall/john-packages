@@ -2,6 +2,8 @@
 
 The usage of Continuous Integration and Continuous Delivery is a method to frequently deliver software to users by introducing automation into the stages of application development.
 
+![Donation](https://img.shields.io/badge/Donate-Yes-brightgreen?style=flat&logo=github-sponsors) Please donate. You can make a real difference and help our work by donating to support the CI infra.
+
 ## Testing
 
 Using multiple providers, we've created a DevOps infrastructure. We are mostly interested
@@ -16,21 +18,23 @@ using:
 - Unix®-like BSD:
   - FreeBSD 11 (11.3-STABLE);
   - FreeBSD 12 (12.1-STABLE);
+  - FreeBSD 13 (13.0-CURRENT);
 - MacOS:
   - macOS 10.13 (Darwin Kernel Version 17.4.0);
   - macOS 10.14 (Darwin Kernel Version 18.5.0);
   - macOS Universal Apps (Darwin Kernel Version 19.5.0);
 - Linux:
-  - CentOS 6 and Fedora 32;
-  - Ubuntu 12.04, Ubuntu 14.04, Ubuntu 16.04, Ubuntu 18.04, Ubuntu 20.04, and Ubuntu 20.10;
+  - CentOS 7 and Fedora 32;
+  - Ubuntu 12.04, Ubuntu 14.04, Ubuntu 16.04, Ubuntu 18.04, Ubuntu 20.04, and Ubuntu 21.04;
 - Compilers:
-  - gcc 4.4, gcc 4.6, gcc 4.8, gcc 5.4, gcc 5.5, gcc 7.2, gcc 7.4, gcc 7.5, gcc 8.3, gcc 9.2, gcc 9.3, gcc 10.2, and gcc 11.0;
+  - gcc 4.6, gcc 4.8, gcc 5.4, gcc 7.2, gcc 7.4, gcc 7.5, gcc 9.2, gcc 9.3, gcc 10.2, and gcc 11.0;
   - clang 5.0, clang 7.0, and clang 10.0;
   - FreeBSD clang version 8.0.1
   - FreeBSD clang version 10.0.0 
-  - Xcode 10.2.1; Apple LLVM version 10.0.1 (clang-1001.0.46.4);
-  - Xcode 11.2.1; Apple clang version 11.0.0 (clang-1100.0.33.12);
-  - Xcode-12; Apple clang version 12.0.0 (clang-1200.0.22.41)
+  - FreeBSD clang version 11.0.1
+  - Xcode 10.3; Apple LLVM version 10.0.1 (clang-1001.0.46.4)
+  - Xcode 11.6; Apple clang version 11.0.3 (clang-1103.0.32.62)
+  - Xcode-12.2; Apple clang version 12.0.0 (clang-1200.0.32.27)
 - Builds:
   - SIMD and non-SIMD builds;
   - OpenMP and non-OpenMP builds;

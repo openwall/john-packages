@@ -1,26 +1,52 @@
 # John the Ripper Packages
 
 [![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://github.com/openwall/john-packages/blob/master/LICENSE.txt)
+![Donation](https://img.shields.io/badge/Donate-US%24%2010-brightgreen?style=flat&logo=github-sponsors)
 
-[Snap](http://snapcraft.io/) and [Flatpak](http://flatpak.org/) are cool new ways
-of distributing Linux applications among a wide range of different distros. They
-are technologies to deploy applications in a secure, sandboxed and containerised way.
-
-```Text
-John the Ripper password cracker
-```
-
-[Openwall](http://openwall.com/) John the Ripper (JtR) is a fast password cracker,
+[Openwall's](http://openwall.com/) John the Ripper (JtR) is a fast password cracker,
 currently available for many flavors of Unix, Windows, DOS, and OpenVMS. Its primary
 purpose is to detect weak Unix passwords. Besides several crypt(3) password hash
 types most commonly found on various Unix systems, supported out of the box are
 Windows LM hashes, plus lots of other hashes and ciphers.
 
-Know our [Continuous Integration and Continuous Delivery](https://github.com/openwall/john-packages/tree/master/tests#continuous-integration-and-continuous-delivery) procedures.
+# Table of Contents
+1. [Introduction](#introduction)
+   1. [Testing, Continuous Integration, and Continuous Delivery](#testing-and-continuous-integration)
+   2. [Package Building Environments](#package-building-environments)
+   3. [Packaging and Application Distribution](#packaging-and-application-distribution)
+   4. [Releases Feed ![New Releases Feed](https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Feed-icon.svg/16px-Feed-icon.svg.png)](https://github.com/openwall/john-packages/releases.atom)
+2. [Snap Package](#snap)
+3. [Flatpak Package](#flatpak)
+4. [Windows Package](#windows)
+5. [Docker Image](#docker-image)
+6. [Checksums](#packages-checksums)
+7. [Package Security](#security)
+8. [License](#license)
+
+# Introduction
+
+### Testing and Continuous Integration
+Click on the link to learn more about our [Continuous Integration and Continuous Delivery](https://github.com/openwall/john-packages/tree/master/tests#continuous-integration-and-continuous-delivery) procedures.
+
+[![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBW1Vwc3RyZWFtIENvbW1pdF0gLS0-fGNoZWNrIHN1aXRhYmlsaXR5fCBCKFJ1biBhIGRvd25zdHJlYW0gcmViYXNlIHRvIGdldCB0aGUgbGF0ZXN0IGNoYW5nZXMpXG4gICAgQiAtLT4gQ3tSdW4gaW48YnI-IFBhcmFsbGVsfVxuICAgIEMgLS0-fEFwcHZleW9yIENJfCBEW2ZhOmZhLWRlc2t0b3AgPGJyPldpbmRvd3NdXG4gICAgQyAtLT58Q2lyY2xlIENJfCBFW2ZhOmZhLWRlc2t0b3AgPGJyPkRvY2tlcl1cbiAgICBDIC0tPnxDaXJydXMgQ0l8IEZbZmE6ZmEtZGVza3RvcCA8YnI-RnJlZUJTRF1cbiAgICBDIC0tPnxUcmF2aXNDSXwgR1tmYTpmYS1kZXNrdG9wIDxicj5NYWM8YnI-IExpbnV4PGJyPiBPdGhlciBBcmNoc11cbiAgICBDIC0tPnxBenVyZSBEZXZPUFN8IEhbZmE6ZmEtZGVza3RvcCA8YnI-RnV6emluZyBUZXN0PGJyPis8YnI-SW5zcGVjdCBEZXBsb3k8YnI-UGFja2FnZV1cbiAgICBIW2ZhOmZhLWRlc2t0b3AgPGJyPkZ1enppbmcgVGVzdDxicj4rPGJyPkluc3BlY3Rpb24gb2Y8YnI-IERlcGxveW1lbnQ8YnI-UGFja2FnZV0gLS0-fG1hbnVhbCBhcHByb3ZhbHwgWChDcmVhdGUgYSBSZWxlYXNlKVxuIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifSwidXBkYXRlRWRpdG9yIjpmYWxzZX0)](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBW1Vwc3RyZWFtIENvbW1pdF0gLS0-fGNoZWNrIHN1aXRhYmlsaXR5fCBCKFJ1biBhIGRvd25zdHJlYW0gcmViYXNlIHRvIGdldCB0aGUgbGF0ZXN0IGNoYW5nZXMpXG4gICAgQiAtLT4gQ3tSdW4gaW48YnI-IFBhcmFsbGVsfVxuICAgIEMgLS0-fEFwcHZleW9yIENJfCBEW2ZhOmZhLWRlc2t0b3AgPGJyPldpbmRvd3NdXG4gICAgQyAtLT58Q2lyY2xlIENJfCBFW2ZhOmZhLWRlc2t0b3AgPGJyPkRvY2tlcl1cbiAgICBDIC0tPnxDaXJydXMgQ0l8IEZbZmE6ZmEtZGVza3RvcCA8YnI-RnJlZUJTRF1cbiAgICBDIC0tPnxUcmF2aXNDSXwgR1tmYTpmYS1kZXNrdG9wIDxicj5NYWM8YnI-IExpbnV4PGJyPiBPdGhlciBBcmNoc11cbiAgICBDIC0tPnxBenVyZSBEZXZPUFN8IEhbZmE6ZmEtZGVza3RvcCA8YnI-RnV6emluZyBUZXN0PGJyPis8YnI-SW5zcGVjdCBEZXBsb3k8YnI-UGFja2FnZV1cbiAgICBIW2ZhOmZhLWRlc2t0b3AgPGJyPkZ1enppbmcgVGVzdDxicj4rPGJyPkluc3BlY3Rpb24gb2Y8YnI-IERlcGxveW1lbnQ8YnI-UGFja2FnZV0gLS0-fG1hbnVhbCBhcHByb3ZhbHwgWChDcmVhdGUgYSBSZWxlYXNlKVxuIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifSwidXBkYXRlRWRpdG9yIjpmYWxzZX0)
+
+### Package Building Environments
+
+Click on the link to learn more about our packages [Building Environments](https://github.com/openwall/john-packages/tree/master/deploy#deployments).
+
+### Packaging and Application Distribution
+
+[Snap](https://snapcraft.io/) and [Flatpak](https://flatpak.org/) are cool new ways
+of distributing Linux applications among a wide range of different distros. They
+are technologies to deploy applications in a secure, sandboxed and containerised way.
+
+A [Docker](https://www.docker.com/) image is a read-only template used to execute code in a Docker container. An image is an immutable file that contains the binaries, configuration files, libraries, dependencies, tools, and other files needed for John the Ripper application to run.
+
+When the Docker user runs an image, it becomes one instance (it becomes a container, in other words, a running instance of the application).
 
 ## Snap
 
-> Built and deployed using Launchpad
+> Delivered using Launchpad [ supports up to AVX512BW ]
 
 [**A Snap**](https://snapcraft.io/) is a fancy zip file containing an application
 together with its dependencies, and a description of how it should safely be run
@@ -55,6 +81,8 @@ The highlights:
 - prince mode available;
 - OpenCL available (GPU driver installation is needed);
 - also available via the alias **john**, e.g. `john -list=build-info`;
+- ~~the stable John 1.9.0 Jumbo 2:~~
+  - ~~is available for X86_64, armhf, arm64, ppc64el, i386, and s390x;~~
 - the stable John 1.9.0 Jumbo 1:
   - is available for X86_64, armhf, arm64, ppc64el, i386, powerpc, and s390x;
   - has regex mode available;
@@ -65,7 +93,7 @@ The highlights:
 it's running on.
 
 ```Text
-John the Ripper snap package achieved 6 thousand active users [*].
+John the Ripper snap package achieved 7 thousand active users [*].
 ```
 
 [*] 7 Day Active Users: the number of unique users who had at least one session within a 7 day period.
@@ -111,28 +139,10 @@ OpenCL by snaps is a problem. Support for NVIDIA cards is under development.
 As a "general" solution (or in the case of AMD hardware), the user can run john
 out of the sandbox, unconfined (e.g., run `/snap/john-the-ripper/current/run/john`).
 
-~To run JtR OpenCL version you must install the snap using `developer mode`. It
-enables users to install snaps without enforcing security policies. To do this,
-you must install John using (**UNTESTED**):~
-
-```bash
- sudo snap install john-the-ripper --devmode
-```
-
-~When installed this way, snaps behave similarly to traditional *.deb* packages in
-terms of accessing system resources.~
-
-~To run JtR OpenCL binary:~
-
-```bash
- john-the-ripper.opencl -list=build-info
- john-the-ripper.opencl -list=opencl-devices
-```
-
 ### Snap Deployments
 
 If you followed the above instructions, you installed the stable version of John
-the Ripper Jumbo 1.9.0.J1 in your system. If you want to access the hot and bleeding
+the Ripper Jumbo in your system. If you want to access the hot and bleeding
 developing version of JtR, you must follow a development channel. For a clean
 installation:
 
@@ -147,11 +157,10 @@ If you already has JtR installed:
 ```
 
 If you do so, you will be running the development version available on GitHub.
-The average gap expected is 1 week.
 
 ## Flatpak
 
-> Built and deployed using FlatHub and GitLab CI
+> Delivered using FlatHub and GitLab CI [ supports up to AVX2 ]
 
 [**Flatpak**](http://flatpak.org//) is a new framework for desktop applications
 on Linux, built to be distribution agnostic and allow deployment on any Linux
@@ -183,6 +192,8 @@ The highlights:
 
 - fallback for CPU[*] and OMP;
 - prince mode available.
+- ~~the stable John 1.9.0 Jumbo 2:~~
+  - ~~is available for X86_64, arm, aarch64, and i386;~~
 - the stable John 1.9.0 Jumbo 1:
   - is available for X86_64, arm, aarch64, and i386;
   - has regex mode available;
@@ -195,12 +206,12 @@ it's running on.
 ### Flatpak Deployments
 
 If you followed the above instructions, you installed the stable version of John
-the Ripper Jumbo 1.9.0.J1 in your system. If you want to access the hot and bleeding
+the Ripper Jumbo in your system. If you want to access the hot and bleeding
 developing version of JtR, you must install a bundle.
 
 John the Ripper single-file flatpak bundle was built and tested on
 [GitLab](https://gitlab.com/claudioandre-br/JtR-CI/pipelines). You can get it
-[here](https://github.com/openwall/john-packages/releases/tag/jumbo-dev).
+[here](https://github.com/openwall/john-packages/releases).
 
 The necessary steps to install the package are listed below. They were tested on
 a clean Fedora 29 docker image, but they should work for every supported distro
@@ -230,7 +241,7 @@ Run John the Ripper and check if it is working:
 
 ## Windows
 
-> Tested in AppVeyor CI and Azure DevOps. Deployed using Microsoft-hosted Windows 2016 Server in Azure
+> Delivered using Microsoft-hosted Windows 2016 Server in Azure [ supports up to AVX512BW ]
 
 To install John the Ripper by downloading the .zip file and installing manually,
 follow these steps:
@@ -255,6 +266,8 @@ The highlights:
 - generic crypt(3) format available;
 - security feature Address Space Layout Randomisation (ASLR) enabled;
 - security feature Data Execution Prevention (DEP) enabled;
+- ~~the stable John 1.9.0 Jumbo 2:~~
+  - ~~is available for X86_64 and i386;~~
 - the stable John 1.9.0 Jumbo 1:
   - is available for X86_64 and i386;
 - a development version:
@@ -268,13 +281,16 @@ it's running on.
 The links below contain all the executables and libraries needed to run a fresh
 John the Ripper installation.
 
+- ~~the stable John 1.9.0 Jumbo 2:~~
+  - ~~The [32bit version](https://github.com/claudioandre-br/packages/releases/download/1.9.0-jumbo-2/winX32_1_JtR.7z)
+[(logs)](https://github.com/openwall/john-packages/blob/master/1.9.0.J2/x32_log.txt);~~
+  - ~~The [64bit version](https://github.com/claudioandre-br/packages/releases/download/1.9.0-jumbo-2/winX64_1_JtR.7z)
+[(logs)](https://github.com/openwall/john-packages/blob/master/1.9.0.J2/x64_log.txt);~~
 - the stable John 1.9.0 Jumbo 1:
   - The [32bit version](https://github.com/claudioandre-br/packages/releases/download/1.9.0-jumbo-1/x32_win.zip)
-[(libs)](https://github.com/claudioandre-br/packages/releases/download/1.9.0-jumbo-1/x32_optional.zip)
-[(logs)](https://github.com/claudioandre-br/packages/releases/download/1.9.0-jumbo-1/x32_log.txt);
+[(logs)](https://github.com/openwall/john-packages/blob/master/1.9.0.J1/x32_log.txt);
   - The [64bit version](https://github.com/claudioandre-br/packages/releases/download/1.9.0-jumbo-1/x64_win.zip)
-[(libs)](https://github.com/claudioandre-br/packages/releases/download/1.9.0-jumbo-1/x64_optional.zip)
-[(logs)](https://github.com/claudioandre-br/packages/releases/download/1.9.0-jumbo-1/x64_log.txt);
+[(logs)](https://github.com/openwall/john-packages/blob/master/1.9.0.J1/x64_log.txt);
 - a development [64bit version](https://github.com/openwall/john-packages/releases/tag/jumbo-dev).
 
 Libs **may** be needed on some systems.
@@ -337,32 +353,16 @@ Hello world!     (?)
 Use the "--show" option to display all of the cracked passwords reliably
 Session completed
 ```
-
-#### File hash computed by the CI server
-
-File verification is the process of using an algorithm for verifying the integrity
-of a computer file. A popular approach is to store checksums (hashes) of files,
-also known as message digests, for later comparison.
-
-Accessing the build logs, you can view the hashes of all relevant
-files. For example:
-
-```text
-Algorithm       Hash                                                                   Path
----------       ----                                                                   ----
-SHA256          768C9D39453C9380CCCFE179FDF559BCCDE9E3AFA0C612F55FFB1823F35105E4       C:\win_x64.zip
-```
-
 ## Docker Image
 
-> Built using Travis CI and deployed using Docker Hub
+> Delivered using Travis CI [ supports up to AVX512BW ]
 
 For testing and future reference, we have a Docker image of John the Ripper.
 To use it:
 
 ```bash
  # CPU only formats
- docker run -it ghcr.io/openwall/john:v1.9.0J1 <binary id> <john options>
+ docker run -it ghcr.io/openwall/john:v1.9.0J2 <binary id> <john options>
 
  # To run ztex formats
  docker run -it --device=/dev/ttyUSB0 ghcr.io/openwall/john:v1.9.0J1 ztex <john options>
@@ -371,28 +371,31 @@ To use it:
 Run John the Ripper and check if it is working:
 
 ```bash
- docker run -it ghcr.io/openwall/john:v1.9.0J1 # => SSE2
- docker run -it ghcr.io/openwall/john:v1.9.0J1 best # => uses the best SIMD available
- docker run -it ghcr.io/openwall/john:v1.9.0J1 ssse3-no-omp -list=build-info
- docker run -it ghcr.io/openwall/john:v1.9.0J1 avx512bw -test=0 -format=cpu
- docker run -it ghcr.io/openwall/john:v1.9.0J1 -list=format-tests | cut -f3 > ~/alltests.in
- docker run -it -v "$HOME":/host ghcr.io/openwall/john:v1.9.0J1 avx -form=SHA512crypt /host/alltests.in --max-run=300
+ docker run -it ghcr.io/openwall/john:v1.9.0J2 # => SSE2
+ docker run -it ghcr.io/openwall/john:v1.9.0J2 best # => uses the best SIMD available
+ docker run -it ghcr.io/openwall/john:v1.9.0J2 ssse3-no-omp -list=build-info
+ docker run -it ghcr.io/openwall/john:v1.9.0J2 avx512bw -test=0 -format=cpu
+ docker run -it ghcr.io/openwall/john:v1.9.0J2 -list=format-tests | cut -f3 > ~/alltests.in
+ docker run -it -v "$HOME":/host ghcr.io/openwall/john:v1.9.0J2 avx -form=SHA512crypt /host/alltests.in --max-run=300
 ```
 
 Compare the performance of SIMD extensions:
 
 ```bash
- docker run -it ghcr.io/openwall/john:v1.9.0J1 sse2    --test=10 --format=SHA512crypt
- docker run -it ghcr.io/openwall/john:v1.9.0J1 sse4.1  --test=10 --format=SHA512crypt
- docker run -it ghcr.io/openwall/john:v1.9.0J1 avx     --test=10 --format=SHA512crypt
- docker run -it ghcr.io/openwall/john:v1.9.0J1 avx2    --test=10 --format=SHA512crypt
+ docker run -it ghcr.io/openwall/john:v1.9.0J2 sse2    --test=10 --format=SHA512crypt
+ docker run -it ghcr.io/openwall/john:v1.9.0J2 sse4.1  --test=10 --format=SHA512crypt
+ docker run -it ghcr.io/openwall/john:v1.9.0J2 avx     --test=10 --format=SHA512crypt
+ docker run -it ghcr.io/openwall/john:v1.9.0J2 avx2    --test=10 --format=SHA512crypt
 ```
 
 The highlights:
 
 - prince mode available;
+- ~~the stable John 1.9.0 Jumbo 2 (`ghcr.io/openwall/john:v1.9.0J2`):~~
+  - ~~has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`.~~
 - the stable John 1.9.0 Jumbo 1 (`ghcr.io/openwall/john:v1.9.0J1`):
   - has ztex formats available.
+- ~~the development version (`ghcr.io/openwall/john:v1.9.0J2plus`):~~
 - the development version (`ghcr.io/openwall/john:v1.9.0J2`):
   - has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`.
 
@@ -423,34 +426,22 @@ The available binaries (their IDs are sse2, sse2-no-omp, ssse3, etc) are:
 
 > Released packages checksums computed by Build Servers
 
-### John the Ripper 1.9.0 Jumbo 1
+File verification is the process of using an algorithm for verifying the integrity
+of a computer file. A popular approach is to store checksums (hashes) of files,
+also known as message digests, for later comparison. All john packages checksums (hashes)
+are computed by the CI servers.
 
-#### Windows Packages
+Accessing the build logs, you can view the hashes of all relevant
+files. For your convenience, we provide a file named checksum.txt containing the
+checksums for all packages.
 
-```text
-Algorithm       Hash                                                                   Path
----------       ----                                                                   ----
-SHA256          C06274B7AB3064844F4D36F9CE943492EC666FA50B97C595A02A54719DC40398       C:\win_x32.zip
-SHA256          64B8DDF2B930210263546D52B796740F689C22D539652EBA0D7FE5E3CD024BAB       C:\optional.zip
+#### John the Ripper 1.9.0 Jumbo 2
 
-Algorithm       Hash                                                                   Path
----------       ----                                                                   ----
-SHA256          75C085D1625B50E70EE2906227DC9EE3722A8D24377057E7E22B5FE8579E9314       C:\win_x64.zip
-SHA256          8AF77CB39B1D3E05CF6AFC317151F02C7847A61727D868F9EF49471C9BBA75DB       C:\optional.zip
-```
+~~The checksums are available in [this file](https://github.com/openwall/john-packages/blob/master/1.9.0.J2/checksum.txt).~~
 
-#### Flatpak Package
+#### John the Ripper 1.9.0 Jumbo 1
 
-```bash
-$ sha256sum john.flatpak
-5f330b46f4f40035714678aade47155c58d9eee819adef6951d032552c31813d  john.flatpak
-```
-
-#### Docker Digest
-
-```bash
-Digest: sha256:4ea2eb998a335cb1d482ba125fd10862f807e36e96c39e31fa96a2325579e154
-```
+The checksums are available in [this file](https://github.com/openwall/john-packages/blob/master/1.9.0.J1/checksum.txt).
 
 ## Security
 

@@ -1,0 +1,111 @@
+{
+    "id": "com.openwall.John",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "18.08",
+    "sdk": "org.freedesktop.Sdk",
+    "command": "john",
+    "tags": [ "edge" ],
+    "finish-args": [
+        "--filesystem=home"
+    ],
+    "cleanup" : [
+        "/include",
+        "*.la",
+        "*.a"
+    ],
+    "modules": [
+        {
+            "name": "libpcap",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "http://www.tcpdump.org/release/libpcap-1.8.1.tar.gz",
+                    "sha256": "673dbc69fdc3f5a86fb5759ab19899039a8e5e6c631749e48dcd9c6f0c83541e"
+                }
+            ]
+        },
+        {
+            "name": "john",
+            "buildsystem": "simple",
+            "subdir": "src",
+            "build-commands": [
+                "###### build script ######",
+                "../build.sh"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/magnumripper/JohnTheRipper.git",
+                    "branch": "bleeding-jumbo"
+                },
+                {
+                    "type": "patch",
+                    "path": "confined-system-wide-build.patch"
+                },
+                {
+                    "type": "file",
+                    "path": "../tests/show_info.sh"
+                },
+                {
+                    "type": "file",
+                    "path": "../tests/package_version.sh"
+                },
+                {
+                    "type": "file",
+                    "path": "../tests/disable_formats.sh"
+                },
+                {
+                    "type": "file",
+                    "path": "../tests/run_tests.sh"
+                },
+                {
+                    "type": "file",
+                    "path": "../tests/clean_package.sh"
+                },
+                {
+                    "type": "file",
+                    "path": "../tests/run_build.sh"
+                },
+                {
+                    "type": "file",
+                    "path": "build.sh"
+                },
+                {
+                    "type": "file",
+                    "path": "com.openwall.John.appdata.xml"
+                },
+                {
+                    "type": "file",
+                    "path": "com.openwall.John.desktop"
+                },
+                {
+                    "type": "file",
+                    "path": "com.openwall.John.png"
+                },
+                {
+                    "type": "file",
+                    "path": "64.png"
+                },
+                {
+                    "type": "file",
+                    "path": "128.png"
+                }
+            ],
+            "post-install": [
+                "###### Install JtR system wide ######",
+                "cp -r ../run/.   /app/bin",
+                "cp -r ../doc/    /app/",
+                "cp    ../README* /app/",
+                "###### Bash Completion ######",
+                "mkdir -p /app/share/bash-completion/completions",
+                "cp ../run/john.*_completion /app/share/bash-completion/completions",
+                "###### Environment ######",
+                "install -Dm644 ../com.openwall.John.png /app/share/icons/hicolor/256x256/apps/com.openwall.John.png",
+                "install -Dm644 ../128.png               /app/share/icons/hicolor/128x128/apps/com.openwall.John.png",
+                "install -Dm644 ../64.png                /app/share/icons/hicolor/64x64/apps/com.openwall.John.png",
+                "install -Dm644 ../com.openwall.John.desktop /app/share/applications/com.openwall.John.desktop",
+                "install -Dm644 ../com.openwall.John.appdata.xml /app/share/appdata/com.openwall.John.appdata.xml"
+            ]
+        }
+    ]
+}
