@@ -100,6 +100,34 @@ variable instance {
 }
 # ####################################################################
 
+# TODO ###############################################################
+# Set your Spot preferences.
+variable "spot" {
+  type = string
+  description = "Use Spot instances? (yes or no)"
+  default = ""
+
+  validation {
+    condition = (
+      ((var.spot) == "" || (var.spot) == "yes" || (var.spot) == "no")
+    )
+    error_message = "The spot flag must be 'yes' or 'no'."
+  }
+}
+variable "spot_price" {
+  type = number
+  description = "Use Spot instances?"
+  default = 0.0116
+
+  validation {
+    condition = (
+      (var.spot_price) > 0
+    )
+    error_message = "The spot price must be greater than zero."
+  }
+}
+# ####################################################################
+
 variable domain {
   type = string
   default = "John the Ripper cracking agent (worker)"

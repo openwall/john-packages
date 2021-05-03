@@ -9,28 +9,17 @@
 # http://www.gnu.org/licenses/gpl-2.0.html
 ######################################################################
 
-data "aws_ami" "ubuntu" {
-  most_recent = true
-
-  filter {
-    name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
-  }
-
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-
-  owners = ["099720109477"] # Images owned by Canonical (099720109477)
-}
-
-resource "aws_instance" "worker" {
+resource "aws_spot_instance_request" "worker" {
   ami           = data.aws_ami.ubuntu.id
   vpc_security_group_ids = [aws_security_group.jtrcrackers-sg.id]
   key_name = aws_key_pair.deployer.key_name
   instance_type = var.instance["instance_type"]
-  count = "${var.spot != "yes" ? var.instance["count"] : 0}"
+  count = "${var.spot == "yes" ? var.instance["count"] : 0}"
+
+
+  spot_price = "${var.spot_price}"
+  wait_for_fulfillment = true
+  spot_type = "one-time"
 
   credit_specification {
     cpu_credits = "standard"
@@ -76,16 +65,3 @@ resource "aws_instance" "worker" {
     Confidentiality = var.confidentiality
   }
 }
-
-resource "aws_key_pair" "deployer" {
-  key_name   = "deployer-key"
-  public_key = local.public_key_content
-}
-
-# You can also add your key here.
-/*
-resource "aws_key_pair" "deployer" {
-  key_name   = "deployer-key"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD3F6tyPEFEzV0LX3X8BsXdMsQz1x2cEikKDEY0aIj41qgxMCP/iteneqXSIFZBp5vizPvaoIR3Um9xK7PGoW8giupGn+EPuxIA4cDM4vzOqOkiMPhz5XK0whEjkVzTo4+S0puvDZuwIsdiW9mxhJc7tgBNL0cYlWSYVkz4G/fslNfRPW5mYAM49f4fhtxPb5ok4Q2Lg9dPKVHO/Bgeu5woMc7RY0p1ej6D4CKFE6lymSDJpW0YHX/wqE9+cfEauh7xZcG0q9t2ta6F6fmX0agvpFyZo8aFbXeUBr7osSCJNgvavWbM/06niWrOvYX2xwWdhXmXSrbX8ZbabVohBK41 email@example.com"
-}
-*/

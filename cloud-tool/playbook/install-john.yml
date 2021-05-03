@@ -14,7 +14,7 @@
   remote_user: ubuntu
   tasks:
     - name: Transfer the script
-      copy: src=../build-john.sh dest=/home/ubuntu/build-john.sh mode=0777
+      copy: src=../build-john.sh dest=/home/ubuntu/build-john.sh mode=0700
 
     - name: Execute the script
       shell: /home/ubuntu/build-john.sh | tee buildlog.txt
