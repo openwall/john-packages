@@ -53,12 +53,14 @@ ssh-keygen -t rsa -f workerKey
 ## Example (Something I really did)
 
 ```
-# To create a sample hashes.txt
-john --list=format-tests 2> /dev/null | cut -f3 1> hashes.txt
+# Edit the `variables.tf` file and update it with your *public* IP address (search for 'YOUR_IP_HERE').
 
 # Get the tool
 git clone https://github.com/openwall/john-packages.git cloud
 cd  cloud/cloud-tool
+
+# Create your hashes.txt file (an example file already exists in the project directory).
+john --list=format-tests 2> /dev/null | cut -f3 1> hashes.txt
 
 # The `-v` is to share content between host and Docker (Bind-mount a directory inside Docker)
 #   Current (project) folder   -v $(pwd):/host/cloud-tools
