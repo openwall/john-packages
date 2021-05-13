@@ -6,5 +6,17 @@ graph TD
     C -->|Cirrus CI| F[fa:fa-desktop <br>FreeBSD]
     C -->|TravisCI| G[fa:fa-desktop <br>Mac<br> Linux<br> Other Archs]
     C -->|Azure DevOPS| H[fa:fa-desktop <br>Fuzzing Test<br>+<br>Inspect Deploy<br>Package]
-    H[fa:fa-desktop <br>Fuzzing Test<br>+<br>Inspection of<br> Deployment<br>Package] -->|manual approval| X(Create a Release)
+    H[fa:fa-desktop <br>Fuzzing Test<br>+<br>Inspection of<br> Deployment<br>Package] -->|manual approval| X(Azure Deploys<br>the Release)
+
+
+
+graph TD
+    A[Packaging] -->|Is CI ok?| B(<br>Manual Startup<br>...)
+    B --> B1[Get Source Code<br>From Upstream]
+    B1 --> C{Providers}
+    C -->|GitLab CI| D[fa:fa-desktop <br>FlatPak]
+    C -->|Launchpad| E[fa:fa-desktop <br>Snap]
+    C -->|Travis CI| F[fa:fa-desktop <br>Docker<br>Package]
+    C -->|AppVeyor CI| G[fa:fa-desktop <br>Windows<br>32bit]
+    C -->|Azure DevOPS| H[fa:fa-desktop <br>Windows<br>64bit]
 
