@@ -1,7 +1,7 @@
 {
     "id": "com.openwall.John",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "18.08",
+    "runtime-version": "20.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "john",
     "tags": [ "edge" ],
@@ -19,8 +19,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://www.tcpdump.org/release/libpcap-1.8.1.tar.gz",
-                    "sha256": "673dbc69fdc3f5a86fb5759ab19899039a8e5e6c631749e48dcd9c6f0c83541e"
+                    "url": "https://www.tcpdump.org/release/libpcap-1.10.0.tar.gz",
+                    "sha256": "8d12b42623eeefee872f123bd0dc85d535b00df4d42e865f993c40f7bfc92b1e"
                 }
             ]
         },
