@@ -75,4 +75,4 @@ Plans and future vision:
 | Cirrus CI | FreeBSD | ✗ No build artifacts |
 | GitLab CI | Linux (FlatPak app) | ✓ Build artifacts available |
 | LaunchPad | Linux (Snap app) | ✓ Build artifacts available |
-| Travis CI | Linux and macOS | ✗ No build artifacts |
+| Travis CI | Linux and macOS | ✓ Deployed to Docker Hub |
