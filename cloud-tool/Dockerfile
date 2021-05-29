@@ -23,12 +23,12 @@ RUN apt-get update -qq && \
         terraform ansible \
         wget git nano \
         && \
-    useradd -U -m cracker && \
+    useradd -U -m usr && \
     # Clean the image
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists
 
-USER cracker
-WORKDIR /host/cloud-tools
+USER usr
+WORKDIR /host/workdir
 ENV PROVIDER AWS
 CMD /bin/bash

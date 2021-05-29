@@ -17,6 +17,6 @@ cd john/src
 
 # Build John the Ripper
 # TODO remove the next line
-rm -f *fmt_plug.c
+# rm -f *fmt_plug.c
 ./configure && make -sj2
 ../run/john

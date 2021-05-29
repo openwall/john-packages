@@ -23,7 +23,7 @@ IMPORTANT: The total cost of your cracking sessions on AWS will vary depending o
 
 ```
 cd PROJECT_FOLDER && \
-  docker run -it --rm -v $(pwd):/host/cloud-tools -v ~/.aws/:/home/cracker/.aws/:ro claudioandre/john-cloud-tools
+  docker run -it --rm -v $(pwd):/host/workdir -v ~/.aws/:/home/usr/.aws/:ro claudioandre/cloud-tool
 ```
 Hint: create an alias for the command.
 
@@ -32,7 +32,7 @@ Create your [AWS profile](https://docs.aws.amazon.com/cli/latest/userguide/cli-c
 
 Example `~/.aws/credentials`
 ```
-[cracker]
+[usr]
 aws_access_key_id=AKIAIOSFODNN7EXAMPLE
 aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 ```
@@ -64,10 +64,10 @@ cd  cloud/cloud-tool
 john --list=format-tests 2> /dev/null | cut -f3 1> hashes.txt
 
 # The `-v` is to share content between host and Docker (Bind-mount a directory inside Docker)
-#   Current (project) folder   -v $(pwd):/host/cloud-tools
-#   AWS credentials            -v ~/.aws/:/home/cracker/.aws/:ro
+#   Current (project) folder   -v $(pwd):/host/workdir
+#   AWS credentials            -v ~/.aws/:/home/usr/.aws/:ro
 
-docker run -it --rm -v $(pwd):/host/cloud-tools -v ~/.aws/:/home/cracker/.aws/:ro claudioandre/john-cloud-tools
+docker run -it --rm -v $(pwd):/host/workdir -v ~/.aws/:/home/usr/.aws/:ro claudioandre/cloud-tool
 
 # Create disposable SSH credentials (to use inside docker).
 # You will not lose the key, it will be saved on the host machine due to Bind-mount (-v).

@@ -41,9 +41,9 @@ variable "profile_list" {
   description = "Your section inside the `~/.aws/credentials` profile file."
   type = map(string)
   default = {
-    default = "cracker"
-    testing = "cracker-testing"
-    production = "cracker-production"
+    default = "usr"
+    testing = "usr-testing"
+    production = "usr-production"
   }
 }
 
