@@ -1,3 +1,6 @@
+Click on the ↑↑ **Preview** ↑↑ button above to read this message.
+
+
 ### Checklist ###
 - [ ] :1st_place_medal: I've read and understood these instrucions;
   - This is not a support forum, it's a bug tracker. For questions and support, review postings on the [john-users mailing list](https://www.openwall.com/lists/john-users/).
