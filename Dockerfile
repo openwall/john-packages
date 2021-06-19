@@ -65,4 +65,4 @@ RUN ln -s /usr/local/bin/docker-entrypoint.sh && \
 USER JtR
 ENV BASE ubuntu
 ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["sse2"]
+CMD ["best"]
