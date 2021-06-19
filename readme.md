@@ -395,7 +395,7 @@ The highlights:
   - ~~has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`.~~
 - the stable John 1.9.0 Jumbo 1 (`ghcr.io/openwall/john:v1.9.0J1`):
   - has ztex formats available.
-- ~~the development version (`ghcr.io/openwall/john:v1.9.0J2plus`):~~
+- ~~the development version (`ghcr.io/openwall/john:latest`):~~
 - the development version (`ghcr.io/openwall/john:v1.9.0J2`):
   - has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`.
 
