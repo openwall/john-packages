@@ -11,6 +11,8 @@ in quality assurance, CI (continuous integration), and CD (continuous delivery).
 this goal, our testing scheme builds and inspects the source code of John the Ripper
 using:
 
+> As Travis.org is gone, I'm planning to run continuous integration using Travis.com at a very low frequency, maybe once a year.
+
 - Microsoft Windows:
   - Windows Server 2012 R2 Datacenter (6.3.9600 N/A Build 9600);
   - Windows Server 2016 Datacenter (10.0.14393 N/A Build 14393);
@@ -24,7 +26,7 @@ using:
   - macOS 10.14 (Darwin Kernel Version 18.5.0);
   - macOS Universal Apps (Darwin Kernel Version 19.5.0);
 - Linux:
-  - CentOS 7 and Fedora 32;
+  - CentOS 7 and Fedora 34;
   - Ubuntu 12.04, Ubuntu 14.04, Ubuntu 16.04, Ubuntu 18.04, Ubuntu 20.04, and Ubuntu 21.04;
 - Compilers:
   - gcc 4.6, gcc 4.8, gcc 5.4, gcc 7.2, gcc 7.4, gcc 7.5, gcc 9.2, gcc 9.3, gcc 10.2, and gcc 11.0;
@@ -75,4 +77,5 @@ Plans and future vision:
 | Cirrus CI | FreeBSD | ✗ No build artifacts |
 | GitLab CI | Linux (FlatPak app) | ✓ Build artifacts available |
 | LaunchPad | Linux (Snap app) | ✓ Build artifacts available |
-| Travis CI | Linux and macOS | ✓ Deployed to Docker Hub |
+| Travis CI | Linux and macOS | ✗ No build artifacts |
+| GitHub Actions | Linux | ✓ Deployed to GitHub Artifacts |
