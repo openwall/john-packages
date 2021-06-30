@@ -21,7 +21,8 @@ Windows LM hashes, plus lots of other hashes and ciphers.
 5. [Docker Image](#docker-image)
 6. [Checksums](#packages-checksums)
 7. [Package Security](#security)
-8. [License](#license)
+8. [Contribute](#contribute)
+9. [License](#license)
 
 # Introduction
 
@@ -450,6 +451,10 @@ We already know they're safe, but you should verify the security and contents of
 binary from the internet you are not familiar with.
 
 We take security very seriously.
+
+## Contribute
+
+We love contributions in the form of issues and pull requests. [Read more here](CONTRIBUTING.md) before contributing.
 
 ## License
 
