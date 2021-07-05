@@ -11,41 +11,29 @@ in quality assurance, CI (continuous integration), and CD (continuous delivery).
 this goal, our testing scheme builds and inspects the source code of John the Ripper
 using:
 
-> As Travis.org is gone, I'm planning to run continuous integration using Travis.com at a very low frequency, maybe once a year.
+> As Travis.org is gone, I'm giving up on Travis (I asked for OSS credits and received none).
 
 - Microsoft Windows:
-  - Windows Server 2012 R2 Datacenter (6.3.9600 N/A Build 9600);
   - Windows Server 2016 Datacenter (10.0.14393 N/A Build 14393);
   - Windows Server 2019 Datacenter (10.0.17763 N/A Build 17763);
 - Unix®-like BSD:
   - FreeBSD 11 (11.3-STABLE);
   - FreeBSD 12 (12.1-STABLE);
   - FreeBSD 13 (13.0-CURRENT);
-- MacOS:
-  - macOS 10.13 (Darwin Kernel Version 17.4.0);
-  - macOS 10.14 (Darwin Kernel Version 18.5.0);
-  - macOS Universal Apps (Darwin Kernel Version 19.5.0);
 - Linux:
   - CentOS 7 and Fedora 34;
-  - Ubuntu 12.04, Ubuntu 14.04, Ubuntu 16.04, Ubuntu 18.04, Ubuntu 20.04, and Ubuntu 21.04;
+  - Ubuntu 16.04, Ubuntu 18.04, and Ubuntu devel (the under development version);
 - Compilers:
-  - gcc 4.6, gcc 4.8, gcc 5.4, gcc 7.2, gcc 7.4, gcc 7.5, gcc 9.2, gcc 9.3, gcc 10.2, and gcc 11.0;
-  - clang 5.0, clang 7.0, and clang 10.0;
+  - gcc 5.4, gcc 7.2, gcc 7.5, gcc 10.2, and gcc 11.1;
   - FreeBSD clang version 8.0.1
-  - FreeBSD clang version 10.0.0 
+  - FreeBSD clang version 10.0.0
   - FreeBSD clang version 11.0.1
-  - Xcode 10.3; Apple LLVM version 10.0.1 (clang-1001.0.46.4)
-  - Xcode 11.6; Apple clang version 11.0.3 (clang-1103.0.32.62)
-  - Xcode-12.2; Apple clang version 12.0.0 (clang-1200.0.32.27)
 - Builds:
-  - SIMD and non-SIMD builds;
-  - OpenMP and non-OpenMP builds;
   - LE (Little Endian) and BE (Big Endian) builds;
   - ASAN (address sanitizer) and UBSAN (undefined behavior sanitizer);
   - Fuzzing (<https://en.wikipedia.org/wiki/Fuzzing>);
-  - MinGW and Wine on Fedora Linux;
   - CygWin on Windows Server;
-  - OpenCL on CPU using Apple, Intel, and POCL (<http://portablecl.org/>) runtimes;
+  - OpenCL on CPU using Intel, and POCL (<http://portablecl.org/>) runtimes;
   - OpenCL on GPU using Azure cloud (_work in progress_);
   - And a final assessment using ARMv7 (armhf), ARMv8 (aarch64), PowerPC64 Little-Endian,
 and IBM System z.
