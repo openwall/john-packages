@@ -18,3 +18,10 @@ project
 │   │   .vscode
 │   │   [...]
 ```
+
+## Debugging JtR Using Visual Studio Code
+
+- Debugging in action:
+  - watch the breakpoint, inspection of variable contents, "step in", "step into", "step out". Stop using `printf()` while experimenting with John the Ripper.
+
+![](Debugging-JtR-Using-IDE.png)
