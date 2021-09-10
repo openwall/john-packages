@@ -24,7 +24,7 @@ RUN apt-get update -qq && \
     # Build John the Ripper
     git clone --depth 10 https://github.com/openwall/john.git && \
     # Make it a reproducible build
-    if [[ "$release" == "true" ]] ; then cd john; git checkout $commit; cd ..; fi && \
+    if [ "$release" == "true" ] ; then cd john; git checkout $commit; cd ..; fi && \
     cd john/src && \
       ./configure --disable-native-tests --disable-openmp --enable-simd=sse2   && make -s clean && make -sj2 && mv ../run/john ../run/john-sse2-no-omp && \
       ./configure --disable-native-tests                  --enable-simd=sse2   && make -s clean && make -sj2 && mv ../run/john ../run/john-sse2 && \
