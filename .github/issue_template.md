@@ -2,7 +2,7 @@ Click on the ↑↑ **Preview** ↑↑ button above to read this message.
 
 
 ### Checklist ###
-- [ ] :1st_place_medal: I've read and understood these instrucions;
+- [ ] :1st_place_medal: I've read and understood these instructions;
   - This is not a support forum, it's a bug tracker. For questions and support, review postings on the [john-users mailing list](https://www.openwall.com/lists/john-users/).
 - [ ] :thumbsup: I've tested using latest bleeding package version from this repository.
   - Be clear about your environment and what you are doing. Share a sample hash or file that can be used to reproduce.
