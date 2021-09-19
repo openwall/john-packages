@@ -356,7 +356,7 @@ Session completed
 ```
 ## Docker Image
 
-> Delivered using Travis CI [ supports up to AVX512BW ]
+> Delivered using GitHub Actions [ supports up to AVX512BW ]
 
 For testing and future reference, we have a Docker image of John the Ripper.
 To use it:
