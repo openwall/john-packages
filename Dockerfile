@@ -48,10 +48,11 @@ RUN apt-get update -qq && \
     rm *.o && cd .. && rm -rf src .git .ci .circleci .editorconfig .gitattributes .github .gitignore .mailmap .pre-commit.sh .travis .travis.yml && rm -rf run/ztex
 
 FROM ubuntu:20.04
-LABEL maintainer Claudio André (c) 2017-2021 1.9.0J1+
-LABEL software John the Ripper 1.9.0 Jumbo 1+
+LABEL maintainer Claudio André (c) 2017-2021
 
-ARG GIT_COMMIT
+ARG VERSION_NAME
+LABEL software "John the Ripper ${VERSION_NAME}"
+
 LABEL org.opencontainers.image.revision "bleeding"
 
 ARG BUILD_DATE
