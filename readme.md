@@ -242,7 +242,7 @@ Run John the Ripper and check if it is working:
 
 ## Windows
 
-> Delivered using Microsoft-hosted Windows 2016 Server in Azure [ supports up to AVX512BW ]
+> Delivered using Microsoft-hosted Windows 2019 Server in Azure [ supports up to AVX512BW ]
 
 To install John the Ripper by downloading the .zip file and installing manually,
 follow these steps:
