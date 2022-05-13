@@ -4,7 +4,7 @@
                             #### Windows ####
 Algorithm       Hash                                                                   Path
 ---------       ----                                                                   ----
-SHA256          ##TODO##       C:\win_x64.zip
+SHA256          E3BF94EEC394251E6524B2E6D7D038953B1ED6B0FE6B00EE77C0AF209D3936C5       C:\win_x64.7z
 
                          #### Flatpak (sha256sum) ###
 $ sha256sum john.flatpak
