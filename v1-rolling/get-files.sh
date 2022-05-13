@@ -11,30 +11,33 @@
 ######################################################################
 
 # Directory names and folders
-APPVEYOR_32bits="g9ixfeae1ytmksa5"
-FLATPAK="1207046569"
-FLATPAK_TEST="1207046569"
-AZURE_ID="311"
+APPVEYOR_32bits=""
+FLATPAK="2454796001"
+FLATPAK_TEST="2454796002"
+AZURE_ID="370"
 DOCKER="766336842"
 
 # AppVeyor (32 bits) ###########################################################
-wget https://ci.appveyor.com/api/buildjobs/$APPVEYOR_32bits/log                       -O x32_log.txt
+if [[ -n $APPVEYOR_32bits ]]; then
+    wget https://ci.appveyor.com/api/buildjobs/$APPVEYOR_32bits/log                       -O x32_log.txt
+fi
 
 # Azure Windows package (64 bits) ##############################################
-wget https://dev.azure.com/claudioandre-br/40224313-b91e-465d-852b-fc4ea516f33e/_apis/build/builds/$AZURE_ID/logs/115 -O x64_log.txt
+wget https://dev.azure.com/claudioandre-br/40224313-b91e-465d-852b-fc4ea516f33e/_apis/build/builds/$AZURE_ID/logs/113 -O x64_log.txt
 
 # GitLab (Linux Flatpak app) ###################################################
 wget https://gitlab.com/claudioandre-br/JtR-CI/-/jobs/$FLATPAK/raw                    -O bundle_log.txt
 wget https://gitlab.com/claudioandre-br/JtR-CI/-/jobs/$FLATPAK_TEST/raw               -O bundle_test.txt
 
-wget https://api.travis-ci.org/v3/job/$DOCKER/log.txt    -O docker_log.txt
+#Fiz download manual
+#wget https://api.travis-ci.org/v3/job/$DOCKER/log.txt    -O docker_log.txt
 
 # Snap App #####################################################################
-wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1386646/+files/buildlog_snap_ubuntu_bionic_amd64_john-the-ripper_BUILDING.txt.gz
-wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1386648/+files/buildlog_snap_ubuntu_bionic_arm64_john-the-ripper_BUILDING.txt.gz
-wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1386647/+files/buildlog_snap_ubuntu_bionic_armhf_john-the-ripper_BUILDING.txt.gz
-wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1386650/+files/buildlog_snap_ubuntu_bionic_s390x_john-the-ripper_BUILDING.txt.gz
-wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1386649/+files/buildlog_snap_ubuntu_bionic_ppc64el_john-the-ripper_BUILDING.txt.gz
+wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1762378/+files/buildlog_snap_ubuntu_bionic_s390x_john-the-ripper_BUILDING.txt.gz
+wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1762377/+files/buildlog_snap_ubuntu_bionic_ppc64el_john-the-ripper_BUILDING.txt.gz
+wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1762374/+files/buildlog_snap_ubuntu_bionic_amd64_john-the-ripper_BUILDING.txt.gz
+wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1762375/+files/buildlog_snap_ubuntu_bionic_armhf_john-the-ripper_BUILDING.txt.gz
+wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1762376/+files/buildlog_snap_ubuntu_bionic_arm64_john-the-ripper_BUILDING.txt.gz
 #TODO i386
 
 if [[ "$1" == "ALL_FILES" ]]; then

@@ -82,8 +82,8 @@ The highlights:
 - prince mode available;
 - OpenCL available (GPU driver installation is needed);
 - also available via the alias **john**, e.g. `john -list=build-info`;
-- ~~the stable John 1.9.0 Jumbo 2:~~
-  - ~~is available for X86_64, armhf, arm64, ppc64el, i386, and s390x;~~
+- the rolling version of John 1.9.0 Jumbo 1+:
+  - is available for X86_64, armhf, arm64, ppc64el, and s390x;
 - the stable John 1.9.0 Jumbo 1:
   - is available for X86_64, armhf, arm64, ppc64el, i386, powerpc, and s390x;
   - has regex mode available;
@@ -94,7 +94,7 @@ The highlights:
 it's running on.
 
 ```Text
-John the Ripper snap package achieved 7 thousand active users [*].
+John the Ripper snap package achieved more than eight thousand active users [*].
 ```
 
 [*] 7 Day Active Users: the number of unique users who had at least one session within a 7 day period.
@@ -142,8 +142,8 @@ out of the sandbox, unconfined (e.g., run `/snap/john-the-ripper/current/run/joh
 
 ### Snap Deployments
 
-If you followed the above instructions, you installed the stable version of John
-the Ripper Jumbo in your system. If you want to access the hot and bleeding
+If you followed the above instructions, you installed the rolling version of John
+the Ripper Jumbo 1+ in your system. If you want to access the hot and bleeding
 developing version of JtR, you must follow a development channel. For a clean
 installation:
 
@@ -193,8 +193,8 @@ The highlights:
 
 - fallback for CPU[*] and OMP;
 - prince mode available.
-- ~~the stable John 1.9.0 Jumbo 2:~~
-  - ~~is available for X86_64, arm, aarch64, and i386;~~
+- the rolling version of John 1.9.0 Jumbo 1+:
+  - is available for X86_64, arm, and aarch64;
 - the stable John 1.9.0 Jumbo 1:
   - is available for X86_64, arm, aarch64, and i386;
   - has regex mode available;
@@ -206,8 +206,8 @@ it's running on.
 
 ### Flatpak Deployments
 
-If you followed the above instructions, you installed the stable version of John
-the Ripper Jumbo in your system. If you want to access the hot and bleeding
+If you followed the above instructions, you installed the rolling version of John
+the Ripper Jumbo 1+ in your system. If you want to access the hot and bleeding
 developing version of JtR, you must install a bundle.
 
 John the Ripper single-file flatpak bundle was built and tested on
@@ -267,8 +267,8 @@ The highlights:
 - generic crypt(3) format available;
 - security feature Address Space Layout Randomisation (ASLR) enabled;
 - security feature Data Execution Prevention (DEP) enabled;
-- ~~the stable John 1.9.0 Jumbo 2:~~
-  - ~~is available for X86_64 and i386;~~
+- the rolling version of John 1.9.0 Jumbo 1+:
+  - is available for X86_64;
 - the stable John 1.9.0 Jumbo 1:
   - is available for X86_64 and i386;
 - a development version:
@@ -282,15 +282,13 @@ it's running on.
 The links below contain all the executables and libraries needed to run a fresh
 John the Ripper installation.
 
-- ~~the stable John 1.9.0 Jumbo 2:~~
-  - ~~The [32bit version](https://github.com/claudioandre-br/packages/releases/download/1.9.0-jumbo-2/winX32_1_JtR.7z)
-[(logs)](https://github.com/openwall/john-packages/blob/master/1.9.0.J2/x32_log.txt);~~
-  - ~~The [64bit version](https://github.com/claudioandre-br/packages/releases/download/1.9.0-jumbo-2/winX64_1_JtR.7z)
-[(logs)](https://github.com/openwall/john-packages/blob/master/1.9.0.J2/x64_log.txt);~~
+- The rolling version of John 1.9.0 Jumbo 1+:
+  - The [64bit version](https://github.com/claudioandre-br/packages/releases/download/v1-rolling/winX64_1_JtR.7z)
+[(logs)](https://github.com/openwall/john-packages/blob/master/v1-rolling/x64_log.txt);
 - the stable John 1.9.0 Jumbo 1:
-  - The [32bit version](https://github.com/claudioandre-br/packages/releases/download/1.9.0-jumbo-1/x32_win.zip)
+  - The [32bit version](https://github.com/openwall/john-packages/releases/download/1.9.0-jumbo-1/x32_win.zip)
 [(logs)](https://github.com/openwall/john-packages/blob/master/1.9.0.J1/x32_log.txt);
-  - The [64bit version](https://github.com/claudioandre-br/packages/releases/download/1.9.0-jumbo-1/x64_win.zip)
+  - The [64bit version](https://github.com/openwall/john-packages/releases/download/1.9.0-jumbo-1/x64_win.zip)
 [(logs)](https://github.com/openwall/john-packages/blob/master/1.9.0.J1/x64_log.txt);
 - a development [64bit version](https://github.com/openwall/john-packages/releases/tag/jumbo-dev).
 
@@ -363,7 +361,7 @@ To use it:
 
 ```bash
  # CPU only formats
- docker run -it ghcr.io/openwall/john:v1.9.0J2 <binary id> <john options>
+ docker run -it ghcr.io/openwall/john:latest <binary id> <john options>
 
  # To run ztex formats
  docker run -it --device=/dev/ttyUSB0 ghcr.io/openwall/john:v1.9.0J1 ztex <john options>
@@ -372,28 +370,28 @@ To use it:
 Run John the Ripper and check if it is working:
 
 ```bash
- docker run -it ghcr.io/openwall/john:v1.9.0J2 # => SSE2
- docker run -it ghcr.io/openwall/john:v1.9.0J2 best # => uses the best SIMD available
- docker run -it ghcr.io/openwall/john:v1.9.0J2 ssse3-no-omp -list=build-info
- docker run -it ghcr.io/openwall/john:v1.9.0J2 avx512bw -test=0 -format=cpu
- docker run -it ghcr.io/openwall/john:v1.9.0J2 -list=format-tests | cut -f3 > ~/alltests.in
- docker run -it -v "$HOME":/host ghcr.io/openwall/john:v1.9.0J2 avx -form=SHA512crypt /host/alltests.in --max-run=300
+ docker run -it ghcr.io/openwall/john:latest # => SSE2
+ docker run -it ghcr.io/openwall/john:latest best # => uses the best SIMD available
+ docker run -it ghcr.io/openwall/john:latest ssse3-no-omp -list=build-info
+ docker run -it ghcr.io/openwall/john:latest avx512bw -test=0 -format=cpu
+ docker run -it ghcr.io/openwall/john:latest -list=format-tests | cut -f3 > ~/alltests.in
+ docker run -it -v "$HOME":/host ghcr.io/openwall/john:latest avx -form=SHA512crypt /host/alltests.in --max-run=300
 ```
 
 Compare the performance of SIMD extensions:
 
 ```bash
- docker run -it ghcr.io/openwall/john:v1.9.0J2 sse2    --test=10 --format=SHA512crypt
- docker run -it ghcr.io/openwall/john:v1.9.0J2 sse4.1  --test=10 --format=SHA512crypt
- docker run -it ghcr.io/openwall/john:v1.9.0J2 avx     --test=10 --format=SHA512crypt
- docker run -it ghcr.io/openwall/john:v1.9.0J2 avx2    --test=10 --format=SHA512crypt
+ docker run -it ghcr.io/openwall/john:latest sse2    --test=10 --format=SHA512crypt
+ docker run -it ghcr.io/openwall/john:latest sse4.1  --test=10 --format=SHA512crypt
+ docker run -it ghcr.io/openwall/john:latest avx     --test=10 --format=SHA512crypt
+ docker run -it ghcr.io/openwall/john:latest avx2    --test=10 --format=SHA512crypt
 ```
 
 The highlights:
 
 - prince mode available;
-- ~~the stable John 1.9.0 Jumbo 2 (`ghcr.io/openwall/john:v1.9.0J2`):~~
-  - ~~has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`.~~
+- the rolling version of John 1.9.0 Jumbo 1+ (`ghcr.io/openwall/john:v1-rolling`):
+  - has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`.
 - the stable John 1.9.0 Jumbo 1 (`ghcr.io/openwall/john:v1.9.0J1`):
   - has ztex formats available.
 - the development version (`ghcr.io/openwall/john:latest`):
@@ -435,9 +433,9 @@ Accessing the build logs, you can view the hashes of all relevant
 files. For your convenience, we provide a file named checksum.txt containing the
 checksums for all packages.
 
-#### John the Ripper 1.9.0 Jumbo 2
+#### Rolling Version of John the Ripper 1.9.0 Jumbo 1+
 
-~~The checksums are available in [this file](https://github.com/openwall/john-packages/blob/master/1.9.0.J2/checksum.txt).~~
+The checksums are available in [this file](https://github.com/openwall/john-packages/blob/master/v1-rolling/checksum.txt).
 
 #### John the Ripper 1.9.0 Jumbo 1
 

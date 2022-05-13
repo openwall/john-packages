@@ -11,7 +11,7 @@
 
 # Jumbo 1 release (docker build [...] --build-arg release=true)
 ARG release=false
-ARG commit=a16c8a76259ab870c07e5123c237b1900402d9a6
+ARG commit=52a9bedb58ecc2685518523549ff699a07d3abb9
 
 FROM ubuntu:20.04
 WORKDIR /build/
