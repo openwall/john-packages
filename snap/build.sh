@@ -30,7 +30,7 @@ git clone --depth 10 https://github.com/openwall/john.git tmp
 cp -r tmp/. .
 
 # Uncomment for a release
-# _JUMBO_RELEASE="528d06304c300d60d18c656575e56e04a45ac80d" #TODO: JUMBO_RELEASE
+# _JUMBO_RELEASE="52a9bedb58ecc2685518523549ff699a07d3abb9" #TODO: JUMBO_RELEASE
 
 # Make it a reproducible build
 if [[ -n "$_JUMBO_RELEASE" ]]; then

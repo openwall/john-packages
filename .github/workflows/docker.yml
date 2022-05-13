@@ -20,7 +20,7 @@ on:
       hash:
         description: 'The commit hash to be used'
         required: false
-        default: 'a16c8a76259ab870c07e5123c237b1900402d9a6'
+        default: '52a9bedb58ecc2685518523549ff699a07d3abb9'
       VERSION:
         description: 'The software version'
         required: true
