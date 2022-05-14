@@ -161,7 +161,7 @@ If you do so, you will be running the development version available on GitHub.
 
 ## Flatpak
 
-> Delivered using FlatHub and GitLab CI [ supports up to AVX2 ]
+> Delivered using GitLab CI [ supports up to AVX2 ]
 
 [**Flatpak**](http://flatpak.org//) is a new framework for desktop applications
 on Linux, built to be distribution agnostic and allow deployment on any Linux
@@ -169,16 +169,13 @@ operating system out there.
 
 Flatpak is available for the [most common Linux distributions](http://flatpak.org/getting.html).
 
-To install JtR, simply run:
+To install JtR download the john.flatpak file and run:
 
 ```bash
  dnf install -y flatpak # or 'yum install', 'apt-get install', etc.
  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo # flatpak repository
- flatpak install flathub com.openwall.John
+ flatpak --user install --bundle john.flatpak # per-user installation (not system wide)
 ```
-
-~~You can install JtR by following the instructions at
-[https://flathub.org/apps/details/com.openwall.John](https://flathub.org/apps/details/com.openwall.John).~~
 
 John runs confined under a restrictive security sandbox by default. Nevertheless,
 you can access and audit any file located in your home. Below, an usage example:
@@ -194,7 +191,7 @@ The highlights:
 - fallback for CPU[*] and OMP;
 - prince mode available.
 - the rolling version of John 1.9.0 Jumbo 1+:
-  - is available for X86_64, arm, and aarch64;
+  - is available for X86_64;
 - the stable John 1.9.0 Jumbo 1:
   - is available for X86_64, arm, aarch64, and i386;
   - has regex mode available;
