@@ -83,7 +83,7 @@ The highlights:
 - OpenCL available (GPU driver installation is needed);
 - also available via the alias **john**, e.g. `john -list=build-info`;
 - the rolling version of John 1.9.0 Jumbo 1+:
-  - is available for X86_64, armhf, arm64, ppc64el, and s390x;
+  - is available for X86_64, armhf, arm64, ppc64el, i386, and s390x;
 - the stable John 1.9.0 Jumbo 1:
   - is available for X86_64, armhf, arm64, ppc64el, i386, powerpc, and s390x;
   - has regex mode available;
@@ -94,7 +94,7 @@ The highlights:
 it's running on.
 
 ```Text
-John the Ripper snap package achieved more than eight thousand active users [*].
+John the Ripper snap package has approximately eight thousand active users [*].
 ```
 
 [*] 7 Day Active Users: the number of unique users who had at least one session within a 7 day period.
@@ -280,8 +280,8 @@ The links below contain all the executables and libraries needed to run a fresh
 John the Ripper installation.
 
 - The rolling version of John 1.9.0 Jumbo 1+:
-  - The [64bit version](https://github.com/claudioandre-br/packages/releases/download/v1-rolling/winX64_1_JtR.7z)
-[(logs)](https://github.com/openwall/john-packages/blob/master/v1-rolling/x64_log.txt);
+  - The [64bit version](https://github.com/openwall/john-packages/releases/download/rolling-2210/winX64_1_JtR.7z)
+[(logs)](https://github.com/openwall/john-packages/blob/master/rolling/x64_log.txt);
 - the stable John 1.9.0 Jumbo 1:
   - The [32bit version](https://github.com/openwall/john-packages/releases/download/1.9.0-jumbo-1/x32_win.zip)
 [(logs)](https://github.com/openwall/john-packages/blob/master/1.9.0.J1/x32_log.txt);
@@ -387,7 +387,7 @@ Compare the performance of SIMD extensions:
 The highlights:
 
 - prince mode available;
-- the rolling version of John 1.9.0 Jumbo 1+ (`ghcr.io/openwall/john:v1-rolling`):
+- the rolling version of John 1.9.0 Jumbo 1+ (`ghcr.io/openwall/john:rolling`):
   - has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`.
 - the stable John 1.9.0 Jumbo 1 (`ghcr.io/openwall/john:v1.9.0J1`):
   - has ztex formats available.
@@ -432,7 +432,7 @@ checksums for all packages.
 
 #### Rolling Version of John the Ripper 1.9.0 Jumbo 1+
 
-The checksums are available in [this file](https://github.com/openwall/john-packages/blob/master/v1-rolling/checksum.txt).
+The checksums are available in [this file](https://github.com/openwall/john-packages/blob/master/rolling/checksum.txt).
 
 #### John the Ripper 1.9.0 Jumbo 1
 

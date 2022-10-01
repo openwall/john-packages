@@ -1,6 +1,6 @@
 #!/bin/bash
 ######################################################################
-# Copyright (c) 2021 Claudio André <claudioandre.br at gmail.com>
+# Copyright (c) 2021-2022 Claudio André <claudioandre.br at gmail.com>
 #
 # This program comes with ABSOLUTELY NO WARRANTY; express or implied.
 #
@@ -12,10 +12,10 @@
 
 # Directory names and folders
 APPVEYOR_32bits=""
-FLATPAK="2454796001"
-FLATPAK_TEST="2454796002"
-AZURE_ID="370"
-DOCKER="766336842"
+FLATPAK="3113914408"
+FLATPAK_TEST="3113914409"
+AZURE_ID="381"
+DOCKER=""
 
 # AppVeyor (32 bits) ###########################################################
 if [[ -n $APPVEYOR_32bits ]]; then
@@ -23,7 +23,7 @@ if [[ -n $APPVEYOR_32bits ]]; then
 fi
 
 # Azure Windows package (64 bits) ##############################################
-wget https://dev.azure.com/claudioandre-br/40224313-b91e-465d-852b-fc4ea516f33e/_apis/build/builds/$AZURE_ID/logs/113 -O x64_log.txt
+wget https://dev.azure.com/claudioandre-br/40224313-b91e-465d-852b-fc4ea516f33e/_apis/build/builds/$AZURE_ID/logs/128 -O x64_log.txt
 
 # GitLab (Linux Flatpak app) ###################################################
 wget https://gitlab.com/claudioandre-br/JtR-CI/-/jobs/$FLATPAK/raw                    -O bundle_log.txt
@@ -33,12 +33,15 @@ wget https://gitlab.com/claudioandre-br/JtR-CI/-/jobs/$FLATPAK_TEST/raw         
 #wget https://api.travis-ci.org/v3/job/$DOCKER/log.txt    -O docker_log.txt
 
 # Snap App #####################################################################
-wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1762378/+files/buildlog_snap_ubuntu_bionic_s390x_john-the-ripper_BUILDING.txt.gz
-wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1762377/+files/buildlog_snap_ubuntu_bionic_ppc64el_john-the-ripper_BUILDING.txt.gz
-wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1762374/+files/buildlog_snap_ubuntu_bionic_amd64_john-the-ripper_BUILDING.txt.gz
-wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1762375/+files/buildlog_snap_ubuntu_bionic_armhf_john-the-ripper_BUILDING.txt.gz
-wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1762376/+files/buildlog_snap_ubuntu_bionic_arm64_john-the-ripper_BUILDING.txt.gz
-#TODO i386
+rm buildlog*.gz
+
+wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1897771/+files/buildlog_snap_ubuntu_bionic_arm64_john-the-ripper_BUILDING.txt.gz
+wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1897770/+files/buildlog_snap_ubuntu_bionic_armhf_john-the-ripper_BUILDING.txt.gz
+wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1897769/+files/buildlog_snap_ubuntu_bionic_amd64_john-the-ripper_BUILDING.txt.gz
+wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1897768/+files/buildlog_snap_ubuntu_bionic_i386_john-the-ripper_BUILDING.txt.gz
+wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1897772/+files/buildlog_snap_ubuntu_bionic_ppc64el_john-the-ripper_BUILDING.txt.gz
+wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1897773/+files/buildlog_snap_ubuntu_bionic_s390x_john-the-ripper_BUILDING.txt.gz
+
 
 if [[ "$1" == "ALL_FILES" ]]; then
     https://artprodsbr1.artifacts.visualstudio.com/A56e4da31-e2d8-472b-be22-766278080a34/40224313-b91e-465d-852b-fc4ea516f33e/_apis/artifact/cGlwZWxpbmVhcnRpZmFjdDovL2NsYXVkaW9hbmRyZS1ici9wcm9qZWN0SWQvNDAyMjQzMTMtYjkxZS00NjVkLTg1MmItZmM0ZWE1MTZmMzNlL2J1aWxkSWQvMzExL2FydGlmYWN0TmFtZS93aW5feDY0Ljd60/content?format=file&subPath=%2Fwin_x64.7z  -O x64_win.7z

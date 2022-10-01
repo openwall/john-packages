@@ -1,14 +1,14 @@
 name: john-the-ripper
-version: edge
+version: rolling-2210       #TODO: edit before release (JUMBO_RELEASE)
 version-script: |
   ./package_version.sh
 
 confinement: strict
-grade: devel
+grade: stable            #TODO: [stable or devel] edit before release (JUMBO_RELEASE)
 assumes: [ snapd2.38 ]
 base: core18
 
-#license: GPL-2.0
+license: GPL-2.0
 #title: John the Ripper Community Edition
 summary: John the Ripper "Jumbo" password cracker
 description: |

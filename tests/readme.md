@@ -16,19 +16,19 @@ using:
 - Microsoft Windows:
   - Windows Server 2019 Datacenter (10.0.17763 N/A Build 17763);
   - Windows Server 2022 Datacenter (10.0.20348 N/A Build 20348);
-  - Windows Server 2012 R2 Datacenter (6.3.9600 N/A Build 9600);
   - Windows Server 2016 Datacenter (10.0.14393 N/A Build 14393);
 - Unix®-like BSD:
-  - FreeBSD 11 (11.4-STABLE);
   - FreeBSD 12 (12.2-STABLE);
   - FreeBSD 13 (13.0-STABLE);
+  - FreeBSD 14 (14.0-CURRENT);
 - Linux:
-  - CentOS 7 and Fedora 35;
+  - CentOS 7, Fedora 35, and Fedora 36;
   - Ubuntu 16.04, Ubuntu 18.04, and Ubuntu devel (the under development version);
 - Compilers:
-  - gcc 4.8 (CentOS), gcc 5.4 (Ubuntu 16), gcc 7.2 (fuzzing), gcc 7.4 (Win 2012/2016), gcc 7.5 (ubuntu 18), and gcc 11.2;
+  - gcc 4.8 (CentOS), gcc 5.4 (Ubuntu 16), gcc 7.2 (fuzzing), gcc 7.4 (Win 2016), gcc 7.5 (ubuntu 18), gcc 11.3 (Win 2019/2022, Flatpak), and gcc 12.2 (Fedora 36);
   - FreeBSD clang version 10.0.1
   - FreeBSD clang version 13.0.0
+  - FreeBSD clang version 14.0.5
 - Builds:
   - LE (Little Endian) and BE (Big Endian) builds;
   - ASAN (address sanitizer) and UBSAN (undefined behavior sanitizer);
