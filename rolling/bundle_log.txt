@@ -1,130 +1,33 @@
-[0KRunning with gitlab-runner 14.10.0~beta.50.g1f2fe53e (1f2fe53e)[0;m
-[0K  on blue-1.shared.runners-manager.gitlab.com/default j1aLDqxS[0;m
-section_start:1652463589:resolve_secrets[0K[0K[36;1mResolving secrets[0;m[0;m
-section_end:1652463589:resolve_secrets[0Ksection_start:1652463589:prepare_executor[0K[0K[36;1mPreparing the "docker+machine" executor[0;m[0;m
+[0KRunning with gitlab-runner 15.4.0~beta.5.gdefc7017 (defc7017)[0;m
+[0K  on green-2.shared.runners-manager.gitlab.com/default ns46NMmJ[0;m
+section_start:1664632636:resolve_secrets[0K[0K[36;1mResolving secrets[0;m[0;m
+section_end:1664632636:resolve_secrets[0Ksection_start:1664632636:prepare_executor[0K[0K[36;1mPreparing the "docker+machine" executor[0;m[0;m
 [0KUsing Docker executor with image ghcr.io/claudioandre-br/john-ci:fedora.35.flatpak ...[0;m
 [0KStarting service docker:dind ...[0;m
 [0KPulling docker image docker:dind ...[0;m
-[0KUsing docker image sha256:9e4abd47de51fd416838034c407048ce77c0cfe4cece5a192ee9d20579b0a74c for docker:dind with digest docker@sha256:6add3a812cacaf78c5914697b64e53426bce6e60c3e83629d9530b6c833b32fa ...[0;m
-[0KWaiting for services to be up and running...[0;m
-
-[0;33m*** WARNING:[0;m Service runner-j1aldqxs-project-12573246-concurrent-0-562ff24bf478c8e5-docker-0 probably didn't start properly.
-
-Health check error:
-service "runner-j1aldqxs-project-12573246-concurrent-0-562ff24bf478c8e5-docker-0-wait-for-service" timeout
-
-Health check container logs:
-
-
-Service container logs:
-2022-05-13T17:40:04.350878479Z time="2022-05-13T17:40:04.350727371Z" level=info msg="Starting up"
-2022-05-13T17:40:04.352108883Z time="2022-05-13T17:40:04.352022266Z" level=warning msg="could not change group /var/run/docker.sock to docker: group docker not found"
-2022-05-13T17:40:04.352598597Z time="2022-05-13T17:40:04.352509046Z" level=warning msg="Binding to IP address without --tlsverify is insecure and gives root access on this machine to everyone who has access to your network." host="tcp://0.0.0.0:2375"
-2022-05-13T17:40:04.352706513Z time="2022-05-13T17:40:04.352645134Z" level=warning msg="Binding to an IP address, even on localhost, can also give access to scripts run in a browser. Be safe out there!" host="tcp://0.0.0.0:2375"
-2022-05-13T17:40:05.352975957Z time="2022-05-13T17:40:05.352856811Z" level=warning msg="Binding to an IP address without --tlsverify is deprecated. Startup is intentionally being slowed down to show this message" host="tcp://0.0.0.0:2375"
-2022-05-13T17:40:05.353082125Z time="2022-05-13T17:40:05.353052401Z" level=warning msg="Please consider generating tls certificates with client validation to prevent exposing unauthenticated root access to your network" host="tcp://0.0.0.0:2375"
-2022-05-13T17:40:05.353152383Z time="2022-05-13T17:40:05.353123082Z" level=warning msg="You can override this by explicitly specifying '--tls=false' or '--tlsverify=false'" host="tcp://0.0.0.0:2375"
-2022-05-13T17:40:05.353205062Z time="2022-05-13T17:40:05.353180756Z" level=warning msg="Support for listening on TCP without authentication or explicit intent to run without authentication will be removed in the next release" host="tcp://0.0.0.0:2375"
-2022-05-13T17:40:20.354549817Z time="2022-05-13T17:40:20.354389898Z" level=info msg="libcontainerd: started new containerd process" pid=26
-2022-05-13T17:40:20.354675214Z time="2022-05-13T17:40:20.354621609Z" level=info msg="parsed scheme: \"unix\"" module=grpc
-2022-05-13T17:40:20.354766767Z time="2022-05-13T17:40:20.354696878Z" level=info msg="scheme \"unix\" not registered, fallback to default scheme" module=grpc
-2022-05-13T17:40:20.354857130Z time="2022-05-13T17:40:20.354809975Z" level=info msg="ccResolverWrapper: sending update to cc: {[{unix:///var/run/docker/containerd/containerd.sock  <nil> 0 <nil>}] <nil> <nil>}" module=grpc
-2022-05-13T17:40:20.354913433Z time="2022-05-13T17:40:20.354882084Z" level=info msg="ClientConn switching balancer to \"pick_first\"" module=grpc
-2022-05-13T17:40:20.373020028Z time="2022-05-13T17:40:20Z" level=warning msg="deprecated version : `1`, please switch to version `2`"
-2022-05-13T17:40:20.373639132Z time="2022-05-13T17:40:20.373563478Z" level=info msg="starting containerd" revision=212e8b6fa2f44b9c21b2798135fc6fb7c53efc16 version=v1.6.4
-2022-05-13T17:40:20.394588859Z time="2022-05-13T17:40:20.394513915Z" level=info msg="loading plugin \"io.containerd.content.v1.content\"..." type=io.containerd.content.v1
-2022-05-13T17:40:20.394824571Z time="2022-05-13T17:40:20.394771964Z" level=info msg="loading plugin \"io.containerd.snapshotter.v1.aufs\"..." type=io.containerd.snapshotter.v1
-2022-05-13T17:40:20.399371617Z time="2022-05-13T17:40:20.399209103Z" level=info msg="skip loading plugin \"io.containerd.snapshotter.v1.aufs\"..." error="aufs is not supported (modprobe aufs failed: exit status 1 \"ip: can't find device 'aufs'\\nmodprobe: can't change directory to '/lib/modules': No such file or directory\\n\"): skip plugin" type=io.containerd.snapshotter.v1
-2022-05-13T17:40:20.399489212Z time="2022-05-13T17:40:20.399414177Z" level=info msg="loading plugin \"io.containerd.snapshotter.v1.btrfs\"..." type=io.containerd.snapshotter.v1
-2022-05-13T17:40:20.399819579Z time="2022-05-13T17:40:20.399762590Z" level=info msg="skip loading plugin \"io.containerd.snapshotter.v1.btrfs\"..." error="path /var/lib/docker/containerd/daemon/io.containerd.snapshotter.v1.btrfs (ext4) must be a btrfs filesystem to be used with the btrfs snapshotter: skip plugin" type=io.containerd.snapshotter.v1
-2022-05-13T17:40:20.399884699Z time="2022-05-13T17:40:20.399846530Z" level=info msg="loading plugin \"io.containerd.snapshotter.v1.devmapper\"..." type=io.containerd.snapshotter.v1
-2022-05-13T17:40:20.399952473Z time="2022-05-13T17:40:20.399914131Z" level=warning msg="failed to load plugin io.containerd.snapshotter.v1.devmapper" error="devmapper not configured"
-2022-05-13T17:40:20.400000540Z time="2022-05-13T17:40:20.399973049Z" level=info msg="loading plugin \"io.containerd.snapshotter.v1.native\"..." type=io.containerd.snapshotter.v1
-2022-05-13T17:40:20.400151915Z time="2022-05-13T17:40:20.400108761Z" level=info msg="loading plugin \"io.containerd.snapshotter.v1.overlayfs\"..." type=io.containerd.snapshotter.v1
-2022-05-13T17:40:20.400468932Z time="2022-05-13T17:40:20.400417296Z" level=info msg="loading plugin \"io.containerd.snapshotter.v1.zfs\"..." type=io.containerd.snapshotter.v1
-2022-05-13T17:40:20.400714324Z time="2022-05-13T17:40:20.400658589Z" level=info msg="skip loading plugin \"io.containerd.snapshotter.v1.zfs\"..." error="path /var/lib/docker/containerd/daemon/io.containerd.snapshotter.v1.zfs must be a zfs filesystem to be used with the zfs snapshotter: skip plugin" type=io.containerd.snapshotter.v1
-2022-05-13T17:40:20.400791922Z time="2022-05-13T17:40:20.400745885Z" level=info msg="loading plugin \"io.containerd.metadata.v1.bolt\"..." type=io.containerd.metadata.v1
-2022-05-13T17:40:20.400920484Z time="2022-05-13T17:40:20.400862264Z" level=warning msg="could not use snapshotter devmapper in metadata plugin" error="devmapper not configured"
-2022-05-13T17:40:20.400975363Z time="2022-05-13T17:40:20.400946737Z" level=info msg="metadata content store policy set" policy=shared
-2022-05-13T17:40:20.408410157Z time="2022-05-13T17:40:20.408338249Z" level=info msg="loading plugin \"io.containerd.differ.v1.walking\"..." type=io.containerd.differ.v1
-2022-05-13T17:40:20.408526233Z time="2022-05-13T17:40:20.408478122Z" level=info msg="loading plugin \"io.containerd.event.v1.exchange\"..." type=io.containerd.event.v1
-2022-05-13T17:40:20.408607973Z time="2022-05-13T17:40:20.408560595Z" level=info msg="loading plugin \"io.containerd.gc.v1.scheduler\"..." type=io.containerd.gc.v1
-2022-05-13T17:40:20.408689183Z time="2022-05-13T17:40:20.408655673Z" level=info msg="loading plugin \"io.containerd.service.v1.introspection-service\"..." type=io.containerd.service.v1
-2022-05-13T17:40:20.408773236Z time="2022-05-13T17:40:20.408733951Z" level=info msg="loading plugin \"io.containerd.service.v1.containers-service\"..." type=io.containerd.service.v1
-2022-05-13T17:40:20.408846276Z time="2022-05-13T17:40:20.408814770Z" level=info msg="loading plugin \"io.containerd.service.v1.content-service\"..." type=io.containerd.service.v1
-2022-05-13T17:40:20.408936019Z time="2022-05-13T17:40:20.408899798Z" level=info msg="loading plugin \"io.containerd.service.v1.diff-service\"..." type=io.containerd.service.v1
-2022-05-13T17:40:20.409018688Z time="2022-05-13T17:40:20.408986633Z" level=info msg="loading plugin \"io.containerd.service.v1.images-service\"..." type=io.containerd.service.v1
-2022-05-13T17:40:20.409417086Z time="2022-05-13T17:40:20.409366966Z" level=info msg="loading plugin \"io.containerd.service.v1.leases-service\"..." type=io.containerd.service.v1
-2022-05-13T17:40:20.409501559Z time="2022-05-13T17:40:20.409454774Z" level=info msg="loading plugin \"io.containerd.service.v1.namespaces-service\"..." type=io.containerd.service.v1
-2022-05-13T17:40:20.409567384Z time="2022-05-13T17:40:20.409535510Z" level=info msg="loading plugin \"io.containerd.service.v1.snapshots-service\"..." type=io.containerd.service.v1
-2022-05-13T17:40:20.409660531Z time="2022-05-13T17:40:20.409624821Z" level=info msg="loading plugin \"io.containerd.runtime.v1.linux\"..." type=io.containerd.runtime.v1
-2022-05-13T17:40:20.409964835Z time="2022-05-13T17:40:20.409908208Z" level=info msg="loading plugin \"io.containerd.runtime.v2.task\"..." type=io.containerd.runtime.v2
-2022-05-13T17:40:20.410217385Z time="2022-05-13T17:40:20.410167952Z" level=info msg="loading plugin \"io.containerd.monitor.v1.cgroups\"..." type=io.containerd.monitor.v1
-2022-05-13T17:40:20.411364153Z time="2022-05-13T17:40:20.411286893Z" level=info msg="loading plugin \"io.containerd.service.v1.tasks-service\"..." type=io.containerd.service.v1
-2022-05-13T17:40:20.411492022Z time="2022-05-13T17:40:20.411450751Z" level=info msg="loading plugin \"io.containerd.grpc.v1.introspection\"..." type=io.containerd.grpc.v1
-2022-05-13T17:40:20.411574163Z time="2022-05-13T17:40:20.411540840Z" level=info msg="loading plugin \"io.containerd.internal.v1.restart\"..." type=io.containerd.internal.v1
-2022-05-13T17:40:20.411713401Z time="2022-05-13T17:40:20.411665995Z" level=info msg="loading plugin \"io.containerd.grpc.v1.containers\"..." type=io.containerd.grpc.v1
-2022-05-13T17:40:20.411802215Z time="2022-05-13T17:40:20.411755678Z" level=info msg="loading plugin \"io.containerd.grpc.v1.content\"..." type=io.containerd.grpc.v1
-2022-05-13T17:40:20.411872964Z time="2022-05-13T17:40:20.411840413Z" level=info msg="loading plugin \"io.containerd.grpc.v1.diff\"..." type=io.containerd.grpc.v1
-2022-05-13T17:40:20.411959552Z time="2022-05-13T17:40:20.411924141Z" level=info msg="loading plugin \"io.containerd.grpc.v1.events\"..." type=io.containerd.grpc.v1
-2022-05-13T17:40:20.412037074Z time="2022-05-13T17:40:20.412005531Z" level=info msg="loading plugin \"io.containerd.grpc.v1.healthcheck\"..." type=io.containerd.grpc.v1
-2022-05-13T17:40:20.412133691Z time="2022-05-13T17:40:20.412081176Z" level=info msg="loading plugin \"io.containerd.grpc.v1.images\"..." type=io.containerd.grpc.v1
-2022-05-13T17:40:20.412227951Z time="2022-05-13T17:40:20.412174814Z" level=info msg="loading plugin \"io.containerd.grpc.v1.leases\"..." type=io.containerd.grpc.v1
-2022-05-13T17:40:20.412325867Z time="2022-05-13T17:40:20.412291099Z" level=info msg="loading plugin \"io.containerd.grpc.v1.namespaces\"..." type=io.containerd.grpc.v1
-2022-05-13T17:40:20.412437835Z time="2022-05-13T17:40:20.412377435Z" level=info msg="loading plugin \"io.containerd.internal.v1.opt\"..." type=io.containerd.internal.v1
-2022-05-13T17:40:20.412819166Z time="2022-05-13T17:40:20.412745960Z" level=info msg="loading plugin \"io.containerd.grpc.v1.snapshots\"..." type=io.containerd.grpc.v1
-2022-05-13T17:40:20.412923965Z time="2022-05-13T17:40:20.412876079Z" level=info msg="loading plugin \"io.containerd.grpc.v1.tasks\"..." type=io.containerd.grpc.v1
-2022-05-13T17:40:20.413023570Z time="2022-05-13T17:40:20.412964494Z" level=info msg="loading plugin \"io.containerd.grpc.v1.version\"..." type=io.containerd.grpc.v1
-2022-05-13T17:40:20.413109611Z time="2022-05-13T17:40:20.413052967Z" level=info msg="loading plugin \"io.containerd.tracing.processor.v1.otlp\"..." type=io.containerd.tracing.processor.v1
-2022-05-13T17:40:20.413201058Z time="2022-05-13T17:40:20.413143035Z" level=info msg="skip loading plugin \"io.containerd.tracing.processor.v1.otlp\"..." error="no OpenTelemetry endpoint: skip plugin" type=io.containerd.tracing.processor.v1
-2022-05-13T17:40:20.413288065Z time="2022-05-13T17:40:20.413223717Z" level=info msg="loading plugin \"io.containerd.internal.v1.tracing\"..." type=io.containerd.internal.v1
-2022-05-13T17:40:20.413396646Z time="2022-05-13T17:40:20.413328899Z" level=error msg="failed to initialize a tracing processor \"otlp\"" error="no OpenTelemetry endpoint: skip plugin"
-2022-05-13T17:40:20.419012356Z time="2022-05-13T17:40:20.418936196Z" level=info msg=serving... address=/var/run/docker/containerd/containerd-debug.sock
-2022-05-13T17:40:20.419183068Z time="2022-05-13T17:40:20.419128971Z" level=info msg=serving... address=/var/run/docker/containerd/containerd.sock.ttrpc
-2022-05-13T17:40:20.419360805Z time="2022-05-13T17:40:20.419303797Z" level=info msg=serving... address=/var/run/docker/containerd/containerd.sock
-2022-05-13T17:40:20.419458462Z time="2022-05-13T17:40:20.419392395Z" level=info msg="containerd successfully booted in 0.046776s"
-2022-05-13T17:40:20.427088131Z time="2022-05-13T17:40:20.426997887Z" level=info msg="Setting the storage driver from the $DOCKER_DRIVER environment variable (overlay2)"
-2022-05-13T17:40:20.427391104Z time="2022-05-13T17:40:20.427313893Z" level=info msg="parsed scheme: \"unix\"" module=grpc
-2022-05-13T17:40:20.427484257Z time="2022-05-13T17:40:20.427421328Z" level=info msg="scheme \"unix\" not registered, fallback to default scheme" module=grpc
-2022-05-13T17:40:20.427578011Z time="2022-05-13T17:40:20.427518539Z" level=info msg="ccResolverWrapper: sending update to cc: {[{unix:///var/run/docker/containerd/containerd.sock  <nil> 0 <nil>}] <nil> <nil>}" module=grpc
-2022-05-13T17:40:20.427664169Z time="2022-05-13T17:40:20.427602993Z" level=info msg="ClientConn switching balancer to \"pick_first\"" module=grpc
-2022-05-13T17:40:20.429126661Z time="2022-05-13T17:40:20.429042934Z" level=info msg="parsed scheme: \"unix\"" module=grpc
-2022-05-13T17:40:20.429258934Z time="2022-05-13T17:40:20.429170017Z" level=info msg="scheme \"unix\" not registered, fallback to default scheme" module=grpc
-2022-05-13T17:40:20.429376936Z time="2022-05-13T17:40:20.429300604Z" level=info msg="ccResolverWrapper: sending update to cc: {[{unix:///var/run/docker/containerd/containerd.sock  <nil> 0 <nil>}] <nil> <nil>}" module=grpc
-2022-05-13T17:40:20.429480261Z time="2022-05-13T17:40:20.429425356Z" level=info msg="ClientConn switching balancer to \"pick_first\"" module=grpc
-2022-05-13T17:40:20.463618774Z time="2022-05-13T17:40:20.463534885Z" level=warning msg="Your kernel does not support cgroup blkio weight"
-2022-05-13T17:40:20.463744827Z time="2022-05-13T17:40:20.463668638Z" level=warning msg="Your kernel does not support cgroup blkio weight_device"
-2022-05-13T17:40:20.464041097Z time="2022-05-13T17:40:20.463974209Z" level=info msg="Loading containers: start."
-2022-05-13T17:40:20.514928531Z time="2022-05-13T17:40:20.514846676Z" level=info msg="Default bridge (docker0) is assigned with an IP address 172.18.0.0/16. Daemon option --bip can be used to set a preferred IP address"
-2022-05-13T17:40:20.546278631Z time="2022-05-13T17:40:20.546175183Z" level=info msg="Loading containers: done."
-2022-05-13T17:40:20.555187745Z time="2022-05-13T17:40:20.555088971Z" level=info msg="Docker daemon" commit=f756502 graphdriver(s)=overlay2 version=20.10.16
-2022-05-13T17:40:20.555524683Z time="2022-05-13T17:40:20.555437583Z" level=info msg="Daemon has completed initialization"
-2022-05-13T17:40:20.755262982Z time="2022-05-13T17:40:20.755094919Z" level=info msg="API listen on [::]:2375"
-2022-05-13T17:40:20.755446377Z time="2022-05-13T17:40:20.755370747Z" level=info msg="API listen on /var/run/docker.sock"
-
-[0;33m*********[0;m
-
+[0KUsing docker image sha256:2ac8eb0e66aa6a439c8f5803ad404aec58c707fe0b38fe8b4ab06e99311eb880 for docker:dind with digest docker@sha256:1be6768d332a4aaed59b344e6525e1701c467c4ef8553d5d18bac086cbd82ef1 ...[0;m
+[0KWaiting for services to be up and running (timeout 30 seconds)...[0;m
 [0KPulling docker image ghcr.io/claudioandre-br/john-ci:fedora.35.flatpak ...[0;m
-[0KUsing docker image sha256:28092ac10a1a0c48a9416717eba207a13287bd5afda0a827f0cfb043185be51b for ghcr.io/claudioandre-br/john-ci:fedora.35.flatpak with digest ghcr.io/claudioandre-br/john-ci@sha256:2eaf084f7ff8702acf0006aaf316a8d1028750a927ef369dd0b8fa9bb9e9486a ...[0;m
-section_end:1652463722:prepare_executor[0Ksection_start:1652463722:prepare_script[0K[0K[36;1mPreparing environment[0;m[0;m
-Running on runner-j1aldqxs-project-12573246-concurrent-0 via runner-j1aldqxs-shared-1652463514-c1c56d9a...
-section_end:1652463724:prepare_script[0Ksection_start:1652463724:get_sources[0K[0K[36;1mGetting source from Git repository[0;m[0;m
+[0KUsing docker image sha256:a1b5e8225c1bdeec090d1f63f6d505b012ea5de33c12f06f046470f54ef6c990 for ghcr.io/claudioandre-br/john-ci:fedora.35.flatpak with digest ghcr.io/claudioandre-br/john-ci@sha256:7853f2f4b7e145111dec7fcaef152df050ff3720d7effdcc20b7220988994a79 ...[0;m
+section_end:1664632750:prepare_executor[0Ksection_start:1664632750:prepare_script[0K[0K[36;1mPreparing environment[0;m[0;m
+Running on runner-ns46nmmj-project-12573246-concurrent-0 via runner-ns46nmmj-shared-1664632480-cee4a6d0...
+section_end:1664632752:prepare_script[0Ksection_start:1664632752:get_sources[0K[0K[36;1mGetting source from Git repository[0;m[0;m
 [32;1m$ eval "$CI_PRE_CLONE_SCRIPT"[0;m
 [32;1mFetching changes...[0;m
 Initialized empty Git repository in /builds/claudioandre-br/JtR-CI/.git/
 [32;1mCreated fresh repository.[0;m
-[32;1mChecking out ce3c2551 as master...[0;m
+[32;1mChecking out a8ee6a4c as master...[0;m
 
 [32;1mSkipping Git submodules setup[0;m
-section_end:1652463730:get_sources[0Ksection_start:1652463730:step_script[0K[0K[36;1mExecuting "step_script" stage of the job script[0;m[0;m
-[0KUsing docker image sha256:28092ac10a1a0c48a9416717eba207a13287bd5afda0a827f0cfb043185be51b for ghcr.io/claudioandre-br/john-ci:fedora.35.flatpak with digest ghcr.io/claudioandre-br/john-ci@sha256:2eaf084f7ff8702acf0006aaf316a8d1028750a927ef369dd0b8fa9bb9e9486a ...[0;m
+section_end:1664632755:get_sources[0Ksection_start:1664632755:step_script[0K[0K[36;1mExecuting "step_script" stage of the job script[0;m[0;m
+[0KUsing docker image sha256:a1b5e8225c1bdeec090d1f63f6d505b012ea5de33c12f06f046470f54ef6c990 for ghcr.io/claudioandre-br/john-ci:fedora.35.flatpak with digest ghcr.io/claudioandre-br/john-ci@sha256:7853f2f4b7e145111dec7fcaef152df050ff3720d7effdcc20b7220988994a79 ...[0;m
 [32;1m$ cd flatpak[0;m
 [32;1m$ flatpak-builder --repo=repo build com.openwall.John.json[0;m
 Downloading sources
-Downloading https://www.tcpdump.org/release/libpcap-1.10.0.tar.gz
+Downloading https://www.tcpdump.org/release/libpcap-1.10.1.tar.gz
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 21  912k   21  195k    0     0   230k      0  0:00:03 --:--:--  0:00:03  230k100  912k  100  912k    0     0   879k      0  0:00:01  0:00:01 --:--:--  880k
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  1  913k    1 15920    0     0  27219      0  0:00:34 --:--:--  0:00:34 27213100  913k  100  913k    0     0   863k      0  0:00:01  0:00:01 --:--:--  864k
 hint: Using 'master' as the name for the initial branch. This default branch name
 hint: is subject to change. To configure the initial branch name to use in all
 hint: of your new repositories, which will suppress this warning, call:
@@ -135,7 +38,7 @@ hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
 hint: 'development'. The just-created branch can be renamed via this command:
 hint: 
 hint: 	git branch -m <name>
-Initialized empty Git repository in /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/git/https_github.com_openwall_john.git-61PVL1/
+Initialized empty Git repository in /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/git/https_github.com_openwall_john.git-WQK8S1/
 Fetching git repo https://github.com/openwall/john.git, ref refs/heads/bleeding-jumbo
 From https://github.com/openwall/john
  * [new branch]      bleeding-jumbo -> bleeding-jumbo
@@ -160,6 +63,8 @@ checking for gcc option to accept ISO C89... none needed
 checking for gcc option to accept ISO C99... none needed
 checking whether the compiler supports the -fvisibility=hidden option... yes
 checking for inline... inline
+checking for __atomic_load_n... yes
+checking for __atomic_store_n... yes
 checking for special C compiler options needed for large files... no
 checking for _FILE_OFFSET_BITS value needed for large files... no
 checking for _LARGEFILE_SOURCE value needed for large files... no
@@ -271,7 +176,7 @@ checking lex output file root... lex.yy
 checking lex library... -lfl
 checking whether yytext is a pointer... yes
 checking for capable lex... yes
-checking for bison... bison -y
+checking for bison... bison
 checking for ranlib... ranlib
 checking for ar... ar
 checking whether ln -s works... yes
@@ -324,58 +229,34 @@ config.status: creating rpcapd/rpcapd-config.manfile
 config.status: creating testprogs/Makefile
 config.status: creating config.h
 config.status: executing default-1 commands
-gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection     -c ./pcap-linux.c
+gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -c ./pcap-linux.c
 ./pcap-linux.c: In function ‘pcap_breakloop_linux’:
-./pcap-linux.c:934:8: warning: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
-  934 |  (void)write(handlep->poll_breakloop_fd, &value, sizeof(value));
-      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection     -c ./fad-getad.c
-gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection     -c ./pcap-usb-linux.c
-gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection     -c ./pcap-netfilter-linux.c
-gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection     -c ./pcap-dbus.c
-gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection     -c ./pcap.c
-bison -y -p pcap_ -o grammar.c -d grammar.y
-grammar.y:4.1-7: warning: POSIX Yacc does not support %define [-Wyacc]
-    4 | %define api.pure
-      | ^~~~~~~
-grammar.y:40.1-7: warning: POSIX Yacc does not support %expect [-Wyacc]
-   40 | %expect 38
-      | ^~~~~~~
-grammar.y:381.13-14: warning: POSIX yacc reserves %type to nonterminals [-Wyacc]
-  381 | %type	<s> ID EID AID
-      |             ^~
-grammar.y:381.16-18: warning: POSIX yacc reserves %type to nonterminals [-Wyacc]
-  381 | %type	<s> ID EID AID
-      |                ^~~
-grammar.y:381.20-22: warning: POSIX yacc reserves %type to nonterminals [-Wyacc]
-  381 | %type	<s> ID EID AID
-      |                    ^~~
-grammar.y:382.13-15: warning: POSIX yacc reserves %type to nonterminals [-Wyacc]
-  382 | %type	<s> HID HID6
-      |             ^~~
-grammar.y:382.17-20: warning: POSIX yacc reserves %type to nonterminals [-Wyacc]
-  382 | %type	<s> HID HID6
-      |                 ^~~~
-grammar.y:383.13-15: warning: POSIX yacc reserves %type to nonterminals [-Wyacc]
-  383 | %type	<h> NUM
-      |             ^~~
+./pcap-linux.c:947:15: warning: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  947 |         (void)write(handlep->poll_breakloop_fd, &value, sizeof(value));
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -c ./fad-getad.c
+gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -c ./pcap-usb-linux.c
+gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -c ./pcap-netfilter-linux.c
+gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -c ./pcap-dbus.c
+gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -c ./pcap.c
+bison -p pcap_ -o grammar.c -d grammar.y
 flex -P pcap_ --header-file=scanner.h --nounput -o scanner.c scanner.l
-gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection     -c ./gencode.c
-gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection     -c ./optimize.c
-gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection     -c ./nametoaddr.c
-gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection     -c ./etherent.c
-gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection     -c ./fmtutils.c
-gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection     -c ./savefile.c
-gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection     -c ./sf-pcap.c
-gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection     -c ./sf-pcapng.c
-gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection     -c ./pcap-common.c
-gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection     -c ./bpf_image.c
-gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection     -c ./bpf_filter.c
-gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection     -c ./bpf_dump.c
-gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection     -c scanner.c
-gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection     -c grammar.c
-gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection     -o strlcat.o -c ./missing/strlcat.c
-gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection     -o strlcpy.o -c ./missing/strlcpy.c
+gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -c ./gencode.c
+gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -c ./optimize.c
+gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -c ./nametoaddr.c
+gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -c ./etherent.c
+gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -c ./fmtutils.c
+gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -c ./savefile.c
+gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -c ./sf-pcap.c
+gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -c ./sf-pcapng.c
+gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -c ./pcap-common.c
+gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -c ./bpf_image.c
+gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -c ./bpf_filter.c
+gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -c ./bpf_dump.c
+gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -c scanner.c
+gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -c grammar.c
+gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -o strlcat.o -c ./missing/strlcat.c
+gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -o strlcpy.o -c ./missing/strlcpy.c
 ar rc libpcap.a pcap-linux.o fad-getad.o  pcap-usb-linux.o pcap-netfilter-linux.o pcap-dbus.o  pcap.o gencode.o optimize.o nametoaddr.o etherent.o fmtutils.o savefile.o sf-pcap.o sf-pcapng.o pcap-common.o bpf_image.o bpf_filter.o bpf_dump.o scanner.o grammar.o strlcat.o strlcpy.o 
 ranlib libpcap.a
 VER=`cat ./VERSION`; \
@@ -484,17 +365,18 @@ for i in pcap-savefile.manfile.in; do \
 for i in pcap-filter.manmisc.in pcap-linktype.manmisc.in pcap-tstamp.manmisc.in; do \
 	/usr/bin/install -c -m 644 `echo $i | sed 's/.manmisc.in/.manmisc/'` \
 	    /app/share/man/man7/`echo $i | sed 's/.manmisc.in/.7/'`; done
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/libpcap.so.1.10.0
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/libpcap.so.1.10.0
-[28] .debug_aranges compressed -> .zdebug_aranges (1328 => 380 28.61%)
-[29] .debug_info compressed -> .zdebug_info (380564 => 180061 47.31%)
-[30] .debug_abbrev compressed -> .zdebug_abbrev (20880 => 4224 20.23%)
-[31] .debug_line compressed -> .zdebug_line (163739 => 61935 37.83%)
-[32] .debug_str compressed -> .zdebug_str (30006 => 11657 38.85%)
-[33] .debug_loc compressed -> .zdebug_loc (591207 => 98627 16.68%)
-[34] .debug_ranges compressed -> .zdebug_ranges (98880 => 14509 14.67%)
-[37] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/libpcap.so.1.10.0 to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/lib/libpcap.so.1.10.0.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/libpcap.so.1.10.1
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/libpcap.so.1.10.1
+[28] .debug_aranges compressed -> .zdebug_aranges (1328 => 379 28.54%)
+[29] .debug_info compressed -> .zdebug_info (379027 => 178616 47.12%)
+[30] .debug_abbrev compressed -> .zdebug_abbrev (22815 => 5630 24.68%)
+[31] .debug_line compressed -> .zdebug_line (153911 => 60317 39.19%)
+[32] .debug_str compressed -> .zdebug_str (29640 => 11415 38.51%)
+[33] .debug_line_str compressed -> .zdebug_line_str (1896 => 800 42.19%)
+[34] .debug_loclists compressed -> .zdebug_loclists (262047 => 93023 35.50%)
+[35] .debug_rnglists compressed -> .zdebug_rnglists (29143 => 12299 42.20%)
+[38] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/libpcap.so.1.10.1 to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/lib/libpcap.so.1.10.1.debug
 Committing stage build-libpcap to cache
 ========================================================================
 Building module john in /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/build/john-1
@@ -510,17 +392,17 @@ Build system information
 --------------------------------
 x86_64
 uid=1000(JtR) gid=1000(JtR) groups=1000(JtR)
-Linux runner-j1aldqxs-project-12573246-concurrent-0 5.4.109+ #1 SMP Wed Jun 16 20:00:10 PDT 2021 x86_64 GNU/Linux
+Linux runner-ns46nmmj-project-12573246-concurrent-0 5.4.109+ #1 SMP Wed Jun 16 20:00:10 PDT 2021 x86_64 GNU/Linux
 --------------------------------
                total        used        free      shared  buff/cache   available
-Mem:         3773756      527644      210536         736     3035576     3013936
-Swap:        2097148        4364     2092784
+Mem:         3773756      532364      153976         732     3087416     3008292
+Swap:        2097148        2828     2094320
 --------------------------------
 NAME=Freedesktop.org
-VERSION="20.08.19 (Flatpak runtime)"
-VERSION_ID=20.08.19
+VERSION="21.08.14 (Flatpak runtime)"
+VERSION_ID=21.08.14
 ID=org.freedesktop.platform
-PRETTY_NAME="Freedesktop.org 20.08.19 (Flatpak runtime)"
+PRETTY_NAME="Freedesktop.org 21.08.14 (Flatpak runtime)"
 BUG_REPORT_URL=https://gitlab.com/freedesktop-sdk/freedesktop-sdk/issues
 --------------------------------
 processor	: 0
@@ -552,15 +434,16 @@ power management:
 
 --------------------------------
 SHELL=/bin/sh
+__EGL_EXTERNAL_PLATFORM_CONFIG_DIRS=/etc/egl/egl_external_platform.d:/usr/lib/x86_64-linux-gnu/GL/egl/egl_external_platform.d:/usr/share/egl/egl_external_platform.d
 XDG_CONFIG_DIRS=/app/etc/xdg:/etc/xdg
 PKG_CONFIG_PATH=/app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig
-HOSTNAME=runner-j1aldqxs-project-12573246-concurrent-0
+HOSTNAME=runner-ns46nmmj-project-12573246-concurrent-0
 FLATPAK_ID=com.openwall.John
 PWD=/run/build/john/src
 ALSA_CONFIG_PATH=/usr/share/alsa/alsa-flatpak.conf
-SOURCE_DATE_EPOCH=1652463729
+SOURCE_DATE_EPOCH=1664632754
 CCACHE_DIR=/run/ccache/disabled
-CXXFLAGS=-O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection 
+CXXFLAGS=-O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer 
 container=flatpak
 GI_TYPELIB_PATH=/app/lib/girepository-1.0
 LDFLAGS=-L/app/lib -Wl,-z,relro,-z,now -Wl,--as-needed 
@@ -578,15 +461,15 @@ GST_PLUGIN_SYSTEM_PATH=/app/lib/gstreamer-1.0:/usr/lib/extensions/gstreamer-1.0:
 LC_ALL=en_US.utf8
 XDG_DATA_DIRS=/app/share:/usr/share:/usr/share/runtime/share:/run/host/user-share:/run/host/share
 PATH=/app/bin:/usr/bin
-CFLAGS=-O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection 
+CFLAGS=-O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer 
 C_INCLUDE_PATH=/app/include
 ALSA_CONFIG_DIR=/usr/share/alsa
 _=/usr/bin/env
 --------------------------------
 Compiler information
 --------------------------------
-gcc (GCC) 10.2.0
-Copyright (C) 2020 Free Software Foundation, Inc.
+gcc (GCC) 11.3.0
+Copyright (C) 2021 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
@@ -635,6 +518,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #define __SHRT_MAX__ 0x7fff
 #define __LDBL_MAX__ 1.18973149535723176502126385303097021e+4932L
 #define __FLT64X_MAX_10_EXP__ 4932
+#define __LDBL_IS_IEC_60559__ 2
 #define __FLT64X_HAS_QUIET_NAN__ 1
 #define __UINT_LEAST8_MAX__ 0xff
 #define __GCC_ATOMIC_BOOL_LOCK_FREE 2
@@ -648,6 +532,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #define __FLT128_MIN_EXP__ (-16381)
 #define __WINT_MIN__ 0U
 #define __FLT128_MIN_10_EXP__ (-4931)
+#define __FLT32X_IS_IEC_60559__ 2
 #define __INT_LEAST16_WIDTH__ 16
 #define __SCHAR_MAX__ 0x7f
 #define __FLT128_MANT_DIG__ 113
@@ -663,8 +548,10 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #define __FLT32_DIG__ 6
 #define __FLT_EPSILON__ 1.19209289550781250000000000000000000e-7F
 #define __SHRT_WIDTH__ 16
+#define __FLT32_IS_IEC_60559__ 2
 #define __LDBL_MIN__ 3.36210314311209350626267781732175260e-4932L
 #define __STDC_UTF_16__ 1
+#define __DBL_IS_IEC_60559__ 2
 #define __DEC32_MAX__ 9.999999E96DF
 #define __FLT64X_DENORM_MIN__ 3.64519953188247460252840593361941982e-4951F64x
 #define __FLT32X_HAS_INFINITY__ 1
@@ -679,11 +566,12 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #define __STDC_IEC_559_COMPLEX__ 1
 #define __FLT64_EPSILON__ 2.22044604925031308084726333618164062e-16F64
 #define __gnu_linux__ 1
+#define __FLT128_IS_IEC_60559__ 2
 #define __FLT64X_MIN_10_EXP__ (-4931)
 #define __LDBL_HAS_QUIET_NAN__ 1
 #define __FLT64_MANT_DIG__ 53
 #define __FLT64X_MANT_DIG__ 64
-#define __GNUC__ 10
+#define __GNUC__ 11
 #define __pie__ 2
 #define __MMX__ 1
 #define __FLT_HAS_DENORM__ 1
@@ -720,7 +608,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #define __SIZEOF_WINT_T__ 4
 #define __LONG_LONG_WIDTH__ 64
 #define __FLT32_MAX_EXP__ 128
-#define __GXX_ABI_VERSION 1014
+#define __GXX_ABI_VERSION 1016
 #define __FLT_MIN_EXP__ (-125)
 #define __GCC_HAVE_DWARF2_CFI_ASM 1
 #define __INT16_MAX__ 0x7fff
@@ -751,7 +639,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #define __DEC128_MAX__ 9.999999999999999999999999999999999E6144DL
 #define __FLT_MANT_DIG__ 24
 #define __LDBL_DECIMAL_DIG__ 21
-#define __VERSION__ "10.2.0"
+#define __VERSION__ "11.3.0"
 #define __UINT64_C(c) c ## UL
 #define _STDC_PREDEF_H 1
 #define __INT_LEAST32_MAX__ 0x7fffffff
@@ -771,6 +659,8 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #define unix 1
 #define __SIZE_TYPE__ long unsigned int
 #define __UINT64_MAX__ 0xffffffffffffffffUL
+#define __FLT_IS_IEC_60559__ 2
+#define __GNUC_WIDE_EXECUTION_CHARSET_NAME "UTF-32LE"
 #define __FLT64X_DIG__ 18
 #define __INT8_TYPE__ signed char
 #define __ELF__ 1
@@ -787,6 +677,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #define __GCC_ATOMIC_WCHAR_T_LOCK_FREE 2
 #define __SIZEOF_PTRDIFF_T__ 8
 #define __LDBL_DIG__ 18
+#define __FLT64_IS_IEC_60559__ 2
 #define __x86_64__ 1
 #define __FLT32X_MIN_EXP__ (-1021)
 #define __DEC32_SUBNORMAL_MIN__ 0.000001E-95DF
@@ -800,6 +691,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #define __FLT64X_HAS_DENORM__ 1
 #define __DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000000000001E-6143DL
 #define __FLT_HAS_INFINITY__ 1
+#define __GNUC_EXECUTION_CHARSET_NAME "UTF-8"
 #define __UINT_FAST16_TYPE__ long unsigned int
 #define __DEC64_MAX__ 9.999999999999999E384DD
 #define __INT_FAST32_WIDTH__ 64
@@ -871,6 +763,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #define __LDBL_MAX_EXP__ 16384
 #define __FLT32X_MAX_10_EXP__ 308
 #define __SIZEOF_INT128__ 16
+#define __FLT64X_IS_IEC_60559__ 2
 #define __LDBL_MAX_10_EXP__ 4932
 #define __ATOMIC_RELAXED 0
 #define __DBL_EPSILON__ ((double)2.22044604925031308084726333618164062e-16L)
@@ -918,7 +811,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #define __DEC128_MAX_EXP__ 6145
 #define __FLT32X_HAS_QUIET_NAN__ 1
 #define __ATOMIC_CONSUME 1
-#define __GNUC_MINOR__ 2
+#define __GNUC_MINOR__ 3
 #define __INT_FAST16_WIDTH__ 64
 #define __UINTMAX_MAX__ 0xffffffffffffffffUL
 #define __PIE__ 2
@@ -950,7 +843,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 Running on: 
 Doing: 
 --------------------------------
-v1-roll+52a9bedX
+roll+8998390X
 
 ---------------------------- BUILDING -----------------------------
 checking build system type... x86_64-unknown-linux-gnu
@@ -1286,7 +1179,7 @@ Install missing libraries to get any needed features that were omitted.
 Configure finished.  Now "make -s clean && make -sj4" to compile.
 In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
                  from /usr/include/stdint.h:26,
-                 from /usr/lib/gcc/x86_64-unknown-linux-gnu/10.2.0/include/stdint.h:9,
+                 from /usr/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include/stdint.h:9,
                  from unicode_range.c:8:
 /usr/include/features.h:397:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
   397 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
@@ -1295,9 +1188,6 @@ ar: creating poly1305-donna.a
 ar: creating aes.a
 ar: creating ed25519-donna.a
 ar: creating secp256k1.a
-stribog_fmt_plug.c:472:2: warning: #warning Stribog-256 and Stribog-512 formats require SSE 4.1, formats disabled [-Wcpp]
-  472 | #warning Stribog-256 and Stribog-512 formats require SSE 4.1, formats disabled
-      |  ^~~~~~~
 
 Make process completed.
 checking build system type... x86_64-unknown-linux-gnu
@@ -1633,12 +1523,9 @@ ZTEX USB-FPGA module 1.15y support ................. no
 Install missing libraries to get any needed features that were omitted.
 
 Configure finished.  Now "make -s clean && make -sj4" to compile.
-stribog_fmt_plug.c:472:2: warning: #warning Stribog-256 and Stribog-512 formats require SSE 4.1, formats disabled [-Wcpp]
-  472 | #warning Stribog-256 and Stribog-512 formats require SSE 4.1, formats disabled
-      |  ^~~~~~~
 In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
                  from /usr/include/stdint.h:26,
-                 from /usr/lib/gcc/x86_64-unknown-linux-gnu/10.2.0/include/stdint.h:9,
+                 from /usr/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include/stdint.h:9,
                  from unicode_range.c:8:
 /usr/include/features.h:397:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
   397 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
@@ -1985,7 +1872,7 @@ Install missing libraries to get any needed features that were omitted.
 Configure finished.  Now "make -s clean && make -sj4" to compile.
 In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
                  from /usr/include/stdint.h:26,
-                 from /usr/lib/gcc/x86_64-unknown-linux-gnu/10.2.0/include/stdint.h:9,
+                 from /usr/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include/stdint.h:9,
                  from unicode_range.c:8:
 /usr/include/features.h:397:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
   397 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
@@ -2333,7 +2220,7 @@ Install missing libraries to get any needed features that were omitted.
 Configure finished.  Now "make -s clean && make -sj4" to compile.
 In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
                  from /usr/include/stdint.h:26,
-                 from /usr/lib/gcc/x86_64-unknown-linux-gnu/10.2.0/include/stdint.h:9,
+                 from /usr/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include/stdint.h:9,
                  from unicode_range.c:8:
 /usr/include/features.h:397:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
   397 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
@@ -2683,7 +2570,7 @@ Install missing libraries to get any needed features that were omitted.
 Configure finished.  Now "make -s clean && make -sj4" to compile.
 In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
                  from /usr/include/stdint.h:26,
-                 from /usr/lib/gcc/x86_64-unknown-linux-gnu/10.2.0/include/stdint.h:9,
+                 from /usr/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include/stdint.h:9,
                  from unicode_range.c:8:
 /usr/include/features.h:397:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
   397 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
@@ -3034,7 +2921,7 @@ Install missing libraries to get any needed features that were omitted.
 Configure finished.  Now "make -s clean && make -sj4" to compile.
 In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
                  from /usr/include/stdint.h:26,
-                 from /usr/lib/gcc/x86_64-unknown-linux-gnu/10.2.0/include/stdint.h:9,
+                 from /usr/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include/stdint.h:9,
                  from unicode_range.c:8:
 /usr/include/features.h:397:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
   397 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
@@ -3384,7 +3271,7 @@ Install missing libraries to get any needed features that were omitted.
 Configure finished.  Now "make -s clean && make -sj4" to compile.
 In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
                  from /usr/include/stdint.h:26,
-                 from /usr/lib/gcc/x86_64-unknown-linux-gnu/10.2.0/include/stdint.h:9,
+                 from /usr/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include/stdint.h:9,
                  from unicode_range.c:8:
 /usr/include/features.h:397:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
   397 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
@@ -3735,7 +3622,7 @@ Install missing libraries to get any needed features that were omitted.
 Configure finished.  Now "make -s clean && make -sj4" to compile.
 In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
                  from /usr/include/stdint.h:26,
-                 from /usr/lib/gcc/x86_64-unknown-linux-gnu/10.2.0/include/stdint.h:9,
+                 from /usr/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include/stdint.h:9,
                  from unicode_range.c:8:
 /usr/include/features.h:397:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
   397 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
@@ -4086,7 +3973,7 @@ Install missing libraries to get any needed features that were omitted.
 Configure finished.  Now "make -s clean && make -sj4" to compile.
 In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
                  from /usr/include/stdint.h:26,
-                 from /usr/lib/gcc/x86_64-unknown-linux-gnu/10.2.0/include/stdint.h:9,
+                 from /usr/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include/stdint.h:9,
                  from unicode_range.c:8:
 /usr/include/features.h:397:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
   397 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
@@ -4438,7 +4325,7 @@ Install missing libraries to get any needed features that were omitted.
 Configure finished.  Now "make -s clean && make -sj4" to compile.
 In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
                  from /usr/include/stdint.h:26,
-                 from /usr/lib/gcc/x86_64-unknown-linux-gnu/10.2.0/include/stdint.h:9,
+                 from /usr/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include/stdint.h:9,
                  from unicode_range.c:8:
 /usr/include/features.h:397:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
   397 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
@@ -4449,303 +4336,330 @@ ar: creating ed25519-donna.a
 ar: creating secp256k1.a
 
 Make process completed.
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/keepass2john
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/keepass2john
-[29] .debug_aranges compressed -> .zdebug_aranges (608 => 182 29.93%)
-[30] .debug_info compressed -> .zdebug_info (64217 => 31437 48.95%)
-[31] .debug_abbrev compressed -> .zdebug_abbrev (7296 => 1778 24.37%)
-[32] .debug_line compressed -> .zdebug_line (36807 => 15160 41.19%)
-[33] .debug_str compressed -> .zdebug_str (7077 => 2862 40.44%)
-[34] .debug_loc compressed -> .zdebug_loc (124549 => 24955 20.04%)
-[35] .debug_ranges compressed -> .zdebug_ranges (11696 => 2355 20.14%)
-[38] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/keepass2john to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/keepass2john.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/bitlocker2john
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/bitlocker2john
-[29] .debug_aranges compressed -> .zdebug_aranges (560 => 173 30.89%)
-[30] .debug_info compressed -> .zdebug_info (58510 => 27716 47.37%)
-[31] .debug_abbrev compressed -> .zdebug_abbrev (6140 => 1568 25.54%)
-[32] .debug_line compressed -> .zdebug_line (30519 => 12450 40.79%)
-[33] .debug_str compressed -> .zdebug_str (5722 => 2339 40.88%)
-[34] .debug_loc compressed -> .zdebug_loc (92586 => 18106 19.56%)
-[35] .debug_ranges compressed -> .zdebug_ranges (12352 => 2407 19.49%)
-[38] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/bitlocker2john to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/bitlocker2john.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/cprepair
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/cprepair
-[29] .debug_aranges compressed -> .zdebug_aranges (256 => 94 36.72%)
-[30] .debug_info compressed -> .zdebug_info (587 => 372 63.37%)
-[31] .debug_abbrev compressed -> .zdebug_abbrev (407 => 226 55.53%)
-[32] .debug_line compressed -> .zdebug_line (595 => 356 59.83%)
-[33] .debug_str compressed -> .zdebug_str (1037 => 404 38.96%)
-[34] .debug_loc compressed -> .zdebug_loc (367 => 117 31.88%)
-[35] .debug_ranges compressed -> .zdebug_ranges (128 => 52 40.62%)
-[38] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/cprepair to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/cprepair.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/genmkvpwd
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/genmkvpwd
-[29] .debug_aranges compressed -> .zdebug_aranges (560 => 171 30.54%)
-[30] .debug_info compressed -> .zdebug_info (35778 => 16947 47.37%)
-[31] .debug_abbrev compressed -> .zdebug_abbrev (5271 => 1309 24.83%)
-[32] .debug_line compressed -> .zdebug_line (37112 => 11662 31.42%)
-[33] .debug_str compressed -> .zdebug_str (4405 => 1871 42.47%)
-[34] .debug_loc compressed -> .zdebug_loc (67740 => 14075 20.78%)
-[35] .debug_ranges compressed -> .zdebug_ranges (9136 => 1872 20.49%)
-[38] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/genmkvpwd to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/genmkvpwd.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/mkvcalcproba
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/mkvcalcproba
-[29] .debug_aranges compressed -> .zdebug_aranges (304 => 107 35.20%)
-[30] .debug_info compressed -> .zdebug_info (4266 => 2058 48.24%)
-[31] .debug_abbrev compressed -> .zdebug_abbrev (966 => 410 42.44%)
-[32] .debug_line compressed -> .zdebug_line (2575 => 1328 51.57%)
-[33] .debug_str compressed -> .zdebug_str (1965 => 795 40.46%)
-[34] .debug_loc compressed -> .zdebug_loc (2704 => 633 23.41%)
-[35] .debug_ranges compressed -> .zdebug_ranges (336 => 110 32.74%)
-[38] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/mkvcalcproba to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/mkvcalcproba.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/calc_stat
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/calc_stat
-[29] .debug_aranges compressed -> .zdebug_aranges (304 => 107 35.20%)
-[30] .debug_info compressed -> .zdebug_info (3739 => 1869 49.99%)
-[31] .debug_abbrev compressed -> .zdebug_abbrev (938 => 400 42.64%)
-[32] .debug_line compressed -> .zdebug_line (3188 => 1427 44.76%)
-[33] .debug_str compressed -> .zdebug_str (1931 => 786 40.70%)
-[34] .debug_loc compressed -> .zdebug_loc (2865 => 736 25.69%)
-[35] .debug_ranges compressed -> .zdebug_ranges (480 => 142 29.58%)
-[38] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/calc_stat to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/calc_stat.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/tgtsnarf
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/tgtsnarf
-[29] .debug_aranges compressed -> .zdebug_aranges (320 => 113 35.31%)
-[30] .debug_info compressed -> .zdebug_info (7917 => 4317 54.53%)
-[31] .debug_abbrev compressed -> .zdebug_abbrev (1493 => 569 38.11%)
-[32] .debug_line compressed -> .zdebug_line (3514 => 1625 46.24%)
-[33] .debug_str compressed -> .zdebug_str (3255 => 1393 42.80%)
-[34] .debug_loc compressed -> .zdebug_loc (8101 => 1756 21.68%)
-[35] .debug_ranges compressed -> .zdebug_ranges (1312 => 279 21.27%)
-[38] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/tgtsnarf to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/tgtsnarf.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/racf2john
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/racf2john
-[29] .debug_aranges compressed -> .zdebug_aranges (352 => 120 34.09%)
-[30] .debug_info compressed -> .zdebug_info (7442 => 3864 51.92%)
-[31] .debug_abbrev compressed -> .zdebug_abbrev (1952 => 657 33.66%)
-[32] .debug_line compressed -> .zdebug_line (5049 => 2065 40.90%)
-[33] .debug_str compressed -> .zdebug_str (2676 => 1137 42.49%)
-[34] .debug_loc compressed -> .zdebug_loc (9355 => 2066 22.08%)
-[35] .debug_ranges compressed -> .zdebug_ranges (1248 => 298 23.88%)
-[38] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/racf2john to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/racf2john.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/hccap2john
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/hccap2john
-[29] .debug_aranges compressed -> .zdebug_aranges (416 => 137 32.93%)
-[30] .debug_info compressed -> .zdebug_info (12752 => 6072 47.62%)
-[31] .debug_abbrev compressed -> .zdebug_abbrev (2629 => 786 29.90%)
-[32] .debug_line compressed -> .zdebug_line (9217 => 3288 35.67%)
-[33] .debug_str compressed -> .zdebug_str (3062 => 1287 42.03%)
-[34] .debug_loc compressed -> .zdebug_loc (14515 => 3058 21.07%)
-[35] .debug_ranges compressed -> .zdebug_ranges (2144 => 490 22.85%)
-[38] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/hccap2john to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/hccap2john.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/raw2dyna
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/raw2dyna
-[29] .debug_aranges compressed -> .zdebug_aranges (320 => 113 35.31%)
-[30] .debug_info compressed -> .zdebug_info (4240 => 2263 53.37%)
-[31] .debug_abbrev compressed -> .zdebug_abbrev (1131 => 454 40.14%)
-[32] .debug_line compressed -> .zdebug_line (3350 => 1554 46.39%)
-[33] .debug_str compressed -> .zdebug_str (2156 => 892 41.37%)
-[34] .debug_loc compressed -> .zdebug_loc (3550 => 878 24.73%)
-[35] .debug_ranges compressed -> .zdebug_ranges (608 => 174 28.62%)
-[38] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/raw2dyna to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/raw2dyna.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/dmg2john
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/dmg2john
-[29] .debug_aranges compressed -> .zdebug_aranges (368 => 125 33.97%)
-[30] .debug_info compressed -> .zdebug_info (16304 => 7190 44.10%)
-[31] .debug_abbrev compressed -> .zdebug_abbrev (2228 => 734 32.94%)
-[32] .debug_line compressed -> .zdebug_line (12669 => 3798 29.98%)
-[33] .debug_str compressed -> .zdebug_str (3322 => 1391 41.87%)
-[34] .debug_loc compressed -> .zdebug_loc (24150 => 5043 20.88%)
-[35] .debug_ranges compressed -> .zdebug_ranges (4144 => 776 18.73%)
-[38] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/dmg2john to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/dmg2john.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/putty2john
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/putty2john
-[29] .debug_aranges compressed -> .zdebug_aranges (368 => 125 33.97%)
-[30] .debug_info compressed -> .zdebug_info (12415 => 5770 46.48%)
-[31] .debug_abbrev compressed -> .zdebug_abbrev (2301 => 767 33.33%)
-[32] .debug_line compressed -> .zdebug_line (9630 => 3379 35.09%)
-[33] .debug_str compressed -> .zdebug_str (2813 => 1181 41.98%)
-[34] .debug_loc compressed -> .zdebug_loc (15429 => 3459 22.42%)
-[35] .debug_ranges compressed -> .zdebug_ranges (2528 => 549 21.72%)
-[38] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/putty2john to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/putty2john.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/uaf2john
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/uaf2john
-[30] .debug_aranges compressed -> .zdebug_aranges (368 => 124 33.70%)
-[31] .debug_info compressed -> .zdebug_info (14707 => 7877 53.56%)
-[32] .debug_abbrev compressed -> .zdebug_abbrev (2905 => 914 31.46%)
-[33] .debug_line compressed -> .zdebug_line (13251 => 4788 36.13%)
-[34] .debug_str compressed -> .zdebug_str (3852 => 1761 45.72%)
-[35] .debug_loc compressed -> .zdebug_loc (30563 => 6635 21.71%)
-[36] .debug_ranges compressed -> .zdebug_ranges (3600 => 698 19.39%)
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-sse2-non-omp
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-sse2-non-omp
+[29] .debug_aranges compressed -> .zdebug_aranges (22464 => 4790 21.32%)
+[30] .debug_info compressed -> .zdebug_info (4894382 => 2199429 44.94%)
+[31] .debug_abbrev compressed -> .zdebug_abbrev (465593 => 88162 18.94%)
+[32] .debug_line compressed -> .zdebug_line (3030682 => 819384 27.04%)
+[33] .debug_str compressed -> .zdebug_str (189938 => 53555 28.20%)
+[34] .debug_line_str compressed -> .zdebug_line_str (13321 => 3979 29.87%)
+[35] .debug_loclists compressed -> .zdebug_loclists (3334525 => 1298259 38.93%)
+[36] .debug_rnglists compressed -> .zdebug_rnglists (582266 => 329080 56.52%)
 [39] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/uaf2john to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/uaf2john.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/wpapcap2john
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/wpapcap2john
-[30] .debug_aranges compressed -> .zdebug_aranges (368 => 126 34.24%)
-[31] .debug_info compressed -> .zdebug_info (54346 => 23772 43.74%)
-[32] .debug_abbrev compressed -> .zdebug_abbrev (2780 => 883 31.76%)
-[33] .debug_line compressed -> .zdebug_line (40563 => 15511 38.24%)
-[34] .debug_str compressed -> .zdebug_str (5159 => 2213 42.90%)
-[35] .debug_loc compressed -> .zdebug_loc (87013 => 17666 20.30%)
-[36] .debug_ranges compressed -> .zdebug_ranges (25072 => 4546 18.13%)
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-sse2-non-omp to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/john-sse2-non-omp.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/dmg2john
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/dmg2john
+[29] .debug_aranges compressed -> .zdebug_aranges (400 => 132 33.00%)
+[30] .debug_info compressed -> .zdebug_info (17481 => 7803 44.64%)
+[31] .debug_abbrev compressed -> .zdebug_abbrev (2536 => 909 35.84%)
+[32] .debug_line compressed -> .zdebug_line (12290 => 3623 29.48%)
+[33] .debug_str compressed -> .zdebug_str (3804 => 1573 41.35%)
+[34] .debug_line_str compressed -> .zdebug_line_str (710 => 346 48.73%)
+[35] .debug_loclists compressed -> .zdebug_loclists (11105 => 4770 42.95%)
+[36] .debug_rnglists compressed -> .zdebug_rnglists (1196 => 711 59.45%)
 [39] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/wpapcap2john to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/wpapcap2john.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/SIPdump
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/SIPdump
-[29] .debug_aranges compressed -> .zdebug_aranges (320 => 111 34.69%)
-[30] .debug_info compressed -> .zdebug_info (21134 => 10571 50.02%)
-[31] .debug_abbrev compressed -> .zdebug_abbrev (1955 => 735 37.60%)
-[32] .debug_line compressed -> .zdebug_line (12756 => 5233 41.02%)
-[33] .debug_str compressed -> .zdebug_str (4708 => 2036 43.25%)
-[34] .debug_loc compressed -> .zdebug_loc (24978 => 5357 21.45%)
-[35] .debug_ranges compressed -> .zdebug_ranges (4320 => 880 20.37%)
-[38] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/SIPdump to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/SIPdump.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/vncpcap2john
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/vncpcap2john
-[29] .debug_aranges compressed -> .zdebug_aranges (320 => 110 34.38%)
-[30] .debug_info compressed -> .zdebug_info (8811 => 4592 52.12%)
-[31] .debug_abbrev compressed -> .zdebug_abbrev (1542 => 588 38.13%)
-[32] .debug_line compressed -> .zdebug_line (4900 => 1954 39.88%)
-[33] .debug_str compressed -> .zdebug_str (3118 => 1301 41.73%)
-[34] .debug_loc compressed -> .zdebug_loc (9971 => 2095 21.01%)
-[35] .debug_ranges compressed -> .zdebug_ranges (1792 => 412 22.99%)
-[38] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/vncpcap2john to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/vncpcap2john.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/eapmd5tojohn
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/eapmd5tojohn
-[29] .debug_aranges compressed -> .zdebug_aranges (320 => 113 35.31%)
-[30] .debug_info compressed -> .zdebug_info (10360 => 5456 52.66%)
-[31] .debug_abbrev compressed -> .zdebug_abbrev (1685 => 650 38.58%)
-[32] .debug_line compressed -> .zdebug_line (4412 => 2251 51.02%)
-[33] .debug_str compressed -> .zdebug_str (3460 => 1492 43.12%)
-[34] .debug_loc compressed -> .zdebug_loc (9667 => 2009 20.78%)
-[35] .debug_ranges compressed -> .zdebug_ranges (1440 => 330 22.92%)
-[38] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/eapmd5tojohn to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/eapmd5tojohn.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-xop
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-xop
-[29] .debug_aranges compressed -> .zdebug_aranges (22368 => 4793 21.43%)
-[30] .debug_info compressed -> .zdebug_info (4927500 => 2228562 45.23%)
-[31] .debug_abbrev compressed -> .zdebug_abbrev (450969 => 61137 13.56%)
-[32] .debug_line compressed -> .zdebug_line (3523969 => 876526 24.87%)
-[33] .debug_str compressed -> .zdebug_str (201293 => 57630 28.63%)
-[34] .debug_loc compressed -> .zdebug_loc (7049222 => 1392967 19.76%)
-[35] .debug_ranges compressed -> .zdebug_ranges (1844416 => 285663 15.49%)
-[38] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-xop to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/john-xop.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-xop-non-omp
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-xop-non-omp
-[28] .debug_aranges compressed -> .zdebug_aranges (22368 => 4782 21.38%)
-[29] .debug_info compressed -> .zdebug_info (4854166 => 2187529 45.06%)
-[30] .debug_abbrev compressed -> .zdebug_abbrev (433823 => 59101 13.62%)
-[31] .debug_line compressed -> .zdebug_line (3497621 => 869204 24.85%)
-[32] .debug_str compressed -> .zdebug_str (200051 => 57301 28.64%)
-[33] .debug_loc compressed -> .zdebug_loc (6952727 => 1377609 19.81%)
-[34] .debug_ranges compressed -> .zdebug_ranges (1852096 => 286650 15.48%)
-[37] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-xop-non-omp to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/john-xop-non-omp.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-avx
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-avx
-[29] .debug_aranges compressed -> .zdebug_aranges (22368 => 4782 21.38%)
-[30] .debug_info compressed -> .zdebug_info (5124932 => 2299183 44.86%)
-[31] .debug_abbrev compressed -> .zdebug_abbrev (450525 => 61110 13.56%)
-[32] .debug_line compressed -> .zdebug_line (3411991 => 865807 25.38%)
-[33] .debug_str compressed -> .zdebug_str (201834 => 57814 28.64%)
-[34] .debug_loc compressed -> .zdebug_loc (7150369 => 1400290 19.58%)
-[35] .debug_ranges compressed -> .zdebug_ranges (1972384 => 298764 15.15%)
-[38] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-avx to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/john-avx.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-avx-non-omp
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-avx-non-omp
-[28] .debug_aranges compressed -> .zdebug_aranges (22368 => 4774 21.34%)
-[29] .debug_info compressed -> .zdebug_info (5050163 => 2255230 44.66%)
-[30] .debug_abbrev compressed -> .zdebug_abbrev (433161 => 58913 13.60%)
-[31] .debug_line compressed -> .zdebug_line (3386551 => 858941 25.36%)
-[32] .debug_str compressed -> .zdebug_str (200592 => 57493 28.66%)
-[33] .debug_loc compressed -> .zdebug_loc (7047113 => 1382002 19.61%)
-[34] .debug_ranges compressed -> .zdebug_ranges (1979392 => 300097 15.16%)
-[37] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-avx-non-omp to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/john-avx-non-omp.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-sse4
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-sse4
-[29] .debug_aranges compressed -> .zdebug_aranges (22368 => 4787 21.40%)
-[30] .debug_info compressed -> .zdebug_info (5054006 => 2271046 44.94%)
-[31] .debug_abbrev compressed -> .zdebug_abbrev (450483 => 61065 13.56%)
-[32] .debug_line compressed -> .zdebug_line (3422614 => 878681 25.67%)
-[33] .debug_str compressed -> .zdebug_str (201793 => 57816 28.65%)
-[34] .debug_loc compressed -> .zdebug_loc (6981954 => 1379612 19.76%)
-[35] .debug_ranges compressed -> .zdebug_ranges (2107008 => 324282 15.39%)
-[38] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-sse4 to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/john-sse4.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-sse4-non-omp
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-sse4-non-omp
-[28] .debug_aranges compressed -> .zdebug_aranges (22368 => 4767 21.31%)
-[29] .debug_info compressed -> .zdebug_info (4742463 => 2131815 44.95%)
-[30] .debug_abbrev compressed -> .zdebug_abbrev (432344 => 58746 13.59%)
-[31] .debug_line compressed -> .zdebug_line (3245763 => 852324 26.26%)
-[32] .debug_str compressed -> .zdebug_str (197581 => 55749 28.22%)
-[33] .debug_loc compressed -> .zdebug_loc (6637674 => 1323917 19.95%)
-[34] .debug_ranges compressed -> .zdebug_ranges (1899392 => 297841 15.68%)
-[37] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-sse4-non-omp to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/john-sse4-non-omp.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-sse2
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-sse2
-[29] .debug_aranges compressed -> .zdebug_aranges (22272 => 4770 21.42%)
-[30] .debug_info compressed -> .zdebug_info (5032852 => 2261463 44.93%)
-[31] .debug_abbrev compressed -> .zdebug_abbrev (447996 => 60638 13.54%)
-[32] .debug_line compressed -> .zdebug_line (3401037 => 873139 25.67%)
-[33] .debug_str compressed -> .zdebug_str (201288 => 57614 28.62%)
-[34] .debug_loc compressed -> .zdebug_loc (6985515 => 1381562 19.78%)
-[35] .debug_ranges compressed -> .zdebug_ranges (2103024 => 324317 15.42%)
-[38] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-sse2 to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/john-sse2.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-non-omp
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-non-omp
-[28] .debug_aranges compressed -> .zdebug_aranges (22368 => 4783 21.38%)
-[29] .debug_info compressed -> .zdebug_info (5059384 => 2260413 44.68%)
-[30] .debug_abbrev compressed -> .zdebug_abbrev (433724 => 59093 13.62%)
-[31] .debug_line compressed -> .zdebug_line (3409988 => 866922 25.42%)
-[32] .debug_str compressed -> .zdebug_str (201025 => 57653 28.68%)
-[33] .debug_loc compressed -> .zdebug_loc (7013356 => 1379861 19.67%)
-[34] .debug_ranges compressed -> .zdebug_ranges (1942736 => 295412 15.21%)
-[37] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-non-omp to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/john-non-omp.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-sse2-non-omp
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-sse2-non-omp
-[28] .debug_aranges compressed -> .zdebug_aranges (22272 => 4751 21.33%)
-[29] .debug_info compressed -> .zdebug_info (4721723 => 2121776 44.94%)
-[30] .debug_abbrev compressed -> .zdebug_abbrev (429933 => 58282 13.56%)
-[31] .debug_line compressed -> .zdebug_line (3224761 => 846467 26.25%)
-[32] .debug_str compressed -> .zdebug_str (197076 => 55569 28.20%)
-[33] .debug_loc compressed -> .zdebug_loc (6642881 => 1326210 19.96%)
-[34] .debug_ranges compressed -> .zdebug_ranges (1894448 => 297720 15.72%)
-[37] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john-sse2-non-omp to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/john-sse2-non-omp.debug
-compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john
-processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john
-[29] .debug_aranges compressed -> .zdebug_aranges (22368 => 4777 21.36%)
-[30] .debug_info compressed -> .zdebug_info (5134096 => 2303147 44.86%)
-[31] .debug_abbrev compressed -> .zdebug_abbrev (450855 => 61022 13.53%)
-[32] .debug_line compressed -> .zdebug_line (3435232 => 873005 25.41%)
-[33] .debug_str compressed -> .zdebug_str (202267 => 57973 28.66%)
-[34] .debug_loc compressed -> .zdebug_loc (7112808 => 1397435 19.65%)
-[35] .debug_ranges compressed -> .zdebug_ranges (1935376 => 294308 15.21%)
-[38] Updating section string table
-stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/bin/john to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-S0uy2V/files/lib/debug/bin/john.debug
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/dmg2john to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/dmg2john.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/cprepair
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/cprepair
+[30] .debug_aranges compressed -> .zdebug_aranges (288 => 99 34.38%)
+[31] .debug_info compressed -> .zdebug_info (1765 => 1023 57.96%)
+[32] .debug_abbrev compressed -> .zdebug_abbrev (671 => 328 48.88%)
+[33] .debug_line compressed -> .zdebug_line (647 => 336 51.93%)
+[34] .debug_str compressed -> .zdebug_str (1557 => 615 39.50%)
+[35] .debug_line_str compressed -> .zdebug_line_str (346 => 221 63.87%)
+[36] .debug_loclists compressed -> .zdebug_loclists (131 => 113 86.26%)
+[37] .debug_rnglists compressed -> .zdebug_rnglists (66 => 56 84.85%)
+[40] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/cprepair to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/cprepair.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/racf2john
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/racf2john
+[29] .debug_aranges compressed -> .zdebug_aranges (384 => 125 32.55%)
+[30] .debug_info compressed -> .zdebug_info (8596 => 4481 52.13%)
+[31] .debug_abbrev compressed -> .zdebug_abbrev (2295 => 835 36.38%)
+[32] .debug_line compressed -> .zdebug_line (4551 => 1926 42.32%)
+[33] .debug_str compressed -> .zdebug_str (3099 => 1276 41.17%)
+[34] .debug_line_str compressed -> .zdebug_line_str (682 => 335 49.12%)
+[35] .debug_loclists compressed -> .zdebug_loclists (4180 => 2021 48.35%)
+[36] .debug_rnglists compressed -> .zdebug_rnglists (429 => 272 63.40%)
+[39] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/racf2john to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/racf2john.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-xop
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-xop
+[30] .debug_aranges compressed -> .zdebug_aranges (22464 => 4789 21.32%)
+[31] .debug_info compressed -> .zdebug_info (5064444 => 2286320 45.14%)
+[32] .debug_abbrev compressed -> .zdebug_abbrev (484599 => 91993 18.98%)
+[33] .debug_line compressed -> .zdebug_line (3304585 => 844609 25.56%)
+[34] .debug_str compressed -> .zdebug_str (193711 => 55484 28.64%)
+[35] .debug_line_str compressed -> .zdebug_line_str (13374 => 3995 29.87%)
+[36] .debug_loclists compressed -> .zdebug_loclists (3438365 => 1350668 39.28%)
+[37] .debug_rnglists compressed -> .zdebug_rnglists (554342 => 314521 56.74%)
+[40] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-xop to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/john-xop.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-avx-non-omp
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-avx-non-omp
+[29] .debug_aranges compressed -> .zdebug_aranges (22464 => 4786 21.31%)
+[30] .debug_info compressed -> .zdebug_info (5182711 => 2314036 44.65%)
+[31] .debug_abbrev compressed -> .zdebug_abbrev (466510 => 88342 18.94%)
+[32] .debug_line compressed -> .zdebug_line (3163896 => 828065 26.17%)
+[33] .debug_str compressed -> .zdebug_str (193018 => 55308 28.65%)
+[34] .debug_line_str compressed -> .zdebug_line_str (13354 => 3987 29.86%)
+[35] .debug_loclists compressed -> .zdebug_loclists (3451252 => 1344297 38.95%)
+[36] .debug_rnglists compressed -> .zdebug_rnglists (588584 => 329103 55.91%)
+[39] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-avx-non-omp to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/john-avx-non-omp.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-avx
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-avx
+[30] .debug_aranges compressed -> .zdebug_aranges (22464 => 4788 21.31%)
+[31] .debug_info compressed -> .zdebug_info (5257531 => 2356327 44.82%)
+[32] .debug_abbrev compressed -> .zdebug_abbrev (484227 => 91929 18.98%)
+[33] .debug_line compressed -> .zdebug_line (3192320 => 834428 26.14%)
+[34] .debug_str compressed -> .zdebug_str (194252 => 55639 28.64%)
+[35] .debug_line_str compressed -> .zdebug_line_str (13360 => 3988 29.85%)
+[36] .debug_loclists compressed -> .zdebug_loclists (3474138 => 1357182 39.07%)
+[37] .debug_rnglists compressed -> .zdebug_rnglists (586384 => 327568 55.86%)
+[40] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-avx to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/john-avx.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/calc_stat
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/calc_stat
+[29] .debug_aranges compressed -> .zdebug_aranges (336 => 112 33.33%)
+[30] .debug_info compressed -> .zdebug_info (5163 => 2598 50.32%)
+[31] .debug_abbrev compressed -> .zdebug_abbrev (1336 => 555 41.54%)
+[32] .debug_line compressed -> .zdebug_line (3024 => 1352 44.71%)
+[33] .debug_str compressed -> .zdebug_str (2399 => 953 39.72%)
+[34] .debug_line_str compressed -> .zdebug_line_str (581 => 295 50.77%)
+[35] .debug_loclists compressed -> .zdebug_loclists (1287 => 684 53.15%)
+[36] .debug_rnglists compressed -> .zdebug_rnglists (247 => 188 76.11%)
+[39] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/calc_stat to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/calc_stat.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/mkvcalcproba
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/mkvcalcproba
+[29] .debug_aranges compressed -> .zdebug_aranges (336 => 113 33.63%)
+[30] .debug_info compressed -> .zdebug_info (5548 => 2759 49.73%)
+[31] .debug_abbrev compressed -> .zdebug_abbrev (1342 => 576 42.92%)
+[32] .debug_line compressed -> .zdebug_line (2366 => 1214 51.31%)
+[33] .debug_str compressed -> .zdebug_str (2436 => 962 39.49%)
+[34] .debug_line_str compressed -> .zdebug_line_str (592 => 302 51.01%)
+[35] .debug_loclists compressed -> .zdebug_loclists (1264 => 644 50.95%)
+[36] .debug_rnglists compressed -> .zdebug_rnglists (144 => 105 72.92%)
+[39] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/mkvcalcproba to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/mkvcalcproba.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/vncpcap2john
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/vncpcap2john
+[29] .debug_aranges compressed -> .zdebug_aranges (352 => 118 33.52%)
+[30] .debug_info compressed -> .zdebug_info (10102 => 5247 51.94%)
+[31] .debug_abbrev compressed -> .zdebug_abbrev (1879 => 747 39.76%)
+[32] .debug_line compressed -> .zdebug_line (4527 => 1794 39.63%)
+[33] .debug_str compressed -> .zdebug_str (3165 => 1302 41.14%)
+[34] .debug_line_str compressed -> .zdebug_line_str (783 => 368 47.00%)
+[35] .debug_loclists compressed -> .zdebug_loclists (4657 => 2094 44.96%)
+[36] .debug_rnglists compressed -> .zdebug_rnglists (605 => 389 64.30%)
+[39] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/vncpcap2john to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/vncpcap2john.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/eapmd5tojohn
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/eapmd5tojohn
+[29] .debug_aranges compressed -> .zdebug_aranges (352 => 118 33.52%)
+[30] .debug_info compressed -> .zdebug_info (11522 => 6091 52.86%)
+[31] .debug_abbrev compressed -> .zdebug_abbrev (2052 => 815 39.72%)
+[32] .debug_line compressed -> .zdebug_line (4060 => 2069 50.96%)
+[33] .debug_str compressed -> .zdebug_str (3539 => 1503 42.47%)
+[34] .debug_line_str compressed -> .zdebug_line_str (756 => 364 48.15%)
+[35] .debug_loclists compressed -> .zdebug_loclists (4235 => 2015 47.58%)
+[36] .debug_rnglists compressed -> .zdebug_rnglists (449 => 261 58.13%)
+[39] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/eapmd5tojohn to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/eapmd5tojohn.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-xop-non-omp
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-xop-non-omp
+[29] .debug_aranges compressed -> .zdebug_aranges (22464 => 4781 21.28%)
+[30] .debug_info compressed -> .zdebug_info (4990951 => 2246550 45.01%)
+[31] .debug_abbrev compressed -> .zdebug_abbrev (467073 => 88445 18.94%)
+[32] .debug_line compressed -> .zdebug_line (3275449 => 838464 25.60%)
+[33] .debug_str compressed -> .zdebug_str (192477 => 55114 28.63%)
+[34] .debug_line_str compressed -> .zdebug_line_str (13368 => 3993 29.87%)
+[35] .debug_loclists compressed -> .zdebug_loclists (3417367 => 1339039 39.18%)
+[36] .debug_rnglists compressed -> .zdebug_rnglists (556357 => 315811 56.76%)
+[39] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-xop-non-omp to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/john-xop-non-omp.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/putty2john
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/putty2john
+[29] .debug_aranges compressed -> .zdebug_aranges (400 => 130 32.50%)
+[30] .debug_info compressed -> .zdebug_info (13958 => 6583 47.16%)
+[31] .debug_abbrev compressed -> .zdebug_abbrev (2701 => 974 36.06%)
+[32] .debug_line compressed -> .zdebug_line (8974 => 3180 35.44%)
+[33] .debug_str compressed -> .zdebug_str (3344 => 1382 41.33%)
+[34] .debug_line_str compressed -> .zdebug_line_str (625 => 317 50.72%)
+[35] .debug_loclists compressed -> .zdebug_loclists (6864 => 3385 49.32%)
+[36] .debug_rnglists compressed -> .zdebug_rnglists (769 => 549 71.39%)
+[39] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/putty2john to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/putty2john.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john
+[30] .debug_aranges compressed -> .zdebug_aranges (22464 => 4797 21.35%)
+[31] .debug_info compressed -> .zdebug_info (5267072 => 2360254 44.81%)
+[32] .debug_abbrev compressed -> .zdebug_abbrev (484541 => 92036 18.99%)
+[33] .debug_line compressed -> .zdebug_line (3214140 => 841760 26.19%)
+[34] .debug_str compressed -> .zdebug_str (194685 => 55810 28.67%)
+[35] .debug_line_str compressed -> .zdebug_line_str (13385 => 3998 29.87%)
+[36] .debug_loclists compressed -> .zdebug_loclists (3458114 => 1354507 39.17%)
+[37] .debug_rnglists compressed -> .zdebug_rnglists (575524 => 323580 56.22%)
+[40] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/john.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-sse4
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-sse4
+[30] .debug_aranges compressed -> .zdebug_aranges (22464 => 4796 21.35%)
+[31] .debug_info compressed -> .zdebug_info (5186384 => 2328884 44.90%)
+[32] .debug_abbrev compressed -> .zdebug_abbrev (484197 => 91962 18.99%)
+[33] .debug_line compressed -> .zdebug_line (3202524 => 844806 26.38%)
+[34] .debug_str compressed -> .zdebug_str (194211 => 55635 28.65%)
+[35] .debug_line_str compressed -> .zdebug_line_str (13360 => 3988 29.85%)
+[36] .debug_loclists compressed -> .zdebug_loclists (3411269 => 1336253 39.17%)
+[37] .debug_rnglists compressed -> .zdebug_rnglists (633940 => 357615 56.41%)
+[40] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-sse4 to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/john-sse4.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-sse2
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-sse2
+[30] .debug_aranges compressed -> .zdebug_aranges (22464 => 4793 21.34%)
+[31] .debug_info compressed -> .zdebug_info (5205882 => 2337361 44.90%)
+[32] .debug_abbrev compressed -> .zdebug_abbrev (484108 => 91978 19.00%)
+[33] .debug_line compressed -> .zdebug_line (3204766 => 844335 26.35%)
+[34] .debug_str compressed -> .zdebug_str (194126 => 55586 28.63%)
+[35] .debug_line_str compressed -> .zdebug_line_str (13336 => 3983 29.87%)
+[36] .debug_loclists compressed -> .zdebug_loclists (3441276 => 1344864 39.08%)
+[37] .debug_rnglists compressed -> .zdebug_rnglists (640390 => 357830 55.88%)
+[40] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-sse2 to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/john-sse2.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/hccap2john
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/hccap2john
+[29] .debug_aranges compressed -> .zdebug_aranges (448 => 144 32.14%)
+[30] .debug_info compressed -> .zdebug_info (13886 => 6668 48.02%)
+[31] .debug_abbrev compressed -> .zdebug_abbrev (3016 => 999 33.12%)
+[32] .debug_line compressed -> .zdebug_line (8361 => 3040 36.36%)
+[33] .debug_str compressed -> .zdebug_str (3456 => 1421 41.12%)
+[34] .debug_line_str compressed -> .zdebug_line_str (699 => 341 48.78%)
+[35] .debug_loclists compressed -> .zdebug_loclists (6218 => 2877 46.27%)
+[36] .debug_rnglists compressed -> .zdebug_rnglists (642 => 404 62.93%)
+[39] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/hccap2john to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/hccap2john.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/uaf2john
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/uaf2john
+[30] .debug_aranges compressed -> .zdebug_aranges (400 => 130 32.50%)
+[31] .debug_info compressed -> .zdebug_info (16359 => 8683 53.08%)
+[32] .debug_abbrev compressed -> .zdebug_abbrev (3324 => 1171 35.23%)
+[33] .debug_line compressed -> .zdebug_line (12126 => 4528 37.34%)
+[34] .debug_str compressed -> .zdebug_str (4379 => 1941 44.33%)
+[35] .debug_line_str compressed -> .zdebug_line_str (662 => 333 50.30%)
+[36] .debug_loclists compressed -> .zdebug_loclists (12945 => 6292 48.61%)
+[37] .debug_rnglists compressed -> .zdebug_rnglists (1036 => 681 65.73%)
+[40] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/uaf2john to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/uaf2john.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-non-omp
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-non-omp
+[29] .debug_aranges compressed -> .zdebug_aranges (22464 => 4796 21.35%)
+[30] .debug_info compressed -> .zdebug_info (5193328 => 2319192 44.66%)
+[31] .debug_abbrev compressed -> .zdebug_abbrev (466971 => 88362 18.92%)
+[32] .debug_line compressed -> .zdebug_line (3185634 => 836563 26.26%)
+[33] .debug_str compressed -> .zdebug_str (193451 => 55473 28.68%)
+[34] .debug_line_str compressed -> .zdebug_line_str (13379 => 4000 29.90%)
+[35] .debug_loclists compressed -> .zdebug_loclists (3438658 => 1343138 39.06%)
+[36] .debug_rnglists compressed -> .zdebug_rnglists (577111 => 324752 56.27%)
+[39] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-non-omp to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/john-non-omp.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/raw2dyna
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/raw2dyna
+[29] .debug_aranges compressed -> .zdebug_aranges (352 => 119 33.81%)
+[30] .debug_info compressed -> .zdebug_info (6398 => 3204 50.08%)
+[31] .debug_abbrev compressed -> .zdebug_abbrev (1527 => 634 41.52%)
+[32] .debug_line compressed -> .zdebug_line (3520 => 1580 44.89%)
+[33] .debug_str compressed -> .zdebug_str (2641 => 1072 40.59%)
+[34] .debug_line_str compressed -> .zdebug_line_str (607 => 310 51.07%)
+[35] .debug_loclists compressed -> .zdebug_loclists (1664 => 854 51.32%)
+[36] .debug_rnglists compressed -> .zdebug_rnglists (252 => 172 68.25%)
+[39] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/raw2dyna to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/raw2dyna.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/SIPdump
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/SIPdump
+[29] .debug_aranges compressed -> .zdebug_aranges (352 => 117 33.24%)
+[30] .debug_info compressed -> .zdebug_info (23846 => 11698 49.06%)
+[31] .debug_abbrev compressed -> .zdebug_abbrev (2396 => 934 38.98%)
+[32] .debug_line compressed -> .zdebug_line (12393 => 5046 40.72%)
+[33] .debug_str compressed -> .zdebug_str (4857 => 2068 42.58%)
+[34] .debug_line_str compressed -> .zdebug_line_str (820 => 397 48.41%)
+[35] .debug_loclists compressed -> .zdebug_loclists (11417 => 5216 45.69%)
+[36] .debug_rnglists compressed -> .zdebug_rnglists (1383 => 774 55.97%)
+[39] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/SIPdump to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/SIPdump.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-sse4-non-omp
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-sse4-non-omp
+[29] .debug_aranges compressed -> .zdebug_aranges (22464 => 4780 21.28%)
+[30] .debug_info compressed -> .zdebug_info (4874926 => 2191963 44.96%)
+[31] .debug_abbrev compressed -> .zdebug_abbrev (465673 => 88160 18.93%)
+[32] .debug_line compressed -> .zdebug_line (3028546 => 819923 27.07%)
+[33] .debug_str compressed -> .zdebug_str (190023 => 53593 28.20%)
+[34] .debug_line_str compressed -> .zdebug_line_str (13345 => 3985 29.86%)
+[35] .debug_loclists compressed -> .zdebug_loclists (3303962 => 1289279 39.02%)
+[36] .debug_rnglists compressed -> .zdebug_rnglists (576066 => 328916 57.10%)
+[39] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/john-sse4-non-omp to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/john-sse4-non-omp.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/tgtsnarf
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/tgtsnarf
+[29] .debug_aranges compressed -> .zdebug_aranges (352 => 119 33.81%)
+[30] .debug_info compressed -> .zdebug_info (9458 => 5072 53.63%)
+[31] .debug_abbrev compressed -> .zdebug_abbrev (1987 => 790 39.76%)
+[32] .debug_line compressed -> .zdebug_line (3210 => 1478 46.04%)
+[33] .debug_str compressed -> .zdebug_str (3433 => 1437 41.86%)
+[34] .debug_line_str compressed -> .zdebug_line_str (776 => 365 47.04%)
+[35] .debug_loclists compressed -> .zdebug_loclists (3641 => 1651 45.34%)
+[36] .debug_rnglists compressed -> .zdebug_rnglists (469 => 254 54.16%)
+[39] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/tgtsnarf to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/tgtsnarf.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/keepass2john
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/keepass2john
+[29] .debug_aranges compressed -> .zdebug_aranges (640 => 188 29.37%)
+[30] .debug_info compressed -> .zdebug_info (65512 => 31688 48.37%)
+[31] .debug_abbrev compressed -> .zdebug_abbrev (8169 => 2243 27.46%)
+[32] .debug_line compressed -> .zdebug_line (34611 => 14570 42.10%)
+[33] .debug_str compressed -> .zdebug_str (7475 => 2981 39.88%)
+[34] .debug_line_str compressed -> .zdebug_line_str (887 => 423 47.69%)
+[35] .debug_loclists compressed -> .zdebug_loclists (60617 => 24342 40.16%)
+[36] .debug_rnglists compressed -> .zdebug_rnglists (3058 => 2237 73.15%)
+[39] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/keepass2john to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/keepass2john.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/genmkvpwd
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/genmkvpwd
+[29] .debug_aranges compressed -> .zdebug_aranges (592 => 180 30.41%)
+[30] .debug_info compressed -> .zdebug_info (38080 => 17925 47.07%)
+[31] .debug_abbrev compressed -> .zdebug_abbrev (6095 => 1700 27.89%)
+[32] .debug_line compressed -> .zdebug_line (35579 => 11534 32.42%)
+[33] .debug_str compressed -> .zdebug_str (4827 => 2010 41.64%)
+[34] .debug_line_str compressed -> .zdebug_line_str (768 => 371 48.31%)
+[35] .debug_loclists compressed -> .zdebug_loclists (29333 => 14650 49.94%)
+[36] .debug_rnglists compressed -> .zdebug_rnglists (2599 => 2060 79.26%)
+[39] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/genmkvpwd to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/genmkvpwd.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/bitlocker2john
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/bitlocker2john
+[29] .debug_aranges compressed -> .zdebug_aranges (592 => 177 29.90%)
+[30] .debug_info compressed -> .zdebug_info (59516 => 27937 46.94%)
+[31] .debug_abbrev compressed -> .zdebug_abbrev (7044 => 1985 28.18%)
+[32] .debug_line compressed -> .zdebug_line (28367 => 12115 42.71%)
+[33] .debug_str compressed -> .zdebug_str (6147 => 2473 40.23%)
+[34] .debug_line_str compressed -> .zdebug_line_str (812 => 395 48.65%)
+[35] .debug_loclists compressed -> .zdebug_loclists (37284 => 17220 46.19%)
+[36] .debug_rnglists compressed -> .zdebug_rnglists (3271 => 2211 67.59%)
+[39] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/bitlocker2john to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/bitlocker2john.debug
+compressing debuginfo in: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/wpapcap2john
+processing: /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/wpapcap2john
+[30] .debug_aranges compressed -> .zdebug_aranges (400 => 131 32.75%)
+[31] .debug_info compressed -> .zdebug_info (54859 => 24007 43.76%)
+[32] .debug_abbrev compressed -> .zdebug_abbrev (3130 => 1107 35.37%)
+[33] .debug_line compressed -> .zdebug_line (39343 => 15088 38.35%)
+[34] .debug_str compressed -> .zdebug_str (5583 => 2358 42.24%)
+[35] .debug_line_str compressed -> .zdebug_line_str (641 => 322 50.23%)
+[36] .debug_loclists compressed -> .zdebug_loclists (42712 => 16710 39.12%)
+[37] .debug_rnglists compressed -> .zdebug_rnglists (7399 => 4183 56.53%)
+[40] Updating section string table
+stripping /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/bin/wpapcap2john to /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/rofiles/rofiles-wk73C5/files/lib/debug/bin/wpapcap2john.debug
 Committing stage build-john to cache
 Cleaning up
 Removing files/lib/libpcap.a
@@ -4784,27 +4698,27 @@ Exporting share/icons/hicolor/128x128/apps/com.openwall.John.png
 Please review the exported files and the metadata
 Committing stage finish to cache
 Exporting com.openwall.John to repo
-Commit: 301d9340ebf3d722c3e53cc4021c7351adc49e14db7b20f43757393d1020b811
+Commit: 584c26ca5d35ee536dd207099476337258e07bb414c6e46bc95d5db4bfefc6d3
 Metadata Total: 103
 Metadata Written: 44
-Content Total: 598
-Content Written: 582
-Content Bytes Written: 136192538 (136.2?MB)
+Content Total: 599
+Content Written: 583
+Content Bytes Written: 136307253 (136.3?MB)
 Exporting com.openwall.John.Debug to repo
-Commit: d112cdb9a06b325ef94db2df23ddaa455052e120234805de9a5c5232e3fcf154
+Commit: d6baca1292193455b9fda4fd02010a086767c1671daf24c357d32e9e7dabfe6f
 Metadata Total: 35
 Metadata Written: 18
-Content Total: 824
-Content Written: 824
-Content Bytes Written: 66287121 (66.3?MB)
+Content Total: 835
+Content Written: 835
+Content Bytes Written: 66869252 (66.9?MB)
 Pruning cache
 [32;1m$ flatpak build-bundle repo john.flatpak com.openwall.John[0;m
 [32;1m$ cp john.flatpak "$CI_PROJECT_DIR"[0;m
 [32;1m$ sha256sum john.flatpak[0;m
-21135c3974cd38d829d16c31293445fe870449e2c08ad6fc9545b4441d552984  john.flatpak
-section_end:1652466345:step_script[0Ksection_start:1652466345:upload_artifacts_on_success[0K[0K[36;1mUploading artifacts for successful job[0;m[0;m
+4306f62273a46c0c3582263f721c2fcce1a9250858f85b68d09c82006751a3af  john.flatpak
+section_end:1664635613:step_script[0Ksection_start:1664635613:upload_artifacts_on_success[0K[0K[36;1mUploading artifacts for successful job[0;m[0;m
 [32;1mUploading artifacts...[0;m
 john.flatpak: found 1 matching files and directories[0;m 
-Uploading artifacts as "archive" to coordinator... 201 Created[0;m  id[0;m=2454796001 responseStatus[0;m=201 Created token[0;m=CxEqqQ_E
-section_end:1652466352:upload_artifacts_on_success[0Ksection_start:1652466352:cleanup_file_variables[0K[0K[36;1mCleaning up project directory and file based variables[0;m[0;m
-section_end:1652466352:cleanup_file_variables[0K[32;1mJob succeeded[0;m
+Uploading artifacts as "archive" to coordinator... 201 Created[0;m  id[0;m=3113914408 responseStatus[0;m=201 Created token[0;m=gtU3TdtV
+section_end:1664635620:upload_artifacts_on_success[0Ksection_start:1664635620:cleanup_file_variables[0K[0K[36;1mCleaning up project directory and file based variables[0;m[0;m
+section_end:1664635620:cleanup_file_variables[0K[32;1mJob succeeded[0;m

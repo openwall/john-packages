@@ -29,19 +29,28 @@ OTHER_NO_OPENMP="$SYSTEM_WIDE --disable-openmp"
 git clone --depth 10 https://github.com/openwall/john.git tmp
 cp -r tmp/. .
 
-# Uncomment for a release
-# _JUMBO_RELEASE="52a9bedb58ecc2685518523549ff699a07d3abb9" #TODO: JUMBO_RELEASE
-
-# Make it a reproducible build
-if [[ -n "$_JUMBO_RELEASE" ]]; then
-    git checkout "$_JUMBO_RELEASE"
-fi
-
 # We are in packages folder, change to JtR folder
 cd src
 
+# Uncomment for a release
+#_JUMBO_RELEASE="8998390b651f4a7e744758a1c41eb3068dc5084f"
+
+# Make it a reproducible build
+if [[ -n "$_JUMBO_RELEASE" ]]; then
+    echo "Deploying the release $_JUMBO_RELEASE"
+    git pull --unshallow
+    git checkout "$_JUMBO_RELEASE"
+fi
+
 wget https://raw.githubusercontent.com/openwall/john-packages/master/patches/0001-Handle-self-confined-system-wide-build.patch
 patch < 0001-Handle-self-confined-system-wide-build.patch
+
+wget https://raw.githubusercontent.com/claudioandre-br/JohnTheRipper/bleeding-jumbo/be.patch; _BE_TEST=$?
+
+if [[ "$_BE_TEST" == 0 ]]; then
+    echo "Applying a patch be.patch from claudioandre-br/JohnTheRipper/bleeding-jumbo"
+    git apply be.patch
+fi
 
 # Set package version
 git rev-parse --short HEAD 2>/dev/null > ../../../../My_VERSION.TXT
@@ -81,6 +90,8 @@ if [[ "$arch" == "x86_64" || "$arch" == "i686" ]]; then
         ./configure $X86_REGULAR   --enable-simd=avx512f  CPPFLAGS="-D_SNAP -D_BOXED -DOMP_FALLBACK -DOMP_FALLBACK_BINARY=\"\\\"john-avx512f-non-omp\\\"\" -DCPU_FALLBACK -DCPU_FALLBACK_BINARY=\"\\\"john-avx2\\\"\"" && do_build ../run/john-avx512f
         ./configure $X86_NO_OPENMP --enable-simd=avx512bw CPPFLAGS="-D_SNAP -D_BOXED" && do_build ../run/john-avx512bw-non-omp
         ./configure $X86_REGULAR   --enable-simd=avx512bw CPPFLAGS="-D_SNAP -D_BOXED -DOMP_FALLBACK -DOMP_FALLBACK_BINARY=\"\\\"john-avx512bw-non-omp\\\"\" -DCPU_FALLBACK -DCPU_FALLBACK_BINARY=\"\\\"john-avx512f\\\"\"" && do_build
+    else
+        mv ../run/john-avx2 ../run/john
     fi
 
 else

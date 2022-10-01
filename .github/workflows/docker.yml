@@ -1,5 +1,5 @@
 ######################################################################
-# Copyright (c) 2021 Claudio André <claudioandre.br at gmail.com>
+# Copyright (c) 2021-2022 Claudio André <claudioandre.br at gmail.com>
 #
 # This program comes with ABSOLUTELY NO WARRANTY; express or implied.
 #
@@ -20,11 +20,11 @@ on:
       hash:
         description: 'The commit hash to be used'
         required: false
-        default: '52a9bedb58ecc2685518523549ff699a07d3abb9'
+        default: '8998390b651f4a7e744758a1c41eb3068dc5084f'
       VERSION:
         description: 'The software version'
         required: true
-        default: '1.9.01'  #TODO: edit before release (JUMBO_RELEASE)
+        default: '1.9.01'  #TODO: edit before release (JUMBO_RELEASE) 1.9.02210
       VERSION_NAME:
         description: 'The software version name'
         required: true
@@ -32,7 +32,7 @@ on:
       tag:
         description: 'The image tag'
         required: true
-        default: 'latest'  #TODO: edit before release (JUMBO_RELEASE)
+        default: 'latest'  #TODO: edit before release (JUMBO_RELEASE) rolling
 
 env:
   REPO: ghcr.io/${{ github.repository_owner }}/john

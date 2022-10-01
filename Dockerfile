@@ -1,5 +1,5 @@
 ######################################################################
-# Copyright (c) 2019-2021 Claudio André <claudioandre.br at gmail.com>
+# Copyright (c) 2019-2022 Claudio André <claudioandre.br at gmail.com>
 #
 # This program comes with ABSOLUTELY NO WARRANTY; express or implied.
 #
@@ -11,9 +11,9 @@
 
 # Jumbo 1 release (docker build [...] --build-arg release=true)
 ARG release=false
-ARG commit=52a9bedb58ecc2685518523549ff699a07d3abb9
+ARG commit=8998390b651f4a7e744758a1c41eb3068dc5084f
 
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 WORKDIR /build/
 
 RUN apt-get update -qq && \
@@ -48,7 +48,7 @@ RUN apt-get update -qq && \
     rm *.o && cd .. && rm -rf src .git .ci .circleci .editorconfig .gitattributes .github .gitignore .mailmap .pre-commit.sh .travis .travis.yml && rm -rf run/ztex
 
 FROM ubuntu:20.04
-LABEL maintainer Claudio André (c) 2017-2021
+LABEL maintainer Claudio André (c) 2017-2022
 
 ARG VERSION_NAME
 LABEL software "John the Ripper ${VERSION_NAME}"

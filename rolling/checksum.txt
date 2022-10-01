@@ -4,13 +4,13 @@
                             #### Windows ####
 Algorithm       Hash                                                                   Path
 ---------       ----                                                                   ----
-SHA256          E3BF94EEC394251E6524B2E6D7D038953B1ED6B0FE6B00EE77C0AF209D3936C5       C:\win_x64.7z
+SHA256          139891077A31CFD46EC6F222F429A092907A2C2C7DC26E3EC0407A46A2D7C734       C:\win_x64.7z
 
                          #### Flatpak (sha256sum) ###
 $ sha256sum john.flatpak
-21135c3974cd38d829d16c31293445fe870449e2c08ad6fc9545b4441d552984  john.flatpak
+4306f62273a46c0c3582263f721c2fcce1a9250858f85b68d09c82006751a3af  john.flatpak
 
 
                            #### Docker Image ####
-Digest: sha256:f307a2f3a3f9c01dbdbe4382f9cdcf1fc173dc544103c407c9a8c96915a8d451
+Digest: sha256:9300e6e6433ce2313d96fcbd8c6957f778703ce260f9d4e087b921b0840d94ad
 
