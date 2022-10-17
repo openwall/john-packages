@@ -47,7 +47,7 @@ RUN apt-get update -qq && \
     # Clean the image
     rm *.o && cd .. && rm -rf src .git .ci .circleci .editorconfig .gitattributes .github .gitignore .mailmap .pre-commit.sh .travis .travis.yml && rm -rf run/ztex
 
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 LABEL maintainer Claudio André (c) 2017-2022
 
 ARG VERSION_NAME
