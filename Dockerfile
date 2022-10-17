@@ -75,7 +75,7 @@ RUN ln -s /usr/local/bin/docker-entrypoint.sh && \
     useradd -U -m JtR && \
     apt-get update -qq && \
     export DEBIAN_FRONTEND="noninteractive" && \
-    apt-get install -y libssl1.1 libgomp1 && \
+    apt-get install -y libssl3 libgomp1 && \
     # Clean the image
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/*
