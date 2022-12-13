@@ -172,8 +172,10 @@ Flatpak is available for the [most common Linux distributions](http://flatpak.or
 To install JtR download the john.flatpak file and run:
 
 ```bash
- dnf install -y flatpak # or 'yum install', 'apt-get install', etc.
- flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo # flatpak repository
+# Note that root privileges are required for some operations.
+ sudo dnf install -y flatpak # or 'yum install', 'apt-get install', etc.
+ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo # flatpak repository
+ sudo flatpak install -y flathub org.freedesktop.Platform//22.08 # install the runtime (base "container")
  flatpak --user install --bundle john.flatpak # per-user installation (not system wide)
 ```
 
@@ -203,39 +205,13 @@ it's running on.
 
 ### Flatpak Deployments
 
-If you followed the above instructions, you installed the rolling version of John
-the Ripper Jumbo 1+ in your system. If you want to access the hot and bleeding
-developing version of JtR, you must install a bundle.
+Using the above instructions you can install the rolling version of John
+the Ripper Jumbo 1+, the hot and bleeding version, or any previous stable
+version in your system.
 
 John the Ripper single-file flatpak bundle was built and tested on
 [GitLab](https://gitlab.com/claudioandre-br/JtR-CI/pipelines). You can get it
 [here](https://github.com/openwall/john-packages/releases).
-
-The necessary steps to install the package are listed below. They were tested on
-a clean Fedora 29 docker image, but they should work for every supported distro
-out there. Don't worry, it can't hurt your Linux environment.
-
-Install and configure flatpak itself:
-
-```bash
- dnf install -y flatpak # or 'yum install', 'apt-get install', etc.
- flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo # flatpak repository
- flatpak install -y flathub org.freedesktop.Platform//20.08 # install the runtime (base "container")
-```
-
-Navigate to where you downloaded the john.flatpak file. Now, let's install the
-software:
-
-```bash
- flatpak --user install --bundle john.flatpak # per-user installation (not system wide)
-```
-
-Run John the Ripper and check if it is working:
-
-```bash
- flatpak run com.openwall.John
- flatpak run com.openwall.John --list=build-info
-```
 
 ## Windows
 
