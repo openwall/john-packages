@@ -2,6 +2,7 @@
 
 [![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://github.com/openwall/john-packages/blob/master/LICENSE.txt)
 ![Donation](https://img.shields.io/badge/Donate-US%24%2010-brightgreen?style=flat&logo=github-sponsors)
+[![john-the-ripper](https://snapcraft.io/john-the-ripper/badge.svg)](https://snapcraft.io/john-the-ripper)
 
 [Openwall's](http://openwall.com/) John the Ripper (JtR) is a fast password cracker,
 currently available for many flavors of Unix, Windows, DOS, and OpenVMS. Its primary
