@@ -1,6 +1,6 @@
 #!/bin/bash
 ######################################################################
-# Copyright (c) 2021-2022 Claudio André <claudioandre.br at gmail.com>
+# Copyright (c) 2021-2023 Claudio André <claudioandre.br at gmail.com>
 #
 # This program comes with ABSOLUTELY NO WARRANTY; express or implied.
 #
@@ -12,9 +12,9 @@
 
 # Directory names and folders
 APPVEYOR_32bits=""
-FLATPAK="3113914408"
-FLATPAK_TEST="3113914409"
-AZURE_ID="381"
+FLATPAK="4052942751"
+FLATPAK_TEST="4052942753"
+AZURE_ID="389"
 DOCKER=""
 
 # AppVeyor (32 bits) ###########################################################
@@ -35,13 +35,12 @@ wget https://gitlab.com/claudioandre-br/JtR-CI/-/jobs/$FLATPAK_TEST/raw         
 # Snap App #####################################################################
 rm buildlog*.gz
 
-wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1897771/+files/buildlog_snap_ubuntu_bionic_arm64_john-the-ripper_BUILDING.txt.gz
-wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1897770/+files/buildlog_snap_ubuntu_bionic_armhf_john-the-ripper_BUILDING.txt.gz
-wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1897769/+files/buildlog_snap_ubuntu_bionic_amd64_john-the-ripper_BUILDING.txt.gz
-wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1897768/+files/buildlog_snap_ubuntu_bionic_i386_john-the-ripper_BUILDING.txt.gz
-wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1897772/+files/buildlog_snap_ubuntu_bionic_ppc64el_john-the-ripper_BUILDING.txt.gz
-wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/1897773/+files/buildlog_snap_ubuntu_bionic_s390x_john-the-ripper_BUILDING.txt.gz
-
+wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/2070904/+files/buildlog_snap_ubuntu_bionic_armhf_john-the-ripper_BUILDING.txt.gz
+wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/2070905/+files/buildlog_snap_ubuntu_bionic_arm64_john-the-ripper_BUILDING.txt.gz
+wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/2070903/+files/buildlog_snap_ubuntu_bionic_amd64_john-the-ripper_BUILDING.txt.gz
+wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/2070902/+files/buildlog_snap_ubuntu_bionic_i386_john-the-ripper_BUILDING.txt.gz
+wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/2070907/+files/buildlog_snap_ubuntu_bionic_s390x_john-the-ripper_BUILDING.txt.gz
+wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/2070906/+files/buildlog_snap_ubuntu_bionic_ppc64el_john-the-ripper_BUILDING.txt.gz
 
 if [[ "$1" == "ALL_FILES" ]]; then
     https://artprodsbr1.artifacts.visualstudio.com/A56e4da31-e2d8-472b-be22-766278080a34/40224313-b91e-465d-852b-fc4ea516f33e/_apis/artifact/cGlwZWxpbmVhcnRpZmFjdDovL2NsYXVkaW9hbmRyZS1ici9wcm9qZWN0SWQvNDAyMjQzMTMtYjkxZS00NjVkLTg1MmItZmM0ZWE1MTZmMzNlL2J1aWxkSWQvMzExL2FydGlmYWN0TmFtZS93aW5feDY0Ljd60/content?format=file&subPath=%2Fwin_x64.7z  -O x64_win.7z

@@ -258,7 +258,7 @@ The links below contain all the executables and libraries needed to run a fresh
 John the Ripper installation.
 
 - The rolling version of John 1.9.0 Jumbo 1+:
-  - The [64bit version](https://github.com/openwall/john-packages/releases/download/rolling-2210/winX64_1_JtR.7z)
+  - The [64bit version](https://github.com/openwall/john-packages/releases/download/rolling-2304/winX64_1_JtR.7z)
 [(logs)](https://github.com/openwall/john-packages/blob/master/rolling/x64_log.txt);
 - the stable John 1.9.0 Jumbo 1:
   - The [32bit version](https://github.com/openwall/john-packages/releases/download/1.9.0-jumbo-1/x32_win.zip)

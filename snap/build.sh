@@ -33,7 +33,7 @@ cp -r tmp/. .
 cd src
 
 # Uncomment for a release
-#_JUMBO_RELEASE="8998390b651f4a7e744758a1c41eb3068dc5084f"
+#_JUMBO_RELEASE="15b3b7c25fc8ac34f2504d53f0c94bbf4ec12596"
 
 # Make it a reproducible build
 if [[ -n "$_JUMBO_RELEASE" ]]; then

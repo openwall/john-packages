@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright (c) 2019-2021 Claudio André <claudioandre.br at gmail.com> -->
+<!-- Copyright (c) 2019-2023 Claudio André <claudioandre.br at gmail.com> -->
 <component type="console-application">
   <id>com.openwall.John</id>
   <metadata_license>GFDL-1.3</metadata_license>
-  <project_license>GPL-2.0</project_license>
+  <project_license>GPL-2.0-only</project_license>
   <content_rating type="oars-1.0" />
 
   <name>John the Ripper CE</name>
@@ -22,7 +22,7 @@
        as PDF and Microsoft Office's - and these are just some examples.
 
        Read more at:
-       - github.com/magnumripper/JohnTheRipper
+       - github.com/openwall/john
 
        This version integrates lots of contributed patches, including GPU support,
        dynamic expressions, has fallback for CPU SIMD extensions and for OMP,
@@ -68,13 +68,11 @@
   </provides>
 
   <releases>
-  #TODO: JUMBO_RELEASE
-  
-    <release type="stable" version="1.9.0J1" date="2019-04-19" urgency="high"> 
+    <release type="stable" version="1.9.0J1" date="2019-04-19" urgency="high">
       <description>
         <p>
           We've just released John the Ripper 1.9.0-jumbo-1, available from the
-          usual place: https://www.openwall.com/john/
+          usual place.
 
           This is a major release (after almost 6 years since the 1.8.0 core
           release).
@@ -88,7 +86,7 @@
 
       <artifacts>
         <artifact type="binary" platform="x86_64-linux-gnu">
-          <location>https://github.com/openwall/john-packages/releases/download/1.9.0-jumbo-2/john.flatpak.zip</location>
+          <location>https://github.com/openwall/john-packages/releases/download/1.9.0-jumbo-1/john.flatpak.zip</location>
         </artifact>
         <artifact type="binary" platform="flatpak">
           <location>https://flathub.org/apps/detais/com.openwall.John</location>
@@ -97,13 +95,43 @@
           <location>https://snapcraft.io/john-the-ripper</location>
         </artifact>
         <artifact type="binary" platform="win32">
-          <location>https://github.com/openwall/john-packages/releases/download/1.9.0-jumbo-2/x32_win.zip</location>
+          <location>https://github.com/openwall/john-packages/releases/download/1.9.0-jumbo-1/x32_win.zip</location>
         </artifact>
         <artifact type="binary" platform="win64">
-          <location>https://github.com/openwall/john-packages/releases/download/1.9.0-jumbo-2/x64_win.zip</location>
+          <location>https://github.com/openwall/john-packages/releases/download/1.9.0-jumbo-1/x64_win.zip</location>
         </artifact>
         <artifact type="source">
-          <location>https://github.com/openwall/john/archive/bleeding-jumbo.zip</location>
+          <location>https://github.com/openwall/john/archive/1.9.0-Jumbo-1.zip</location>
+        </artifact>
+      </artifacts>
+    </release>
+
+    <release type="stable" version="rolling-2304" date="2023-04-05" urgency="high">
+      <description>
+        <p>
+          This is a rolling release based on John the Ripper 1.9.0-jumbo-1+.
+
+          This release contains major fixes.
+        </p>
+      </description>
+
+      <url>https://github.com/openwall/john/issues/5134#issuecomment-1126121606</url>
+
+      <artifacts>
+        <artifact type="binary" platform="x86_64-linux-gnu">
+          <location>https://github.com/openwall/john-packages/releases/download/rolling-2304/flatpak_1_JtR.zip</location>
+        </artifact>
+        <artifact type="binary" platform="flatpak">
+          <location>https://flathub.org/apps/detais/com.openwall.John</location>
+        </artifact>
+        <artifact type="binary" platform="snap">
+          <location>https://snapcraft.io/john-the-ripper</location>
+        </artifact>
+        <artifact type="binary" platform="win64">
+          <location>https://github.com/openwall/john-packages/releases/download/rolling-2304/winX64_1_JtR.7z</location>
+        </artifact>
+        <artifact type="source">
+          <location>https://github.com/openwall/john/commit/15b3b7c25fc8ac34f2504d53f0c94bbf4ec12596</location>
         </artifact>
       </artifacts>
     </release>

@@ -1,5 +1,5 @@
 ######################################################################
-# Copyright (c) 2021-2022 Claudio André <claudioandre.br at gmail.com>
+# Copyright (c) 2021-2023 Claudio André <claudioandre.br at gmail.com>
 #
 # This program comes with ABSOLUTELY NO WARRANTY; express or implied.
 #
@@ -20,11 +20,11 @@ on:
       hash:
         description: 'The commit hash to be used'
         required: false
-        default: '8998390b651f4a7e744758a1c41eb3068dc5084f'
+        default: '15b3b7c25fc8ac34f2504d53f0c94bbf4ec12596'
       VERSION:
         description: 'The software version'
         required: true
-        default: '1.9.01'  #TODO: edit before release (JUMBO_RELEASE) 1.9.02210
+        default: '1.9.02'  #TODO: edit before release (JUMBO_RELEASE) 1.9.02304
       VERSION_NAME:
         description: 'The software version name'
         required: true
