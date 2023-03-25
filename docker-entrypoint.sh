@@ -1,6 +1,6 @@
 #!/bin/bash
 ######################################################################
-# Copyright (c) 2019 Claudio André <claudioandre.br at gmail.com>
+# Copyright (c) 2019-2023 Claudio André <claudioandre.br at gmail.com>
 #
 # This program comes with ABSOLUTELY NO WARRANTY; express or implied.
 #
@@ -12,60 +12,33 @@
 
 set -e
 echo "$@"
-binaries="sse2 sse2-no-omp ssse3 ssse3-no-omp sse4.1 sse4.1-no-omp sse4.2 sse4.2-no-omp
-          avx avx-no-omp xop xop-no-omp avx2 avx2-no-omp
-          avx512f avx512f-no-omp avx512bw avx512bw-no-omp
-          ztex ztex-no-omp best
+ids="sse2-omp sse2 avx-omp avx xop-omp xop avx2-omp avx2
+          avx512f-omp avx512f avx512bw-omp avx512bw
+          ztex-omp ztex best
           "
-binary="$1"
+binaries="/john/run/john-avx512bw-omp /john/run/john-avx512f-omp /john/run/john-avx2-omp
+          /john/run/john-xop-omp /john/run/john-avx-omp /john/run/john-sse2-omp
+          "
+requested="$1"
 
-if [[ $# -gt 0 && "$binaries" == *"$binary"* ]]; then
+# If a valid ID was requested.
+if [[ $# -gt 0 && "$ids" == *"$requested"* ]]; then
     shift
 fi
 
-if [[ "$binary" = 'sse2' ]]; then
-    exec /john/run/john-sse2 "$@"
-elif [[ "$binary" = 'sse2-no-omp' ]]; then
-    exec /john/run/john-sse2-no-omp "$@"
-elif [[ "$binary" = 'ssse3' ]]; then
-    exec /john/run/john-ssse3 "$@"
-elif [[ "$binary" = 'ssse3-no-omp' ]]; then
-    exec /john/run/john-ssse3-no-omp "$@"
-elif [[ "$binary" = 'sse4.1' ]]; then
-    exec /john/run/john-sse4.1 "$@"
-elif [[ "$binary" = 'sse4.1-no-omp' ]]; then
-    exec /john/run/john-sse4.1-no-omp "$@"
-elif [[ "$binary" = 'sse4.2' ]]; then
-    exec /john/run/john-sse4.2 "$@"
-elif [[ "$binary" = 'sse4.2-no-omp' ]]; then
-    exec /john/run/john-sse4.2-no-omp "$@"
-elif [[ "$binary" = 'avx' ]]; then
-    exec /john/run/john-avx "$@"
-elif [[ "$binary" = 'avx-no-omp' ]]; then
-    exec /john/run/john-avx-no-omp "$@"
-elif [[ "$binary" = 'xop' ]]; then
-    exec /john/run/john-xop "$@"
-elif [[ "$binary" = 'xop-no-omp' ]]; then
-    exec /john/run/john-xop-no-omp "$@"
-elif [[ "$binary" = 'avx2' ]]; then
-    exec /john/run/john-avx2 "$@"
-elif [[ "$binary" = 'avx2-no-omp' ]]; then
-    exec /john/run/john-avx2-no-omp "$@"
-elif [[ "$binary" = 'avx512f' ]]; then
-    exec /john/run/john-avx512f "$@"
-elif [[ "$binary" = 'avx512f-no-omp' ]]; then
-    exec /john/run/john-avx512f-no-omp "$@"
-elif [[ "$binary" = 'avx512bw' ]]; then
-    exec /john/run/john-avx512bw "$@"
-elif [[ "$binary" = 'avx512bw-no-omp' ]]; then
-    exec /john/run/john-avx512bw-no-omp "$@"
-elif [[ "$binary" = 'ztex' ]]; then
-    echo "Binary $john disabled (please, open a bug report)" ## exec /john/run/john-ztex "$@"
-elif [[ "$binary" = 'ztex-no-omp' ]]; then
-    echo "Binary $john disabled (please, open a bug report)" ## exec /john/run/john-ztex-no-omp "$@"
-elif [[ "$binary" = 'best' ]]; then
+if [[ "$requested" = 'sse2-omp' || "$requested" = 'sse2' ]]; then
+    exec /john/run/john-$requested "$@"
+elif [[ "$requested" = 'avx-omp' || "$requested" = 'avx' || "$requested" = 'avx2-omp' || "$requested" = 'avx2' ]]; then
+    exec /john/run/john-$requested "$@"
+elif [[ "$requested" = 'xop-omp' || "$requested" = 'xop' ]]; then
+    exec /john/run/john-$requested "$@"
+elif [[ "$requested" = 'avx512f-omp'  || "$requested" = 'avx512f'  || "$requested" = 'avx512bw-omp'  || "$requested" = 'avx512bw' ]]; then
+    exec /john/run/john-$requested "$@"
+elif [[ "$requested" = 'ztex-omp' || "$requested" = 'ztex' ]]; then
+    echo "Binary /john/run/john-$requested  disabled (please, open a bug report)"
+elif [[ "$requested" = 'best' ]]; then
 
-    for john in /john/run/john-avx512bw /john/run/john-avx512f /john/run/john-avx2 /john/run/john-xop /john/run/john-avx /john/run/john-sse4.1 /john/run/john-ssse3 /john/run/john-sse2; do
+    for john in $binaries; do
         if $john | grep -q ^Usage:; then
             echo "Will use $john"
             exec $john "$@"
@@ -74,8 +47,7 @@ elif [[ "$binary" = 'best' ]]; then
     done
     echo 'No suitable john binary found'
 else
-    exec /john/run/john-sse2 "$@"
+    exec /john/run/john-sse2-omp "$@"
 fi
 message='### See you soon! ###'
 printf "%*s\n" $(((${#message} + $(tput cols)) / 2)) "$message"
-

@@ -26,26 +26,23 @@ RUN apt-get update -qq && \
     # Make it a reproducible build
     if [ "$release" == "true" ] ; then cd john; git checkout $commit; cd ..; fi && \
     cd john/src && \
-      ./configure --disable-native-tests --disable-openmp --enable-simd=sse2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-sse2-no-omp && \
-      ./configure --disable-native-tests                  --enable-simd=sse2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-sse2 && \
-      ./configure --disable-native-tests --disable-openmp --enable-simd=ssse3  && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-ssse3-no-omp && \
-      ./configure --disable-native-tests                  --enable-simd=ssse3  && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-ssse3 && \
-      ./configure --disable-native-tests --disable-openmp --enable-simd=sse4.1 && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-sse4.1-no-omp && \
-      ./configure --disable-native-tests                  --enable-simd=sse4.1 && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-sse4.1 && \
-      ./configure --disable-native-tests --disable-openmp --enable-simd=sse4.2 && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-sse4.2-no-omp && \
-      ./configure --disable-native-tests                  --enable-simd=sse4.2 && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-sse4.2 && \
-      ./configure --disable-native-tests --disable-openmp --enable-simd=avx    && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx-no-omp && \
-      ./configure --disable-native-tests                  --enable-simd=avx    && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx && \
-      ./configure --disable-native-tests --disable-openmp --enable-simd=xop    && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-xop-no-omp && \
-      ./configure --disable-native-tests                  --enable-simd=xop    && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-xop && \
-      ./configure --disable-native-tests --disable-openmp --enable-simd=avx2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx2-no-omp && \
-      ./configure --disable-native-tests                  --enable-simd=avx2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx2 && \
-      ./configure --disable-native-tests --disable-openmp --enable-simd=avx512f  && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512f-no-omp && \
-      ./configure --disable-native-tests                  --enable-simd=avx512f  && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512f && \
-      ./configure --disable-native-tests --disable-openmp --enable-simd=avx512bw && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512bw-no-omp && \
-      ./configure --disable-native-tests                  --enable-simd=avx512bw && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512bw && \
+      ./configure --disable-native-tests --disable-openmp --enable-simd=sse2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-sse2 && \
+      ./configure --disable-native-tests                  --enable-simd=sse2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-sse2-omp && \
+      ./configure --disable-native-tests --disable-openmp --enable-simd=avx    && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx && \
+      ./configure --disable-native-tests                  --enable-simd=avx    && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx-omp && \
+      ./configure --disable-native-tests --disable-openmp --enable-simd=avx2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx2 && \
+      ./configure --disable-native-tests                  --enable-simd=avx2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx2-omp && \
+      ./configure --disable-native-tests --disable-openmp --enable-simd=avx512f  && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512f && \
+      ./configure --disable-native-tests                  --enable-simd=avx512f  && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512f-omp && \
+      ./configure --disable-native-tests --disable-openmp --enable-simd=avx512bw && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512bw && \
+      ./configure --disable-native-tests                  --enable-simd=avx512bw && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512bw-omp && \
     # Clean the image
-    rm *.o && cd .. && rm -rf src .git .ci .circleci .editorconfig .gitattributes .github .gitignore .mailmap .pre-commit.sh .travis .travis.yml && rm -rf run/ztex
+    rm *.o && cd .. && rm -rf src .git .ci .circleci .editorconfig .gitattributes .github .gitignore .mailmap .pre-commit.sh .travis .travis.yml && rm -rf run/ztex && \
+    # Save information about how the binaries were built
+    echo "[Build Configuration]" > ../run/Defaults && \
+    echo "OpenMP, OpenCL=No" >> ../run/Defaults && \
+    echo "Optional Libraries=Yes" >> ../run/Defaults && \
+    echo "Regex, OpenMPI, Experimental Code, ZTEX=No" >> ../run/Defaults
 
 FROM ubuntu:22.04
 LABEL maintainer Claudio André (c) 2017-2023
