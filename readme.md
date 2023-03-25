@@ -163,7 +163,7 @@ If you do so, you will be running the development version available on GitHub.
 
 ## Flatpak
 
-> Delivered using GitLab CI [ supports up to AVX2 ]
+> Delivered using GitLab CI [ supports up to AVX512BW ]
 
 [**Flatpak**](http://flatpak.org//) is a new framework for desktop applications
 on Linux, built to be distribution agnostic and allow deployment on any Linux
@@ -354,7 +354,7 @@ hardware. If you are facing problems, please ask for support.
 
 Benchmarking:
 
-```text
+```powershell
 PS C:\bleeding\run> .\john --test=5 --format=sha512crypt-opencl
 Device 0: Juniper [AMD Radeon HD 6700 Series]
 Benchmarking: sha512crypt-opencl, crypt(3) $6$ (rounds=5000) [SHA512 OpenCL]... DONE
@@ -407,21 +407,22 @@ To use it:
 Run John the Ripper and check if it is working:
 
 ```bash
- docker run -it ghcr.io/openwall/john:latest # => SSE2
+ docker run -it ghcr.io/openwall/john # => uses the best SIMD available, tag 'latest' can be ommited
+ docker run -it ghcr.io/openwall/john:rolling # => uses the latest rolling release
  docker run -it ghcr.io/openwall/john:latest best # => uses the best SIMD available
- docker run -it ghcr.io/openwall/john:latest ssse3-no-omp -list=build-info
+ docker run -it ghcr.io/openwall/john:latest avx2-omp -list=build-info
  docker run -it ghcr.io/openwall/john:latest avx512bw -test=0 -format=cpu
  docker run -it ghcr.io/openwall/john:latest -list=format-tests | cut -f3 > ~/alltests.in
- docker run -it -v "$HOME":/host ghcr.io/openwall/john:latest avx -form=SHA512crypt /host/alltests.in --max-run=300
+ docker run -it -v "$HOME":/host ghcr.io/openwall/john:latest avx2 -form=SHA512crypt /host/alltests.in --max-run=300
 ```
 
 Compare the performance of SIMD extensions:
 
 ```bash
- docker run -it ghcr.io/openwall/john:latest sse2    --test=10 --format=SHA512crypt
- docker run -it ghcr.io/openwall/john:latest sse4.1  --test=10 --format=SHA512crypt
- docker run -it ghcr.io/openwall/john:latest avx     --test=10 --format=SHA512crypt
- docker run -it ghcr.io/openwall/john:latest avx2    --test=10 --format=SHA512crypt
+ docker run -it ghcr.io/openwall/john:latest sse2     --test=10 --format=SHA512crypt
+ docker run -it ghcr.io/openwall/john:latest avx      --test=10 --format=SHA512crypt
+ docker run -it ghcr.io/openwall/john:latest avx2     --test=10 --format=SHA512crypt
+ docker run -it ghcr.io/openwall/john:latest avx512bw --test=10 --format=SHA512crypt
 ```
 
 The highlights:
@@ -434,26 +435,32 @@ The highlights:
 - the development version (`ghcr.io/openwall/john:latest`):
   - has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`.
 
-The available binaries (their IDs are sse2, sse2-no-omp, ssse3, etc) are:
+The available binaries (their IDs are sse2-omp, sse2, avx-omp, etc) are:
 
-- /john/run/john-sse2 (default binary)
-- /john/run/john-sse2-no-omp
+- /john/run/john-sse2-omp (default binary)
+- /john/run/john-sse2
+- /john/run/john-avx-omp
+- /john/run/john-avx
+- /john/run/john-avx2-omp
+- /john/run/john-avx2
+- /john/run/john-avx512f-omp
+- /john/run/john-avx512f
+- /john/run/john-avx512bw-omp
+- /john/run/john-avx512bw
+
+Binaries available on images up to rolling-2304 (their IDs are sse2, sse2-no-omp, ssse3, etc) are:
+
 - /john/run/john-ssse3
 - /john/run/john-ssse3-no-omp
 - /john/run/john-sse4.1
 - /john/run/john-sse4.1-no-omp
 - /john/run/john-sse4.2
 - /john/run/john-sse4.2-no-omp
-- /john/run/john-avx
-- /john/run/john-avx-no-omp
+- /john/run/john-xop-omp
 - /john/run/john-xop
-- /john/run/john-xop-no-omp
-- /john/run/john-avx2
-- /john/run/john-avx2-no-omp
-- /john/run/john-avx512f
-- /john/run/john-avx512f-no-omp
-- /john/run/john-avx512bw
-- /john/run/john-avx512bw-no-omp
+
+Binaries available on Docker image John 1.9.0 Jumbo 1 (their IDs are ztex and ztex-no-omp) are:
+
 - /john/run/john-ztex (SSE2)
 - /john/run/john-ztex-no-omp (SSE2)
 
