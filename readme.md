@@ -286,8 +286,31 @@ Some adjustments may be necessary to allow John the Ripper detect your GPU
 hardware. If you are facing problems, please ask for support.
 
 - That being said, a few advices to anyone facing Windows problems:
-  - replacing cygwin's OpenCL library `cygOpenCL-1.dll` in the `run` directory with `OpenCL.dll` installed
-  in the `c:\Windows\System32` folder should make everything _almost_ work. Make a backup of `cygOpenCL-1.dll`, copy in the `OpenCL.dll`, and rename the copied file `cygOpenCL-1.dll`.
+  - if `john` is not recognizing your GPU card (and you are sure all required GPU drivers are installed):
+    - replacing cygwin's OpenCL library `cygOpenCL-1.dll` in the `run` directory with `OpenCL.dll` installed
+  in the `c:\Windows\System32` folder should make everything _almost_ work. Copy in the `OpenCL.dll`, and rename the copied file `cygOpenCL-1.dll`. Example:
+      ```powershell
+      # I downloaded and installed john in c:\Temp\Devel
+      C:\> cd c:\Temp\Devel
+
+      C:\Temp\Devel> run\john --list=opencl-devices
+        Error: No OpenCL-capable platforms were detected by the installed OpenCL driver.
+        Error: No OpenCL-capable devices were detected by the installed OpenCL driver.
+
+      C:\Temp\Devel> run\john --test=5 --format=nt-opencl
+      No OpenCL devices found      
+
+      # If you find too many OpenCL.dll files, try them all one at a time:
+      # - copy, rename, test; copy another file, rename and ...
+      C:\Temp\Devel> copy c:\Windows\System32\OpenCL.dll run\cygOpenCL-1.dll
+          1 file(s) copied.
+
+      C:\Temp\Devel> run\john --test=5 --format=nt-opencl
+      Device 1: gfx902 [AMD Radeon(TM) Vega 8 Graphics]
+      Benchmarking: NT-opencl [MD4 OpenCL/mask accel]... LWS=64 GWS=512 (8 blocks) x2470 DONE
+      Raw:    287571K c/s real, 2857M c/s virtual    
+        ```
+
   - if you get errors like `Error building kernel /run/opencl/cryptsha512_kernel_GPU.cl` try running john from the subdirectory `opencl` (e.g. from `JtR\run\opencl` run `..\john.exe`).
 
 Benchmarking:
