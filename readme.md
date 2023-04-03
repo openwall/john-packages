@@ -289,18 +289,18 @@ hardware. If you are facing problems, please ask for support.
   - if `john` is not recognizing your GPU card (and you are sure all required GPU drivers are installed):
     - using the `detect-OpenCL.ps1` script contained in the main folder:
       ```powershell
-      # I downloaded and extracted "john" to c:\Temp\Devel.
+      # I downloaded and extracted "john" to C:\Users\Me\JtR.
       # Then, opened the `detect-OpenCL.ps1` script and copied the command I need to use;
       #   For security reasons, powershell script execution is disabled by default
-      PS C:\Users\Me> cd c:\Temp\Devel
+      PS C:\Users\Me> cd .\JtR\
 
-      PS C:\Temp\Devel> run\john --list=opencl-devices
+      PS C:\Users\Me\JtR> run\john --list=opencl-devices
       Error: No OpenCL-capable platforms were detected by the installed OpenCL driver.
       Error: No OpenCL-capable devices were detected by the installed OpenCL driver.
 
-      PS C:\Temp\Devel> Get-Childitem -Path c:\Windows\System32 -Include amdocl64.dll -File -Recurse -ErrorAction SilentlyContinue | %{$_.FullName} | Out-File -NoNewline -encoding ascii -FilePath etc\OpenCL\vendors\AMD-found.icd
+      PS C:\Users\Me\JtR> Get-Childitem -Path c:\Windows\System32 -Include amdocl64.dll -File -Recurse -ErrorAction SilentlyContinue | %{$_.FullName} | Out-File -NoNewline -encoding ascii -FilePath etc\OpenCL\vendors\AMD-found.icd
 
-      PS C:\Temp\Devel> run\john --list=opencl-devices
+      PS C:\Users\Me\JtR> run\john --list=opencl-devices
       Platform #0 name: AMD Accelerated Parallel Processing, version: OpenCL 2.1 AMD-APP (3075.13)
           Device #0 (1) name:     gfx902
           Board name:             AMD Radeon(TM) Vega 8 Graphics
@@ -331,22 +331,20 @@ hardware. If you are facing problems, please ask for support.
     - replacing cygwin's OpenCL library `cygOpenCL-1.dll` in the `run` directory with `OpenCL.dll` installed
   in the `c:\Windows\System32` folder should make everything _almost_ work. Copy in the `OpenCL.dll`, and rename the copied file `cygOpenCL-1.dll`. Example:
       ```powershell
-      # I downloaded and installed john in c:\Temp\Devel
-      C:\> cd c:\Temp\Devel
-
-      C:\Temp\Devel> run\john --list=opencl-devices
+      # I downloaded and installed john in C:\Users\Me\JtR
+      C:\Users\Me\JtR> run\john --list=opencl-devices
         Error: No OpenCL-capable platforms were detected by the installed OpenCL driver.
         Error: No OpenCL-capable devices were detected by the installed OpenCL driver.
 
-      C:\Temp\Devel> run\john --test=5 --format=nt-opencl
+      C:\Users\Me\JtR> run\john --test=5 --format=nt-opencl
       No OpenCL devices found      
 
       # If you find too many OpenCL.dll files, try them all one at a time:
       # - copy, rename, test; copy another file, rename and ...
-      C:\Temp\Devel> copy c:\Windows\System32\OpenCL.dll run\cygOpenCL-1.dll
+      C:\Users\Me\JtR> copy c:\Windows\System32\OpenCL.dll run\cygOpenCL-1.dll
           1 file(s) copied.
 
-      C:\Temp\Devel> run\john --test=5 --format=nt-opencl
+      C:\Users\Me\JtR> run\john --test=5 --format=nt-opencl
       Device 1: gfx902 [AMD Radeon(TM) Vega 8 Graphics]
       Benchmarking: NT-opencl [MD4 OpenCL/mask accel]... LWS=64 GWS=512 (8 blocks) x2470 DONE
       Raw:    287571K c/s real, 2857M c/s virtual    
