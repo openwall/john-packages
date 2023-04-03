@@ -287,6 +287,47 @@ hardware. If you are facing problems, please ask for support.
 
 - That being said, a few advices to anyone facing Windows problems:
   - if `john` is not recognizing your GPU card (and you are sure all required GPU drivers are installed):
+    - using the `detect-OpenCL.ps1` script contained in the main folder:
+      ```powershell
+      # I downloaded and extracted "john" to c:\Temp\Devel.
+      # Then, opened the `detect-OpenCL.ps1` script and copied the command I need to use;
+      #   For security reasons, powershell script execution is disabled by default
+      PS C:\Users\Me> cd c:\Temp\Devel
+
+      PS C:\Temp\Devel> run\john --list=opencl-devices
+      Error: No OpenCL-capable platforms were detected by the installed OpenCL driver.
+      Error: No OpenCL-capable devices were detected by the installed OpenCL driver.
+
+      PS C:\Temp\Devel> Get-Childitem -Path c:\Windows\System32 -Include amdocl64.dll -File -Recurse -ErrorAction SilentlyContinue | %{$_.FullName} | Out-File -NoNewline -encoding ascii -FilePath etc\OpenCL\vendors\AMD-found.icd
+
+      PS C:\Temp\Devel> run\john --list=opencl-devices
+      Platform #0 name: AMD Accelerated Parallel Processing, version: OpenCL 2.1 AMD-APP (3075.13)
+          Device #0 (1) name:     gfx902
+          Board name:             AMD Radeon(TM) Vega 8 Graphics
+          Device vendor:          Advanced Micro Devices, Inc.
+          Device type:            GPU (LE)
+          Device version:         OpenCL 2.0 AMD-APP (3075.13)
+          OpenCL version support: OpenCL C 2.0
+          Driver version:         3075.13 (PAL,HSAIL) - AMDGPU-Pro
+          Native vector widths:   char 4, short 2, int 1, long 1
+          Preferred vector width: char 4, short 2, int 1, long 1
+          Global Memory:          5672 MiB
+          Global Memory Cache:    16 KiB
+          Local Memory:           32 KiB (Local)
+          Constant Buffer size:   3081 MiB
+          Max memory alloc. size: 3081 MiB
+          Max clock (MHz):        1200
+          Profiling timer res.:   1 ns
+          Max Work Group Size:    256
+          Parallel compute cores: 8
+          Stream processors:      512  (8 x 64)
+          Speed index:            614400
+          SIMD width:             16
+          Wavefront width:        64
+          ADL:                    Overdrive0, device id -1
+          PCI device topology:    05:00.0
+      ```
+
     - replacing cygwin's OpenCL library `cygOpenCL-1.dll` in the `run` directory with `OpenCL.dll` installed
   in the `c:\Windows\System32` folder should make everything _almost_ work. Copy in the `OpenCL.dll`, and rename the copied file `cygOpenCL-1.dll`. Example:
       ```powershell
