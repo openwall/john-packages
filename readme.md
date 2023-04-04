@@ -410,8 +410,21 @@ Run John the Ripper and check if it is working:
  docker run -it ghcr.io/openwall/john:latest best # => uses the best SIMD available
  docker run -it ghcr.io/openwall/john:latest avx2-omp -list=build-info
  docker run -it ghcr.io/openwall/john:latest avx512bw -test=0 -format=cpu
+```
+
+Run a real cracking session:
+
+```bash
  docker run -it ghcr.io/openwall/john:latest -list=format-tests | cut -f3 > ~/alltests.in
  docker run -it -v "$HOME":/host ghcr.io/openwall/john:latest avx2 -form=SHA512crypt /host/alltests.in --max-run=300
+```
+
+Run a real cracking session, saving the session information on the host:
+
+```bash
+ docker run -it -v "$(pwd)":/home/JtR ghcr.io/openwall/john best -form=SHA512crypt /home/JtR/alltests.in --max-run=30
+ docker run -it -v "$(pwd)":/home/JtR ghcr.io/openwall/john best -form=SHA512crypt --wordlist --rules /home/JtR/alltests.in --max-run=20
+ docker run -it -v "$(pwd)":/home/JtR ghcr.io/openwall/john best -form=SHA512crypt --incrementa:digits /home/JtR/alltests.in --max-run=20
 ```
 
 Compare the performance of SIMD extensions:
