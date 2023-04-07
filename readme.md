@@ -267,8 +267,6 @@ John the Ripper installation.
 [(logs)](https://github.com/openwall/john-packages/blob/master/1.9.0.J1/x64_log.txt);
 - a development [64bit version](https://github.com/openwall/john-packages/releases/tag/jumbo-dev).
 
-Libs **may** be needed on some systems.
-
 ### Running a non-OpenMP build on Windows
 
 In some situations a non-OpenMP build may be faster. You can ask to fallback to
@@ -329,7 +327,7 @@ hardware. If you are facing problems, please ask for support.
       ```
 
     - replacing cygwin's OpenCL library `cygOpenCL-1.dll` in the `run` directory with `OpenCL.dll` installed
-  in the `c:\Windows\System32` folder should make everything _almost_ work. Copy in the `OpenCL.dll`, and rename the copied file `cygOpenCL-1.dll`. Example:
+  in the `c:\Windows\System32` folder. Copy in the `OpenCL.dll`, and rename the copied file `cygOpenCL-1.dll`. Example:
       ```powershell
       # I downloaded and installed john in C:\Users\Me\JtR
       C:\Users\Me\JtR> run\john --list=opencl-devices
@@ -466,17 +464,8 @@ of a computer file. A popular approach is to store checksums (hashes) of files,
 also known as message digests, for later comparison. All john packages checksums (hashes)
 are computed by the CI servers.
 
-Accessing the build logs, you can view the hashes of all relevant
-files. For your convenience, we provide a file named checksum.txt containing the
-checksums for all packages.
-
-#### Rolling Version of John the Ripper 1.9.0 Jumbo 1+
-
-The checksums are available in [this file](https://github.com/openwall/john-packages/blob/master/rolling/checksum.txt).
-
-#### John the Ripper 1.9.0 Jumbo 1
-
-The checksums are available in [this file](https://github.com/openwall/john-packages/blob/master/1.9.0.J1/checksum.txt).
+By accessing the build logs for each release on GitHub releases you can view the hashes of all
+relevant files.
 
 ## Security
 
