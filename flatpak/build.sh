@@ -66,6 +66,7 @@ if [[ -z "$TASK" ]]; then
     fi
     # Save information about how the binaries were built
     echo "[Build Configuration]" > ../run/Defaults
+    echo "System Wide Build=Yes" >> ../run/Defaults
     echo "Architecture=$arch" >> ../run/Defaults
     echo "OpenMP, OpenCL=No" >> ../run/Defaults
     echo "Optional Libraries=Yes" >> ../run/Defaults
