@@ -467,8 +467,8 @@ Binaries available on images up to rolling-2304 (their IDs are sse2, sse2-no-omp
 - /john/run/john-sse4.1-no-omp
 - /john/run/john-sse4.2
 - /john/run/john-sse4.2-no-omp
-- /john/run/john-xop-omp
 - /john/run/john-xop
+- /john/run/john-xop-no-omp
 
 Binaries available on Docker image John 1.9.0 Jumbo 1 (their IDs are ztex and ztex-no-omp) are:
 
