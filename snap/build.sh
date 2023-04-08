@@ -97,6 +97,7 @@ else
 fi
 # Save information about how the binaries were built
 echo "[Build Configuration]" > ../run/Defaults
+echo "System Wide Build=Yes" >> ../run/Defaults
 echo "Architecture=$arch" >> ../run/Defaults
 echo "OpenMP=No" >> ../run/Defaults
 echo "OpenCL=Yes # ONLY on x86_64, otherwise No" >> ../run/Defaults
