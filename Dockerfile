@@ -37,7 +37,7 @@ RUN apt-get update -qq && \
       ./configure --disable-native-tests --with-systemwide --disable-openmp --enable-simd=avx512bw && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512bw && \
       ./configure --disable-native-tests --with-systemwide                  --enable-simd=avx512bw && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512bw-omp && \
     # Clean the image
-    rm *.o && cd .. && rm -rf src .git .ci .circleci .editorconfig .gitattributes .github .gitignore .mailmap .pre-commit.sh .travis .travis.yml && rm -rf run/ztex && \
+    rm *.o && cd .. && rm -rf src .git .ci .circleci .azure .editorconfig .gitattributes .github .gitignore .mailmap .pre-commit.sh .travis .travis.yml && rm -rf run/ztex && \
     # Save information about how the binaries were built
     echo "[Build Configuration]" > run/Defaults && \
     echo "System Wide Build=Yes" >> run/Defaults && \
