@@ -1,15 +1,15 @@
 name: john-the-ripper
-version: rolling-2304       #TODO: edit before release (JUMBO_RELEASE)
-version-script: |
-  ./package_version.sh
+version: bleeding
 
 confinement: strict
 grade: stable               #TODO: [stable or devel] edit before release (JUMBO_RELEASE)
-assumes: [ snapd2.38 ]
-base: core18
+base: core22
+
+assumes: [ snapd2.41 ]
+adopt-info: john-the-ripper
 
 license: GPL-2.0
-title: John the Ripper Community Edition
+title: John the Ripper CE Auditing Tool
 summary: John the Ripper "Jumbo" password cracker
 description: |
   John the Ripper is a fast password cracker, currently available for many flavors
@@ -65,6 +65,11 @@ parts:
   john-the-ripper:
     plugin: nil
     source: .
+    override-pull: |
+      craftctl default
+      ./build.sh PULL
+      craftctl set version="$(./package_version.sh)"
+
     override-build: |
       ./build.sh
       mkdir -p ../install/etc/bash_completion
@@ -82,9 +87,12 @@ parts:
       - git
       - wget
       - patch
-      # OpenCL stuff is available only in X86 architecture, make it optional
-      - try:
-        - beignet-dev
+      # OpenCL stuff is available only in X86 architecture
+      - on amd64:
+        - libpocl-dev
+        - ocl-icd-opencl-dev
+        - ocl-icd-libopencl1
+        - pocl-opencl-icd
         - opencl-headers
 
     organize:
@@ -98,17 +106,5 @@ parts:
     stage-packages:
       - libgomp1
       - libpcap0.8
-      - ocl-icd-libopencl1
-      # Staged from core18 runtime
-      # openssl
-      # libgmp10
-      # libbz2
-
-    filesets:
-      extras:
-        - -usr/local/man
-        - -usr/share/
-    prime:
-      - $extras
-    stage:
-      - $extras
+      - on amd64:
+        - ocl-icd-libopencl1
