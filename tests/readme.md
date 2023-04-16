@@ -50,20 +50,30 @@ Plans and future vision:
 
 | Architecture | SIMD |
 | :-: | :-: |
-| ARM | NEON, ASIMD |
+| ARM v7<br>ARV v8 | NEON<br>ASIMD |
 | PowerPC | Altivec |
+| RISC-V 64 | SIMD is not supported |
 | S390x | SIMD is not supported |
-| x86| AVX512BW, AVX512F, AVX2, XOP, AVX, SSE4.2, SSE4.1, SSSE3, SSE2 |
+| x86| AVX512BW, AVX512F, AVX2, AVX, SSE2<br>Not tested anymore: XOP, SSE4.2, SSE4.1, SSSE3 |
 
-#### Development Builds and Artifacts
+#### Builds and Artifacts
 
 | Provider   | OS | Artifacts |
 | ------------- | ------------- | ----- |
 | AppVeyor CI | Windows | ✓ Build artifacts available |
-| Azure | Linux and Windows | ✓ Build artifacts available |
+| Azure | Linux | ✗ No build artifacts |
+| Azure | Windows | ✓ Deployed to GitHub Releases |
 | Azure | OpenCL on GPU | ∅ Under development |
 | Circle CI | Linux | ✗ No build artifacts |
+| Circle CI | MacOS | ✓ Deployed to GitHub Releases |
 | Cirrus CI | FreeBSD | ✗ No build artifacts |
-| GitLab CI | Linux (FlatPak app) | ✓ Build artifacts available |
-| LaunchPad | Linux (Snap app) | ✓ Build artifacts available |
-| GitHub Actions | Linux | ✓ Deployed to GitHub Artifacts |
+| GitLab CI | Linux (FlatPak app) | ✓ Deployed to GitHub Releases |
+| LaunchPad | Linux (Snap app) | ✓ Deployed to Snap Store |
+| GitHub Actions | Linux (Docker image) | ✓ Deployed to GitHub Releases |
+
+## Obsolete Architectures
+
+We can no longer build and package for these environments:
+
+* Intel/AMD X86 32 bits (i386);
+* PowerPC 32 bits (powerpc).
