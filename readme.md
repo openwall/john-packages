@@ -51,7 +51,7 @@ When the Docker user runs an image, it becomes one instance (it becomes a contai
 
 > Delivered using Launchpad [ supports up to AVX512BW ]
 
-[**A Snap**](https://snapcraft.io/) is a fancy zip file containing an application
+[**A Snap**](https://snapcraft.io/) is a gpg signed squashfs file containing an application
 together with its dependencies, and a description of how it should safely be run
 on your system.
 
