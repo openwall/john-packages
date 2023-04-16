@@ -85,7 +85,7 @@ The highlights:
 - OpenCL available (GPU driver installation is needed);
 - also available via the alias **john**, e.g. `john -list=build-info`;
 - the rolling version of John 1.9.0 Jumbo 1+:
-  - is available for X86_64, armhf, arm64, ppc64el, i386, and s390x;
+  - is available for X86_64, armhf, arm64, ppc64el, i386, riscv64, and s390x;
 - the stable John 1.9.0 Jumbo 1:
   - is available for X86_64, armhf, arm64, ppc64el, i386, powerpc, and s390x;
   - has regex mode available;
