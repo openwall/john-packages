@@ -50,7 +50,7 @@ Plans and future vision:
 
 | Architecture | SIMD |
 | :-: | :-: |
-| ARM v7<br>ARV v8 | NEON<br>ASIMD |
+| ARM v7<br>ARM v8 | NEON<br>ASIMD |
 | PowerPC | Altivec |
 | RISC-V 64 | SIMD is not supported |
 | S390x | SIMD is not supported |
