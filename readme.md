@@ -55,23 +55,35 @@ When the Docker user runs an image, it becomes one instance (it becomes a contai
 together with its dependencies, and a description of how it should safely be run
 on your system.
 
-You can install JtR by following the instructions at
-[https://snapcraft.io/john-the-ripper](https://snapcraft.io/john-the-ripper).
-
-Terminal-based users should [enable snap support](https://docs.snapcraft.io/core/install),
-then install JtR like this:
+You can install `john` by following the instructions at
+[https://snapcraft.io/john-the-ripper](https://snapcraft.io/john-the-ripper). For distributions without snap
+pre-installed, users should [enable snap support](https://docs.snapcraft.io/core/install), then install:
 
 ```bash
  sudo snap install john-the-ripper
+```
+
+Just dance now:
+```bash
+ $ john-the-ripper -list=build-info
+ [...]
+ Build: linux-gnu 64-bit x86_64 AVX2 AC OMP OPENCL
+ SIMD: AVX2, interleaving: MD4:3 MD5:3 SHA1:1 SHA256:1 SHA512:1
+ Deploy: sandboxed as a Snap app
+ [...]
+```
+
+You can also run the software using the official `john` alias:
+```bash
+ john -list=build-info
 ```
 
 John runs confined under a restrictive security sandbox by default. Nevertheless,
 you can access and audit any file located in your home. Below, an usage example:
 
 ```bash
- john-the-ripper -list=build-info
- john-the-ripper -list=format-tests | cut -f3 > ~/alltests.in
- john-the-ripper -form=SHA512crypt ~/alltests.in
+ john -list=format-tests | cut -f3 > ~/alltests.in
+ john -form=SHA512crypt ~/alltests.in
 ```
 
 For your convenience, the snap installed on your system contains the file
@@ -83,6 +95,10 @@ The highlights:
 - fallback for CPU[*] and OMP;
 - prince mode available;
 - OpenCL available (GPU driver installation is needed);
+- John the Ripper is a "featured software" in the security category on Canonical Snap Store;
+- John the Ripper is a software with 4-star (⭐⭐⭐⭐) user reviews on Canonical Snap Store;
+- John the Ripper is tagged as safe, confined and auditable software on Canonical Snap Store;
+- John the Ripper supports and has a package for all architectures supported by Ubuntu itself.
 - also available via the alias **john**, e.g. `john -list=build-info`;
 - the rolling version of John 1.9.0 Jumbo 1+:
   - is available for X86_64, armhf, arm64, ppc64el, i386, riscv64, and s390x;
@@ -101,23 +117,13 @@ John the Ripper snap package has approximately eight thousand active users [*].
 
 [*] 7 Day Active Users: the number of unique users who had at least one session within a 7 day period.
 
-### Running a non-OpenMP build
-
-In some situations a non-OpenMP build may be faster. You can ask to fallback to a
-non-OpenMP build specifying `OMP_NUM_THREADS=1 john <options>` in the command line.
-You avail the best SIMD instructions at one's disposal without any OpenMP stuff. E.g.:
-
-```bash
-OMP_NUM_THREADS=1 john --list=build-info
-```
-
 ### Enabling Aliases
 
 You are free to pick and set up aliases. To enable the usage of aliases with John
 the Ripper snap, run `sudo snap alias john-the-ripper <alias>`. For example:
 
 ```bash
- sudo snap alias john-the-ripper my-john
+ sudo snap alias john-the-ripper john-snap
  sudo snap alias john-the-ripper.dmg2john dmg2john
  sudo snap alias john-the-ripper.hccap2john hccap2john
  sudo snap alias john-the-ripper.racf2john racf2john
@@ -132,7 +138,17 @@ the Ripper snap, run `sudo snap alias john-the-ripper <alias>`. For example:
 ```
 
 Once enabled, John itself plus the *2john tools can be invoked using the aliases.
-In the example, to run John type `my-john`.
+In the example, to run John type `john-snap`.
+
+### Running a non-OpenMP build
+
+In some situations a non-OpenMP build may be faster. You can ask to fallback to a
+non-OpenMP build specifying `OMP_NUM_THREADS=1 john <options>` in the command line.
+You avail the best SIMD instructions at one's disposal without any OpenMP stuff. E.g.:
+
+```bash
+OMP_NUM_THREADS=1 john --list=build-info
+```
 
 ### Acessing OpenCL
 
@@ -144,7 +160,9 @@ out of the sandbox, unconfined (e.g., run `/snap/john-the-ripper/current/run/joh
 
 ### Snap Deployments
 
-If you followed the above instructions, you installed the rolling version of John
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/john-the-ripper)
+
+If you followed the above instructions, you installed the stable (or rolling) version of John
 the Ripper Jumbo 1+ in your system. If you want to access the hot and bleeding
 developing version of JtR, you must follow a development channel. For a clean
 installation:
@@ -207,13 +225,14 @@ it's running on.
 
 ### Flatpak Deployments
 
+[![Flatpak Download](https://img.shields.io/badge/Download-Flatpak%20Package-blue)](https://github.com/openwall/john-packages/releases)
+
 Using the above instructions you can install the rolling version of John
 the Ripper Jumbo 1+, the hot and bleeding version, or any previous stable
 version in your system.
 
 John the Ripper single-file flatpak bundle was built and tested on
-[GitLab](https://gitlab.com/claudioandre-br/JtR-CI/pipelines). You can get it
-[here](https://github.com/openwall/john-packages/releases).
+[GitLab](https://gitlab.com/claudioandre-br/JtR-CI/pipelines).
 
 ## Windows
 
@@ -254,18 +273,14 @@ it's running on.
 
 ### Windows Deployments
 
-The links below contain all the executables and libraries needed to run a fresh
-John the Ripper installation.
+[![Windows Downloads](https://img.shields.io/badge/Download-Windows%20Build-blue.svg)](https://github.com/openwall/john-packages/releases)
 
-- The rolling version of John 1.9.0 Jumbo 1+:
-  - The [64bit version](https://github.com/openwall/john-packages/releases/download/rolling-2304/winX64_1_JtR.7z)
-[(logs)](https://github.com/openwall/john-packages/blob/master/rolling/x64_log.txt);
-- the stable John 1.9.0 Jumbo 1:
-  - The [32bit version](https://github.com/openwall/john-packages/releases/download/1.9.0-jumbo-1/x32_win.zip)
-[(logs)](https://github.com/openwall/john-packages/blob/master/1.9.0.J1/x32_log.txt);
-  - The [64bit version](https://github.com/openwall/john-packages/releases/download/1.9.0-jumbo-1/x64_win.zip)
-[(logs)](https://github.com/openwall/john-packages/blob/master/1.9.0.J1/x64_log.txt);
-- a development [64bit version](https://github.com/openwall/john-packages/releases/tag/jumbo-dev).
+Using the above instructions you can install the rolling version of John
+the Ripper Jumbo 1+, the hot and bleeding version, or any previous stable
+version in your system.
+
+The package contain all the executables and libraries needed to run a fresh
+John the Ripper installation.
 
 ### Running a non-OpenMP build on Windows
 
@@ -278,7 +293,7 @@ PS C:\john-the-ripper\run> set OMP_NUM_THREADS=1
 PS C:\john-the-ripper\run> .\john --list=build-info
 ```
 
-### Running OpenCL
+### Acessing OpenCL
 
 Some adjustments may be necessary to allow John the Ripper detect your GPU
 hardware. If you are facing problems, please ask for support.
@@ -335,7 +350,7 @@ hardware. If you are facing problems, please ask for support.
         Error: No OpenCL-capable devices were detected by the installed OpenCL driver.
 
       C:\Users\Me\JtR> run\john --test=5 --format=nt-opencl
-      No OpenCL devices found      
+      No OpenCL devices found
 
       # If you find too many OpenCL.dll files, try them all one at a time:
       # - copy, rename, test; copy another file, rename and ...
@@ -345,7 +360,7 @@ hardware. If you are facing problems, please ask for support.
       C:\Users\Me\JtR> run\john --test=5 --format=nt-opencl
       Device 1: gfx902 [AMD Radeon(TM) Vega 8 Graphics]
       Benchmarking: NT-opencl [MD4 OpenCL/mask accel]... LWS=64 GWS=512 (8 blocks) x2470 DONE
-      Raw:    287571K c/s real, 2857M c/s virtual    
+      Raw:    287571K c/s real, 2857M c/s virtual
         ```
 
   - if you get errors like `Error building kernel /run/opencl/cryptsha512_kernel_GPU.cl` try running john from the subdirectory `opencl` (e.g. from `JtR\run\opencl` run `..\john.exe`).
@@ -474,6 +489,14 @@ Binaries available on Docker image John 1.9.0 Jumbo 1 (their IDs are ztex and zt
 
 - /john/run/john-ztex (SSE2)
 - /john/run/john-ztex-no-omp (SSE2)
+
+### Docker Image Deployments
+
+[![Docker Image Downloads](https://img.shields.io/badge/Download-Docker%20Build-blue.svg)](https://github.com/openwall/john-packages/pkgs/container/john)
+
+Using the above instructions you can install the rolling version of John
+the Ripper Jumbo 1+, the hot and bleeding version, or any previous stable
+version in your system.
 
 ## Packages Checksums
 
