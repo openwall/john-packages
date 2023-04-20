@@ -45,7 +45,7 @@
   <url type="donation">https://www.zerodayclothing.com/openwall_store.php</url>
 
   <developer_name>Openwall and others</developer_name>
-  <update_contact>claudioandre.br@gmail.com</update_contact>
+  <update_contact>https://github.com/openwall/john-packages/issues</update_contact>
 
   <categories>
     <category>Security</category>
