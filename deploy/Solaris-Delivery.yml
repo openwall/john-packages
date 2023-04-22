@@ -1,0 +1,61 @@
+######################################################################
+# Copyright (c) 2023 Claudio André <claudioandre.br at gmail.com>
+#
+# This program comes with ABSOLUTELY NO WARRANTY; express or implied.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, as expressed in version 2, seen at
+# http://www.gnu.org/licenses/gpl-2.0.html
+######################################################################
+name: Extra CI
+
+on:
+  workflow_dispatch:
+    inputs:
+      hash:
+        description: 'The commit hash to be used'
+        required: false
+        default: '15b3b7c25fc8ac34f2504d53f0c94bbf4ec12596'
+
+jobs:
+  test:
+    runs-on: macos-12
+    name: Solaris 11
+    env:
+      TARGET_ARCH : "SOLARIS"
+      EXTRA: "full;extra"
+      BUILD_OPTS: ""
+      BASE : "Oracle Solaris"
+      _JUMBO_RELEASE: ${{ github.event.inputs.release }}
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build on Solaris
+      id: test
+      uses: vmactions/solaris-vm@v0
+      with:
+        envs: 'TARGET_ARCH EXTRA BUILD_OPTS TEST BASE'
+        usesh: true
+        copyback: false
+        mem: 2048
+        prepare: |
+          pkgutil -y -i socat
+          pkgutil -y -i git
+
+        run: |
+          echo '--------------------------------'
+          echo "      Solaris Environment"
+          echo '--------------------------------'
+          psrinfo -vp
+          echo
+          cat /etc/release
+          echo '--------------------------------'
+          git clone --depth 10 https://github.com/openwall/john.git ~/tmp
+          cd ~/tmp
+
+          wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/tests-ci.sh -O .ci/tests-ci.sh
+          chmod +x .ci/tests-ci.sh
+
+          .ci/tests-ci.sh $TARGET_ARCH BUILD
+          .ci/tests-ci.sh $TARGET_ARCH TEST
