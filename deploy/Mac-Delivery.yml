@@ -1,0 +1,59 @@
+######################################################################
+# Copyright (c) 2019-2023 Claudio André <claudioandre.br at gmail.com>
+#
+# This program comes with ABSOLUTELY NO WARRANTY; express or implied.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, as expressed in version 2, seen at
+# http://www.gnu.org/licenses/gpl-2.0.html
+######################################################################
+version: 2
+jobs:
+  Mac-OS:
+    macos:
+      xcode: 14.2.0
+    environment:
+      TARGET_ARCH : "MacOS"
+      EXTRA: "full;extra"
+      BUILD_OPTS: "--disable-native-tests --enable-simd=avx"
+      CC : "clang"
+      TEST : "MacOS;"
+      BASE : "Apple MacOS"
+
+    steps:
+      - run:
+          name: Checkout code
+          command: |
+            git clone --depth 10 https://github.com/openwall/john.git ~/tmp
+            cp -r ~/tmp/. .
+            wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/tests-ci.sh -O .ci/tests-ci.sh
+            chmod +x .ci/tests-ci.sh
+      - run:
+          name: Building JtR
+          command: .ci/tests-ci.sh $TARGET_ARCH BUILD
+      - run:
+          name: Testing JtR
+          command: .ci/tests-ci.sh $TARGET_ARCH TEST
+      - run:
+          name: Cleaning
+          command: rm -rf src .git .ci .circleci .azure .editorconfig .gitattributes .github .gitignore .mailmap .pre-commit.sh .travis .travis.yml && rm -rf run/ztex
+      - run:
+          name: Saving package
+          command: |
+            zip -vr -9 ../JtR.zip ./
+            sha256sum ../*.zip || true
+
+      - store_artifacts:
+          path: ../JtR.zip
+          destination: JtR.zip
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - mac-package:
+          type: approval
+      - Mac-OS:
+          requires:
+            - mac-package

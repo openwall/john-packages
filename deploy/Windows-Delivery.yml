@@ -1,0 +1,231 @@
+######################################################################
+# Copyright (c) 2019-2023 Claudio André <claudioandre.br at gmail.com>
+#
+# This program comes with ABSOLUTELY NO WARRANTY; express or implied.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, as expressed in version 2, seen at
+# http://www.gnu.org/licenses/gpl-2.0.html
+######################################################################
+steps:
+    - powershell: |
+        # Setup image environment ##############################################
+        $cygwinFolder = "C:\$env:cygwinPath"
+
+        if ($env:Test -eq "package") {
+            # Use upstream source code
+            cd $env:PROJ_FOLDER
+            Remove-Item ./JtR -Force -Recurse -ErrorAction SilentlyContinue
+            git clone -q --depth 1 https://github.com/openwall/john.git JtR
+        }
+        cd $env:BUILD_FOLDER
+        git describe --dirty=+ --always
+        echo '--------------------------------'
+
+        # $JUMBO_RELEASE = "15b3b7c25fc8ac34f2504d53f0c94bbf4ec12596"
+
+        # Make it a reproducible build
+        if ($JUMBO_RELEASE) {
+            Write-Host "--------------------------------------------------------"
+            Write-Host "   =====  Deploying the release $JUMBO_RELEASE  =====   " -ForegroundColor White
+            Write-Host "--------------------------------------------------------"
+            git pull --unshallow
+            git checkout $JUMBO_RELEASE
+        }
+
+        # If needed (CygWin is not installed) or as a workaround (CygWin update is required)
+        if ($env:Cygwin -eq "install") {
+            Write-Host "--------------------------------------------------------"
+            Write-Host "             =====  Installing CygWin  =====            " -ForegroundColor White
+            Write-Host "--------------------------------------------------------"
+            choco install -y cygwin cyg-get
+            cyg-get libssl-devel libbz2-devel libgmp-devel zlib-devel gcc-core libOpenCL-devel libcrypt-devel make wget rebase perl
+        }
+
+        # Powershell shell "Bash" run ##########################################
+        $posixBuildFolder = $env:BUILD_FOLDER -Replace '\\', '/'
+
+        function shell($command, $dieOnError = $true) {
+
+            Write-Host "Executing '$command'"
+                & "$cygwinFolder\bash" -lc ". /etc/profile && cd $posixBuildFolder && $command"
+
+            if ($LASTEXITCODE -ne 0) {
+                Write-Host "'$command' failed with exit code $LASTEXITCODE! " -ForegroundColor Red -NoNewline
+
+                if ($dieOnError) {
+                    exit $LASTEXITCODE
+                }
+            }
+        }
+
+        # Apply patch(es) ######################################################
+        wget "https://raw.githubusercontent.com/openwall/john-packages/master/patches/0001-Remove-peflags-from-the-default-target.patch" -O 0001.patch
+        git apply 0001.patch
+        # 1. Remove peflags from the default target on Windows
+
+        # Build ################################################################
+        Write-Host "--------------------------------------------------------"
+        Write-Host "                 =====  Building  =====                 " -ForegroundColor White
+        Write-Host "--------------------------------------------------------"
+
+        echo 'Compiler version'
+        shell "gcc --version"
+        echo '--------------------------------'
+        shell "gcc -dM -E -x c /dev/null"
+        echo '--------------------------------'
+
+        # ####
+        # Redirect strderr to stdout.
+        #  It fails because of prints to stderr
+        #    + CategoryInfo          : NotSpecified: (ar: creating aes.a:String) [], RemoteException
+        #    + FullyQualifiedErrorId : NativeCommandError
+        # ####
+        $EXE_NORMAL = "--disable-native-tests"
+        $EXE_NO_OMP = "--disable-native-tests --disable-openmp"
+
+        # CPU (OMP and extensions fallback)
+        shell "./configure $EXE_NO_OMP --enable-simd=sse2                                                                                                                                                  && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-sse2"
+        shell "./configure $EXE_NORMAL --enable-simd=sse2  CPPFLAGS='-DOMP_FALLBACK_BINARY=\`"\\\`"john-sse2\\\`"\`" '                                                                      && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-sse2-omp"
+        shell "./configure $EXE_NO_OMP --enable-simd=avx                                                                                                                                                   && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-avx"
+        shell "./configure $EXE_NORMAL --enable-simd=avx   CPPFLAGS='-DOMP_FALLBACK_BINARY=\`"\\\`"john-avx\\\`"\`"   -DCPU_FALLBACK_BINARY=\`"\\\`"john-sse2-omp\\\`"\`" '  && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-avx-omp"
+        shell "./configure $EXE_NO_OMP --enable-simd=avx2                                                                                                                                                  && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-avx2"
+        shell "./configure $EXE_NORMAL --enable-simd=avx2  CPPFLAGS='-DOMP_FALLBACK_BINARY=\`"\\\`"john-avx2\\\`"\`"  -DCPU_FALLBACK_BINARY=\`"\\\`"john-avx-omp\\\`"\`" '   && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-avx2-omp"
+
+        shell "./configure $EXE_NO_OMP --enable-simd=avx512f  CPPFLAGS='-fno-asynchronous-unwind-tables '                                                                                                                                          && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-avx512f"
+        shell "./configure $EXE_NORMAL --enable-simd=avx512f  CPPFLAGS='-fno-asynchronous-unwind-tables -DOMP_FALLBACK_BINARY=\`"\\\`"john-avx512f\\\`"\`"  -DCPU_FALLBACK_BINARY=\`"\\\`"john-avx2-omp\\\`"\`" '    && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-avx512f-omp"
+        shell "./configure $EXE_NO_OMP --enable-simd=avx512bw CPPFLAGS='-fno-asynchronous-unwind-tables '                                                                                                                                          && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-avx512bw"
+        shell "./configure $EXE_NORMAL --enable-simd=avx512bw CPPFLAGS='-fno-asynchronous-unwind-tables -DOMP_FALLBACK_BINARY=\`"\\\`"john-avx512bw\\\`"\`" -DCPU_FALLBACK_BINARY=\`"\\\`"john-avx512f-omp\\\`"\`" ' && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-avx512bw-omp"
+        $EXE_NAME = "john-avx512bw-omp.exe"
+
+        # Configure OpenCL ICD
+        shell "mkdir -p ../etc/OpenCL/vendors"
+        shell "echo 'c:\Windows\System32\amdocl64.dll' > ../etc/OpenCL/vendors/amd.icd"
+        shell "echo 'c:\Windows\System32\nvopencl.dll' > ../etc/OpenCL/vendors/nvidia.icd"
+        shell "echo 'c:\Windows\System32\IntelOpenCL64.dll' > ../etc/OpenCL/vendors/intel.icd"
+
+        # The "windows-package" make target depends on default,
+        # - So it needs the john.exe I built above
+        shell "cp ../run/$EXE_NAME ../run/john.exe"
+
+        # Make this a Windows package
+        shell "make -s windows-package"
+
+        # Save information about how the binaries were built
+        shell "echo '[Build Configuration]' > ../run/Defaults"
+        shell "echo 'System Wide Build=No' >> ../run/Defaults"
+        shell "echo 'OpenMP=No' >> ../run/Defaults"
+        shell "echo 'OpenCL=Yes' >> ../run/Defaults"
+        shell "echo 'Generic crypt(3) format=Yes' >> ../run/Defaults"
+        shell "echo 'libpcap=No' >> ../run/Defaults"
+        shell "echo 'Other Optional Libraries=Yes' >> ../run/Defaults"
+        shell "echo 'Regex, OpenMPI, Experimental Code, ZTEX=No' >> ../run/Defaults"
+
+        # Use symlink.c to produce a tiny john.exe that executes the best SIMD
+        shell "make windows-tiny-link-to-john MAIN_NAME=$EXE_NAME "
+        ########################################################################
+        # I should strip the tiny john.exe at some time in the future
+        # - But I can't call a make target that depends on default
+        # - So, I can't run a make strip here
+        ########################################################################
+
+        # Required dlls (Windows 10 64 bits)
+        xcopy $cygwinFolder\cygwin1.dll         ..\run\
+        xcopy $cygwinFolder\cygbz2-1.dll        ..\run\
+        xcopy $cygwinFolder\cygcrypto-1.1.dll   ..\run\
+        xcopy $cygwinFolder\cyggomp-1.dll       ..\run\
+        xcopy $cygwinFolder\cyggmp-10.dll       ..\run\
+        xcopy $cygwinFolder\cygz.dll            ..\run\
+        xcopy $cygwinFolder\cygcrypt-2.dll      ..\run\
+        xcopy $cygwinFolder\cygOpenCL-1.dll     ..\run\
+        xcopy $cygwinFolder\cyggcc_s-seh-1.dll  ..\run\
+
+        # The after_build ######################################################
+        cd $env:JTR_FOLDER\run
+
+        # Build info
+        ./john --list=build-info
+      displayName: 'Build JtR'
+
+    - powershell: |
+        "$env:BUILD_BUILDID" | Out-File -FilePath C:\Build._ID -Encoding ASCII -Append
+
+      displayName: 'Save the Buid ID value'
+
+    - script: |
+        powershell -command 'Write-Host "---------------------------------------------------------"'
+        powershell -command 'Write-Host "==  Enable ASLR and DEP for the Windows binary of JtR  ==" -ForegroundColor White'
+        powershell -command 'Write-Host "---------------------------------------------------------"'
+
+        REM # Setup worker environment
+        cd $(Build.SourcesDirectory)\run
+
+        c:\%cygwinPath%\peflags --dynamicbase=true --nxcompat=true *.exe 2>&1
+      displayName: 'Enable ASLR and DEP for the binaries'
+
+    # Clean up #################################################################
+    - script: |
+        REM # Setup worker environment
+        SET PATH=%PATH%;C:\ProgramData\chocolatey\bin
+        cd $(Build.SourcesDirectory)
+
+        REM # Remove the left-over from testing
+        del "%JTR_FOLDER%\run\john.log"
+        del "%JTR_FOLDER%\run\john.pot"
+        del "%JTR_FOLDER%\run\john-local.conf"
+
+        REM # Remove unused/unneeded stuff
+        rmdir "%JTR_FOLDER%\run\ztex" /s /Q
+
+        REM # Remove hidden .name files and folders
+        del "%JTR_FOLDER%\appveyor.yml"
+        if NOT "%test%" == "package" del "%JTR_FOLDER%\azure-pipelines.yml"
+        if NOT "%test%" == "package" del "%JTR_FOLDER%\.cirrus.yml"
+        del "%JTR_FOLDER%\.editorconfig"
+        del "%JTR_FOLDER%\.gitattributes"
+        del "%JTR_FOLDER%\.gitignore"
+        del "%JTR_FOLDER%\.mailmap"
+        del "%JTR_FOLDER%\.pre-commit.sh"
+        del "%JTR_FOLDER%\.travis.yml"
+
+        if NOT "%test%" == "package" rmdir "%JTR_FOLDER%\.azure"    /s /Q
+        rmdir "%JTR_FOLDER%\.ci"       /s /Q
+        rmdir "%JTR_FOLDER%\.circleci" /s /Q
+        rmdir "%JTR_FOLDER%\.github"   /s /Q
+        rmdir "%JTR_FOLDER%\.travis"   /s /Q
+
+        if exist "%JTR_FOLDER%\src\config.log" 7z a -tzip debug_logs.zip "%JTR_FOLDER%\src\config.log" > nul
+        if exist "%JTR_FOLDER%\src\configure" 7z a -tzip debug_logs.zip "%JTR_FOLDER%\src\configure" > nul
+        if exist "%JTR_FOLDER%\src\Makefile" 7z a -tzip debug_logs.zip "%JTR_FOLDER%\src\Makefile" > nul
+        move debug_logs.zip c:\
+
+        REM # Remove non distributable files
+        rmdir "%JTR_FOLDER%\.git" /s /Q
+        rmdir "%JTR_FOLDER%\src" /s /Q
+
+        REM # Save John the Ripper zip file
+        if exist "%JTR_FOLDER%\run\john.exe" 7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=128m -ms=on "win_x%bits%.7z" "%JTR_FOLDER%"
+        move "win_x%bits%.7z" c:\
+      displayName: 'Clean Up the Package'
+
+    # Compute checksums ########################################################
+    - powershell: |
+        Write-Host "--------------------------------------------------------"
+        Write-Host "        =====  Compute and Save Checksums  =====        " -ForegroundColor White
+        Write-Host "--------------------------------------------------------"
+
+        # Setup worker environment
+        cd $(Build.SourcesDirectory)\run
+
+        if ($Zipfile = Get-ChildItem "c:\win_x$env:Bits.7z") {
+            # Print files hashes
+            Get-FileHash "c:\win_x$env:Bits.7z"
+            Get-FileHash "c:\optional.7z"
+        }
+
+        Write-Output "**************************************************************************"
+        Write-Output "File verification is the process of using an algorithm for verifying the integrity of a computer file. A popular approach is to store checksums (hashes) of files, also known as message digests, for later comparison." | Tee-Object -FilePath c:\checksums.txt
+        Write-Output "**************************************************************************" | Tee-Object -FilePath c:\checksums.txt -Append
+        Get-FileHash -Path .\*.exe | Tee-Object -FilePath c:\checksums.txt -Append
+      displayName: 'Compute and Save Checksums'
