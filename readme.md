@@ -1,9 +1,8 @@
 # John the Ripper Packages
 
+[![john-the-ripper](https://snapcraft.io/john-the-ripper/badge.svg)](https://snapcraft.io/john-the-ripper)
 [![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://github.com/openwall/john-packages/blob/master/LICENSE.txt)
 ![Donation](https://img.shields.io/badge/Donate-US%24%2010-brightgreen?style=flat&logo=github-sponsors)
-[![Publish Docker image](https://github.com/openwall/john-packages/actions/workflows/docker.yml/badge.svg)](https://github.com/openwall/john-packages/actions/workflows/docker.yml)
-[![john-the-ripper](https://snapcraft.io/john-the-ripper/badge.svg)](https://snapcraft.io/john-the-ripper)
 
 [Openwall's](http://openwall.com/) John the Ripper (JtR) is a fast password cracker,
 currently available for many flavors of Unix, Windows, DOS, and OpenVMS. Its primary
@@ -38,6 +37,11 @@ start the process.
 Click on the link to learn more about our [Continuous Integration and Continuous Delivery](https://github.com/openwall/john-packages/tree/master/tests#continuous-integration-and-continuous-delivery) procedures.
 
 [![](https://mermaid.ink/img/pako:eNqVk01vGjEQhv_KyKdEDTlWFaoiLWzSRCkFAVUjQQ6Dd1gsvLblD1pg-e-1F6JCuj10D6v9mOed8Tsze8Z1QazLSotmBdN8riBe2ey7cd4SVtDXVSX8K3Q6dzVfEV-DC8LjQkjhtzX0rsZBAUKhf6oTYWmBjsBrKMmDXxFI9OQ88BWqktz1MUcvSUJ_n3ihPi_sHYzQopQkD8eIfpM0M2ZDW22h_1RDPltid4mdgtzaawMJ-yFUzO7i_9dzri8sl9RQ9y1UrvmabAtkg2ughxbowRL1Jvl7KtsFS5DTZjia1PDYBobdTqgSptGH9P4h3Z6UM8R9BI3U2_RlhHyNJf0Rv72NHtVCbSInSvRCqxqeZ_TLkBUVKY_yFPzc2Fn3hLfCURIb6NikY1nG1fC1paxMFVaL4lLizLhBCzNAPpzAy6ePf1Fvzn37J5WNB5fUF-EfwwIynk4Wixy2oBMtMZ7pBP6vu1EX9LIZr6PPybVzr5sOVqgCSkBjrN6grOHl6q2piXEJSJM8JklxuK8vGlQXxNOWOBeTUVHDqKXGqcWNOA0pu2EV2QpFETdvn7TmLKpXNGfd-FjQEoP0czZXhxiKwevJVnHW9TbQDQumiPuUC4w7W7GYRzo6_AZBrkP3?type=png)](tests#continuous-integration-and-continuous-delivery)
+
+### Continuous Delivery Status
+[![Publish Docker image](https://github.com/openwall/john-packages/actions/workflows/docker.yml/badge.svg)](https://github.com/openwall/john-packages/actions/workflows/docker.yml)
+[![Flatpak Build](https://gitlab.com/claudioandre-br/JtR-CI/badges/master/pipeline.svg?key_text=Flatpak)](https://gitlab.com/claudioandre-br/JtR-CI/pipelines)
+[![Build Status](https://dev.azure.com/claudioandre-br/JohnTheRipper/_apis/build/status/JohnTheRipper?label=Windows)](https://dev.azure.com/claudioandre-br/JohnTheRipper/_build/latest?definitionId=2)
 
 ### Package Building Environments
 
