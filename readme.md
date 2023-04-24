@@ -1,9 +1,8 @@
 # John the Ripper Packages
 
+[![john-the-ripper](https://snapcraft.io/john-the-ripper/badge.svg)](https://snapcraft.io/john-the-ripper)
 [![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://github.com/openwall/john-packages/blob/master/LICENSE.txt)
 ![Donation](https://img.shields.io/badge/Donate-US%24%2010-brightgreen?style=flat&logo=github-sponsors)
-[![Publish Docker image](https://github.com/openwall/john-packages/actions/workflows/docker.yml/badge.svg)](https://github.com/openwall/john-packages/actions/workflows/docker.yml)
-[![john-the-ripper](https://snapcraft.io/john-the-ripper/badge.svg)](https://snapcraft.io/john-the-ripper)
 
 [Openwall's](http://openwall.com/) John the Ripper (JtR) is a fast password cracker,
 currently available for many flavors of Unix, Windows, DOS, and OpenVMS. Its primary
@@ -33,6 +32,11 @@ Windows LM hashes, plus lots of other hashes and ciphers.
 Click on the link to learn more about our [Continuous Integration and Continuous Delivery](https://github.com/openwall/john-packages/tree/master/tests#continuous-integration-and-continuous-delivery) procedures.
 
 [![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBW1Vwc3RyZWFtIENvbW1pdF0gLS0-fGNoZWNrIHN1aXRhYmlsaXR5fCBCKFJ1biBhIGRvd25zdHJlYW0gcmViYXNlIHRvIGdldCB0aGUgbGF0ZXN0IGNoYW5nZXMpXG4gICAgQiAtLT4gQ3tSdW4gaW48YnI-IFBhcmFsbGVsfVxuICAgIEMgLS0-fEFwcHZleW9yIENJfCBEW2ZhOmZhLWRlc2t0b3AgPGJyPldpbmRvd3NdXG4gICAgQyAtLT58Q2lyY2xlIENJfCBFW2ZhOmZhLWRlc2t0b3AgPGJyPkRvY2tlcl1cbiAgICBDIC0tPnxDaXJydXMgQ0l8IEZbZmE6ZmEtZGVza3RvcCA8YnI-RnJlZUJTRF1cbiAgICBDIC0tPnxBenVyZSBEZXZPUFN8IEhbZmE6ZmEtZGVza3RvcCA8YnI-RnV6emluZyBUZXN0PGJyPis8YnI-SW5zcGVjdCBEZXBsb3k8YnI-UGFja2FnZV1cbiAgICBIW2ZhOmZhLWRlc2t0b3AgPGJyPkZ1enppbmcgVGVzdDxicj4rPGJyPkluc3BlY3Rpb24gb2Y8YnI-IERlcGxveW1lbnQ8YnI-UGFja2FnZV0gLS0-fG1hbnVhbCBhcHByb3ZhbHwgWChBenVyZSBEZXBsb3lzPGJyPnRoZSBSZWxlYXNlKVxuICAgIEMgLS4uLT58RGVjb21taXNzaW9uZWR8IEdbZmE6ZmEtZGVza3RvcCA8YnI-VHJhdmlzQ0ldXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlLCJhdXRvU3luYyI6dHJ1ZSwidXBkYXRlRGlhZ3JhbSI6ZmFsc2V9)](tests#continuous-integration-and-continuous-delivery)
+
+### Continuous Delivery Status
+[![Publish Docker image](https://github.com/openwall/john-packages/actions/workflows/docker.yml/badge.svg)](https://github.com/openwall/john-packages/actions/workflows/docker.yml)
+[![Flatpak Build](https://gitlab.com/claudioandre-br/JtR-CI/badges/master/pipeline.svg?key_text=Flatpak)](https://gitlab.com/claudioandre-br/JtR-CI/pipelines)
+[![Build Status](https://dev.azure.com/claudioandre-br/JohnTheRipper/_apis/build/status/JohnTheRipper?label=Windows)](https://dev.azure.com/claudioandre-br/JohnTheRipper/_build/latest?definitionId=2)
 
 ### Package Building Environments
 
