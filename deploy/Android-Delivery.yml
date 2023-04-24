@@ -1,0 +1,71 @@
+---
+format_version: '11'
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+project_type: other
+app:
+  envs:
+  - default_apk_name: john-app.apk
+  - TARGET_ARCH: NIX
+  - EXTRA: full;extra
+  # BUILD_OPTS: --disable-native-tests --build=arm-linux-gnueabi
+  #   => FAILS: --build=aarch64-linux-gnueabi (pseudo_intrinsics.h:48:22: fatal error: arm_neon.h: No such file or directory)
+  - BASE: Android
+
+workflows:
+  deploy-ARM:
+    envs:
+    - BUILD_OPTS: "--disable-native-tests --build=arm-linux-gnueabi"
+    after_run:
+    - _deploy
+
+  deploy-X86:
+    envs:
+    - BUILD_OPTS: "--disable-native-tests"
+    after_run:
+    - _deploy
+
+  _deploy:
+    steps:
+    - activate-ssh-key@4:
+        run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
+    - git-clone@8: {}
+    - script@1.2:
+        title: Checkout code
+        inputs:
+        - content: |-
+            #!/bin/bash
+            set -ex
+
+            rm -rf tmp
+            git clone --depth 10 https://github.com/openwall/john.git tmp
+            cp -r tmp/. .
+    - script@1.2:
+        title: Building JtR
+        inputs:
+        - content: |-
+            #!/bin/bash
+            set -ex
+
+            echo "----------------------------------------------------------------------"
+            echo "Build options: $BUILD_OPTS"
+            echo "----------------------------------------------------------------------"
+
+            wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/tests-ci.sh -O .ci/tests-ci.sh
+            chmod +x .ci/tests-ci.sh
+
+            .ci/tests-ci.sh $TARGET_ARCH BUILD
+            .ci/tests-ci.sh $TARGET_ARCH TEST
+
+            mkdir -p "${BITRISE_DEPLOY_DIR}/${default_apk_name}/"
+            mv README.md "${BITRISE_DEPLOY_DIR}/${default_apk_name}/"
+            mv run "${BITRISE_DEPLOY_DIR}/${default_apk_name}/run"
+            mv doc "${BITRISE_DEPLOY_DIR}/${default_apk_name}/doc"
+    - deploy-to-bitrise-io:
+        run_if: ".IsCI"
+        inputs:
+        - is_compress: 'true'
+        - deploy_path: "${BITRISE_DEPLOY_DIR}/${default_apk_name}"
+meta:
+  bitrise.io:
+    stack: linux-docker-android-20.04
+    machine_type_id: standard
