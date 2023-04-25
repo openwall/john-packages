@@ -6,7 +6,11 @@ graph TD
     C -->|Cirrus CI| F[fa:fa-desktop <br>FreeBSD]
     C -->|Azure DevOPS| H[fa:fa-desktop <br>Fuzzing Test<br>+<br>Inspect Deploy<br>Package]
     H[fa:fa-desktop <br>Fuzzing Test<br>+<br>Inspection of<br> Deployment<br>Package] -->|manual approval| X(Azure Deploys<br>the Release)
-    C -..->|Decommissioned| G[fa:fa-desktop <br>TravisCI]
+    C -..-> |investigation| K[experimental]
+    K --> |Bitrise<br>Mobile DevOps| L[fa:fa-desktop <br>Android]
+    K --> |Circle CI| M[fa:fa-desktop <br>MacOS X86]
+    K --> |GitHub Actions| N[fa:fa-desktop <br>Solaris]
+    C -..->|decommissioned| O[fa:fa-desktop <br>TravisCI]
 
 
 
@@ -19,4 +23,5 @@ graph TD
     C -->|GitHub Actions| F[fa:fa-desktop <br>Docker<br>Image]
     C -->|Azure DevOPS| H[fa:fa-desktop <br>Windows<br>64bit]
     C -->|experimental<br>Bitrise Mobile DevOps| K[fa:fa-desktop <br>Android<br>ARM e X86<br><i><u>no package</u></i>]
-    C -->|experimental<br>CircleCI| L[fa:fa-desktop <br>Solaris 11.4<br>64bit<br><i><u>no package</u></i>]
+    C -->|experimental<br>Circle CI| L[fa:fa-desktop <br>MacOS<br>X86]
+    C -->|experimental<br>GitHub Actions| M[fa:fa-desktop <br>Solaris 11.4<br>64bit<br><i><u>no package</u></i>]
