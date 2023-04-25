@@ -24,10 +24,13 @@ using:
 - Linux:
   - CentOS 7 and Fedora 37;
   - Ubuntu 16.04 (Intel OpenCL for CPUs), Ubuntu 22.04, and Ubuntu devel (the under development version);
-  - flatpak (Fedora 37);
-  - snap (Ubuntu 22);
+  - flatpak (runtime: org.freedesktop.Platform 22.08);
+  - snap (runtime: core22);
+  - Android NDK r23 LTS (ANDROID_NDK_VERSION=r23b)
 - Compilers:
-  - gcc 4.8 (CentOS), gcc 5.4 (Ubuntu 16), gcc 7.2 (fuzzing), gcc 7.3 (Solaris), gcc 7.4 (Win 2016), gcc 11.3 (Win 2019/2022, Ubuntu 22), and gcc 12.2 (Fedora 37, Ubuntu Dev);
+  - gcc 4.8 (CentOS), gcc 5.4 (Ubuntu 16, Android), gcc 7.4 (Win 2016);
+  - gcc 11.3 (Win 2019/2022, Ubuntu 22, Snap), and gcc 12.2 (Fedora 37, Flatpak, Ubuntu Dev, fuzzing);
+  - Solaris gcc (GCC) 7.3.0;
   - FreeBSD clang version 13.0.0;
   - FreeBSD clang version 14.0.5;
   - FreeBSD clang version 15.0.7;
@@ -72,6 +75,7 @@ Plans and future vision:
 | Azure | Linux | ✗ No build artifacts |
 | Azure | Windows | ✗ No build artifacts |
 | Azure | OpenCL on GPU | ∅ Under development |
+| Bitrise Mobile DevOps | Android | ✓ Build artifacts available |
 | Circle CI | Linux | ✗ No build artifacts |
 | Cirrus CI | FreeBSD | ✗ No build artifacts |
 | GitHub Actions | Solaris | ✗ No build artifacts |
