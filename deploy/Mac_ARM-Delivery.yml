@@ -1,0 +1,77 @@
+###############################################################################
+#       _       _             _   _            _____  _
+#       | |     | |           | | | |          |  __ \(_)
+#       | | ___ | |__  _ __   | |_| |__   ___  | |__) |_ _ __  _ __   ___ _ __
+#   _   | |/ _ \| '_ \| '_ \  | __| '_ \ / _ \ |  _  /| | '_ \| '_ \ / _ \ '__|
+#  | |__| | (_) | | | | | | | | |_| | | |  __/ | | \ \| | |_) | |_) |  __/ |
+#   \____/ \___/|_| |_|_| |_|  \__|_| |_|\___| |_|  \_\_| .__/| .__/ \___|_|
+#                                                       | |   | |
+#                                                       |_|   |_|
+#
+# Copyright (c) 2023 Claudio André <claudioandre.br at gmail.com>
+#
+# This program comes with ABSOLUTELY NO WARRANTY; express or implied.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, as expressed in version 2, seen at
+# http://www.gnu.org/licenses/gpl-2.0.html
+###############################################################################
+# Cirrus CI configuration
+# More info at https://github.com/openwall/john-packages
+
+macos_task:
+  name: macOS M1
+  trigger_type: manual
+  macos_instance:
+    image: ghcr.io/cirruslabs/macos-ventura-xcode:latest
+
+  env:
+    CIRRUS_CLONE_DEPTH: "10"
+    BUILD_OPS: "--build=aarch64-apple-darwin"
+    CC : "clang"
+    MAKE_FLAGS: "-sj4"
+    TARGET_ARCH : "MacOS"
+    EXTRA: "full;extra"
+    TEST : "MacOS;"
+    BASE : "Apple MacOS M1"
+
+  pkginstall_script:
+    - brew update
+    - brew install openssl libpcap libomp gmp coreutils
+    - brew link openssl --force
+
+  info_script:
+    - wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/tests-ci.sh -O .ci/tests-ci.sh
+    - chmod +x .ci/tests-ci.sh
+    - .ci/tests-ci.sh $TARGET_ARCH INFO
+
+  build_script:
+    - cd src
+    - ./configure $BUILD_OPS LDFLAGS="-L/opt/homebrew/opt/openssl/lib -L/opt/homebrew/opt/libomp/lib -lomp -L/opt/homebrew/opt/gmp/lib" CPPFLAGS="-Xclang -fopenmp -I/opt/homebrew/opt/openssl/include -I/opt/homebrew/opt/libomp/include -I/opt/homebrew/opt/gmp/include"
+    - make "$MAKE_FLAGS"
+
+    # Format crash on M1
+    - echo '[Local:Disabled:Formats]' >> ../run/john-local.conf
+    - echo 'SunMD5 = Y' >> ../run/john-local.conf
+
+  check_script:
+    - run/john --list=build-info
+
+  test_script:
+    - wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/tests-ci.sh -O .ci/tests-ci.sh
+    - chmod +x .ci/tests-ci.sh
+
+    - .ci/tests-ci.sh $TARGET_ARCH TEST
+
+    - rm -rf src .git .ci .circleci .cirrus.yml .azure .editorconfig .gitattributes .github .gitignore .mailmap .pre-commit.sh .travis .travis.yml && rm -rf run/ztex
+    - zip -vr -9 ../JtR.zip ./
+    - sha256sum ../*.zip || true
+    - cp ../JtR.zip JtR.zip
+
+  # Saving build artifacts.
+  # https://api.cirrus-ci.com/v1/artifact/github/claudioandre-br/JohnTheRipper/macOS%20M1/binaries/JtR.zip
+
+  always:
+    binaries_artifacts:
+      path: "JtR.zip"
