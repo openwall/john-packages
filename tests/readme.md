@@ -27,6 +27,9 @@ using:
   - flatpak (runtime: org.freedesktop.Platform 22.08);
   - snap (runtime: core22);
   - Android NDK r23 LTS (ANDROID_NDK_VERSION=r23b)
+- MacOS:
+  - Darwin 21.6.0 x86_64 i386;
+  - Darwin 22.4.0 arm64 arm;
 - Compilers:
   - gcc 4.8 (CentOS), gcc 5.4 (Ubuntu 16, Android), gcc 7.4 (Win 2016);
   - gcc 11.3 (Win 2019/2022, Ubuntu 22, Snap), and gcc 12.2 (Fedora 37, Flatpak, Ubuntu Dev, fuzzing);
@@ -34,7 +37,8 @@ using:
   - FreeBSD clang version 13.0.0;
   - FreeBSD clang version 14.0.5;
   - FreeBSD clang version 15.0.7;
-  - MacOS clang version: 14.0.0 (clang-1400.0.29.202)
+  - Apple clang version 14.0.0 (clang-1400.0.29.202)
+  - Apple clang version 14.0.3 (clang-1403.0.22.14.1)
 - Builds:
   - LE (Little Endian) and BE (Big Endian) builds;
   - ASAN (address sanitizer) and UBSAN (undefined behavior sanitizer);
@@ -85,7 +89,8 @@ Plans and future vision:
 | Provider   | OS | Artifacts |
 | ------------- | ------------- | ----- |
 | Azure | Windows | ✓ Deployed to GitHub Releases |
-| Circle CI | MacOS | ✓ Deployed to GitHub Releases |
+| Circle CI | MacOS X86 | ✓ Deployed to GitHub Releases |
+| Cirrus CI | MacOS M1 | ✓ Deployed to GitHub Releases |
 | GitLab CI | Linux (FlatPak app) | ✓ Deployed to GitHub Releases |
 | GitHub Actions | Linux (Docker image) | ✓ Deployed to GitHub Packages |
 | LaunchPad | Linux (Snap app) | ✓ Deployed to Snap Store |
