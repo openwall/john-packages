@@ -20,7 +20,8 @@
 		"ms-vscode.cpptools",
 		"jeff-hykin.better-cpp-syntax",
 		"ms-vscode.cpptools-themes",
-		"galarius.vscode-opencl"
+		"galarius.vscode-opencl",
+		"ms-vscode.cpptools-extension-pack"
 	]
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
