@@ -44,7 +44,6 @@ source ../run_build.sh
 
 if [[ -z "$TASK" ]]; then
     # The script that computes the package version
-    echo -n "Flatpak Commit "
     source ../package_version.sh
 
     echo ""
@@ -87,6 +86,9 @@ if [[ -z "$TASK" ]]; then
     echo "Optional Libraries=Yes" >> ../run/Defaults
     echo "Regex, OpenMPI, Experimental Code, ZTEX=No" >> ../run/Defaults
     echo "Version=$(../package_version.sh)" >> ../run/Defaults
+
+    # List build info logs
+    ../run/john-omp
 
 elif [[ "$TASK" == "test" ]]; then
     # "---------------------------- TESTING -----------------------------"

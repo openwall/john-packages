@@ -40,8 +40,8 @@ RUN apt-get update -qq && \
 # ------------------------------------------------------------------
     git clone --depth 10 https://github.com/openwall/john.git && \
     # Make it a reproducible build
-    if [ "$release" == "true" ] ; then (cd john; git checkout $commit;) fi && \
-    cd john/src && \
+    if [ "$release" = "true" ] ; then (cd john; git checkout "$commit";) fi && \
+    (cd john/src && \
       ./configure --disable-native-tests --with-systemwide --disable-openmp --enable-simd=sse2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-sse2 && \
       ./configure --disable-native-tests --with-systemwide                  --enable-simd=sse2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-sse2-omp && \
       ./configure --disable-native-tests --with-systemwide --disable-openmp --enable-simd=avx    && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx && \
@@ -51,9 +51,9 @@ RUN apt-get update -qq && \
       ./configure --disable-native-tests --with-systemwide --disable-openmp --enable-simd=avx512f  && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512f && \
       ./configure --disable-native-tests --with-systemwide                  --enable-simd=avx512f  && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512f-omp && \
       ./configure --disable-native-tests --with-systemwide --disable-openmp --enable-simd=avx512bw && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512bw && \
-      ./configure --disable-native-tests --with-systemwide                  --enable-simd=avx512bw && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512bw-omp && \
+      ./configure --disable-native-tests --with-systemwide                  --enable-simd=avx512bw && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512bw-omp) && \
     # Clean the image
-    cd .. && rm -rf src .git .ci .circleci .azure .editorconfig .gitattributes .github .gitignore .mailmap .pre-commit.sh .travis .travis.yml && rm -rf run/ztex && \
+    rm -rf src .git .ci .circleci .azure .editorconfig .gitattributes .github .gitignore .mailmap .pre-commit.sh .travis .travis.yml && rm -rf run/ztex && \
     # Save information about how the binaries were built
     echo "[Build Configuration]" > run/Defaults && \
     echo "System Wide Build=Yes" >> run/Defaults && \
@@ -103,7 +103,7 @@ RUN ln -s /usr/local/bin/docker-entrypoint.sh . && \
     useradd -U -m JtR && \
     apt-get update -qq && \
     export DEBIAN_FRONTEND="noninteractive" && \
-    apt-get install -y --no-install-recommends libssl3 libgomp1 && \
+    apt-get install -y --no-install-recommends libssl3=3.0.2-0ubuntu1.10 libgomp1=12.1.0-2ubuntu1~22.04 && \
 # ==================================================================
 # Clean up the image (shrink the Docker image)
 # ------------------------------------------------------------------

@@ -4,6 +4,9 @@
 
 [![john-the-ripper](https://snapcraft.io/john-the-ripper/badge.svg)](https://snapcraft.io/john-the-ripper)
 [![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://github.com/openwall/john-packages/blob/master/LICENSE.txt)
+
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/openwall/john-packages/badge)](https://api.securityscorecards.dev/projects/github.com/openwall/john-packages)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/7525/badge)](https://bestpractices.coreinfrastructure.org/projects/7525)
 [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/openwall/john-packages?label=Grade&logo=codefactor&logoColor=ffffff&style=flat-square "CodeFactor Grade")](https://www.codefactor.io/repository/github/openwall/john-packages)
 
 ![Donation](https://img.shields.io/badge/Donate-US%24%2010-brightgreen?style=flat&logo=github-sponsors)
@@ -21,6 +24,9 @@ encrypted document files such as PDF and Microsoft Office's, plus lots of
 other hashes and ciphers.
 
 # Table of Contents
+
+<img align="right" src="https://www.openwall.com/logo.png" width="182" height="80">
+
 1. [Introduction](#introduction)
    1. [Continuous Delivery Status](#continuous-delivery-status)
    2. [Package Build Environments](#package-building-environments)
@@ -50,6 +56,8 @@ We produce software in short cycles, ensuring that the software can be reliably 
 [![Flatpak Build](https://gitlab.com/claudioandre-br/JtR-CI/badges/master/pipeline.svg?key_text=Flatpak)](https://gitlab.com/claudioandre-br/JtR-CI/pipelines)
 [![Build Status](https://dev.azure.com/claudioandre-br/JohnTheRipper/_apis/build/status/JohnTheRipper?label=Windows)](https://dev.azure.com/claudioandre-br/JohnTheRipper/_build/latest?definitionId=2)
 
+[![Launchpad](https://media.launchpad.net/lp-badge-kit/launchpad-badge-w120px.png)](https://launchpad.net/~claudioandre.br/john/+snap/john-the-ripper)
+
 [![Virus Scan](https://github.com/openwall/john-packages/actions/workflows/virusscan.yml/badge.svg)](https://github.com/openwall/john-packages/actions/workflows/virusscan.yml)
 
 | **Releases** | **Latest** (![GitHub Latest Release Date](https://img.shields.io/github/release-date/openwall/john-packages?label=&style=flat-square "GitHub Latest Release Date")) | **Pre-Release** (![GitHub Latest Pre-Release Date](https://img.shields.io/github/release-date-pre/openwall/john-packages?label=&style=flat-square "GitHub Latest Pre-Release Date")) |
@@ -70,7 +78,7 @@ start the process.
 
 Click on the link to learn more about our [Continuous Integration and Continuous Delivery](https://github.com/openwall/john-packages/tree/master/tests#continuous-integration-and-continuous-delivery) procedures.
 
-[![](https://mermaid.ink/img/pako:eNqVk01vGjEQhv_KyKdEDTlWFaoiLWzSRCkFAVUjQQ6Dd1gsvLblD1pg-e-1F6JCuj10D6v9mOed8Tsze8Z1QazLSotmBdN8riBe2ey7cd4SVtDXVSX8K3Q6dzVfEV-DC8LjQkjhtzX0rsZBAUKhf6oTYWmBjsBrKMmDXxFI9OQ88BWqktz1MUcvSUJ_n3ihPi_sHYzQopQkD8eIfpM0M2ZDW22h_1RDPltid4mdgtzaawMJ-yFUzO7i_9dzri8sl9RQ9y1UrvmabAtkg2ughxbowRL1Jvl7KtsFS5DTZjia1PDYBobdTqgSptGH9P4h3Z6UM8R9BI3U2_RlhHyNJf0Rv72NHtVCbSInSvRCqxqeZ_TLkBUVKY_yFPzc2Fn3hLfCURIb6NikY1nG1fC1paxMFVaL4lLizLhBCzNAPpzAy6ePf1Fvzn37J5WNB5fUF-EfwwIynk4Wixy2oBMtMZ7pBP6vu1EX9LIZr6PPybVzr5sOVqgCSkBjrN6grOHl6q2piXEJSJM8JklxuK8vGlQXxNOWOBeTUVHDqKXGqcWNOA0pu2EV2QpFETdvn7TmLKpXNGfd-FjQEoP0czZXhxiKwevJVnHW9TbQDQumiPuUC4w7W7GYRzo6_AZBrkP3?type=png)](tests#continuous-integration-and-continuous-delivery)
+[![](https://mermaid.ink/img/pako:eNqVk01vGjEQhv_KyKdEDTlWFaoiLWzTRCkFAVUjQQ6Dd1gsvLblD1pg-e-xFyJIuz10D6v98PPOzDsze8Z1QazLSotmBdN8riBe2eyHcd4SVtDXVSX8C3Q6dzVfEV-DC8LjQkjhtzX0rsZBAUKhf6kTYWmBjsBrKMmDXxFI9OQ88BWqktz1MUYvSUJ_n3ihPi_sHYzQopQkD8cT_SZoZsyGttpC_7GGfLbE7hI7Bbm11wYS9lOoGN3F_y-XXF9YLqmhvrRQueZrsi2QDa6B7luge0vUm-R_UtkuWIKcNsPRpIaHNjDsdkKVMI0-pPcP6faonCHuI2ik3qYvI-RrLOksfnsbPaqF2kROlOiFVjU8zei3ISsqUh7l6fBTY2fdE94KR0lsoGOTjmkZV8O3lrQyVVgtinM9J5UL7wYt2AD5cALPnz7-Rb2Z9_2fVDYevKe-Cv8QFpDxVFzMc9iCTrTEWNY5z__1OEqDXjZDdnQ7eXfpeNPHClVACWiM1RuUNTxfvbU2MS4BaZ7HJCmO-PW7NtUF8bQrzsVgVNQwaslxanFzrIPdsIpshaKI27dPSnMWtSuas258LGiJQfo5m6tDPIrB68lWcdb1NtANC6aIO5ULjHtbsRhFOjq8AkqZRIU?type=png)](tests#continuous-integration-and-continuous-delivery)
 
 ### Packaging and Application Distribution
 
@@ -97,11 +105,13 @@ follow these steps:
 - Run JtR:
 
 ```powershell
-C:\john-the-ripper\run>john --list=build-info
-C:\john-the-ripper\run>john --test --format=SHA512crypt
+ C:\john-the-ripper\run>john --list=build-info
+ C:\john-the-ripper\run>john --test --format=SHA512crypt
 ```
 
-The highlights:
+| 📑 **More examples of** [running John The Ripper on Windows](docs/examples-windows.md#more-examples-of-running-john-the-ripper-on-windows).
+
+The highlights (👀):
 
 - fallback for CPU[*] and OMP;
 - prince mode available;
@@ -137,119 +147,16 @@ a non-OpenMP build specifying the value of OMP_NUM_THREADS in the command line.
 You avail the best SIMD instructions at one's disposal without any OpenMP stuff. E.g.:
 
 ```powershell
-PS C:\john-the-ripper\run> set OMP_NUM_THREADS=1
-PS C:\john-the-ripper\run> .\john --list=build-info
+ PS C:\john-the-ripper\run> set OMP_NUM_THREADS=1
+ PS C:\john-the-ripper\run> .\john --list=build-info
 ```
 
 ### Acessing OpenCL
 
 Some adjustments may be necessary to allow John the Ripper detect your GPU
-hardware. If you are facing problems, please ask for support.
+hardware. If you are facing problems, please read:
 
-- That being said, a few advices to anyone facing Windows problems:
-  - if `john` is not recognizing your GPU card (and you are sure all required GPU drivers are installed):
-    - using the `detect-OpenCL.ps1` script contained in the main folder:
-      ```powershell
-      # I downloaded and extracted "john" to C:\Users\Me\JtR.
-      # Then, opened the `detect-OpenCL.ps1` script and copied the command I need to use;
-      #   For security reasons, powershell script execution is disabled by default
-      PS C:\Users\Me> cd .\JtR\
-
-      PS C:\Users\Me\JtR> run\john --list=opencl-devices
-      Error: No OpenCL-capable platforms were detected by the installed OpenCL driver.
-      Error: No OpenCL-capable devices were detected by the installed OpenCL driver.
-
-      PS C:\Users\Me\JtR> Get-Childitem -Path c:\Windows\System32 -Include amdocl64.dll -File -Recurse -ErrorAction SilentlyContinue | %{$_.FullName} | Out-File -NoNewline -encoding ascii -FilePath etc\OpenCL\vendors\AMD-found.icd
-
-      PS C:\Users\Me\JtR> run\john --list=opencl-devices
-      Platform #0 name: AMD Accelerated Parallel Processing, version: OpenCL 2.1 AMD-APP (3075.13)
-          Device #0 (1) name:     gfx902
-          Board name:             AMD Radeon(TM) Vega 8 Graphics
-          Device vendor:          Advanced Micro Devices, Inc.
-          Device type:            GPU (LE)
-          Device version:         OpenCL 2.0 AMD-APP (3075.13)
-          OpenCL version support: OpenCL C 2.0
-          Driver version:         3075.13 (PAL,HSAIL) - AMDGPU-Pro
-          Native vector widths:   char 4, short 2, int 1, long 1
-          Preferred vector width: char 4, short 2, int 1, long 1
-          Global Memory:          5672 MiB
-          Global Memory Cache:    16 KiB
-          Local Memory:           32 KiB (Local)
-          Constant Buffer size:   3081 MiB
-          Max memory alloc. size: 3081 MiB
-          Max clock (MHz):        1200
-          Profiling timer res.:   1 ns
-          Max Work Group Size:    256
-          Parallel compute cores: 8
-          Stream processors:      512  (8 x 64)
-          Speed index:            614400
-          SIMD width:             16
-          Wavefront width:        64
-          ADL:                    Overdrive0, device id -1
-          PCI device topology:    05:00.0
-      ```
-
-    - replacing cygwin's OpenCL library `cygOpenCL-1.dll` in the `run` directory with `OpenCL.dll` installed
-  in the `c:\Windows\System32` folder. Copy in the `OpenCL.dll`, and rename the copied file `cygOpenCL-1.dll`. Example:
-      ```powershell
-      # I downloaded and installed john in C:\Users\Me\JtR
-      C:\Users\Me\JtR> run\john --list=opencl-devices
-        Error: No OpenCL-capable platforms were detected by the installed OpenCL driver.
-        Error: No OpenCL-capable devices were detected by the installed OpenCL driver.
-
-      C:\Users\Me\JtR> run\john --test=5 --format=nt-opencl
-      No OpenCL devices found
-
-      # If you find too many OpenCL.dll files, try them all one at a time:
-      # - copy, rename, test; copy another file, rename and ...
-      C:\Users\Me\JtR> copy c:\Windows\System32\OpenCL.dll run\cygOpenCL-1.dll
-          1 file(s) copied.
-
-      C:\Users\Me\JtR> run\john --test=5 --format=nt-opencl
-      Device 1: gfx902 [AMD Radeon(TM) Vega 8 Graphics]
-      Benchmarking: NT-opencl [MD4 OpenCL/mask accel]... LWS=64 GWS=512 (8 blocks) x2470 DONE
-      Raw:    287571K c/s real, 2857M c/s virtual
-        ```
-
-  - if you get errors like `Error building kernel /run/opencl/cryptsha512_kernel_GPU.cl` try running john from the subdirectory `opencl` (e.g. from `JtR\run\opencl` run `..\john.exe`).
-
-Benchmarking:
-
-```powershell
-PS C:\bleeding\run> .\john --test=5 --format=sha512crypt-opencl
-Device 0: Juniper [AMD Radeon HD 6700 Series]
-Benchmarking: sha512crypt-opencl, crypt(3) $6$ (rounds=5000) [SHA512 OpenCL]... DONE
-Speed for cost 1 (iteration count) of 5000
-Raw:	11522 c/s real, 819200 c/s virtual
-```
-
-Real cracking:
-
-```powershell
-PS C:\bleeding\run> .\john --format=sha512crypt-opencl d:\hash.txt
-Device 0: Juniper [AMD Radeon HD 6700 Series]
-Using default input encoding: UTF-8
-Loaded 2 password hashes with 2 different salts (sha512crypt-opencl, crypt(3) $6$ [SHA512 OpenCL])
-Cost 1 (iteration count) is 5000 for all loaded hashes
-Press 'q' or Ctrl-C to abort, almost any other key for status
-                 (?)
-1g 0:00:00:28  3/3 0.03540g/s 5553p/s 9178c/s 9178C/s 123456
-```
-
-```powershell
-PS C:\bleeding\run> .\john --format=sha512crypt-opencl d:\hash.txt --mask=Hello?awor?l?l?a
-Device 0: Juniper [AMD Radeon HD 6700 Series]
-Using default input encoding: UTF-8
-Loaded 2 password hashes with 2 different salts (sha512crypt-opencl, crypt(3) $6$ [SHA512 OpenCL])
-Remaining 1 password hash
-Cost 1 (iteration count) is 5000 for all loaded hashes
-Press 'q' or Ctrl-C to abort, almost any other key for status
-GPU 0 probably invalid temp reading (-1°C).
-Hello world!     (?)
-1g 0:00:05:06 DONE (2018-01-01 15:08) 0.003265g/s 11369p/s 11369c/s 11369C/s HelloYworik_..HelloLworurU
-Use the "--show" option to display all of the cracked passwords reliably
-Session completed
-```
+| 📑 **Workarounds for** [OpenCL issues on Windows](docs/examples-windows.md#more-examples-of-running-john-the-ripper-on-windows).
 
 ## 📂 Snap
 
@@ -294,7 +201,7 @@ For your convenience, the snap installed on your system contains the file
 `/snap/john-the-ripper/current/snap/manifest.yaml` which field `build_url`
 points to its build log.
 
-The highlights:
+The highlights (👀):
 
 - fallback for CPU[*] and OMP;
 - prince mode available;
@@ -329,20 +236,12 @@ the Ripper snap, run `sudo snap alias john-the-ripper <alias>`. For example:
 ```bash
  sudo snap alias john-the-ripper john-snap
  sudo snap alias john-the-ripper.dmg2john dmg2john
- sudo snap alias john-the-ripper.hccap2john hccap2john
- sudo snap alias john-the-ripper.racf2john racf2john
- sudo snap alias john-the-ripper.vncpcap2john vncpcap2john
- sudo snap alias john-the-ripper.zip2john zip2john
- sudo snap alias john-the-ripper.gpg2john gpg2john
- sudo snap alias john-the-ripper.keepass2john keepass2john
- sudo snap alias john-the-ripper.putty2john putty2john
- sudo snap alias john-the-ripper.rar2john rar2john
- sudo snap alias john-the-ripper.uaf2john uaf2john
- sudo snap alias john-the-ripper.wpapcap2john wpapcap2john
 ```
 
 Once enabled, John itself plus the *2john tools can be invoked using the aliases.
 In the example, to run John type `john-snap`.
+
+| 📑 **More examples of** [enabling alias for John The Ripper snap](docs/examples-snap-alias.md#more-examples-of-enabling-alias-for-john-the-ripper-snap).
 
 ### Running a non-OpenMP build
 
@@ -409,7 +308,7 @@ Execute John the Ripper:
  run/john -list=build-info
 ```
 
-The highlights:
+The highlights (👀):
 
 - fallback for CPU[*] (if that makes sense) and OMP;
 - prince mode available;
@@ -471,7 +370,7 @@ you can access and audit any file located in your home. Below, an usage example:
  flatpak run com.openwall.John -form=SHA512crypt ~/alltests.in
 ```
 
-The highlights:
+The highlights (👀):
 
 - fallback for CPU[*] and OMP;
 - prince mode available.
@@ -515,54 +414,11 @@ Run John the Ripper and check if it is working:
  docker run ghcr.io/openwall/john # => uses the best SIMD available, tag 'latest' can be ommited
  docker run ghcr.io/openwall/john:rolling # => uses the latest rolling release
  docker run ghcr.io/openwall/john:latest best # => uses the best SIMD available
- docker run ghcr.io/openwall/john:latest avx2-omp -list=build-info
- docker run ghcr.io/openwall/john:latest avx512bw -test=0 -format=cpu
 ```
 
-Run a real cracking session:
+| 📑 **More examples of** [running John The Ripper on Docker](docs/examples-docker.md#more-examples-of-running-john-the-ripper-on-docker).
 
-```bash
- docker run ghcr.io/openwall/john:latest -list=format-tests | cut -f3 > ~/alltests.in
- docker run -v "$HOME":/host ghcr.io/openwall/john:latest avx2 -form=SHA512crypt /host/alltests.in --max-run=300
-```
-
-Run a real cracking session, saving the session information on the host:
-
-```bash
- # I'm using a demo hashes file:
- docker run ghcr.io/openwall/john:latest -list=format-tests | cut -f3 > alltests.in
-
- docker run -v "$(pwd)":/home/JtR ghcr.io/openwall/john best -form=SHA512crypt /home/JtR/alltests.in --max-run=30
- docker run -v "$(pwd)":/home/JtR ghcr.io/openwall/john best -form=SHA512crypt --wordlist --rules /home/JtR/alltests.in --max-run=20
- docker run -v "$(pwd)":/home/JtR ghcr.io/openwall/john best -form=SHA512crypt --incrementa:digits /home/JtR/alltests.in --max-run=20
-
- # On the host (inside the current folder) I can find the session files:
- $ ls -lahR
- total 3,9G
- drwxrwxr-x  5 claudio claudio 4,0K jun 20 08:59  .
- drwxr-x--- 22 claudio claudio 4,0K jun 20 08:59  ..
- -rw-rw-r--  1 claudio claudio 1,2M jun 20 08:58  alltests.in
- drwx------  2 claudio claudio 4,0K jun 20 08:59  .john
- [...]
- ./.john:
- total 24K
- drwx------ 2 claudio claudio 4,0K jun 20 08:59 .
- drwxrwxr-x 5 claudio claudio 4,0K jun 20 08:59 ..
- -rw------- 1 claudio claudio 8,4K jun 20 08:59 john.log
- -rw------- 1 claudio claudio    0 jun 20 08:59 john.pot
- -rw------- 1 claudio claudio  246 jun 20 08:59 john.rec
-```
-
-Compare the performance of SIMD extensions:
-
-```bash
- docker run ghcr.io/openwall/john:latest sse2     --test=10 --format=SHA512crypt
- docker run ghcr.io/openwall/john:latest avx      --test=10 --format=SHA512crypt
- docker run ghcr.io/openwall/john:latest avx2     --test=10 --format=SHA512crypt
- docker run ghcr.io/openwall/john:latest avx512bw --test=10 --format=SHA512crypt
-```
-
-The highlights:
+The highlights (👀):
 
 - prince mode available;
 - the rolling version of John 1.9.0 Jumbo 1+ (`ghcr.io/openwall/john:rolling`):
@@ -571,24 +427,6 @@ The highlights:
   - has ztex formats available.
 - the development version (`ghcr.io/openwall/john:latest`):
   - has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`.
-
-The available binaries (their IDs are sse2-omp, sse2, avx-omp, etc) are:
-
-- /john/run/john-sse2-omp (default binary)
-- /john/run/john-sse2
-- /john/run/john-avx-omp
-- /john/run/john-avx
-- /john/run/john-avx2-omp
-- /john/run/john-avx2
-- /john/run/john-avx512f-omp
-- /john/run/john-avx512f
-- /john/run/john-avx512bw-omp
-- /john/run/john-avx512bw
-
-Binaries available on Docker image John 1.9.0 Jumbo 1 (their IDs are ztex and ztex-no-omp) are:
-
-- /john/run/john-ztex (SSE2)
-- /john/run/john-ztex-no-omp (SSE2)
 
 ### Docker Image Deployments
 
@@ -620,7 +458,7 @@ We take security very seriously.
 
 ## Contribute
 
-We love contributions in the form of issues and pull requests. [Read more here](CONTRIBUTING.md) before contributing.
+We love contributions in the form of issues and pull requests. Read the [Contributor Guide](CONTRIBUTING.md) before contributing.
 
 ## License
 

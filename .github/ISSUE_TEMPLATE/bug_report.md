@@ -7,13 +7,13 @@ assignees: ''
 
 ---
 
-**Describe the bug**
+**1. Describe the bug**
 
 A clear and concise description of what the bug is.
 
 We expect only reports of issues with the latest revision found in https://github.com/openwall/john GitHub repository. We do not expect in here, and have little use for, reports of issues only seen in a release or in a distro package.
 
-**To Reproduce**
+**2. To Reproduce**
 
 Steps to reproduce the behavior:
 1. Go to '...'
@@ -21,17 +21,17 @@ Steps to reproduce the behavior:
 3. Scroll down to '....'
 4. See error
 
-**Command Line**
+**3. Command Line**
 
 If applicable, add the full command line and, if possible, a demo file or a hash to reproduce the bug.
 
-**Environement (please complete the following information):**
+**4. Environement (please complete the following information):**
  - OS: [e.g. Windows 10]
  - Version [e.g. 22H2 + CUDA 10 + restarted to test (all new libs are loaded)]
  - The output of `./john --list=build-info`
  - The output of `./john --list=opencl-devices` (if applicable)
 
-**Additional context**
+**5. Additional context**
 
 Add any other context about the problem here.
 

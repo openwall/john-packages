@@ -13,20 +13,20 @@ Important notes:
 The `john` community releases patches for security vulnerabilities. Which versions are eligible for
 receiving such patches depends on the version:
 
-| Version | Supported          | Note                        |
+| Version | Supported          | Note                                      |
 | ------- | ------------------ | ----------------------------------------- |
 | upstream bleeding code | :heavy_check_mark: | Under development version  |
-| rolling 15b3b7c   | :white_check_mark: | Most recent release             |
-| jumbo 1   | :x: | Stable released version |
-| < jumbo 1 | :x: | No longer maintained    |
+| rolling 15b3b7c        | :white_check_mark: | Most recent release        |
+| jumbo 1                | :x: | Stable released version                   |
+| < jumbo 1              | :x: | No longer maintained                      |
 
 ## Reporting a Vulnerability
 
 Please just report issues in public right away:
-* if you are worried about a package or its dependencies, create a bug report here;
+* if you are worried about a package or its dependencies, create a bug report [here](https://github.com/openwall/john-packages/issues);
 * otherwise, at https://github.com/openwall/john/issues.
 
-If the issue is confirmed, we will release a patch as soon as possible depending on complexity.
+If the issue is confirmed, `john` community will release a patch as soon as possible depending on complexity.
 
 Please note that for security purposes all inputs are considered trusted by upstream `john`, and it should
 be assumed that input can control the program in arbitrary ways. In cases where greater robustness is desired,
@@ -38,4 +38,4 @@ of input files.
 When you think John The Ripper has a potential security vulnerability.
 
 When you know of or suspect a potential vulnerability on another project that is used by `john`.
-For example in a packaged dependency.
+For example, in a packaged dependency.

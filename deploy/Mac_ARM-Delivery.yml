@@ -44,6 +44,7 @@ macos_task:
     - wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/tests-ci.sh -O .ci/tests-ci.sh
     - chmod +x .ci/tests-ci.sh
     - .ci/tests-ci.sh "$TARGET_ARCH" INFO
+    - echo  "$CIRRUS_TASK_ID" > Build._ID
 
   build_script:
     - .ci/tests-ci.sh "$TARGET_ARCH" BUILD
@@ -63,3 +64,6 @@ macos_task:
   always:
     binaries_artifacts:
       path: "JtR-macArm.7z"
+
+    id_artifacts:
+      path: "Build._ID"
