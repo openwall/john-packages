@@ -1,10 +1,10 @@
 ## Describe your changes
 
-Add text here.
+Add your text here.
 
 ## Issue ticket number and link
 
-Add text here.
+Add your text here.
 
 ## Checklist before requesting a review
 - [ ] I have performed a self-review of my code

@@ -19,7 +19,7 @@
 # the Free Software Foundation, as expressed in version 2, seen at
 # http://www.gnu.org/licenses/gpl-2.0.html
 ###############################################################################
-# Script to automate the build of john the ripper
+# Script to automate the build of John the Ripper snap
 # More info at https://github.com/openwall/john-packages
 
 # Required defines
@@ -51,11 +51,6 @@ if [[ "$1" == "PULL" ]]; then
         git pull --unshallow
         git checkout "$_JUMBO_RELEASE"
     fi
-
-    # Set package version
-    git rev-parse --short HEAD 2>/dev/null > ../../../My_VERSION.TXT
-    cp ../../../My_VERSION.TXT My_VERSION.TXT
-    cp ../../../My_VERSION.TXT src/My_VERSION.TXT
 
     # Get the script that computes the package version
     wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/package_version.sh

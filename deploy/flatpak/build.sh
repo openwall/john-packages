@@ -19,7 +19,7 @@
 # the Free Software Foundation, as expressed in version 2, seen at
 # http://www.gnu.org/licenses/gpl-2.0.html
 ###############################################################################
-# Script to automate the build of john the ripper
+# Script to automate the build of John the Ripper flatpak
 # More info at https://github.com/openwall/john-packages
 
 # Required defines
@@ -43,10 +43,8 @@ source ../show_info.sh
 source ../run_build.sh
 
 if [[ -z "$TASK" ]]; then
-    # Set package version
-    git rev-parse --short HEAD 2>/dev/null > My_VERSION.TXT
-
     # The script that computes the package version
+    echo -n "Flatpak Commit "
     source ../package_version.sh
 
     echo ""
