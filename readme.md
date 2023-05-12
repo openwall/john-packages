@@ -4,6 +4,7 @@
 
 [![john-the-ripper](https://snapcraft.io/john-the-ripper/badge.svg)](https://snapcraft.io/john-the-ripper)
 [![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://github.com/openwall/john-packages/blob/master/LICENSE.txt)
+[![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/openwall/john-packages?label=Grade&logo=codefactor&logoColor=ffffff&style=flat-square "CodeFactor Grade")](https://www.codefactor.io/repository/github/openwall/john-packages)
 
 ![Donation](https://img.shields.io/badge/Donate-US%24%2010-brightgreen?style=flat&logo=github-sponsors)
 
@@ -27,13 +28,13 @@ other hashes and ciphers.
    4. [Packaging and Application Distribution](#packaging-and-application-distribution)
    5. [The commits feed of this repository ![New Commits Feed](https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Feed-icon.svg/16px-Feed-icon.svg.png)](https://github.com/openwall/john-packages/commits/main.atom)
    6. [The feed of John the Ripper releases ![New Releases Feed](https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Feed-icon.svg/16px-Feed-icon.svg.png)](https://github.com/openwall/john-packages/releases.atom)
-2. [Windows Package](#windows)
-3. [Snap Package](#snap)
-4. [Mac OS Package](#mac-os)
-5. [Flatpak Package](#flatpak)
-6. [Docker Image](#docker-image)
+2. [Windows Package](#📂-windows)
+3. [Snap Package](#📂-snap)
+4. [Mac OS Package](#📂-mac-os)
+5. [Flatpak Package](#📂-flatpak)
+6. [Docker Image](#📂-docker-image)
 7. [Checksums](#packages-checksums)
-8. [Package Security](#security)
+8. [Package Security](#⚠-security)
 9. [Contribute](#contribute)
 10. [License](#license)
 
@@ -41,9 +42,21 @@ other hashes and ciphers.
 
 ### Continuous Delivery Status
 
-[![Publish Docker image](https://github.com/openwall/john-packages/actions/workflows/docker.yml/badge.svg)](https://github.com/openwall/john-packages/actions/workflows/docker.yml)
+We produce software in short cycles, ensuring that the software can be reliably released at any time, following a pipeline through a "production-like environment".
+
+<div id="CD" align="center">
+
+[![Docker image](https://github.com/openwall/john-packages/actions/workflows/docker.yml/badge.svg)](https://github.com/openwall/john-packages/actions/workflows/docker.yml)
 [![Flatpak Build](https://gitlab.com/claudioandre-br/JtR-CI/badges/master/pipeline.svg?key_text=Flatpak)](https://gitlab.com/claudioandre-br/JtR-CI/pipelines)
 [![Build Status](https://dev.azure.com/claudioandre-br/JohnTheRipper/_apis/build/status/JohnTheRipper?label=Windows)](https://dev.azure.com/claudioandre-br/JohnTheRipper/_build/latest?definitionId=2)
+
+[![Virus Scan](https://github.com/openwall/john-packages/actions/workflows/virusscan.yml/badge.svg)](https://github.com/openwall/john-packages/actions/workflows/virusscan.yml)
+
+| **Releases** | **Latest** (![GitHub Latest Release Date](https://img.shields.io/github/release-date/openwall/john-packages?label=&style=flat-square "GitHub Latest Release Date")) | **Pre** (![GitHub Latest Pre-Release Date](https://img.shields.io/github/release-date-pre/openwall/john-packages?label=&style=flat-square "GitHub Latest Pre-Release Date")) |
+|:-:|:-:|:-:|
+ [![GitHub](https://img.shields.io/badge/Downloads-gray "Downloads")](https://github.com/openwall/john-packages/releases) ![GitHub Total Downloads](https://img.shields.io/github/downloads/openwall/john-packages/total?label=&style=flat-square "GitHub Total Downloads") | ![GitHub Latest Release Version](https://img.shields.io/github/release/openwall/john-packages?sort=date&label=&style=flat-square&color=blue "GitHub Latest Release Version") | ![GitHub Latest Pre-Release Version](https://img.shields.io/github/release/openwall/john-packages?include_prereleases&sort=date&label=&style=flat-square&color=blue "GitHub Latest Pre-Release Version") |
+
+</div>
 
 ### Package Building Environments
 
@@ -69,7 +82,7 @@ A [Docker](https://www.docker.com/) image is a read-only template used to execut
 
 When the Docker user runs an image, it becomes one instance (it becomes a container, in other words, a running instance of the application).
 
-## Windows
+## 📂 Windows
 
 > Delivered using Microsoft-hosted Windows 2019 Server in Azure [ supports up to AVX512BW ]
 
@@ -238,7 +251,7 @@ Use the "--show" option to display all of the cracked passwords reliably
 Session completed
 ```
 
-## Snap
+## 📂 Snap
 
 > Delivered using Launchpad [ supports up to AVX512BW ]
 
@@ -370,7 +383,7 @@ If you already has JtR installed:
 
 If you do so, you will be running the development version available on GitHub.
 
-## Mac OS
+## 📂 Mac OS
 
 > Delivered using Circle CI and Cirrus CI [ supports ASIMD (on ARM), AVX and AVX2 (on x86) ]
 
@@ -429,7 +442,7 @@ You avail the best SIMD instructions at one's disposal without any OpenMP stuff.
 OMP_NUM_THREADS=1 run/john --list=build-info
 ```
 
-## Flatpak
+## 📂 Flatpak
 
 > Delivered using GitLab CI [ supports up to AVX512BW ]
 
@@ -481,7 +494,7 @@ Using the above instructions you can install the rolling version of John
 the Ripper Jumbo 1+, the hot and bleeding version, or a previous stable
 version in your system.
 
-## Docker Image
+## 📂 Docker Image
 
 > Delivered using GitHub Actions [ supports up to AVX512BW ]
 
@@ -597,7 +610,7 @@ are computed by the CI servers.
 By accessing the build logs for each release on GitHub releases you can view the hashes of all
 relevant files.
 
-## Security
+## ⚠ Security
 
 Please inspect all packages prior to running any of them to ensure safety.
 We already know they're safe, but you should verify the security and contents of any
