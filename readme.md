@@ -1,14 +1,23 @@
 # John the Ripper Packages
 
+<div id="header" align="center">
+
 [![john-the-ripper](https://snapcraft.io/john-the-ripper/badge.svg)](https://snapcraft.io/john-the-ripper)
 [![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://github.com/openwall/john-packages/blob/master/LICENSE.txt)
+
 ![Donation](https://img.shields.io/badge/Donate-US%24%2010-brightgreen?style=flat&logo=github-sponsors)
 
+</div>
+
 [Openwall's](http://openwall.com/) John the Ripper (JtR) is a fast password cracker,
-currently available for many flavors of Unix, Windows, DOS, and OpenVMS. Its primary
+currently available for many flavors of Unix and for Windows. Its primary
 purpose is to detect weak Unix passwords. Besides several crypt(3) password hash
 types most commonly found on various Unix systems, supported out of the box are
-Windows LM hashes, plus lots of other hashes and ciphers.
+Windows LM hashes, various macOS password hashes, as well as many
+non-hashes such as SSH private keys, encrypted filesystems such as macOS .dmg files
+and "sparse bundles", encrypted archives such as ZIP, RAR, and 7z,
+encrypted document files such as PDF and Microsoft Office's, plus lots of
+other hashes and ciphers.
 
 # Table of Contents
 1. [Introduction](#introduction)
@@ -31,6 +40,7 @@ Windows LM hashes, plus lots of other hashes and ciphers.
 # Introduction
 
 ### Continuous Delivery Status
+
 [![Publish Docker image](https://github.com/openwall/john-packages/actions/workflows/docker.yml/badge.svg)](https://github.com/openwall/john-packages/actions/workflows/docker.yml)
 [![Flatpak Build](https://gitlab.com/claudioandre-br/JtR-CI/badges/master/pipeline.svg?key_text=Flatpak)](https://gitlab.com/claudioandre-br/JtR-CI/pipelines)
 [![Build Status](https://dev.azure.com/claudioandre-br/JohnTheRipper/_apis/build/status/JohnTheRipper?label=Windows)](https://dev.azure.com/claudioandre-br/JohnTheRipper/_build/latest?definitionId=2)
@@ -41,7 +51,7 @@ Click on the link to learn more about our packages [Building Environments](https
 
 ### Testing and Continuous Integration
 
-All continuous integration (CI) and continuous delivery (CD) procedures are fully automated, all builds and tests are
+All continuous integration (CI) and continuous delivery (CD) procedures are fully automated, builds and tests are
 performed whenever requested by the packager. Manual procedures are required just to
 start the process.
 
@@ -63,14 +73,14 @@ When the Docker user runs an image, it becomes one instance (it becomes a contai
 
 > Delivered using Microsoft-hosted Windows 2019 Server in Azure [ supports up to AVX512BW ]
 
-To install John the Ripper by downloading the .zip file and installing manually,
+To install John the Ripper by downloading the .7z file and installing it manually,
 follow these steps:
 
-- Download the ZIP file to your machine.
+- Download the compressed file to your machine.
 - Navigate to where you downloaded the file and double click the compressed file.
 - Extract it to a directory such as `C:\john-the-ripper`.
 - Start a command prompt.
-- Navigate to the directory you extracted the .zip file, e.g., `cd C:\john-the-ripper\run`.
+- Navigate to the directory you extracted the compressed file, e.g., `cd C:\john-the-ripper\run`.
 - Run JtR:
 
 ```powershell
@@ -101,10 +111,10 @@ it's running on.
 [![Windows Downloads](https://img.shields.io/badge/Download-Windows%20Build-blue.svg)](https://github.com/openwall/john-packages/releases)
 
 Using the above instructions you can install the rolling version of John
-the Ripper Jumbo 1+, the hot and bleeding version, or any previous stable
+the Ripper Jumbo 1+, the hot and bleeding version, or a previous stable
 version in your system.
 
-The package contain all the executables and libraries needed to run a fresh
+The package contains all the executables and libraries needed to run a fresh
 John the Ripper installation.
 
 ### Running a non-OpenMP build on Windows
@@ -328,7 +338,7 @@ non-OpenMP build specifying `OMP_NUM_THREADS=1 john <options>` in the command li
 You avail the best SIMD instructions at one's disposal without any OpenMP stuff. E.g.:
 
 ```bash
-OMP_NUM_THREADS=1 john --list=build-info
+ OMP_NUM_THREADS=1 john --list=build-info
 ```
 
 ### Acessing OpenCL
@@ -362,7 +372,7 @@ If you do so, you will be running the development version available on GitHub.
 
 ## Mac OS
 
-> Delivered using Circle CI and Cirrus CI [ supports ASIMD (on ARM) and AVX (on x86) ]
+> Delivered using Circle CI and Cirrus CI [ supports ASIMD (on ARM), AVX and AVX2 (on x86) ]
 
 To install John the Ripper by downloading the .7z file and installing it manually,
 follow these steps:
@@ -376,14 +386,14 @@ follow these steps:
 Install required Homebrew packages (if not already installed):
 
 ```bash
-brew update
-brew install libomp openssl gmp
+ brew update
+ brew install libomp openssl gmp
 ```
 
-Run John the Ripper:
+Execute John the Ripper:
 
 ```bash
- ./john -list=build-info
+ run/john -list=build-info
 ```
 
 The highlights:
@@ -391,6 +401,7 @@ The highlights:
 - fallback for CPU[*] (if that makes sense) and OMP;
 - prince mode available;
 - OpenCL available;
+- built using clang from the official XCode toolchain plus non-system libraries from Homebrew;
 - a development version:
   - is available for X86_64 (on Intel).
   - is available for ARM (on M1 and M2).
@@ -415,7 +426,7 @@ a non-OpenMP build specifying the value of OMP_NUM_THREADS in the command line.
 You avail the best SIMD instructions at one's disposal without any OpenMP stuff. E.g.:
 
 ```bash
-OMP_NUM_THREADS=1 .\john --list=build-info
+OMP_NUM_THREADS=1 run/john --list=build-info
 ```
 
 ## Flatpak
@@ -431,7 +442,7 @@ Flatpak is available for the [most common Linux distributions](http://flatpak.or
 To install JtR download the john.flatpak file and run:
 
 ```bash
-# Note that root privileges are required for some operations.
+ # Note that root privileges are required for some operations.
  sudo dnf install -y flatpak # or 'yum install', 'apt-get install', etc.
  sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo # flatpak repository
  sudo flatpak install -y flathub org.freedesktop.Platform//22.08 # install the runtime (base "container")
@@ -467,11 +478,8 @@ it's running on.
 [![Flatpak Download](https://img.shields.io/badge/Download-Flatpak%20Package-blue)](https://github.com/openwall/john-packages/releases)
 
 Using the above instructions you can install the rolling version of John
-the Ripper Jumbo 1+, the hot and bleeding version, or any previous stable
+the Ripper Jumbo 1+, the hot and bleeding version, or a previous stable
 version in your system.
-
-John the Ripper single-file flatpak bundle was built and tested on
-[GitLab](https://gitlab.com/claudioandre-br/JtR-CI/pipelines).
 
 ## Docker Image
 
@@ -508,9 +516,28 @@ Run a real cracking session:
 Run a real cracking session, saving the session information on the host:
 
 ```bash
+ # I'm using a demo hashes file:
+ docker run ghcr.io/openwall/john:latest -list=format-tests | cut -f3 > alltests.in
+
  docker run -v "$(pwd)":/home/JtR ghcr.io/openwall/john best -form=SHA512crypt /home/JtR/alltests.in --max-run=30
  docker run -v "$(pwd)":/home/JtR ghcr.io/openwall/john best -form=SHA512crypt --wordlist --rules /home/JtR/alltests.in --max-run=20
  docker run -v "$(pwd)":/home/JtR ghcr.io/openwall/john best -form=SHA512crypt --incrementa:digits /home/JtR/alltests.in --max-run=20
+
+ # On the host (inside the current folder) I can find the session files:
+ $ ls -lahR
+ total 3,9G
+ drwxrwxr-x  5 claudio claudio 4,0K jun 20 08:59  .
+ drwxr-x--- 22 claudio claudio 4,0K jun 20 08:59  ..
+ -rw-rw-r--  1 claudio claudio 1,2M jun 20 08:58  alltests.in
+ drwx------  2 claudio claudio 4,0K jun 20 08:59  .john
+ [...]
+ ./.john:
+ total 24K
+ drwx------ 2 claudio claudio 4,0K jun 20 08:59 .
+ drwxrwxr-x 5 claudio claudio 4,0K jun 20 08:59 ..
+ -rw------- 1 claudio claudio 8,4K jun 20 08:59 john.log
+ -rw------- 1 claudio claudio    0 jun 20 08:59 john.pot
+ -rw------- 1 claudio claudio  246 jun 20 08:59 john.rec
 ```
 
 Compare the performance of SIMD extensions:
@@ -545,17 +572,6 @@ The available binaries (their IDs are sse2-omp, sse2, avx-omp, etc) are:
 - /john/run/john-avx512bw-omp
 - /john/run/john-avx512bw
 
-Binaries available on images up to rolling-2304 (their IDs are sse2, sse2-no-omp, ssse3, etc) are:
-
-- /john/run/john-ssse3
-- /john/run/john-ssse3-no-omp
-- /john/run/john-sse4.1
-- /john/run/john-sse4.1-no-omp
-- /john/run/john-sse4.2
-- /john/run/john-sse4.2-no-omp
-- /john/run/john-xop
-- /john/run/john-xop-no-omp
-
 Binaries available on Docker image John 1.9.0 Jumbo 1 (their IDs are ztex and ztex-no-omp) are:
 
 - /john/run/john-ztex (SSE2)
@@ -566,7 +582,7 @@ Binaries available on Docker image John 1.9.0 Jumbo 1 (their IDs are ztex and zt
 [![Docker Image Downloads](https://img.shields.io/badge/Download-Docker%20Build-blue.svg)](https://github.com/openwall/john-packages/pkgs/container/john)
 
 Using the above instructions you can install the rolling version of John
-the Ripper Jumbo 1+, the hot and bleeding version, or any previous stable
+the Ripper Jumbo 1+, the hot and bleeding version, or a previous stable
 version in your system.
 
 ## Packages Checksums

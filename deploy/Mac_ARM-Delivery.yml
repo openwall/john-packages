@@ -31,47 +31,35 @@ macos_task:
     BUILD_OPS: "--build=aarch64-apple-darwin"
     CC : "clang"
     MAKE_FLAGS: "-sj4"
-    TARGET_ARCH : "MacOS"
+    TARGET_ARCH : "MacOS ARM"
     EXTRA: "full;extra"
     TEST : "MacOS;"
     BASE : "Apple MacOS M1"
-
-  pkginstall_script:
-    - brew update
-    - brew install openssl libpcap libomp gmp coreutils
-    - brew link openssl --force
+    DEPLOY_PAK : "Yes"
 
   info_script:
+    - git clone --depth 10 https://github.com/openwall/john.git ~/tmp
+    - cp -r ~/tmp/. .
+
     - wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/tests-ci.sh -O .ci/tests-ci.sh
     - chmod +x .ci/tests-ci.sh
-    - .ci/tests-ci.sh $TARGET_ARCH INFO
+    - .ci/tests-ci.sh "$TARGET_ARCH" INFO
 
   build_script:
-    - cd src
-    - ./configure $BUILD_OPS LDFLAGS="-L/opt/homebrew/opt/openssl/lib -L/opt/homebrew/opt/libomp/lib -lomp -L/opt/homebrew/opt/gmp/lib" CPPFLAGS="-Xclang -fopenmp -I/opt/homebrew/opt/openssl/include -I/opt/homebrew/opt/libomp/include -I/opt/homebrew/opt/gmp/include"
-    - make "$MAKE_FLAGS"
+    - .ci/tests-ci.sh "$TARGET_ARCH" BUILD
 
     # Format crash on M1
-    - echo '[Local:Disabled:Formats]' >> ../run/john-local.conf
-    - echo 'SunMD5 = Y' >> ../run/john-local.conf
+    - echo '[Local:Disabled:Formats]' >> run/john-local.conf
+    - echo 'SunMD5 = Y' >> run/john-local.conf
+    - .ci/tests-ci.sh "$TARGET_ARCH" TEST
 
-  check_script:
-    - run/john --list=build-info
+  package_script:
+    - wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/clean_package.sh -O .ci/clean_package.sh
+    - source .ci/clean_package.sh
 
-  test_script:
-    - wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/tests-ci.sh -O .ci/tests-ci.sh
-    - chmod +x .ci/tests-ci.sh
-
-    - .ci/tests-ci.sh $TARGET_ARCH TEST
-
-    - rm -rf src .git .ci .circleci .cirrus.yml .azure .editorconfig .gitattributes .github .gitignore .mailmap .pre-commit.sh .travis .travis.yml && rm -rf run/ztex
-    - zip -vr -9 ../JtR.zip ./
-    - sha256sum ../*.zip || true
-    - cp ../JtR.zip JtR.zip
-
-  # Saving build artifacts.
-  # https://api.cirrus-ci.com/v1/artifact/github/claudioandre-br/JohnTheRipper/macOS%20M1/binaries/JtR.zip
+    - 7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=128m -ms=on JtR-macArm.7z ./
+    - sha256sum JtR-macArm.7z || true
 
   always:
     binaries_artifacts:
-      path: "JtR.zip"
+      path: "JtR-macArm.7z"

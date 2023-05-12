@@ -15,10 +15,10 @@ receiving such patches depends on the version:
 
 | Version | Supported          | Note                        |
 | ------- | ------------------ | ----------------------------------------- |
-| upstream bleeding code | :heavy_check_mark: | Under development version    |
-| rolling 15b3b7c   | :white_check_mark: | Most recent release                |
-| jumbo 1  | :x: | Stable released version |
-| < jumbo 1    | :x:                | No longer maintained |
+| upstream bleeding code | :heavy_check_mark: | Under development version  |
+| rolling 15b3b7c   | :white_check_mark: | Most recent release             |
+| jumbo 1   | :x: | Stable released version |
+| < jumbo 1 | :x: | No longer maintained    |
 
 ## Reporting a Vulnerability
 
@@ -26,12 +26,12 @@ Please just report issues in public right away:
 * if you are worried about a package or its dependencies, create a bug report here;
 * otherwise, at https://github.com/openwall/john/issues.
 
+If the issue is confirmed, we will release a patch as soon as possible depending on complexity.
+
 Please note that for security purposes all inputs are considered trusted by upstream `john`, and it should
 be assumed that input can control the program in arbitrary ways. In cases where greater robustness is desired,
 use the snap, the flatpak or the Docker version; you can also use the `--format` option to reduce parsing
 of input files.
-
-If the issue is confirmed, we will release a patch as soon as possible depending on complexity.
 
 ## When to report a vulnerability
 

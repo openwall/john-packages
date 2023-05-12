@@ -1,4 +1,4 @@
-From b676d446ed9e80aacf82672e2487fa7bf6c26795 Mon Sep 17 00:00:00 2001
+From 5c8522ff234ce7012484c52576c4ce156327b180 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Claudio=20Andr=C3=A9?= <claudioandre.br@gmail.com>
 Date: Sat, 15 Dec 2018 23:35:51 -0200
 Subject: [PATCH] Handle self confined system wide build.
@@ -9,10 +9,10 @@ Subject: [PATCH] Handle self confined system wide build.
  2 files changed, 22 insertions(+), 2 deletions(-)
 
 diff --git a/src/listconf.c b/src/listconf.c
-index 7a1b2dca8..075362f54 100644
+index d33e993f0..bd2e403a4 100644
 --- a/src/listconf.c
 +++ b/src/listconf.c
-@@ -143,6 +143,18 @@ static void listconf_list_build_info(void)
+@@ -151,6 +151,18 @@ static void listconf_list_build_info(void)
  	       SIMD_PARA_SHA256, SIMD_PARA_SHA512);
  #endif
  #if JOHN_SYSTEMWIDE
@@ -32,7 +32,7 @@ index 7a1b2dca8..075362f54 100644
  	puts("System-wide home: " JOHN_SYSTEMWIDE_HOME);
  	puts("Private home: " JOHN_PRIVATE_HOME);
 diff --git a/src/params.h b/src/params.h
-index 290aef16d..f2dae5fae 100644
+index 83afed9eb..fa7d43f58 100644
 --- a/src/params.h
 +++ b/src/params.h
 @@ -106,10 +106,18 @@
@@ -57,5 +57,5 @@ index 290aef16d..f2dae5fae 100644
  #define JOHN_PRIVATE_HOME		"~/.john"
  #endif
 -- 
-2.19.1
+2.39.2
 

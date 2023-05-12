@@ -23,11 +23,11 @@ Steps to reproduce the behavior:
 
 **Command Line**
 
-If applicable, add the full command line and, if possible, a demo file to reproduce the bug.
+If applicable, add the full command line and, if possible, a demo file or a hash to reproduce the bug.
 
 **Environement (please complete the following information):**
  - OS: [e.g. Windows 10]
- - Version [e.g. 22H2 + CUDA 10]
+ - Version [e.g. 22H2 + CUDA 10 + restarted to test (all new libs are loaded)]
  - The output of `./john --list=build-info`
  - The output of `./john --list=opencl-devices` (if applicable)
 
@@ -41,7 +41,7 @@ Add any other context about the problem here.
 
 - [ ] :1st_place_medal: I've read and understood these instructions;
   - This is not a support forum, it's a bug tracker. For questions and support, review postings on the [john-users mailing list](https://www.openwall.com/lists/john-users/).
-- [ ] :thumbsup: I've tested using latest bleeding package version from upstream repository.
+- [ ] :thumbsup: I've tested using latest bleeding package version from this repository.
   - Be clear about your environment and what you are doing. Share a sample hash or file that can be used to reproduce.
 - [ ] :confused: I'm confused and I need guidance.
   - Please, read the instructions at https://www.openwall.com/john/#lists, then join the list before posting.

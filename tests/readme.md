@@ -11,6 +11,8 @@ in quality assurance, CI (continuous integration), and CD (continuous delivery).
 this goal, our testing scheme builds and inspects the source code of John the Ripper
 using:
 
+### Operating Systems (OS)
+
 - Microsoft Windows:
   - Windows Server 2016 Datacenter (10.0.14393 N/A Build 14393);
   - Windows Server 2019 Datacenter (10.0.17763 N/A Build 17763);
@@ -22,23 +24,32 @@ using:
 - Solaris:
   - SunOS Release 5.11 Version 11.4.0.15.0 64-bit;
 - Linux:
-  - CentOS 7 and Fedora 37;
+  - CentOS 7 and Fedora 38;
   - Ubuntu 16.04 (Intel OpenCL for CPUs), Ubuntu 22.04, and Ubuntu devel (the under development version);
   - flatpak (runtime: org.freedesktop.Platform 22.08);
   - snap (runtime: core22);
   - Android NDK r23 LTS (ANDROID_NDK_VERSION=r23b)
 - MacOS:
-  - Darwin 21.6.0 x86_64 i386;
-  - Darwin 22.4.0 arm64 arm;
+  - macOS 12.6 21G115:
+    - Darwin 21.6.0 x86_64 i386;
+  - macOS 13.4 22F66:
+    - Darwin 22.4.0 arm64 arm;
+
+### Toolchains
+
 - Compilers:
   - gcc 4.8 (CentOS), gcc 5.4 (Ubuntu 16, Android), gcc 7.4 (Win 2016);
-  - gcc 11.3 (Win 2019/2022, Ubuntu 22, Snap), and gcc 12.2 (Fedora 37, Flatpak, Ubuntu Dev, fuzzing);
+  - gcc 11.3 (Ubuntu 22, Snap), gcc 11.4 (Win 2019/2022);
+  - gcc 12.2 (Flatpak, fuzzing), gcc 12.3 (Ubuntu Dev), and gcc 13.1 (Fedora 38);
   - Solaris gcc (GCC) 7.3.0;
   - FreeBSD clang version 13.0.0;
   - FreeBSD clang version 14.0.5;
   - FreeBSD clang version 15.0.7;
-  - Apple clang version 14.0.0 (clang-1400.0.29.202)
-  - Apple clang version 14.0.3 (clang-1403.0.22.14.1)
+  - Apple clang version 14.0.0 (clang-1400.0.29.202);
+  - Apple clang version 14.0.3 (clang-1403.0.22.14.1);
+
+### Testing and Commissioning
+
 - Builds:
   - LE (Little Endian) and BE (Big Endian) builds;
   - ASAN (address sanitizer) and UBSAN (undefined behavior sanitizer);
@@ -49,12 +60,13 @@ using:
   - And a final assessment using ARMv7 (armhf), ARMv8 (aarch64), PowerPC64 Little-Endian,
 and IBM System z.
 
-Plans and future vision:
-
-- Develop a fully automated build and release pipeline using Azure DevOps Services
-  to create the CI/CD pipeline and Azure Services for deploying to development/staging and
-  production.
-  See the [release workflow here](https://github.com/openwall/john-packages/blob/master/tests/CI-workflow.pdf).
+- Plans and future vision:
+  - Develop a fully automated build and release pipeline using Azure DevOps Services
+    to create the CI/CD pipeline and Azure Services for deploying to development/staging and
+    production.
+    See the [release workflow here](https://github.com/openwall/john-packages/blob/master/tests/CI-workflow.pdf);
+  - Add support to ClusterFuzz (OSS-Fuzz);
+  - Add support to static code quality analyzer.
 
 #### Supported SIMD Extensions
 
@@ -97,7 +109,11 @@ Plans and future vision:
 
 ## Obsolete Architectures
 
-We can no longer build and package for these environments:
+We can no longer build and test for these environments:
 
-* Intel/AMD X86 32 bits (i386);
-* PowerPC 32 bits (powerpc).
+* Any 32-bit build (e.g. i386, i686, and powerpc);
+* Windows 8 or older (64-bit);
+* Windows Server 2012 or older (64-bit);
+
+
+If you need such a build, use a previous stable or rolling release.
