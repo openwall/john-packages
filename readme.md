@@ -20,11 +20,12 @@ Windows LM hashes, plus lots of other hashes and ciphers.
 2. [Snap Package](#snap)
 3. [Flatpak Package](#flatpak)
 4. [Windows Package](#windows)
-5. [Docker Image](#docker-image)
-6. [Checksums](#packages-checksums)
-7. [Package Security](#security)
-8. [Contribute](#contribute)
-9. [License](#license)
+5. [Mac OS Package](#mac-os)
+6. [Docker Image](#docker-image)
+7. [Checksums](#packages-checksums)
+8. [Package Security](#security)
+9. [Contribute](#contribute)
+10. [License](#license)
 
 # Introduction
 
@@ -412,6 +413,65 @@ Hello world!     (?)
 Use the "--show" option to display all of the cracked passwords reliably
 Session completed
 ```
+
+## Mac OS
+
+> Delivered using Circle CI and Cirrus CI [ supports ASIMD (on ARM) and AVX (on x86) ]
+
+To install John the Ripper by downloading the .7z file and installing it manually,
+follow these steps:
+
+- Download the compressed file to your machine.
+- Extract it to a directory such as `/Users/Me/bleeding`.
+- Start a command prompt.
+- Navigate to the directory you extracted the compressed file, e.g., `cd /Users/Me/bleeding`.
+- Run the software:
+
+Install required Homebrew packages (if not already installed):
+
+```bash
+brew update
+brew install libomp openssl gmp
+```
+
+Run John the Ripper:
+
+```bash
+ ./john -list=build-info
+```
+
+The highlights:
+
+- fallback for CPU[*] (if that makes sense) and OMP;
+- prince mode available;
+- OpenCL available;
+- a development version:
+  - is available for X86_64 (on Intel).
+  - is available for ARM (on M1 and M2).
+
+[*] John the Ripper runs using the best SIMD instructions available on the host
+it's running on.
+
+### Mac OS Deployments
+
+[![Mac OS Downloads](https://img.shields.io/badge/Download-Mac%20Build-blue.svg)](https://github.com/openwall/john-packages/releases)
+
+Using the above instructions you can install the hot and bleeding version
+in your system.
+
+The package contains the necessary executables to run a fresh install of John the Ripper.
+You must install required Homebrew libraries.
+
+### Running a non-OpenMP build on Mac OS
+
+In some situations a non-OpenMP build may be faster. You can ask to fallback to
+a non-OpenMP build specifying the value of OMP_NUM_THREADS in the command line.
+You avail the best SIMD instructions at one's disposal without any OpenMP stuff. E.g.:
+
+```bash
+OMP_NUM_THREADS=1 .\john --list=build-info
+```
+
 ## Docker Image
 
 > Delivered using GitHub Actions [ supports up to AVX512BW ]
