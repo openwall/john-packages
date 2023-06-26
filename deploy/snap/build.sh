@@ -132,8 +132,8 @@ ln -s $(realpath ../run) /snap/john-the-ripper/current/run
 wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/disable_formats.sh
 source disable_formats.sh
 
-wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/run_tests.sh
+wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/run_tests.sh
 source run_tests.sh
 
-wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/clean_package.sh
+wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh
 source clean_package.sh
