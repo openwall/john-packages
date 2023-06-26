@@ -17,10 +17,10 @@
 # the Free Software Foundation, as expressed in version 2, seen at
 # http://www.gnu.org/licenses/gpl-2.0.html
 ###############################################################################
-# Github Actions CI configuration
+# Github Action to build John the Ripper's CPU Docker image
 # More info at https://github.com/openwall/john-packages
 
-name: Publish Docker image
+name: Docker Image
 
 on:
   workflow_dispatch:
