@@ -28,13 +28,13 @@ other hashes and ciphers.
    4. [Packaging and Application Distribution](#packaging-and-application-distribution)
    5. [The commits feed of this repository ![New Commits Feed](https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Feed-icon.svg/16px-Feed-icon.svg.png)](https://github.com/openwall/john-packages/commits/main.atom)
    6. [The feed of John the Ripper releases ![New Releases Feed](https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Feed-icon.svg/16px-Feed-icon.svg.png)](https://github.com/openwall/john-packages/releases.atom)
-2. [Windows Package](#📂-windows)
-3. [Snap Package](#📂-snap)
-4. [Mac OS Package](#📂-mac-os)
-5. [Flatpak Package](#📂-flatpak)
-6. [Docker Image](#📂-docker-image)
+2. [Windows Package](#-windows)
+3. [Snap Package](#-snap)
+4. [Mac OS Package](#-mac-os)
+5. [Flatpak Package](#-flatpak)
+6. [Docker Image](#-docker-image)
 7. [Checksums](#packages-checksums)
-8. [Package Security](#⚠-security)
+8. [Package Security](#-security)
 9. [Contribute](#contribute)
 10. [License](#license)
 
@@ -52,7 +52,7 @@ We produce software in short cycles, ensuring that the software can be reliably 
 
 [![Virus Scan](https://github.com/openwall/john-packages/actions/workflows/virusscan.yml/badge.svg)](https://github.com/openwall/john-packages/actions/workflows/virusscan.yml)
 
-| **Releases** | **Latest** (![GitHub Latest Release Date](https://img.shields.io/github/release-date/openwall/john-packages?label=&style=flat-square "GitHub Latest Release Date")) | **Pre** (![GitHub Latest Pre-Release Date](https://img.shields.io/github/release-date-pre/openwall/john-packages?label=&style=flat-square "GitHub Latest Pre-Release Date")) |
+| **Releases** | **Latest** (![GitHub Latest Release Date](https://img.shields.io/github/release-date/openwall/john-packages?label=&style=flat-square "GitHub Latest Release Date")) | **Pre-Release** (![GitHub Latest Pre-Release Date](https://img.shields.io/github/release-date-pre/openwall/john-packages?label=&style=flat-square "GitHub Latest Pre-Release Date")) |
 |:-:|:-:|:-:|
  [![GitHub](https://img.shields.io/badge/Downloads-gray "Downloads")](https://github.com/openwall/john-packages/releases) ![GitHub Total Downloads](https://img.shields.io/github/downloads/openwall/john-packages/total?label=&style=flat-square "GitHub Total Downloads") | ![GitHub Latest Release Version](https://img.shields.io/github/release/openwall/john-packages?sort=date&label=&style=flat-square&color=blue "GitHub Latest Release Version") | ![GitHub Latest Pre-Release Version](https://img.shields.io/github/release/openwall/john-packages?include_prereleases&sort=date&label=&style=flat-square&color=blue "GitHub Latest Pre-Release Version") |
 
