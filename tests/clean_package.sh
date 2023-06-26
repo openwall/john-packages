@@ -19,7 +19,7 @@
 # the Free Software Foundation, as expressed in version 2, seen at
 # http://www.gnu.org/licenses/gpl-2.0.html
 ###############################################################################
-# Script to remove unnecessary stuff from John the Ripper package  
+# Script to remove unnecessary stuff from John the Ripper package
 # More info at https://github.com/openwall/john-packages
 
 # Remove the left-over from testing
