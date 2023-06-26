@@ -1,0 +1,41 @@
+# Security Policy
+
+Important notes:
+* `john` isn't to be used on untrusted input and should be run with the lowest privileges necessary;
+  * it is unrealistic to have zero bugs, it is a consequence of how many formats and different parsers it has.
+* prefer sandboxed versions of packages (snap, flatpak or Docker) whenever you need "hardening";
+* reminder:
+  * the MPI library (not used by our packges) tends to open and listening ports, so it can expose itself,
+    `john`, and the underlying system to direct network-based attacks as well.
+
+## Supported Versions
+
+The `john` community releases patches for security vulnerabilities. Which versions are eligible for
+receiving such patches depends on the version:
+
+| Version | Supported          | Note                        |
+| ------- | ------------------ | ----------------------------------------- |
+| upstream bleeding code | :heavy_check_mark: | Under development version    |
+| rolling 15b3b7c   | :white_check_mark: | Most recent release                |
+| jumbo 1  | :x: | Stable released version |
+| < jumbo 1    | :x:                | No longer maintained |
+
+## Reporting a Vulnerability
+
+Please just report issues in public right away:
+* if you are worried about a package or its dependencies, create a bug report here;
+* otherwise, at https://github.com/openwall/john/issues.
+
+Please note that for security purposes all inputs are considered trusted by upstream `john`, and it should
+be assumed that input can control the program in arbitrary ways. In cases where greater robustness is desired,
+use the snap, the flatpak or the Docker version; you can also use the `--format` option to reduce parsing
+of input files.
+
+If the issue is confirmed, we will release a patch as soon as possible depending on complexity.
+
+## When to report a vulnerability
+
+When you think John The Ripper has a potential security vulnerability.
+
+When you know of or suspect a potential vulnerability on another project that is used by `john`.
+For example in a packaged dependency.
