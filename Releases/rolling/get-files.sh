@@ -54,13 +54,13 @@ wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/2070907
 wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/2070906/+files/buildlog_snap_ubuntu_bionic_ppc64el_john-the-ripper_BUILDING.txt.gz
 
 if [[ "$1" == "ALL_FILES" ]]; then
-    https://artprodsbr1.artifacts.visualstudio.com/A56e4da31-e2d8-472b-be22-766278080a34/40224313-b91e-465d-852b-fc4ea516f33e/_apis/artifact/cGlwZWxpbmVhcnRpZmFjdDovL2NsYXVkaW9hbmRyZS1ici9wcm9qZWN0SWQvNDAyMjQzMTMtYjkxZS00NjVkLTg1MmItZmM0ZWE1MTZmMzNlL2J1aWxkSWQvMzExL2FydGlmYWN0TmFtZS93aW5feDY0Ljd60/content?format=file&subPath=%2Fwin_x64.7z  -O x64_win.7z
+    wget https://artprodsbr1.artifacts.visualstudio.com/A56e4da31-e2d8-472b-be22-766278080a34/40224313-b91e-465d-852b-fc4ea516f33e/_apis/artifact/cGlwZWxpbmVhcnRpZmFjdDovL2NsYXVkaW9hbmRyZS1ici9wcm9qZWN0SWQvNDAyMjQzMTMtYjkxZS00NjVkLTg1MmItZmM0ZWE1MTZmMzNlL2J1aWxkSWQvMzExL2FydGlmYWN0TmFtZS93aW5feDY0Ljd60/content?format=file&subPath=%2Fwin_x64.7z  -O x64_win.7z
     wget https://ci.appveyor.com/api/buildjobs/$APPVEYOR_32bits/artifacts/win_x32.7z  -O x32_win.7z
     wget https://gitlab.com/claudioandre-br/packages/-/jobs/$FLATPAK/artifacts/download  -O john.flatpak.zip
 
     unzip john.flatpak.zip
-    sha256sum *.zip
-    sha256sum *.7z
-    sha256sum john.flatpak
+    sha256sum -- *.zip
+    sha256sum -- *.7z
+    sha256sum -- john.flatpak
 fi
 

@@ -27,7 +27,7 @@
 ARG release=false
 ARG commit=15b3b7c25fc8ac34f2504d53f0c94bbf4ec12596
 
-FROM ubuntu:22.04
+FROM ubuntu:22.04 as build
 WORKDIR /build/
 
 RUN apt-get update -qq && \
@@ -40,7 +40,7 @@ RUN apt-get update -qq && \
 # ------------------------------------------------------------------
     git clone --depth 10 https://github.com/openwall/john.git && \
     # Make it a reproducible build
-    if [ "$release" == "true" ] ; then cd john; git checkout $commit; cd ..; fi && \
+    if [ "$release" == "true" ] ; then (cd john; git checkout $commit;) fi && \
     cd john/src && \
       ./configure --disable-native-tests --with-systemwide --disable-openmp --enable-simd=sse2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-sse2 && \
       ./configure --disable-native-tests --with-systemwide                  --enable-simd=sse2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-sse2-omp && \
@@ -95,11 +95,11 @@ LABEL \
 # libgomp1                         (apt)
 # Default user is JtR
 
-COPY --from=0 /build/john /john
+COPY --from=build /build/john /john
 RUN mkdir -p /usr/share/ && ln -s /john/run /usr/share/john
 COPY docker-entrypoint.sh /usr/local/bin/
 
-RUN ln -s /usr/local/bin/docker-entrypoint.sh && \
+RUN ln -s /usr/local/bin/docker-entrypoint.sh . && \
     useradd -U -m JtR && \
     apt-get update -qq && \
     export DEBIAN_FRONTEND="noninteractive" && \

@@ -42,5 +42,5 @@ wget https://gitlab.com/claudioandre-br/packages/-/jobs/212460695/raw           
 wget https://api.travis-ci.org/v3/job/532480502/log.txt    -O docker_log.txt
 
 unzip john.flatpak.zip
-sha256sum *.zip
-sha256sum john.flatpak
+sha256sum -- *.zip
+sha256sum -- john.flatpak
