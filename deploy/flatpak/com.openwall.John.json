@@ -56,11 +56,13 @@
                 },
                 {
                     "type": "file",
-                    "path": "../tests/run_tests.sh"
+                    "url": "https://raw.githubusercontent.com/openwall/john-packages/main/tests/run_tests.sh",
+                    "sha256": "29df53b27999f34992d3507d2f59549687aa304b40679ae63cd7ab2586cdcb79"
                 },
                 {
                     "type": "file",
-                    "path": "../tests/clean_package.sh"
+                    "url": "https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh",
+                    "sha256": "fe0559b39a99a48786c7112495ae1be1ab533db97d2f00e5d1145a097a17cfcb"
                 },
                 {
                     "type": "file",
