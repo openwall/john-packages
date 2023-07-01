@@ -9,8 +9,6 @@
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/7525/badge)](https://bestpractices.coreinfrastructure.org/projects/7525)
 [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/openwall/john-packages?label=Grade&logo=codefactor&logoColor=ffffff&style=flat-square "CodeFactor Grade")](https://www.codefactor.io/repository/github/openwall/john-packages)
 
-![Donation](https://img.shields.io/badge/Donate-US%24%2010-brightgreen?style=flat&logo=github-sponsors)
-
 </div>
 
 [Openwall's](http://openwall.com/) John the Ripper (JtR) is a fast password cracker,

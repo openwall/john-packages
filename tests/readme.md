@@ -2,8 +2,6 @@
 
 The usage of Continuous Integration and Continuous Delivery is a method to frequently deliver software to users by introducing automation into the stages of application development.
 
-![Donation](https://img.shields.io/badge/Donate-Yes-brightgreen?style=flat&logo=github-sponsors) Please donate. You can make a real difference and help our work by donating to support the CI infra.
-
 ## Testing
 
 Using multiple providers, we've created a DevOps infrastructure. We are mostly interested
