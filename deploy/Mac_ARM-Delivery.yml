@@ -20,7 +20,7 @@
 # Cirrus CI configuration
 # More info at https://github.com/openwall/john-packages
 
-macos_task:
+macOS_task:
   name: macOS M1
   trigger_type: manual
   macos_instance:
@@ -31,10 +31,10 @@ macos_task:
     BUILD_OPS: "--build=aarch64-apple-darwin"
     CC : "clang"
     MAKE_FLAGS: "-sj4"
-    TARGET_ARCH : "MacOS ARM"
+    TARGET_ARCH : "macOS ARM"
     EXTRA: "full;extra"
-    TEST : "MacOS;"
-    BASE : "Apple MacOS M1"
+    TEST : "macOS;"
+    BASE : "Apple macOS M1"
     DEPLOY_PAK : "Yes"
 
   info_script:
