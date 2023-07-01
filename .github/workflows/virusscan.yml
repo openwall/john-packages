@@ -30,8 +30,13 @@ jobs:
   virustotal:
     runs-on: ubuntu-latest
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845 # v2.4.1
+        with:
+          egress-policy: audit
+
       - name: VirusTotal Scan
-        uses: crazy-max/ghaction-virustotal@v3
+        uses: crazy-max/ghaction-virustotal@6d0c025d8231cb0687a3173a515177b3cac8e064 # v3.2.0
 
         with:
           vt_api_key: ${{ secrets.VT_API_KEY }}
