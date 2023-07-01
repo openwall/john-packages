@@ -27,7 +27,7 @@
 ARG release=false
 ARG commit=15b3b7c25fc8ac34f2504d53f0c94bbf4ec12596
 
-FROM ubuntu:22.04 as build
+FROM ubuntu:22.04@sha256:6120be6a2b7ce665d0cbddc3ce6eae60fe94637c6a66985312d1f02f63cc0bcd as build
 WORKDIR /build/
 
 RUN apt-get update -qq && \
@@ -64,7 +64,7 @@ RUN apt-get update -qq && \
 # ==================================================================
 # Tagging
 # ------------------------------------------------------------------
-FROM ubuntu:22.04
+FROM ubuntu:22.04@sha256:6120be6a2b7ce665d0cbddc3ce6eae60fe94637c6a66985312d1f02f63cc0bcd
 LABEL maintainer="Claudio André (c) 2019-2023"
 
 ARG VERSION_NAME

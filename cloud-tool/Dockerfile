@@ -20,7 +20,7 @@
 # Dockerfile for a cloud helper tool
 # More info at https://github.com/openwall/john-packages
 
-FROM ubuntu:latest
+FROM ubuntu:latest@sha256:6120be6a2b7ce665d0cbddc3ce6eae60fe94637c6a66985312d1f02f63cc0bcd
 LABEL maintainer Claudio André (c) 2021 1.0.Cloud Tools
 LABEL software automation for John the Ripper
 
