@@ -34,7 +34,6 @@
 
   <url type="homepage">https://www.openwall.com/john/</url>
   <url type="bugtracker">https://github.com/openwall/john/issues</url>
-  <url type="donation">https://www.zerodayclothing.com/openwall_store.php</url>
 
   <developer_name>Openwall and others</developer_name>
   <update_contact>https://github.com/openwall/john-packages/issues</update_contact>
