@@ -55,11 +55,11 @@ RUN apt-get update -qq && \
     # Clean the image
     rm -rf src .git .ci .circleci .azure .editorconfig .gitattributes .github .gitignore .mailmap .pre-commit.sh .travis .travis.yml && rm -rf run/ztex && \
     # Save information about how the binaries were built
-    echo "[Build Configuration]" > run/Defaults && \
-    echo "System Wide Build=Yes" >> run/Defaults && \
-    echo "OpenMP, OpenCL=No" >> run/Defaults && \
-    echo "Optional Libraries=Yes" >> run/Defaults && \
-    echo "Regex, OpenMPI, Experimental Code, ZTEX=No" >> run/Defaults
+    echo "[Build Configuration]" > john/run/Defaults && \
+    echo "System Wide Build=Yes" >> john/run/Defaults && \
+    echo "OpenMP, OpenCL=No" >> john/run/Defaults && \
+    echo "Optional Libraries=Yes" >> john/run/Defaults && \
+    echo "Regex, OpenMPI, Experimental Code, ZTEX=No" >> john/run/Defaults
 
 # ==================================================================
 # Tagging
