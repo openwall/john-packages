@@ -36,8 +36,6 @@ jobs:
     permissions:
       # required to update the release. But it is a secutiry issue.
       contents: write
-      statuses: write
-      security-events: write
       id-token: write
 
     steps:
