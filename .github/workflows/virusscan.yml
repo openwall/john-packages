@@ -26,8 +26,16 @@ on:
   release:
     types: [published]
 
+permissions: read-all
+
 jobs:
   virustotal:
+    permissions:
+      deployments: read
+      packages: read
+      contents: read|write
+      statuses: write
+
     runs-on: ubuntu-latest
     steps:
       - name: VirusTotal Scan
