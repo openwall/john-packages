@@ -23,7 +23,7 @@ and "sparse bundles", encrypted archives such as ZIP, RAR, and 7z,
 encrypted document files such as PDF and Microsoft Office's, plus lots of
 other hashes and ciphers.
 
-# Table of Contents
+## Table of Contents
 
 <img align="right" src="https://www.openwall.com/logo.png" width="182" height="80">
 
@@ -36,7 +36,7 @@ other hashes and ciphers.
    6. [The feed of John the Ripper releases ![New Releases Feed](https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Feed-icon.svg/16px-Feed-icon.svg.png)](https://github.com/openwall/john-packages/releases.atom)
 2. [Windows Package](#-windows)
 3. [Snap Package](#-snap)
-4. [Mac OS Package](#-mac-os)
+4. [macOS Package](#-macos)
 5. [Flatpak Package](#-flatpak)
 6. [Docker Image](#-docker-image)
 7. [Checksums](#packages-checksums)
@@ -44,7 +44,7 @@ other hashes and ciphers.
 9. [Contribute](#contribute)
 10. [License](#license)
 
-# Introduction
+## Introduction
 
 ### Continuous Delivery Status
 
@@ -60,9 +60,9 @@ We produce software in short cycles, ensuring that the software can be reliably 
 
 [![Virus Scan](https://github.com/openwall/john-packages/actions/workflows/virusscan.yml/badge.svg)](https://github.com/openwall/john-packages/actions/workflows/virusscan.yml)
 
-| **Releases** | **Latest** (![GitHub Latest Release Date](https://img.shields.io/github/release-date/openwall/john-packages?label=&style=flat-square "GitHub Latest Release Date")) | **Pre-Release** (![GitHub Latest Pre-Release Date](https://img.shields.io/github/release-date-pre/openwall/john-packages?label=&style=flat-square "GitHub Latest Pre-Release Date")) |
+| **Releases** | **Latest** (![GitHub Latest Release Date](https://img.shields.io/github/release-date/openwall/john-packages?label=&style=flat-square "GitHub Latest Release Date")) | **Prerelease** (![GitHub Latest Prerelease Date](https://img.shields.io/github/release-date-pre/openwall/john-packages?label=&style=flat-square "GitHub Latest Prerelease Date")) |
 |:-:|:-:|:-:|
- [![GitHub](https://img.shields.io/badge/Downloads-gray "Downloads")](https://github.com/openwall/john-packages/releases) ![GitHub Total Downloads](https://img.shields.io/github/downloads/openwall/john-packages/total?label=&style=flat-square "GitHub Total Downloads") | ![GitHub Latest Release Version](https://img.shields.io/github/release/openwall/john-packages?sort=date&label=&style=flat-square&color=blue "GitHub Latest Release Version") | ![GitHub Latest Pre-Release Version](https://img.shields.io/github/release/openwall/john-packages?include_prereleases&sort=date&label=&style=flat-square&color=blue "GitHub Latest Pre-Release Version") |
+ [![GitHub](https://img.shields.io/badge/Downloads-gray "Downloads")](https://github.com/openwall/john-packages/releases) ![GitHub Total Downloads](https://img.shields.io/github/downloads/openwall/john-packages/total?label=&style=flat-square "GitHub Total Downloads") | ![GitHub Latest Release Version](https://img.shields.io/github/release/openwall/john-packages?sort=date&label=&style=flat-square&color=blue "GitHub Latest Release Version") | ![GitHub Latest Prerelease Version](https://img.shields.io/github/release/openwall/john-packages?include_prereleases&sort=date&label=&style=flat-square&color=blue "GitHub Latest Prerelease Version") |
 
 </div>
 
@@ -78,7 +78,7 @@ start the process.
 
 Click on the link to learn more about our [Continuous Integration and Continuous Delivery](https://github.com/openwall/john-packages/tree/master/tests#continuous-integration-and-continuous-delivery) procedures.
 
-[![](https://mermaid.ink/img/pako:eNqVk01vGjEQhv_KyKdEDTlWFaoiLWzTRCkFAVUjQQ6Dd1gsvLblD1pg-e-xFyJIuz10D6v98PPOzDsze8Z1QazLSotmBdN8riBe2eyHcd4SVtDXVSX8C3Q6dzVfEV-DC8LjQkjhtzX0rsZBAUKhf6kTYWmBjsBrKMmDXxFI9OQ88BWqktz1MUYvSUJ_n3ihPi_sHYzQopQkD8cT_SZoZsyGttpC_7GGfLbE7hI7Bbm11wYS9lOoGN3F_y-XXF9YLqmhvrRQueZrsi2QDa6B7luge0vUm-R_UtkuWIKcNsPRpIaHNjDsdkKVMI0-pPcP6faonCHuI2ik3qYvI-RrLOksfnsbPaqF2kROlOiFVjU8zei3ISsqUh7l6fBTY2fdE94KR0lsoGOTjmkZV8O3lrQyVVgtinM9J5UL7wYt2AD5cALPnz7-Rb2Z9_2fVDYevKe-Cv8QFpDxVFzMc9iCTrTEWNY5z__1OEqDXjZDdnQ7eXfpeNPHClVACWiM1RuUNTxfvbU2MS4BaZ7HJCmO-PW7NtUF8bQrzsVgVNQwaslxanFzrIPdsIpshaKI27dPSnMWtSuas258LGiJQfo5m6tDPIrB68lWcdb1NtANC6aIO5ULjHtbsRhFOjq8AkqZRIU?type=png)](tests#continuous-integration-and-continuous-delivery)
+[![Graph](https://mermaid.ink/img/pako:eNqVk01vGjEQhv_KyKdEDTlWFaoiLWzTRCkFAVUjQQ6Dd1gsvLblD1pg-e-xFyJIuz10D6v98PPOzDsze8Z1QazLSotmBdN8riBe2eyHcd4SVtDXVSX8C3Q6dzVfEV-DC8LjQkjhtzX0rsZBAUKhf6kTYWmBjsBrKMmDXxFI9OQ88BWqktz1MUYvSUJ_n3ihPi_sHYzQopQkD8cT_SZoZsyGttpC_7GGfLbE7hI7Bbm11wYS9lOoGN3F_y-XXF9YLqmhvrRQueZrsi2QDa6B7luge0vUm-R_UtkuWIKcNsPRpIaHNjDsdkKVMI0-pPcP6faonCHuI2ik3qYvI-RrLOksfnsbPaqF2kROlOiFVjU8zei3ISsqUh7l6fBTY2fdE94KR0lsoGOTjmkZV8O3lrQyVVgtinM9J5UL7wYt2AD5cALPnz7-Rb2Z9_2fVDYevKe-Cv8QFpDxVFzMc9iCTrTEWNY5z__1OEqDXjZDdnQ7eXfpeNPHClVACWiM1RuUNTxfvbU2MS4BaZ7HJCmO-PW7NtUF8bQrzsVgVNQwaslxanFzrIPdsIpshaKI27dPSnMWtSuas258LGiJQfo5m6tDPIrB68lWcdb1NtANC6aIO5ULjHtbsRhFOjq8AkqZRIU?type=png)](tests#continuous-integration-and-continuous-delivery)
 
 ### Packaging and Application Distribution
 
@@ -151,7 +151,7 @@ You avail the best SIMD instructions at one's disposal without any OpenMP stuff.
  PS C:\john-the-ripper\run> .\john --list=build-info
 ```
 
-### Acessing OpenCL
+### Acessing OpenCL on Windows
 
 Some adjustments may be necessary to allow John the Ripper detect your GPU
 hardware. If you are facing problems, please read:
@@ -215,7 +215,7 @@ The highlights (👀):
   - is available for X86_64, armhf, arm64, ppc64el, i386, riscv64, and s390x;
 - the stable John 1.9.0 Jumbo 1:
   - is available for X86_64, armhf, arm64, ppc64el, i386, powerpc, and s390x;
-  - has regex mode available;
+  - has regular expression mode available;
 - a development version:
   - is available for X86_64, arm64, ppc64el, and s390x.
 
@@ -253,9 +253,9 @@ You avail the best SIMD instructions at one's disposal without any OpenMP stuff.
  OMP_NUM_THREADS=1 john --list=build-info
 ```
 
-### Acessing OpenCL
+### Acessing OpenCL on Snap
 
-As noted at https://forum.snapcraft.io/t/snaps-and-opencl/8509/17, the use of
+As noted at [https://forum.snapcraft.io/t/snaps-and-opencl/8509/17](https://forum.snapcraft.io/t/snaps-and-opencl/8509/17), the use of
 OpenCL by snaps is a problem. Support for NVIDIA cards is under development.
 
 As a "general" solution (or in the case of AMD hardware), the user can run john
@@ -282,7 +282,7 @@ If you already has JtR installed:
 
 If you do so, you will be running the development version available on GitHub.
 
-## 📂 Mac OS
+## 📂 macOS
 
 > Delivered using Circle CI and Cirrus CI [ supports ASIMD (on ARM), AVX and AVX2 (on x86) ]
 
@@ -321,9 +321,9 @@ The highlights (👀):
 [*] John the Ripper runs using the best SIMD instructions available on the host
 it's running on.
 
-### Mac OS Deployments
+### macOS Deployments
 
-[![Mac OS Downloads](https://img.shields.io/badge/Download-Mac%20Build-blue.svg)](https://github.com/openwall/john-packages/releases)
+[![macOS Downloads](https://img.shields.io/badge/Download-Mac%20Build-blue.svg)](https://github.com/openwall/john-packages/releases)
 
 Using the above instructions you can install the hot and bleeding version
 in your system.
@@ -331,7 +331,7 @@ in your system.
 The package contains the necessary executables to run a fresh install of John the Ripper.
 You must install required Homebrew libraries.
 
-### Running a non-OpenMP build on Mac OS
+### Running a non-OpenMP build on macOS
 
 In some situations a non-OpenMP build may be faster. You can ask to fallback to
 a non-OpenMP build specifying the value of OMP_NUM_THREADS in the command line.
@@ -378,7 +378,7 @@ The highlights (👀):
   - is available for X86_64;
 - the stable John 1.9.0 Jumbo 1:
   - is available for X86_64, arm, aarch64, and i386;
-  - has regex mode available;
+  - has regular expression mode available;
 - a development version:
   - is available for X86_64.
 

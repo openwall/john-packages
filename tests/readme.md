@@ -29,7 +29,7 @@ using:
   - flatpak (runtime: org.freedesktop.Platform 22.08);
   - snap (runtime: core22);
   - Android NDK r23 LTS (ANDROID_NDK_VERSION=r23b)
-- MacOS:
+- macOS:
   - macOS 12.6 21G115:
     - Darwin 21.6.0 x86_64 i386;
   - macOS 13.4 22F66:
@@ -101,8 +101,8 @@ and IBM System z.
 | Provider   | OS | Artifacts |
 | ------------- | ------------- | ----- |
 | Azure | Windows | ✓ Deployed to GitHub Releases |
-| Circle CI | MacOS X86 | ✓ Deployed to GitHub Releases |
-| Cirrus CI | MacOS M1 | ✓ Deployed to GitHub Releases |
+| Circle CI | macOS X86 | ✓ Deployed to GitHub Releases |
+| Cirrus CI | macOS M1 | ✓ Deployed to GitHub Releases |
 | GitLab CI | Linux (FlatPak app) | ✓ Deployed to GitHub Releases |
 | GitHub Actions | Linux (Docker image) | ✓ Deployed to GitHub Packages |
 | LaunchPad | Linux (Snap app) | ✓ Deployed to Snap Store |

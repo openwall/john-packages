@@ -26,12 +26,12 @@ jobs:
     macos:
       xcode: 14.2.0
     environment:
-      TARGET_ARCH : "MacOS X86"
+      TARGET_ARCH : "macOS X86"
       EXTRA: "full;extra"
       BUILD_OPTS: "--disable-native-tests"
       CC : "clang"
-      TEST : "MacOS;"
-      BASE : "Apple MacOS"
+      TEST : "macOS;"
+      BASE : "Apple macOS"
       DEPLOY_PAK : "Yes"
 
     steps:
