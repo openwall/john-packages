@@ -31,10 +31,9 @@ permissions: read-all
 jobs:
   virustotal:
     permissions:
-      deployments: read
-      packages: read
-      contents: read|write # required to update the release status. But it is a secutiry issue.
-      statuses: read|write # required to update the release status. But it is a secutiry issue.
+      # required to update the release. But it is a secutiry issue.
+      contents: write
+      statuses: write
 
     runs-on: ubuntu-latest
     steps:
