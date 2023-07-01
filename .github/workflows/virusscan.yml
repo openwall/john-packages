@@ -20,6 +20,7 @@
 # Github Action to scan a release using VirusTotal
 # More info at https://github.com/openwall/john-packages
 
+---
 name: Virus Scan
 
 on:
@@ -30,17 +31,25 @@ permissions: read-all
 
 jobs:
   virustotal:
+    name: Virus Scan
+    runs-on: ubuntu-latest
     permissions:
       # required to update the release. But it is a secutiry issue.
       contents: write
       statuses: write
+      security-events: write
+      id-token: write
 
-    runs-on: ubuntu-latest
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845 # v2.4.1
         with:
-          egress-policy: audit
+          disable-sudo: true
+          egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            objects.githubusercontent.com:443
+            www.virustotal.com:443
 
       - name: VirusTotal Scan
         uses: crazy-max/ghaction-virustotal@6d0c025d8231cb0687a3173a515177b3cac8e064 # v3.2.0
