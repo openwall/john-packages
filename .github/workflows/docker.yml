@@ -79,7 +79,7 @@ jobs:
         run: echo "::set-output name=date::$(date -u)"
 
       - name: Log in to GitHub Docker Registry
-        uses: docker/login-action@dd4fa0671be5250ee6f50aedf4cb05514abda2c7 # v1.14.1
+        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2.2.0
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
