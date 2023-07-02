@@ -38,13 +38,13 @@ if [[ $# -gt 0 && "$ids" == *"$requested"* ]]; then
 fi
 
 if [[ "$requested" = 'sse2-omp' || "$requested" = 'sse2' ]]; then
-    exec /john/run/john-$requested "$@"
+    exec "/john/run/john-$requested" "$@"
 elif [[ "$requested" = 'avx-omp' || "$requested" = 'avx' || "$requested" = 'avx2-omp' || "$requested" = 'avx2' ]]; then
-    exec /john/run/john-$requested "$@"
+    exec "/john/run/john-$requested" "$@"
 elif [[ "$requested" = 'xop-omp' || "$requested" = 'xop' ]]; then
-    exec /john/run/john-$requested "$@"
+    exec "/john/run/john-$requested" "$@"
 elif [[ "$requested" = 'avx512f-omp'  || "$requested" = 'avx512f'  || "$requested" = 'avx512bw-omp'  || "$requested" = 'avx512bw' ]]; then
-    exec /john/run/john-$requested "$@"
+    exec "/john/run/john-$requested" "$@"
 elif [[ "$requested" = 'ztex-omp' || "$requested" = 'ztex' ]]; then
     echo "Binary /john/run/john-$requested  disabled (please, open a bug report)"
 elif [[ "$requested" = 'best' ]]; then
