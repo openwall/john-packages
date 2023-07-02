@@ -23,43 +23,15 @@
 # John the Ripper Docker image is hosted at GitHub Packages
 #   https://github.com/openwall/john-packages/pkgs/container/john
 
-# To build a release run a (docker build [...] --build-arg release=true)
-ARG release=false
-ARG commit=15b3b7c25fc8ac34f2504d53f0c94bbf4ec12596
-
 FROM ubuntu:22.04@sha256:6120be6a2b7ce665d0cbddc3ce6eae60fe94637c6a66985312d1f02f63cc0bcd as build
 WORKDIR /build/
+COPY build.sh .
 
-RUN apt-get update -qq && \
-    export DEBIAN_FRONTEND="noninteractive" && \
-    apt-get install -y \
-        build-essential libssl-dev zlib1g-dev yasm libgmp-dev libpcap-dev pkg-config \
-        libbz2-dev wget git libusb-1.0-0-dev && \
-# ==================================================================
-# Build John the Ripper
-# ------------------------------------------------------------------
-    git clone --depth 10 https://github.com/openwall/john.git && \
-    # Make it a reproducible build
-    if [ "$release" = "true" ] ; then (cd john; git checkout "$commit";) fi && \
-    (cd john/src && \
-      ./configure --disable-native-tests --with-systemwide --disable-openmp --enable-simd=sse2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-sse2 && \
-      ./configure --disable-native-tests --with-systemwide                  --enable-simd=sse2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-sse2-omp && \
-      ./configure --disable-native-tests --with-systemwide --disable-openmp --enable-simd=avx    && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx && \
-      ./configure --disable-native-tests --with-systemwide                  --enable-simd=avx    && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx-omp && \
-      ./configure --disable-native-tests --with-systemwide --disable-openmp --enable-simd=avx2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx2 && \
-      ./configure --disable-native-tests --with-systemwide                  --enable-simd=avx2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx2-omp && \
-      ./configure --disable-native-tests --with-systemwide --disable-openmp --enable-simd=avx512f  && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512f && \
-      ./configure --disable-native-tests --with-systemwide                  --enable-simd=avx512f  && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512f-omp && \
-      ./configure --disable-native-tests --with-systemwide --disable-openmp --enable-simd=avx512bw && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512bw && \
-      ./configure --disable-native-tests --with-systemwide                  --enable-simd=avx512bw && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512bw-omp) && \
-    # Clean the image
-    rm -rf src .git .ci .circleci .azure .editorconfig .gitattributes .github .gitignore .mailmap .pre-commit.sh .travis .travis.yml && rm -rf run/ztex && \
-    # Save information about how the binaries were built
-    echo "[Build Configuration]" > john/run/Defaults && \
-    echo "System Wide Build=Yes" >> john/run/Defaults && \
-    echo "OpenMP, OpenCL=No" >> john/run/Defaults && \
-    echo "Optional Libraries=Yes" >> john/run/Defaults && \
-    echo "Regex, OpenMPI, Experimental Code, ZTEX=No" >> john/run/Defaults
+# To build a release run a (docker build [...] --build-arg release=true)
+ARG RELEASE=false
+ARG COMMIT=15b3b7c25fc8ac34f2504d53f0c94bbf4ec12596
+
+RUN ./build.sh
 
 # ==================================================================
 # Tagging
