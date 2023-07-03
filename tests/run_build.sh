@@ -35,8 +35,9 @@ function do_build () {
     fi
 
     if [[ -z "$MAKE_FLAGS" ]]; then
-        MAKE_FLAGS="-sj $(nproc)"
+        MAKE_FLAGS="-sj$(nproc)"
     fi
+    echo "flags: $MAKE_FLAGS"
 
     if [[ -n "$1" ]]; then
         $MAKE -s clean && $MAKE "$MAKE_FLAGS" && mv ../run/john "$1"
