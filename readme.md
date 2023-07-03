@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://github.com/openwall/john-packages/blob/master/LICENSE.txt)
 
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/openwall/john-packages/badge)](https://api.securityscorecards.dev/projects/github.com/openwall/john-packages)
-[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/7525/badge)](https://bestpractices.coreinfrastructure.org/projects/7525)
+[![Best Practices](https://bestpractices.coreinfrastructure.org/projects/7525/badge)](https://bestpractices.coreinfrastructure.org/projects/7525)
 [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/openwall/john-packages?label=Grade&logo=codefactor&logoColor=ffffff&style=flat-square "CodeFactor Grade")](https://www.codefactor.io/repository/github/openwall/john-packages)
 
 </div>
@@ -76,7 +76,8 @@ start the process.
 
 Click on the link to learn more about our [Continuous Integration and Continuous Delivery](https://github.com/openwall/john-packages/tree/master/tests#continuous-integration-and-continuous-delivery) procedures.
 
-[![Graph](https://mermaid.ink/img/pako:eNqVk01vGjEQhv_KyKdEDTlWFaoiLWzTRCkFAVUjQQ6Dd1gsvLblD1pg-e-xFyJIuz10D6v98PPOzDsze8Z1QazLSotmBdN8riBe2eyHcd4SVtDXVSX8C3Q6dzVfEV-DC8LjQkjhtzX0rsZBAUKhf6kTYWmBjsBrKMmDXxFI9OQ88BWqktz1MUYvSUJ_n3ihPi_sHYzQopQkD8cT_SZoZsyGttpC_7GGfLbE7hI7Bbm11wYS9lOoGN3F_y-XXF9YLqmhvrRQueZrsi2QDa6B7luge0vUm-R_UtkuWIKcNsPRpIaHNjDsdkKVMI0-pPcP6faonCHuI2ik3qYvI-RrLOksfnsbPaqF2kROlOiFVjU8zei3ISsqUh7l6fBTY2fdE94KR0lsoGOTjmkZV8O3lrQyVVgtinM9J5UL7wYt2AD5cALPnz7-Rb2Z9_2fVDYevKe-Cv8QFpDxVFzMc9iCTrTEWNY5z__1OEqDXjZDdnQ7eXfpeNPHClVACWiM1RuUNTxfvbU2MS4BaZ7HJCmO-PW7NtUF8bQrzsVgVNQwaslxanFzrIPdsIpshaKI27dPSnMWtSuas258LGiJQfo5m6tDPIrB68lWcdb1NtANC6aIO5ULjHtbsRhFOjq8AkqZRIU?type=png)](tests#continuous-integration-and-continuous-delivery)
+[![Graph](https://mermaid.ink/img/pako:eNqVk01vGjEQhv_KyKdEDTlWFaoiLWzTRCkFAVUjQQ6Dd1gsvLblD1pg-e-xFyJIuz10D6v98PPOzDsze8Z1QazLSotmBdN8riBe2eyHcd4SVtDXVSX8C3Q6dzVfEV-DC8LjQkjhtzX0rsZBAUKhf6kTYWmBjsBrKMmDXxFI9OQ88BWqktz1MUYvSUJ_n3ihPi_sHYzQopQkD8cT_SZoZsyGttpC_7GGfLbE7hI7Bbm11wYS9lOoGN3F_y-XXF9YLqmhvrRQueZrsi2QDa6B7luge0vUm-R_UtkuWIKcNsPRpIaHNjDsdkKVMI0-pPcP6faonCHuI2ik3qYvI-RrLOksfnsbPaqF2kROlOiFVjU8zei3ISsqUh7l6fBTY2fdE94KR0lsoGOTjmkZV8O3lrQyVVgtinM9J5UL7wYtWIV8OIHnTx__ot7M-_5PKhsP3lNfhX8IC8h4Ki7mOWxBJ1piLOuc5_96HKVBL5shO7qdvLt0vOljhSqgBDTG6g3KGp6v3lqbGJeANM9jkhRH_Ppdm-qCeNoV52IwKmoYteQ4tbg51sFuWEW2QlHE7dsnpTmL2hXNWTc-FrTEIP2czdUhHsXg9WSrOOt6G-iGBVPEncoFxr2tWIwiHR1eAamZRMU?type=png)](tests#continuous-integration-and-continuous-delivery)
+
 
 ### Packaging and Application Distribution
 
@@ -154,7 +155,7 @@ You avail the best SIMD instructions at one's disposal without any OpenMP stuff.
 Some adjustments may be necessary to allow John the Ripper detect your GPU
 hardware. If you are facing problems, please read:
 
-| 📑 **Workarounds for** [OpenCL issues on Windows](docs/examples-windows.md#more-examples-of-running-john-the-ripper-on-windows).
+| 📑 **Workarounds for** [OpenCL issues on Windows](docs/opencl-issues.md#advices-to-anyone-facing-opencl-windows-problems).
 
 ## 📂 Snap
 
