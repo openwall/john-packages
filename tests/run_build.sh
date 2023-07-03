@@ -46,3 +46,9 @@ function do_build () {
     fi
     set +e
 }
+
+function do_configure() {
+  # shellcheck disable=SC2068
+  set -- $@
+  ./configure "$@"
+}
