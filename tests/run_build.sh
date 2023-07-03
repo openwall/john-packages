@@ -48,7 +48,9 @@ function do_build () {
 }
 
 function do_configure() {
-  # shellcheck disable=SC2068
-  set -- $@
-  ./configure "$@"
+    param="$1"
+    shift
+    # shellcheck disable=SC2086
+    set -- $param "$@"
+    ./configure "$@"
 }
