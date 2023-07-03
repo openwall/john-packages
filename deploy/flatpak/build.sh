@@ -56,16 +56,16 @@ if [[ -z "$TASK" ]]; then
 
     if [[ "$arch" == "x86_64" ]]; then
         # x86_64 CPU (OMP and SIMD fallback)
-        ./configure "$X86_NO_OPENMP" --enable-simd=sse2   CPPFLAGS="-D_BOXED" && do_build ../run/john-sse2
-        ./configure "$X86_REGULAR"   --enable-simd=sse2   CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-sse2\\\"\"" && do_build ../run/john-sse2-omp
-        ./configure "$X86_NO_OPENMP" --enable-simd=avx    CPPFLAGS="-D_BOXED" && do_build ../run/john-avx
-        ./configure "$X86_REGULAR"   --enable-simd=avx    CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-sse2-omp\\\"\"" && do_build ../run/john-avx-omp
-        ./configure "$X86_NO_OPENMP" --enable-simd=avx2   CPPFLAGS="-D_BOXED" && do_build ../run/john-avx2
-        ./configure "$X86_REGULAR"   --enable-simd=avx2   CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx2\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx-omp\\\"\"" && do_build ../run/john-avx2-omp
-        ./configure "$X86_NO_OPENMP" --enable-simd=avx512f  CPPFLAGS="-D_BOXED" && do_build ../run/john-avx512f
-        ./configure "$X86_REGULAR"   --enable-simd=avx512f  CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx512f\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx2-omp\\\"\"" && do_build ../run/john-avx512f-omp
-        ./configure "$X86_NO_OPENMP" --enable-simd=avx512bw CPPFLAGS="-D_BOXED" && do_build ../run/john-avx512bw
-        ./configure "$X86_REGULAR"   --enable-simd=avx512bw CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx512bw\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx512f-omp\\\"\"" && do_build ../run/john-avx512bw-omp
+        do_configure "$X86_NO_OPENMP" --enable-simd=sse2   CPPFLAGS="-D_BOXED" && do_build ../run/john-sse2
+        do_configure "$X86_REGULAR"   --enable-simd=sse2   CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-sse2\\\"\"" && do_build ../run/john-sse2-omp
+        do_configure "$X86_NO_OPENMP" --enable-simd=avx    CPPFLAGS="-D_BOXED" && do_build ../run/john-avx
+        do_configure "$X86_REGULAR"   --enable-simd=avx    CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-sse2-omp\\\"\"" && do_build ../run/john-avx-omp
+        do_configure "$X86_NO_OPENMP" --enable-simd=avx2   CPPFLAGS="-D_BOXED" && do_build ../run/john-avx2
+        do_configure "$X86_REGULAR"   --enable-simd=avx2   CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx2\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx-omp\\\"\"" && do_build ../run/john-avx2-omp
+        do_configure "$X86_NO_OPENMP" --enable-simd=avx512f  CPPFLAGS="-D_BOXED" && do_build ../run/john-avx512f
+        do_configure "$X86_REGULAR"   --enable-simd=avx512f  CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx512f\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx2-omp\\\"\"" && do_build ../run/john-avx512f-omp
+        do_configure "$X86_NO_OPENMP" --enable-simd=avx512bw CPPFLAGS="-D_BOXED" && do_build ../run/john-avx512bw
+        do_configure "$X86_REGULAR"   --enable-simd=avx512bw CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx512bw\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx512f-omp\\\"\"" && do_build ../run/john-avx512bw-omp
 
         #Create a 'john' executable
         (
@@ -74,8 +74,8 @@ if [[ -z "$TASK" ]]; then
         )
     else
         # Non X86 CPU (OMP fallback)
-        ./configure "$OTHER_NO_OPENMP"   CPPFLAGS="-D_BOXED" && do_build "../run/john-$arch"
-        ./configure "$OTHER_REGULAR"     CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-$arch\\\"\"" && do_build ../run/john-omp
+        do_configure "$OTHER_NO_OPENMP"   CPPFLAGS="-D_BOXED" && do_build "../run/john-$arch"
+        do_configure "$OTHER_REGULAR"     CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-$arch\\\"\"" && do_build ../run/john-omp
 
         #Create a 'john' executable
         (

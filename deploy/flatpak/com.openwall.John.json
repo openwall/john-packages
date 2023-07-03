@@ -67,7 +67,8 @@
                 },
                 {
                     "type": "file",
-                    "path": "../tests/run_build.sh"
+                    "path": ".https://raw.githubusercontent.com/openwall/john-packages/main/tests/run_build.sh",
+                    "sha256": "4f90497d81b542ee50a50e1888c797f791967350aed528dff918b4a806783770"
                 },
                 {
                     "type": "file",

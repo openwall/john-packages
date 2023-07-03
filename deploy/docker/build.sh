@@ -25,6 +25,11 @@
 echo "Release $RELEASE"
 arch=$(uname -m)
 
+# Build options (system wide, disable checks, etc.)
+SYSTEM_WIDE='--with-systemwide'
+X86_REGULAR="--disable-native-tests $SYSTEM_WIDE"
+X86_NO_OPENMP="--disable-native-tests $SYSTEM_WIDE --disable-openmp"
+
 # Install build dependencies
 apt-get update -qq
 export DEBIAN_FRONTEND="noninteractive"
@@ -50,16 +55,16 @@ git clone --depth 10 https://github.com/openwall/john.git
 if [ "$RELEASE" = "true" ] ; then (cd john || true; git checkout "$COMMIT"); fi
 (
     cd john/src || true
-    ./configure --disable-native-tests --with-systemwide --disable-openmp --enable-simd=sse2   && do_build ../run/john-sse2
-    ./configure --disable-native-tests --with-systemwide                  --enable-simd=sse2   && do_build ../run/john-sse2-omp
-    ./configure --disable-native-tests --with-systemwide --disable-openmp --enable-simd=avx    && do_build ../run/john-avx
-    ./configure --disable-native-tests --with-systemwide                  --enable-simd=avx    && do_build ../run/john-avx-omp
-    ./configure --disable-native-tests --with-systemwide --disable-openmp --enable-simd=avx2   && do_build ../run/john-avx2
-    ./configure --disable-native-tests --with-systemwide                  --enable-simd=avx2   && do_build ../run/john-avx2-omp
-    ./configure --disable-native-tests --with-systemwide --disable-openmp --enable-simd=avx512f  && do_build ../run/john-avx512f
-    ./configure --disable-native-tests --with-systemwide                  --enable-simd=avx512f  && do_build ../run/john-avx512f-omp
-    ./configure --disable-native-tests --with-systemwide --disable-openmp --enable-simd=avx512bw && do_build ../run/john-avx512bw
-    ./configure --disable-native-tests --with-systemwide                  --enable-simd=avx512bw && do_build ../run/john-avx512bw-omp
+    do_configure "$X86_NO_OPENMP" --enable-simd=sse2   && do_build ../run/john-sse2
+    do_configure "$X86_REGULAR"   --enable-simd=sse2   && do_build ../run/john-sse2-omp
+    do_configure "$X86_NO_OPENMP" --enable-simd=avx    && do_build ../run/john-avx
+    do_configure "$X86_REGULAR"   --enable-simd=avx    && do_build ../run/john-avx-omp
+    do_configure "$X86_NO_OPENMP" --enable-simd=avx2   && do_build ../run/john-avx2
+    do_configure "$X86_REGULAR"   --enable-simd=avx2   && do_build ../run/john-avx2-omp
+    do_configure "$X86_NO_OPENMP" --enable-simd=avx512f  && do_build ../run/john-avx512f
+    do_configure "$X86_REGULAR"   --enable-simd=avx512f  && do_build ../run/john-avx512f-omp
+    do_configure "$X86_NO_OPENMP" --enable-simd=avx512bw && do_build ../run/john-avx512bw
+    do_configure "$X86_REGULAR"   --enable-simd=avx512bw && do_build ../run/john-avx512bw-omp
 )
 
 # Clean the image
