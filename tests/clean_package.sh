@@ -23,15 +23,15 @@
 # More info at https://github.com/openwall/john-packages
 
 # Remove the left-over from testing
-rm -f ../run/john.log
-rm -f ../run/john.pot
-rm -f ../run/john-local.conf
+rm -f run/john.log
+rm -f run/john.pot
+rm -f run/john-local.conf
 
 # Remove unused stuff
-rm -rf ../run/ztex
+rm -rf run/ztex
 
 # Cleanup to deploy
 if [[ -n "$DEPLOY_PAK"  ]]; then
     rm -rf src appveyor.yml azure-pipelines.yml .git .ci .circleci .cirrus.yml .azure .editorconfig .gitattributes \
-          .github .gitignore .mailmap .pre-commit.sh .travis .travis.yml && rm -rf run/ztex
+          .github .gitignore .mailmap .pre-commit.sh .travis .travis.yml
 fi

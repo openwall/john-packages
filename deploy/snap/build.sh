@@ -27,6 +27,8 @@ TEST=';full;extra;' # Controls how the test will happen
 arch=$(uname -m)
 JTR_BIN='../run/john'
 JTR_CL="$JTR_BIN"
+export TEST
+export JTR_CL
 
 # Build options (system wide, disable checks, etc.)
 SYSTEM_WIDE='--with-systemwide'
@@ -53,7 +55,7 @@ if [[ "$1" == "PULL" ]]; then
     fi
 
     # Get the script that computes the package version
-    wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/package_version.sh
+    wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/package_version.sh
     chmod +x package_version.sh
     cp package_version.sh ../../../package_version.sh
 
@@ -61,7 +63,7 @@ if [[ "$1" == "PULL" ]]; then
 fi
 
 # We are in packages folder, change to JtR folder
-cd src
+cd src || true
 
 wget https://raw.githubusercontent.com/openwall/john-packages/master/patches/0001-Handle-self-confined-system-wide-build.patch
 patch < 0001-Handle-self-confined-system-wide-build.patch
@@ -78,10 +80,12 @@ export CFLAGS="-O2 $CFLAGS"
 
 # Show environmen information
 wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/show_info.sh
+# shellcheck source=/dev/null
 source show_info.sh
 
 # Build helper
-wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/run_build.sh
+wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/run_build.sh
+# shellcheck source=/dev/null
 source run_build.sh
 
 echo ""
@@ -89,36 +93,45 @@ echo "---------------------------- BUILDING -----------------------------"
 
 if [[ "$arch" == "x86_64" ]]; then
     # x86_64 CPU (OMP and SIMD fallback)
-    ./configure $X86_NO_OPENMP --enable-simd=sse2   CPPFLAGS="-D_SNAP -D_BOXED" && do_build ../run/john-sse2
-    ./configure $X86_REGULAR   --enable-simd=sse2   CPPFLAGS="-D_SNAP -D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-sse2\\\"\"" && do_build ../run/john-sse2-omp
-    ./configure $X86_NO_OPENMP --enable-simd=avx    CPPFLAGS="-D_SNAP -D_BOXED" && do_build ../run/john-avx
-    ./configure $X86_REGULAR   --enable-simd=avx    CPPFLAGS="-D_SNAP -D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-sse2-omp\\\"\"" && do_build ../run/john-avx-omp
-    ./configure $X86_NO_OPENMP --enable-simd=avx2   CPPFLAGS="-D_SNAP -D_BOXED" && do_build ../run/john-avx2
-    ./configure $X86_REGULAR   --enable-simd=avx2   CPPFLAGS="-D_SNAP -D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx2\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx-omp\\\"\"" && do_build ../run/john-avx2-omp
-    ./configure $X86_NO_OPENMP --enable-simd=avx512f  CPPFLAGS="-D_SNAP -D_BOXED" && do_build ../run/john-avx512f
-    ./configure $X86_REGULAR   --enable-simd=avx512f  CPPFLAGS="-D_SNAP -D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx512f\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx2-omp\\\"\"" && do_build ../run/john-avx512f-omp
-    ./configure $X86_NO_OPENMP --enable-simd=avx512bw CPPFLAGS="-D_SNAP -D_BOXED" && do_build ../run/john-avx512bw
-    ./configure $X86_REGULAR   --enable-simd=avx512bw CPPFLAGS="-D_SNAP -D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx512bw\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx512f-omp\\\"\"" && do_build ../run/john-avx512bw-omp
+    ./configure "$X86_NO_OPENMP" --enable-simd=sse2   CPPFLAGS="-D_SNAP -D_BOXED" && do_build ../run/john-sse2
+    ./configure "$X86_REGULAR"   --enable-simd=sse2   CPPFLAGS="-D_SNAP -D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-sse2\\\"\"" && do_build ../run/john-sse2-omp
+    ./configure "$X86_NO_OPENMP" --enable-simd=avx    CPPFLAGS="-D_SNAP -D_BOXED" && do_build ../run/john-avx
+    ./configure "$X86_REGULAR"   --enable-simd=avx    CPPFLAGS="-D_SNAP -D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-sse2-omp\\\"\"" && do_build ../run/john-avx-omp
+    ./configure "$X86_NO_OPENMP" --enable-simd=avx2   CPPFLAGS="-D_SNAP -D_BOXED" && do_build ../run/john-avx2
+    ./configure "$X86_REGULAR"   --enable-simd=avx2   CPPFLAGS="-D_SNAP -D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx2\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx-omp\\\"\"" && do_build ../run/john-avx2-omp
+    ./configure "$X86_NO_OPENMP" --enable-simd=avx512f  CPPFLAGS="-D_SNAP -D_BOXED" && do_build ../run/john-avx512f
+    ./configure "$X86_REGULAR"   --enable-simd=avx512f  CPPFLAGS="-D_SNAP -D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx512f\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx2-omp\\\"\"" && do_build ../run/john-avx512f-omp
+    ./configure "$X86_NO_OPENMP" --enable-simd=avx512bw CPPFLAGS="-D_SNAP -D_BOXED" && do_build ../run/john-avx512bw
+    ./configure "$X86_REGULAR"   --enable-simd=avx512bw CPPFLAGS="-D_SNAP -D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx512bw\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx512f-omp\\\"\"" && do_build ../run/john-avx512bw-omp
 
     #Create a 'john' executable
-    ln -s ../run/john-avx512bw-omp ../run/john
+    (
+        cd ../run || true
+        ln -s john-avx512bw-omp john
+    )
 else
     # Non X86 CPU (OMP fallback)
-    ./configure $OTHER_NO_OPENMP   CPPFLAGS="-D_SNAP -D_BOXED" && do_build "../run/john-$arch"
-    ./configure $OTHER_REGULAR     CPPFLAGS="-D_SNAP -D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-$arch\\\"\"" && do_build ../run/john-omp
+    ./configure "$OTHER_NO_OPENMP"   CPPFLAGS="-D_SNAP -D_BOXED" && do_build "../run/john-$arch"
+    ./configure "$OTHER_REGULAR"     CPPFLAGS="-D_SNAP -D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-$arch\\\"\"" && do_build ../run/john-omp
 
     #Create a 'john' executable
-    ln -s ../run/john-omp ../run/john
+    (
+        cd ../run || true
+        ln -s john-omp john
+    )
 fi
 # Save information about how the binaries were built
-echo "[Build Configuration]" > ../run/Defaults
-echo "System Wide Build=Yes" >> ../run/Defaults
-echo "Architecture=$arch" >> ../run/Defaults
-echo "OpenMP=No" >> ../run/Defaults
-echo "OpenCL=Yes # ONLY on x86_64, otherwise No" >> ../run/Defaults
-echo "Optional Libraries=Yes" >> ../run/Defaults
-echo "Regex, OpenMPI, Experimental Code, ZTEX=No" >> ../run/Defaults
-echo "Version=$(../package_version.sh)" >> ../run/Defaults
+cat <<-EOF > ../run/Defaults
+#   File that lists how the build (binaries) were made
+[Build Configuration]
+System Wide Build=Yes
+Architecture="$arch"
+OpenMP=No
+OpenCL=Yes # ONLY on x86_64, otherwise No
+Optional Libraries=Yes
+Regex, OpenMPI, Experimental Code, ZTEX=No
+Version="$(../package_version.sh)"
+EOF
 
 # To be able to run testing
 sudo apt-get install -y language-pack-en
@@ -126,14 +139,20 @@ sudo apt-get install -y language-pack-en
 # "---------------------------- TESTING -----------------------------"
 # Allow to test a system wide build
 mkdir --parents /snap/john-the-ripper/current/
-ln -s $(realpath ../run) /snap/john-the-ripper/current/run
+ln -s "$(realpath ../run)" /snap/john-the-ripper/current/run
 
 # Adjust the testing environment, import and run some testing
 wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/disable_formats.sh
+# shellcheck source=/dev/null
 source disable_formats.sh
 
 wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/run_tests.sh
+# shellcheck source=/dev/null
 source run_tests.sh
 
-wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh
-source clean_package.sh
+(
+    cd ..
+    wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh
+    # shellcheck source=/dev/null
+    source clean_package.sh
+)

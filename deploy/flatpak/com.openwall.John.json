@@ -48,7 +48,8 @@
                 },
                 {
                     "type": "file",
-                    "path": "../tests/package_version.sh"
+                    "url": "https://raw.githubusercontent.com/openwall/john-packages/main/tests/package_version.sh",
+                    "sha256": "9e5d841ad0ab61a06c446c33b8d60a66915439ca5d7b24b3947b4313be759910"
                 },
                 {
                     "type": "file",

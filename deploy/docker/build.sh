@@ -25,6 +25,11 @@
 echo "Release $RELEASE"
 arch=$(uname -m)
 
+# Build options (system wide, disable checks, etc.)
+SYSTEM_WIDE='--with-systemwide'
+X86_REGULAR="--disable-native-tests $SYSTEM_WIDE"
+X86_NO_OPENMP="--disable-native-tests $SYSTEM_WIDE --disable-openmp"
+
 # Install build dependencies
 apt-get update -qq
 export DEBIAN_FRONTEND="noninteractive"
@@ -33,8 +38,13 @@ apt-get install -y --no-install-recommends \
     libbz2-dev=* wget=* git=* libusb-1.0-0-dev=* ca-certificates=*
 
 # Get the script that computes the package version
-wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/package_version.sh
+wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/package_version.sh
 chmod +x package_version.sh
+
+# Build helper
+wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/run_build.sh
+# shellcheck source=/dev/null
+source run_build.sh
 
 # ==================================================================
 # Build John the Ripper
@@ -45,22 +55,24 @@ git clone --depth 10 https://github.com/openwall/john.git
 if [ "$RELEASE" = "true" ] ; then (cd john || true; git checkout "$COMMIT"); fi
 (
     cd john/src || true
-    ./configure --disable-native-tests --with-systemwide --disable-openmp --enable-simd=sse2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-sse2
-    ./configure --disable-native-tests --with-systemwide                  --enable-simd=sse2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-sse2-omp
-    ./configure --disable-native-tests --with-systemwide --disable-openmp --enable-simd=avx    && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx
-    ./configure --disable-native-tests --with-systemwide                  --enable-simd=avx    && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx-omp
-    ./configure --disable-native-tests --with-systemwide --disable-openmp --enable-simd=avx2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx2
-    ./configure --disable-native-tests --with-systemwide                  --enable-simd=avx2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx2-omp
-    ./configure --disable-native-tests --with-systemwide --disable-openmp --enable-simd=avx512f  && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512f
-    ./configure --disable-native-tests --with-systemwide                  --enable-simd=avx512f  && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512f-omp
-    ./configure --disable-native-tests --with-systemwide --disable-openmp --enable-simd=avx512bw && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512bw
-    ./configure --disable-native-tests --with-systemwide                  --enable-simd=avx512bw && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512bw-omp
+    ./configure "$X86_NO_OPENMP" --enable-simd=sse2   && do_build ../run/john-sse2
+    ./configure "$X86_REGULAR"   --enable-simd=sse2   && do_build ../run/john-sse2-omp
+    ./configure "$X86_NO_OPENMP" --enable-simd=avx    && do_build ../run/john-avx
+    ./configure "$X86_REGULAR"   --enable-simd=avx    && do_build ../run/john-avx-omp
+    ./configure "$X86_NO_OPENMP" --enable-simd=avx2   && do_build ../run/john-avx2
+    ./configure "$X86_REGULAR"   --enable-simd=avx2   && do_build ../run/john-avx2-omp
+    ./configure "$X86_NO_OPENMP" --enable-simd=avx512f  && do_build ../run/john-avx512f
+    ./configure "$X86_REGULAR"   --enable-simd=avx512f  && do_build ../run/john-avx512f-omp
+    ./configure "$X86_NO_OPENMP" --enable-simd=avx512bw && do_build ../run/john-avx512bw
+    ./configure "$X86_REGULAR"   --enable-simd=avx512bw && do_build ../run/john-avx512bw-omp
 )
 
 # Clean the image
 (
     cd john || true
-    rm -rf src .git .ci .circleci .azure .editorconfig .gitattributes .github .gitignore .mailmap .pre-commit.sh .travis .travis.yml && rm -rf run/ztex
+    wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh
+    # shellcheck source=/dev/null
+    source clean_package.sh
 )
 
 # Save information about how the binaries were built
@@ -72,6 +84,5 @@ Architecture="$arch"
 OpenMP, OpenCL=No
 Optional Libraries=Yes
 Regex, OpenMPI, Experimental Code, ZTEX=No
-Version="$(../package_version.sh)"
+Version="$(./package_version.sh)"
 EOF
-
