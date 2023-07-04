@@ -2,8 +2,6 @@
 
 We use premium build providers like Azure Cloud, Launchpad, and GitLab.
 
-![Donation](https://img.shields.io/badge/Donate-Yes-brightgreen?style=flat&logo=github-sponsors) Please donate. You can make a real difference and help our work by donating to support the infra.
-
 At the time of this writing, `john` is known to build and work on:
 
 * Linux (kernel 6 or later recommended)
