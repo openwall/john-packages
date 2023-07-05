@@ -22,8 +22,57 @@
 # Script to automate the build of John the Ripper Docker image
 # More info at https://github.com/openwall/john-packages
 
+function install_nvidia_opencl_dev() {
+    apt-get install -y --no-install-recommends \
+        nvidia-opencl-dev=*
+}
+
+function build_default_binaries() {
+    do_configure "$X86_NO_OPENMP" --enable-simd=avx2   && do_build ../run/john-avx2
+    do_configure "$X86_REGULAR"   --enable-simd=avx2   && do_build ../run/john-avx2-omp
+    do_configure "$X86_NO_OPENMP" --enable-simd=avx512bw && do_build ../run/john-avx512bw
+    do_configure "$X86_REGULAR"   --enable-simd=avx512bw && do_build ../run/john-avx512bw-omp}
+}
+
+function save_build_info() {
+    (
+    cd john || true
+
+    # Get the script that computes the package version
+    wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/package_version.sh
+    chmod +x package_version.sh
+
+    cat <<-EOF > run/Defaults
+#   File that lists how the build (binaries) were made
+[Build Configuration]
+System Wide Build=Yes
+Architecture="$arch"
+OpenMP=No
+OpenCL=Yes
+Optional Libraries=Yes
+Regex, OpenMPI, Experimental Code, ZTEX=No
+Version="$(./package_version.sh)"
+EOF
+
+    rm -f package_version.sh
+    )
+}
+
+function clean_image() {
+    (
+    cd john || true
+    wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh
+    # shellcheck source=/dev/null
+    source clean_package.sh
+
+    rm -f clean_package.sh
+    )
+}
+
 echo "Release $RELEASE"
 arch=$(uname -m)
+type="$1"
+export DEPLOY_PAK="Yes"
 
 # Build options (system wide, disable checks, etc.)
 SYSTEM_WIDE='--with-systemwide'
@@ -37,52 +86,40 @@ apt-get install -y --no-install-recommends \
     build-essential=* libssl-dev=* zlib1g-dev=* yasm=* libgmp-dev=* libpcap-dev=* pkg-config=* \
     libbz2-dev=* wget=* git=* libusb-1.0-0-dev=* ca-certificates=*
 
-# Get the script that computes the package version
-wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/package_version.sh
-chmod +x package_version.sh
+if [ "$type" == "ALL" ] || [ "$type" == "GPU"  ] ; then
+    install_nvidia_opencl_dev
+fi
 
 # Build helper
 wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/run_build.sh
 # shellcheck source=/dev/null
 source run_build.sh
 
-# ==================================================================
-# Build John the Ripper
-# ------------------------------------------------------------------
+# Get upstream source code
 git clone --depth 10 https://github.com/openwall/john.git
 
 # Make it a reproducible build
-if [ "$RELEASE" = "true" ] ; then (cd john || true; git checkout "$COMMIT"); fi
-(
-    cd john/src || true
-    do_configure "$X86_NO_OPENMP" --enable-simd=sse2   && do_build ../run/john-sse2
-    do_configure "$X86_REGULAR"   --enable-simd=sse2   && do_build ../run/john-sse2-omp
-    do_configure "$X86_NO_OPENMP" --enable-simd=avx    && do_build ../run/john-avx
-    do_configure "$X86_REGULAR"   --enable-simd=avx    && do_build ../run/john-avx-omp
-    do_configure "$X86_NO_OPENMP" --enable-simd=avx2   && do_build ../run/john-avx2
-    do_configure "$X86_REGULAR"   --enable-simd=avx2   && do_build ../run/john-avx2-omp
-    do_configure "$X86_NO_OPENMP" --enable-simd=avx512f  && do_build ../run/john-avx512f
-    do_configure "$X86_REGULAR"   --enable-simd=avx512f  && do_build ../run/john-avx512f-omp
-    do_configure "$X86_NO_OPENMP" --enable-simd=avx512bw && do_build ../run/john-avx512bw
-    do_configure "$X86_REGULAR"   --enable-simd=avx512bw && do_build ../run/john-avx512bw-omp
-)
-
-# Clean the image
-(
+if [ "$RELEASE" == "true" ] ; then
+    (
     cd john || true
-    wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh
-    # shellcheck source=/dev/null
-    source clean_package.sh
+    git checkout "$COMMIT"
+    )
+fi
+
+(
+cd john/src || true
+
+# Build for CPU only image
+if [ "$type" != "GPU" ] ; then
+   do_configure "$X86_NO_OPENMP" --enable-simd=sse2     && do_build ../run/john-sse2
+   do_configure "$X86_REGULAR"   --enable-simd=sse2     && do_build ../run/john-sse2-omp
+   do_configure "$X86_NO_OPENMP" --enable-simd=avx      && do_build ../run/john-avx
+   do_configure "$X86_REGULAR"   --enable-simd=avx      && do_build ../run/john-avx-omp
+   do_configure "$X86_NO_OPENMP" --enable-simd=avx512f  && do_build ../run/john-avx512f
+   do_configure "$X86_REGULAR"   --enable-simd=avx512f  && do_build ../run/john-avx512f-omp
+fi
+build_default_binaries
 )
 
-# Save information about how the binaries were built
-cat <<-EOF > john/run/Defaults
-#   File that lists how the build (binaries) were made
-[Build Configuration]
-System Wide Build=Yes
-Architecture="$arch"
-OpenMP, OpenCL=No
-Optional Libraries=Yes
-Regex, OpenMPI, Experimental Code, ZTEX=No
-Version="$(./package_version.sh)"
-EOF
+save_build_info
+clean_image

@@ -58,7 +58,11 @@ elif [[ "$requested" = 'best' ]]; then
     done
     echo 'No suitable john binary found'
 else
-    exec /john/run/john-sse2-omp "$@"
+    if [[ -f /john/run/john-sse2-omp ]]; then
+        exec /john/run/john-sse2-omp "$@"
+    else
+        exec /john/run/john-avx2-omp "$@"
+    fi
 fi
 message='### See you soon! ###'
 printf "%*s\n" $(((${#message} + $(tput cols)) / 2)) "$message"
