@@ -23,7 +23,7 @@
 # John the Ripper Docker image is hosted at GitHub Packages
 #   https://github.com/openwall/john-packages/pkgs/container/john
 
-FROM nvidia/cuda:12.2.0-base-ubuntu22.04@sha256:1069ccd2910506f68e1d7c0907a32aaa877b8038d1aa24cb7ffb2d2a85d725c7 as build
+FROM nvidia/cuda:12.2.0-base-ubuntu22.04@sha256:f8870283bea6a85ba4b4a5e1b65158dd15e8009e433539e7c83c94707e703a1b as build
 WORKDIR /build/
 COPY build.sh .
 
@@ -37,7 +37,7 @@ RUN ./build.sh "${TYPE}"
 # ==================================================================
 # Tagging
 # ------------------------------------------------------------------
-FROM nvidia/cuda:12.2.0-base-ubuntu22.04@sha256:1069ccd2910506f68e1d7c0907a32aaa877b8038d1aa24cb7ffb2d2a85d725c7
+FROM nvidia/cuda:12.2.0-base-ubuntu22.04@sha256:f8870283bea6a85ba4b4a5e1b65158dd15e8009e433539e7c83c94707e703a1b
 LABEL maintainer="Claudio André (c) 2019-2023"
 
 ARG VERSION_NAME
