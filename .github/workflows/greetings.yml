@@ -1,4 +1,3 @@
-name: Greetings
 ###############################################################################
 #        _       _             _   _            _____  _
 #       | |     | |           | | | |          |  __ \(_)
@@ -20,6 +19,9 @@ name: Greetings
 ###############################################################################
 # Github Action to build John the Ripper's CPU Docker image
 # More info at https://github.com/openwall/john-packages
+
+---
+name: Greetings
 
 on: [pull_request_target, issues]
 
