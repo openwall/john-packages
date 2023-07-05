@@ -19,3 +19,8 @@ updates:
     directory: /cloud-tool
     schedule:
       interval: daily
+
+  - package-ecosystem: docker
+    directory: /deploy/docker
+    schedule:
+      interval: daily
