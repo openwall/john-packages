@@ -17,26 +17,27 @@
 # the Free Software Foundation, as expressed in version 2, seen at
 # http://www.gnu.org/licenses/gpl-2.0.html
 ###############################################################################
-# Dockerfile for john the ripper
+# Dockerfile for john the ripper that supports CPU formats plus NVIDIA GPUs
 # More info at https://github.com/openwall/john-packages
 
 # John the Ripper Docker image is hosted at GitHub Packages
 #   https://github.com/openwall/john-packages/pkgs/container/john
 
-FROM ubuntu:22.04@sha256:6120be6a2b7ce665d0cbddc3ce6eae60fe94637c6a66985312d1f02f63cc0bcd as build
+FROM nvidia/cuda:12.2.0-base-ubuntu22.04@sha256:1069ccd2910506f68e1d7c0907a32aaa877b8038d1aa24cb7ffb2d2a85d725c7 as build
 WORKDIR /build/
 COPY build.sh .
 
 # To build a release run a (docker build [...] --build-arg release=true)
 ARG RELEASE=false
 ARG COMMIT=15b3b7c25fc8ac34f2504d53f0c94bbf4ec12596
+ARG TYPE=ALL
 
-RUN ./build.sh
+RUN ./build.sh "${TYPE}"
 
 # ==================================================================
 # Tagging
 # ------------------------------------------------------------------
-FROM ubuntu:22.04@sha256:6120be6a2b7ce665d0cbddc3ce6eae60fe94637c6a66985312d1f02f63cc0bcd
+FROM nvidia/cuda:12.2.0-base-ubuntu22.04@sha256:1069ccd2910506f68e1d7c0907a32aaa877b8038d1aa24cb7ffb2d2a85d725c7
 LABEL maintainer="Claudio André (c) 2019-2023"
 
 ARG VERSION_NAME
@@ -75,7 +76,7 @@ RUN ln -s /usr/local/bin/docker-entrypoint.sh . && \
     useradd -U -m JtR && \
     apt-get update -qq && \
     export DEBIAN_FRONTEND="noninteractive" && \
-    apt-get install -y --no-install-recommends libssl3=3.0.2-0ubuntu1.10 libgomp1=12.1.0-2ubuntu1~22.04 && \
+    apt-get install -y --no-install-recommends libssl3=3.0* libgomp1=12.1* ocl-icd-opencl-dev=2.2* && \
 # ==================================================================
 # Clean up the image (shrink the Docker image)
 # ------------------------------------------------------------------
