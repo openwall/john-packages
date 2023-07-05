@@ -24,6 +24,8 @@
 
 echo "Release $RELEASE"
 arch=$(uname -m)
+type="$1"
+export DEPLOY_PAK="Yes"
 
 # Build options (system wide, disable checks, etc.)
 SYSTEM_WIDE='--with-systemwide'
@@ -37,9 +39,10 @@ apt-get install -y --no-install-recommends \
     build-essential=* libssl-dev=* zlib1g-dev=* yasm=* libgmp-dev=* libpcap-dev=* pkg-config=* \
     libbz2-dev=* wget=* git=* libusb-1.0-0-dev=* ca-certificates=*
 
-# Get the script that computes the package version
-wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/package_version.sh
-chmod +x package_version.sh
+if [ "$type" == "ALL" || "$type" == "GPU"  ] ; then
+    apt-get install -y --no-install-recommends \
+        nvidia-opencl-dev
+fi
 
 # Build helper
 wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/run_build.sh
@@ -55,16 +58,51 @@ git clone --depth 10 https://github.com/openwall/john.git
 if [ "$RELEASE" = "true" ] ; then (cd john || true; git checkout "$COMMIT"); fi
 (
     cd john/src || true
-    do_configure "$X86_NO_OPENMP" --enable-simd=sse2   && do_build ../run/john-sse2
-    do_configure "$X86_REGULAR"   --enable-simd=sse2   && do_build ../run/john-sse2-omp
-    do_configure "$X86_NO_OPENMP" --enable-simd=avx    && do_build ../run/john-avx
-    do_configure "$X86_REGULAR"   --enable-simd=avx    && do_build ../run/john-avx-omp
+
+    # Build for CPU only image
+    if [ "$type" != "GPU" ] ; then
+        do_configure "$X86_NO_OPENMP" --enable-simd=sse2   && do_build ../run/john-sse2
+        do_configure "$X86_REGULAR"   --enable-simd=sse2   && do_build ../run/john-sse2-omp
+        do_configure "$X86_NO_OPENMP" --enable-simd=avx    && do_build ../run/john-avx
+        do_configure "$X86_REGULAR"   --enable-simd=avx    && do_build ../run/john-avx-omp
+    fi
+
+    # Build for all images
     do_configure "$X86_NO_OPENMP" --enable-simd=avx2   && do_build ../run/john-avx2
     do_configure "$X86_REGULAR"   --enable-simd=avx2   && do_build ../run/john-avx2-omp
-    do_configure "$X86_NO_OPENMP" --enable-simd=avx512f  && do_build ../run/john-avx512f
-    do_configure "$X86_REGULAR"   --enable-simd=avx512f  && do_build ../run/john-avx512f-omp
+
+    # Build for CPU only image
+    if [ "$type" != "GPU" ] ; then
+        do_configure "$X86_NO_OPENMP" --enable-simd=avx512f  && do_build ../run/john-avx512f
+        do_configure "$X86_REGULAR"   --enable-simd=avx512f  && do_build ../run/john-avx512f-omp
+    fi
+
+    # Build for all images
     do_configure "$X86_NO_OPENMP" --enable-simd=avx512bw && do_build ../run/john-avx512bw
     do_configure "$X86_REGULAR"   --enable-simd=avx512bw && do_build ../run/john-avx512bw-omp
+)
+
+# Save information about how the binaries were built
+(
+    cd john || true
+
+    # Get the script that computes the package version
+    wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/package_version.sh
+    chmod +x package_version.sh
+
+    cat <<-EOF > run/Defaults
+#   File that lists how the build (binaries) were made
+[Build Configuration]
+System Wide Build=Yes
+Architecture="$arch"
+OpenMP=No
+OpenCL=Yes
+Optional Libraries=Yes
+Regex, OpenMPI, Experimental Code, ZTEX=No
+Version="$(./package_version.sh)"
+EOF
+
+    rm -f package_version.sh
 )
 
 # Clean the image
@@ -73,16 +111,6 @@ if [ "$RELEASE" = "true" ] ; then (cd john || true; git checkout "$COMMIT"); fi
     wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh
     # shellcheck source=/dev/null
     source clean_package.sh
-)
 
-# Save information about how the binaries were built
-cat <<-EOF > john/run/Defaults
-#   File that lists how the build (binaries) were made
-[Build Configuration]
-System Wide Build=Yes
-Architecture="$arch"
-OpenMP, OpenCL=No
-Optional Libraries=Yes
-Regex, OpenMPI, Experimental Code, ZTEX=No
-Version="$(./package_version.sh)"
-EOF
+    rm -f clean_package.sh
+)
