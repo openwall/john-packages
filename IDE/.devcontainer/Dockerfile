@@ -1,6 +1,6 @@
 # See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/master/containers
 
-FROM mcr.microsoft.com/vscode/devcontainers/base:jammy@sha256:3cb26c96497bfc785273ed8f2aa6983a68f26138dbf119b4444421d434037700
+FROM mcr.microsoft.com/vscode/devcontainers/base:jammy@sha256:58455121a1914fc23fa3440ef505e63776b889b667245c00de3ab3176be07ab7
 
 # ** [Optional] Uncomment this section to install additional packages. **
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
