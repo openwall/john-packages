@@ -58,7 +58,7 @@ We produce software in short cycles, ensuring that the software can be reliably 
 
 [![Virus Scan](https://github.com/openwall/john-packages/actions/workflows/virusscan.yml/badge.svg)](https://github.com/openwall/john-packages/actions/workflows/virusscan.yml)
 
-| **Releases** | **Latest** (![GitHub Latest Release Date](https://img.shields.io/github/release-date/openwall/john-packages?label=&style=flat-square "GitHub Latest Release Date")) | **Prerelease** (![GitHub Latest Prerelease Date](https://img.shields.io/github/release-date-pre/openwall/john-packages?label=&style=flat-square "GitHub Latest Prerelease Date")) |
+| **Releases** | **Latest** <br> ![GitHub Latest Release Date](https://img.shields.io/github/release-date/openwall/john-packages?label=&style=flat-square "GitHub Latest Release Date") | **Prerelease** <br> ![GitHub Latest Prerelease Date](https://img.shields.io/github/release-date-pre/openwall/john-packages?label=&style=flat-square "GitHub Latest Prerelease Date") |
 |:-:|:-:|:-:|
  [![GitHub](https://img.shields.io/badge/Downloads-gray "Downloads")](https://github.com/openwall/john-packages/releases) ![GitHub Total Downloads](https://img.shields.io/github/downloads/openwall/john-packages/total?label=&style=flat-square "GitHub Total Downloads") | ![GitHub Latest Release Version](https://img.shields.io/github/release/openwall/john-packages?sort=date&label=&style=flat-square&color=blue "GitHub Latest Release Version") | ![GitHub Latest Prerelease Version](https://img.shields.io/github/release/openwall/john-packages?include_prereleases&sort=date&label=&style=flat-square&color=blue "GitHub Latest Prerelease Version") |
 
