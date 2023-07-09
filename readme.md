@@ -400,7 +400,7 @@ For testing and future reference, we have a Docker image of John the Ripper.
 To use it:
 
 ```bash
- # CPU only formats
+ # CPU and GPU formats
  docker run -it ghcr.io/openwall/john:latest <binary id> <john options>
 
  # To run ztex formats
@@ -425,7 +425,8 @@ The highlights (👀):
 - the stable John 1.9.0 Jumbo 1 (`ghcr.io/openwall/john:v1.9.0J1`):
   - has ztex formats available.
 - the development version (`ghcr.io/openwall/john:latest`):
-  - has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`.
+  - has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`;
+  - has NVIDIA OpenCL available (GPU driver is required on the host).
 
 ### Docker Image Deployments
 
