@@ -1,6 +1,6 @@
-## Advices To Anyone Facing Opencl Windows Problems
+# Advices To Anyone Facing Opencl Windows Problems
 
-### If `john` is not recognizing your GPU card:
+## If `john` is not recognizing your GPU card
 
 - make sure all required GPU drivers are installed;
 - restart your PC, if you have just installed the drivers;
@@ -68,7 +68,7 @@
      Raw:    287571K c/s real, 2857M c/s virtual
     ```
 
-### OpenCL compilation erros:
+## OpenCL compilation erros
 
-  - if you get errors like `Error building kernel /run/opencl/cryptsha512_kernel_GPU.cl`
-    try running john from the subdirectory `opencl` (e.g. from `JtR\run\opencl` run `..\john.exe`).
+- if you get errors like `Error building kernel /run/opencl/cryptsha512_kernel_GPU.cl`
+  try running john from the subdirectory `opencl` (e.g. from `JtR\run\opencl` run `..\john.exe`).

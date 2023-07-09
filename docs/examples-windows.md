@@ -1,23 +1,23 @@
-## More Examples Of Running John The Ripper On Windows
+# More Examples Of Running John The Ripper On Windows
 
-### Basic usage:
+## Basic usage
 
 ```powershell
 C:\john-the-ripper\run>john --list=build-info
 C:\john-the-ripper\run>john --test --format=SHA512crypt
 ```
 
-### Benchmarking:
+## Benchmarking
 
 ```powershell
 PS C:\bleeding\run> .\john --test=5 --format=sha512crypt-opencl
 Device 0: Juniper [AMD Radeon HD 6700 Series]
 Benchmarking: sha512crypt-opencl, crypt(3) $6$ (rounds=5000) [SHA512 OpenCL]... DONE
 Speed for cost 1 (iteration count) of 5000
-Raw:	11522 c/s real, 819200 c/s virtual
+Raw:    11522 c/s real, 819200 c/s virtual
 ```
 
-### Real cracking:
+## Real cracking
 
 ```powershell
 PS C:\bleeding\run> .\john --format=sha512crypt-opencl d:\hash.txt

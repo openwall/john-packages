@@ -1,6 +1,6 @@
-## More Examples Of Enabling Alias For John The Ripper Snap
+# More Examples Of Enabling Alias For John The Ripper Snap
 
-### Set alias for john and compiled 2john tools:
+## Set alias for john and compiled 2john tools
 
 ```bash
  sudo snap alias john-the-ripper john-snap

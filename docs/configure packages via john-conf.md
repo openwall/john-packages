@@ -33,21 +33,21 @@ $JOHN is /snap/john-the-ripper/current/run/
 [...]
 ```
 
-```
+```bash
+$ john --format=sha512crypt -list=format-tests | cut -f3 > ~/alltests.in
 # Create some sample hashes
-john --format=sha512crypt -list=format-tests | cut -f3 > ~/alltests.in
 ```
 
 * Crack it using the "regular" packaged `john`
 ```bash
-$ rm -f snap/john-the-ripper/current/.john/*.pot; john ~/alltests.in --max-run=10 --mask
+$ rm -f ~/snap/john-the-ripper/current/.john/john.pot; john ~/alltests.in --max-run=10 --mask
 Warning: detected hash type "sha512crypt", but the string is also recognized as "sha512crypt-opencl"
 Use the "--format=sha512crypt-opencl" option to force loading these as that type instead
 Using default input encoding: UTF-8
 Loaded 6 password hashes with 4 different salts (1.5x same-salt boost) (sha512crypt, crypt(3) $6$ [SHA512 256/256 AVX2 4x])
 Cost 1 (iteration count) is 5000 for all loaded hashes
 Will run 8 OpenMP threads
-Using default mask: ?1?2?2?2?2?2?2?3?3?3?3?d?d?d?d    ## <===== HERE ************************************
+Using default mask: ?1?2?2?2?2?2?2?3?3?3?3?d?d?d?d    ## <===== HERE ******************************************************
 Press 'q' or Ctrl-C to abort, 'h' for help, almost any other key for status
 0g 0:00:00:00  (2) 0g/s 0p/s 0c/s 0C/s
                  (?)
@@ -57,23 +57,21 @@ Use the "--show" option to display all of the cracked passwords reliably
 Session stopped (max run-time reached)
 ```
 
-* Use your personal (edited) `john.conf` (compare the mask values).
+* Use your personal/edited `john.conf`
 ```bash
-$ cp /snap/john-the-ripper/current/run/john.conf snap/john-the-ripper/current/.john/john.conf
+$ cp /snap/john-the-ripper/current/run/john.conf ~/snap/john-the-ripper/current/.john/john.conf
+# File copied.
 
-$ sed -i 's/DefaultMask = ?1?2?2?2?2?2?2?3?3?3?3?d?d?d?d/DefaultMask = Hello?awor?l?l?a/g' snap/john-the-ripper/current/.john/john.conf
+$ sed -i 's/DefaultMask = ?1?2?2?2?2?2?2?3?3?3?3?d?d?d?d/DefaultMask = Hello?awor?l?l?a/g' ~/snap/john-the-ripper/current/.john/john.conf
+# File edited.
+```
 
-$ rm -f snap/john-the-ripper/current/.john/*.pot; john ~/alltests.in --max-run=10 --mask
-Warning: detected hash type "sha512crypt", but the string is also recognized as "sha512crypt-opencl"
-Use the "--format=sha512crypt-opencl" option to force loading these as that type instead
-Using default input encoding: UTF-8
-Loaded 6 password hashes with 4 different salts (1.5x same-salt boost) (sha512crypt, crypt(3) $6$ [SHA512 256/256 AVX2 4x])
-Cost 1 (iteration count) is 5000 for all loaded hashes
-Will run 8 OpenMP threads
-Using default mask: Hello?awor?l?l?a   ## <===== HERE ************************************
-Press 'q' or Ctrl-C to abort, 'h' for help, almost any other key for status
-0g 0:00:00:00  (10) 0g/s 0p/s 0c/s 0C/s
-                 (?)
+* Try it again (compare the mask value used)
+```bash
+$ rm -f ~/snap/john-the-ripper/current/.john/john.pot; john ~/alltests.in --max-run=10 --mask
+[...]
+Using default mask: Hello?awor?l?l?a   ## <===== HERE *********************************************************************
+[...]
 1g 0:00:00:02 3.09% (11) (ETA: 12:09:26) 0g/s 726.2p/s 2541c/s 3994C/s Hello.worg..Hello7woria
 1g 0:00:00:10 10.82% (11) (ETA: 12:09:54) 0g/s 700.7p/s 2302c/s 3703C/s HelloIworje..Hello9worni
 Use the "--show" option to display all of the cracked passwords reliably
@@ -86,6 +84,7 @@ Create a suitable `$(pwd)/.john/john.conf` file in your 'host'.
 
 ```bash
 $ cp YOUR-FILE/john.conf $(pwd)/.john/john.conf
+# Use your personal/edited `john.conf`
 ```
 
 Then connect the 'host' file system to the running container (linking the host current folder to `/home/JtR`).
@@ -98,4 +97,5 @@ You will need add the following option to the `docker run` command line:
 Example:
 ```bash
 $ docker run -v "$(pwd)":/home/JtR ghcr.io/openwall/john best -form=SHA512crypt --incrementa:digits /home/JtR/alltests.in --max-run=20
+# john is executed in a Docker container
 ```

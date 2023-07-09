@@ -1,33 +1,34 @@
-## More Examples Of Running John The Ripper On Docker
+# More Examples Of Running John The Ripper On Docker
 
-### Syntax:
+## Syntax
 
 ```bash
- # CPU only formats
+ # CPU and GPU formats
  docker run -it ghcr.io/openwall/john:latest <binary id> <john options>
 
  # To run ztex formats
  docker run --device=/dev/ttyUSB0 ghcr.io/openwall/john:v1.9.0J1 ztex <john options>
 ```
 
-### Basic usage:
+## Basic usage
 
 ```bash
  docker run ghcr.io/openwall/john # => uses the best SIMD available, tag 'latest' can be ommited
  docker run ghcr.io/openwall/john:rolling # => uses the latest rolling release
  docker run ghcr.io/openwall/john:latest best # => uses the best SIMD available
+ docker run ghcr.io/openwall/john:latest avx2 -list=build-info
  docker run ghcr.io/openwall/john:latest avx2-omp -list=build-info
  docker run ghcr.io/openwall/john:latest avx512bw -test=0 -format=cpu
 ```
 
-### Run a real cracking session:
+## Run a real cracking session
 
 ```bash
  docker run ghcr.io/openwall/john:latest -list=format-tests | cut -f3 > ~/alltests.in
  docker run -v "$HOME":/host ghcr.io/openwall/john:latest avx2 -form=SHA512crypt /host/alltests.in --max-run=300
 ```
 
-### Run a real cracking session, saving the session information on the host:
+## Run a real cracking session, saving the session information on the host
 
 ```bash
  # I'm using a demo hashes file:
@@ -54,7 +55,7 @@
  -rw------- 1 claudio claudio  246 jun 20 08:59 john.rec
 ```
 
-### Compare the performance of SIMD extensions:
+## Compare the performance of SIMD extensions
 
 ```bash
  docker run ghcr.io/openwall/john:latest sse2     --test=10 --format=SHA512crypt
@@ -63,7 +64,7 @@
  docker run ghcr.io/openwall/john:latest avx512bw --test=10 --format=SHA512crypt
 ```
 
-### Binaries:
+## Binaries
 
 The available binaries (their IDs are sse2-omp, sse2, avx-omp, etc) are:
 
