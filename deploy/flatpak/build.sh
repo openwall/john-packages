@@ -22,6 +22,38 @@
 # Script to automate the build of John the Ripper flatpak
 # More info at https://github.com/openwall/john-packages
 
+function save_build_info() {
+    (
+    cd .. || true
+
+    # Get the script that computes the package version
+    chmod +x package_version.sh
+
+    cat <<-EOF > run/Defaults
+#   File that lists how the build (binaries) were made
+[Build Configuration]
+System Wide Build=Yes
+Architecture="$(uname -m)"
+OpenMP, OpenCL=No
+Optional Libraries=Yes
+Regex, OpenMPI, Experimental Code, ZTEX=No
+Version="$(./package_version.sh)"
+EOF
+
+    rm -f package_version.sh
+    )
+}
+
+function clean_image() {
+    (
+    cd .. || true
+    # shellcheck source=/dev/null
+    source clean_package.sh
+
+    rm -f clean_package.sh
+    )
+}
+
 # Required defines
 TEST=';full;extra;' # Controls how the test will happen
 arch=$(uname -m)
@@ -38,7 +70,7 @@ X86_NO_OPENMP="--disable-native-tests $SYSTEM_WIDE --disable-openmp"
 OTHER_REGULAR="$SYSTEM_WIDE"
 OTHER_NO_OPENMP="$SYSTEM_WIDE --disable-openmp"
 
-# Show environmen information
+# Show environment information
 # shellcheck source=/dev/null
 source ../show_info.sh
 
@@ -83,18 +115,6 @@ if [[ -z "$TASK" ]]; then
             ln -s john-omp john
         )
     fi
-    # Save information about how the binaries were built
-    cat <<-EOF > ../run/Defaults
-#   File that lists how the build (binaries) were made
-[Build Configuration]
-System Wide Build=Yes
-Architecture="$arch"
-OpenMP, OpenCL=No
-Optional Libraries=Yes
-Regex, OpenMPI, Experimental Code, ZTEX=No
-Version="$(../package_version.sh)"
-EOF
-
     # List build info logs
     ../run/john-omp
 
@@ -108,8 +128,5 @@ elif [[ "$TASK" == "test" ]]; then
     # shellcheck source=/dev/null
     source ../run_tests.sh
 fi
-(
-    cd ..
-    # shellcheck source=/dev/null
-    source clean_package.sh
-)
+save_build_info
+clean_image

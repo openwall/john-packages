@@ -22,7 +22,7 @@
 # Script to automate the build of John the Ripper Docker image
 # More info at https://github.com/openwall/john-packages
 
-function install_nvidia_opencl_dev() {
+function install_nvidia_opencl() {
     apt-get install -y --no-install-recommends \
         nvidia-opencl-dev=*
 }
@@ -46,7 +46,7 @@ function save_build_info() {
 #   File that lists how the build (binaries) were made
 [Build Configuration]
 System Wide Build=Yes
-Architecture="$arch"
+Architecture="$(uname -m)"
 OpenMP=No
 OpenCL=Yes
 Optional Libraries=Yes
@@ -70,7 +70,6 @@ function clean_image() {
 }
 
 echo "Release $RELEASE"
-arch=$(uname -m)
 type="$1"
 export DEPLOY_PAK="Yes"
 
@@ -87,7 +86,7 @@ apt-get install -y --no-install-recommends \
     libbz2-dev=* wget=* git=* libusb-1.0-0-dev=* ca-certificates=*
 
 if [ "$type" == "ALL" ] || [ "$type" == "GPU"  ] ; then
-    install_nvidia_opencl_dev
+    install_nvidia_opencl
 fi
 
 # Build helper

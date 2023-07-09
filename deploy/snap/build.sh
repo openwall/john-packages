@@ -22,6 +22,41 @@
 # Script to automate the build of John the Ripper snap
 # More info at https://github.com/openwall/john-packages
 
+function save_build_info() {
+    (
+    cd .. || true
+
+    # Get the script that computes the package version
+    wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/package_version.sh
+    chmod +x package_version.sh
+
+    cat <<-EOF > run/Defaults
+#   File that lists how the build (binaries) were made
+[Build Configuration]
+System Wide Build=Yes
+Architecture="$(uname -m)"
+OpenMP=No
+OpenCL=Yes # ONLY on x86_64, otherwise No
+Optional Libraries=Yes
+Regex, OpenMPI, Experimental Code, ZTEX=No
+Version="$(./package_version.sh)"
+EOF
+
+    rm -f package_version.sh
+    )
+}
+
+function clean_image() {
+    (
+    cd .. || true
+    wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh
+    # shellcheck source=/dev/null
+    source clean_package.sh
+
+    rm -f clean_package.sh
+    )
+}
+
 # Required defines
 TEST=';full;extra;' # Controls how the test will happen
 arch=$(uname -m)
@@ -45,13 +80,13 @@ if [[ "$1" == "PULL" ]]; then
     cp -r tmp/. .
 
     # Uncomment for a release
-    #_JUMBO_RELEASE="15b3b7c25fc8ac34f2504d53f0c94bbf4ec12596"
+    #RELEASE="15b3b7c25fc8ac34f2504d53f0c94bbf4ec12596"
 
     # Make it a reproducible build
-    if [[ -n "$_JUMBO_RELEASE" ]]; then
-        echo "Deploying the release $_JUMBO_RELEASE"
+    if [[ -n "$RELEASE" ]]; then
+        echo "Deploying the release $RELEASE"
         git pull --unshallow
-        git checkout "$_JUMBO_RELEASE"
+        git checkout "$RELEASE"
     fi
 
     # Get the script that computes the package version
@@ -78,7 +113,7 @@ fi
 # Force CFLAGS with -O2
 export CFLAGS="-O2 $CFLAGS"
 
-# Show environmen information
+# Show environment information
 wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/show_info.sh
 # shellcheck source=/dev/null
 source show_info.sh
@@ -120,18 +155,6 @@ else
         ln -s john-omp john
     )
 fi
-# Save information about how the binaries were built
-cat <<-EOF > ../run/Defaults
-#   File that lists how the build (binaries) were made
-[Build Configuration]
-System Wide Build=Yes
-Architecture="$arch"
-OpenMP=No
-OpenCL=Yes # ONLY on x86_64, otherwise No
-Optional Libraries=Yes
-Regex, OpenMPI, Experimental Code, ZTEX=No
-Version="$(../package_version.sh)"
-EOF
 
 # To be able to run testing
 sudo apt-get install -y language-pack-en
@@ -150,9 +173,5 @@ wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/run_tes
 # shellcheck source=/dev/null
 source run_tests.sh
 
-(
-    cd ..
-    wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh
-    # shellcheck source=/dev/null
-    source clean_package.sh
-)
+save_build_info
+clean_image

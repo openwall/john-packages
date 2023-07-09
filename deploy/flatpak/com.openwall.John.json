@@ -40,7 +40,7 @@
                 },
                 {
                     "type": "patch",
-                    "path": "confined-system-wide-build.patch"
+                    "path": "../../patches/0001-Handle-self-confined-system-wide-build.patch"
                 },
                 {
                     "type": "file",
@@ -48,12 +48,17 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://raw.githubusercontent.com/openwall/john-packages/main/tests/package_version.sh",
-                    "sha256": "9e5d841ad0ab61a06c446c33b8d60a66915439ca5d7b24b3947b4313be759910"
+                    "path": "../tests/disable_formats.sh"
                 },
                 {
                     "type": "file",
-                    "path": "../tests/disable_formats.sh"
+                    "url": "https://raw.githubusercontent.com/openwall/john-packages/main/tests/package_version.sh",
+                    "sha256": "7a25fd926b9a7bc406dca6db5b2802a4a8a4625cc191b9ecdd1291bfcd1146ef"
+                },
+                {
+                    "type": "file",
+                    "url": "https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh",
+                    "sha256": "57ad39d297f29c2decf5233e1d5497b72af06ec43eb892423d47ca6a2e9e89f8"
                 },
                 {
                     "type": "file",
@@ -62,13 +67,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh",
-                    "sha256": "fe0559b39a99a48786c7112495ae1be1ab533db97d2f00e5d1145a097a17cfcb"
-                },
-                {
-                    "type": "file",
-                    "path": ".https://raw.githubusercontent.com/openwall/john-packages/main/tests/run_build.sh",
-                    "sha256": "4f90497d81b542ee50a50e1888c797f791967350aed528dff918b4a806783770"
+                    "url": "https://raw.githubusercontent.com/openwall/john-packages/main/tests/run_build.sh",
+                    "sha256": "06a1a477773a7d80131ca1e883efcedfa56af963caac1108090a84c49cc4b450"
                 },
                 {
                     "type": "file",

@@ -21,7 +21,7 @@
 ###############################################################################
 
 git_tag=$(git rev-parse --short=7 HEAD 2>/dev/null)
-ID=$(curl -s https://raw.githubusercontent.com/openwall/john-packages/release/deploy/Release.ID 2>/dev/null)
+ID=$(curl -s https://raw.githubusercontent.com/openwall/john-packages/release/deploy/Release.ID 2>/dev/null | tr -d '\n')
 
 if [[ -z "$ID" || "$ID" == "404: Not Found" ]]; then
     ID="1.9J1+"
