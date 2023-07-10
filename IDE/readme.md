@@ -6,7 +6,7 @@ Visual Studio Code Remote Development allows you to use a container as a full-fe
 
 In here you can find the project files (the workspace). Basically, you should use it this way:
 
-```
+```text
 project
 │   john.code-workspace
 │   .devcontainer
@@ -24,4 +24,4 @@ project
 - Debugging in action:
   - watch the breakpoint, inspection of variable contents, "step in", "step into", "step out". Stop using `printf()` while experimenting with John the Ripper.
 
-![](Debugging-JtR-Using-IDE.png)
+![VSCode Screen](Debugging-JtR-Using-IDE.png)

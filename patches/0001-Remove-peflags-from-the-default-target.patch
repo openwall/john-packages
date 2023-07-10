@@ -14,12 +14,11 @@ index c6b47b5ff..587a32193 100644
 @@ -195,7 +195,7 @@ default:
  		JOHN_OBJS="$(JOHN_OBJS) @CC_ASM_OBJS@" \
  		AESNI_ARCH=@AESNI_ARCH@
- 
+
 -	@if [ "$(OS)" = "Windows_NT" ]; then \
 +	@if [ "$(OS)" = "None-Windows_NT" ]; then \
  		$(MAKE) peflags; \
  	fi
  	@echo
--- 
+--
 2.39.2
-

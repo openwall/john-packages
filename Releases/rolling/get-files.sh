@@ -63,4 +63,3 @@ if [[ "$1" == "ALL_FILES" ]]; then
     sha256sum -- *.7z
     sha256sum -- john.flatpak
 fi
-

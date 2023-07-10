@@ -36,7 +36,7 @@ index 83afed9eb..fa7d43f58 100644
 --- a/src/params.h
 +++ b/src/params.h
 @@ -106,10 +106,18 @@
- 
+
  #if JOHN_SYSTEMWIDE
  #ifndef JOHN_SYSTEMWIDE_EXEC /* please refer to the notes above */
 -#define JOHN_SYSTEMWIDE_EXEC		"/usr/libexec/john"
@@ -56,6 +56,5 @@ index 83afed9eb..fa7d43f58 100644
  #endif
  #define JOHN_PRIVATE_HOME		"~/.john"
  #endif
--- 
+--
 2.39.2
-

@@ -60,12 +60,12 @@
 2023-04-03T17:13:28.0322232Z hint: Using 'master' as the name for the initial branch. This default branch name
 2023-04-03T17:13:28.0323477Z hint: is subject to change. To configure the initial branch name to use in all
 2023-04-03T17:13:28.0324176Z hint: of your new repositories, which will suppress this warning, call:
-2023-04-03T17:13:28.0337207Z hint: 
+2023-04-03T17:13:28.0337207Z hint:
 2023-04-03T17:13:28.0338410Z hint: 	git config --global init.defaultBranch <name>
-2023-04-03T17:13:28.0339045Z hint: 
+2023-04-03T17:13:28.0339045Z hint:
 2023-04-03T17:13:28.0339921Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
 2023-04-03T17:13:28.0341196Z hint: 'development'. The just-created branch can be renamed via this command:
-2023-04-03T17:13:28.0341706Z hint: 
+2023-04-03T17:13:28.0341706Z hint:
 2023-04-03T17:13:28.0342331Z hint: 	git branch -m <name>
 2023-04-03T17:13:28.0356936Z Initialized empty Git repository in /home/runner/work/john-packages/john-packages/.git/
 2023-04-03T17:13:28.0393110Z [command]/usr/bin/git remote add origin https://github.com/openwall/john-packages
@@ -82,192 +82,192 @@
 2023-04-03T17:13:28.1554563Z ##[endgroup]
 2023-04-03T17:13:28.1555101Z ##[group]Fetching the repository
 2023-04-03T17:13:28.1571378Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +fea7a78043ac5947b73ca145e86d32273ff8b9a2:refs/remotes/origin/master
-2023-04-03T17:13:28.6475462Z remote: Enumerating objects: 95, done.        
-2023-04-03T17:13:28.6481529Z remote: Counting objects:   1% (1/95)        
-2023-04-03T17:13:28.6486088Z remote: Counting objects:   2% (2/95)        
-2023-04-03T17:13:28.6490946Z remote: Counting objects:   3% (3/95)        
-2023-04-03T17:13:28.6495278Z remote: Counting objects:   4% (4/95)        
-2023-04-03T17:13:28.6500679Z remote: Counting objects:   5% (5/95)        
-2023-04-03T17:13:28.6505453Z remote: Counting objects:   6% (6/95)        
-2023-04-03T17:13:28.6510904Z remote: Counting objects:   7% (7/95)        
-2023-04-03T17:13:28.6516615Z remote: Counting objects:   8% (8/95)        
-2023-04-03T17:13:28.6521335Z remote: Counting objects:   9% (9/95)        
-2023-04-03T17:13:28.6526879Z remote: Counting objects:  10% (10/95)        
-2023-04-03T17:13:28.6531538Z remote: Counting objects:  11% (11/95)        
-2023-04-03T17:13:28.6536077Z remote: Counting objects:  12% (12/95)        
-2023-04-03T17:13:28.6540345Z remote: Counting objects:  13% (13/95)        
-2023-04-03T17:13:28.6544662Z remote: Counting objects:  14% (14/95)        
-2023-04-03T17:13:28.6549959Z remote: Counting objects:  15% (15/95)        
-2023-04-03T17:13:28.6555710Z remote: Counting objects:  16% (16/95)        
-2023-04-03T17:13:28.6560442Z remote: Counting objects:  17% (17/95)        
-2023-04-03T17:13:28.6563749Z remote: Counting objects:  18% (18/95)        
-2023-04-03T17:13:28.6567565Z remote: Counting objects:  20% (19/95)        
-2023-04-03T17:13:28.6571933Z remote: Counting objects:  21% (20/95)        
-2023-04-03T17:13:28.6576430Z remote: Counting objects:  22% (21/95)        
-2023-04-03T17:13:28.6580056Z remote: Counting objects:  23% (22/95)        
-2023-04-03T17:13:28.6583307Z remote: Counting objects:  24% (23/95)        
-2023-04-03T17:13:28.6586434Z remote: Counting objects:  25% (24/95)        
-2023-04-03T17:13:28.6589696Z remote: Counting objects:  26% (25/95)        
-2023-04-03T17:13:28.6592932Z remote: Counting objects:  27% (26/95)        
-2023-04-03T17:13:28.6596324Z remote: Counting objects:  28% (27/95)        
-2023-04-03T17:13:28.6599730Z remote: Counting objects:  29% (28/95)        
-2023-04-03T17:13:28.6603135Z remote: Counting objects:  30% (29/95)        
-2023-04-03T17:13:28.6606599Z remote: Counting objects:  31% (30/95)        
-2023-04-03T17:13:28.6609793Z remote: Counting objects:  32% (31/95)        
-2023-04-03T17:13:28.6612882Z remote: Counting objects:  33% (32/95)        
-2023-04-03T17:13:28.6616111Z remote: Counting objects:  34% (33/95)        
-2023-04-03T17:13:28.6619070Z remote: Counting objects:  35% (34/95)        
-2023-04-03T17:13:28.6622073Z remote: Counting objects:  36% (35/95)        
-2023-04-03T17:13:28.6625085Z remote: Counting objects:  37% (36/95)        
-2023-04-03T17:13:28.6628246Z remote: Counting objects:  38% (37/95)        
-2023-04-03T17:13:28.6631200Z remote: Counting objects:  40% (38/95)        
-2023-04-03T17:13:28.6635626Z remote: Counting objects:  41% (39/95)        
-2023-04-03T17:13:28.6638641Z remote: Counting objects:  42% (40/95)        
-2023-04-03T17:13:28.6651824Z remote: Counting objects:  43% (41/95)        
-2023-04-03T17:13:28.6652151Z remote: Counting objects:  44% (42/95)        
-2023-04-03T17:13:28.6652564Z remote: Counting objects:  45% (43/95)        
-2023-04-03T17:13:28.6653019Z remote: Counting objects:  46% (44/95)        
-2023-04-03T17:13:28.6653313Z remote: Counting objects:  47% (45/95)        
-2023-04-03T17:13:28.6653588Z remote: Counting objects:  48% (46/95)        
-2023-04-03T17:13:28.6653879Z remote: Counting objects:  49% (47/95)        
-2023-04-03T17:13:28.6654171Z remote: Counting objects:  50% (48/95)        
-2023-04-03T17:13:28.6654444Z remote: Counting objects:  51% (49/95)        
-2023-04-03T17:13:28.6654731Z remote: Counting objects:  52% (50/95)        
-2023-04-03T17:13:28.6656195Z remote: Counting objects:  53% (51/95)        
-2023-04-03T17:13:28.6656815Z remote: Counting objects:  54% (52/95)        
-2023-04-03T17:13:28.6657162Z remote: Counting objects:  55% (53/95)        
-2023-04-03T17:13:28.6657474Z remote: Counting objects:  56% (54/95)        
-2023-04-03T17:13:28.6657786Z remote: Counting objects:  57% (55/95)        
-2023-04-03T17:13:28.6658081Z remote: Counting objects:  58% (56/95)        
-2023-04-03T17:13:28.6658400Z remote: Counting objects:  60% (57/95)        
-2023-04-03T17:13:28.6658858Z remote: Counting objects:  61% (58/95)        
-2023-04-03T17:13:28.6659132Z remote: Counting objects:  62% (59/95)        
-2023-04-03T17:13:28.6659426Z remote: Counting objects:  63% (60/95)        
-2023-04-03T17:13:28.6659716Z remote: Counting objects:  64% (61/95)        
-2023-04-03T17:13:28.6659987Z remote: Counting objects:  65% (62/95)        
-2023-04-03T17:13:28.6660274Z remote: Counting objects:  66% (63/95)        
-2023-04-03T17:13:28.6660560Z remote: Counting objects:  67% (64/95)        
-2023-04-03T17:13:28.6661004Z remote: Counting objects:  68% (65/95)        
-2023-04-03T17:13:28.6661894Z remote: Counting objects:  69% (66/95)        
-2023-04-03T17:13:28.6662208Z remote: Counting objects:  70% (67/95)        
-2023-04-03T17:13:28.6662501Z remote: Counting objects:  71% (68/95)        
-2023-04-03T17:13:28.6662788Z remote: Counting objects:  72% (69/95)        
-2023-04-03T17:13:28.6663071Z remote: Counting objects:  73% (70/95)        
-2023-04-03T17:13:28.6663393Z remote: Counting objects:  74% (71/95)        
-2023-04-03T17:13:28.6663683Z remote: Counting objects:  75% (72/95)        
-2023-04-03T17:13:28.6663954Z remote: Counting objects:  76% (73/95)        
-2023-04-03T17:13:28.6664238Z remote: Counting objects:  77% (74/95)        
-2023-04-03T17:13:28.6664523Z remote: Counting objects:  78% (75/95)        
-2023-04-03T17:13:28.6664796Z remote: Counting objects:  80% (76/95)        
-2023-04-03T17:13:28.6665087Z remote: Counting objects:  81% (77/95)        
-2023-04-03T17:13:28.6665375Z remote: Counting objects:  82% (78/95)        
-2023-04-03T17:13:28.6665652Z remote: Counting objects:  83% (79/95)        
-2023-04-03T17:13:28.6665939Z remote: Counting objects:  84% (80/95)        
-2023-04-03T17:13:28.6666225Z remote: Counting objects:  85% (81/95)        
-2023-04-03T17:13:28.6666513Z remote: Counting objects:  86% (82/95)        
-2023-04-03T17:13:28.6666784Z remote: Counting objects:  87% (83/95)        
-2023-04-03T17:13:28.6667357Z remote: Counting objects:  88% (84/95)        
-2023-04-03T17:13:28.6667648Z remote: Counting objects:  89% (85/95)        
-2023-04-03T17:13:28.6667920Z remote: Counting objects:  90% (86/95)        
-2023-04-03T17:13:28.6668304Z remote: Counting objects:  91% (87/95)        
-2023-04-03T17:13:28.6668591Z remote: Counting objects:  92% (88/95)        
-2023-04-03T17:13:28.6668862Z remote: Counting objects:  93% (89/95)        
-2023-04-03T17:13:28.6669147Z remote: Counting objects:  94% (90/95)        
-2023-04-03T17:13:28.6669433Z remote: Counting objects:  95% (91/95)        
-2023-04-03T17:13:28.6669703Z remote: Counting objects:  96% (92/95)        
-2023-04-03T17:13:28.6670001Z remote: Counting objects:  97% (93/95)        
-2023-04-03T17:13:28.6670290Z remote: Counting objects:  98% (94/95)        
-2023-04-03T17:13:28.6670577Z remote: Counting objects: 100% (95/95)        
-2023-04-03T17:13:28.6670863Z remote: Counting objects: 100% (95/95), done.        
-2023-04-03T17:13:28.6677160Z remote: Compressing objects:   1% (1/87)        
-2023-04-03T17:13:28.6677495Z remote: Compressing objects:   2% (2/87)        
-2023-04-03T17:13:28.6677779Z remote: Compressing objects:   3% (3/87)        
-2023-04-03T17:13:28.6678076Z remote: Compressing objects:   4% (4/87)        
-2023-04-03T17:13:28.6678426Z remote: Compressing objects:   5% (5/87)        
-2023-04-03T17:13:28.6678707Z remote: Compressing objects:   6% (6/87)        
-2023-04-03T17:13:28.6678999Z remote: Compressing objects:   8% (7/87)        
-2023-04-03T17:13:28.6679307Z remote: Compressing objects:   9% (8/87)        
-2023-04-03T17:13:28.6740209Z remote: Compressing objects:  10% (9/87)        
-2023-04-03T17:13:28.6921028Z remote: Compressing objects:  11% (10/87)        
-2023-04-03T17:13:28.7090450Z remote: Compressing objects:  12% (11/87)        
-2023-04-03T17:13:28.7090855Z remote: Compressing objects:  13% (12/87)        
-2023-04-03T17:13:28.7144131Z remote: Compressing objects:  14% (13/87)        
-2023-04-03T17:13:28.7144573Z remote: Compressing objects:  16% (14/87)        
-2023-04-03T17:13:28.7144895Z remote: Compressing objects:  17% (15/87)        
-2023-04-03T17:13:28.7199180Z remote: Compressing objects:  18% (16/87)        
-2023-04-03T17:13:28.7265368Z remote: Compressing objects:  19% (17/87)        
-2023-04-03T17:13:28.7300911Z remote: Compressing objects:  20% (18/87)        
-2023-04-03T17:13:28.7301254Z remote: Compressing objects:  21% (19/87)        
-2023-04-03T17:13:28.7301533Z remote: Compressing objects:  22% (20/87)        
-2023-04-03T17:13:28.7301821Z remote: Compressing objects:  24% (21/87)        
-2023-04-03T17:13:28.7329589Z remote: Compressing objects:  25% (22/87)        
-2023-04-03T17:13:28.7338656Z remote: Compressing objects:  26% (23/87)        
-2023-04-03T17:13:28.7354335Z remote: Compressing objects:  27% (24/87)        
-2023-04-03T17:13:28.7409481Z remote: Compressing objects:  28% (25/87)        
-2023-04-03T17:13:28.7410225Z remote: Compressing objects:  29% (26/87)        
-2023-04-03T17:13:28.7410566Z remote: Compressing objects:  31% (27/87)        
-2023-04-03T17:13:28.7469346Z remote: Compressing objects:  32% (28/87)        
-2023-04-03T17:13:28.7469698Z remote: Compressing objects:  33% (29/87)        
-2023-04-03T17:13:28.7470003Z remote: Compressing objects:  34% (30/87)        
-2023-04-03T17:13:28.7470284Z remote: Compressing objects:  35% (31/87)        
-2023-04-03T17:13:28.7470577Z remote: Compressing objects:  36% (32/87)        
-2023-04-03T17:13:28.7470864Z remote: Compressing objects:  37% (33/87)        
-2023-04-03T17:13:28.7471138Z remote: Compressing objects:  39% (34/87)        
-2023-04-03T17:13:28.7471425Z remote: Compressing objects:  40% (35/87)        
-2023-04-03T17:13:28.7471728Z remote: Compressing objects:  41% (36/87)        
-2023-04-03T17:13:28.7472003Z remote: Compressing objects:  42% (37/87)        
-2023-04-03T17:13:28.7472286Z remote: Compressing objects:  43% (38/87)        
-2023-04-03T17:13:28.7472571Z remote: Compressing objects:  44% (39/87)        
-2023-04-03T17:13:28.7473463Z remote: Compressing objects:  45% (40/87)        
-2023-04-03T17:13:28.7473759Z remote: Compressing objects:  47% (41/87)        
-2023-04-03T17:13:28.7474382Z remote: Compressing objects:  48% (42/87)        
-2023-04-03T17:13:28.7474987Z remote: Compressing objects:  49% (43/87)        
-2023-04-03T17:13:28.7475306Z remote: Compressing objects:  50% (44/87)        
-2023-04-03T17:13:28.7475625Z remote: Compressing objects:  51% (45/87)        
-2023-04-03T17:13:28.7475944Z remote: Compressing objects:  52% (46/87)        
-2023-04-03T17:13:28.7476245Z remote: Compressing objects:  54% (47/87)        
-2023-04-03T17:13:28.7476565Z remote: Compressing objects:  55% (48/87)        
-2023-04-03T17:13:28.7476890Z remote: Compressing objects:  56% (49/87)        
-2023-04-03T17:13:28.7477192Z remote: Compressing objects:  57% (50/87)        
-2023-04-03T17:13:28.7477511Z remote: Compressing objects:  58% (51/87)        
-2023-04-03T17:13:28.7477826Z remote: Compressing objects:  59% (52/87)        
-2023-04-03T17:13:28.7478149Z remote: Compressing objects:  60% (53/87)        
-2023-04-03T17:13:28.7478445Z remote: Compressing objects:  62% (54/87)        
-2023-04-03T17:13:28.7478788Z remote: Compressing objects:  63% (55/87)        
-2023-04-03T17:13:28.7479099Z remote: Compressing objects:  64% (56/87)        
-2023-04-03T17:13:28.7479552Z remote: Compressing objects:  65% (57/87)        
-2023-04-03T17:13:28.7479836Z remote: Compressing objects:  66% (58/87)        
-2023-04-03T17:13:28.7480118Z remote: Compressing objects:  67% (59/87)        
-2023-04-03T17:13:28.7480386Z remote: Compressing objects:  68% (60/87)        
-2023-04-03T17:13:28.7480672Z remote: Compressing objects:  70% (61/87)        
-2023-04-03T17:13:28.7481125Z remote: Compressing objects:  71% (62/87)        
-2023-04-03T17:13:28.7481418Z remote: Compressing objects:  72% (63/87)        
-2023-04-03T17:13:28.7481709Z remote: Compressing objects:  73% (64/87)        
-2023-04-03T17:13:28.7486492Z remote: Compressing objects:  74% (65/87)        
-2023-04-03T17:13:28.7486897Z remote: Compressing objects:  75% (66/87)        
-2023-04-03T17:13:28.7487176Z remote: Compressing objects:  77% (67/87)        
-2023-04-03T17:13:28.7487463Z remote: Compressing objects:  78% (68/87)        
-2023-04-03T17:13:28.7487749Z remote: Compressing objects:  79% (69/87)        
-2023-04-03T17:13:28.7488019Z remote: Compressing objects:  80% (70/87)        
-2023-04-03T17:13:28.7488303Z remote: Compressing objects:  81% (71/87)        
-2023-04-03T17:13:28.7488591Z remote: Compressing objects:  82% (72/87)        
-2023-04-03T17:13:28.7488860Z remote: Compressing objects:  83% (73/87)        
-2023-04-03T17:13:28.7489154Z remote: Compressing objects:  85% (74/87)        
-2023-04-03T17:13:28.7489446Z remote: Compressing objects:  86% (75/87)        
-2023-04-03T17:13:28.7490136Z remote: Compressing objects:  87% (76/87)        
-2023-04-03T17:13:28.7490784Z remote: Compressing objects:  88% (77/87)        
-2023-04-03T17:13:28.7491087Z remote: Compressing objects:  89% (78/87)        
-2023-04-03T17:13:28.7491394Z remote: Compressing objects:  90% (79/87)        
-2023-04-03T17:13:28.7491674Z remote: Compressing objects:  91% (80/87)        
-2023-04-03T17:13:28.7491972Z remote: Compressing objects:  93% (81/87)        
-2023-04-03T17:13:28.7492263Z remote: Compressing objects:  94% (82/87)        
-2023-04-03T17:13:28.7492543Z remote: Compressing objects:  95% (83/87)        
-2023-04-03T17:13:28.7492834Z remote: Compressing objects:  96% (84/87)        
-2023-04-03T17:13:28.7493294Z remote: Compressing objects:  97% (85/87)        
-2023-04-03T17:13:28.7493563Z remote: Compressing objects:  98% (86/87)        
-2023-04-03T17:13:28.7493850Z remote: Compressing objects: 100% (87/87)        
-2023-04-03T17:13:28.7494156Z remote: Compressing objects: 100% (87/87), done.        
-2023-04-03T17:13:28.9194943Z remote: Total 95 (delta 10), reused 67 (delta 1), pack-reused 0        
+2023-04-03T17:13:28.6475462Z remote: Enumerating objects: 95, done.
+2023-04-03T17:13:28.6481529Z remote: Counting objects:   1% (1/95)
+2023-04-03T17:13:28.6486088Z remote: Counting objects:   2% (2/95)
+2023-04-03T17:13:28.6490946Z remote: Counting objects:   3% (3/95)
+2023-04-03T17:13:28.6495278Z remote: Counting objects:   4% (4/95)
+2023-04-03T17:13:28.6500679Z remote: Counting objects:   5% (5/95)
+2023-04-03T17:13:28.6505453Z remote: Counting objects:   6% (6/95)
+2023-04-03T17:13:28.6510904Z remote: Counting objects:   7% (7/95)
+2023-04-03T17:13:28.6516615Z remote: Counting objects:   8% (8/95)
+2023-04-03T17:13:28.6521335Z remote: Counting objects:   9% (9/95)
+2023-04-03T17:13:28.6526879Z remote: Counting objects:  10% (10/95)
+2023-04-03T17:13:28.6531538Z remote: Counting objects:  11% (11/95)
+2023-04-03T17:13:28.6536077Z remote: Counting objects:  12% (12/95)
+2023-04-03T17:13:28.6540345Z remote: Counting objects:  13% (13/95)
+2023-04-03T17:13:28.6544662Z remote: Counting objects:  14% (14/95)
+2023-04-03T17:13:28.6549959Z remote: Counting objects:  15% (15/95)
+2023-04-03T17:13:28.6555710Z remote: Counting objects:  16% (16/95)
+2023-04-03T17:13:28.6560442Z remote: Counting objects:  17% (17/95)
+2023-04-03T17:13:28.6563749Z remote: Counting objects:  18% (18/95)
+2023-04-03T17:13:28.6567565Z remote: Counting objects:  20% (19/95)
+2023-04-03T17:13:28.6571933Z remote: Counting objects:  21% (20/95)
+2023-04-03T17:13:28.6576430Z remote: Counting objects:  22% (21/95)
+2023-04-03T17:13:28.6580056Z remote: Counting objects:  23% (22/95)
+2023-04-03T17:13:28.6583307Z remote: Counting objects:  24% (23/95)
+2023-04-03T17:13:28.6586434Z remote: Counting objects:  25% (24/95)
+2023-04-03T17:13:28.6589696Z remote: Counting objects:  26% (25/95)
+2023-04-03T17:13:28.6592932Z remote: Counting objects:  27% (26/95)
+2023-04-03T17:13:28.6596324Z remote: Counting objects:  28% (27/95)
+2023-04-03T17:13:28.6599730Z remote: Counting objects:  29% (28/95)
+2023-04-03T17:13:28.6603135Z remote: Counting objects:  30% (29/95)
+2023-04-03T17:13:28.6606599Z remote: Counting objects:  31% (30/95)
+2023-04-03T17:13:28.6609793Z remote: Counting objects:  32% (31/95)
+2023-04-03T17:13:28.6612882Z remote: Counting objects:  33% (32/95)
+2023-04-03T17:13:28.6616111Z remote: Counting objects:  34% (33/95)
+2023-04-03T17:13:28.6619070Z remote: Counting objects:  35% (34/95)
+2023-04-03T17:13:28.6622073Z remote: Counting objects:  36% (35/95)
+2023-04-03T17:13:28.6625085Z remote: Counting objects:  37% (36/95)
+2023-04-03T17:13:28.6628246Z remote: Counting objects:  38% (37/95)
+2023-04-03T17:13:28.6631200Z remote: Counting objects:  40% (38/95)
+2023-04-03T17:13:28.6635626Z remote: Counting objects:  41% (39/95)
+2023-04-03T17:13:28.6638641Z remote: Counting objects:  42% (40/95)
+2023-04-03T17:13:28.6651824Z remote: Counting objects:  43% (41/95)
+2023-04-03T17:13:28.6652151Z remote: Counting objects:  44% (42/95)
+2023-04-03T17:13:28.6652564Z remote: Counting objects:  45% (43/95)
+2023-04-03T17:13:28.6653019Z remote: Counting objects:  46% (44/95)
+2023-04-03T17:13:28.6653313Z remote: Counting objects:  47% (45/95)
+2023-04-03T17:13:28.6653588Z remote: Counting objects:  48% (46/95)
+2023-04-03T17:13:28.6653879Z remote: Counting objects:  49% (47/95)
+2023-04-03T17:13:28.6654171Z remote: Counting objects:  50% (48/95)
+2023-04-03T17:13:28.6654444Z remote: Counting objects:  51% (49/95)
+2023-04-03T17:13:28.6654731Z remote: Counting objects:  52% (50/95)
+2023-04-03T17:13:28.6656195Z remote: Counting objects:  53% (51/95)
+2023-04-03T17:13:28.6656815Z remote: Counting objects:  54% (52/95)
+2023-04-03T17:13:28.6657162Z remote: Counting objects:  55% (53/95)
+2023-04-03T17:13:28.6657474Z remote: Counting objects:  56% (54/95)
+2023-04-03T17:13:28.6657786Z remote: Counting objects:  57% (55/95)
+2023-04-03T17:13:28.6658081Z remote: Counting objects:  58% (56/95)
+2023-04-03T17:13:28.6658400Z remote: Counting objects:  60% (57/95)
+2023-04-03T17:13:28.6658858Z remote: Counting objects:  61% (58/95)
+2023-04-03T17:13:28.6659132Z remote: Counting objects:  62% (59/95)
+2023-04-03T17:13:28.6659426Z remote: Counting objects:  63% (60/95)
+2023-04-03T17:13:28.6659716Z remote: Counting objects:  64% (61/95)
+2023-04-03T17:13:28.6659987Z remote: Counting objects:  65% (62/95)
+2023-04-03T17:13:28.6660274Z remote: Counting objects:  66% (63/95)
+2023-04-03T17:13:28.6660560Z remote: Counting objects:  67% (64/95)
+2023-04-03T17:13:28.6661004Z remote: Counting objects:  68% (65/95)
+2023-04-03T17:13:28.6661894Z remote: Counting objects:  69% (66/95)
+2023-04-03T17:13:28.6662208Z remote: Counting objects:  70% (67/95)
+2023-04-03T17:13:28.6662501Z remote: Counting objects:  71% (68/95)
+2023-04-03T17:13:28.6662788Z remote: Counting objects:  72% (69/95)
+2023-04-03T17:13:28.6663071Z remote: Counting objects:  73% (70/95)
+2023-04-03T17:13:28.6663393Z remote: Counting objects:  74% (71/95)
+2023-04-03T17:13:28.6663683Z remote: Counting objects:  75% (72/95)
+2023-04-03T17:13:28.6663954Z remote: Counting objects:  76% (73/95)
+2023-04-03T17:13:28.6664238Z remote: Counting objects:  77% (74/95)
+2023-04-03T17:13:28.6664523Z remote: Counting objects:  78% (75/95)
+2023-04-03T17:13:28.6664796Z remote: Counting objects:  80% (76/95)
+2023-04-03T17:13:28.6665087Z remote: Counting objects:  81% (77/95)
+2023-04-03T17:13:28.6665375Z remote: Counting objects:  82% (78/95)
+2023-04-03T17:13:28.6665652Z remote: Counting objects:  83% (79/95)
+2023-04-03T17:13:28.6665939Z remote: Counting objects:  84% (80/95)
+2023-04-03T17:13:28.6666225Z remote: Counting objects:  85% (81/95)
+2023-04-03T17:13:28.6666513Z remote: Counting objects:  86% (82/95)
+2023-04-03T17:13:28.6666784Z remote: Counting objects:  87% (83/95)
+2023-04-03T17:13:28.6667357Z remote: Counting objects:  88% (84/95)
+2023-04-03T17:13:28.6667648Z remote: Counting objects:  89% (85/95)
+2023-04-03T17:13:28.6667920Z remote: Counting objects:  90% (86/95)
+2023-04-03T17:13:28.6668304Z remote: Counting objects:  91% (87/95)
+2023-04-03T17:13:28.6668591Z remote: Counting objects:  92% (88/95)
+2023-04-03T17:13:28.6668862Z remote: Counting objects:  93% (89/95)
+2023-04-03T17:13:28.6669147Z remote: Counting objects:  94% (90/95)
+2023-04-03T17:13:28.6669433Z remote: Counting objects:  95% (91/95)
+2023-04-03T17:13:28.6669703Z remote: Counting objects:  96% (92/95)
+2023-04-03T17:13:28.6670001Z remote: Counting objects:  97% (93/95)
+2023-04-03T17:13:28.6670290Z remote: Counting objects:  98% (94/95)
+2023-04-03T17:13:28.6670577Z remote: Counting objects: 100% (95/95)
+2023-04-03T17:13:28.6670863Z remote: Counting objects: 100% (95/95), done.
+2023-04-03T17:13:28.6677160Z remote: Compressing objects:   1% (1/87)
+2023-04-03T17:13:28.6677495Z remote: Compressing objects:   2% (2/87)
+2023-04-03T17:13:28.6677779Z remote: Compressing objects:   3% (3/87)
+2023-04-03T17:13:28.6678076Z remote: Compressing objects:   4% (4/87)
+2023-04-03T17:13:28.6678426Z remote: Compressing objects:   5% (5/87)
+2023-04-03T17:13:28.6678707Z remote: Compressing objects:   6% (6/87)
+2023-04-03T17:13:28.6678999Z remote: Compressing objects:   8% (7/87)
+2023-04-03T17:13:28.6679307Z remote: Compressing objects:   9% (8/87)
+2023-04-03T17:13:28.6740209Z remote: Compressing objects:  10% (9/87)
+2023-04-03T17:13:28.6921028Z remote: Compressing objects:  11% (10/87)
+2023-04-03T17:13:28.7090450Z remote: Compressing objects:  12% (11/87)
+2023-04-03T17:13:28.7090855Z remote: Compressing objects:  13% (12/87)
+2023-04-03T17:13:28.7144131Z remote: Compressing objects:  14% (13/87)
+2023-04-03T17:13:28.7144573Z remote: Compressing objects:  16% (14/87)
+2023-04-03T17:13:28.7144895Z remote: Compressing objects:  17% (15/87)
+2023-04-03T17:13:28.7199180Z remote: Compressing objects:  18% (16/87)
+2023-04-03T17:13:28.7265368Z remote: Compressing objects:  19% (17/87)
+2023-04-03T17:13:28.7300911Z remote: Compressing objects:  20% (18/87)
+2023-04-03T17:13:28.7301254Z remote: Compressing objects:  21% (19/87)
+2023-04-03T17:13:28.7301533Z remote: Compressing objects:  22% (20/87)
+2023-04-03T17:13:28.7301821Z remote: Compressing objects:  24% (21/87)
+2023-04-03T17:13:28.7329589Z remote: Compressing objects:  25% (22/87)
+2023-04-03T17:13:28.7338656Z remote: Compressing objects:  26% (23/87)
+2023-04-03T17:13:28.7354335Z remote: Compressing objects:  27% (24/87)
+2023-04-03T17:13:28.7409481Z remote: Compressing objects:  28% (25/87)
+2023-04-03T17:13:28.7410225Z remote: Compressing objects:  29% (26/87)
+2023-04-03T17:13:28.7410566Z remote: Compressing objects:  31% (27/87)
+2023-04-03T17:13:28.7469346Z remote: Compressing objects:  32% (28/87)
+2023-04-03T17:13:28.7469698Z remote: Compressing objects:  33% (29/87)
+2023-04-03T17:13:28.7470003Z remote: Compressing objects:  34% (30/87)
+2023-04-03T17:13:28.7470284Z remote: Compressing objects:  35% (31/87)
+2023-04-03T17:13:28.7470577Z remote: Compressing objects:  36% (32/87)
+2023-04-03T17:13:28.7470864Z remote: Compressing objects:  37% (33/87)
+2023-04-03T17:13:28.7471138Z remote: Compressing objects:  39% (34/87)
+2023-04-03T17:13:28.7471425Z remote: Compressing objects:  40% (35/87)
+2023-04-03T17:13:28.7471728Z remote: Compressing objects:  41% (36/87)
+2023-04-03T17:13:28.7472003Z remote: Compressing objects:  42% (37/87)
+2023-04-03T17:13:28.7472286Z remote: Compressing objects:  43% (38/87)
+2023-04-03T17:13:28.7472571Z remote: Compressing objects:  44% (39/87)
+2023-04-03T17:13:28.7473463Z remote: Compressing objects:  45% (40/87)
+2023-04-03T17:13:28.7473759Z remote: Compressing objects:  47% (41/87)
+2023-04-03T17:13:28.7474382Z remote: Compressing objects:  48% (42/87)
+2023-04-03T17:13:28.7474987Z remote: Compressing objects:  49% (43/87)
+2023-04-03T17:13:28.7475306Z remote: Compressing objects:  50% (44/87)
+2023-04-03T17:13:28.7475625Z remote: Compressing objects:  51% (45/87)
+2023-04-03T17:13:28.7475944Z remote: Compressing objects:  52% (46/87)
+2023-04-03T17:13:28.7476245Z remote: Compressing objects:  54% (47/87)
+2023-04-03T17:13:28.7476565Z remote: Compressing objects:  55% (48/87)
+2023-04-03T17:13:28.7476890Z remote: Compressing objects:  56% (49/87)
+2023-04-03T17:13:28.7477192Z remote: Compressing objects:  57% (50/87)
+2023-04-03T17:13:28.7477511Z remote: Compressing objects:  58% (51/87)
+2023-04-03T17:13:28.7477826Z remote: Compressing objects:  59% (52/87)
+2023-04-03T17:13:28.7478149Z remote: Compressing objects:  60% (53/87)
+2023-04-03T17:13:28.7478445Z remote: Compressing objects:  62% (54/87)
+2023-04-03T17:13:28.7478788Z remote: Compressing objects:  63% (55/87)
+2023-04-03T17:13:28.7479099Z remote: Compressing objects:  64% (56/87)
+2023-04-03T17:13:28.7479552Z remote: Compressing objects:  65% (57/87)
+2023-04-03T17:13:28.7479836Z remote: Compressing objects:  66% (58/87)
+2023-04-03T17:13:28.7480118Z remote: Compressing objects:  67% (59/87)
+2023-04-03T17:13:28.7480386Z remote: Compressing objects:  68% (60/87)
+2023-04-03T17:13:28.7480672Z remote: Compressing objects:  70% (61/87)
+2023-04-03T17:13:28.7481125Z remote: Compressing objects:  71% (62/87)
+2023-04-03T17:13:28.7481418Z remote: Compressing objects:  72% (63/87)
+2023-04-03T17:13:28.7481709Z remote: Compressing objects:  73% (64/87)
+2023-04-03T17:13:28.7486492Z remote: Compressing objects:  74% (65/87)
+2023-04-03T17:13:28.7486897Z remote: Compressing objects:  75% (66/87)
+2023-04-03T17:13:28.7487176Z remote: Compressing objects:  77% (67/87)
+2023-04-03T17:13:28.7487463Z remote: Compressing objects:  78% (68/87)
+2023-04-03T17:13:28.7487749Z remote: Compressing objects:  79% (69/87)
+2023-04-03T17:13:28.7488019Z remote: Compressing objects:  80% (70/87)
+2023-04-03T17:13:28.7488303Z remote: Compressing objects:  81% (71/87)
+2023-04-03T17:13:28.7488591Z remote: Compressing objects:  82% (72/87)
+2023-04-03T17:13:28.7488860Z remote: Compressing objects:  83% (73/87)
+2023-04-03T17:13:28.7489154Z remote: Compressing objects:  85% (74/87)
+2023-04-03T17:13:28.7489446Z remote: Compressing objects:  86% (75/87)
+2023-04-03T17:13:28.7490136Z remote: Compressing objects:  87% (76/87)
+2023-04-03T17:13:28.7490784Z remote: Compressing objects:  88% (77/87)
+2023-04-03T17:13:28.7491087Z remote: Compressing objects:  89% (78/87)
+2023-04-03T17:13:28.7491394Z remote: Compressing objects:  90% (79/87)
+2023-04-03T17:13:28.7491674Z remote: Compressing objects:  91% (80/87)
+2023-04-03T17:13:28.7491972Z remote: Compressing objects:  93% (81/87)
+2023-04-03T17:13:28.7492263Z remote: Compressing objects:  94% (82/87)
+2023-04-03T17:13:28.7492543Z remote: Compressing objects:  95% (83/87)
+2023-04-03T17:13:28.7492834Z remote: Compressing objects:  96% (84/87)
+2023-04-03T17:13:28.7493294Z remote: Compressing objects:  97% (85/87)
+2023-04-03T17:13:28.7493563Z remote: Compressing objects:  98% (86/87)
+2023-04-03T17:13:28.7493850Z remote: Compressing objects: 100% (87/87)
+2023-04-03T17:13:28.7494156Z remote: Compressing objects: 100% (87/87), done.
+2023-04-03T17:13:28.9194943Z remote: Total 95 (delta 10), reused 67 (delta 1), pack-reused 0
 2023-04-03T17:13:28.9340892Z From https://github.com/openwall/john-packages
 2023-04-03T17:13:28.9342643Z  * [new ref]         fea7a78043ac5947b73ca145e86d32273ff8b9a2 -> origin/master
 2023-04-03T17:13:28.9406031Z ##[endgroup]
@@ -333,7 +333,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:13:30.1854425Z  OS/Arch:           linux/amd64
 2023-04-03T17:13:30.1857796Z  Context:           default
 2023-04-03T17:13:30.1860265Z  Experimental:      true
-2023-04-03T17:13:30.1860915Z 
+2023-04-03T17:13:30.1860915Z
 2023-04-03T17:13:30.1862714Z Server:
 2023-04-03T17:13:30.1864517Z  Engine:
 2023-04-03T17:13:30.1868963Z   Version:          20.10.23+azure-2
@@ -351,7 +351,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:13:30.1880146Z   GitCommit:        5fd4c4d144137e991c4acebb2146ab1483a97925
 2023-04-03T17:13:30.1880471Z  docker-init:
 2023-04-03T17:13:30.1880711Z   Version:          0.19.0
-2023-04-03T17:13:30.1880936Z   GitCommit:        
+2023-04-03T17:13:30.1880936Z   GitCommit:
 2023-04-03T17:13:30.1973238Z [command]/usr/bin/docker info
 2023-04-03T17:13:30.8010769Z Client:
 2023-04-03T17:13:30.8012109Z  Context:    default
@@ -359,7 +359,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:13:30.8013664Z  Plugins:
 2023-04-03T17:13:30.8014592Z   buildx: Docker Buildx (Docker Inc., 0.10.4+azure-1)
 2023-04-03T17:13:30.8015377Z   compose: Docker Compose (Docker Inc., 2.16.0+azure-2)
-2023-04-03T17:13:30.8016477Z 
+2023-04-03T17:13:30.8016477Z
 2023-04-03T17:13:30.8016770Z Server:
 2023-04-03T17:13:30.8017211Z  Containers: 0
 2023-04-03T17:13:30.8017675Z   Running: 0
@@ -385,7 +385,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:13:30.8029856Z  Init Binary: docker-init
 2023-04-03T17:13:30.8030166Z  containerd version: 1e1ea6e986c6c86565bc33d52e34b81b3e2bc71f
 2023-04-03T17:13:30.8030524Z  runc version: 5fd4c4d144137e991c4acebb2146ab1483a97925
-2023-04-03T17:13:30.8030813Z  init version: 
+2023-04-03T17:13:30.8030813Z  init version:
 2023-04-03T17:13:30.8031035Z  Security Options:
 2023-04-03T17:13:30.8031270Z   apparmor
 2023-04-03T17:13:30.8031488Z   seccomp
@@ -408,7 +408,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:13:30.8040452Z  Insecure Registries:
 2023-04-03T17:13:30.8040688Z   127.0.0.0/8
 2023-04-03T17:13:30.8040932Z  Live Restore Enabled: false
-2023-04-03T17:13:30.8041082Z 
+2023-04-03T17:13:30.8041082Z
 2023-04-03T17:13:30.8041565Z ##[endgroup]
 2023-04-03T17:13:30.8926300Z ##[warning]The `save-state` command is deprecated and will be disabled soon. Please upgrade to using Environment Files. For more information see: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
 2023-04-03T17:13:31.0020869Z [command]/usr/bin/docker buildx build --build-arg release=false --build-arg commit=15b3b7c25fc8ac34f2504d53f0c94bbf4ec12596 --build-arg BUILD_DATE=Mon Apr  3 17:13:29 UTC 2023 --build-arg VERSION=1.9.02304 --build-arg VERSION_NAME=1.9.0-jumbo-1+ --file ../../Dockerfile --iidfile /tmp/docker-build-push-AfC6Br/iidfile --secret id=GIT_AUTH_TOKEN,src=/tmp/docker-build-push-AfC6Br/tmp-1752-17husJ1uF6gF --tag ghcr.io/openwall/john:rolling --tag ghcr.io/openwall/john:rolling_J31 --metadata-file /tmp/docker-build-push-AfC6Br/metadata-file --push https://github.com/openwall/john-packages.git#fea7a78043ac5947b73ca145e86d32273ff8b9a2
@@ -425,16 +425,16 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:13:32.4317098Z #1 1.023  * [new tag]         rolling-2210            -> rolling-2210
 2023-04-03T17:13:32.4317798Z #1 1.023  * [new tag]         v1-rolling              -> v1-rolling
 2023-04-03T17:13:32.4318252Z #1 DONE 1.1s
-2023-04-03T17:13:32.4318546Z 
+2023-04-03T17:13:32.4318546Z
 2023-04-03T17:13:32.4318701Z #2 [internal] load metadata for docker.io/library/ubuntu:22.04
 2023-04-03T17:13:32.4319127Z #2 DONE 0.0s
-2023-04-03T17:13:32.5818204Z 
+2023-04-03T17:13:32.5818204Z
 2023-04-03T17:13:32.5819413Z #3 [stage-0 1/3] FROM docker.io/library/ubuntu:22.04
 2023-04-03T17:13:32.5820606Z #3 DONE 0.0s
-2023-04-03T17:13:32.5820886Z 
+2023-04-03T17:13:32.5820886Z
 2023-04-03T17:13:32.5821268Z #4 [stage-0 2/3] WORKDIR /build/
 2023-04-03T17:13:32.5821531Z #4 DONE 0.0s
-2023-04-03T17:13:32.5821661Z 
+2023-04-03T17:13:32.5821661Z
 2023-04-03T17:13:32.5829869Z #5 [stage-0 3/3] RUN apt-get update -qq &&     export DEBIAN_FRONTEND="noninteractive" &&     apt-get install -y         build-essential libssl-dev zlib1g-dev yasm libgmp-dev libpcap-dev pkg-config         libbz2-dev wget git libusb-1.0-0-dev &&     git clone --depth 10 https://github.com/openwall/john.git &&     if [ "$release" == "true" ] ; then cd john; git checkout $commit; cd ..; fi &&     cd john/src &&       ./configure --disable-native-tests --disable-openmp --enable-simd=sse2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-sse2-no-omp &&       ./configure --disable-native-tests                  --enable-simd=sse2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-sse2 &&       ./configure --disable-native-tests --disable-openmp --enable-simd=ssse3  && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-ssse3-no-omp &&       ./configure --disable-native-tests                  --enable-simd=ssse3  && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-ssse3 &&       ./configure --disable-native-tests --disable-openmp --enable-simd=sse4.1 && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-sse4.1-no-omp &&       ./configure --disable-native-tests                  --enable-simd=sse4.1 && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-sse4.1 &&       ./configure --disable-native-tests --disable-openmp --enable-simd=sse4.2 && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-sse4.2-no-omp &&       ./configure --disable-native-tests                  --enable-simd=sse4.2 && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-sse4.2 &&       ./configure --disable-native-tests --disable-openmp --enable-simd=avx    && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx-no-omp &&       ./configure --disable-native-tests                  --enable-simd=avx    && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx &&       ./configure --disable-native-tests --disable-openmp --enable-simd=xop    && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-xop-no-omp &&       ./configure --disable-native-tests                  --enable-simd=xop    && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-xop &&       ./configure --disable-native-tests --disable-openmp --enable-simd=avx2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx2-no-omp &&       ./configure --disable-native-tests                  --enable-simd=avx2   && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx2 &&       ./configure --disable-native-tests --disable-openmp --enable-simd=avx512f  && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512f-no-omp &&       ./configure --disable-native-tests                  --enable-simd=avx512f  && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512f &&       ./configure --disable-native-tests --disable-openmp --enable-simd=avx512bw && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512bw-no-omp &&       ./configure --disable-native-tests                  --enable-simd=avx512bw && make -s clean && make -sj2 && make strip && mv ../run/john ../run/john-avx512bw &&     rm *.o && cd .. && rm -rf src .git .ci .circleci .editorconfig .gitattributes .github .gitignore .mailmap .pre-commit.sh .travis .travis.yml && rm -rf run/ztex
 2023-04-03T17:13:41.1540495Z #5 7.615 Reading package lists...
 2023-04-03T17:13:41.2998479Z #5 8.600 Building dependency tree...
@@ -655,7 +655,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:14:03.1183909Z #5 30.52 debconf: delaying package configuration, since apt-utils is not installed
 2023-04-03T17:14:03.1184400Z #5 30.56 Fetched 110 MB in 20s (5465 kB/s)
 2023-04-03T17:14:03.2235003Z #5 30.73 Selecting previously unselected package liblocale-gettext-perl.
-2023-04-03T17:14:03.3484206Z #5 30.73 (Reading database ... 
+2023-04-03T17:14:03.3484206Z #5 30.73 (Reading database ...
 2023-04-03T17:14:03.3484544Z (Reading database ... 5%
 2023-04-03T17:14:03.3484789Z (Reading database ... 10%
 2023-04-03T17:14:03.3486682Z (Reading database ... 15%
@@ -1310,7 +1310,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:14:26.0217969Z #5 53.42 checking for gcc... gcc
 2023-04-03T17:14:26.0218644Z #5 53.45 checking whether the C compiler works... yes
 2023-04-03T17:14:26.0219713Z #5 53.49 checking for C compiler default output file name... a.out
-2023-04-03T17:14:26.0220205Z #5 53.49 checking for suffix of executables... 
+2023-04-03T17:14:26.0220205Z #5 53.49 checking for suffix of executables...
 2023-04-03T17:14:26.1330182Z #5 53.53 checking whether we are cross compiling... no
 2023-04-03T17:14:26.1330718Z #5 53.58 checking for suffix of object files... o
 2023-04-03T17:14:26.1331446Z #5 53.60 checking whether we are using the GNU C compiler... yes
@@ -1389,7 +1389,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:14:28.3818543Z #5 55.84 checking for SSSE3... no
 2023-04-03T17:14:28.5176005Z #5 55.89 checking for arch.h alternative... x86-64.h
 2023-04-03T17:14:28.5176651Z #5 55.89 checking for byte ordering according to target triple... little
-2023-04-03T17:14:28.5177035Z #5 55.89 checking supplied paths for OpenSSL...  
+2023-04-03T17:14:28.5177035Z #5 55.89 checking supplied paths for OpenSSL...
 2023-04-03T17:14:28.5177371Z #5 55.89 checking additional paths for OpenSSL... none
 2023-04-03T17:14:28.5177903Z #5 55.89 checking openssl/opensslv.h usability... yes
 2023-04-03T17:14:28.5178262Z #5 55.94 checking openssl/opensslv.h presence... yes
@@ -1601,15 +1601,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:14:37.6058990Z #5 65.04 config.status: executing default commands
 2023-04-03T17:14:37.6060858Z #5 65.04 configure: creating ./fmt_externs.h
 2023-04-03T17:14:39.2173806Z #5 66.72 configure: creating ./fmt_registers.h
-2023-04-03T17:14:41.6243067Z #5 68.99 
+2023-04-03T17:14:41.6243067Z #5 68.99
 2023-04-03T17:14:41.6243677Z #5 68.99 Configured for building John the Ripper jumbo:
-2023-04-03T17:14:41.6243964Z #5 68.99 
+2023-04-03T17:14:41.6243964Z #5 68.99
 2023-04-03T17:14:41.6245288Z #5 68.99 Target CPU ......................................... x86_64 SSE2, 64-bit LE
 2023-04-03T17:14:41.6246469Z #5 68.99 AES-NI support ..................................... run-time detection
 2023-04-03T17:14:41.6247459Z #5 68.99 Target OS .......................................... linux-gnu
 2023-04-03T17:14:41.6247972Z #5 68.99 Cross compiling .................................... no
 2023-04-03T17:14:41.6249130Z #5 68.99 Legacy arch header ................................. x86-64.h
-2023-04-03T17:14:41.6249910Z #5 68.99 
+2023-04-03T17:14:41.6249910Z #5 68.99
 2023-04-03T17:14:41.6250367Z #5 68.99 Optional libraries/features found:
 2023-04-03T17:14:41.6250721Z #5 68.99 Memory map (share/page large files) ................ yes
 2023-04-03T17:14:41.6251066Z #5 68.99 Fork support ....................................... yes
@@ -1627,15 +1627,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:14:41.6255976Z #5 68.99 OpenMPI support (default disabled) ................. no
 2023-04-03T17:14:41.6256300Z #5 68.99 Experimental code (default disabled) ............... no
 2023-04-03T17:14:41.6256685Z #5 68.99 ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-03T17:14:41.6257130Z #5 68.99 
+2023-04-03T17:14:41.6257130Z #5 68.99
 2023-04-03T17:14:41.6257882Z #5 68.99 Install missing libraries to get any needed features that were omitted.
-2023-04-03T17:14:41.6258182Z #5 68.99 
+2023-04-03T17:14:41.6258182Z #5 68.99
 2023-04-03T17:14:41.6258585Z #5 68.99 Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-03T17:14:47.9393017Z #5 75.34 ar: creating aes.a
 2023-04-03T17:14:49.7422051Z #5 77.25 ar: creating ed25519-donna.a
 2023-04-03T17:14:49.8628150Z #5 77.37 ar: creating poly1305-donna.a
 2023-04-03T17:14:50.1634689Z #5 77.55 ar: creating secp256k1.a
-2023-04-03T17:16:02.7599425Z #5 150.2 
+2023-04-03T17:16:02.7599425Z #5 150.2
 2023-04-03T17:16:02.7600385Z #5 150.2 Make process completed.
 2023-04-03T17:16:02.7601145Z #5 150.2 make find_version
 2023-04-03T17:16:02.7601927Z #5 150.2 make[1]: Entering directory '/build/john/src'
@@ -1671,7 +1671,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:16:02.9120475Z #5 150.3 make[1]: '../run/vncpcap2john' is up to date.
 2023-04-03T17:16:02.9120839Z #5 150.3 make[1]: '../run/eapmd5tojohn' is up to date.
 2023-04-03T17:16:02.9121219Z #5 150.3 make[1]: Leaving directory '/build/john/src'
-2023-04-03T17:16:02.9121453Z #5 150.3 
+2023-04-03T17:16:02.9121453Z #5 150.3
 2023-04-03T17:16:02.9121679Z #5 150.3 Make process completed.
 2023-04-03T17:16:02.9121935Z #5 150.3 Stripping executables.
 2023-04-03T17:16:02.9122628Z #5 150.3 strip ../run/john ../run/unshadow ../run/unafs ../run/unique ../run/undrop ../run/rar2john ../run/zip2john ../run/genmkvpwd ../run/mkvcalcproba ../run/calc_stat ../run/tgtsnarf ../run/racf2john ../run/hccap2john ../run/raw2dyna ../run/keepass2john ../run/bitlocker2john ../run/dmg2john ../run/putty2john ../run/uaf2john ../run/wpapcap2john ../run/gpg2john ../run/cprepair ../run/base64conv ../run/SIPdump ../run/vncpcap2john ../run/eapmd5tojohn
@@ -1681,7 +1681,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:16:03.3171460Z #5 150.7 checking for gcc... gcc
 2023-04-03T17:16:03.3172196Z #5 150.7 checking whether the C compiler works... yes
 2023-04-03T17:16:03.4247550Z #5 150.8 checking for C compiler default output file name... a.out
-2023-04-03T17:16:03.4248452Z #5 150.8 checking for suffix of executables... 
+2023-04-03T17:16:03.4248452Z #5 150.8 checking for suffix of executables...
 2023-04-03T17:16:03.4250282Z #5 150.9 checking whether we are cross compiling... no
 2023-04-03T17:16:03.5382856Z #5 150.9 checking for suffix of object files... o
 2023-04-03T17:16:03.5383985Z #5 151.0 checking whether we are using the GNU C compiler... yes
@@ -1760,7 +1760,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:16:05.8991184Z #5 153.3 checking for SSSE3... no
 2023-04-03T17:16:05.8996483Z #5 153.3 checking for arch.h alternative... x86-64.h
 2023-04-03T17:16:05.8997189Z #5 153.3 checking for byte ordering according to target triple... little
-2023-04-03T17:16:05.8997581Z #5 153.3 checking supplied paths for OpenSSL...  
+2023-04-03T17:16:05.8997581Z #5 153.3 checking supplied paths for OpenSSL...
 2023-04-03T17:16:05.8998775Z #5 153.3 checking additional paths for OpenSSL... none
 2023-04-03T17:16:05.9003834Z #5 153.3 checking openssl/opensslv.h usability... yes
 2023-04-03T17:16:05.9005289Z #5 153.4 checking openssl/opensslv.h presence... yes
@@ -1974,15 +1974,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:16:15.1033192Z #5 162.5 config.status: executing default commands
 2023-04-03T17:16:15.1033626Z #5 162.5 configure: creating ./fmt_externs.h
 2023-04-03T17:16:16.9070115Z #5 164.4 configure: creating ./fmt_registers.h
-2023-04-03T17:16:19.3132344Z #5 166.7 
+2023-04-03T17:16:19.3132344Z #5 166.7
 2023-04-03T17:16:19.3132802Z #5 166.7 Configured for building John the Ripper jumbo:
-2023-04-03T17:16:19.3133039Z #5 166.7 
+2023-04-03T17:16:19.3133039Z #5 166.7
 2023-04-03T17:16:19.3133635Z #5 166.7 Target CPU ......................................... x86_64 SSE2, 64-bit LE
 2023-04-03T17:16:19.3134037Z #5 166.7 AES-NI support ..................................... run-time detection
 2023-04-03T17:16:19.3134400Z #5 166.7 Target OS .......................................... linux-gnu
 2023-04-03T17:16:19.3134690Z #5 166.7 Cross compiling .................................... no
 2023-04-03T17:16:19.3135058Z #5 166.7 Legacy arch header ................................. x86-64.h
-2023-04-03T17:16:19.3135298Z #5 166.7 
+2023-04-03T17:16:19.3135298Z #5 166.7
 2023-04-03T17:16:19.3135898Z #5 166.7 Optional libraries/features found:
 2023-04-03T17:16:19.3136226Z #5 166.7 Memory map (share/page large files) ................ yes
 2023-04-03T17:16:19.3136519Z #5 166.7 Fork support ....................................... yes
@@ -2000,15 +2000,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:16:19.3140266Z #5 166.7 OpenMPI support (default disabled) ................. no
 2023-04-03T17:16:19.3140791Z #5 166.7 Experimental code (default disabled) ............... no
 2023-04-03T17:16:19.3141165Z #5 166.7 ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-03T17:16:19.3141465Z #5 166.7 
+2023-04-03T17:16:19.3141465Z #5 166.7
 2023-04-03T17:16:19.3141743Z #5 166.7 Install missing libraries to get any needed features that were omitted.
-2023-04-03T17:16:19.3142016Z #5 166.7 
+2023-04-03T17:16:19.3142016Z #5 166.7
 2023-04-03T17:16:19.3142347Z #5 166.7 Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-03T17:17:29.9815078Z #5 237.4 ar: creating aes.a
 2023-04-03T17:17:32.5141841Z #5 239.9 ar: creating secp256k1.a
 2023-04-03T17:17:34.3181557Z #5 241.8 ar: creating ed25519-donna.a
 2023-04-03T17:17:34.4693479Z #5 241.9 ar: creating poly1305-donna.a
-2023-04-03T17:17:40.1345711Z #5 247.5 
+2023-04-03T17:17:40.1345711Z #5 247.5
 2023-04-03T17:17:40.1346074Z #5 247.6 Make process completed.
 2023-04-03T17:17:40.2865225Z #5 247.6 make find_version
 2023-04-03T17:17:40.2865889Z #5 247.6 make[1]: Entering directory '/build/john/src'
@@ -2044,7 +2044,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:17:40.2877994Z #5 247.6 make[1]: '../run/vncpcap2john' is up to date.
 2023-04-03T17:17:40.2878358Z #5 247.6 make[1]: '../run/eapmd5tojohn' is up to date.
 2023-04-03T17:17:40.2878713Z #5 247.6 make[1]: Leaving directory '/build/john/src'
-2023-04-03T17:17:40.2878953Z #5 247.6 
+2023-04-03T17:17:40.2878953Z #5 247.6
 2023-04-03T17:17:40.2879154Z #5 247.6 Make process completed.
 2023-04-03T17:17:40.2879400Z #5 247.6 Stripping executables.
 2023-04-03T17:17:40.2880077Z #5 247.6 strip ../run/john ../run/unshadow ../run/unafs ../run/unique ../run/undrop ../run/rar2john ../run/zip2john ../run/genmkvpwd ../run/mkvcalcproba ../run/calc_stat ../run/tgtsnarf ../run/racf2john ../run/hccap2john ../run/raw2dyna ../run/keepass2john ../run/bitlocker2john ../run/dmg2john ../run/putty2john ../run/uaf2john ../run/wpapcap2john ../run/gpg2john ../run/cprepair ../run/base64conv ../run/SIPdump ../run/vncpcap2john ../run/eapmd5tojohn
@@ -2054,7 +2054,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:17:40.5760504Z #5 248.0 checking for gcc... gcc
 2023-04-03T17:17:40.5760754Z #5 248.0 checking whether the C compiler works... yes
 2023-04-03T17:17:40.6880353Z #5 248.1 checking for C compiler default output file name... a.out
-2023-04-03T17:17:40.6880880Z #5 248.1 checking for suffix of executables... 
+2023-04-03T17:17:40.6880880Z #5 248.1 checking for suffix of executables...
 2023-04-03T17:17:40.6881201Z #5 248.1 checking whether we are cross compiling... no
 2023-04-03T17:17:40.6881464Z #5 248.2 checking for suffix of object files... o
 2023-04-03T17:17:40.6881754Z #5 248.2 checking whether we are using the GNU C compiler... yes
@@ -2134,7 +2134,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:17:42.8528042Z #5 250.2 checking for SSE4.1... no
 2023-04-03T17:17:42.8528641Z #5 250.3 checking for arch.h alternative... x86-64.h
 2023-04-03T17:17:42.8528940Z #5 250.3 checking for byte ordering according to target triple... little
-2023-04-03T17:17:42.8529214Z #5 250.3 checking supplied paths for OpenSSL...  
+2023-04-03T17:17:42.8529214Z #5 250.3 checking supplied paths for OpenSSL...
 2023-04-03T17:17:42.8529487Z #5 250.3 checking additional paths for OpenSSL... none
 2023-04-03T17:17:42.8529753Z #5 250.3 checking openssl/opensslv.h usability... yes
 2023-04-03T17:17:42.8529999Z #5 250.3 checking openssl/opensslv.h presence... yes
@@ -2347,15 +2347,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:17:50.9912319Z #5 258.4 config.status: executing default commands
 2023-04-03T17:17:50.9912597Z #5 258.4 configure: creating ./fmt_externs.h
 2023-04-03T17:17:52.4823622Z #5 260.0 configure: creating ./fmt_registers.h
-2023-04-03T17:17:54.5899402Z #5 262.0 
+2023-04-03T17:17:54.5899402Z #5 262.0
 2023-04-03T17:17:54.5900386Z #5 262.0 Configured for building John the Ripper jumbo:
-2023-04-03T17:17:54.5900828Z #5 262.0 
+2023-04-03T17:17:54.5900828Z #5 262.0
 2023-04-03T17:17:54.5901728Z #5 262.0 Target CPU ......................................... x86_64 SSSE3, 64-bit LE
 2023-04-03T17:17:54.5902124Z #5 262.0 AES-NI support ..................................... run-time detection
 2023-04-03T17:17:54.5902481Z #5 262.0 Target OS .......................................... linux-gnu
 2023-04-03T17:17:54.5902786Z #5 262.0 Cross compiling .................................... no
 2023-04-03T17:17:54.5903143Z #5 262.0 Legacy arch header ................................. x86-64.h
-2023-04-03T17:17:54.5903375Z #5 262.0 
+2023-04-03T17:17:54.5903375Z #5 262.0
 2023-04-03T17:17:54.5903583Z #5 262.0 Optional libraries/features found:
 2023-04-03T17:17:54.5903865Z #5 262.0 Memory map (share/page large files) ................ yes
 2023-04-03T17:17:54.5904147Z #5 262.0 Fork support ....................................... yes
@@ -2373,15 +2373,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:17:54.5908694Z #5 262.0 OpenMPI support (default disabled) ................. no
 2023-04-03T17:17:54.5909143Z #5 262.0 Experimental code (default disabled) ............... no
 2023-04-03T17:17:54.5909476Z #5 262.0 ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-03T17:17:54.5909704Z #5 262.0 
+2023-04-03T17:17:54.5909704Z #5 262.0
 2023-04-03T17:17:54.5909957Z #5 262.0 Install missing libraries to get any needed features that were omitted.
-2023-04-03T17:17:54.5910215Z #5 262.0 
+2023-04-03T17:17:54.5910215Z #5 262.0
 2023-04-03T17:17:54.5910515Z #5 262.0 Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-03T17:19:03.1487983Z #5 330.6 ar: creating aes.a
 2023-04-03T17:19:05.8541818Z #5 333.3 ar: creating secp256k1.a
 2023-04-03T17:19:07.6161754Z #5 335.1 ar: creating ed25519-donna.a
 2023-04-03T17:19:07.7341038Z #5 335.2 ar: creating poly1305-donna.a
-2023-04-03T17:19:13.2541787Z #5 340.7 
+2023-04-03T17:19:13.2541787Z #5 340.7
 2023-04-03T17:19:13.2542463Z #5 340.7 Make process completed.
 2023-04-03T17:19:13.2543444Z #5 340.7 make find_version
 2023-04-03T17:19:13.2544345Z #5 340.7 make[1]: Entering directory '/build/john/src'
@@ -2417,7 +2417,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:19:13.4061972Z #5 340.8 make[1]: '../run/vncpcap2john' is up to date.
 2023-04-03T17:19:13.4062323Z #5 340.8 make[1]: '../run/eapmd5tojohn' is up to date.
 2023-04-03T17:19:13.4062675Z #5 340.8 make[1]: Leaving directory '/build/john/src'
-2023-04-03T17:19:13.4062905Z #5 340.8 
+2023-04-03T17:19:13.4062905Z #5 340.8
 2023-04-03T17:19:13.4063125Z #5 340.8 Make process completed.
 2023-04-03T17:19:13.4063370Z #5 340.8 Stripping executables.
 2023-04-03T17:19:13.4064037Z #5 340.8 strip ../run/john ../run/unshadow ../run/unafs ../run/unique ../run/undrop ../run/rar2john ../run/zip2john ../run/genmkvpwd ../run/mkvcalcproba ../run/calc_stat ../run/tgtsnarf ../run/racf2john ../run/hccap2john ../run/raw2dyna ../run/keepass2john ../run/bitlocker2john ../run/dmg2john ../run/putty2john ../run/uaf2john ../run/wpapcap2john ../run/gpg2john ../run/cprepair ../run/base64conv ../run/SIPdump ../run/vncpcap2john ../run/eapmd5tojohn
@@ -2427,7 +2427,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:19:13.6814830Z #5 341.2 checking for gcc... gcc
 2023-04-03T17:19:13.8047951Z #5 341.2 checking whether the C compiler works... yes
 2023-04-03T17:19:13.8048369Z #5 341.2 checking for C compiler default output file name... a.out
-2023-04-03T17:19:13.8048671Z #5 341.2 checking for suffix of executables... 
+2023-04-03T17:19:13.8048671Z #5 341.2 checking for suffix of executables...
 2023-04-03T17:19:13.8048958Z #5 341.3 checking whether we are cross compiling... no
 2023-04-03T17:19:13.9290226Z #5 341.3 checking for suffix of object files... o
 2023-04-03T17:19:13.9290817Z #5 341.3 checking whether we are using the GNU C compiler... yes
@@ -2507,7 +2507,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:19:16.0062105Z #5 343.4 checking for SSE4.1... no
 2023-04-03T17:19:16.0062972Z #5 343.4 checking for arch.h alternative... x86-64.h
 2023-04-03T17:19:16.0077636Z #5 343.4 checking for byte ordering according to target triple... little
-2023-04-03T17:19:16.0077946Z #5 343.4 checking supplied paths for OpenSSL...  
+2023-04-03T17:19:16.0077946Z #5 343.4 checking supplied paths for OpenSSL...
 2023-04-03T17:19:16.0078588Z #5 343.4 checking additional paths for OpenSSL... none
 2023-04-03T17:19:16.0078871Z #5 343.4 checking openssl/opensslv.h usability... yes
 2023-04-03T17:19:16.0079135Z #5 343.4 checking openssl/opensslv.h presence... yes
@@ -2721,15 +2721,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:19:24.3021570Z #5 351.7 config.status: executing default commands
 2023-04-03T17:19:24.3021848Z #5 351.7 configure: creating ./fmt_externs.h
 2023-04-03T17:19:25.9561613Z #5 353.3 configure: creating ./fmt_registers.h
-2023-04-03T17:19:28.0617993Z #5 355.5 
+2023-04-03T17:19:28.0617993Z #5 355.5
 2023-04-03T17:19:28.0618353Z #5 355.5 Configured for building John the Ripper jumbo:
-2023-04-03T17:19:28.0618603Z #5 355.5 
+2023-04-03T17:19:28.0618603Z #5 355.5
 2023-04-03T17:19:28.0619178Z #5 355.5 Target CPU ......................................... x86_64 SSSE3, 64-bit LE
 2023-04-03T17:19:28.0619558Z #5 355.5 AES-NI support ..................................... run-time detection
 2023-04-03T17:19:28.0619942Z #5 355.5 Target OS .......................................... linux-gnu
 2023-04-03T17:19:28.0620220Z #5 355.5 Cross compiling .................................... no
 2023-04-03T17:19:28.0620571Z #5 355.5 Legacy arch header ................................. x86-64.h
-2023-04-03T17:19:28.0620782Z #5 355.5 
+2023-04-03T17:19:28.0620782Z #5 355.5
 2023-04-03T17:19:28.0621376Z #5 355.5 Optional libraries/features found:
 2023-04-03T17:19:28.0621659Z #5 355.5 Memory map (share/page large files) ................ yes
 2023-04-03T17:19:28.0624802Z #5 355.5 Fork support ....................................... yes
@@ -2747,15 +2747,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:19:28.0629032Z #5 355.5 OpenMPI support (default disabled) ................. no
 2023-04-03T17:19:28.0629337Z #5 355.5 Experimental code (default disabled) ............... no
 2023-04-03T17:19:28.0629697Z #5 355.5 ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-03T17:19:28.0629939Z #5 355.5 
+2023-04-03T17:19:28.0629939Z #5 355.5
 2023-04-03T17:19:28.0630225Z #5 355.5 Install missing libraries to get any needed features that were omitted.
-2023-04-03T17:19:28.0630478Z #5 355.5 
+2023-04-03T17:19:28.0630478Z #5 355.5
 2023-04-03T17:19:28.0630821Z #5 355.5 Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-03T17:20:40.2258144Z #5 427.6 ar: creating aes.a
 2023-04-03T17:20:42.7814804Z #5 430.2 ar: creating secp256k1.a
 2023-04-03T17:20:44.7361045Z #5 432.1 ar: creating ed25519-donna.a
 2023-04-03T17:20:44.8857574Z #5 432.2 ar: creating poly1305-donna.a
-2023-04-03T17:20:50.4009344Z #5 437.9 
+2023-04-03T17:20:50.4009344Z #5 437.9
 2023-04-03T17:20:50.5514788Z #5 437.9 Make process completed.
 2023-04-03T17:20:50.5515484Z #5 437.9 make find_version
 2023-04-03T17:20:50.5608771Z #5 437.9 make[1]: Entering directory '/build/john/src'
@@ -2791,7 +2791,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:20:50.5626873Z #5 438.0 make[1]: '../run/vncpcap2john' is up to date.
 2023-04-03T17:20:50.5627251Z #5 438.0 make[1]: '../run/eapmd5tojohn' is up to date.
 2023-04-03T17:20:50.5627640Z #5 438.0 make[1]: Leaving directory '/build/john/src'
-2023-04-03T17:20:50.5627880Z #5 438.0 
+2023-04-03T17:20:50.5627880Z #5 438.0
 2023-04-03T17:20:50.5628274Z #5 438.0 Make process completed.
 2023-04-03T17:20:50.5628534Z #5 438.0 Stripping executables.
 2023-04-03T17:20:50.5629729Z #5 438.0 strip ../run/john ../run/unshadow ../run/unafs ../run/unique ../run/undrop ../run/rar2john ../run/zip2john ../run/genmkvpwd ../run/mkvcalcproba ../run/calc_stat ../run/tgtsnarf ../run/racf2john ../run/hccap2john ../run/raw2dyna ../run/keepass2john ../run/bitlocker2john ../run/dmg2john ../run/putty2john ../run/uaf2john ../run/wpapcap2john ../run/gpg2john ../run/cprepair ../run/base64conv ../run/SIPdump ../run/vncpcap2john ../run/eapmd5tojohn
@@ -2801,7 +2801,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:20:50.9633355Z #5 438.4 checking for gcc... gcc
 2023-04-03T17:20:50.9633622Z #5 438.4 checking whether the C compiler works... yes
 2023-04-03T17:20:50.9633950Z #5 438.4 checking for C compiler default output file name... a.out
-2023-04-03T17:20:50.9634274Z #5 438.4 checking for suffix of executables... 
+2023-04-03T17:20:50.9634274Z #5 438.4 checking for suffix of executables...
 2023-04-03T17:20:51.0711205Z #5 438.5 checking whether we are cross compiling... no
 2023-04-03T17:20:51.0711615Z #5 438.5 checking for suffix of object files... o
 2023-04-03T17:20:51.0712147Z #5 438.5 checking whether we are using the GNU C compiler... yes
@@ -2882,7 +2882,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:20:53.2724447Z #5 440.7 checking for SSE4.2... no
 2023-04-03T17:20:53.3848259Z #5 440.8 checking for arch.h alternative... x86-64.h
 2023-04-03T17:20:53.3848670Z #5 440.8 checking for byte ordering according to target triple... little
-2023-04-03T17:20:53.3849012Z #5 440.8 checking supplied paths for OpenSSL...  
+2023-04-03T17:20:53.3849012Z #5 440.8 checking supplied paths for OpenSSL...
 2023-04-03T17:20:53.3849316Z #5 440.8 checking additional paths for OpenSSL... none
 2023-04-03T17:20:53.3849602Z #5 440.8 checking openssl/opensslv.h usability... yes
 2023-04-03T17:20:53.3849897Z #5 440.8 checking openssl/opensslv.h presence... yes
@@ -3095,15 +3095,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:21:01.6192144Z #5 449.0 config.status: executing default commands
 2023-04-03T17:21:01.6192411Z #5 449.0 configure: creating ./fmt_externs.h
 2023-04-03T17:21:03.1087121Z #5 450.6 configure: creating ./fmt_registers.h
-2023-04-03T17:21:05.3638197Z #5 452.8 
+2023-04-03T17:21:05.3638197Z #5 452.8
 2023-04-03T17:21:05.3638554Z #5 452.8 Configured for building John the Ripper jumbo:
-2023-04-03T17:21:05.3638782Z #5 452.8 
+2023-04-03T17:21:05.3638782Z #5 452.8
 2023-04-03T17:21:05.3639295Z #5 452.8 Target CPU ......................................... x86_64 SSE4.1, 64-bit LE
 2023-04-03T17:21:05.3639650Z #5 452.8 AES-NI support ..................................... run-time detection
 2023-04-03T17:21:05.3639982Z #5 452.8 Target OS .......................................... linux-gnu
 2023-04-03T17:21:05.3640216Z #5 452.8 Cross compiling .................................... no
 2023-04-03T17:21:05.3640537Z #5 452.8 Legacy arch header ................................. x86-64.h
-2023-04-03T17:21:05.3640748Z #5 452.8 
+2023-04-03T17:21:05.3640748Z #5 452.8
 2023-04-03T17:21:05.3640973Z #5 452.8 Optional libraries/features found:
 2023-04-03T17:21:05.3641228Z #5 452.8 Memory map (share/page large files) ................ yes
 2023-04-03T17:21:05.3641476Z #5 452.8 Fork support ....................................... yes
@@ -3121,15 +3121,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:21:05.3644884Z #5 452.8 OpenMPI support (default disabled) ................. no
 2023-04-03T17:21:05.3645166Z #5 452.8 Experimental code (default disabled) ............... no
 2023-04-03T17:21:05.3645511Z #5 452.8 ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-03T17:21:05.3645720Z #5 452.8 
+2023-04-03T17:21:05.3645720Z #5 452.8
 2023-04-03T17:21:05.3645976Z #5 452.8 Install missing libraries to get any needed features that were omitted.
-2023-04-03T17:21:05.3646225Z #5 452.8 
+2023-04-03T17:21:05.3646225Z #5 452.8
 2023-04-03T17:21:05.3646525Z #5 452.8 Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-03T17:22:14.4832518Z #5 521.8 ar: creating aes.a
 2023-04-03T17:22:17.0046008Z #5 524.4 ar: creating secp256k1.a
 2023-04-03T17:22:18.9257796Z #5 526.3 ar: creating ed25519-donna.a
 2023-04-03T17:22:19.0765517Z #5 526.4 ar: creating poly1305-donna.a
-2023-04-03T17:22:24.4586679Z #5 532.0 
+2023-04-03T17:22:24.4586679Z #5 532.0
 2023-04-03T17:22:24.6090018Z #5 532.0 Make process completed.
 2023-04-03T17:22:24.6090738Z #5 532.0 make find_version
 2023-04-03T17:22:24.6092319Z #5 532.0 make[1]: Entering directory '/build/john/src'
@@ -3165,7 +3165,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:22:24.6188620Z #5 532.0 make[1]: '../run/vncpcap2john' is up to date.
 2023-04-03T17:22:24.6189156Z #5 532.0 make[1]: '../run/eapmd5tojohn' is up to date.
 2023-04-03T17:22:24.6189669Z #5 532.0 make[1]: Leaving directory '/build/john/src'
-2023-04-03T17:22:24.6190057Z #5 532.0 
+2023-04-03T17:22:24.6190057Z #5 532.0
 2023-04-03T17:22:24.6190423Z #5 532.0 Make process completed.
 2023-04-03T17:22:24.6190815Z #5 532.0 Stripping executables.
 2023-04-03T17:22:24.6191597Z #5 532.0 strip ../run/john ../run/unshadow ../run/unafs ../run/unique ../run/undrop ../run/rar2john ../run/zip2john ../run/genmkvpwd ../run/mkvcalcproba ../run/calc_stat ../run/tgtsnarf ../run/racf2john ../run/hccap2john ../run/raw2dyna ../run/keepass2john ../run/bitlocker2john ../run/dmg2john ../run/putty2john ../run/uaf2john ../run/wpapcap2john ../run/gpg2john ../run/cprepair ../run/base64conv ../run/SIPdump ../run/vncpcap2john ../run/eapmd5tojohn
@@ -3175,7 +3175,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:22:24.9764161Z #5 532.4 checking for gcc... gcc
 2023-04-03T17:22:24.9764504Z #5 532.4 checking whether the C compiler works... yes
 2023-04-03T17:22:24.9764995Z #5 532.4 checking for C compiler default output file name... a.out
-2023-04-03T17:22:24.9765429Z #5 532.4 checking for suffix of executables... 
+2023-04-03T17:22:24.9765429Z #5 532.4 checking for suffix of executables...
 2023-04-03T17:22:25.0917013Z #5 532.5 checking whether we are cross compiling... no
 2023-04-03T17:22:25.0917993Z #5 532.5 checking for suffix of object files... o
 2023-04-03T17:22:25.0918930Z #5 532.6 checking whether we are using the GNU C compiler... yes
@@ -3256,7 +3256,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:22:27.2328567Z #5 534.7 checking for SSE4.2... no
 2023-04-03T17:22:27.3461890Z #5 534.7 checking for arch.h alternative... x86-64.h
 2023-04-03T17:22:27.3464604Z #5 534.7 checking for byte ordering according to target triple... little
-2023-04-03T17:22:27.3465050Z #5 534.7 checking supplied paths for OpenSSL...  
+2023-04-03T17:22:27.3465050Z #5 534.7 checking supplied paths for OpenSSL...
 2023-04-03T17:22:27.3466879Z #5 534.7 checking additional paths for OpenSSL... none
 2023-04-03T17:22:27.3467203Z #5 534.7 checking openssl/opensslv.h usability... yes
 2023-04-03T17:22:27.3467527Z #5 534.8 checking openssl/opensslv.h presence... yes
@@ -3470,15 +3470,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:22:35.4572306Z #5 542.9 config.status: executing default commands
 2023-04-03T17:22:35.4572572Z #5 542.9 configure: creating ./fmt_externs.h
 2023-04-03T17:22:37.1107048Z #5 544.5 configure: creating ./fmt_registers.h
-2023-04-03T17:22:39.2169814Z #5 546.6 
+2023-04-03T17:22:39.2169814Z #5 546.6
 2023-04-03T17:22:39.2179423Z #5 546.6 Configured for building John the Ripper jumbo:
-2023-04-03T17:22:39.2179720Z #5 546.6 
+2023-04-03T17:22:39.2179720Z #5 546.6
 2023-04-03T17:22:39.2180442Z #5 546.6 Target CPU ......................................... x86_64 SSE4.1, 64-bit LE
 2023-04-03T17:22:39.2181192Z #5 546.6 AES-NI support ..................................... run-time detection
 2023-04-03T17:22:39.2181529Z #5 546.6 Target OS .......................................... linux-gnu
 2023-04-03T17:22:39.2181765Z #5 546.6 Cross compiling .................................... no
 2023-04-03T17:22:39.2182083Z #5 546.6 Legacy arch header ................................. x86-64.h
-2023-04-03T17:22:39.2182289Z #5 546.6 
+2023-04-03T17:22:39.2182289Z #5 546.6
 2023-04-03T17:22:39.2182475Z #5 546.6 Optional libraries/features found:
 2023-04-03T17:22:39.2182728Z #5 546.6 Memory map (share/page large files) ................ yes
 2023-04-03T17:22:39.2182999Z #5 546.6 Fork support ....................................... yes
@@ -3496,15 +3496,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:22:39.2186949Z #5 546.6 OpenMPI support (default disabled) ................. no
 2023-04-03T17:22:39.2187215Z #5 546.6 Experimental code (default disabled) ............... no
 2023-04-03T17:22:39.2187610Z #5 546.6 ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-03T17:22:39.2187819Z #5 546.6 
+2023-04-03T17:22:39.2187819Z #5 546.6
 2023-04-03T17:22:39.2188060Z #5 546.6 Install missing libraries to get any needed features that were omitted.
-2023-04-03T17:22:39.2188296Z #5 546.6 
+2023-04-03T17:22:39.2188296Z #5 546.6
 2023-04-03T17:22:39.2188580Z #5 546.6 Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-03T17:23:51.2306806Z #5 618.6 ar: creating aes.a
 2023-04-03T17:23:53.7892679Z #5 621.2 ar: creating secp256k1.a
 2023-04-03T17:23:55.5509019Z #5 623.1 ar: creating ed25519-donna.a
 2023-04-03T17:23:55.6739665Z #5 623.2 ar: creating poly1305-donna.a
-2023-04-03T17:24:01.0719622Z #5 628.5 
+2023-04-03T17:24:01.0719622Z #5 628.5
 2023-04-03T17:24:01.0719930Z #5 628.5 Make process completed.
 2023-04-03T17:24:01.0720195Z #5 628.5 make find_version
 2023-04-03T17:24:01.0720716Z #5 628.5 make[1]: Entering directory '/build/john/src'
@@ -3540,7 +3540,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:24:01.2236439Z #5 628.6 make[1]: '../run/vncpcap2john' is up to date.
 2023-04-03T17:24:01.2236779Z #5 628.6 make[1]: '../run/eapmd5tojohn' is up to date.
 2023-04-03T17:24:01.2237123Z #5 628.6 make[1]: Leaving directory '/build/john/src'
-2023-04-03T17:24:01.2237343Z #5 628.6 
+2023-04-03T17:24:01.2237343Z #5 628.6
 2023-04-03T17:24:01.2237556Z #5 628.6 Make process completed.
 2023-04-03T17:24:01.2238171Z #5 628.6 Stripping executables.
 2023-04-03T17:24:01.2238842Z #5 628.6 strip ../run/john ../run/unshadow ../run/unafs ../run/unique ../run/undrop ../run/rar2john ../run/zip2john ../run/genmkvpwd ../run/mkvcalcproba ../run/calc_stat ../run/tgtsnarf ../run/racf2john ../run/hccap2john ../run/raw2dyna ../run/keepass2john ../run/bitlocker2john ../run/dmg2john ../run/putty2john ../run/uaf2john ../run/wpapcap2john ../run/gpg2john ../run/cprepair ../run/base64conv ../run/SIPdump ../run/vncpcap2john ../run/eapmd5tojohn
@@ -3550,7 +3550,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:24:01.4935081Z #5 628.9 checking for gcc... gcc
 2023-04-03T17:24:01.4935338Z #5 629.0 checking whether the C compiler works... yes
 2023-04-03T17:24:01.4935684Z #5 629.0 checking for C compiler default output file name... a.out
-2023-04-03T17:24:01.5962226Z #5 629.0 checking for suffix of executables... 
+2023-04-03T17:24:01.5962226Z #5 629.0 checking for suffix of executables...
 2023-04-03T17:24:01.5962653Z #5 629.0 checking whether we are cross compiling... no
 2023-04-03T17:24:01.5963304Z #5 629.1 checking for suffix of object files... o
 2023-04-03T17:24:01.7059951Z #5 629.1 checking whether we are using the GNU C compiler... yes
@@ -3632,7 +3632,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:24:04.1957019Z #5 631.4 checking for AVX... no
 2023-04-03T17:24:04.3032856Z #5 631.7 checking for arch.h alternative... x86-64.h
 2023-04-03T17:24:04.3033239Z #5 631.7 checking for byte ordering according to target triple... little
-2023-04-03T17:24:04.3033525Z #5 631.7 checking supplied paths for OpenSSL...  
+2023-04-03T17:24:04.3033525Z #5 631.7 checking supplied paths for OpenSSL...
 2023-04-03T17:24:04.3033772Z #5 631.7 checking additional paths for OpenSSL... none
 2023-04-03T17:24:04.3034034Z #5 631.7 checking openssl/opensslv.h usability... yes
 2023-04-03T17:24:04.3034303Z #5 631.7 checking openssl/opensslv.h presence... yes
@@ -3845,15 +3845,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:24:12.5410489Z #5 639.9 config.status: executing default commands
 2023-04-03T17:24:12.5410781Z #5 639.9 configure: creating ./fmt_externs.h
 2023-04-03T17:24:13.9951356Z #5 641.5 configure: creating ./fmt_registers.h
-2023-04-03T17:24:16.1001614Z #5 643.5 
+2023-04-03T17:24:16.1001614Z #5 643.5
 2023-04-03T17:24:16.1001947Z #5 643.5 Configured for building John the Ripper jumbo:
-2023-04-03T17:24:16.1002188Z #5 643.5 
+2023-04-03T17:24:16.1002188Z #5 643.5
 2023-04-03T17:24:16.1003103Z #5 643.5 Target CPU ......................................... x86_64 SSE4.2, 64-bit LE
 2023-04-03T17:24:16.1004927Z #5 643.5 AES-NI support ..................................... run-time detection
 2023-04-03T17:24:16.1005378Z #5 643.5 Target OS .......................................... linux-gnu
 2023-04-03T17:24:16.1005745Z #5 643.5 Cross compiling .................................... no
 2023-04-03T17:24:16.1006175Z #5 643.5 Legacy arch header ................................. x86-64.h
-2023-04-03T17:24:16.1006436Z #5 643.5 
+2023-04-03T17:24:16.1006436Z #5 643.5
 2023-04-03T17:24:16.1006702Z #5 643.5 Optional libraries/features found:
 2023-04-03T17:24:16.1007043Z #5 643.5 Memory map (share/page large files) ................ yes
 2023-04-03T17:24:16.1007362Z #5 643.5 Fork support ....................................... yes
@@ -3871,15 +3871,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:24:16.1013966Z #5 643.5 OpenMPI support (default disabled) ................. no
 2023-04-03T17:24:16.1014287Z #5 643.5 Experimental code (default disabled) ............... no
 2023-04-03T17:24:16.1014836Z #5 643.5 ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-03T17:24:16.1015090Z #5 643.5 
+2023-04-03T17:24:16.1015090Z #5 643.5
 2023-04-03T17:24:16.1015376Z #5 643.5 Install missing libraries to get any needed features that were omitted.
-2023-04-03T17:24:16.1015636Z #5 643.5 
+2023-04-03T17:24:16.1015636Z #5 643.5
 2023-04-03T17:24:16.1015995Z #5 643.5 Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-03T17:25:23.7513281Z #5 711.2 ar: creating aes.a
 2023-04-03T17:25:26.4586800Z #5 713.9 ar: creating secp256k1.a
 2023-04-03T17:25:28.4127742Z #5 715.9 ar: creating ed25519-donna.a
 2023-04-03T17:25:28.5635549Z #5 716.0 ar: creating poly1305-donna.a
-2023-04-03T17:25:33.8209850Z #5 721.3 
+2023-04-03T17:25:33.8209850Z #5 721.3
 2023-04-03T17:25:33.9227140Z #5 721.3 Make process completed.
 2023-04-03T17:25:33.9227455Z #5 721.3 make find_version
 2023-04-03T17:25:33.9228089Z #5 721.3 make[1]: Entering directory '/build/john/src'
@@ -3915,7 +3915,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:25:34.0715210Z #5 721.4 make[1]: '../run/vncpcap2john' is up to date.
 2023-04-03T17:25:34.0715556Z #5 721.4 make[1]: '../run/eapmd5tojohn' is up to date.
 2023-04-03T17:25:34.0716080Z #5 721.4 make[1]: Leaving directory '/build/john/src'
-2023-04-03T17:25:34.0716327Z #5 721.4 
+2023-04-03T17:25:34.0716327Z #5 721.4
 2023-04-03T17:25:34.0716531Z #5 721.4 Make process completed.
 2023-04-03T17:25:34.0716779Z #5 721.4 Stripping executables.
 2023-04-03T17:25:34.0717463Z #5 721.4 strip ../run/john ../run/unshadow ../run/unafs ../run/unique ../run/undrop ../run/rar2john ../run/zip2john ../run/genmkvpwd ../run/mkvcalcproba ../run/calc_stat ../run/tgtsnarf ../run/racf2john ../run/hccap2john ../run/raw2dyna ../run/keepass2john ../run/bitlocker2john ../run/dmg2john ../run/putty2john ../run/uaf2john ../run/wpapcap2john ../run/gpg2john ../run/cprepair ../run/base64conv ../run/SIPdump ../run/vncpcap2john ../run/eapmd5tojohn
@@ -3925,7 +3925,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:25:34.3381974Z #5 721.8 checking for gcc... gcc
 2023-04-03T17:25:34.3382435Z #5 721.8 checking whether the C compiler works... yes
 2023-04-03T17:25:34.4515747Z #5 721.8 checking for C compiler default output file name... a.out
-2023-04-03T17:25:34.4516219Z #5 721.8 checking for suffix of executables... 
+2023-04-03T17:25:34.4516219Z #5 721.8 checking for suffix of executables...
 2023-04-03T17:25:34.4516488Z #5 721.9 checking whether we are cross compiling... no
 2023-04-03T17:25:34.4516885Z #5 721.9 checking for suffix of object files... o
 2023-04-03T17:25:34.4517182Z #5 721.9 checking whether we are using the GNU C compiler... yes
@@ -4007,7 +4007,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:25:36.8315534Z #5 724.1 checking for AVX... no
 2023-04-03T17:25:36.9550211Z #5 724.3 checking for arch.h alternative... x86-64.h
 2023-04-03T17:25:36.9550827Z #5 724.3 checking for byte ordering according to target triple... little
-2023-04-03T17:25:36.9551207Z #5 724.3 checking supplied paths for OpenSSL...  
+2023-04-03T17:25:36.9551207Z #5 724.3 checking supplied paths for OpenSSL...
 2023-04-03T17:25:36.9551498Z #5 724.3 checking additional paths for OpenSSL... none
 2023-04-03T17:25:36.9551809Z #5 724.3 checking openssl/opensslv.h usability... yes
 2023-04-03T17:25:36.9552114Z #5 724.4 checking openssl/opensslv.h presence... yes
@@ -4221,15 +4221,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:25:45.0137627Z #5 732.4 config.status: executing default commands
 2023-04-03T17:25:45.0137888Z #5 732.4 configure: creating ./fmt_externs.h
 2023-04-03T17:25:46.5177581Z #5 734.0 configure: creating ./fmt_registers.h
-2023-04-03T17:25:48.6255739Z #5 736.1 
+2023-04-03T17:25:48.6255739Z #5 736.1
 2023-04-03T17:25:48.6256072Z #5 736.1 Configured for building John the Ripper jumbo:
-2023-04-03T17:25:48.6256293Z #5 736.1 
+2023-04-03T17:25:48.6256293Z #5 736.1
 2023-04-03T17:25:48.6256796Z #5 736.1 Target CPU ......................................... x86_64 SSE4.2, 64-bit LE
 2023-04-03T17:25:48.6257500Z #5 736.1 AES-NI support ..................................... run-time detection
 2023-04-03T17:25:48.6257883Z #5 736.1 Target OS .......................................... linux-gnu
 2023-04-03T17:25:48.6258135Z #5 736.1 Cross compiling .................................... no
 2023-04-03T17:25:48.6258439Z #5 736.1 Legacy arch header ................................. x86-64.h
-2023-04-03T17:25:48.6258667Z #5 736.1 
+2023-04-03T17:25:48.6258667Z #5 736.1
 2023-04-03T17:25:48.6258866Z #5 736.1 Optional libraries/features found:
 2023-04-03T17:25:48.6259105Z #5 736.1 Memory map (share/page large files) ................ yes
 2023-04-03T17:25:48.6259352Z #5 736.1 Fork support ....................................... yes
@@ -4247,15 +4247,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:25:48.6262798Z #5 736.1 OpenMPI support (default disabled) ................. no
 2023-04-03T17:25:48.6263064Z #5 736.1 Experimental code (default disabled) ............... no
 2023-04-03T17:25:48.6263388Z #5 736.1 ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-03T17:25:48.6263600Z #5 736.1 
+2023-04-03T17:25:48.6263600Z #5 736.1
 2023-04-03T17:25:48.6263832Z #5 736.1 Install missing libraries to get any needed features that were omitted.
-2023-04-03T17:25:48.6264065Z #5 736.1 
+2023-04-03T17:25:48.6264065Z #5 736.1
 2023-04-03T17:25:48.6264371Z #5 736.1 Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-03T17:26:58.5251539Z #5 805.9 ar: creating aes.a
 2023-04-03T17:27:01.0811435Z #5 808.4 ar: creating secp256k1.a
 2023-04-03T17:27:03.1717953Z #5 810.5 ar: creating ed25519-donna.a
 2023-04-03T17:27:03.3226791Z #5 810.7 ar: creating poly1305-donna.a
-2023-04-03T17:27:08.7385491Z #5 816.1 
+2023-04-03T17:27:08.7385491Z #5 816.1
 2023-04-03T17:27:08.7385815Z #5 816.1 Make process completed.
 2023-04-03T17:27:08.7386103Z #5 816.1 make find_version
 2023-04-03T17:27:08.7386713Z #5 816.1 make[1]: Entering directory '/build/john/src'
@@ -4291,7 +4291,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:27:08.7398144Z #5 816.2 make[1]: '../run/vncpcap2john' is up to date.
 2023-04-03T17:27:08.7398956Z #5 816.2 make[1]: '../run/eapmd5tojohn' is up to date.
 2023-04-03T17:27:08.7399567Z #5 816.2 make[1]: Leaving directory '/build/john/src'
-2023-04-03T17:27:08.7399840Z #5 816.2 
+2023-04-03T17:27:08.7399840Z #5 816.2
 2023-04-03T17:27:08.7400072Z #5 816.2 Make process completed.
 2023-04-03T17:27:08.7400353Z #5 816.2 Stripping executables.
 2023-04-03T17:27:08.7401227Z #5 816.2 strip ../run/john ../run/unshadow ../run/unafs ../run/unique ../run/undrop ../run/rar2john ../run/zip2john ../run/genmkvpwd ../run/mkvcalcproba ../run/calc_stat ../run/tgtsnarf ../run/racf2john ../run/hccap2john ../run/raw2dyna ../run/keepass2john ../run/bitlocker2john ../run/dmg2john ../run/putty2john ../run/uaf2john ../run/wpapcap2john ../run/gpg2john ../run/cprepair ../run/base64conv ../run/SIPdump ../run/vncpcap2john ../run/eapmd5tojohn
@@ -4301,7 +4301,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:27:09.1261224Z #5 816.5 checking for gcc... gcc
 2023-04-03T17:27:09.1261518Z #5 816.6 checking whether the C compiler works... yes
 2023-04-03T17:27:09.1262031Z #5 816.6 checking for C compiler default output file name... a.out
-2023-04-03T17:27:09.1262685Z #5 816.6 checking for suffix of executables... 
+2023-04-03T17:27:09.1262685Z #5 816.6 checking for suffix of executables...
 2023-04-03T17:27:09.2291609Z #5 816.6 checking whether we are cross compiling... no
 2023-04-03T17:27:09.2291928Z #5 816.7 checking for suffix of object files... o
 2023-04-03T17:27:09.2292235Z #5 816.7 checking whether we are using the GNU C compiler... yes
@@ -4385,7 +4385,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:27:12.1785953Z #5 819.4 checking for AVX2... no
 2023-04-03T17:27:12.2958430Z #5 819.7 checking for arch.h alternative... x86-64.h
 2023-04-03T17:27:12.2959043Z #5 819.7 checking for byte ordering according to target triple... little
-2023-04-03T17:27:12.2959373Z #5 819.7 checking supplied paths for OpenSSL...  
+2023-04-03T17:27:12.2959373Z #5 819.7 checking supplied paths for OpenSSL...
 2023-04-03T17:27:12.2960147Z #5 819.7 checking additional paths for OpenSSL... none
 2023-04-03T17:27:12.2960514Z #5 819.7 checking openssl/opensslv.h usability... yes
 2023-04-03T17:27:12.2960881Z #5 819.7 checking openssl/opensslv.h presence... yes
@@ -4598,15 +4598,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:27:20.5496679Z #5 827.9 config.status: executing default commands
 2023-04-03T17:27:20.5496938Z #5 827.9 configure: creating ./fmt_externs.h
 2023-04-03T17:27:22.0506339Z #5 829.6 configure: creating ./fmt_registers.h
-2023-04-03T17:27:24.3059314Z #5 831.7 
+2023-04-03T17:27:24.3059314Z #5 831.7
 2023-04-03T17:27:24.3060514Z #5 831.7 Configured for building John the Ripper jumbo:
-2023-04-03T17:27:24.3061954Z #5 831.7 
+2023-04-03T17:27:24.3061954Z #5 831.7
 2023-04-03T17:27:24.3063674Z #5 831.7 Target CPU ......................................... x86_64 AVX, 64-bit LE
 2023-04-03T17:27:24.3064846Z #5 831.7 AES-NI support ..................................... run-time detection
 2023-04-03T17:27:24.3066386Z #5 831.7 Target OS .......................................... linux-gnu
 2023-04-03T17:27:24.3066683Z #5 831.7 Cross compiling .................................... no
 2023-04-03T17:27:24.3067484Z #5 831.7 Legacy arch header ................................. x86-64.h
-2023-04-03T17:27:24.3067697Z #5 831.7 
+2023-04-03T17:27:24.3067697Z #5 831.7
 2023-04-03T17:27:24.3067883Z #5 831.7 Optional libraries/features found:
 2023-04-03T17:27:24.3068529Z #5 831.7 Memory map (share/page large files) ................ yes
 2023-04-03T17:27:24.3069972Z #5 831.7 Fork support ....................................... yes
@@ -4624,15 +4624,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:27:24.3073917Z #5 831.7 OpenMPI support (default disabled) ................. no
 2023-04-03T17:27:24.3074181Z #5 831.7 Experimental code (default disabled) ............... no
 2023-04-03T17:27:24.3074507Z #5 831.7 ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-03T17:27:24.3074703Z #5 831.7 
+2023-04-03T17:27:24.3074703Z #5 831.7
 2023-04-03T17:27:24.3074944Z #5 831.7 Install missing libraries to get any needed features that were omitted.
-2023-04-03T17:27:24.3075178Z #5 831.7 
+2023-04-03T17:27:24.3075178Z #5 831.7
 2023-04-03T17:27:24.3075470Z #5 831.7 Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-03T17:28:55.2677432Z #5 922.7 ar: creating aes.a
 2023-04-03T17:28:57.8236306Z #5 925.3 ar: creating secp256k1.a
 2023-04-03T17:28:59.8950485Z #5 927.3 ar: creating ed25519-donna.a
 2023-04-03T17:29:00.0456907Z #5 927.4 ar: creating poly1305-donna.a
-2023-04-03T17:29:06.3124032Z #5 933.8 
+2023-04-03T17:29:06.3124032Z #5 933.8
 2023-04-03T17:29:06.3124363Z #5 933.8 Make process completed.
 2023-04-03T17:29:06.3124634Z #5 933.8 make find_version
 2023-04-03T17:29:06.3125247Z #5 933.8 make[1]: Entering directory '/build/john/src'
@@ -4668,7 +4668,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:29:06.4640263Z #5 933.9 make[1]: '../run/vncpcap2john' is up to date.
 2023-04-03T17:29:06.4640595Z #5 933.9 make[1]: '../run/eapmd5tojohn' is up to date.
 2023-04-03T17:29:06.4640949Z #5 933.9 make[1]: Leaving directory '/build/john/src'
-2023-04-03T17:29:06.4641194Z #5 933.9 
+2023-04-03T17:29:06.4641194Z #5 933.9
 2023-04-03T17:29:06.4641394Z #5 933.9 Make process completed.
 2023-04-03T17:29:06.4641640Z #5 933.9 Stripping executables.
 2023-04-03T17:29:06.4642316Z #5 933.9 strip ../run/john ../run/unshadow ../run/unafs ../run/unique ../run/undrop ../run/rar2john ../run/zip2john ../run/genmkvpwd ../run/mkvcalcproba ../run/calc_stat ../run/tgtsnarf ../run/racf2john ../run/hccap2john ../run/raw2dyna ../run/keepass2john ../run/bitlocker2john ../run/dmg2john ../run/putty2john ../run/uaf2john ../run/wpapcap2john ../run/gpg2john ../run/cprepair ../run/base64conv ../run/SIPdump ../run/vncpcap2john ../run/eapmd5tojohn
@@ -4678,7 +4678,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:29:06.8745568Z #5 934.3 checking for gcc... gcc
 2023-04-03T17:29:06.8746001Z #5 934.3 checking whether the C compiler works... yes
 2023-04-03T17:29:06.8746414Z #5 934.3 checking for C compiler default output file name... a.out
-2023-04-03T17:29:06.8746846Z #5 934.3 checking for suffix of executables... 
+2023-04-03T17:29:06.8746846Z #5 934.3 checking for suffix of executables...
 2023-04-03T17:29:06.9924818Z #5 934.4 checking whether we are cross compiling... no
 2023-04-03T17:29:06.9925554Z #5 934.4 checking for suffix of object files... o
 2023-04-03T17:29:06.9926311Z #5 934.5 checking whether we are using the GNU C compiler... yes
@@ -4762,7 +4762,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:29:10.4183050Z #5 937.5 checking for AVX2... no
 2023-04-03T17:29:10.4183856Z #5 937.8 checking for arch.h alternative... x86-64.h
 2023-04-03T17:29:10.4184233Z #5 937.8 checking for byte ordering according to target triple... little
-2023-04-03T17:29:10.4184580Z #5 937.8 checking supplied paths for OpenSSL...  
+2023-04-03T17:29:10.4184580Z #5 937.8 checking supplied paths for OpenSSL...
 2023-04-03T17:29:10.4184896Z #5 937.8 checking additional paths for OpenSSL... none
 2023-04-03T17:29:10.4185193Z #5 937.8 checking openssl/opensslv.h usability... yes
 2023-04-03T17:29:10.4185671Z #5 937.8 checking openssl/opensslv.h presence... yes
@@ -4976,15 +4976,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:29:19.0819671Z #5 946.5 config.status: executing default commands
 2023-04-03T17:29:19.0820492Z #5 946.5 configure: creating ./fmt_externs.h
 2023-04-03T17:29:20.8863657Z #5 948.3 configure: creating ./fmt_registers.h
-2023-04-03T17:29:23.1418416Z #5 950.5 
+2023-04-03T17:29:23.1418416Z #5 950.5
 2023-04-03T17:29:23.1418776Z #5 950.5 Configured for building John the Ripper jumbo:
-2023-04-03T17:29:23.1419000Z #5 950.5 
+2023-04-03T17:29:23.1419000Z #5 950.5
 2023-04-03T17:29:23.1419560Z #5 950.5 Target CPU ......................................... x86_64 AVX, 64-bit LE
 2023-04-03T17:29:23.1419945Z #5 950.5 AES-NI support ..................................... run-time detection
 2023-04-03T17:29:23.1420315Z #5 950.5 Target OS .......................................... linux-gnu
 2023-04-03T17:29:23.1420605Z #5 950.5 Cross compiling .................................... no
 2023-04-03T17:29:23.1420962Z #5 950.5 Legacy arch header ................................. x86-64.h
-2023-04-03T17:29:23.1421346Z #5 950.5 
+2023-04-03T17:29:23.1421346Z #5 950.5
 2023-04-03T17:29:23.1421544Z #5 950.5 Optional libraries/features found:
 2023-04-03T17:29:23.1421818Z #5 950.5 Memory map (share/page large files) ................ yes
 2023-04-03T17:29:23.1422102Z #5 950.5 Fork support ....................................... yes
@@ -5002,15 +5002,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:29:23.1425552Z #5 950.5 OpenMPI support (default disabled) ................. no
 2023-04-03T17:29:23.1425839Z #5 950.5 Experimental code (default disabled) ............... no
 2023-04-03T17:29:23.1426188Z #5 950.5 ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-03T17:29:23.1426399Z #5 950.5 
+2023-04-03T17:29:23.1426399Z #5 950.5
 2023-04-03T17:29:23.1426657Z #5 950.5 Install missing libraries to get any needed features that were omitted.
-2023-04-03T17:29:23.1426912Z #5 950.5 
+2023-04-03T17:29:23.1426912Z #5 950.5
 2023-04-03T17:29:23.1427550Z #5 950.5 Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-03T17:30:58.4334869Z #5 1045.9 ar: creating aes.a
 2023-04-03T17:31:01.2528808Z #5 1048.8 ar: creating secp256k1.a
 2023-04-03T17:31:03.1723163Z #5 1050.7 ar: creating ed25519-donna.a
 2023-04-03T17:31:03.2991872Z #5 1050.8 ar: creating poly1305-donna.a
-2023-04-03T17:31:09.4166871Z #5 1056.8 
+2023-04-03T17:31:09.4166871Z #5 1056.8
 2023-04-03T17:31:09.4167168Z #5 1056.8 Make process completed.
 2023-04-03T17:31:09.4168286Z #5 1056.8 make find_version
 2023-04-03T17:31:09.4169747Z #5 1056.8 make[1]: Entering directory '/build/john/src'
@@ -5046,7 +5046,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:31:09.5685045Z #5 1056.9 make[1]: '../run/vncpcap2john' is up to date.
 2023-04-03T17:31:09.5685358Z #5 1056.9 make[1]: '../run/eapmd5tojohn' is up to date.
 2023-04-03T17:31:09.5685673Z #5 1056.9 make[1]: Leaving directory '/build/john/src'
-2023-04-03T17:31:09.5685883Z #5 1056.9 
+2023-04-03T17:31:09.5685883Z #5 1056.9
 2023-04-03T17:31:09.5686079Z #5 1056.9 Make process completed.
 2023-04-03T17:31:09.5686304Z #5 1056.9 Stripping executables.
 2023-04-03T17:31:09.5687073Z #5 1056.9 strip ../run/john ../run/unshadow ../run/unafs ../run/unique ../run/undrop ../run/rar2john ../run/zip2john ../run/genmkvpwd ../run/mkvcalcproba ../run/calc_stat ../run/tgtsnarf ../run/racf2john ../run/hccap2john ../run/raw2dyna ../run/keepass2john ../run/bitlocker2john ../run/dmg2john ../run/putty2john ../run/uaf2john ../run/wpapcap2john ../run/gpg2john ../run/cprepair ../run/base64conv ../run/SIPdump ../run/vncpcap2john ../run/eapmd5tojohn
@@ -5056,7 +5056,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:31:09.8280908Z #5 1057.3 checking for gcc... gcc
 2023-04-03T17:31:09.8281210Z #5 1057.3 checking whether the C compiler works... yes
 2023-04-03T17:31:09.8281518Z #5 1057.3 checking for C compiler default output file name... a.out
-2023-04-03T17:31:09.9284479Z #5 1057.3 checking for suffix of executables... 
+2023-04-03T17:31:09.9284479Z #5 1057.3 checking for suffix of executables...
 2023-04-03T17:31:09.9284850Z #5 1057.4 checking whether we are cross compiling... no
 2023-04-03T17:31:10.0479272Z #5 1057.4 checking for suffix of object files... o
 2023-04-03T17:31:10.0479693Z #5 1057.4 checking whether we are using the GNU C compiler... yes
@@ -5140,7 +5140,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:31:12.9353390Z #5 1060.2 checking for AVX2... no
 2023-04-03T17:31:13.0454832Z #5 1060.4 checking for arch.h alternative... x86-64.h
 2023-04-03T17:31:13.0455487Z #5 1060.4 checking for byte ordering according to target triple... little
-2023-04-03T17:31:13.0457253Z #5 1060.4 checking supplied paths for OpenSSL...  
+2023-04-03T17:31:13.0457253Z #5 1060.4 checking supplied paths for OpenSSL...
 2023-04-03T17:31:13.0457562Z #5 1060.4 checking additional paths for OpenSSL... none
 2023-04-03T17:31:13.0457996Z #5 1060.4 checking openssl/opensslv.h usability... yes
 2023-04-03T17:31:13.0458287Z #5 1060.5 checking openssl/opensslv.h presence... yes
@@ -5353,15 +5353,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:31:21.1853117Z #5 1068.6 config.status: executing default commands
 2023-04-03T17:31:21.1853423Z #5 1068.6 configure: creating ./fmt_externs.h
 2023-04-03T17:31:23.1423915Z #5 1070.5 configure: creating ./fmt_registers.h
-2023-04-03T17:31:25.3550699Z #5 1072.9 
+2023-04-03T17:31:25.3550699Z #5 1072.9
 2023-04-03T17:31:25.3551100Z #5 1072.9 Configured for building John the Ripper jumbo:
-2023-04-03T17:31:25.3551370Z #5 1072.9 
+2023-04-03T17:31:25.3551370Z #5 1072.9
 2023-04-03T17:31:25.3551935Z #5 1072.9 Target CPU ......................................... x86_64 XOP, 64-bit LE
 2023-04-03T17:31:25.3552400Z #5 1072.9 AES-NI support ..................................... run-time detection
 2023-04-03T17:31:25.3553018Z #5 1072.9 Target OS .......................................... linux-gnu
 2023-04-03T17:31:25.3553331Z #5 1072.9 Cross compiling .................................... no
 2023-04-03T17:31:25.3554051Z #5 1072.9 Legacy arch header ................................. x86-64.h
-2023-04-03T17:31:25.3554680Z #5 1072.9 
+2023-04-03T17:31:25.3554680Z #5 1072.9
 2023-04-03T17:31:25.3554910Z #5 1072.9 Optional libraries/features found:
 2023-04-03T17:31:25.3555186Z #5 1072.9 Memory map (share/page large files) ................ yes
 2023-04-03T17:31:25.3555473Z #5 1072.9 Fork support ....................................... yes
@@ -5379,15 +5379,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:31:25.3560478Z #5 1072.9 OpenMPI support (default disabled) ................. no
 2023-04-03T17:31:25.3560765Z #5 1072.9 Experimental code (default disabled) ............... no
 2023-04-03T17:31:25.3561140Z #5 1072.9 ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-03T17:31:25.3561379Z #5 1072.9 
+2023-04-03T17:31:25.3561379Z #5 1072.9
 2023-04-03T17:31:25.5070305Z #5 1072.9 Install missing libraries to get any needed features that were omitted.
-2023-04-03T17:33:00.6455965Z #5 1072.9 
+2023-04-03T17:33:00.6455965Z #5 1072.9
 2023-04-03T17:33:00.6456675Z #5 1072.9 Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-03T17:33:00.6456945Z #5 1168.0 ar: creating aes.a
 2023-04-03T17:33:03.3517374Z #5 1170.8 ar: creating secp256k1.a
 2023-04-03T17:33:05.2949671Z #5 1172.6 ar: creating poly1305-donna.a
 2023-04-03T17:33:05.4454381Z #5 1172.8 ar: creating ed25519-donna.a
-2023-04-03T17:33:10.9631233Z #5 1178.5 
+2023-04-03T17:33:10.9631233Z #5 1178.5
 2023-04-03T17:33:11.1135375Z #5 1178.5 Make process completed.
 2023-04-03T17:33:11.1135971Z #5 1178.5 make find_version
 2023-04-03T17:33:11.1184404Z #5 1178.5 make[1]: Entering directory '/build/john/src'
@@ -5423,7 +5423,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:33:11.1203885Z #5 1178.6 make[1]: '../run/vncpcap2john' is up to date.
 2023-04-03T17:33:11.1204282Z #5 1178.6 make[1]: '../run/eapmd5tojohn' is up to date.
 2023-04-03T17:33:11.1204672Z #5 1178.6 make[1]: Leaving directory '/build/john/src'
-2023-04-03T17:33:11.1204945Z #5 1178.6 
+2023-04-03T17:33:11.1204945Z #5 1178.6
 2023-04-03T17:33:11.1205194Z #5 1178.6 Make process completed.
 2023-04-03T17:33:11.1205462Z #5 1178.6 Stripping executables.
 2023-04-03T17:33:11.1206244Z #5 1178.6 strip ../run/john ../run/unshadow ../run/unafs ../run/unique ../run/undrop ../run/rar2john ../run/zip2john ../run/genmkvpwd ../run/mkvcalcproba ../run/calc_stat ../run/tgtsnarf ../run/racf2john ../run/hccap2john ../run/raw2dyna ../run/keepass2john ../run/bitlocker2john ../run/dmg2john ../run/putty2john ../run/uaf2john ../run/wpapcap2john ../run/gpg2john ../run/cprepair ../run/base64conv ../run/SIPdump ../run/vncpcap2john ../run/eapmd5tojohn
@@ -5433,7 +5433,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:33:11.5053772Z #5 1178.9 checking for gcc... gcc
 2023-04-03T17:33:11.5054045Z #5 1178.9 checking whether the C compiler works... yes
 2023-04-03T17:33:11.5054522Z #5 1179.0 checking for C compiler default output file name... a.out
-2023-04-03T17:33:11.5054846Z #5 1179.0 checking for suffix of executables... 
+2023-04-03T17:33:11.5054846Z #5 1179.0 checking for suffix of executables...
 2023-04-03T17:33:11.6384298Z #5 1179.0 checking whether we are cross compiling... no
 2023-04-03T17:33:11.6384777Z #5 1179.1 checking for suffix of object files... o
 2023-04-03T17:33:11.6385178Z #5 1179.1 checking whether we are using the GNU C compiler... yes
@@ -5517,7 +5517,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:33:14.5863442Z #5 1181.8 checking for AVX2... no
 2023-04-03T17:33:14.5864413Z #5 1182.1 checking for arch.h alternative... x86-64.h
 2023-04-03T17:33:14.6980864Z #5 1182.1 checking for byte ordering according to target triple... little
-2023-04-03T17:33:14.6981601Z #5 1182.1 checking supplied paths for OpenSSL...  
+2023-04-03T17:33:14.6981601Z #5 1182.1 checking supplied paths for OpenSSL...
 2023-04-03T17:33:14.6981911Z #5 1182.1 checking additional paths for OpenSSL... none
 2023-04-03T17:33:14.6982415Z #5 1182.1 checking openssl/opensslv.h usability... yes
 2023-04-03T17:33:14.6982750Z #5 1182.1 checking openssl/opensslv.h presence... yes
@@ -5731,15 +5731,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:33:23.0910866Z #5 1190.5 config.status: executing default commands
 2023-04-03T17:33:23.0911144Z #5 1190.5 configure: creating ./fmt_externs.h
 2023-04-03T17:33:24.7454114Z #5 1192.2 configure: creating ./fmt_registers.h
-2023-04-03T17:33:26.8220142Z #5 1194.3 
+2023-04-03T17:33:26.8220142Z #5 1194.3
 2023-04-03T17:33:26.8220558Z #5 1194.3 Configured for building John the Ripper jumbo:
-2023-04-03T17:33:26.8220795Z #5 1194.3 
+2023-04-03T17:33:26.8220795Z #5 1194.3
 2023-04-03T17:33:26.8221484Z #5 1194.3 Target CPU ......................................... x86_64 XOP, 64-bit LE
 2023-04-03T17:33:26.8221855Z #5 1194.3 AES-NI support ..................................... run-time detection
 2023-04-03T17:33:26.8222228Z #5 1194.3 Target OS .......................................... linux-gnu
 2023-04-03T17:33:26.8222489Z #5 1194.3 Cross compiling .................................... no
 2023-04-03T17:33:26.8222809Z #5 1194.3 Legacy arch header ................................. x86-64.h
-2023-04-03T17:33:26.8223026Z #5 1194.3 
+2023-04-03T17:33:26.8223026Z #5 1194.3
 2023-04-03T17:33:26.8223234Z #5 1194.3 Optional libraries/features found:
 2023-04-03T17:33:26.8223485Z #5 1194.3 Memory map (share/page large files) ................ yes
 2023-04-03T17:33:26.8223746Z #5 1194.3 Fork support ....................................... yes
@@ -5757,15 +5757,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:33:26.8229594Z #5 1194.3 OpenMPI support (default disabled) ................. no
 2023-04-03T17:33:26.8229948Z #5 1194.3 Experimental code (default disabled) ............... no
 2023-04-03T17:33:26.8230523Z #5 1194.3 ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-03T17:33:26.8231136Z #5 1194.3 
+2023-04-03T17:33:26.8231136Z #5 1194.3
 2023-04-03T17:33:26.9722420Z #5 1194.3 Install missing libraries to get any needed features that were omitted.
-2023-04-03T17:33:26.9722776Z #5 1194.3 
+2023-04-03T17:33:26.9722776Z #5 1194.3
 2023-04-03T17:33:26.9723398Z #5 1194.3 Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-03T17:35:02.2934400Z #5 1289.7 ar: creating aes.a
 2023-04-03T17:35:04.9998073Z #5 1292.4 ar: creating secp256k1.a
 2023-04-03T17:35:06.9562198Z #5 1294.3 ar: creating poly1305-donna.a
 2023-04-03T17:35:06.9563858Z #5 1294.4 ar: creating ed25519-donna.a
-2023-04-03T17:35:12.7690442Z #5 1300.2 
+2023-04-03T17:35:12.7690442Z #5 1300.2
 2023-04-03T17:35:12.7690728Z #5 1300.2 Make process completed.
 2023-04-03T17:35:12.7690939Z #5 1300.2 make find_version
 2023-04-03T17:35:12.7691449Z #5 1300.2 make[1]: Entering directory '/build/john/src'
@@ -5801,7 +5801,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:35:12.7701930Z #5 1300.3 make[1]: '../run/vncpcap2john' is up to date.
 2023-04-03T17:35:12.7702228Z #5 1300.3 make[1]: '../run/eapmd5tojohn' is up to date.
 2023-04-03T17:35:12.7702528Z #5 1300.3 make[1]: Leaving directory '/build/john/src'
-2023-04-03T17:35:12.7702716Z #5 1300.3 
+2023-04-03T17:35:12.7702716Z #5 1300.3
 2023-04-03T17:35:12.9205161Z #5 1300.3 Make process completed.
 2023-04-03T17:35:12.9205522Z #5 1300.3 Stripping executables.
 2023-04-03T17:35:12.9206194Z #5 1300.3 strip ../run/john ../run/unshadow ../run/unafs ../run/unique ../run/undrop ../run/rar2john ../run/zip2john ../run/genmkvpwd ../run/mkvcalcproba ../run/calc_stat ../run/tgtsnarf ../run/racf2john ../run/hccap2john ../run/raw2dyna ../run/keepass2john ../run/bitlocker2john ../run/dmg2john ../run/putty2john ../run/uaf2john ../run/wpapcap2john ../run/gpg2john ../run/cprepair ../run/base64conv ../run/SIPdump ../run/vncpcap2john ../run/eapmd5tojohn
@@ -5811,7 +5811,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:35:13.1945456Z #5 1300.6 checking for gcc... gcc
 2023-04-03T17:35:13.1945686Z #5 1300.7 checking whether the C compiler works... yes
 2023-04-03T17:35:13.1946001Z #5 1300.7 checking for C compiler default output file name... a.out
-2023-04-03T17:35:13.2993531Z #5 1300.7 checking for suffix of executables... 
+2023-04-03T17:35:13.2993531Z #5 1300.7 checking for suffix of executables...
 2023-04-03T17:35:13.2994107Z #5 1300.7 checking whether we are cross compiling... no
 2023-04-03T17:35:13.2995609Z #5 1300.8 checking for suffix of object files... o
 2023-04-03T17:35:13.4134377Z #5 1300.8 checking whether we are using the GNU C compiler... yes
@@ -5896,7 +5896,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:35:16.5669553Z #5 1303.8 checking for AVX512F... no
 2023-04-03T17:35:16.6891710Z #5 1304.1 checking for arch.h alternative... x86-64.h
 2023-04-03T17:35:16.6892162Z #5 1304.1 checking for byte ordering according to target triple... little
-2023-04-03T17:35:16.6892485Z #5 1304.1 checking supplied paths for OpenSSL...  
+2023-04-03T17:35:16.6892485Z #5 1304.1 checking supplied paths for OpenSSL...
 2023-04-03T17:35:16.6892802Z #5 1304.1 checking additional paths for OpenSSL... none
 2023-04-03T17:35:16.6893120Z #5 1304.1 checking openssl/opensslv.h usability... yes
 2023-04-03T17:35:16.6893419Z #5 1304.1 checking openssl/opensslv.h presence... yes
@@ -6109,15 +6109,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:35:24.9633835Z #5 1312.4 config.status: executing default commands
 2023-04-03T17:35:24.9634104Z #5 1312.4 configure: creating ./fmt_externs.h
 2023-04-03T17:35:26.6095604Z #5 1314.1 configure: creating ./fmt_registers.h
-2023-04-03T17:35:28.8215011Z #5 1316.3 
+2023-04-03T17:35:28.8215011Z #5 1316.3
 2023-04-03T17:35:28.8215415Z #5 1316.3 Configured for building John the Ripper jumbo:
-2023-04-03T17:35:28.8215673Z #5 1316.3 
+2023-04-03T17:35:28.8215673Z #5 1316.3
 2023-04-03T17:35:28.8216239Z #5 1316.3 Target CPU ......................................... x86_64 AVX2, 64-bit LE
 2023-04-03T17:35:28.8216657Z #5 1316.3 AES-NI support ..................................... run-time detection
 2023-04-03T17:35:28.8217058Z #5 1316.3 Target OS .......................................... linux-gnu
 2023-04-03T17:35:28.8217665Z #5 1316.3 Cross compiling .................................... no
 2023-04-03T17:35:28.8218216Z #5 1316.3 Legacy arch header ................................. x86-64.h
-2023-04-03T17:35:28.8218663Z #5 1316.3 
+2023-04-03T17:35:28.8218663Z #5 1316.3
 2023-04-03T17:35:28.8219050Z #5 1316.3 Optional libraries/features found:
 2023-04-03T17:35:28.8219498Z #5 1316.3 Memory map (share/page large files) ................ yes
 2023-04-03T17:35:28.8219782Z #5 1316.3 Fork support ....................................... yes
@@ -6135,15 +6135,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:35:28.8223435Z #5 1316.3 OpenMPI support (default disabled) ................. no
 2023-04-03T17:35:28.8223734Z #5 1316.3 Experimental code (default disabled) ............... no
 2023-04-03T17:35:28.8224101Z #5 1316.3 ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-03T17:35:28.8224318Z #5 1316.3 
+2023-04-03T17:35:28.8224318Z #5 1316.3
 2023-04-03T17:35:28.9719818Z #5 1316.3 Install missing libraries to get any needed features that were omitted.
-2023-04-03T17:35:28.9720138Z #5 1316.3 
+2023-04-03T17:35:28.9720138Z #5 1316.3
 2023-04-03T17:35:28.9720719Z #5 1316.3 Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-03T17:37:01.2803020Z #5 1408.7 ar: creating aes.a
 2023-04-03T17:37:03.9940958Z #5 1411.4 ar: creating secp256k1.a
 2023-04-03T17:37:05.9233194Z #5 1413.3 ar: creating ed25519-donna.a
 2023-04-03T17:37:05.9233608Z #5 1413.4 ar: creating poly1305-donna.a
-2023-04-03T17:37:11.6090874Z #5 1419.1 
+2023-04-03T17:37:11.6090874Z #5 1419.1
 2023-04-03T17:37:11.7603812Z #5 1419.1 Make process completed.
 2023-04-03T17:37:11.7604098Z #5 1419.1 make find_version
 2023-04-03T17:37:11.7604645Z #5 1419.1 make[1]: Entering directory '/build/john/src'
@@ -6179,7 +6179,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:37:11.7614842Z #5 1419.2 make[1]: '../run/vncpcap2john' is up to date.
 2023-04-03T17:37:11.7615158Z #5 1419.2 make[1]: '../run/eapmd5tojohn' is up to date.
 2023-04-03T17:37:11.7615478Z #5 1419.2 make[1]: Leaving directory '/build/john/src'
-2023-04-03T17:37:11.7615683Z #5 1419.2 
+2023-04-03T17:37:11.7615683Z #5 1419.2
 2023-04-03T17:37:11.7615879Z #5 1419.2 Make process completed.
 2023-04-03T17:37:11.7616105Z #5 1419.2 Stripping executables.
 2023-04-03T17:37:11.7616709Z #5 1419.2 strip ../run/john ../run/unshadow ../run/unafs ../run/unique ../run/undrop ../run/rar2john ../run/zip2john ../run/genmkvpwd ../run/mkvcalcproba ../run/calc_stat ../run/tgtsnarf ../run/racf2john ../run/hccap2john ../run/raw2dyna ../run/keepass2john ../run/bitlocker2john ../run/dmg2john ../run/putty2john ../run/uaf2john ../run/wpapcap2john ../run/gpg2john ../run/cprepair ../run/base64conv ../run/SIPdump ../run/vncpcap2john ../run/eapmd5tojohn
@@ -6189,7 +6189,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:37:12.1505429Z #5 1419.6 checking for gcc... gcc
 2023-04-03T17:37:12.1505656Z #5 1419.6 checking whether the C compiler works... yes
 2023-04-03T17:37:12.1505939Z #5 1419.6 checking for C compiler default output file name... a.out
-2023-04-03T17:37:12.1506409Z #5 1419.6 checking for suffix of executables... 
+2023-04-03T17:37:12.1506409Z #5 1419.6 checking for suffix of executables...
 2023-04-03T17:37:12.2770547Z #5 1419.7 checking whether we are cross compiling... no
 2023-04-03T17:37:12.2770884Z #5 1419.7 checking for suffix of object files... o
 2023-04-03T17:37:12.2771183Z #5 1419.7 checking whether we are using the GNU C compiler... yes
@@ -6274,7 +6274,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:37:15.4064792Z #5 1422.7 checking for AVX512F... no
 2023-04-03T17:37:15.5280969Z #5 1422.9 checking for arch.h alternative... x86-64.h
 2023-04-03T17:37:15.5281379Z #5 1422.9 checking for byte ordering according to target triple... little
-2023-04-03T17:37:15.5282787Z #5 1422.9 checking supplied paths for OpenSSL...  
+2023-04-03T17:37:15.5282787Z #5 1422.9 checking supplied paths for OpenSSL...
 2023-04-03T17:37:15.5283097Z #5 1422.9 checking additional paths for OpenSSL... none
 2023-04-03T17:37:15.5283494Z #5 1422.9 checking openssl/opensslv.h usability... yes
 2023-04-03T17:37:15.5283815Z #5 1423.0 checking openssl/opensslv.h presence... yes
@@ -6488,15 +6488,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:37:23.6985246Z #5 1431.1 config.status: executing default commands
 2023-04-03T17:37:23.6985482Z #5 1431.1 configure: creating ./fmt_externs.h
 2023-04-03T17:37:25.3526407Z #5 1432.8 configure: creating ./fmt_registers.h
-2023-04-03T17:37:27.6083756Z #5 1435.0 
+2023-04-03T17:37:27.6083756Z #5 1435.0
 2023-04-03T17:37:27.6084098Z #5 1435.0 Configured for building John the Ripper jumbo:
-2023-04-03T17:37:27.6084331Z #5 1435.0 
+2023-04-03T17:37:27.6084331Z #5 1435.0
 2023-04-03T17:37:27.6084861Z #5 1435.0 Target CPU ......................................... x86_64 AVX2, 64-bit LE
 2023-04-03T17:37:27.6085471Z #5 1435.0 AES-NI support ..................................... run-time detection
 2023-04-03T17:37:27.6086226Z #5 1435.0 Target OS .......................................... linux-gnu
 2023-04-03T17:37:27.6088150Z #5 1435.0 Cross compiling .................................... no
 2023-04-03T17:37:27.6088668Z #5 1435.0 Legacy arch header ................................. x86-64.h
-2023-04-03T17:37:27.6089006Z #5 1435.0 
+2023-04-03T17:37:27.6089006Z #5 1435.0
 2023-04-03T17:37:27.6089287Z #5 1435.0 Optional libraries/features found:
 2023-04-03T17:37:27.6089619Z #5 1435.0 Memory map (share/page large files) ................ yes
 2023-04-03T17:37:27.6089947Z #5 1435.0 Fork support ....................................... yes
@@ -6514,15 +6514,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:37:27.6095013Z #5 1435.0 OpenMPI support (default disabled) ................. no
 2023-04-03T17:37:27.6096195Z #5 1435.0 Experimental code (default disabled) ............... no
 2023-04-03T17:37:27.6096811Z #5 1435.0 ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-03T17:37:27.6097213Z #5 1435.0 
+2023-04-03T17:37:27.6097213Z #5 1435.0
 2023-04-03T17:37:27.6097646Z #5 1435.0 Install missing libraries to get any needed features that were omitted.
-2023-04-03T17:37:27.6098064Z #5 1435.0 
+2023-04-03T17:37:27.6098064Z #5 1435.0
 2023-04-03T17:37:27.6098570Z #5 1435.0 Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-03T17:38:59.6125864Z #5 1527.1 ar: creating aes.a
 2023-04-03T17:39:02.1394985Z #5 1529.5 ar: creating secp256k1.a
 2023-04-03T17:39:04.0250195Z #5 1531.4 ar: creating ed25519-donna.a
 2023-04-03T17:39:04.1753750Z #5 1531.5 ar: creating poly1305-donna.a
-2023-04-03T17:39:09.8464874Z #5 1537.3 
+2023-04-03T17:39:09.8464874Z #5 1537.3
 2023-04-03T17:39:09.8465183Z #5 1537.3 Make process completed.
 2023-04-03T17:39:09.8465619Z #5 1537.3 make find_version
 2023-04-03T17:39:09.8466514Z #5 1537.3 make[1]: Entering directory '/build/john/src'
@@ -6558,7 +6558,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:39:09.9988840Z #5 1537.4 make[1]: '../run/vncpcap2john' is up to date.
 2023-04-03T17:39:09.9989167Z #5 1537.4 make[1]: '../run/eapmd5tojohn' is up to date.
 2023-04-03T17:39:09.9989515Z #5 1537.4 make[1]: Leaving directory '/build/john/src'
-2023-04-03T17:39:09.9989752Z #5 1537.4 
+2023-04-03T17:39:09.9989752Z #5 1537.4
 2023-04-03T17:39:09.9989966Z #5 1537.4 Make process completed.
 2023-04-03T17:39:09.9990193Z #5 1537.4 Stripping executables.
 2023-04-03T17:39:09.9990860Z #5 1537.4 strip ../run/john ../run/unshadow ../run/unafs ../run/unique ../run/undrop ../run/rar2john ../run/zip2john ../run/genmkvpwd ../run/mkvcalcproba ../run/calc_stat ../run/tgtsnarf ../run/racf2john ../run/hccap2john ../run/raw2dyna ../run/keepass2john ../run/bitlocker2john ../run/dmg2john ../run/putty2john ../run/uaf2john ../run/wpapcap2john ../run/gpg2john ../run/cprepair ../run/base64conv ../run/SIPdump ../run/vncpcap2john ../run/eapmd5tojohn
@@ -6568,7 +6568,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:39:10.3784776Z #5 1537.8 checking for gcc... gcc
 2023-04-03T17:39:10.3785140Z #5 1537.8 checking whether the C compiler works... yes
 2023-04-03T17:39:10.3785516Z #5 1537.8 checking for C compiler default output file name... a.out
-2023-04-03T17:39:10.3785897Z #5 1537.8 checking for suffix of executables... 
+2023-04-03T17:39:10.3785897Z #5 1537.8 checking for suffix of executables...
 2023-04-03T17:39:10.4798474Z #5 1537.9 checking whether we are cross compiling... no
 2023-04-03T17:39:10.4799105Z #5 1537.9 checking for suffix of object files... o
 2023-04-03T17:39:10.4799544Z #5 1537.9 checking whether we are using the GNU C compiler... yes
@@ -6654,7 +6654,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:39:13.9245984Z #5 1541.2 checking for AVX512BW... no
 2023-04-03T17:39:13.9251426Z #5 1541.4 checking for arch.h alternative... x86-64.h
 2023-04-03T17:39:13.9254371Z #5 1541.4 checking for byte ordering according to target triple... little
-2023-04-03T17:39:13.9257274Z #5 1541.4 checking supplied paths for OpenSSL...  
+2023-04-03T17:39:13.9257274Z #5 1541.4 checking supplied paths for OpenSSL...
 2023-04-03T17:39:13.9260063Z #5 1541.4 checking additional paths for OpenSSL... none
 2023-04-03T17:39:13.9262868Z #5 1541.4 checking openssl/opensslv.h usability... yes
 2023-04-03T17:39:14.0669882Z #5 1541.4 checking openssl/opensslv.h presence... yes
@@ -6867,15 +6867,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:39:22.0343781Z #5 1549.5 config.status: executing default commands
 2023-04-03T17:39:22.0344333Z #5 1549.5 configure: creating ./fmt_externs.h
 2023-04-03T17:39:23.8399312Z #5 1551.2 configure: creating ./fmt_registers.h
-2023-04-03T17:39:25.9444161Z #5 1553.4 
+2023-04-03T17:39:25.9444161Z #5 1553.4
 2023-04-03T17:39:25.9444526Z #5 1553.4 Configured for building John the Ripper jumbo:
-2023-04-03T17:39:25.9444775Z #5 1553.4 
+2023-04-03T17:39:25.9444775Z #5 1553.4
 2023-04-03T17:39:25.9445323Z #5 1553.4 Target CPU ......................................... x86_64 AVX512F, 64-bit LE
 2023-04-03T17:39:25.9445751Z #5 1553.4 AES-NI support ..................................... run-time detection
 2023-04-03T17:39:25.9446117Z #5 1553.4 Target OS .......................................... linux-gnu
 2023-04-03T17:39:25.9446395Z #5 1553.4 Cross compiling .................................... no
 2023-04-03T17:39:25.9446737Z #5 1553.4 Legacy arch header ................................. x86-64.h
-2023-04-03T17:39:25.9446972Z #5 1553.4 
+2023-04-03T17:39:25.9446972Z #5 1553.4
 2023-04-03T17:39:25.9447196Z #5 1553.4 Optional libraries/features found:
 2023-04-03T17:39:25.9447644Z #5 1553.4 Memory map (share/page large files) ................ yes
 2023-04-03T17:39:25.9447956Z #5 1553.4 Fork support ....................................... yes
@@ -6893,15 +6893,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:39:25.9452603Z #5 1553.4 OpenMPI support (default disabled) ................. no
 2023-04-03T17:39:25.9452919Z #5 1553.4 Experimental code (default disabled) ............... no
 2023-04-03T17:39:25.9453620Z #5 1553.4 ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-03T17:39:25.9453862Z #5 1553.4 
+2023-04-03T17:39:25.9453862Z #5 1553.4
 2023-04-03T17:39:25.9454115Z #5 1553.4 Install missing libraries to get any needed features that were omitted.
-2023-04-03T17:39:25.9454374Z #5 1553.4 
+2023-04-03T17:39:25.9454374Z #5 1553.4
 2023-04-03T17:39:25.9454709Z #5 1553.4 Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-03T17:40:59.6073051Z #5 1647.0 ar: creating aes.a
 2023-04-03T17:41:02.1628083Z #5 1649.5 ar: creating secp256k1.a
 2023-04-03T17:41:03.8174738Z #5 1651.2 ar: creating poly1305-donna.a
 2023-04-03T17:41:04.1182627Z #5 1651.5 ar: creating ed25519-donna.a
-2023-04-03T17:41:09.6805307Z #5 1657.0 
+2023-04-03T17:41:09.6805307Z #5 1657.0
 2023-04-03T17:41:09.6805636Z #5 1657.0 Make process completed.
 2023-04-03T17:41:09.6806262Z #5 1657.1 make find_version
 2023-04-03T17:41:09.6806835Z #5 1657.1 make[1]: Entering directory '/build/john/src'
@@ -6937,7 +6937,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:41:09.6819060Z #5 1657.1 make[1]: '../run/vncpcap2john' is up to date.
 2023-04-03T17:41:09.6819395Z #5 1657.1 make[1]: '../run/eapmd5tojohn' is up to date.
 2023-04-03T17:41:09.6819757Z #5 1657.1 make[1]: Leaving directory '/build/john/src'
-2023-04-03T17:41:09.6820001Z #5 1657.1 
+2023-04-03T17:41:09.6820001Z #5 1657.1
 2023-04-03T17:41:09.6820227Z #5 1657.1 Make process completed.
 2023-04-03T17:41:09.6820464Z #5 1657.1 Stripping executables.
 2023-04-03T17:41:09.6821143Z #5 1657.1 strip ../run/john ../run/unshadow ../run/unafs ../run/unique ../run/undrop ../run/rar2john ../run/zip2john ../run/genmkvpwd ../run/mkvcalcproba ../run/calc_stat ../run/tgtsnarf ../run/racf2john ../run/hccap2john ../run/raw2dyna ../run/keepass2john ../run/bitlocker2john ../run/dmg2john ../run/putty2john ../run/uaf2john ../run/wpapcap2john ../run/gpg2john ../run/cprepair ../run/base64conv ../run/SIPdump ../run/vncpcap2john ../run/eapmd5tojohn
@@ -6947,7 +6947,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:41:10.0811561Z #5 1657.5 checking for gcc... gcc
 2023-04-03T17:41:10.0811876Z #5 1657.5 checking whether the C compiler works... yes
 2023-04-03T17:41:10.0812437Z #5 1657.5 checking for C compiler default output file name... a.out
-2023-04-03T17:41:10.0812789Z #5 1657.5 checking for suffix of executables... 
+2023-04-03T17:41:10.0812789Z #5 1657.5 checking for suffix of executables...
 2023-04-03T17:41:10.1880714Z #5 1657.6 checking whether we are cross compiling... no
 2023-04-03T17:41:10.1881091Z #5 1657.6 checking for suffix of object files... o
 2023-04-03T17:41:10.1881417Z #5 1657.7 checking whether we are using the GNU C compiler... yes
@@ -7033,7 +7033,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:41:13.5794639Z #5 1660.8 checking for AVX512BW... no
 2023-04-03T17:41:13.5795458Z #5 1661.0 checking for arch.h alternative... x86-64.h
 2023-04-03T17:41:13.5795825Z #5 1661.0 checking for byte ordering according to target triple... little
-2023-04-03T17:41:13.5796202Z #5 1661.0 checking supplied paths for OpenSSL...  
+2023-04-03T17:41:13.5796202Z #5 1661.0 checking supplied paths for OpenSSL...
 2023-04-03T17:41:13.5796672Z #5 1661.0 checking additional paths for OpenSSL... none
 2023-04-03T17:41:13.5797001Z #5 1661.0 checking openssl/opensslv.h usability... yes
 2023-04-03T17:41:13.7304334Z #5 1661.1 checking openssl/opensslv.h presence... yes
@@ -7247,15 +7247,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:41:21.8647319Z #5 1669.3 config.status: executing default commands
 2023-04-03T17:41:21.8647621Z #5 1669.3 configure: creating ./fmt_externs.h
 2023-04-03T17:41:23.6678977Z #5 1671.1 configure: creating ./fmt_registers.h
-2023-04-03T17:41:25.9230526Z #5 1673.3 
+2023-04-03T17:41:25.9230526Z #5 1673.3
 2023-04-03T17:41:25.9230866Z #5 1673.3 Configured for building John the Ripper jumbo:
-2023-04-03T17:41:25.9231077Z #5 1673.3 
+2023-04-03T17:41:25.9231077Z #5 1673.3
 2023-04-03T17:41:25.9231613Z #5 1673.3 Target CPU ......................................... x86_64 AVX512F, 64-bit LE
 2023-04-03T17:41:25.9231970Z #5 1673.3 AES-NI support ..................................... run-time detection
 2023-04-03T17:41:25.9232341Z #5 1673.3 Target OS .......................................... linux-gnu
 2023-04-03T17:41:25.9232575Z #5 1673.3 Cross compiling .................................... no
 2023-04-03T17:41:25.9233068Z #5 1673.3 Legacy arch header ................................. x86-64.h
-2023-04-03T17:41:25.9233279Z #5 1673.3 
+2023-04-03T17:41:25.9233279Z #5 1673.3
 2023-04-03T17:41:25.9233467Z #5 1673.3 Optional libraries/features found:
 2023-04-03T17:41:25.9233743Z #5 1673.3 Memory map (share/page large files) ................ yes
 2023-04-03T17:41:25.9233996Z #5 1673.3 Fork support ....................................... yes
@@ -7273,15 +7273,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:41:25.9237703Z #5 1673.3 OpenMPI support (default disabled) ................. no
 2023-04-03T17:41:25.9237968Z #5 1673.3 Experimental code (default disabled) ............... no
 2023-04-03T17:41:25.9238297Z #5 1673.3 ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-03T17:41:25.9238492Z #5 1673.3 
+2023-04-03T17:41:25.9238492Z #5 1673.3
 2023-04-03T17:41:25.9238734Z #5 1673.3 Install missing libraries to get any needed features that were omitted.
-2023-04-03T17:41:25.9239383Z #5 1673.3 
+2023-04-03T17:41:25.9239383Z #5 1673.3
 2023-04-03T17:41:25.9239715Z #5 1673.3 Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-03T17:42:58.4040978Z #5 1765.8 ar: creating aes.a
 2023-04-03T17:43:01.1139288Z #5 1768.5 ar: creating secp256k1.a
 2023-04-03T17:43:02.4409725Z #5 1769.9 ar: creating poly1305-donna.a
 2023-04-03T17:43:03.0430086Z #5 1770.5 ar: creating ed25519-donna.a
-2023-04-03T17:43:08.5588748Z #5 1776.0 
+2023-04-03T17:43:08.5588748Z #5 1776.0
 2023-04-03T17:43:08.5589041Z #5 1776.0 Make process completed.
 2023-04-03T17:43:08.5589260Z #5 1776.0 make find_version
 2023-04-03T17:43:08.5589759Z #5 1776.0 make[1]: Entering directory '/build/john/src'
@@ -7317,7 +7317,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:43:08.7120706Z #5 1776.1 make[1]: '../run/vncpcap2john' is up to date.
 2023-04-03T17:43:08.7122601Z #5 1776.1 make[1]: '../run/eapmd5tojohn' is up to date.
 2023-04-03T17:43:08.7123169Z #5 1776.1 make[1]: Leaving directory '/build/john/src'
-2023-04-03T17:43:08.7123536Z #5 1776.1 
+2023-04-03T17:43:08.7123536Z #5 1776.1
 2023-04-03T17:43:08.7123936Z #5 1776.1 Make process completed.
 2023-04-03T17:43:08.7124208Z #5 1776.1 Stripping executables.
 2023-04-03T17:43:08.7126597Z #5 1776.1 strip ../run/john ../run/unshadow ../run/unafs ../run/unique ../run/undrop ../run/rar2john ../run/zip2john ../run/genmkvpwd ../run/mkvcalcproba ../run/calc_stat ../run/tgtsnarf ../run/racf2john ../run/hccap2john ../run/raw2dyna ../run/keepass2john ../run/bitlocker2john ../run/dmg2john ../run/putty2john ../run/uaf2john ../run/wpapcap2john ../run/gpg2john ../run/cprepair ../run/base64conv ../run/SIPdump ../run/vncpcap2john ../run/eapmd5tojohn
@@ -7327,7 +7327,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:43:08.9862908Z #5 1776.4 checking for gcc... gcc
 2023-04-03T17:43:08.9863157Z #5 1776.5 checking whether the C compiler works... yes
 2023-04-03T17:43:09.0971012Z #5 1776.5 checking for C compiler default output file name... a.out
-2023-04-03T17:43:09.0971546Z #5 1776.5 checking for suffix of executables... 
+2023-04-03T17:43:09.0971546Z #5 1776.5 checking for suffix of executables...
 2023-04-03T17:43:09.0971815Z #5 1776.5 checking whether we are cross compiling... no
 2023-04-03T17:43:09.0972058Z #5 1776.6 checking for suffix of object files... o
 2023-04-03T17:43:09.0972330Z #5 1776.6 checking whether we are using the GNU C compiler... yes
@@ -7413,7 +7413,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:43:12.6568972Z #5 1779.9 checking for AVX512BW... yes
 2023-04-03T17:43:12.7703958Z #5 1780.2 checking for arch.h alternative... x86-64.h
 2023-04-03T17:43:12.7704659Z #5 1780.2 checking for byte ordering according to target triple... little
-2023-04-03T17:43:12.7705414Z #5 1780.2 checking supplied paths for OpenSSL...  
+2023-04-03T17:43:12.7705414Z #5 1780.2 checking supplied paths for OpenSSL...
 2023-04-03T17:43:12.7705918Z #5 1780.2 checking additional paths for OpenSSL... none
 2023-04-03T17:43:12.7706219Z #5 1780.2 checking openssl/opensslv.h usability... yes
 2023-04-03T17:43:12.7706496Z #5 1780.2 checking openssl/opensslv.h presence... yes
@@ -7626,15 +7626,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:43:20.8603727Z #5 1788.3 config.status: executing default commands
 2023-04-03T17:43:20.8603987Z #5 1788.3 configure: creating ./fmt_externs.h
 2023-04-03T17:43:22.6667605Z #5 1790.1 configure: creating ./fmt_registers.h
-2023-04-03T17:43:24.8896762Z #5 1792.4 
+2023-04-03T17:43:24.8896762Z #5 1792.4
 2023-04-03T17:43:24.8897642Z #5 1792.4 Configured for building John the Ripper jumbo:
-2023-04-03T17:43:24.8901749Z #5 1792.4 
+2023-04-03T17:43:24.8901749Z #5 1792.4
 2023-04-03T17:43:24.8902409Z #5 1792.4 Target CPU ......................................... x86_64 AVX512BW, 64-bit LE
 2023-04-03T17:43:24.8902857Z #5 1792.4 AES-NI support ..................................... run-time detection
 2023-04-03T17:43:24.8903267Z #5 1792.4 Target OS .......................................... linux-gnu
 2023-04-03T17:43:24.8903692Z #5 1792.4 Cross compiling .................................... no
 2023-04-03T17:43:24.8904203Z #5 1792.4 Legacy arch header ................................. x86-64.h
-2023-04-03T17:43:24.8904426Z #5 1792.4 
+2023-04-03T17:43:24.8904426Z #5 1792.4
 2023-04-03T17:43:24.8904628Z #5 1792.4 Optional libraries/features found:
 2023-04-03T17:43:24.8904900Z #5 1792.4 Memory map (share/page large files) ................ yes
 2023-04-03T17:43:24.8905174Z #5 1792.4 Fork support ....................................... yes
@@ -7652,15 +7652,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:43:24.8909052Z #5 1792.4 OpenMPI support (default disabled) ................. no
 2023-04-03T17:43:24.8909338Z #5 1792.4 Experimental code (default disabled) ............... no
 2023-04-03T17:43:24.8909695Z #5 1792.4 ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-03T17:43:24.8909906Z #5 1792.4 
+2023-04-03T17:43:24.8909906Z #5 1792.4
 2023-04-03T17:43:25.0402556Z #5 1792.4 Install missing libraries to get any needed features that were omitted.
-2023-04-03T17:43:25.0403788Z #5 1792.4 
+2023-04-03T17:43:25.0403788Z #5 1792.4
 2023-04-03T17:43:25.0404657Z #5 1792.4 Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-03T17:44:55.5375308Z #5 1882.9 ar: creating aes.a
 2023-04-03T17:44:58.0517225Z #5 1885.4 ar: creating secp256k1.a
 2023-04-03T17:44:59.2554140Z #5 1886.7 ar: creating poly1305-donna.a
 2023-04-03T17:44:59.8568809Z #5 1887.3 ar: creating ed25519-donna.a
-2023-04-03T17:45:05.1157306Z #5 1892.6 
+2023-04-03T17:45:05.1157306Z #5 1892.6
 2023-04-03T17:45:05.2668135Z #5 1892.6 Make process completed.
 2023-04-03T17:45:05.2668597Z #5 1892.6 make find_version
 2023-04-03T17:45:05.2669154Z #5 1892.6 make[1]: Entering directory '/build/john/src'
@@ -7696,7 +7696,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:45:05.2682863Z #5 1892.7 make[1]: '../run/vncpcap2john' is up to date.
 2023-04-03T17:45:05.2683196Z #5 1892.7 make[1]: '../run/eapmd5tojohn' is up to date.
 2023-04-03T17:45:05.2683551Z #5 1892.7 make[1]: Leaving directory '/build/john/src'
-2023-04-03T17:45:05.2683792Z #5 1892.7 
+2023-04-03T17:45:05.2683792Z #5 1892.7
 2023-04-03T17:45:05.2683996Z #5 1892.7 Make process completed.
 2023-04-03T17:45:05.2684244Z #5 1892.7 Stripping executables.
 2023-04-03T17:45:05.2684925Z #5 1892.7 strip ../run/john ../run/unshadow ../run/unafs ../run/unique ../run/undrop ../run/rar2john ../run/zip2john ../run/genmkvpwd ../run/mkvcalcproba ../run/calc_stat ../run/tgtsnarf ../run/racf2john ../run/hccap2john ../run/raw2dyna ../run/keepass2john ../run/bitlocker2john ../run/dmg2john ../run/putty2john ../run/uaf2john ../run/wpapcap2john ../run/gpg2john ../run/cprepair ../run/base64conv ../run/SIPdump ../run/vncpcap2john ../run/eapmd5tojohn
@@ -7706,7 +7706,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:45:05.6236543Z #5 1893.0 checking for gcc... gcc
 2023-04-03T17:45:05.6236858Z #5 1893.0 checking whether the C compiler works... yes
 2023-04-03T17:45:05.6237222Z #5 1893.1 checking for C compiler default output file name... a.out
-2023-04-03T17:45:05.6237607Z #5 1893.1 checking for suffix of executables... 
+2023-04-03T17:45:05.6237607Z #5 1893.1 checking for suffix of executables...
 2023-04-03T17:45:05.7552169Z #5 1893.1 checking whether we are cross compiling... no
 2023-04-03T17:45:05.7554081Z #5 1893.2 checking for suffix of object files... o
 2023-04-03T17:45:05.7555014Z #5 1893.2 checking whether we are using the GNU C compiler... yes
@@ -7792,7 +7792,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:45:09.3268172Z #5 1896.6 checking for AVX512BW... yes
 2023-04-03T17:45:09.4515648Z #5 1896.8 checking for arch.h alternative... x86-64.h
 2023-04-03T17:45:09.4516009Z #5 1896.8 checking for byte ordering according to target triple... little
-2023-04-03T17:45:09.4516325Z #5 1896.8 checking supplied paths for OpenSSL...  
+2023-04-03T17:45:09.4516325Z #5 1896.8 checking supplied paths for OpenSSL...
 2023-04-03T17:45:09.4517177Z #5 1896.8 checking additional paths for OpenSSL... none
 2023-04-03T17:45:09.4517502Z #5 1896.8 checking openssl/opensslv.h usability... yes
 2023-04-03T17:45:09.4517774Z #5 1896.9 checking openssl/opensslv.h presence... yes
@@ -8006,15 +8006,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:45:17.7350729Z #5 1905.1 config.status: executing default commands
 2023-04-03T17:45:17.7350963Z #5 1905.1 configure: creating ./fmt_externs.h
 2023-04-03T17:45:19.4981977Z #5 1907.0 configure: creating ./fmt_registers.h
-2023-04-03T17:45:22.0110660Z #5 1909.5 
+2023-04-03T17:45:22.0110660Z #5 1909.5
 2023-04-03T17:45:22.0111089Z #5 1909.5 Configured for building John the Ripper jumbo:
-2023-04-03T17:45:22.0111337Z #5 1909.5 
+2023-04-03T17:45:22.0111337Z #5 1909.5
 2023-04-03T17:45:22.0111906Z #5 1909.5 Target CPU ......................................... x86_64 AVX512BW, 64-bit LE
 2023-04-03T17:45:22.0112311Z #5 1909.5 AES-NI support ..................................... run-time detection
 2023-04-03T17:45:22.0112958Z #5 1909.5 Target OS .......................................... linux-gnu
 2023-04-03T17:45:22.0113257Z #5 1909.5 Cross compiling .................................... no
 2023-04-03T17:45:22.0113652Z #5 1909.5 Legacy arch header ................................. x86-64.h
-2023-04-03T17:45:22.0113888Z #5 1909.5 
+2023-04-03T17:45:22.0113888Z #5 1909.5
 2023-04-03T17:45:22.0114117Z #5 1909.5 Optional libraries/features found:
 2023-04-03T17:45:22.0114384Z #5 1909.5 Memory map (share/page large files) ................ yes
 2023-04-03T17:45:22.0114666Z #5 1909.5 Fork support ....................................... yes
@@ -8032,15 +8032,15 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:45:22.0118764Z #5 1909.5 OpenMPI support (default disabled) ................. no
 2023-04-03T17:45:22.0119044Z #5 1909.5 Experimental code (default disabled) ............... no
 2023-04-03T17:45:22.0119410Z #5 1909.5 ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-03T17:45:22.0119642Z #5 1909.5 
+2023-04-03T17:45:22.0119642Z #5 1909.5
 2023-04-03T17:45:22.1606310Z #5 1909.5 Install missing libraries to get any needed features that were omitted.
-2023-04-03T17:45:22.1606647Z #5 1909.5 
+2023-04-03T17:45:22.1606647Z #5 1909.5
 2023-04-03T17:46:57.6281213Z #5 1909.5 Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-03T17:46:57.6281604Z #5 2005.0 ar: creating aes.a
 2023-04-03T17:47:00.1837253Z #5 2007.5 ar: creating secp256k1.a
 2023-04-03T17:47:01.5225023Z #5 2008.9 ar: creating poly1305-donna.a
 2023-04-03T17:47:01.9731144Z #5 2009.4 ar: creating ed25519-donna.a
-2023-04-03T17:47:07.3669309Z #5 2014.9 
+2023-04-03T17:47:07.3669309Z #5 2014.9
 2023-04-03T17:47:07.5176524Z #5 2014.9 Make process completed.
 2023-04-03T17:47:07.5176928Z #5 2014.9 make find_version
 2023-04-03T17:47:07.5177517Z #5 2014.9 make[1]: Entering directory '/build/john/src'
@@ -8076,18 +8076,18 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:47:07.5190105Z #5 2015.0 make[1]: '../run/vncpcap2john' is up to date.
 2023-04-03T17:47:07.5190469Z #5 2015.0 make[1]: '../run/eapmd5tojohn' is up to date.
 2023-04-03T17:47:07.5190836Z #5 2015.0 make[1]: Leaving directory '/build/john/src'
-2023-04-03T17:47:07.5191090Z #5 2015.0 
+2023-04-03T17:47:07.5191090Z #5 2015.0
 2023-04-03T17:47:07.5191298Z #5 2015.0 Make process completed.
 2023-04-03T17:47:07.5191553Z #5 2015.0 Stripping executables.
 2023-04-03T17:47:07.5192255Z #5 2015.0 strip ../run/john ../run/unshadow ../run/unafs ../run/unique ../run/undrop ../run/rar2john ../run/zip2john ../run/genmkvpwd ../run/mkvcalcproba ../run/calc_stat ../run/tgtsnarf ../run/racf2john ../run/hccap2john ../run/raw2dyna ../run/keepass2john ../run/bitlocker2john ../run/dmg2john ../run/putty2john ../run/uaf2john ../run/wpapcap2john ../run/gpg2john ../run/cprepair ../run/base64conv ../run/SIPdump ../run/vncpcap2john ../run/eapmd5tojohn
 2023-04-03T17:47:07.7771866Z #5 DONE 2015.3s
-2023-04-03T17:47:08.5300613Z 
+2023-04-03T17:47:08.5300613Z
 2023-04-03T17:47:08.5301239Z #6 [stage-1 2/4] COPY --from=0 /build/john /john
 2023-04-03T17:47:09.4336722Z #6 DONE 0.9s
-2023-04-03T17:47:09.4337197Z 
+2023-04-03T17:47:09.4337197Z
 2023-04-03T17:47:09.4337929Z #7 [stage-1 3/4] COPY docker-entrypoint.sh /usr/local/bin/
 2023-04-03T17:47:09.4338198Z #7 DONE 0.0s
-2023-04-03T17:47:09.4338491Z 
+2023-04-03T17:47:09.4338491Z
 2023-04-03T17:47:09.4339335Z #8 [stage-1 4/4] RUN ln -s /usr/local/bin/docker-entrypoint.sh &&     useradd -U -m JtR &&     apt-get update -qq &&     export DEBIAN_FRONTEND="noninteractive" &&     apt-get install -y libssl3 libgomp1 &&     apt-get -y clean &&     rm -rf /var/lib/apt/lists/*
 2023-04-03T17:47:14.3636488Z #8 4.090 Reading package lists...
 2023-04-03T17:47:14.4747691Z #8 4.924 Building dependency tree...
@@ -8102,7 +8102,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:47:15.6628378Z #8 6.292 debconf: delaying package configuration, since apt-utils is not installed
 2023-04-03T17:47:15.8133467Z #8 6.313 Fetched 126 kB in 1s (138 kB/s)
 2023-04-03T17:47:15.8133833Z #8 6.341 Selecting previously unselected package libgomp1:amd64.
-2023-04-03T17:47:15.8134120Z #8 6.341 (Reading database ... 
+2023-04-03T17:47:15.8134120Z #8 6.341 (Reading database ...
 2023-04-03T17:47:15.8134331Z (Reading database ... 5%
 2023-04-03T17:47:15.8134562Z (Reading database ... 10%
 2023-04-03T17:47:15.8134788Z (Reading database ... 15%
@@ -8129,7 +8129,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:47:15.8140471Z #8 6.375 Setting up libgomp1:amd64 (12.1.0-2ubuntu1~22.04) ...
 2023-04-03T17:47:15.8140837Z #8 6.380 Processing triggers for libc-bin (2.35-0ubuntu3.1) ...
 2023-04-03T17:47:15.9651051Z #8 DONE 6.5s
-2023-04-03T17:47:15.9651265Z 
+2023-04-03T17:47:15.9651265Z
 2023-04-03T17:47:15.9651384Z #9 exporting to image
 2023-04-03T17:47:15.9651621Z #9 exporting layers
 2023-04-03T17:47:17.3167729Z #9 exporting layers 1.4s done
@@ -8137,7 +8137,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:47:17.3168426Z #9 naming to ghcr.io/openwall/john:rolling done
 2023-04-03T17:47:17.3168710Z #9 naming to ghcr.io/openwall/john:rolling_J31 done
 2023-04-03T17:47:17.3168932Z #9 DONE 1.4s
-2023-04-03T17:47:17.3169052Z 
+2023-04-03T17:47:17.3169052Z
 2023-04-03T17:47:17.3169190Z #10 pushing ghcr.io/openwall/john:rolling with docker
 2023-04-03T17:47:17.4671858Z #10 pushing layer 07e70567b55d
 2023-04-03T17:47:17.4672145Z #10 pushing layer 6b034370e46e
@@ -8184,7 +8184,7 @@ ghcr.io/openwall/john:rolling_J31
 2023-04-03T17:47:29.1689845Z #10 pushing layer b93c1bd012ab 20.8s done
 2023-04-03T17:47:29.9213839Z #10 pushing layer 4a1620e75cc3 24.8s done
 2023-04-03T17:47:32.1778216Z #10 DONE 14.9s
-2023-04-03T17:47:32.1778589Z 
+2023-04-03T17:47:32.1778589Z
 2023-04-03T17:47:32.1781248Z #11 pushing ghcr.io/openwall/john:rolling_J31 with docker
 2023-04-03T17:47:32.3283284Z #11 pushing layer 07e70567b55d
 2023-04-03T17:47:32.3283607Z #11 pushing layer 6b034370e46e

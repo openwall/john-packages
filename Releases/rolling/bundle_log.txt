@@ -32,12 +32,12 @@ Downloading https://www.tcpdump.org/release/libpcap-1.10.1.tar.gz
 hint: Using 'master' as the name for the initial branch. This default branch name
 hint: is subject to change. To configure the initial branch name to use in all
 hint: of your new repositories, which will suppress this warning, call:
-hint: 
+hint:
 hint: 	git config --global init.defaultBranch <name>
-hint: 
+hint:
 hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
 hint: 'development'. The just-created branch can be renamed via this command:
-hint: 
+hint:
 hint: 	git branch -m <name>
 Initialized empty Git repository in /builds/claudioandre-br/JtR-CI/flatpak/.flatpak-builder/git/https_github.com_openwall_john.git-CV2L21/
 Fetching git repo https://github.com/openwall/john.git, ref refs/heads/bleeding-jumbo
@@ -55,7 +55,7 @@ checking target system type... x86_64-pc-linux-gnu
 checking for gcc... gcc
 checking whether the C compiler works... yes
 checking for C compiler default output file name... a.out
-checking for suffix of executables... 
+checking for suffix of executables...
 checking whether we are cross compiling... no
 checking for suffix of object files... o
 checking whether we are using the GNU C compiler... yes
@@ -260,12 +260,12 @@ gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSE
 gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -c grammar.c
 gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -o strlcat.o -c ./missing/strlcat.c
 gcc -fvisibility=hidden -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer   -fpic -I.  -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include  -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer     -o strlcpy.o -c ./missing/strlcpy.c
-ar rc libpcap.a pcap-linux.o fad-getad.o  pcap-usb-linux.o pcap-netfilter-linux.o pcap-bt-linux.o pcap-bt-monitor-linux.o pcap-dbus.o  pcap.o gencode.o optimize.o nametoaddr.o etherent.o fmtutils.o savefile.o sf-pcap.o sf-pcapng.o pcap-common.o bpf_image.o bpf_filter.o bpf_dump.o scanner.o grammar.o strlcat.o strlcpy.o 
+ar rc libpcap.a pcap-linux.o fad-getad.o  pcap-usb-linux.o pcap-netfilter-linux.o pcap-bt-linux.o pcap-bt-monitor-linux.o pcap-dbus.o  pcap.o gencode.o optimize.o nametoaddr.o etherent.o fmtutils.o savefile.o sf-pcap.o sf-pcapng.o pcap-common.o bpf_image.o bpf_filter.o bpf_dump.o scanner.o grammar.o strlcat.o strlcpy.o
 ranlib libpcap.a
 VER=`cat ./VERSION`; \
 MAJOR_VER=`sed 's/\([0-9][0-9]*\)\..*/\1/' ./VERSION`; \
 gcc -L/app/lib -Wl,-z,relro,-z,now -Wl,--as-needed   -shared -Wl,-soname,libpcap.so.$MAJOR_VER \
-    -o libpcap.so.$VER pcap-linux.o fad-getad.o  pcap-usb-linux.o pcap-netfilter-linux.o pcap-bt-linux.o pcap-bt-monitor-linux.o pcap-dbus.o  pcap.o gencode.o optimize.o nametoaddr.o etherent.o fmtutils.o savefile.o sf-pcap.o sf-pcapng.o pcap-common.o bpf_image.o bpf_filter.o bpf_dump.o scanner.o grammar.o strlcat.o strlcpy.o  -ldbus-1 
+    -o libpcap.so.$VER pcap-linux.o fad-getad.o  pcap-usb-linux.o pcap-netfilter-linux.o pcap-bt-linux.o pcap-bt-monitor-linux.o pcap-dbus.o  pcap.o gencode.o optimize.o nametoaddr.o etherent.o fmtutils.o savefile.o sf-pcap.o sf-pcapng.o pcap-common.o bpf_image.o bpf_filter.o bpf_dump.o scanner.o grammar.o strlcat.o strlcpy.o  -ldbus-1
 ./config.status --file=libpcap.pc.tmp:./libpcap.pc.in
 config.status: creating libpcap.pc.tmp
 mv libpcap.pc.tmp libpcap.pc
@@ -276,7 +276,7 @@ chmod a+x pcap-config
 VER=`cat ./VERSION`; \
 MAJOR_VER=`sed 's/\([0-9][0-9]*\)\..*/\1/' ./VERSION`; \
 gcc -L/app/lib -Wl,-z,relro,-z,now -Wl,--as-needed   -shared -Wl,-soname,libpcap.so.$MAJOR_VER \
-    -o libpcap.so.$VER pcap-linux.o fad-getad.o  pcap-usb-linux.o pcap-netfilter-linux.o pcap-bt-linux.o pcap-bt-monitor-linux.o pcap-dbus.o  pcap.o gencode.o optimize.o nametoaddr.o etherent.o fmtutils.o savefile.o sf-pcap.o sf-pcapng.o pcap-common.o bpf_image.o bpf_filter.o bpf_dump.o scanner.o grammar.o strlcat.o strlcpy.o  -ldbus-1 
+    -o libpcap.so.$VER pcap-linux.o fad-getad.o  pcap-usb-linux.o pcap-netfilter-linux.o pcap-bt-linux.o pcap-bt-monitor-linux.o pcap-dbus.o  pcap.o gencode.o optimize.o nametoaddr.o etherent.o fmtutils.o savefile.o sf-pcap.o sf-pcapng.o pcap-common.o bpf_image.o bpf_filter.o bpf_dump.o scanner.o grammar.o strlcat.o strlcpy.o  -ldbus-1
 [ -d /app/lib ] || \
     (mkdir -p /app/lib; chmod 755 /app/lib)
 VER=`cat ./VERSION`; \
@@ -446,10 +446,10 @@ PWD=/run/build/john/src
 ALSA_CONFIG_PATH=/usr/share/alsa/alsa-flatpak.conf
 SOURCE_DATE_EPOCH=1680543823
 CCACHE_DIR=/run/ccache/disabled
-CXXFLAGS=-O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer 
+CXXFLAGS=-O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer
 container=flatpak
 GI_TYPELIB_PATH=/app/lib/girepository-1.0
-LDFLAGS=-L/app/lib -Wl,-z,relro,-z,now -Wl,--as-needed 
+LDFLAGS=-L/app/lib -Wl,-z,relro,-z,now -Wl,--as-needed
 HOME=/home/JtR
 FLATPAK_BUILDER_BUILDDIR=/run/build/john
 FLATPAK_ARCH=x86_64
@@ -464,7 +464,7 @@ GST_PLUGIN_SYSTEM_PATH=/app/lib/gstreamer-1.0:/usr/lib/extensions/gstreamer-1.0:
 LC_ALL=en_US.utf8
 XDG_DATA_DIRS=/app/share:/usr/share:/usr/share/runtime/share:/run/host/user-share:/run/host/share
 PATH=/app/bin:/usr/bin
-CFLAGS=-O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer 
+CFLAGS=-O2 -g -pipe -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer
 C_INCLUDE_PATH=/app/include
 ALSA_CONFIG_DIR=/usr/share/alsa
 _=/usr/bin/env
@@ -637,7 +637,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #define __FLT16_MIN_10_EXP__ (-4)
 #define __FLT64X_DECIMAL_DIG__ 21
 #define __DEC128_MIN__ 1E-6143DL
-#define __REGISTER_PREFIX__ 
+#define __REGISTER_PREFIX__
 #define __UINT16_MAX__ 0xffff
 #define __DBL_HAS_DENORM__ 1
 #define __LDBL_HAS_INFINITY__ 1
@@ -687,7 +687,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #define __FLT32X_MIN__ 2.22507385850720138309023271733240406e-308F32x
 #define __SIG_ATOMIC_MAX__ 0x7fffffff
 #define __GCC_ATOMIC_WCHAR_T_LOCK_FREE 2
-#define __USER_LABEL_PREFIX__ 
+#define __USER_LABEL_PREFIX__
 #define __STDC_IEC_60559_BFP__ 201404L
 #define __SIZEOF_PTRDIFF_T__ 8
 #define __LDBL_DIG__ 18
@@ -863,8 +863,8 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #define __ATOMIC_RELEASE 3
 --------------------------------
 ------ Task ------
-Running on: 
-Doing: 
+Running on:
+Doing:
 --------------------------------
 roll+15b3b7c
 
@@ -875,7 +875,7 @@ checking whether to compile using MPI... no
 checking for gcc... gcc
 checking whether the C compiler works... yes
 checking for C compiler default output file name... a.out
-checking for suffix of executables... 
+checking for suffix of executables...
 checking whether we are cross compiling... no
 checking for suffix of object files... o
 checking whether we are using the GNU C compiler... yes
@@ -954,7 +954,7 @@ checking for SSE2... yes
 checking for SSSE3... no
 checking for arch.h alternative... x86-64.h
 checking for byte ordering according to target triple... little
-checking supplied paths for OpenSSL...  
+checking supplied paths for OpenSSL...
 checking additional paths for OpenSSL... none
 checking openssl/opensslv.h usability... yes
 checking openssl/opensslv.h presence... yes
@@ -1144,7 +1144,7 @@ checking for sprintf_s... no
 checking for strcasestr... yes
 checking for clGetKernelArgInfo... no
 checking for posix_memalign... yes
-checking for yasm that supports "-g dwarf2 -f elf64"... 
+checking for yasm that supports "-g dwarf2 -f elf64"...
 checking for OS-specific feature macros needed...  -D_POSIX_SOURCE -D_GNU_SOURCE -D_XOPEN_SOURCE=600
 checking size of size_t... 8
 checking size of off_t... 8
@@ -1305,7 +1305,7 @@ checking whether to compile using MPI... no
 checking for gcc... gcc
 checking whether the C compiler works... yes
 checking for C compiler default output file name... a.out
-checking for suffix of executables... 
+checking for suffix of executables...
 checking whether we are cross compiling... no
 checking for suffix of object files... o
 checking whether we are using the GNU C compiler... yes
@@ -1384,7 +1384,7 @@ checking for SSE2... yes
 checking for SSSE3... no
 checking for arch.h alternative... x86-64.h
 checking for byte ordering according to target triple... little
-checking supplied paths for OpenSSL...  
+checking supplied paths for OpenSSL...
 checking additional paths for OpenSSL... none
 checking openssl/opensslv.h usability... yes
 checking openssl/opensslv.h presence... yes
@@ -1575,7 +1575,7 @@ checking for sprintf_s... no
 checking for strcasestr... yes
 checking for clGetKernelArgInfo... no
 checking for posix_memalign... yes
-checking for yasm that supports "-g dwarf2 -f elf64"... 
+checking for yasm that supports "-g dwarf2 -f elf64"...
 checking for OS-specific feature macros needed...  -D_POSIX_SOURCE -D_GNU_SOURCE -D_XOPEN_SOURCE=600
 checking size of size_t... 8
 checking size of off_t... 8
@@ -1737,7 +1737,7 @@ checking whether to compile using MPI... no
 checking for gcc... gcc
 checking whether the C compiler works... yes
 checking for C compiler default output file name... a.out
-checking for suffix of executables... 
+checking for suffix of executables...
 checking whether we are cross compiling... no
 checking for suffix of object files... o
 checking whether we are using the GNU C compiler... yes
@@ -1818,7 +1818,7 @@ checking for SSE4.1... yes
 checking for SSE4.2... no
 checking for arch.h alternative... x86-64.h
 checking for byte ordering according to target triple... little
-checking supplied paths for OpenSSL...  
+checking supplied paths for OpenSSL...
 checking additional paths for OpenSSL... none
 checking openssl/opensslv.h usability... yes
 checking openssl/opensslv.h presence... yes
@@ -2008,7 +2008,7 @@ checking for sprintf_s... no
 checking for strcasestr... yes
 checking for clGetKernelArgInfo... no
 checking for posix_memalign... yes
-checking for yasm that supports "-g dwarf2 -f elf64"... 
+checking for yasm that supports "-g dwarf2 -f elf64"...
 checking for OS-specific feature macros needed...  -D_POSIX_SOURCE -D_GNU_SOURCE -D_XOPEN_SOURCE=600
 checking size of size_t... 8
 checking size of off_t... 8
@@ -2170,7 +2170,7 @@ checking whether to compile using MPI... no
 checking for gcc... gcc
 checking whether the C compiler works... yes
 checking for C compiler default output file name... a.out
-checking for suffix of executables... 
+checking for suffix of executables...
 checking whether we are cross compiling... no
 checking for suffix of object files... o
 checking whether we are using the GNU C compiler... yes
@@ -2251,7 +2251,7 @@ checking for SSE4.1... yes
 checking for SSE4.2... no
 checking for arch.h alternative... x86-64.h
 checking for byte ordering according to target triple... little
-checking supplied paths for OpenSSL...  
+checking supplied paths for OpenSSL...
 checking additional paths for OpenSSL... none
 checking openssl/opensslv.h usability... yes
 checking openssl/opensslv.h presence... yes
@@ -2442,7 +2442,7 @@ checking for sprintf_s... no
 checking for strcasestr... yes
 checking for clGetKernelArgInfo... no
 checking for posix_memalign... yes
-checking for yasm that supports "-g dwarf2 -f elf64"... 
+checking for yasm that supports "-g dwarf2 -f elf64"...
 checking for OS-specific feature macros needed...  -D_POSIX_SOURCE -D_GNU_SOURCE -D_XOPEN_SOURCE=600
 checking size of size_t... 8
 checking size of off_t... 8
@@ -2604,7 +2604,7 @@ checking whether to compile using MPI... no
 checking for gcc... gcc
 checking whether the C compiler works... yes
 checking for C compiler default output file name... a.out
-checking for suffix of executables... 
+checking for suffix of executables...
 checking whether we are cross compiling... no
 checking for suffix of object files... o
 checking whether we are using the GNU C compiler... yes
@@ -2688,7 +2688,7 @@ checking for XOP... no
 checking for AVX2... no
 checking for arch.h alternative... x86-64.h
 checking for byte ordering according to target triple... little
-checking supplied paths for OpenSSL...  
+checking supplied paths for OpenSSL...
 checking additional paths for OpenSSL... none
 checking openssl/opensslv.h usability... yes
 checking openssl/opensslv.h presence... yes
@@ -2878,7 +2878,7 @@ checking for sprintf_s... no
 checking for strcasestr... yes
 checking for clGetKernelArgInfo... no
 checking for posix_memalign... yes
-checking for yasm that supports "-g dwarf2 -f elf64"... 
+checking for yasm that supports "-g dwarf2 -f elf64"...
 checking for OS-specific feature macros needed...  -D_POSIX_SOURCE -D_GNU_SOURCE -D_XOPEN_SOURCE=600
 checking size of size_t... 8
 checking size of off_t... 8
@@ -3040,7 +3040,7 @@ checking whether to compile using MPI... no
 checking for gcc... gcc
 checking whether the C compiler works... yes
 checking for C compiler default output file name... a.out
-checking for suffix of executables... 
+checking for suffix of executables...
 checking whether we are cross compiling... no
 checking for suffix of object files... o
 checking whether we are using the GNU C compiler... yes
@@ -3124,7 +3124,7 @@ checking for XOP... no
 checking for AVX2... no
 checking for arch.h alternative... x86-64.h
 checking for byte ordering according to target triple... little
-checking supplied paths for OpenSSL...  
+checking supplied paths for OpenSSL...
 checking additional paths for OpenSSL... none
 checking openssl/opensslv.h usability... yes
 checking openssl/opensslv.h presence... yes
@@ -3315,7 +3315,7 @@ checking for sprintf_s... no
 checking for strcasestr... yes
 checking for clGetKernelArgInfo... no
 checking for posix_memalign... yes
-checking for yasm that supports "-g dwarf2 -f elf64"... 
+checking for yasm that supports "-g dwarf2 -f elf64"...
 checking for OS-specific feature macros needed...  -D_POSIX_SOURCE -D_GNU_SOURCE -D_XOPEN_SOURCE=600
 checking size of size_t... 8
 checking size of off_t... 8
@@ -3477,7 +3477,7 @@ checking whether to compile using MPI... no
 checking for gcc... gcc
 checking whether the C compiler works... yes
 checking for C compiler default output file name... a.out
-checking for suffix of executables... 
+checking for suffix of executables...
 checking whether we are cross compiling... no
 checking for suffix of object files... o
 checking whether we are using the GNU C compiler... yes
@@ -3561,7 +3561,7 @@ checking for XOP... yes
 checking for AVX2... no
 checking for arch.h alternative... x86-64.h
 checking for byte ordering according to target triple... little
-checking supplied paths for OpenSSL...  
+checking supplied paths for OpenSSL...
 checking additional paths for OpenSSL... none
 checking openssl/opensslv.h usability... yes
 checking openssl/opensslv.h presence... yes
@@ -3751,7 +3751,7 @@ checking for sprintf_s... no
 checking for strcasestr... yes
 checking for clGetKernelArgInfo... no
 checking for posix_memalign... yes
-checking for yasm that supports "-g dwarf2 -f elf64"... 
+checking for yasm that supports "-g dwarf2 -f elf64"...
 checking for OS-specific feature macros needed...  -D_POSIX_SOURCE -D_GNU_SOURCE -D_XOPEN_SOURCE=600
 checking size of size_t... 8
 checking size of off_t... 8
@@ -3913,7 +3913,7 @@ checking whether to compile using MPI... no
 checking for gcc... gcc
 checking whether the C compiler works... yes
 checking for C compiler default output file name... a.out
-checking for suffix of executables... 
+checking for suffix of executables...
 checking whether we are cross compiling... no
 checking for suffix of object files... o
 checking whether we are using the GNU C compiler... yes
@@ -3997,7 +3997,7 @@ checking for XOP... yes
 checking for AVX2... no
 checking for arch.h alternative... x86-64.h
 checking for byte ordering according to target triple... little
-checking supplied paths for OpenSSL...  
+checking supplied paths for OpenSSL...
 checking additional paths for OpenSSL... none
 checking openssl/opensslv.h usability... yes
 checking openssl/opensslv.h presence... yes
@@ -4188,7 +4188,7 @@ checking for sprintf_s... no
 checking for strcasestr... yes
 checking for clGetKernelArgInfo... no
 checking for posix_memalign... yes
-checking for yasm that supports "-g dwarf2 -f elf64"... 
+checking for yasm that supports "-g dwarf2 -f elf64"...
 checking for OS-specific feature macros needed...  -D_POSIX_SOURCE -D_GNU_SOURCE -D_XOPEN_SOURCE=600
 checking size of size_t... 8
 checking size of off_t... 8
@@ -4350,7 +4350,7 @@ checking whether to compile using MPI... no
 checking for gcc... gcc
 checking whether the C compiler works... yes
 checking for C compiler default output file name... a.out
-checking for suffix of executables... 
+checking for suffix of executables...
 checking whether we are cross compiling... no
 checking for suffix of object files... o
 checking whether we are using the GNU C compiler... yes
@@ -4435,7 +4435,7 @@ checking for AVX2... yes
 checking for AVX512F... no
 checking for arch.h alternative... x86-64.h
 checking for byte ordering according to target triple... little
-checking supplied paths for OpenSSL...  
+checking supplied paths for OpenSSL...
 checking additional paths for OpenSSL... none
 checking openssl/opensslv.h usability... yes
 checking openssl/opensslv.h presence... yes
@@ -4625,7 +4625,7 @@ checking for sprintf_s... no
 checking for strcasestr... yes
 checking for clGetKernelArgInfo... no
 checking for posix_memalign... yes
-checking for yasm that supports "-g dwarf2 -f elf64"... 
+checking for yasm that supports "-g dwarf2 -f elf64"...
 checking for OS-specific feature macros needed...  -D_POSIX_SOURCE -D_GNU_SOURCE -D_XOPEN_SOURCE=600
 checking size of size_t... 8
 checking size of off_t... 8
@@ -4787,7 +4787,7 @@ checking whether to compile using MPI... no
 checking for gcc... gcc
 checking whether the C compiler works... yes
 checking for C compiler default output file name... a.out
-checking for suffix of executables... 
+checking for suffix of executables...
 checking whether we are cross compiling... no
 checking for suffix of object files... o
 checking whether we are using the GNU C compiler... yes
@@ -4872,7 +4872,7 @@ checking for AVX2... yes
 checking for AVX512F... no
 checking for arch.h alternative... x86-64.h
 checking for byte ordering according to target triple... little
-checking supplied paths for OpenSSL...  
+checking supplied paths for OpenSSL...
 checking additional paths for OpenSSL... none
 checking openssl/opensslv.h usability... yes
 checking openssl/opensslv.h presence... yes
@@ -5063,7 +5063,7 @@ checking for sprintf_s... no
 checking for strcasestr... yes
 checking for clGetKernelArgInfo... no
 checking for posix_memalign... yes
-checking for yasm that supports "-g dwarf2 -f elf64"... 
+checking for yasm that supports "-g dwarf2 -f elf64"...
 checking for OS-specific feature macros needed...  -D_POSIX_SOURCE -D_GNU_SOURCE -D_XOPEN_SOURCE=600
 checking size of size_t... 8
 checking size of off_t... 8
@@ -5601,7 +5601,7 @@ Pruning cache
 a2d6396c7d54b2ab5940e55028ea2d464f377ea313c95d4af142c3bd79d690e2  john.flatpak
 section_end:1680547205:step_script[0Ksection_start:1680547205:upload_artifacts_on_success[0K[0K[36;1mUploading artifacts for successful job[0;m[0;m
 [32;1mUploading artifacts...[0;m
-john.flatpak: found 1 matching artifact files and directories[0;m 
+john.flatpak: found 1 matching artifact files and directories[0;m
 Uploading artifacts as "archive" to coordinator... 201 Created[0;m  id[0;m=4052942751 responseStatus[0;m=201 Created token[0;m=64_XmYBr
 section_end:1680547210:upload_artifacts_on_success[0Ksection_start:1680547210:cleanup_file_variables[0K[0K[36;1mCleaning up project directory and file based variables[0;m[0;m
 section_end:1680547211:cleanup_file_variables[0K[32;1mJob succeeded[0;m

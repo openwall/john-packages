@@ -27,10 +27,10 @@
 2023-04-03T23:15:10.6625112Z Downloading task: PublishPipelineArtifact (0.141.0)
 2023-04-03T23:15:10.8510171Z Downloading task: DownloadPipelineArtifact (1.198.0)
 2023-04-03T23:15:11.0437223Z Checking job knob settings.
-2023-04-03T23:15:11.0447756Z    Knob: DockerActionRetries = true Source: $(VSTSAGENT_DOCKER_ACTION_RETRIES) 
-2023-04-03T23:15:11.0448259Z    Knob: AgentToolsDirectory = C:\hostedtoolcache\windows Source: ${AGENT_TOOLSDIRECTORY} 
-2023-04-03T23:15:11.0449344Z    Knob: AgentPerflog = c:\vsts\perflog Source: ${VSTS_AGENT_PERFLOG} 
-2023-04-03T23:15:11.0451627Z    Knob: ContinueAfterCancelProcessTreeKillAttempt = true Source: $(VSTSAGENT_CONTINUE_AFTER_CANCEL_PROCESSTREEKILL_ATTEMPT) 
+2023-04-03T23:15:11.0447756Z    Knob: DockerActionRetries = true Source: $(VSTSAGENT_DOCKER_ACTION_RETRIES)
+2023-04-03T23:15:11.0448259Z    Knob: AgentToolsDirectory = C:\hostedtoolcache\windows Source: ${AGENT_TOOLSDIRECTORY}
+2023-04-03T23:15:11.0449344Z    Knob: AgentPerflog = c:\vsts\perflog Source: ${VSTS_AGENT_PERFLOG}
+2023-04-03T23:15:11.0451627Z    Knob: ContinueAfterCancelProcessTreeKillAttempt = true Source: $(VSTSAGENT_CONTINUE_AFTER_CANCEL_PROCESSTREEKILL_ATTEMPT)
 2023-04-03T23:15:11.0452018Z Finished checking job knob settings.
 2023-04-03T23:15:11.1416394Z Plugin: 'Test Result Parser plugin' is running in background.
 2023-04-03T23:15:11.1416581Z Plugin: 'Test File Publisher plugin' is running in background.
@@ -76,214 +76,214 @@
 2023-04-03T23:15:18.2275863Z ##[command]git config --get-all http.proxy
 2023-04-03T23:15:18.2765403Z ##[command]git config http.version HTTP/1.1
 2023-04-03T23:15:18.3374029Z ##[command]git --config-env=http.extraheader=env_var_http.extraheader fetch --force --tags --prune --prune-tags --progress --no-recurse-submodules origin --depth=5 +88dec64caddf35042f2303bb0a7d044384f4e6a5:refs/remotes/origin/88dec64caddf35042f2303bb0a7d044384f4e6a5
-2023-04-03T23:15:20.3559227Z remote: Enumerating objects: 5003, done.        
-2023-04-03T23:15:20.3563567Z remote: Counting objects:   0% (1/5003)        
-2023-04-03T23:15:20.3564372Z remote: Counting objects:   1% (51/5003)        
-2023-04-03T23:15:20.3565197Z remote: Counting objects:   2% (101/5003)        
-2023-04-03T23:15:20.3585499Z remote: Counting objects:   3% (151/5003)        
-2023-04-03T23:15:20.3587561Z remote: Counting objects:   4% (201/5003)        
-2023-04-03T23:15:20.3589960Z remote: Counting objects:   5% (251/5003)        
-2023-04-03T23:15:20.3592784Z remote: Counting objects:   6% (301/5003)        
-2023-04-03T23:15:20.3593951Z remote: Counting objects:   7% (351/5003)        
-2023-04-03T23:15:20.3594908Z remote: Counting objects:   8% (401/5003)        
-2023-04-03T23:15:20.3595846Z remote: Counting objects:   9% (451/5003)        
-2023-04-03T23:15:20.3596811Z remote: Counting objects:  10% (501/5003)        
-2023-04-03T23:15:20.3597634Z remote: Counting objects:  11% (551/5003)        
-2023-04-03T23:15:20.3906580Z remote: Counting objects:  12% (601/5003)        
-2023-04-03T23:15:20.3907647Z remote: Counting objects:  13% (651/5003)        
-2023-04-03T23:15:20.3908011Z remote: Counting objects:  14% (701/5003)        
-2023-04-03T23:15:20.3912387Z remote: Counting objects:  15% (751/5003)        
-2023-04-03T23:15:20.3913799Z remote: Counting objects:  16% (801/5003)        
-2023-04-03T23:15:20.3914445Z remote: Counting objects:  17% (851/5003)        
-2023-04-03T23:15:20.3915108Z remote: Counting objects:  18% (901/5003)        
-2023-04-03T23:15:20.3915685Z remote: Counting objects:  19% (951/5003)        
-2023-04-03T23:15:20.3918960Z remote: Counting objects:  20% (1001/5003)        
-2023-04-03T23:15:20.3919387Z remote: Counting objects:  21% (1051/5003)        
-2023-04-03T23:15:20.3919742Z remote: Counting objects:  22% (1101/5003)        
-2023-04-03T23:15:20.3920817Z remote: Counting objects:  23% (1151/5003)        
-2023-04-03T23:15:20.3921241Z remote: Counting objects:  24% (1201/5003)        
-2023-04-03T23:15:20.3921600Z remote: Counting objects:  25% (1251/5003)        
-2023-04-03T23:15:20.3921902Z remote: Counting objects:  26% (1301/5003)        
-2023-04-03T23:15:20.3922145Z remote: Counting objects:  27% (1351/5003)        
-2023-04-03T23:15:20.3922395Z remote: Counting objects:  28% (1401/5003)        
-2023-04-03T23:15:20.3922719Z remote: Counting objects:  29% (1451/5003)        
-2023-04-03T23:15:20.3923049Z remote: Counting objects:  30% (1501/5003)        
-2023-04-03T23:15:20.3923337Z remote: Counting objects:  31% (1551/5003)        
-2023-04-03T23:15:20.3923868Z remote: Counting objects:  32% (1601/5003)        
-2023-04-03T23:15:20.3924245Z remote: Counting objects:  33% (1651/5003)        
-2023-04-03T23:15:20.3924591Z remote: Counting objects:  34% (1702/5003)        
-2023-04-03T23:15:20.3924925Z remote: Counting objects:  35% (1752/5003)        
-2023-04-03T23:15:20.3925263Z remote: Counting objects:  36% (1802/5003)        
-2023-04-03T23:15:20.3925595Z remote: Counting objects:  37% (1852/5003)        
-2023-04-03T23:15:20.3925885Z remote: Counting objects:  38% (1902/5003)        
-2023-04-03T23:15:20.3926119Z remote: Counting objects:  39% (1952/5003)        
-2023-04-03T23:15:20.3926373Z remote: Counting objects:  40% (2002/5003)        
-2023-04-03T23:15:20.3926933Z remote: Counting objects:  41% (2052/5003)        
-2023-04-03T23:15:20.3927431Z remote: Counting objects:  42% (2102/5003)        
-2023-04-03T23:15:20.3927882Z remote: Counting objects:  43% (2152/5003)        
-2023-04-03T23:15:20.3928519Z remote: Counting objects:  44% (2202/5003)        
-2023-04-03T23:15:20.3929136Z remote: Counting objects:  45% (2252/5003)        
-2023-04-03T23:15:20.3929580Z remote: Counting objects:  46% (2302/5003)        
-2023-04-03T23:15:20.3930112Z remote: Counting objects:  47% (2352/5003)        
-2023-04-03T23:15:20.3930651Z remote: Counting objects:  48% (2402/5003)        
-2023-04-03T23:15:20.3931099Z remote: Counting objects:  49% (2452/5003)        
-2023-04-03T23:15:20.3931632Z remote: Counting objects:  50% (2502/5003)        
-2023-04-03T23:15:20.3932285Z remote: Counting objects:  51% (2552/5003)        
-2023-04-03T23:15:20.3932779Z remote: Counting objects:  52% (2602/5003)        
-2023-04-03T23:15:20.3933160Z remote: Counting objects:  53% (2652/5003)        
-2023-04-03T23:15:20.3933646Z remote: Counting objects:  54% (2702/5003)        
-2023-04-03T23:15:20.3934175Z remote: Counting objects:  55% (2752/5003)        
-2023-04-03T23:15:20.3934539Z remote: Counting objects:  56% (2802/5003)        
-2023-04-03T23:15:20.3935072Z remote: Counting objects:  57% (2852/5003)        
-2023-04-03T23:15:20.3935563Z remote: Counting objects:  58% (2902/5003)        
-2023-04-03T23:15:20.3936047Z remote: Counting objects:  59% (2952/5003)        
-2023-04-03T23:15:20.3936325Z remote: Counting objects:  60% (3002/5003)        
-2023-04-03T23:15:20.3936698Z remote: Counting objects:  61% (3052/5003)        
-2023-04-03T23:15:20.3937349Z remote: Counting objects:  62% (3102/5003)        
-2023-04-03T23:15:20.3938018Z remote: Counting objects:  63% (3152/5003)        
-2023-04-03T23:15:20.3938386Z remote: Counting objects:  64% (3202/5003)        
-2023-04-03T23:15:20.3939108Z remote: Counting objects:  65% (3252/5003)        
-2023-04-03T23:15:20.3939597Z remote: Counting objects:  66% (3302/5003)        
-2023-04-03T23:15:20.3940195Z remote: Counting objects:  67% (3353/5003)        
-2023-04-03T23:15:20.3940756Z remote: Counting objects:  68% (3403/5003)        
-2023-04-03T23:15:20.3941367Z remote: Counting objects:  69% (3453/5003)        
-2023-04-03T23:15:20.3942499Z remote: Counting objects:  70% (3503/5003)        
-2023-04-03T23:15:20.3942908Z remote: Counting objects:  71% (3553/5003)        
-2023-04-03T23:15:20.3943171Z remote: Counting objects:  72% (3603/5003)        
-2023-04-03T23:15:20.3943727Z remote: Counting objects:  73% (3653/5003)        
-2023-04-03T23:15:20.3944205Z remote: Counting objects:  74% (3703/5003)        
-2023-04-03T23:15:20.3944819Z remote: Counting objects:  75% (3753/5003)        
-2023-04-03T23:15:20.3945325Z remote: Counting objects:  76% (3803/5003)        
-2023-04-03T23:15:20.3945736Z remote: Counting objects:  77% (3853/5003)        
-2023-04-03T23:15:20.3946207Z remote: Counting objects:  78% (3903/5003)        
-2023-04-03T23:15:20.3946743Z remote: Counting objects:  79% (3953/5003)        
-2023-04-03T23:15:20.3947147Z remote: Counting objects:  80% (4003/5003)        
-2023-04-03T23:15:20.3948181Z remote: Counting objects:  81% (4053/5003)        
-2023-04-03T23:15:20.3948620Z remote: Counting objects:  82% (4103/5003)        
-2023-04-03T23:15:20.3949151Z remote: Counting objects:  83% (4153/5003)        
-2023-04-03T23:15:20.3949707Z remote: Counting objects:  84% (4203/5003)        
-2023-04-03T23:15:20.3950159Z remote: Counting objects:  85% (4253/5003)        
-2023-04-03T23:15:20.3950686Z remote: Counting objects:  86% (4303/5003)        
-2023-04-03T23:15:20.3951196Z remote: Counting objects:  87% (4353/5003)        
-2023-04-03T23:15:20.3951706Z remote: Counting objects:  88% (4403/5003)        
-2023-04-03T23:15:20.3952074Z remote: Counting objects:  89% (4453/5003)        
-2023-04-03T23:15:20.3952348Z remote: Counting objects:  90% (4503/5003)        
-2023-04-03T23:15:20.3952842Z remote: Counting objects:  91% (4553/5003)        
-2023-04-03T23:15:20.3953315Z remote: Counting objects:  92% (4603/5003)        
-2023-04-03T23:15:20.3953732Z remote: Counting objects:  93% (4653/5003)        
-2023-04-03T23:15:20.3954286Z remote: Counting objects:  94% (4703/5003)        
-2023-04-03T23:15:20.3954915Z remote: Counting objects:  95% (4753/5003)        
-2023-04-03T23:15:20.3955439Z remote: Counting objects:  96% (4803/5003)        
-2023-04-03T23:15:20.3955969Z remote: Counting objects:  97% (4853/5003)        
-2023-04-03T23:15:20.3956582Z remote: Counting objects:  98% (4903/5003)        
-2023-04-03T23:15:20.3957048Z remote: Counting objects:  99% (4953/5003)        
-2023-04-03T23:15:20.3957699Z remote: Counting objects: 100% (5003/5003)        
-2023-04-03T23:15:20.3958137Z remote: Counting objects: 100% (5003/5003), done.        
-2023-04-03T23:15:20.3958761Z remote: Compressing objects:   0% (1/3597)        
-2023-04-03T23:15:20.3959227Z remote: Compressing objects:   1% (36/3597)        
-2023-04-03T23:15:20.3959825Z remote: Compressing objects:   2% (72/3597)        
-2023-04-03T23:15:20.3978948Z remote: Compressing objects:   3% (108/3597)        
-2023-04-03T23:15:20.4063868Z remote: Compressing objects:   4% (144/3597)        
-2023-04-03T23:15:20.8884116Z remote: Compressing objects:   5% (180/3597)        
-2023-04-03T23:15:20.9042208Z remote: Compressing objects:   6% (216/3597)        
-2023-04-03T23:15:21.4928312Z remote: Compressing objects:   7% (252/3597)        
-2023-04-03T23:15:22.5998312Z remote: Compressing objects:   7% (268/3597)        
-2023-04-03T23:15:22.6120470Z remote: Compressing objects:   7% (272/3597)        
-2023-04-03T23:15:22.6246736Z remote: Compressing objects:   8% (288/3597)        
-2023-04-03T23:15:22.6372463Z remote: Compressing objects:   9% (324/3597)        
-2023-04-03T23:15:22.6373107Z remote: Compressing objects:  10% (360/3597)        
-2023-04-03T23:15:22.6629818Z remote: Compressing objects:  11% (396/3597)        
-2023-04-03T23:15:22.6761334Z remote: Compressing objects:  12% (432/3597)        
-2023-04-03T23:15:22.6988408Z remote: Compressing objects:  13% (468/3597)        
-2023-04-03T23:15:22.7070880Z remote: Compressing objects:  14% (504/3597)        
-2023-04-03T23:15:22.7163390Z remote: Compressing objects:  15% (540/3597)        
-2023-04-03T23:15:22.7347744Z remote: Compressing objects:  16% (576/3597)        
-2023-04-03T23:15:22.7569973Z remote: Compressing objects:  17% (612/3597)        
-2023-04-03T23:15:22.7570952Z remote: Compressing objects:  18% (648/3597)        
-2023-04-03T23:15:22.7698640Z remote: Compressing objects:  19% (684/3597)        
-2023-04-03T23:15:22.7805835Z remote: Compressing objects:  20% (720/3597)        
-2023-04-03T23:15:22.8027851Z remote: Compressing objects:  21% (756/3597)        
-2023-04-03T23:15:22.8142837Z remote: Compressing objects:  22% (792/3597)        
-2023-04-03T23:15:22.8671807Z remote: Compressing objects:  23% (828/3597)        
-2023-04-03T23:15:22.8911401Z remote: Compressing objects:  24% (864/3597)        
-2023-04-03T23:15:22.9048255Z remote: Compressing objects:  25% (900/3597)        
-2023-04-03T23:15:22.9170037Z remote: Compressing objects:  26% (936/3597)        
-2023-04-03T23:15:22.9170474Z remote: Compressing objects:  27% (972/3597)        
-2023-04-03T23:15:22.9300205Z remote: Compressing objects:  28% (1008/3597)        
-2023-04-03T23:15:22.9429233Z remote: Compressing objects:  29% (1044/3597)        
-2023-04-03T23:15:22.9430004Z remote: Compressing objects:  30% (1080/3597)        
-2023-04-03T23:15:22.9566650Z remote: Compressing objects:  31% (1116/3597)        
-2023-04-03T23:15:22.9567107Z remote: Compressing objects:  32% (1152/3597)        
-2023-04-03T23:15:22.9568103Z remote: Compressing objects:  33% (1188/3597)        
-2023-04-03T23:15:22.9569065Z remote: Compressing objects:  34% (1223/3597)        
-2023-04-03T23:15:22.9697770Z remote: Compressing objects:  35% (1259/3597)        
-2023-04-03T23:15:22.9698902Z remote: Compressing objects:  36% (1295/3597)        
-2023-04-03T23:15:22.9836691Z remote: Compressing objects:  37% (1331/3597)        
-2023-04-03T23:15:22.9923529Z remote: Compressing objects:  38% (1367/3597)        
-2023-04-03T23:15:22.9924296Z remote: Compressing objects:  39% (1403/3597)        
-2023-04-03T23:15:23.0006501Z remote: Compressing objects:  40% (1439/3597)        
-2023-04-03T23:15:23.0107040Z remote: Compressing objects:  41% (1475/3597)        
-2023-04-03T23:15:23.0118769Z remote: Compressing objects:  42% (1511/3597)        
-2023-04-03T23:15:23.0132943Z remote: Compressing objects:  43% (1547/3597)        
-2023-04-03T23:15:23.0241656Z remote: Compressing objects:  44% (1583/3597)        
-2023-04-03T23:15:23.0431218Z remote: Compressing objects:  45% (1619/3597)        
-2023-04-03T23:15:23.0545931Z remote: Compressing objects:  46% (1655/3597)        
-2023-04-03T23:15:23.0657358Z remote: Compressing objects:  47% (1691/3597)        
-2023-04-03T23:15:23.0766286Z remote: Compressing objects:  48% (1727/3597)        
-2023-04-03T23:15:23.0876201Z remote: Compressing objects:  49% (1763/3597)        
-2023-04-03T23:15:23.1206800Z remote: Compressing objects:  50% (1799/3597)        
-2023-04-03T23:15:23.1414157Z remote: Compressing objects:  51% (1835/3597)        
-2023-04-03T23:15:23.1519234Z remote: Compressing objects:  52% (1871/3597)        
-2023-04-03T23:15:23.1618648Z remote: Compressing objects:  53% (1907/3597)        
-2023-04-03T23:15:23.1730171Z remote: Compressing objects:  54% (1943/3597)        
-2023-04-03T23:15:23.1930991Z remote: Compressing objects:  55% (1979/3597)        
-2023-04-03T23:15:23.2110774Z remote: Compressing objects:  56% (2015/3597)        
-2023-04-03T23:15:23.2249211Z remote: Compressing objects:  57% (2051/3597)        
-2023-04-03T23:15:23.2416706Z remote: Compressing objects:  58% (2087/3597)        
-2023-04-03T23:15:23.2685695Z remote: Compressing objects:  59% (2123/3597)        
-2023-04-03T23:15:23.2913189Z remote: Compressing objects:  60% (2159/3597)        
-2023-04-03T23:15:23.3074137Z remote: Compressing objects:  61% (2195/3597)        
-2023-04-03T23:15:23.3433574Z remote: Compressing objects:  62% (2231/3597)        
-2023-04-03T23:15:23.3635919Z remote: Compressing objects:  63% (2267/3597)        
-2023-04-03T23:15:23.3730763Z remote: Compressing objects:  64% (2303/3597)        
-2023-04-03T23:15:23.3929531Z remote: Compressing objects:  64% (2311/3597)        
-2023-04-03T23:15:23.4228105Z remote: Compressing objects:  65% (2339/3597)        
-2023-04-03T23:15:23.4510632Z remote: Compressing objects:  66% (2375/3597)        
-2023-04-03T23:15:23.4700015Z remote: Compressing objects:  67% (2410/3597)        
-2023-04-03T23:15:23.4845369Z remote: Compressing objects:  68% (2446/3597)        
-2023-04-03T23:15:23.5074177Z remote: Compressing objects:  69% (2482/3597)        
-2023-04-03T23:15:23.5373920Z remote: Compressing objects:  70% (2518/3597)        
-2023-04-03T23:15:23.5610590Z remote: Compressing objects:  71% (2554/3597)        
-2023-04-03T23:15:23.5840498Z remote: Compressing objects:  72% (2590/3597)        
-2023-04-03T23:15:23.6156826Z remote: Compressing objects:  73% (2626/3597)        
-2023-04-03T23:15:23.6364455Z remote: Compressing objects:  74% (2662/3597)        
-2023-04-03T23:15:23.6778850Z remote: Compressing objects:  75% (2698/3597)        
-2023-04-03T23:15:23.7081578Z remote: Compressing objects:  76% (2734/3597)        
-2023-04-03T23:15:23.7271750Z remote: Compressing objects:  77% (2770/3597)        
-2023-04-03T23:15:23.7545544Z remote: Compressing objects:  78% (2806/3597)        
-2023-04-03T23:15:23.7737028Z remote: Compressing objects:  79% (2842/3597)        
-2023-04-03T23:15:23.8055883Z remote: Compressing objects:  80% (2878/3597)        
-2023-04-03T23:15:23.8174222Z remote: Compressing objects:  81% (2914/3597)        
-2023-04-03T23:15:23.8415300Z remote: Compressing objects:  82% (2950/3597)        
-2023-04-03T23:15:23.8618809Z remote: Compressing objects:  83% (2986/3597)        
-2023-04-03T23:15:23.8721878Z remote: Compressing objects:  84% (3022/3597)        
-2023-04-03T23:15:23.8955558Z remote: Compressing objects:  85% (3058/3597)        
-2023-04-03T23:15:23.9070325Z remote: Compressing objects:  86% (3094/3597)        
-2023-04-03T23:15:23.9173849Z remote: Compressing objects:  87% (3130/3597)        
-2023-04-03T23:15:23.9264399Z remote: Compressing objects:  88% (3166/3597)        
-2023-04-03T23:15:23.9479126Z remote: Compressing objects:  89% (3202/3597)        
-2023-04-03T23:15:23.9604866Z remote: Compressing objects:  90% (3238/3597)        
-2023-04-03T23:15:23.9712494Z remote: Compressing objects:  91% (3274/3597)        
-2023-04-03T23:15:23.9952154Z remote: Compressing objects:  92% (3310/3597)        
-2023-04-03T23:15:24.0065495Z remote: Compressing objects:  93% (3346/3597)        
-2023-04-03T23:15:24.0066440Z remote: Compressing objects:  94% (3382/3597)        
-2023-04-03T23:15:24.0067357Z remote: Compressing objects:  95% (3418/3597)        
-2023-04-03T23:15:24.0068123Z remote: Compressing objects:  96% (3454/3597)        
-2023-04-03T23:15:24.0068834Z remote: Compressing objects:  97% (3490/3597)        
-2023-04-03T23:15:24.0069594Z remote: Compressing objects:  98% (3526/3597)        
-2023-04-03T23:15:24.0070460Z remote: Compressing objects:  99% (3562/3597)        
-2023-04-03T23:15:24.0071166Z remote: Compressing objects: 100% (3597/3597)        
-2023-04-03T23:15:24.0071844Z remote: Compressing objects: 100% (3597/3597), done.        
+2023-04-03T23:15:20.3559227Z remote: Enumerating objects: 5003, done.
+2023-04-03T23:15:20.3563567Z remote: Counting objects:   0% (1/5003)
+2023-04-03T23:15:20.3564372Z remote: Counting objects:   1% (51/5003)
+2023-04-03T23:15:20.3565197Z remote: Counting objects:   2% (101/5003)
+2023-04-03T23:15:20.3585499Z remote: Counting objects:   3% (151/5003)
+2023-04-03T23:15:20.3587561Z remote: Counting objects:   4% (201/5003)
+2023-04-03T23:15:20.3589960Z remote: Counting objects:   5% (251/5003)
+2023-04-03T23:15:20.3592784Z remote: Counting objects:   6% (301/5003)
+2023-04-03T23:15:20.3593951Z remote: Counting objects:   7% (351/5003)
+2023-04-03T23:15:20.3594908Z remote: Counting objects:   8% (401/5003)
+2023-04-03T23:15:20.3595846Z remote: Counting objects:   9% (451/5003)
+2023-04-03T23:15:20.3596811Z remote: Counting objects:  10% (501/5003)
+2023-04-03T23:15:20.3597634Z remote: Counting objects:  11% (551/5003)
+2023-04-03T23:15:20.3906580Z remote: Counting objects:  12% (601/5003)
+2023-04-03T23:15:20.3907647Z remote: Counting objects:  13% (651/5003)
+2023-04-03T23:15:20.3908011Z remote: Counting objects:  14% (701/5003)
+2023-04-03T23:15:20.3912387Z remote: Counting objects:  15% (751/5003)
+2023-04-03T23:15:20.3913799Z remote: Counting objects:  16% (801/5003)
+2023-04-03T23:15:20.3914445Z remote: Counting objects:  17% (851/5003)
+2023-04-03T23:15:20.3915108Z remote: Counting objects:  18% (901/5003)
+2023-04-03T23:15:20.3915685Z remote: Counting objects:  19% (951/5003)
+2023-04-03T23:15:20.3918960Z remote: Counting objects:  20% (1001/5003)
+2023-04-03T23:15:20.3919387Z remote: Counting objects:  21% (1051/5003)
+2023-04-03T23:15:20.3919742Z remote: Counting objects:  22% (1101/5003)
+2023-04-03T23:15:20.3920817Z remote: Counting objects:  23% (1151/5003)
+2023-04-03T23:15:20.3921241Z remote: Counting objects:  24% (1201/5003)
+2023-04-03T23:15:20.3921600Z remote: Counting objects:  25% (1251/5003)
+2023-04-03T23:15:20.3921902Z remote: Counting objects:  26% (1301/5003)
+2023-04-03T23:15:20.3922145Z remote: Counting objects:  27% (1351/5003)
+2023-04-03T23:15:20.3922395Z remote: Counting objects:  28% (1401/5003)
+2023-04-03T23:15:20.3922719Z remote: Counting objects:  29% (1451/5003)
+2023-04-03T23:15:20.3923049Z remote: Counting objects:  30% (1501/5003)
+2023-04-03T23:15:20.3923337Z remote: Counting objects:  31% (1551/5003)
+2023-04-03T23:15:20.3923868Z remote: Counting objects:  32% (1601/5003)
+2023-04-03T23:15:20.3924245Z remote: Counting objects:  33% (1651/5003)
+2023-04-03T23:15:20.3924591Z remote: Counting objects:  34% (1702/5003)
+2023-04-03T23:15:20.3924925Z remote: Counting objects:  35% (1752/5003)
+2023-04-03T23:15:20.3925263Z remote: Counting objects:  36% (1802/5003)
+2023-04-03T23:15:20.3925595Z remote: Counting objects:  37% (1852/5003)
+2023-04-03T23:15:20.3925885Z remote: Counting objects:  38% (1902/5003)
+2023-04-03T23:15:20.3926119Z remote: Counting objects:  39% (1952/5003)
+2023-04-03T23:15:20.3926373Z remote: Counting objects:  40% (2002/5003)
+2023-04-03T23:15:20.3926933Z remote: Counting objects:  41% (2052/5003)
+2023-04-03T23:15:20.3927431Z remote: Counting objects:  42% (2102/5003)
+2023-04-03T23:15:20.3927882Z remote: Counting objects:  43% (2152/5003)
+2023-04-03T23:15:20.3928519Z remote: Counting objects:  44% (2202/5003)
+2023-04-03T23:15:20.3929136Z remote: Counting objects:  45% (2252/5003)
+2023-04-03T23:15:20.3929580Z remote: Counting objects:  46% (2302/5003)
+2023-04-03T23:15:20.3930112Z remote: Counting objects:  47% (2352/5003)
+2023-04-03T23:15:20.3930651Z remote: Counting objects:  48% (2402/5003)
+2023-04-03T23:15:20.3931099Z remote: Counting objects:  49% (2452/5003)
+2023-04-03T23:15:20.3931632Z remote: Counting objects:  50% (2502/5003)
+2023-04-03T23:15:20.3932285Z remote: Counting objects:  51% (2552/5003)
+2023-04-03T23:15:20.3932779Z remote: Counting objects:  52% (2602/5003)
+2023-04-03T23:15:20.3933160Z remote: Counting objects:  53% (2652/5003)
+2023-04-03T23:15:20.3933646Z remote: Counting objects:  54% (2702/5003)
+2023-04-03T23:15:20.3934175Z remote: Counting objects:  55% (2752/5003)
+2023-04-03T23:15:20.3934539Z remote: Counting objects:  56% (2802/5003)
+2023-04-03T23:15:20.3935072Z remote: Counting objects:  57% (2852/5003)
+2023-04-03T23:15:20.3935563Z remote: Counting objects:  58% (2902/5003)
+2023-04-03T23:15:20.3936047Z remote: Counting objects:  59% (2952/5003)
+2023-04-03T23:15:20.3936325Z remote: Counting objects:  60% (3002/5003)
+2023-04-03T23:15:20.3936698Z remote: Counting objects:  61% (3052/5003)
+2023-04-03T23:15:20.3937349Z remote: Counting objects:  62% (3102/5003)
+2023-04-03T23:15:20.3938018Z remote: Counting objects:  63% (3152/5003)
+2023-04-03T23:15:20.3938386Z remote: Counting objects:  64% (3202/5003)
+2023-04-03T23:15:20.3939108Z remote: Counting objects:  65% (3252/5003)
+2023-04-03T23:15:20.3939597Z remote: Counting objects:  66% (3302/5003)
+2023-04-03T23:15:20.3940195Z remote: Counting objects:  67% (3353/5003)
+2023-04-03T23:15:20.3940756Z remote: Counting objects:  68% (3403/5003)
+2023-04-03T23:15:20.3941367Z remote: Counting objects:  69% (3453/5003)
+2023-04-03T23:15:20.3942499Z remote: Counting objects:  70% (3503/5003)
+2023-04-03T23:15:20.3942908Z remote: Counting objects:  71% (3553/5003)
+2023-04-03T23:15:20.3943171Z remote: Counting objects:  72% (3603/5003)
+2023-04-03T23:15:20.3943727Z remote: Counting objects:  73% (3653/5003)
+2023-04-03T23:15:20.3944205Z remote: Counting objects:  74% (3703/5003)
+2023-04-03T23:15:20.3944819Z remote: Counting objects:  75% (3753/5003)
+2023-04-03T23:15:20.3945325Z remote: Counting objects:  76% (3803/5003)
+2023-04-03T23:15:20.3945736Z remote: Counting objects:  77% (3853/5003)
+2023-04-03T23:15:20.3946207Z remote: Counting objects:  78% (3903/5003)
+2023-04-03T23:15:20.3946743Z remote: Counting objects:  79% (3953/5003)
+2023-04-03T23:15:20.3947147Z remote: Counting objects:  80% (4003/5003)
+2023-04-03T23:15:20.3948181Z remote: Counting objects:  81% (4053/5003)
+2023-04-03T23:15:20.3948620Z remote: Counting objects:  82% (4103/5003)
+2023-04-03T23:15:20.3949151Z remote: Counting objects:  83% (4153/5003)
+2023-04-03T23:15:20.3949707Z remote: Counting objects:  84% (4203/5003)
+2023-04-03T23:15:20.3950159Z remote: Counting objects:  85% (4253/5003)
+2023-04-03T23:15:20.3950686Z remote: Counting objects:  86% (4303/5003)
+2023-04-03T23:15:20.3951196Z remote: Counting objects:  87% (4353/5003)
+2023-04-03T23:15:20.3951706Z remote: Counting objects:  88% (4403/5003)
+2023-04-03T23:15:20.3952074Z remote: Counting objects:  89% (4453/5003)
+2023-04-03T23:15:20.3952348Z remote: Counting objects:  90% (4503/5003)
+2023-04-03T23:15:20.3952842Z remote: Counting objects:  91% (4553/5003)
+2023-04-03T23:15:20.3953315Z remote: Counting objects:  92% (4603/5003)
+2023-04-03T23:15:20.3953732Z remote: Counting objects:  93% (4653/5003)
+2023-04-03T23:15:20.3954286Z remote: Counting objects:  94% (4703/5003)
+2023-04-03T23:15:20.3954915Z remote: Counting objects:  95% (4753/5003)
+2023-04-03T23:15:20.3955439Z remote: Counting objects:  96% (4803/5003)
+2023-04-03T23:15:20.3955969Z remote: Counting objects:  97% (4853/5003)
+2023-04-03T23:15:20.3956582Z remote: Counting objects:  98% (4903/5003)
+2023-04-03T23:15:20.3957048Z remote: Counting objects:  99% (4953/5003)
+2023-04-03T23:15:20.3957699Z remote: Counting objects: 100% (5003/5003)
+2023-04-03T23:15:20.3958137Z remote: Counting objects: 100% (5003/5003), done.
+2023-04-03T23:15:20.3958761Z remote: Compressing objects:   0% (1/3597)
+2023-04-03T23:15:20.3959227Z remote: Compressing objects:   1% (36/3597)
+2023-04-03T23:15:20.3959825Z remote: Compressing objects:   2% (72/3597)
+2023-04-03T23:15:20.3978948Z remote: Compressing objects:   3% (108/3597)
+2023-04-03T23:15:20.4063868Z remote: Compressing objects:   4% (144/3597)
+2023-04-03T23:15:20.8884116Z remote: Compressing objects:   5% (180/3597)
+2023-04-03T23:15:20.9042208Z remote: Compressing objects:   6% (216/3597)
+2023-04-03T23:15:21.4928312Z remote: Compressing objects:   7% (252/3597)
+2023-04-03T23:15:22.5998312Z remote: Compressing objects:   7% (268/3597)
+2023-04-03T23:15:22.6120470Z remote: Compressing objects:   7% (272/3597)
+2023-04-03T23:15:22.6246736Z remote: Compressing objects:   8% (288/3597)
+2023-04-03T23:15:22.6372463Z remote: Compressing objects:   9% (324/3597)
+2023-04-03T23:15:22.6373107Z remote: Compressing objects:  10% (360/3597)
+2023-04-03T23:15:22.6629818Z remote: Compressing objects:  11% (396/3597)
+2023-04-03T23:15:22.6761334Z remote: Compressing objects:  12% (432/3597)
+2023-04-03T23:15:22.6988408Z remote: Compressing objects:  13% (468/3597)
+2023-04-03T23:15:22.7070880Z remote: Compressing objects:  14% (504/3597)
+2023-04-03T23:15:22.7163390Z remote: Compressing objects:  15% (540/3597)
+2023-04-03T23:15:22.7347744Z remote: Compressing objects:  16% (576/3597)
+2023-04-03T23:15:22.7569973Z remote: Compressing objects:  17% (612/3597)
+2023-04-03T23:15:22.7570952Z remote: Compressing objects:  18% (648/3597)
+2023-04-03T23:15:22.7698640Z remote: Compressing objects:  19% (684/3597)
+2023-04-03T23:15:22.7805835Z remote: Compressing objects:  20% (720/3597)
+2023-04-03T23:15:22.8027851Z remote: Compressing objects:  21% (756/3597)
+2023-04-03T23:15:22.8142837Z remote: Compressing objects:  22% (792/3597)
+2023-04-03T23:15:22.8671807Z remote: Compressing objects:  23% (828/3597)
+2023-04-03T23:15:22.8911401Z remote: Compressing objects:  24% (864/3597)
+2023-04-03T23:15:22.9048255Z remote: Compressing objects:  25% (900/3597)
+2023-04-03T23:15:22.9170037Z remote: Compressing objects:  26% (936/3597)
+2023-04-03T23:15:22.9170474Z remote: Compressing objects:  27% (972/3597)
+2023-04-03T23:15:22.9300205Z remote: Compressing objects:  28% (1008/3597)
+2023-04-03T23:15:22.9429233Z remote: Compressing objects:  29% (1044/3597)
+2023-04-03T23:15:22.9430004Z remote: Compressing objects:  30% (1080/3597)
+2023-04-03T23:15:22.9566650Z remote: Compressing objects:  31% (1116/3597)
+2023-04-03T23:15:22.9567107Z remote: Compressing objects:  32% (1152/3597)
+2023-04-03T23:15:22.9568103Z remote: Compressing objects:  33% (1188/3597)
+2023-04-03T23:15:22.9569065Z remote: Compressing objects:  34% (1223/3597)
+2023-04-03T23:15:22.9697770Z remote: Compressing objects:  35% (1259/3597)
+2023-04-03T23:15:22.9698902Z remote: Compressing objects:  36% (1295/3597)
+2023-04-03T23:15:22.9836691Z remote: Compressing objects:  37% (1331/3597)
+2023-04-03T23:15:22.9923529Z remote: Compressing objects:  38% (1367/3597)
+2023-04-03T23:15:22.9924296Z remote: Compressing objects:  39% (1403/3597)
+2023-04-03T23:15:23.0006501Z remote: Compressing objects:  40% (1439/3597)
+2023-04-03T23:15:23.0107040Z remote: Compressing objects:  41% (1475/3597)
+2023-04-03T23:15:23.0118769Z remote: Compressing objects:  42% (1511/3597)
+2023-04-03T23:15:23.0132943Z remote: Compressing objects:  43% (1547/3597)
+2023-04-03T23:15:23.0241656Z remote: Compressing objects:  44% (1583/3597)
+2023-04-03T23:15:23.0431218Z remote: Compressing objects:  45% (1619/3597)
+2023-04-03T23:15:23.0545931Z remote: Compressing objects:  46% (1655/3597)
+2023-04-03T23:15:23.0657358Z remote: Compressing objects:  47% (1691/3597)
+2023-04-03T23:15:23.0766286Z remote: Compressing objects:  48% (1727/3597)
+2023-04-03T23:15:23.0876201Z remote: Compressing objects:  49% (1763/3597)
+2023-04-03T23:15:23.1206800Z remote: Compressing objects:  50% (1799/3597)
+2023-04-03T23:15:23.1414157Z remote: Compressing objects:  51% (1835/3597)
+2023-04-03T23:15:23.1519234Z remote: Compressing objects:  52% (1871/3597)
+2023-04-03T23:15:23.1618648Z remote: Compressing objects:  53% (1907/3597)
+2023-04-03T23:15:23.1730171Z remote: Compressing objects:  54% (1943/3597)
+2023-04-03T23:15:23.1930991Z remote: Compressing objects:  55% (1979/3597)
+2023-04-03T23:15:23.2110774Z remote: Compressing objects:  56% (2015/3597)
+2023-04-03T23:15:23.2249211Z remote: Compressing objects:  57% (2051/3597)
+2023-04-03T23:15:23.2416706Z remote: Compressing objects:  58% (2087/3597)
+2023-04-03T23:15:23.2685695Z remote: Compressing objects:  59% (2123/3597)
+2023-04-03T23:15:23.2913189Z remote: Compressing objects:  60% (2159/3597)
+2023-04-03T23:15:23.3074137Z remote: Compressing objects:  61% (2195/3597)
+2023-04-03T23:15:23.3433574Z remote: Compressing objects:  62% (2231/3597)
+2023-04-03T23:15:23.3635919Z remote: Compressing objects:  63% (2267/3597)
+2023-04-03T23:15:23.3730763Z remote: Compressing objects:  64% (2303/3597)
+2023-04-03T23:15:23.3929531Z remote: Compressing objects:  64% (2311/3597)
+2023-04-03T23:15:23.4228105Z remote: Compressing objects:  65% (2339/3597)
+2023-04-03T23:15:23.4510632Z remote: Compressing objects:  66% (2375/3597)
+2023-04-03T23:15:23.4700015Z remote: Compressing objects:  67% (2410/3597)
+2023-04-03T23:15:23.4845369Z remote: Compressing objects:  68% (2446/3597)
+2023-04-03T23:15:23.5074177Z remote: Compressing objects:  69% (2482/3597)
+2023-04-03T23:15:23.5373920Z remote: Compressing objects:  70% (2518/3597)
+2023-04-03T23:15:23.5610590Z remote: Compressing objects:  71% (2554/3597)
+2023-04-03T23:15:23.5840498Z remote: Compressing objects:  72% (2590/3597)
+2023-04-03T23:15:23.6156826Z remote: Compressing objects:  73% (2626/3597)
+2023-04-03T23:15:23.6364455Z remote: Compressing objects:  74% (2662/3597)
+2023-04-03T23:15:23.6778850Z remote: Compressing objects:  75% (2698/3597)
+2023-04-03T23:15:23.7081578Z remote: Compressing objects:  76% (2734/3597)
+2023-04-03T23:15:23.7271750Z remote: Compressing objects:  77% (2770/3597)
+2023-04-03T23:15:23.7545544Z remote: Compressing objects:  78% (2806/3597)
+2023-04-03T23:15:23.7737028Z remote: Compressing objects:  79% (2842/3597)
+2023-04-03T23:15:23.8055883Z remote: Compressing objects:  80% (2878/3597)
+2023-04-03T23:15:23.8174222Z remote: Compressing objects:  81% (2914/3597)
+2023-04-03T23:15:23.8415300Z remote: Compressing objects:  82% (2950/3597)
+2023-04-03T23:15:23.8618809Z remote: Compressing objects:  83% (2986/3597)
+2023-04-03T23:15:23.8721878Z remote: Compressing objects:  84% (3022/3597)
+2023-04-03T23:15:23.8955558Z remote: Compressing objects:  85% (3058/3597)
+2023-04-03T23:15:23.9070325Z remote: Compressing objects:  86% (3094/3597)
+2023-04-03T23:15:23.9173849Z remote: Compressing objects:  87% (3130/3597)
+2023-04-03T23:15:23.9264399Z remote: Compressing objects:  88% (3166/3597)
+2023-04-03T23:15:23.9479126Z remote: Compressing objects:  89% (3202/3597)
+2023-04-03T23:15:23.9604866Z remote: Compressing objects:  90% (3238/3597)
+2023-04-03T23:15:23.9712494Z remote: Compressing objects:  91% (3274/3597)
+2023-04-03T23:15:23.9952154Z remote: Compressing objects:  92% (3310/3597)
+2023-04-03T23:15:24.0065495Z remote: Compressing objects:  93% (3346/3597)
+2023-04-03T23:15:24.0066440Z remote: Compressing objects:  94% (3382/3597)
+2023-04-03T23:15:24.0067357Z remote: Compressing objects:  95% (3418/3597)
+2023-04-03T23:15:24.0068123Z remote: Compressing objects:  96% (3454/3597)
+2023-04-03T23:15:24.0068834Z remote: Compressing objects:  97% (3490/3597)
+2023-04-03T23:15:24.0069594Z remote: Compressing objects:  98% (3526/3597)
+2023-04-03T23:15:24.0070460Z remote: Compressing objects:  99% (3562/3597)
+2023-04-03T23:15:24.0071166Z remote: Compressing objects: 100% (3597/3597)
+2023-04-03T23:15:24.0071844Z remote: Compressing objects: 100% (3597/3597), done.
 2023-04-03T23:15:24.0240065Z Receiving objects:   0% (1/5003)
 2023-04-03T23:15:24.0296896Z Receiving objects:   1% (51/5003)
 2023-04-03T23:15:24.0755688Z Receiving objects:   2% (101/5003)
@@ -388,7 +388,7 @@
 2023-04-03T23:15:28.8619855Z Receiving objects:  97% (4853/5003), 44.59 MiB | 9.39 MiB/s
 2023-04-03T23:15:28.8639943Z Receiving objects:  98% (4903/5003), 44.59 MiB | 9.39 MiB/s
 2023-04-03T23:15:28.8669062Z Receiving objects:  99% (4953/5003), 44.59 MiB | 9.39 MiB/s
-2023-04-03T23:15:28.8811261Z remote: Total 5003 (delta 2640), reused 2540 (delta 1394), pack-reused 0        
+2023-04-03T23:15:28.8811261Z remote: Total 5003 (delta 2640), reused 2540 (delta 1394), pack-reused 0
 2023-04-03T23:15:28.8818418Z Receiving objects: 100% (5003/5003), 44.59 MiB | 9.39 MiB/s
 2023-04-03T23:15:28.8832042Z Receiving objects: 100% (5003/5003), 46.82 MiB | 9.67 MiB/s, done.
 2023-04-03T23:15:28.8833598Z Resolving deltas:   0% (0/2640)
@@ -511,7 +511,7 @@
 2023-04-03T23:15:29.3705217Z  * [new tag]         Owl-3_0-release -> Owl-3_0-release
 2023-04-03T23:15:29.3706590Z  * [new tag]         jumbo-dev       -> jumbo-dev
 2023-04-03T23:15:29.4235453Z ##[command]git --config-env=http.extraheader=env_var_http.extraheader fetch --force --tags --prune --prune-tags --progress --no-recurse-submodules origin --depth=5 +88dec64caddf35042f2303bb0a7d044384f4e6a5
-2023-04-03T23:15:29.8198322Z remote: Total 0 (delta 0), reused 0 (delta 0), pack-reused 0        
+2023-04-03T23:15:29.8198322Z remote: Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
 2023-04-03T23:15:29.8711636Z From https://github.com/claudioandre-br/JohnTheRipper
 2023-04-03T23:15:29.8712640Z  * branch            88dec64caddf35042f2303bb0a7d044384f4e6a5 -> FETCH_HEAD
 2023-04-03T23:15:29.9229287Z ##[command]git checkout --progress --force refs/remotes/origin/88dec64caddf35042f2303bb0a7d044384f4e6a5
@@ -554,22 +554,22 @@
 2023-04-03T23:15:31.1734497Z Updating files: 100% (1998/1998)
 2023-04-03T23:15:31.1751188Z Updating files: 100% (1998/1998), done.
 2023-04-03T23:15:31.1868485Z Note: switching to 'refs/remotes/origin/88dec64caddf35042f2303bb0a7d044384f4e6a5'.
-2023-04-03T23:15:31.1870049Z 
+2023-04-03T23:15:31.1870049Z
 2023-04-03T23:15:31.1871165Z You are in 'detached HEAD' state. You can look around, make experimental
 2023-04-03T23:15:31.1871939Z changes and commit them, and you can discard any commits you make in this
 2023-04-03T23:15:31.1872705Z state without impacting any branches by switching back to a branch.
-2023-04-03T23:15:31.1875504Z 
+2023-04-03T23:15:31.1875504Z
 2023-04-03T23:15:31.1876495Z If you want to create a new branch to retain commits you create, you may
 2023-04-03T23:15:31.1877208Z do so (now or later) by using -c with the switch command. Example:
-2023-04-03T23:15:31.1877840Z 
+2023-04-03T23:15:31.1877840Z
 2023-04-03T23:15:31.1878540Z   git switch -c <new-branch-name>
-2023-04-03T23:15:31.1890392Z 
+2023-04-03T23:15:31.1890392Z
 2023-04-03T23:15:31.1891613Z Or undo this operation with:
-2023-04-03T23:15:31.1892353Z 
+2023-04-03T23:15:31.1892353Z
 2023-04-03T23:15:31.1892993Z   git switch -
-2023-04-03T23:15:31.1893766Z 
+2023-04-03T23:15:31.1893766Z
 2023-04-03T23:15:31.1894457Z Turn off this advice by setting config variable advice.detachedHead to false
-2023-04-03T23:15:31.1895059Z 
+2023-04-03T23:15:31.1895059Z
 2023-04-03T23:15:31.1895707Z HEAD is now at 88dec64 CI: test and package for Windows seg 03 abr 2023 19:49:19 -03
 2023-04-03T23:15:31.2171093Z ##[section]Finishing: Checkout claudioandre-br/JohnTheRipper@bleeding-jumbo to JtR
 2023-04-03T23:15:32.5476331Z ##[section]Starting: System Information
@@ -584,229 +584,229 @@
 2023-04-03T23:15:33.5840940Z ========================== Starting Command Output ===========================
 2023-04-03T23:15:33.6070380Z ##[command]"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Unrestricted -Command ". 'D:\a\_temp\258d2baa-d5de-4e39-9416-e0ce46651867.ps1'"
 2023-04-03T23:15:33.8849099Z ---------------------------------------------------------
-2023-04-03T23:15:33.9368845Z 
-2023-04-03T23:15:33.9373695Z Name                           Value                                                                                   
-2023-04-03T23:15:33.9375248Z ----                           -----                                                                                   
-2023-04-03T23:15:33.9376647Z agent.jobstatus                Succeeded                                                                               
-2023-04-03T23:15:33.9381211Z AGENT_BUILDDIRECTORY           D:\a\1                                                                                  
-2023-04-03T23:15:33.9384718Z AGENT_CLOUDID                  b8ea65ed-2da8-45c0-8b65-f0e7cfad3b8f                                                    
-2023-04-03T23:15:33.9395800Z AGENT_DISABLELOGPLUGIN_TEST... true                                                                                    
-2023-04-03T23:15:33.9406679Z AGENT_DISABLELOGPLUGIN_TEST... false                                                                                   
-2023-04-03T23:15:33.9409865Z AGENT_HOMEDIRECTORY            C:\agents\3.218.0                                                                       
-2023-04-03T23:15:33.9413096Z AGENT_ID                       161                                                                                     
-2023-04-03T23:15:33.9416361Z AGENT_ISSELFHOSTED             0                                                                                       
-2023-04-03T23:15:33.9419575Z AGENT_JOBNAME                  Windows 2019                                                                            
-2023-04-03T23:15:33.9422790Z AGENT_JOBSTATUS                Succeeded                                                                               
-2023-04-03T23:15:33.9425997Z AGENT_LOGTOBLOBSTORAGESERVICE  true                                                                                    
-2023-04-03T23:15:33.9429192Z AGENT_MACHINENAME              fv-az200-655                                                                            
-2023-04-03T23:15:33.9432430Z AGENT_NAME                     Azure Pipelines 3                                                                       
-2023-04-03T23:15:33.9435715Z AGENT_OS                       Windows_NT                                                                              
-2023-04-03T23:15:33.9438870Z AGENT_OSARCHITECTURE           X64                                                                                     
-2023-04-03T23:15:33.9442096Z AGENT_READONLYVARIABLES        true                                                                                    
-2023-04-03T23:15:33.9445323Z AGENT_RETAINDEFAULTENCODING    false                                                                                   
-2023-04-03T23:15:33.9451619Z AGENT_ROOTDIRECTORY            D:\a                                                                                    
-2023-04-03T23:15:33.9456799Z AGENT_SERVEROMDIRECTORY        C:\agents\3.218.0\externals\vstsom                                                      
-2023-04-03T23:15:33.9466731Z AGENT_TASKRESTRICTIONSENFOR... Enabled                                                                                 
-2023-04-03T23:15:33.9470494Z AGENT_TEMPDIRECTORY            D:\a\_temp                                                                              
-2023-04-03T23:15:33.9473846Z AGENT_TOOLSDIRECTORY           C:\hostedtoolcache\windows                                                              
-2023-04-03T23:15:33.9481894Z AGENT_UPLOADBUILDARTIFACTST... true                                                                                    
-2023-04-03T23:15:33.9494982Z AGENT_UPLOADTIMELINEATTACHM... true                                                                                    
-2023-04-03T23:15:33.9499056Z AGENT_USEWORKSPACEID           true                                                                                    
-2023-04-03T23:15:33.9502272Z AGENT_VERSION                  3.218.0                                                                                 
-2023-04-03T23:15:33.9505433Z AGENT_WORKFOLDER               D:\a                                                                                    
-2023-04-03T23:15:33.9508646Z ALLUSERSPROFILE                C:\ProgramData                                                                          
-2023-04-03T23:15:33.9511809Z ANDROID_HOME                   C:\Android\android-sdk                                                                  
-2023-04-03T23:15:33.9514987Z ANDROID_NDK                    C:\Android\android-sdk\ndk\25.2.9519653                                                 
-2023-04-03T23:15:33.9518212Z ANDROID_NDK_HOME               C:\Android\android-sdk\ndk\25.2.9519653                                                 
-2023-04-03T23:15:33.9521409Z ANDROID_NDK_LATEST_HOME        C:\Android\android-sdk\ndk\25.2.9519653                                                 
-2023-04-03T23:15:33.9524539Z ANDROID_NDK_ROOT               C:\Android\android-sdk\ndk\25.2.9519653                                                 
-2023-04-03T23:15:33.9527769Z ANDROID_SDK_ROOT               C:\Android\android-sdk                                                                  
-2023-04-03T23:15:33.9530981Z ANT_HOME                       C:\ProgramData\chocolatey\lib\ant\tools\apache-ant-1.10.13                              
-2023-04-03T23:15:33.9534219Z APPDATA                        C:\Users\VssAdministrator\AppData\Roaming                                               
-2023-04-03T23:15:33.9537446Z ARCH                           x86_64                                                                                  
-2023-04-03T23:15:33.9540697Z AZURE_EXTENSION_DIR            C:\Program Files\Common Files\AzureCliExtensionDirectory                                
-2023-04-03T23:15:33.9543926Z AZURE_HTTP_USER_AGENT          VSTS_56e4da31-e2d8-472b-be22-766278080a34_build_2_0                                     
-2023-04-03T23:15:33.9547169Z BITS                           64                                                                                      
-2023-04-03T23:15:33.9550425Z BUILD_ARTIFACTSTAGINGDIRECTORY D:\a\1\a                                                                                
-2023-04-03T23:15:33.9553606Z BUILD_BINARIESDIRECTORY        D:\a\1\b                                                                                
-2023-04-03T23:15:33.9556893Z BUILD_BUILDID                  389                                                                                     
-2023-04-03T23:15:33.9560184Z BUILD_BUILDNUMBER              20230403.1                                                                              
-2023-04-03T23:15:33.9564127Z BUILD_BUILDURI                 vstfs:///Build/Build/389                                                                
-2023-04-03T23:15:33.9566735Z BUILD_CONTAINERID              7451884                                                                                 
-2023-04-03T23:15:33.9570586Z BUILD_DEFINITIONFOLDERPATH     \                                                                                       
-2023-04-03T23:15:33.9573904Z BUILD_DEFINITIONNAME           JohnTheRipper                                                                           
-2023-04-03T23:15:33.9577170Z BUILD_DEFINITIONVERSION        3                                                                                       
-2023-04-03T23:15:33.9580380Z BUILD_FOLDER                   D:\a\1\JtR\src                                                                          
-2023-04-03T23:15:33.9583592Z BUILD_QUEUEDBY                 Microsoft.VisualStudio.Services.TFS                                                     
-2023-04-03T23:15:33.9587022Z BUILD_QUEUEDBYID               00000002-0000-8888-8000-000000000000                                                    
-2023-04-03T23:15:33.9590246Z BUILD_REASON                   IndividualCI                                                                            
-2023-04-03T23:15:33.9593489Z BUILD_REPOSITORY_CLEAN         False                                                                                   
-2023-04-03T23:15:33.9604888Z BUILD_REPOSITORY_GIT_SUBMOD... False                                                                                   
-2023-04-03T23:15:33.9608234Z BUILD_REPOSITORY_ID            claudioandre-br/JohnTheRipper                                                           
-2023-04-03T23:15:33.9611467Z BUILD_REPOSITORY_LOCALPATH     D:\a\1\JtR                                                                              
-2023-04-03T23:15:33.9614751Z BUILD_REPOSITORY_NAME          claudioandre-br/JohnTheRipper                                                           
-2023-04-03T23:15:33.9618041Z BUILD_REPOSITORY_PROVIDER      GitHub                                                                                  
-2023-04-03T23:15:33.9621268Z BUILD_REPOSITORY_URI           https://github.com/claudioandre-br/JohnTheRipper                                        
-2023-04-03T23:15:33.9624957Z BUILD_REQUESTEDFOR             Claudio André                                                                           
-2023-04-03T23:15:33.9628332Z BUILD_REQUESTEDFOREMAIL        claudioandre.br@gmail.com                                                               
-2023-04-03T23:15:33.9631697Z BUILD_REQUESTEDFORID           2c10767e-ca97-6ea8-a786-e3577a75b18f                                                    
-2023-04-03T23:15:33.9634936Z BUILD_SOURCEBRANCH             refs/heads/bleeding-jumbo                                                               
-2023-04-03T23:15:33.9638190Z BUILD_SOURCEBRANCHNAME         bleeding-jumbo                                                                          
-2023-04-03T23:15:33.9641991Z BUILD_SOURCESDIRECTORY         D:\a\1\JtR                                                                              
-2023-04-03T23:15:33.9645202Z BUILD_SOURCEVERSION            88dec64caddf35042f2303bb0a7d044384f4e6a5                                                
-2023-04-03T23:15:33.9648448Z BUILD_SOURCEVERSIONAUTHOR      claudioandre-br                                                                         
-2023-04-03T23:15:33.9651707Z BUILD_SOURCEVERSIONMESSAGE     CI: test and package for Windows seg 03 abr 2023 19:49:19 -03                           
-2023-04-03T23:15:33.9654808Z BUILD_STAGINGDIRECTORY         D:\a\1\a                                                                                
-2023-04-03T23:15:33.9658015Z CABAL_DIR                      C:\cabal                                                                                
-2023-04-03T23:15:33.9661328Z ChocolateyInstall              C:\ProgramData\chocolatey                                                               
-2023-04-03T23:15:33.9664400Z ChromeWebDriver                C:\SeleniumWebDrivers\ChromeDriver                                                      
-2023-04-03T23:15:33.9667619Z COBERTURA_HOME                 C:\cobertura-2.1.1                                                                      
-2023-04-03T23:15:33.9670865Z COMMON_TESTRESULTSDIRECTORY    D:\a\1\TestResults                                                                      
-2023-04-03T23:15:33.9674057Z CommonProgramFiles             C:\Program Files\Common Files                                                           
-2023-04-03T23:15:33.9677128Z CommonProgramFiles(x86)        C:\Program Files (x86)\Common Files                                                     
-2023-04-03T23:15:33.9680297Z CommonProgramW6432             C:\Program Files\Common Files                                                           
-2023-04-03T23:15:33.9683482Z COMPUTERNAME                   fv-az200-655                                                                            
-2023-04-03T23:15:33.9686678Z ComSpec                        C:\Windows\system32\cmd.exe                                                             
-2023-04-03T23:15:33.9689866Z CONDA                          C:\Miniconda                                                                            
-2023-04-03T23:15:33.9693107Z CYGWIN                         install                                                                                 
-2023-04-03T23:15:33.9696347Z CYGWINPATH                     tools\cygwin\bin                                                                        
-2023-04-03T23:15:33.9699569Z DOTNET_MULTILEVEL_LOOKUP       0                                                                                       
-2023-04-03T23:15:33.9702883Z DriverData                     C:\Windows\System32\Drivers\DriverData                                                  
-2023-04-03T23:15:33.9706054Z EdgeWebDriver                  C:\SeleniumWebDrivers\EdgeDriver                                                        
-2023-04-03T23:15:33.9709225Z GCM_INTERACTIVE                Never                                                                                   
-2023-04-03T23:15:33.9712490Z GeckoWebDriver                 C:\SeleniumWebDrivers\GeckoDriver                                                       
-2023-04-03T23:15:33.9715735Z GHCUP_INSTALL_BASE_PREFIX      C:\                                                                                     
-2023-04-03T23:15:33.9718995Z GHCUP_MSYS2                    C:\msys64                                                                               
-2023-04-03T23:15:33.9722272Z GIT_TERMINAL_PROMPT            0                                                                                       
-2023-04-03T23:15:33.9725428Z GOROOT_1_17_X64                C:\hostedtoolcache\windows\go\1.17.13\x64                                               
-2023-04-03T23:15:33.9965682Z GOROOT_1_18_X64                C:\hostedtoolcache\windows\go\1.18.10\x64                                               
-2023-04-03T23:15:33.9968797Z GOROOT_1_19_X64                C:\hostedtoolcache\windows\go\1.19.7\x64                                                
-2023-04-03T23:15:33.9972646Z GOROOT_1_20_X64                C:\hostedtoolcache\windows\go\1.20.2\x64                                                
-2023-04-03T23:15:33.9975792Z GRADLE_HOME                    C:\ProgramData\chocolatey\lib\gradle\tools\gradle-7.6                                   
-2023-04-03T23:15:33.9978838Z HOMEDRIVE                      C:                                                                                      
-2023-04-03T23:15:33.9981894Z HOMEPATH                       \Users\VssAdministrator                                                                 
-2023-04-03T23:15:33.9984988Z IEWebDriver                    C:\SeleniumWebDrivers\IEDriver                                                          
-2023-04-03T23:15:33.9988218Z ImageOS                        win19                                                                                   
-2023-04-03T23:15:33.9991169Z ImageVersion                   20230326.1                                                                              
-2023-04-03T23:15:33.9994286Z JAVA_HOME                      C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\8.0.362-9\x64                       
-2023-04-03T23:15:33.9997337Z JAVA_HOME_11_X64               C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\11.0.18-10\x64                      
-2023-04-03T23:15:34.0000393Z JAVA_HOME_13_X64               C:\hostedtoolcache\windows\Java_Adopt_jdk\13.0.2-8.1\x64                                
-2023-04-03T23:15:34.0003480Z JAVA_HOME_17_X64               C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.6-10\x64                       
-2023-04-03T23:15:34.0006472Z JAVA_HOME_8_X64                C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\8.0.362-9\x64                       
-2023-04-03T23:15:34.0009397Z JTR_FOLDER                     D:\a\1\JtR                                                                              
-2023-04-03T23:15:34.0012434Z LOCALAPPDATA                   C:\Users\VssAdministrator\AppData\Local                                                 
-2023-04-03T23:15:34.0015482Z LOGONSERVER                    \\fv-az200-655                                                                          
-2023-04-03T23:15:34.0018598Z M2                             C:\ProgramData\chocolatey\lib\maven\apache-maven-3.8.7\bin                              
-2023-04-03T23:15:34.0021611Z M2_REPO                        C:\ProgramData\m2                                                                       
-2023-04-03T23:15:34.0024581Z MAVEN_OPTS                     -Xms256m                                                                                
-2023-04-03T23:15:34.0027616Z MSDEPLOY_HTTP_USER_AGENT       VSTS_56e4da31-e2d8-472b-be22-766278080a34_build_2_0                                     
-2023-04-03T23:15:34.0030560Z npm_config_prefix              C:\npm\prefix                                                                           
-2023-04-03T23:15:34.0033548Z NUMBER_OF_PROCESSORS           2                                                                                       
-2023-04-03T23:15:34.0036526Z OS                             Windows_NT                                                                              
+2023-04-03T23:15:33.9368845Z
+2023-04-03T23:15:33.9373695Z Name                           Value
+2023-04-03T23:15:33.9375248Z ----                           -----
+2023-04-03T23:15:33.9376647Z agent.jobstatus                Succeeded
+2023-04-03T23:15:33.9381211Z AGENT_BUILDDIRECTORY           D:\a\1
+2023-04-03T23:15:33.9384718Z AGENT_CLOUDID                  b8ea65ed-2da8-45c0-8b65-f0e7cfad3b8f
+2023-04-03T23:15:33.9395800Z AGENT_DISABLELOGPLUGIN_TEST... true
+2023-04-03T23:15:33.9406679Z AGENT_DISABLELOGPLUGIN_TEST... false
+2023-04-03T23:15:33.9409865Z AGENT_HOMEDIRECTORY            C:\agents\3.218.0
+2023-04-03T23:15:33.9413096Z AGENT_ID                       161
+2023-04-03T23:15:33.9416361Z AGENT_ISSELFHOSTED             0
+2023-04-03T23:15:33.9419575Z AGENT_JOBNAME                  Windows 2019
+2023-04-03T23:15:33.9422790Z AGENT_JOBSTATUS                Succeeded
+2023-04-03T23:15:33.9425997Z AGENT_LOGTOBLOBSTORAGESERVICE  true
+2023-04-03T23:15:33.9429192Z AGENT_MACHINENAME              fv-az200-655
+2023-04-03T23:15:33.9432430Z AGENT_NAME                     Azure Pipelines 3
+2023-04-03T23:15:33.9435715Z AGENT_OS                       Windows_NT
+2023-04-03T23:15:33.9438870Z AGENT_OSARCHITECTURE           X64
+2023-04-03T23:15:33.9442096Z AGENT_READONLYVARIABLES        true
+2023-04-03T23:15:33.9445323Z AGENT_RETAINDEFAULTENCODING    false
+2023-04-03T23:15:33.9451619Z AGENT_ROOTDIRECTORY            D:\a
+2023-04-03T23:15:33.9456799Z AGENT_SERVEROMDIRECTORY        C:\agents\3.218.0\externals\vstsom
+2023-04-03T23:15:33.9466731Z AGENT_TASKRESTRICTIONSENFOR... Enabled
+2023-04-03T23:15:33.9470494Z AGENT_TEMPDIRECTORY            D:\a\_temp
+2023-04-03T23:15:33.9473846Z AGENT_TOOLSDIRECTORY           C:\hostedtoolcache\windows
+2023-04-03T23:15:33.9481894Z AGENT_UPLOADBUILDARTIFACTST... true
+2023-04-03T23:15:33.9494982Z AGENT_UPLOADTIMELINEATTACHM... true
+2023-04-03T23:15:33.9499056Z AGENT_USEWORKSPACEID           true
+2023-04-03T23:15:33.9502272Z AGENT_VERSION                  3.218.0
+2023-04-03T23:15:33.9505433Z AGENT_WORKFOLDER               D:\a
+2023-04-03T23:15:33.9508646Z ALLUSERSPROFILE                C:\ProgramData
+2023-04-03T23:15:33.9511809Z ANDROID_HOME                   C:\Android\android-sdk
+2023-04-03T23:15:33.9514987Z ANDROID_NDK                    C:\Android\android-sdk\ndk\25.2.9519653
+2023-04-03T23:15:33.9518212Z ANDROID_NDK_HOME               C:\Android\android-sdk\ndk\25.2.9519653
+2023-04-03T23:15:33.9521409Z ANDROID_NDK_LATEST_HOME        C:\Android\android-sdk\ndk\25.2.9519653
+2023-04-03T23:15:33.9524539Z ANDROID_NDK_ROOT               C:\Android\android-sdk\ndk\25.2.9519653
+2023-04-03T23:15:33.9527769Z ANDROID_SDK_ROOT               C:\Android\android-sdk
+2023-04-03T23:15:33.9530981Z ANT_HOME                       C:\ProgramData\chocolatey\lib\ant\tools\apache-ant-1.10.13
+2023-04-03T23:15:33.9534219Z APPDATA                        C:\Users\VssAdministrator\AppData\Roaming
+2023-04-03T23:15:33.9537446Z ARCH                           x86_64
+2023-04-03T23:15:33.9540697Z AZURE_EXTENSION_DIR            C:\Program Files\Common Files\AzureCliExtensionDirectory
+2023-04-03T23:15:33.9543926Z AZURE_HTTP_USER_AGENT          VSTS_56e4da31-e2d8-472b-be22-766278080a34_build_2_0
+2023-04-03T23:15:33.9547169Z BITS                           64
+2023-04-03T23:15:33.9550425Z BUILD_ARTIFACTSTAGINGDIRECTORY D:\a\1\a
+2023-04-03T23:15:33.9553606Z BUILD_BINARIESDIRECTORY        D:\a\1\b
+2023-04-03T23:15:33.9556893Z BUILD_BUILDID                  389
+2023-04-03T23:15:33.9560184Z BUILD_BUILDNUMBER              20230403.1
+2023-04-03T23:15:33.9564127Z BUILD_BUILDURI                 vstfs:///Build/Build/389
+2023-04-03T23:15:33.9566735Z BUILD_CONTAINERID              7451884
+2023-04-03T23:15:33.9570586Z BUILD_DEFINITIONFOLDERPATH     \
+2023-04-03T23:15:33.9573904Z BUILD_DEFINITIONNAME           JohnTheRipper
+2023-04-03T23:15:33.9577170Z BUILD_DEFINITIONVERSION        3
+2023-04-03T23:15:33.9580380Z BUILD_FOLDER                   D:\a\1\JtR\src
+2023-04-03T23:15:33.9583592Z BUILD_QUEUEDBY                 Microsoft.VisualStudio.Services.TFS
+2023-04-03T23:15:33.9587022Z BUILD_QUEUEDBYID               00000002-0000-8888-8000-000000000000
+2023-04-03T23:15:33.9590246Z BUILD_REASON                   IndividualCI
+2023-04-03T23:15:33.9593489Z BUILD_REPOSITORY_CLEAN         False
+2023-04-03T23:15:33.9604888Z BUILD_REPOSITORY_GIT_SUBMOD... False
+2023-04-03T23:15:33.9608234Z BUILD_REPOSITORY_ID            claudioandre-br/JohnTheRipper
+2023-04-03T23:15:33.9611467Z BUILD_REPOSITORY_LOCALPATH     D:\a\1\JtR
+2023-04-03T23:15:33.9614751Z BUILD_REPOSITORY_NAME          claudioandre-br/JohnTheRipper
+2023-04-03T23:15:33.9618041Z BUILD_REPOSITORY_PROVIDER      GitHub
+2023-04-03T23:15:33.9621268Z BUILD_REPOSITORY_URI           https://github.com/claudioandre-br/JohnTheRipper
+2023-04-03T23:15:33.9624957Z BUILD_REQUESTEDFOR             Claudio André
+2023-04-03T23:15:33.9628332Z BUILD_REQUESTEDFOREMAIL        claudioandre.br@gmail.com
+2023-04-03T23:15:33.9631697Z BUILD_REQUESTEDFORID           2c10767e-ca97-6ea8-a786-e3577a75b18f
+2023-04-03T23:15:33.9634936Z BUILD_SOURCEBRANCH             refs/heads/bleeding-jumbo
+2023-04-03T23:15:33.9638190Z BUILD_SOURCEBRANCHNAME         bleeding-jumbo
+2023-04-03T23:15:33.9641991Z BUILD_SOURCESDIRECTORY         D:\a\1\JtR
+2023-04-03T23:15:33.9645202Z BUILD_SOURCEVERSION            88dec64caddf35042f2303bb0a7d044384f4e6a5
+2023-04-03T23:15:33.9648448Z BUILD_SOURCEVERSIONAUTHOR      claudioandre-br
+2023-04-03T23:15:33.9651707Z BUILD_SOURCEVERSIONMESSAGE     CI: test and package for Windows seg 03 abr 2023 19:49:19 -03
+2023-04-03T23:15:33.9654808Z BUILD_STAGINGDIRECTORY         D:\a\1\a
+2023-04-03T23:15:33.9658015Z CABAL_DIR                      C:\cabal
+2023-04-03T23:15:33.9661328Z ChocolateyInstall              C:\ProgramData\chocolatey
+2023-04-03T23:15:33.9664400Z ChromeWebDriver                C:\SeleniumWebDrivers\ChromeDriver
+2023-04-03T23:15:33.9667619Z COBERTURA_HOME                 C:\cobertura-2.1.1
+2023-04-03T23:15:33.9670865Z COMMON_TESTRESULTSDIRECTORY    D:\a\1\TestResults
+2023-04-03T23:15:33.9674057Z CommonProgramFiles             C:\Program Files\Common Files
+2023-04-03T23:15:33.9677128Z CommonProgramFiles(x86)        C:\Program Files (x86)\Common Files
+2023-04-03T23:15:33.9680297Z CommonProgramW6432             C:\Program Files\Common Files
+2023-04-03T23:15:33.9683482Z COMPUTERNAME                   fv-az200-655
+2023-04-03T23:15:33.9686678Z ComSpec                        C:\Windows\system32\cmd.exe
+2023-04-03T23:15:33.9689866Z CONDA                          C:\Miniconda
+2023-04-03T23:15:33.9693107Z CYGWIN                         install
+2023-04-03T23:15:33.9696347Z CYGWINPATH                     tools\cygwin\bin
+2023-04-03T23:15:33.9699569Z DOTNET_MULTILEVEL_LOOKUP       0
+2023-04-03T23:15:33.9702883Z DriverData                     C:\Windows\System32\Drivers\DriverData
+2023-04-03T23:15:33.9706054Z EdgeWebDriver                  C:\SeleniumWebDrivers\EdgeDriver
+2023-04-03T23:15:33.9709225Z GCM_INTERACTIVE                Never
+2023-04-03T23:15:33.9712490Z GeckoWebDriver                 C:\SeleniumWebDrivers\GeckoDriver
+2023-04-03T23:15:33.9715735Z GHCUP_INSTALL_BASE_PREFIX      C:\
+2023-04-03T23:15:33.9718995Z GHCUP_MSYS2                    C:\msys64
+2023-04-03T23:15:33.9722272Z GIT_TERMINAL_PROMPT            0
+2023-04-03T23:15:33.9725428Z GOROOT_1_17_X64                C:\hostedtoolcache\windows\go\1.17.13\x64
+2023-04-03T23:15:33.9965682Z GOROOT_1_18_X64                C:\hostedtoolcache\windows\go\1.18.10\x64
+2023-04-03T23:15:33.9968797Z GOROOT_1_19_X64                C:\hostedtoolcache\windows\go\1.19.7\x64
+2023-04-03T23:15:33.9972646Z GOROOT_1_20_X64                C:\hostedtoolcache\windows\go\1.20.2\x64
+2023-04-03T23:15:33.9975792Z GRADLE_HOME                    C:\ProgramData\chocolatey\lib\gradle\tools\gradle-7.6
+2023-04-03T23:15:33.9978838Z HOMEDRIVE                      C:
+2023-04-03T23:15:33.9981894Z HOMEPATH                       \Users\VssAdministrator
+2023-04-03T23:15:33.9984988Z IEWebDriver                    C:\SeleniumWebDrivers\IEDriver
+2023-04-03T23:15:33.9988218Z ImageOS                        win19
+2023-04-03T23:15:33.9991169Z ImageVersion                   20230326.1
+2023-04-03T23:15:33.9994286Z JAVA_HOME                      C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\8.0.362-9\x64
+2023-04-03T23:15:33.9997337Z JAVA_HOME_11_X64               C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\11.0.18-10\x64
+2023-04-03T23:15:34.0000393Z JAVA_HOME_13_X64               C:\hostedtoolcache\windows\Java_Adopt_jdk\13.0.2-8.1\x64
+2023-04-03T23:15:34.0003480Z JAVA_HOME_17_X64               C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\17.0.6-10\x64
+2023-04-03T23:15:34.0006472Z JAVA_HOME_8_X64                C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\8.0.362-9\x64
+2023-04-03T23:15:34.0009397Z JTR_FOLDER                     D:\a\1\JtR
+2023-04-03T23:15:34.0012434Z LOCALAPPDATA                   C:\Users\VssAdministrator\AppData\Local
+2023-04-03T23:15:34.0015482Z LOGONSERVER                    \\fv-az200-655
+2023-04-03T23:15:34.0018598Z M2                             C:\ProgramData\chocolatey\lib\maven\apache-maven-3.8.7\bin
+2023-04-03T23:15:34.0021611Z M2_REPO                        C:\ProgramData\m2
+2023-04-03T23:15:34.0024581Z MAVEN_OPTS                     -Xms256m
+2023-04-03T23:15:34.0027616Z MSDEPLOY_HTTP_USER_AGENT       VSTS_56e4da31-e2d8-472b-be22-766278080a34_build_2_0
+2023-04-03T23:15:34.0030560Z npm_config_prefix              C:\npm\prefix
+2023-04-03T23:15:34.0033548Z NUMBER_OF_PROCESSORS           2
+2023-04-03T23:15:34.0036526Z OS                             Windows_NT
 2023-04-03T23:15:34.0063863Z Path                           C:\agents\3.218.0\externals\git\cmd;C:\agents\3.218.0\externals\git\mingw64\bin;C:\Pr...
-2023-04-03T23:15:34.0066932Z PATHEXT                        .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL                              
-2023-04-03T23:15:34.0069862Z PGBIN                          C:\Program Files\PostgreSQL\14\bin                                                      
-2023-04-03T23:15:34.0072794Z PGDATA                         C:\Program Files\PostgreSQL\14\data                                                     
-2023-04-03T23:15:34.0075716Z PGPASSWORD                     root                                                                                    
-2023-04-03T23:15:34.0078692Z PGROOT                         C:\Program Files\PostgreSQL\14                                                          
-2023-04-03T23:15:34.0081654Z PGUSER                         postgres                                                                                
-2023-04-03T23:15:34.0084597Z PHPROOT                        c:\tools\php                                                                            
-2023-04-03T23:15:34.0087546Z PIPELINE_WORKSPACE             D:\a\1                                                                                  
-2023-04-03T23:15:34.0090470Z PIPX_BIN_DIR                   C:\Program Files (x86)\pipx_bin                                                         
-2023-04-03T23:15:34.0094028Z PIPX_HOME                      C:\Program Files (x86)\pipx                                                             
-2023-04-03T23:15:34.0103900Z POWERSHELL_DISTRIBUTION_CHA... Azure-DevOps-win19                                                                      
-2023-04-03T23:15:34.0106915Z POWERSHELL_UPDATECHECK         Off                                                                                     
-2023-04-03T23:15:34.0109826Z PROCESSOR_ARCHITECTURE         AMD64                                                                                   
-2023-04-03T23:15:34.0112632Z PROCESSOR_IDENTIFIER           Intel64 Family 6 Model 106 Stepping 6, GenuineIntel                                     
-2023-04-03T23:15:34.0115840Z PROCESSOR_LEVEL                6                                                                                       
-2023-04-03T23:15:34.0118845Z PROCESSOR_REVISION             6a06                                                                                    
-2023-04-03T23:15:34.0121835Z ProgramData                    C:\ProgramData                                                                          
-2023-04-03T23:15:34.0124834Z ProgramFiles                   C:\Program Files                                                                        
-2023-04-03T23:15:34.0127771Z ProgramFiles(x86)              C:\Program Files (x86)                                                                  
-2023-04-03T23:15:34.0130706Z ProgramW6432                   C:\Program Files                                                                        
-2023-04-03T23:15:34.0133694Z PROJ_FOLDER                    D:\a\1                                                                                  
-2023-04-03T23:15:34.0136699Z PSExecutionPolicyPreference    Unrestricted                                                                            
+2023-04-03T23:15:34.0066932Z PATHEXT                        .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+2023-04-03T23:15:34.0069862Z PGBIN                          C:\Program Files\PostgreSQL\14\bin
+2023-04-03T23:15:34.0072794Z PGDATA                         C:\Program Files\PostgreSQL\14\data
+2023-04-03T23:15:34.0075716Z PGPASSWORD                     root
+2023-04-03T23:15:34.0078692Z PGROOT                         C:\Program Files\PostgreSQL\14
+2023-04-03T23:15:34.0081654Z PGUSER                         postgres
+2023-04-03T23:15:34.0084597Z PHPROOT                        c:\tools\php
+2023-04-03T23:15:34.0087546Z PIPELINE_WORKSPACE             D:\a\1
+2023-04-03T23:15:34.0090470Z PIPX_BIN_DIR                   C:\Program Files (x86)\pipx_bin
+2023-04-03T23:15:34.0094028Z PIPX_HOME                      C:\Program Files (x86)\pipx
+2023-04-03T23:15:34.0103900Z POWERSHELL_DISTRIBUTION_CHA... Azure-DevOps-win19
+2023-04-03T23:15:34.0106915Z POWERSHELL_UPDATECHECK         Off
+2023-04-03T23:15:34.0109826Z PROCESSOR_ARCHITECTURE         AMD64
+2023-04-03T23:15:34.0112632Z PROCESSOR_IDENTIFIER           Intel64 Family 6 Model 106 Stepping 6, GenuineIntel
+2023-04-03T23:15:34.0115840Z PROCESSOR_LEVEL                6
+2023-04-03T23:15:34.0118845Z PROCESSOR_REVISION             6a06
+2023-04-03T23:15:34.0121835Z ProgramData                    C:\ProgramData
+2023-04-03T23:15:34.0124834Z ProgramFiles                   C:\Program Files
+2023-04-03T23:15:34.0127771Z ProgramFiles(x86)              C:\Program Files (x86)
+2023-04-03T23:15:34.0130706Z ProgramW6432                   C:\Program Files
+2023-04-03T23:15:34.0133694Z PROJ_FOLDER                    D:\a\1
+2023-04-03T23:15:34.0136699Z PSExecutionPolicyPreference    Unrestricted
 2023-04-03T23:15:34.0164073Z PSModulePath                   C:\Users\VssAdministrator\Documents\WindowsPowerShell\Modules;C:\\Modules\azurerm_2.1...
-2023-04-03T23:15:34.0167051Z PUBLIC                         C:\Users\Public                                                                         
-2023-04-03T23:15:34.0170009Z RESOURCES_TRIGGERINGALIAS                                                                                              
-2023-04-03T23:15:34.0172972Z RESOURCES_TRIGGERINGCATEGORY                                                                                           
-2023-04-03T23:15:34.0175953Z RTOOLS40_HOME                  C:\rtools40                                                                             
-2023-04-03T23:15:34.0178969Z RUNNER_TOOLSDIRECTORY          C:\hostedtoolcache\windows                                                              
-2023-04-03T23:15:34.0181932Z SBT_HOME                       C:\Program Files (x86)\sbt\                                                             
-2023-04-03T23:15:34.0184916Z SELENIUM_JAR_PATH              C:\selenium\selenium-server.jar                                                         
-2023-04-03T23:15:34.0187851Z STATS_EXT                      true                                                                                    
+2023-04-03T23:15:34.0167051Z PUBLIC                         C:\Users\Public
+2023-04-03T23:15:34.0170009Z RESOURCES_TRIGGERINGALIAS
+2023-04-03T23:15:34.0172972Z RESOURCES_TRIGGERINGCATEGORY
+2023-04-03T23:15:34.0175953Z RTOOLS40_HOME                  C:\rtools40
+2023-04-03T23:15:34.0178969Z RUNNER_TOOLSDIRECTORY          C:\hostedtoolcache\windows
+2023-04-03T23:15:34.0181932Z SBT_HOME                       C:\Program Files (x86)\sbt\
+2023-04-03T23:15:34.0184916Z SELENIUM_JAR_PATH              C:\selenium\selenium-server.jar
+2023-04-03T23:15:34.0187851Z STATS_EXT                      true
 2023-04-03T23:15:34.0215008Z STATS_EXTP                     https://provjobdsettingscdn.blob.core.windows.net/settings/provjobdsettings-0.5.137+2...
-2023-04-03T23:15:34.0217926Z STATS_NM                       true                                                                                    
-2023-04-03T23:15:34.0220829Z STATS_PFS                      true                                                                                    
-2023-04-03T23:15:34.0223750Z STATS_RDCL                     true                                                                                    
-2023-04-03T23:15:34.0226667Z SYSTEM                         build                                                                                   
-2023-04-03T23:15:34.0229113Z SYSTEM_ARTIFACTSDIRECTORY      D:\a\1\a                                                                                
-2023-04-03T23:15:34.0232056Z SYSTEM_COLLECTIONID            56e4da31-e2d8-472b-be22-766278080a34                                                    
-2023-04-03T23:15:34.0234914Z SYSTEM_COLLECTIONURI           https://dev.azure.com/claudioandre-br/                                                  
-2023-04-03T23:15:34.0237797Z SYSTEM_CULTURE                 en-US                                                                                   
-2023-04-03T23:15:34.0240711Z SYSTEM_DEFAULTWORKINGDIRECTORY D:\a\1\JtR                                                                              
-2023-04-03T23:15:34.0243615Z SYSTEM_DEFINITIONID            2                                                                                       
-2023-04-03T23:15:34.0246546Z SYSTEM_DEFINITIONNAME          JohnTheRipper                                                                           
-2023-04-03T23:15:34.0249488Z SYSTEM_ENABLEACCESSTOKEN       SecretVariable                                                                          
-2023-04-03T23:15:34.0252415Z SYSTEM_HOSTTYPE                build                                                                                   
-2023-04-03T23:15:34.0255371Z SYSTEM_ISAZUREVM               1                                                                                       
-2023-04-03T23:15:34.0258329Z SYSTEM_ISDOCKERCONTAINER       0                                                                                       
-2023-04-03T23:15:34.0261272Z SYSTEM_ISSCHEDULED             False                                                                                   
-2023-04-03T23:15:34.0264171Z SYSTEM_JOBATTEMPT              1                                                                                       
-2023-04-03T23:15:34.0267089Z SYSTEM_JOBDISPLAYNAME          Windows 2019                                                                            
-2023-04-03T23:15:34.0270387Z SYSTEM_JOBID                   3e89176a-3c36-5b0b-fef5-ea8cae94149b                                                    
-2023-04-03T23:15:34.0273755Z SYSTEM_JOBIDENTIFIER           delivery.Windows_2019.__default                                                         
-2023-04-03T23:15:34.0277595Z SYSTEM_JOBNAME                 __default                                                                               
-2023-04-03T23:15:34.0280633Z SYSTEM_JOBPARALLELISMTAG       Public                                                                                  
-2023-04-03T23:15:34.0283626Z SYSTEM_JOBPOSITIONINPHASE      1                                                                                       
-2023-04-03T23:15:34.0286590Z SYSTEM_JOBTIMEOUT              0                                                                                       
-2023-04-03T23:15:34.0289546Z SYSTEM_PHASEATTEMPT            1                                                                                       
-2023-04-03T23:15:34.0292517Z SYSTEM_PHASEDISPLAYNAME        Windows 2019                                                                            
-2023-04-03T23:15:34.0295451Z SYSTEM_PHASEID                 0881dff7-532c-513b-cc73-e09a0eff4e08                                                    
-2023-04-03T23:15:34.0298397Z SYSTEM_PHASENAME               Windows_2019                                                                            
-2023-04-03T23:15:34.0301406Z SYSTEM_PIPELINESTARTTIME       2023-04-03 20:15:03-03:00                                                               
-2023-04-03T23:15:34.0304336Z SYSTEM_PLANID                  090ce79c-ae06-47fb-8440-bf2fb5268be5                                                    
-2023-04-03T23:15:34.0307265Z SYSTEM_POSTLINESSPEED          500                                                                                     
-2023-04-03T23:15:34.0310197Z SYSTEM_PULLREQUEST_ISFORK      False                                                                                   
-2023-04-03T23:15:34.0313243Z SYSTEM_SERVERTYPE              Hosted                                                                                  
-2023-04-03T23:15:34.0316128Z SYSTEM_STAGEATTEMPT            1                                                                                       
-2023-04-03T23:15:34.0319113Z SYSTEM_STAGEDISPLAYNAME        Delivery                                                                                
-2023-04-03T23:15:34.0322089Z SYSTEM_STAGEID                 52e5c710-3f09-5ad6-0c38-decbe96b0346                                                    
-2023-04-03T23:15:34.0325536Z SYSTEM_STAGENAME               delivery                                                                                
-2023-04-03T23:15:34.0328558Z SYSTEM_TASKDEFINITIONSURI      https://dev.azure.com/claudioandre-br/                                                  
-2023-04-03T23:15:34.0331534Z SYSTEM_TASKDISPLAYNAME         System Information                                                                      
-2023-04-03T23:15:34.0334539Z SYSTEM_TASKINSTANCEID          e47a60d2-5441-5fb8-da54-88968e8acdd1                                                    
-2023-04-03T23:15:34.0337484Z SYSTEM_TASKINSTANCENAME        PowerShell1                                                                             
-2023-04-03T23:15:34.0348075Z SYSTEM_TEAMFOUNDATIONCOLLEC... https://dev.azure.com/claudioandre-br/                                                  
-2023-04-03T23:15:34.0351160Z SYSTEM_TEAMFOUNDATIONSERVERURI https://dev.azure.com/claudioandre-br/                                                  
-2023-04-03T23:15:34.0354135Z SYSTEM_TEAMPROJECT             JohnTheRipper                                                                           
-2023-04-03T23:15:34.0357142Z SYSTEM_TEAMPROJECTID           40224313-b91e-465d-852b-fc4ea516f33e                                                    
-2023-04-03T23:15:34.0360156Z SYSTEM_TIMELINEID              090ce79c-ae06-47fb-8440-bf2fb5268be5                                                    
-2023-04-03T23:15:34.0363120Z SYSTEM_TOTALJOBSINPHASE        1                                                                                       
-2023-04-03T23:15:34.0366249Z SYSTEM_WORKFOLDER              D:\a                                                                                    
-2023-04-03T23:15:34.0369254Z SystemDrive                    C:                                                                                      
-2023-04-03T23:15:34.0372245Z SystemRoot                     C:\Windows                                                                              
-2023-04-03T23:15:34.0375196Z TASK_DISPLAYNAME               System Information                                                                      
-2023-04-03T23:15:34.0378140Z TASK_SKIPTRANSLATORFORCHECKOUT False                                                                                   
-2023-04-03T23:15:34.0381092Z TEMP                           C:\Users\VSSADM~1\AppData\Local\Temp                                                    
-2023-04-03T23:15:34.0383986Z TEST                           package                                                                                 
-2023-04-03T23:15:34.0386917Z TF_BUILD                       True                                                                                    
-2023-04-03T23:15:34.0389866Z TMP                            C:\Users\VSSADM~1\AppData\Local\Temp                                                    
-2023-04-03T23:15:34.0392769Z USE_MSAL                       true                                                                                    
-2023-04-03T23:15:34.0395751Z USERDOMAIN                     fv-az200-655                                                                            
-2023-04-03T23:15:34.0398682Z USERDOMAIN_ROAMINGPROFILE      fv-az200-655                                                                            
-2023-04-03T23:15:34.0401799Z USERNAME                       VssAdministrator                                                                        
-2023-04-03T23:15:34.0404685Z USERPROFILE                    C:\Users\VssAdministrator                                                               
-2023-04-03T23:15:34.0407657Z VCPKG_INSTALLATION_ROOT        C:\vcpkg                                                                                
-2023-04-03T23:15:34.0410689Z VS140COMNTOOLS                 C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\                      
-2023-04-03T23:15:34.0413656Z VSTS_AGENT_PERFLOG             c:\vsts\perflog                                                                         
-2023-04-03T23:15:34.0416606Z VSTS_PROCESS_LOOKUP_ID         vsts_4cfc80be-a167-4abd-a4e9-6f669121ff45                                               
-2023-04-03T23:15:34.0428034Z VSTSAGENT_CONTINUE_AFTER_CA... true                                                                                    
-2023-04-03T23:15:34.0439253Z VSTSAGENT_DOCKER_ACTION_RET... true                                                                                    
-2023-04-03T23:15:34.0442298Z windir                         C:\Windows                                                                              
-2023-04-03T23:15:34.0445256Z WIX                            C:\Program Files (x86)\WiX Toolset v3.11\                                               
+2023-04-03T23:15:34.0217926Z STATS_NM                       true
+2023-04-03T23:15:34.0220829Z STATS_PFS                      true
+2023-04-03T23:15:34.0223750Z STATS_RDCL                     true
+2023-04-03T23:15:34.0226667Z SYSTEM                         build
+2023-04-03T23:15:34.0229113Z SYSTEM_ARTIFACTSDIRECTORY      D:\a\1\a
+2023-04-03T23:15:34.0232056Z SYSTEM_COLLECTIONID            56e4da31-e2d8-472b-be22-766278080a34
+2023-04-03T23:15:34.0234914Z SYSTEM_COLLECTIONURI           https://dev.azure.com/claudioandre-br/
+2023-04-03T23:15:34.0237797Z SYSTEM_CULTURE                 en-US
+2023-04-03T23:15:34.0240711Z SYSTEM_DEFAULTWORKINGDIRECTORY D:\a\1\JtR
+2023-04-03T23:15:34.0243615Z SYSTEM_DEFINITIONID            2
+2023-04-03T23:15:34.0246546Z SYSTEM_DEFINITIONNAME          JohnTheRipper
+2023-04-03T23:15:34.0249488Z SYSTEM_ENABLEACCESSTOKEN       SecretVariable
+2023-04-03T23:15:34.0252415Z SYSTEM_HOSTTYPE                build
+2023-04-03T23:15:34.0255371Z SYSTEM_ISAZUREVM               1
+2023-04-03T23:15:34.0258329Z SYSTEM_ISDOCKERCONTAINER       0
+2023-04-03T23:15:34.0261272Z SYSTEM_ISSCHEDULED             False
+2023-04-03T23:15:34.0264171Z SYSTEM_JOBATTEMPT              1
+2023-04-03T23:15:34.0267089Z SYSTEM_JOBDISPLAYNAME          Windows 2019
+2023-04-03T23:15:34.0270387Z SYSTEM_JOBID                   3e89176a-3c36-5b0b-fef5-ea8cae94149b
+2023-04-03T23:15:34.0273755Z SYSTEM_JOBIDENTIFIER           delivery.Windows_2019.__default
+2023-04-03T23:15:34.0277595Z SYSTEM_JOBNAME                 __default
+2023-04-03T23:15:34.0280633Z SYSTEM_JOBPARALLELISMTAG       Public
+2023-04-03T23:15:34.0283626Z SYSTEM_JOBPOSITIONINPHASE      1
+2023-04-03T23:15:34.0286590Z SYSTEM_JOBTIMEOUT              0
+2023-04-03T23:15:34.0289546Z SYSTEM_PHASEATTEMPT            1
+2023-04-03T23:15:34.0292517Z SYSTEM_PHASEDISPLAYNAME        Windows 2019
+2023-04-03T23:15:34.0295451Z SYSTEM_PHASEID                 0881dff7-532c-513b-cc73-e09a0eff4e08
+2023-04-03T23:15:34.0298397Z SYSTEM_PHASENAME               Windows_2019
+2023-04-03T23:15:34.0301406Z SYSTEM_PIPELINESTARTTIME       2023-04-03 20:15:03-03:00
+2023-04-03T23:15:34.0304336Z SYSTEM_PLANID                  090ce79c-ae06-47fb-8440-bf2fb5268be5
+2023-04-03T23:15:34.0307265Z SYSTEM_POSTLINESSPEED          500
+2023-04-03T23:15:34.0310197Z SYSTEM_PULLREQUEST_ISFORK      False
+2023-04-03T23:15:34.0313243Z SYSTEM_SERVERTYPE              Hosted
+2023-04-03T23:15:34.0316128Z SYSTEM_STAGEATTEMPT            1
+2023-04-03T23:15:34.0319113Z SYSTEM_STAGEDISPLAYNAME        Delivery
+2023-04-03T23:15:34.0322089Z SYSTEM_STAGEID                 52e5c710-3f09-5ad6-0c38-decbe96b0346
+2023-04-03T23:15:34.0325536Z SYSTEM_STAGENAME               delivery
+2023-04-03T23:15:34.0328558Z SYSTEM_TASKDEFINITIONSURI      https://dev.azure.com/claudioandre-br/
+2023-04-03T23:15:34.0331534Z SYSTEM_TASKDISPLAYNAME         System Information
+2023-04-03T23:15:34.0334539Z SYSTEM_TASKINSTANCEID          e47a60d2-5441-5fb8-da54-88968e8acdd1
+2023-04-03T23:15:34.0337484Z SYSTEM_TASKINSTANCENAME        PowerShell1
+2023-04-03T23:15:34.0348075Z SYSTEM_TEAMFOUNDATIONCOLLEC... https://dev.azure.com/claudioandre-br/
+2023-04-03T23:15:34.0351160Z SYSTEM_TEAMFOUNDATIONSERVERURI https://dev.azure.com/claudioandre-br/
+2023-04-03T23:15:34.0354135Z SYSTEM_TEAMPROJECT             JohnTheRipper
+2023-04-03T23:15:34.0357142Z SYSTEM_TEAMPROJECTID           40224313-b91e-465d-852b-fc4ea516f33e
+2023-04-03T23:15:34.0360156Z SYSTEM_TIMELINEID              090ce79c-ae06-47fb-8440-bf2fb5268be5
+2023-04-03T23:15:34.0363120Z SYSTEM_TOTALJOBSINPHASE        1
+2023-04-03T23:15:34.0366249Z SYSTEM_WORKFOLDER              D:\a
+2023-04-03T23:15:34.0369254Z SystemDrive                    C:
+2023-04-03T23:15:34.0372245Z SystemRoot                     C:\Windows
+2023-04-03T23:15:34.0375196Z TASK_DISPLAYNAME               System Information
+2023-04-03T23:15:34.0378140Z TASK_SKIPTRANSLATORFORCHECKOUT False
+2023-04-03T23:15:34.0381092Z TEMP                           C:\Users\VSSADM~1\AppData\Local\Temp
+2023-04-03T23:15:34.0383986Z TEST                           package
+2023-04-03T23:15:34.0386917Z TF_BUILD                       True
+2023-04-03T23:15:34.0389866Z TMP                            C:\Users\VSSADM~1\AppData\Local\Temp
+2023-04-03T23:15:34.0392769Z USE_MSAL                       true
+2023-04-03T23:15:34.0395751Z USERDOMAIN                     fv-az200-655
+2023-04-03T23:15:34.0398682Z USERDOMAIN_ROAMINGPROFILE      fv-az200-655
+2023-04-03T23:15:34.0401799Z USERNAME                       VssAdministrator
+2023-04-03T23:15:34.0404685Z USERPROFILE                    C:\Users\VssAdministrator
+2023-04-03T23:15:34.0407657Z VCPKG_INSTALLATION_ROOT        C:\vcpkg
+2023-04-03T23:15:34.0410689Z VS140COMNTOOLS                 C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\
+2023-04-03T23:15:34.0413656Z VSTS_AGENT_PERFLOG             c:\vsts\perflog
+2023-04-03T23:15:34.0416606Z VSTS_PROCESS_LOOKUP_ID         vsts_4cfc80be-a167-4abd-a4e9-6f669121ff45
+2023-04-03T23:15:34.0428034Z VSTSAGENT_CONTINUE_AFTER_CA... true
+2023-04-03T23:15:34.0439253Z VSTSAGENT_DOCKER_ACTION_RET... true
+2023-04-03T23:15:34.0442298Z windir                         C:\Windows
+2023-04-03T23:15:34.0445256Z WIX                            C:\Program Files (x86)\WiX Toolset v3.11\
 2023-04-03T23:15:34.0454325Z ---------------------------------------------------------
-2023-04-03T23:15:38.9998475Z 
+2023-04-03T23:15:38.9998475Z
 2023-04-03T23:15:39.0000632Z Host Name:                 fv-az200-655
 2023-04-03T23:15:39.0001713Z OS Name:                   Microsoft Windows Server 2019 Datacenter
 2023-04-03T23:15:39.0003055Z OS Version:                10.0.17763 N/A Build 17763
@@ -861,8 +861,8 @@
 2023-04-03T23:15:39.0077984Z                                  [02]: fe80::8f8d:1937:7e88:d908
 2023-04-03T23:15:39.0079406Z Hyper-V Requirements:      A hypervisor has been detected. Features required for Hyper-V will not be displayed.
 2023-04-03T23:15:39.0121220Z ---------------------------------------------------------
-2023-04-03T23:15:39.0200196Z 
-2023-04-03T23:15:39.0200719Z 
+2023-04-03T23:15:39.0200196Z
+2023-04-03T23:15:39.0200719Z
 2023-04-03T23:15:39.0598444Z ##[section]Finishing: System Information
 2023-04-03T23:15:40.2823898Z ##[section]Starting: Build JtR
 2023-04-03T23:15:40.2936785Z ==============================================================================
@@ -878,13 +878,13 @@
 2023-04-03T23:15:54.1015782Z 15b3b7c
 2023-04-03T23:15:54.1779947Z --------------------------------
 2023-04-03T23:15:54.1892555Z --------------------------------------------------------
-2023-04-03T23:15:54.1908077Z              =====  Installing CygWin  =====            
+2023-04-03T23:15:54.1908077Z              =====  Installing CygWin  =====
 2023-04-03T23:15:54.1915438Z --------------------------------------------------------
 2023-04-03T23:15:56.9240510Z Chocolatey v1.3.1
 2023-04-03T23:15:57.3221244Z Installing the following packages:
 2023-04-03T23:15:57.3229896Z cygwin;cyg-get
 2023-04-03T23:15:57.3236904Z By installing, you accept licenses for the packages.
-2023-04-03T23:16:00.1746361Z 
+2023-04-03T23:16:00.1746361Z
 2023-04-03T23:16:00.1747648Z Progress: Downloading Cygwin 3.4.6... 0%
 2023-04-03T23:16:00.1748552Z Progress: Downloading Cygwin 3.4.6... 0%
 2023-04-03T23:16:00.1749146Z Progress: Downloading Cygwin 3.4.6... 0%
@@ -1283,7 +1283,7 @@
 2023-04-03T23:16:00.2513967Z Progress: Downloading Cygwin 3.4.6... 99%
 2023-04-03T23:16:00.2514395Z Progress: Downloading Cygwin 3.4.6... 99%
 2023-04-03T23:16:00.2515229Z Progress: Downloading Cygwin 3.4.6... 100%
-2023-04-03T23:16:00.7539076Z 
+2023-04-03T23:16:00.7539076Z
 2023-04-03T23:16:00.7540255Z Cygwin v3.4.6 [Approved]
 2023-04-03T23:16:00.7636317Z cygwin package files install completed. Performing other installation steps.
 2023-04-03T23:16:07.6164505Z Download site: http://mirrors.kernel.org/sourceware/cygwin/
@@ -1295,33 +1295,33 @@
 2023-04-03T23:17:25.5063078Z  see the changes (or in powershell/cmd.exe just type `refreshenv`).
 2023-04-03T23:17:25.5987269Z  The install of cygwin was successful.
 2023-04-03T23:17:25.5992528Z   Software installed to 'C:\tools\cygwin'
-2023-04-03T23:17:26.2841999Z 
+2023-04-03T23:17:26.2841999Z
 2023-04-03T23:17:26.2843433Z Progress: Downloading cyg-get 1.2.1... 16%
 2023-04-03T23:17:26.2844368Z Progress: Downloading cyg-get 1.2.1... 43%
 2023-04-03T23:17:26.2844929Z Progress: Downloading cyg-get 1.2.1... 70%
 2023-04-03T23:17:26.2846509Z Progress: Downloading cyg-get 1.2.1... 97%
 2023-04-03T23:17:26.2846953Z Progress: Downloading cyg-get 1.2.1... 100%
-2023-04-03T23:17:26.5472199Z 
+2023-04-03T23:17:26.5472199Z
 2023-04-03T23:17:26.5473397Z cyg-get v1.2.1 [Approved]
 2023-04-03T23:17:26.5489323Z cyg-get package files install completed. Performing other installation steps.
 2023-04-03T23:17:27.0510951Z Adding C:\ProgramData\chocolatey\bin\cyg-get.bat and pointing it to powershell command C:\ProgramData\chocolatey\lib\cyg-get\tools\cyg-get.ps1
 2023-04-03T23:17:27.4022406Z  The install of cyg-get was successful.
 2023-04-03T23:17:27.4024427Z   Software install location not explicitly set, it could be in package or
 2023-04-03T23:17:27.4024937Z   default install location of installer.
-2023-04-03T23:17:27.4547491Z 
-2023-04-03T23:17:27.4548791Z Chocolatey installed 2/2 packages. 
+2023-04-03T23:17:27.4547491Z
+2023-04-03T23:17:27.4548791Z Chocolatey installed 2/2 packages.
 2023-04-03T23:17:27.4549422Z  See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
 2023-04-03T23:17:28.2780695Z Attempting to install cygwin packages: libssl-devel,libbz2-devel,libgmp-devel,zlib-devel,gcc-core,libOpenCL-devel,libcrypt-devel,make,wget,rebase,perl
 2023-04-03T23:19:12.8687696Z --------------------------------------------------------
-2023-04-03T23:19:12.8695919Z                  =====  Building  =====                 
+2023-04-03T23:19:12.8695919Z                  =====  Building  =====
 2023-04-03T23:19:12.8702683Z --------------------------------------------------------
 2023-04-03T23:19:12.8707265Z Compiler version
 2023-04-03T23:19:12.9077378Z Executing 'gcc --version'
 2023-04-03T23:19:12.9707514Z Copying skeleton files.
 2023-04-03T23:19:12.9708709Z These files are for the users to personalise their cygwin experience.
-2023-04-03T23:19:12.9709236Z 
+2023-04-03T23:19:12.9709236Z
 2023-04-03T23:19:12.9709929Z They will never be overwritten nor automatically updated.
-2023-04-03T23:19:12.9710455Z 
+2023-04-03T23:19:12.9710455Z
 2023-04-03T23:19:13.0364735Z './.bashrc' -> '/home/VssAdministrator//.bashrc'
 2023-04-03T23:19:13.0550684Z './.bash_profile' -> '/home/VssAdministrator//.bash_profile'
 2023-04-03T23:19:13.0731881Z './.inputrc' -> '/home/VssAdministrator//.inputrc'
@@ -1330,7 +1330,7 @@
 2023-04-03T23:19:13.1997307Z Copyright (C) 2021 Free Software Foundation, Inc.
 2023-04-03T23:19:13.1997708Z This is free software; see the source for copying conditions.  There is NO
 2023-04-03T23:19:13.2003319Z warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-2023-04-03T23:19:13.2011179Z 
+2023-04-03T23:19:13.2011179Z
 2023-04-03T23:19:13.2070867Z --------------------------------
 2023-04-03T23:19:13.2080281Z Executing 'gcc -dM -E -x c /dev/null'
 2023-04-03T23:19:13.3852859Z #define __DBL_MIN_EXP__ (-1021)
@@ -1398,7 +1398,7 @@
 2023-04-03T23:19:13.3898389Z #define __INT64_C(c) c ## L
 2023-04-03T23:19:13.3898770Z #define __GCC_ATOMIC_POINTER_LOCK_FREE 2
 2023-04-03T23:19:13.3899163Z #define __FLT32X_MANT_DIG__ 53
-2023-04-03T23:19:13.3899430Z #define __USER_LABEL_PREFIX__ 
+2023-04-03T23:19:13.3899430Z #define __USER_LABEL_PREFIX__
 2023-04-03T23:19:13.3899936Z #define __FLT64X_EPSILON__ 1.08420217248550443400745280086994171e-19F64x
 2023-04-03T23:19:13.3900310Z #define __STDC_HOSTED__ 1
 2023-04-03T23:19:13.3901208Z #define __DEC64_MIN_EXP__ (-382)
@@ -1484,7 +1484,7 @@
 2023-04-03T23:19:13.3927256Z #define __FLT64_MIN_10_EXP__ (-307)
 2023-04-03T23:19:13.3927480Z #define __FLT64X_DECIMAL_DIG__ 21
 2023-04-03T23:19:13.3927737Z #define __DEC128_MIN__ 1E-6143DL
-2023-04-03T23:19:13.3927992Z #define __REGISTER_PREFIX__ 
+2023-04-03T23:19:13.3927992Z #define __REGISTER_PREFIX__
 2023-04-03T23:19:13.3928209Z #define __UINT16_MAX__ 0xffff
 2023-04-03T23:19:13.3928463Z #define __DBL_HAS_DENORM__ 1
 2023-04-03T23:19:13.3928731Z #define __cdecl __attribute__((__cdecl__))
@@ -1784,7 +1784,7 @@
 2023-04-03T23:19:30.8950358Z checking for SSSE3... no
 2023-04-03T23:19:30.9123998Z checking for arch.h alternative... x86-64.h
 2023-04-03T23:19:30.9130281Z checking for byte ordering according to target triple... little
-2023-04-03T23:19:30.9140705Z checking supplied paths for OpenSSL...  
+2023-04-03T23:19:30.9140705Z checking supplied paths for OpenSSL...
 2023-04-03T23:19:30.9145026Z checking additional paths for OpenSSL... none
 2023-04-03T23:19:31.1008710Z checking openssl/opensslv.h usability... yes
 2023-04-03T23:19:31.1873602Z checking openssl/opensslv.h presence... yes
@@ -1976,7 +1976,7 @@
 2023-04-03T23:20:20.0398788Z checking for strcasestr... yes
 2023-04-03T23:20:20.4447852Z checking for clGetKernelArgInfo... yes
 2023-04-03T23:20:20.8802766Z checking for posix_memalign... yes
-2023-04-03T23:20:21.1859159Z checking for yasm that supports "-f win64"... 
+2023-04-03T23:20:21.1859159Z checking for yasm that supports "-f win64"...
 2023-04-03T23:20:21.1871867Z checking for *2john helper type... .exe (symlink.c)
 2023-04-03T23:20:21.5270198Z checking for _get_osfhandle... yes
 2023-04-03T23:20:23.8708638Z checking for GetFileSizeEx... yes
@@ -2001,15 +2001,15 @@
 2023-04-03T23:20:30.5868924Z config.status: executing default commands
 2023-04-03T23:20:30.6061040Z configure: creating ./fmt_externs.h
 2023-04-03T23:20:38.3659161Z configure: creating ./fmt_registers.h
-2023-04-03T23:20:48.3309348Z 
+2023-04-03T23:20:48.3309348Z
 2023-04-03T23:20:48.3324763Z Configured for building John the Ripper jumbo:
-2023-04-03T23:20:48.3325556Z 
+2023-04-03T23:20:48.3325556Z
 2023-04-03T23:20:48.3326176Z Target CPU ......................................... x86_64 SSE2, 64-bit LE
 2023-04-03T23:20:48.3327355Z AES-NI support ..................................... depends on OpenSSL
 2023-04-03T23:20:48.3328153Z Target OS .......................................... cygwin
 2023-04-03T23:20:48.3328671Z Cross compiling .................................... no
 2023-04-03T23:20:48.3329181Z Legacy arch header ................................. x86-64.h
-2023-04-03T23:20:48.3329538Z 
+2023-04-03T23:20:48.3329538Z
 2023-04-03T23:20:48.3329977Z Optional libraries/features found:
 2023-04-03T23:20:48.3330461Z Memory map (share/page large files) ................ yes
 2023-04-03T23:20:48.3330938Z Fork support ....................................... yes
@@ -2027,9 +2027,9 @@
 2023-04-03T23:20:48.3336781Z OpenMPI support (default disabled) ................. no
 2023-04-03T23:20:48.3337251Z Experimental code (default disabled) ............... no
 2023-04-03T23:20:48.3337881Z ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-03T23:20:48.3338493Z 
+2023-04-03T23:20:48.3338493Z
 2023-04-03T23:20:48.3339986Z Install missing libraries to get any needed features that were omitted.
-2023-04-03T23:20:48.3340474Z 
+2023-04-03T23:20:48.3340474Z
 2023-04-03T23:20:48.3340944Z Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-03T23:21:06.3135356Z In file included from subsets.c:25:
 2023-04-03T23:21:06.6957220Z subsets.c: In function ‘do_subsets_crack’:
@@ -2040,9 +2040,9 @@
 2023-04-03T23:21:18.9644334Z ar: creating ed25519-donna.a
 2023-04-03T23:21:19.4603880Z ar: creating poly1305-donna.a
 2023-04-03T23:21:20.6634172Z ar: creating secp256k1.a
-2023-04-03T23:26:54.3998814Z 
+2023-04-03T23:26:54.3998814Z
 2023-04-03T23:26:54.4167172Z Make process completed.
-2023-04-03T23:26:55.5011664Z 
+2023-04-03T23:26:55.5011664Z
 2023-04-03T23:26:55.5179950Z Make process completed.
 2023-04-03T23:26:55.5349548Z Stripping executables.
 2023-04-03T23:26:56.2371962Z Executing './configure --disable-native-tests --enable-simd=sse2   CPPFLAGS='-DOMP_FALLBACK -DOMP_FALLBACK_BINARY=\"\\\"john-sse2-non-omp\\\"\" '                                                                  && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-sse2'
@@ -2131,7 +2131,7 @@
 2023-04-03T23:27:13.6531427Z checking for SSSE3... no
 2023-04-03T23:27:13.6694034Z checking for arch.h alternative... x86-64.h
 2023-04-03T23:27:13.6699830Z checking for byte ordering according to target triple... little
-2023-04-03T23:27:13.6710040Z checking supplied paths for OpenSSL...  
+2023-04-03T23:27:13.6710040Z checking supplied paths for OpenSSL...
 2023-04-03T23:27:13.6714028Z checking additional paths for OpenSSL... none
 2023-04-03T23:27:13.8522953Z checking openssl/opensslv.h usability... yes
 2023-04-03T23:27:13.9372584Z checking openssl/opensslv.h presence... yes
@@ -2324,7 +2324,7 @@
 2023-04-03T23:28:03.4422001Z checking for strcasestr... yes
 2023-04-03T23:28:03.8484481Z checking for clGetKernelArgInfo... yes
 2023-04-03T23:28:04.2909086Z checking for posix_memalign... yes
-2023-04-03T23:28:04.5998487Z checking for yasm that supports "-f win64"... 
+2023-04-03T23:28:04.5998487Z checking for yasm that supports "-f win64"...
 2023-04-03T23:28:04.6010944Z checking for *2john helper type... .exe (symlink.c)
 2023-04-03T23:28:04.9427501Z checking for _get_osfhandle... yes
 2023-04-03T23:28:07.3089521Z checking for GetFileSizeEx... yes
@@ -2350,15 +2350,15 @@
 2023-04-03T23:28:14.0072420Z config.status: executing default commands
 2023-04-03T23:28:14.0259453Z configure: creating ./fmt_externs.h
 2023-04-03T23:28:21.8761714Z configure: creating ./fmt_registers.h
-2023-04-03T23:28:31.9645172Z 
+2023-04-03T23:28:31.9645172Z
 2023-04-03T23:28:31.9660587Z Configured for building John the Ripper jumbo:
-2023-04-03T23:28:31.9661373Z 
+2023-04-03T23:28:31.9661373Z
 2023-04-03T23:28:31.9662400Z Target CPU ......................................... x86_64 SSE2, 64-bit LE
 2023-04-03T23:28:31.9663065Z AES-NI support ..................................... depends on OpenSSL
 2023-04-03T23:28:31.9663630Z Target OS .......................................... cygwin
 2023-04-03T23:28:31.9664597Z Cross compiling .................................... no
 2023-04-03T23:28:31.9665189Z Legacy arch header ................................. x86-64.h
-2023-04-03T23:28:31.9665727Z 
+2023-04-03T23:28:31.9665727Z
 2023-04-03T23:28:31.9666218Z Optional libraries/features found:
 2023-04-03T23:28:31.9666836Z Memory map (share/page large files) ................ yes
 2023-04-03T23:28:31.9667321Z Fork support ....................................... yes
@@ -2376,9 +2376,9 @@
 2023-04-03T23:28:31.9673600Z OpenMPI support (default disabled) ................. no
 2023-04-03T23:28:31.9674076Z Experimental code (default disabled) ............... no
 2023-04-03T23:28:31.9674596Z ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-03T23:28:31.9675050Z 
+2023-04-03T23:28:31.9675050Z
 2023-04-03T23:28:31.9676716Z Install missing libraries to get any needed features that were omitted.
-2023-04-03T23:28:31.9677170Z 
+2023-04-03T23:28:31.9677170Z
 2023-04-03T23:28:31.9677499Z Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-03T23:32:41.4617502Z In file included from subsets.c:25:
 2023-04-03T23:32:41.5079780Z subsets.c: In function ‘do_subsets_crack’:
@@ -2389,9 +2389,9 @@
 2023-04-03T23:34:21.4157514Z ar: creating secp256k1.a
 2023-04-03T23:34:28.1278349Z ar: creating ed25519-donna.a
 2023-04-03T23:34:28.6462038Z ar: creating poly1305-donna.a
-2023-04-03T23:34:58.1448881Z 
+2023-04-03T23:34:58.1448881Z
 2023-04-03T23:34:58.1616742Z Make process completed.
-2023-04-03T23:34:59.2476502Z 
+2023-04-03T23:34:59.2476502Z
 2023-04-03T23:34:59.2639024Z Make process completed.
 2023-04-03T23:34:59.2806114Z Stripping executables.
 2023-04-03T23:34:59.9853762Z Executing './configure --disable-native-tests --disable-openmp --enable-simd=sse4.1 CPPFLAGS='-DCPU_FALLBACK -DCPU_FALLBACK_BINARY=\"\\\"john-sse2\\\"\" '                                                                          && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-sse41-non-omp'
@@ -2482,7 +2482,7 @@
 2023-04-03T23:35:18.2534000Z checking for SSE4.2... no
 2023-04-03T23:35:18.2696977Z checking for arch.h alternative... x86-64.h
 2023-04-03T23:35:18.2702192Z checking for byte ordering according to target triple... little
-2023-04-03T23:35:18.2712502Z checking supplied paths for OpenSSL...  
+2023-04-03T23:35:18.2712502Z checking supplied paths for OpenSSL...
 2023-04-03T23:35:18.2716571Z checking additional paths for OpenSSL... none
 2023-04-03T23:35:18.4529902Z checking openssl/opensslv.h usability... yes
 2023-04-03T23:35:18.5393397Z checking openssl/opensslv.h presence... yes
@@ -2674,7 +2674,7 @@
 2023-04-03T23:36:07.8539681Z checking for strcasestr... yes
 2023-04-03T23:36:08.0001941Z checking for clGetKernelArgInfo... yes
 2023-04-03T23:36:08.4350690Z checking for posix_memalign... yes
-2023-04-03T23:36:08.7398054Z checking for yasm that supports "-f win64"... 
+2023-04-03T23:36:08.7398054Z checking for yasm that supports "-f win64"...
 2023-04-03T23:36:08.7410384Z checking for *2john helper type... .exe (symlink.c)
 2023-04-03T23:36:09.0808490Z checking for _get_osfhandle... yes
 2023-04-03T23:36:11.4228399Z checking for GetFileSizeEx... yes
@@ -2700,15 +2700,15 @@
 2023-04-03T23:36:18.0751889Z config.status: executing default commands
 2023-04-03T23:36:18.0934136Z configure: creating ./fmt_externs.h
 2023-04-03T23:36:25.8773234Z configure: creating ./fmt_registers.h
-2023-04-03T23:36:35.8895026Z 
+2023-04-03T23:36:35.8895026Z
 2023-04-03T23:36:35.8910165Z Configured for building John the Ripper jumbo:
-2023-04-03T23:36:35.8910743Z 
+2023-04-03T23:36:35.8910743Z
 2023-04-03T23:36:35.8911416Z Target CPU ......................................... x86_64 SSE4.1, 64-bit LE
 2023-04-03T23:36:35.8911961Z AES-NI support ..................................... depends on OpenSSL
 2023-04-03T23:36:35.8912521Z Target OS .......................................... cygwin
 2023-04-03T23:36:35.8913166Z Cross compiling .................................... no
 2023-04-03T23:36:35.8913708Z Legacy arch header ................................. x86-64.h
-2023-04-03T23:36:35.8914062Z 
+2023-04-03T23:36:35.8914062Z
 2023-04-03T23:36:35.8914532Z Optional libraries/features found:
 2023-04-03T23:36:35.8915032Z Memory map (share/page large files) ................ yes
 2023-04-03T23:36:35.8915510Z Fork support ....................................... yes
@@ -2726,9 +2726,9 @@
 2023-04-03T23:36:35.8922848Z OpenMPI support (default disabled) ................. no
 2023-04-03T23:36:35.8923343Z Experimental code (default disabled) ............... no
 2023-04-03T23:36:35.8923858Z ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-03T23:36:35.8924244Z 
+2023-04-03T23:36:35.8924244Z
 2023-04-03T23:36:35.8925509Z Install missing libraries to get any needed features that were omitted.
-2023-04-03T23:36:35.8925947Z 
+2023-04-03T23:36:35.8925947Z
 2023-04-03T23:36:35.8926396Z Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-03T23:40:37.0209171Z In file included from subsets.c:25:
 2023-04-03T23:40:37.0519614Z subsets.c: In function ‘do_subsets_crack’:
@@ -2739,9 +2739,9 @@
 2023-04-03T23:42:16.6422586Z ar: creating secp256k1.a
 2023-04-03T23:42:23.3446504Z ar: creating ed25519-donna.a
 2023-04-03T23:42:23.8562072Z ar: creating poly1305-donna.a
-2023-04-03T23:42:52.5795088Z 
+2023-04-03T23:42:52.5795088Z
 2023-04-03T23:42:52.5962615Z Make process completed.
-2023-04-03T23:42:53.6912122Z 
+2023-04-03T23:42:53.6912122Z
 2023-04-03T23:42:53.7075412Z Make process completed.
 2023-04-03T23:42:53.7241983Z Stripping executables.
 2023-04-03T23:42:54.4217027Z Executing './configure --disable-native-tests --enable-simd=sse4.1 CPPFLAGS='-DOMP_FALLBACK -DOMP_FALLBACK_BINARY=\"\\\"john-sse41-non-omp\\\"\" -DCPU_FALLBACK -DCPU_FALLBACK_BINARY=\"\\\"john-sse2\\\"\" '  && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-sse41'
@@ -2832,7 +2832,7 @@
 2023-04-03T23:43:12.7220062Z checking for SSE4.2... no
 2023-04-03T23:43:12.7389123Z checking for arch.h alternative... x86-64.h
 2023-04-03T23:43:12.7395520Z checking for byte ordering according to target triple... little
-2023-04-03T23:43:12.7405729Z checking supplied paths for OpenSSL...  
+2023-04-03T23:43:12.7405729Z checking supplied paths for OpenSSL...
 2023-04-03T23:43:12.7409763Z checking additional paths for OpenSSL... none
 2023-04-03T23:43:12.9231305Z checking openssl/opensslv.h usability... yes
 2023-04-03T23:43:13.0079552Z checking openssl/opensslv.h presence... yes
@@ -3025,7 +3025,7 @@
 2023-04-03T23:44:03.5436302Z checking for strcasestr... yes
 2023-04-03T23:44:03.9584305Z checking for clGetKernelArgInfo... yes
 2023-04-03T23:44:04.4029622Z checking for posix_memalign... yes
-2023-04-03T23:44:04.7207152Z checking for yasm that supports "-f win64"... 
+2023-04-03T23:44:04.7207152Z checking for yasm that supports "-f win64"...
 2023-04-03T23:44:04.7219444Z checking for *2john helper type... .exe (symlink.c)
 2023-04-03T23:44:05.0658532Z checking for _get_osfhandle... yes
 2023-04-03T23:44:07.4346157Z checking for GetFileSizeEx... yes
@@ -3051,15 +3051,15 @@
 2023-04-03T23:44:14.1770660Z config.status: executing default commands
 2023-04-03T23:44:14.1952510Z configure: creating ./fmt_externs.h
 2023-04-03T23:44:22.1326503Z configure: creating ./fmt_registers.h
-2023-04-03T23:44:32.2937066Z 
+2023-04-03T23:44:32.2937066Z
 2023-04-03T23:44:32.2951725Z Configured for building John the Ripper jumbo:
-2023-04-03T23:44:32.2952352Z 
+2023-04-03T23:44:32.2952352Z
 2023-04-03T23:44:32.2953003Z Target CPU ......................................... x86_64 SSE4.1, 64-bit LE
 2023-04-03T23:44:32.2953581Z AES-NI support ..................................... depends on OpenSSL
 2023-04-03T23:44:32.2954141Z Target OS .......................................... cygwin
 2023-04-03T23:44:32.2954786Z Cross compiling .................................... no
 2023-04-03T23:44:32.2955285Z Legacy arch header ................................. x86-64.h
-2023-04-03T23:44:32.2955693Z 
+2023-04-03T23:44:32.2955693Z
 2023-04-03T23:44:32.2956163Z Optional libraries/features found:
 2023-04-03T23:44:32.2956640Z Memory map (share/page large files) ................ yes
 2023-04-03T23:44:32.2957170Z Fork support ....................................... yes
@@ -3077,9 +3077,9 @@
 2023-04-03T23:44:32.2964734Z OpenMPI support (default disabled) ................. no
 2023-04-03T23:44:32.2965260Z Experimental code (default disabled) ............... no
 2023-04-03T23:44:32.2965740Z ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-03T23:44:32.2966138Z 
+2023-04-03T23:44:32.2966138Z
 2023-04-03T23:44:32.2966720Z Install missing libraries to get any needed features that were omitted.
-2023-04-03T23:44:32.2967091Z 
+2023-04-03T23:44:32.2967091Z
 2023-04-03T23:44:32.2967609Z Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-03T23:48:43.9575187Z In file included from subsets.c:25:
 2023-04-03T23:48:44.0037607Z subsets.c: In function ‘do_subsets_crack’:
@@ -3090,9 +3090,9 @@
 2023-04-03T23:50:25.0371047Z ar: creating secp256k1.a
 2023-04-03T23:50:31.7771628Z ar: creating ed25519-donna.a
 2023-04-03T23:50:32.2895450Z ar: creating poly1305-donna.a
-2023-04-03T23:51:01.1798106Z 
+2023-04-03T23:51:01.1798106Z
 2023-04-03T23:51:01.1965885Z Make process completed.
-2023-04-03T23:51:02.2957066Z 
+2023-04-03T23:51:02.2957066Z
 2023-04-03T23:51:02.3121360Z Make process completed.
 2023-04-03T23:51:02.3288341Z Stripping executables.
 2023-04-03T23:51:03.0402555Z Executing './configure --disable-native-tests --disable-openmp --enable-simd=avx    CPPFLAGS='-DCPU_FALLBACK -DCPU_FALLBACK_BINARY=\"\\\"john-sse41\\\"\" '                                                                         && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-avx-non-omp'
@@ -3186,7 +3186,7 @@
 2023-04-03T23:51:24.2888452Z checking for AVX2... no
 2023-04-03T23:51:24.3056792Z checking for arch.h alternative... x86-64.h
 2023-04-03T23:51:24.3062388Z checking for byte ordering according to target triple... little
-2023-04-03T23:51:24.3072681Z checking supplied paths for OpenSSL...  
+2023-04-03T23:51:24.3072681Z checking supplied paths for OpenSSL...
 2023-04-03T23:51:24.3076780Z checking additional paths for OpenSSL... none
 2023-04-03T23:51:24.4908649Z checking openssl/opensslv.h usability... yes
 2023-04-03T23:51:24.5759475Z checking openssl/opensslv.h presence... yes
@@ -3378,7 +3378,7 @@
 2023-04-03T23:52:13.5585351Z checking for strcasestr... yes
 2023-04-03T23:52:13.9620348Z checking for clGetKernelArgInfo... yes
 2023-04-03T23:52:14.3972289Z checking for posix_memalign... yes
-2023-04-03T23:52:14.6989037Z checking for yasm that supports "-f win64"... 
+2023-04-03T23:52:14.6989037Z checking for yasm that supports "-f win64"...
 2023-04-03T23:52:14.7001371Z checking for *2john helper type... .exe (symlink.c)
 2023-04-03T23:52:15.0397672Z checking for _get_osfhandle... yes
 2023-04-03T23:52:17.3838023Z checking for GetFileSizeEx... yes
@@ -3404,15 +3404,15 @@
 2023-04-03T23:52:24.0764842Z config.status: executing default commands
 2023-04-03T23:52:24.0954694Z configure: creating ./fmt_externs.h
 2023-04-03T23:52:31.9944545Z configure: creating ./fmt_registers.h
-2023-04-03T23:52:42.0799325Z 
+2023-04-03T23:52:42.0799325Z
 2023-04-03T23:52:42.0813509Z Configured for building John the Ripper jumbo:
-2023-04-03T23:52:42.0814243Z 
+2023-04-03T23:52:42.0814243Z
 2023-04-03T23:52:42.0814865Z Target CPU ......................................... x86_64 AVX, 64-bit LE
 2023-04-03T23:52:42.0815422Z AES-NI support ..................................... depends on OpenSSL
 2023-04-03T23:52:42.0816046Z Target OS .......................................... cygwin
 2023-04-03T23:52:42.0816560Z Cross compiling .................................... no
 2023-04-03T23:52:42.0817058Z Legacy arch header ................................. x86-64.h
-2023-04-03T23:52:42.0817418Z 
+2023-04-03T23:52:42.0817418Z
 2023-04-03T23:52:42.0817852Z Optional libraries/features found:
 2023-04-03T23:52:42.0818329Z Memory map (share/page large files) ................ yes
 2023-04-03T23:52:42.0818810Z Fork support ....................................... yes
@@ -3430,9 +3430,9 @@
 2023-04-03T23:52:42.0825636Z OpenMPI support (default disabled) ................. no
 2023-04-03T23:52:42.0826103Z Experimental code (default disabled) ............... no
 2023-04-03T23:52:42.0826579Z ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-03T23:52:42.0826934Z 
+2023-04-03T23:52:42.0826934Z
 2023-04-03T23:52:42.0828260Z Install missing libraries to get any needed features that were omitted.
-2023-04-03T23:52:42.0828665Z 
+2023-04-03T23:52:42.0828665Z
 2023-04-03T23:52:42.0829121Z Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-03T23:57:58.2912761Z In file included from subsets.c:25:
 2023-04-03T23:57:58.2914602Z subsets.c: In function ‘do_subsets_crack’:
@@ -3443,9 +3443,9 @@
 2023-04-04T00:00:18.0316707Z ar: creating secp256k1.a
 2023-04-04T00:00:24.8549978Z ar: creating ed25519-donna.a
 2023-04-04T00:00:25.3849057Z ar: creating poly1305-donna.a
-2023-04-04T00:00:55.7852874Z 
+2023-04-04T00:00:55.7852874Z
 2023-04-04T00:00:55.8022227Z Make process completed.
-2023-04-04T00:00:56.8938558Z 
+2023-04-04T00:00:56.8938558Z
 2023-04-04T00:00:56.9104588Z Make process completed.
 2023-04-04T00:00:56.9276615Z Stripping executables.
 2023-04-04T00:00:57.6230393Z Executing './configure --disable-native-tests --enable-simd=avx    CPPFLAGS='-DOMP_FALLBACK -DOMP_FALLBACK_BINARY=\"\\\"john-avx-non-omp\\\"\"   -DCPU_FALLBACK -DCPU_FALLBACK_BINARY=\"\\\"john-sse41\\\"\" ' && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-avx'
@@ -3539,7 +3539,7 @@
 2023-04-04T00:01:18.7751173Z checking for AVX2... no
 2023-04-04T00:01:18.7914553Z checking for arch.h alternative... x86-64.h
 2023-04-04T00:01:18.7920798Z checking for byte ordering according to target triple... little
-2023-04-04T00:01:18.7931108Z checking supplied paths for OpenSSL...  
+2023-04-04T00:01:18.7931108Z checking supplied paths for OpenSSL...
 2023-04-04T00:01:18.7935097Z checking additional paths for OpenSSL... none
 2023-04-04T00:01:18.9750799Z checking openssl/opensslv.h usability... yes
 2023-04-04T00:01:19.0610281Z checking openssl/opensslv.h presence... yes
@@ -3732,7 +3732,7 @@
 2023-04-04T00:02:08.5862002Z checking for strcasestr... yes
 2023-04-04T00:02:08.9909059Z checking for clGetKernelArgInfo... yes
 2023-04-04T00:02:09.4345718Z checking for posix_memalign... yes
-2023-04-04T00:02:09.7453838Z checking for yasm that supports "-f win64"... 
+2023-04-04T00:02:09.7453838Z checking for yasm that supports "-f win64"...
 2023-04-04T00:02:09.7466251Z checking for *2john helper type... .exe (symlink.c)
 2023-04-04T00:02:10.0852804Z checking for _get_osfhandle... yes
 2023-04-04T00:02:12.4361337Z checking for GetFileSizeEx... yes
@@ -3758,15 +3758,15 @@
 2023-04-04T00:02:19.1567032Z config.status: executing default commands
 2023-04-04T00:02:19.1746616Z configure: creating ./fmt_externs.h
 2023-04-04T00:02:27.2073838Z configure: creating ./fmt_registers.h
-2023-04-04T00:02:37.4729467Z 
+2023-04-04T00:02:37.4729467Z
 2023-04-04T00:02:37.4743595Z Configured for building John the Ripper jumbo:
-2023-04-04T00:02:37.4744400Z 
+2023-04-04T00:02:37.4744400Z
 2023-04-04T00:02:37.4745069Z Target CPU ......................................... x86_64 AVX, 64-bit LE
 2023-04-04T00:02:37.4745648Z AES-NI support ..................................... depends on OpenSSL
 2023-04-04T00:02:37.4746319Z Target OS .......................................... cygwin
 2023-04-04T00:02:37.4746863Z Cross compiling .................................... no
 2023-04-04T00:02:37.4747396Z Legacy arch header ................................. x86-64.h
-2023-04-04T00:02:37.4747754Z 
+2023-04-04T00:02:37.4747754Z
 2023-04-04T00:02:37.4748225Z Optional libraries/features found:
 2023-04-04T00:02:37.4748752Z Memory map (share/page large files) ................ yes
 2023-04-04T00:02:37.4749492Z Fork support ....................................... yes
@@ -3784,9 +3784,9 @@
 2023-04-04T00:02:37.4756368Z OpenMPI support (default disabled) ................. no
 2023-04-04T00:02:37.4756841Z Experimental code (default disabled) ............... no
 2023-04-04T00:02:37.4757355Z ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-04T00:02:37.4757745Z 
+2023-04-04T00:02:37.4757745Z
 2023-04-04T00:02:37.4758272Z Install missing libraries to get any needed features that were omitted.
-2023-04-04T00:02:37.4758678Z 
+2023-04-04T00:02:37.4758678Z
 2023-04-04T00:02:37.4759193Z Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-04T00:07:58.8059414Z In file included from subsets.c:25:
 2023-04-04T00:07:58.9152520Z subsets.c: In function ‘do_subsets_crack’:
@@ -3797,9 +3797,9 @@
 2023-04-04T00:10:24.8375886Z ar: creating secp256k1.a
 2023-04-04T00:10:31.6320767Z ar: creating ed25519-donna.a
 2023-04-04T00:10:32.1528430Z ar: creating poly1305-donna.a
-2023-04-04T00:11:01.7181811Z 
+2023-04-04T00:11:01.7181811Z
 2023-04-04T00:11:01.7350225Z Make process completed.
-2023-04-04T00:11:02.8472650Z 
+2023-04-04T00:11:02.8472650Z
 2023-04-04T00:11:02.8644753Z Make process completed.
 2023-04-04T00:11:02.8812466Z Stripping executables.
 2023-04-04T00:11:03.5847063Z Executing './configure --disable-native-tests --disable-openmp --enable-simd=xop    CPPFLAGS='-DCPU_FALLBACK -DCPU_FALLBACK_BINARY=\"\\\"john-avx\\\"\" '                                                                           && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-xop-non-omp'
@@ -3893,7 +3893,7 @@
 2023-04-04T00:11:24.7282296Z checking for AVX2... no
 2023-04-04T00:11:24.7446731Z checking for arch.h alternative... x86-64.h
 2023-04-04T00:11:24.7448973Z checking for byte ordering according to target triple... little
-2023-04-04T00:11:24.7459173Z checking supplied paths for OpenSSL...  
+2023-04-04T00:11:24.7459173Z checking supplied paths for OpenSSL...
 2023-04-04T00:11:24.7464981Z checking additional paths for OpenSSL... none
 2023-04-04T00:11:24.9261632Z checking openssl/opensslv.h usability... yes
 2023-04-04T00:11:25.0098864Z checking openssl/opensslv.h presence... yes
@@ -4085,7 +4085,7 @@
 2023-04-04T00:12:13.6279778Z checking for strcasestr... yes
 2023-04-04T00:12:14.0294301Z checking for clGetKernelArgInfo... yes
 2023-04-04T00:12:14.4647260Z checking for posix_memalign... yes
-2023-04-04T00:12:14.7710663Z checking for yasm that supports "-f win64"... 
+2023-04-04T00:12:14.7710663Z checking for yasm that supports "-f win64"...
 2023-04-04T00:12:14.7723148Z checking for *2john helper type... .exe (symlink.c)
 2023-04-04T00:12:15.1095767Z checking for _get_osfhandle... yes
 2023-04-04T00:12:17.4474654Z checking for GetFileSizeEx... yes
@@ -4111,15 +4111,15 @@
 2023-04-04T00:12:24.0681090Z config.status: executing default commands
 2023-04-04T00:12:24.0868396Z configure: creating ./fmt_externs.h
 2023-04-04T00:12:31.9578975Z configure: creating ./fmt_registers.h
-2023-04-04T00:12:42.5919498Z 
+2023-04-04T00:12:42.5919498Z
 2023-04-04T00:12:42.5920706Z Configured for building John the Ripper jumbo:
-2023-04-04T00:12:42.5921569Z 
+2023-04-04T00:12:42.5921569Z
 2023-04-04T00:12:42.5922873Z Target CPU ......................................... x86_64 XOP, 64-bit LE
 2023-04-04T00:12:42.5923392Z AES-NI support ..................................... depends on OpenSSL
 2023-04-04T00:12:42.5923764Z Target OS .......................................... cygwin
 2023-04-04T00:12:42.5924188Z Cross compiling .................................... no
 2023-04-04T00:12:42.5924709Z Legacy arch header ................................. x86-64.h
-2023-04-04T00:12:42.5930299Z 
+2023-04-04T00:12:42.5930299Z
 2023-04-04T00:12:42.5931140Z Optional libraries/features found:
 2023-04-04T00:12:42.5931664Z Memory map (share/page large files) ................ yes
 2023-04-04T00:12:42.5932169Z Fork support ....................................... yes
@@ -4137,9 +4137,9 @@
 2023-04-04T00:12:42.5938599Z OpenMPI support (default disabled) ................. no
 2023-04-04T00:12:42.5939132Z Experimental code (default disabled) ............... no
 2023-04-04T00:12:42.5939570Z ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-04T00:12:42.5939916Z 
+2023-04-04T00:12:42.5939916Z
 2023-04-04T00:12:42.5941207Z Install missing libraries to get any needed features that were omitted.
-2023-04-04T00:12:42.5941600Z 
+2023-04-04T00:12:42.5941600Z
 2023-04-04T00:12:42.5942047Z Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-04T00:17:57.9649012Z In file included from subsets.c:25:
 2023-04-04T00:17:58.0223901Z subsets.c: In function ‘do_subsets_crack’:
@@ -4150,9 +4150,9 @@
 2023-04-04T00:20:23.4633648Z ar: creating secp256k1.a
 2023-04-04T00:20:29.9260705Z ar: creating poly1305-donna.a
 2023-04-04T00:20:30.1851854Z ar: creating ed25519-donna.a
-2023-04-04T00:20:59.3362599Z 
+2023-04-04T00:20:59.3362599Z
 2023-04-04T00:20:59.3531996Z Make process completed.
-2023-04-04T00:21:00.4753657Z 
+2023-04-04T00:21:00.4753657Z
 2023-04-04T00:21:00.4923700Z Make process completed.
 2023-04-04T00:21:00.5098382Z Stripping executables.
 2023-04-04T00:21:01.2140160Z Executing './configure --disable-native-tests --enable-simd=xop    CPPFLAGS='-DOMP_FALLBACK -DOMP_FALLBACK_BINARY=\"\\\"john-xop-non-omp\\\"\"   -DCPU_FALLBACK -DCPU_FALLBACK_BINARY=\"\\\"john-avx\\\"\" '   && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-xop'
@@ -4246,7 +4246,7 @@
 2023-04-04T00:21:22.7368929Z checking for AVX2... no
 2023-04-04T00:21:22.7531461Z checking for arch.h alternative... x86-64.h
 2023-04-04T00:21:22.7537469Z checking for byte ordering according to target triple... little
-2023-04-04T00:21:22.7547573Z checking supplied paths for OpenSSL...  
+2023-04-04T00:21:22.7547573Z checking supplied paths for OpenSSL...
 2023-04-04T00:21:22.7551600Z checking additional paths for OpenSSL... none
 2023-04-04T00:21:22.9343800Z checking openssl/opensslv.h usability... yes
 2023-04-04T00:21:23.0175949Z checking openssl/opensslv.h presence... yes
@@ -4439,7 +4439,7 @@
 2023-04-04T00:22:12.5516225Z checking for strcasestr... yes
 2023-04-04T00:22:12.9530958Z checking for clGetKernelArgInfo... yes
 2023-04-04T00:22:13.3910026Z checking for posix_memalign... yes
-2023-04-04T00:22:13.6920801Z checking for yasm that supports "-f win64"... 
+2023-04-04T00:22:13.6920801Z checking for yasm that supports "-f win64"...
 2023-04-04T00:22:13.6933491Z checking for *2john helper type... .exe (symlink.c)
 2023-04-04T00:22:14.0313016Z checking for _get_osfhandle... yes
 2023-04-04T00:22:16.3847046Z checking for GetFileSizeEx... yes
@@ -4465,15 +4465,15 @@
 2023-04-04T00:22:23.0760813Z config.status: executing default commands
 2023-04-04T00:22:23.0941303Z configure: creating ./fmt_externs.h
 2023-04-04T00:22:31.0824991Z configure: creating ./fmt_registers.h
-2023-04-04T00:22:41.3130044Z 
+2023-04-04T00:22:41.3130044Z
 2023-04-04T00:22:41.3136922Z Configured for building John the Ripper jumbo:
-2023-04-04T00:22:41.3143591Z 
+2023-04-04T00:22:41.3143591Z
 2023-04-04T00:22:41.3144323Z Target CPU ......................................... x86_64 XOP, 64-bit LE
 2023-04-04T00:22:41.3144701Z AES-NI support ..................................... depends on OpenSSL
 2023-04-04T00:22:41.3145486Z Target OS .......................................... cygwin
 2023-04-04T00:22:41.3146268Z Cross compiling .................................... no
 2023-04-04T00:22:41.3146800Z Legacy arch header ................................. x86-64.h
-2023-04-04T00:22:41.3147127Z 
+2023-04-04T00:22:41.3147127Z
 2023-04-04T00:22:41.3147572Z Optional libraries/features found:
 2023-04-04T00:22:41.3148038Z Memory map (share/page large files) ................ yes
 2023-04-04T00:22:41.3148475Z Fork support ....................................... yes
@@ -4491,9 +4491,9 @@
 2023-04-04T00:22:41.3154357Z OpenMPI support (default disabled) ................. no
 2023-04-04T00:22:41.3154784Z Experimental code (default disabled) ............... no
 2023-04-04T00:22:41.3155593Z ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-04T00:22:41.3156063Z 
+2023-04-04T00:22:41.3156063Z
 2023-04-04T00:22:41.3157503Z Install missing libraries to get any needed features that were omitted.
-2023-04-04T00:22:41.3157890Z 
+2023-04-04T00:22:41.3157890Z
 2023-04-04T00:22:41.3158367Z Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-04T00:28:03.7862668Z In file included from subsets.c:25:
 2023-04-04T00:28:03.8332558Z subsets.c: In function ‘do_subsets_crack’:
@@ -4504,9 +4504,9 @@
 2023-04-04T00:30:29.2432916Z ar: creating secp256k1.a
 2023-04-04T00:30:35.9540689Z ar: creating ed25519-donna.a
 2023-04-04T00:30:36.0149053Z ar: creating poly1305-donna.a
-2023-04-04T00:31:04.8979619Z 
+2023-04-04T00:31:04.8979619Z
 2023-04-04T00:31:04.9146206Z Make process completed.
-2023-04-04T00:31:05.9975071Z 
+2023-04-04T00:31:05.9975071Z
 2023-04-04T00:31:06.0138120Z Make process completed.
 2023-04-04T00:31:06.0305194Z Stripping executables.
 2023-04-04T00:31:06.7376481Z Executing './configure --disable-native-tests --disable-openmp --enable-simd=avx2   CPPFLAGS='-DCPU_FALLBACK -DCPU_FALLBACK_BINARY=\"\\\"john-xop\\\"\" '                                                                           && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-avx2-non-omp'
@@ -4601,7 +4601,7 @@
 2023-04-04T00:31:28.8543557Z checking for AVX512F... no
 2023-04-04T00:31:28.8708824Z checking for arch.h alternative... x86-64.h
 2023-04-04T00:31:28.8714372Z checking for byte ordering according to target triple... little
-2023-04-04T00:31:28.8724389Z checking supplied paths for OpenSSL...  
+2023-04-04T00:31:28.8724389Z checking supplied paths for OpenSSL...
 2023-04-04T00:31:28.8728400Z checking additional paths for OpenSSL... none
 2023-04-04T00:31:29.0531915Z checking openssl/opensslv.h usability... yes
 2023-04-04T00:31:29.1402512Z checking openssl/opensslv.h presence... yes
@@ -4793,7 +4793,7 @@
 2023-04-04T00:32:18.5083268Z checking for strcasestr... yes
 2023-04-04T00:32:18.9146936Z checking for clGetKernelArgInfo... yes
 2023-04-04T00:32:19.3513264Z checking for posix_memalign... yes
-2023-04-04T00:32:19.6603592Z checking for yasm that supports "-f win64"... 
+2023-04-04T00:32:19.6603592Z checking for yasm that supports "-f win64"...
 2023-04-04T00:32:19.6616087Z checking for *2john helper type... .exe (symlink.c)
 2023-04-04T00:32:20.0019006Z checking for _get_osfhandle... yes
 2023-04-04T00:32:22.3650906Z checking for GetFileSizeEx... yes
@@ -4819,15 +4819,15 @@
 2023-04-04T00:32:29.2131896Z config.status: executing default commands
 2023-04-04T00:32:29.2321003Z configure: creating ./fmt_externs.h
 2023-04-04T00:32:37.2985323Z configure: creating ./fmt_registers.h
-2023-04-04T00:32:47.5370375Z 
+2023-04-04T00:32:47.5370375Z
 2023-04-04T00:32:47.5382734Z Configured for building John the Ripper jumbo:
-2023-04-04T00:32:47.5383509Z 
+2023-04-04T00:32:47.5383509Z
 2023-04-04T00:32:47.5384138Z Target CPU ......................................... x86_64 AVX2, 64-bit LE
 2023-04-04T00:32:47.5384692Z AES-NI support ..................................... depends on OpenSSL
 2023-04-04T00:32:47.5385203Z Target OS .......................................... cygwin
 2023-04-04T00:32:47.5385697Z Cross compiling .................................... no
 2023-04-04T00:32:47.5386144Z Legacy arch header ................................. x86-64.h
-2023-04-04T00:32:47.5386528Z 
+2023-04-04T00:32:47.5386528Z
 2023-04-04T00:32:47.5387061Z Optional libraries/features found:
 2023-04-04T00:32:47.5387494Z Memory map (share/page large files) ................ yes
 2023-04-04T00:32:47.5387973Z Fork support ....................................... yes
@@ -4845,9 +4845,9 @@
 2023-04-04T00:32:47.5394390Z OpenMPI support (default disabled) ................. no
 2023-04-04T00:32:47.5394860Z Experimental code (default disabled) ............... no
 2023-04-04T00:32:47.5395336Z ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-04T00:32:47.5395638Z 
+2023-04-04T00:32:47.5395638Z
 2023-04-04T00:32:47.5396912Z Install missing libraries to get any needed features that were omitted.
-2023-04-04T00:32:47.5397258Z 
+2023-04-04T00:32:47.5397258Z
 2023-04-04T00:32:47.5397722Z Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-04T00:38:06.5062753Z In file included from subsets.c:25:
 2023-04-04T00:38:06.6311074Z subsets.c: In function ‘do_subsets_crack’:
@@ -4858,9 +4858,9 @@
 2023-04-04T00:40:30.7034844Z ar: creating secp256k1.a
 2023-04-04T00:40:37.4449040Z ar: creating ed25519-donna.a
 2023-04-04T00:40:37.9780670Z ar: creating poly1305-donna.a
-2023-04-04T00:41:07.2167380Z 
+2023-04-04T00:41:07.2167380Z
 2023-04-04T00:41:07.2331926Z Make process completed.
-2023-04-04T00:41:08.3164071Z 
+2023-04-04T00:41:08.3164071Z
 2023-04-04T00:41:08.3326035Z Make process completed.
 2023-04-04T00:41:08.3489702Z Stripping executables.
 2023-04-04T00:41:09.0474313Z Executing './configure --disable-native-tests --enable-simd=avx2   CPPFLAGS='-DOMP_FALLBACK -DOMP_FALLBACK_BINARY=\"\\\"john-avx2-non-omp\\\"\"  -DCPU_FALLBACK -DCPU_FALLBACK_BINARY=\"\\\"john-xop\\\"\" '   && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-avx2'
@@ -4955,7 +4955,7 @@
 2023-04-04T00:41:30.9298940Z checking for AVX512F... no
 2023-04-04T00:41:30.9459668Z checking for arch.h alternative... x86-64.h
 2023-04-04T00:41:30.9464870Z checking for byte ordering according to target triple... little
-2023-04-04T00:41:30.9474963Z checking supplied paths for OpenSSL...  
+2023-04-04T00:41:30.9474963Z checking supplied paths for OpenSSL...
 2023-04-04T00:41:30.9479046Z checking additional paths for OpenSSL... none
 2023-04-04T00:41:31.1277570Z checking openssl/opensslv.h usability... yes
 2023-04-04T00:41:31.2146370Z checking openssl/opensslv.h presence... yes
@@ -5148,7 +5148,7 @@
 2023-04-04T00:42:21.0380997Z checking for strcasestr... yes
 2023-04-04T00:42:21.4469400Z checking for clGetKernelArgInfo... yes
 2023-04-04T00:42:21.8887737Z checking for posix_memalign... yes
-2023-04-04T00:42:22.2003294Z checking for yasm that supports "-f win64"... 
+2023-04-04T00:42:22.2003294Z checking for yasm that supports "-f win64"...
 2023-04-04T00:42:22.2015603Z checking for *2john helper type... .exe (symlink.c)
 2023-04-04T00:42:22.5444726Z checking for _get_osfhandle... yes
 2023-04-04T00:42:24.9277358Z checking for GetFileSizeEx... yes
@@ -5174,15 +5174,15 @@
 2023-04-04T00:42:31.7507103Z config.status: executing default commands
 2023-04-04T00:42:31.7697581Z configure: creating ./fmt_externs.h
 2023-04-04T00:42:39.9612937Z configure: creating ./fmt_registers.h
-2023-04-04T00:42:50.2784052Z 
+2023-04-04T00:42:50.2784052Z
 2023-04-04T00:42:50.2793182Z Configured for building John the Ripper jumbo:
-2023-04-04T00:42:50.2799625Z 
+2023-04-04T00:42:50.2799625Z
 2023-04-04T00:42:50.2800391Z Target CPU ......................................... x86_64 AVX2, 64-bit LE
 2023-04-04T00:42:50.2800963Z AES-NI support ..................................... depends on OpenSSL
 2023-04-04T00:42:50.2801560Z Target OS .......................................... cygwin
 2023-04-04T00:42:50.2802334Z Cross compiling .................................... no
 2023-04-04T00:42:50.2803095Z Legacy arch header ................................. x86-64.h
-2023-04-04T00:42:50.2803436Z 
+2023-04-04T00:42:50.2803436Z
 2023-04-04T00:42:50.2803902Z Optional libraries/features found:
 2023-04-04T00:42:50.2804369Z Memory map (share/page large files) ................ yes
 2023-04-04T00:42:50.2804853Z Fork support ....................................... yes
@@ -5200,9 +5200,9 @@
 2023-04-04T00:42:50.2810583Z OpenMPI support (default disabled) ................. no
 2023-04-04T00:42:50.2811112Z Experimental code (default disabled) ............... no
 2023-04-04T00:42:50.2811546Z ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-04T00:42:50.2811877Z 
+2023-04-04T00:42:50.2811877Z
 2023-04-04T00:42:50.2813199Z Install missing libraries to get any needed features that were omitted.
-2023-04-04T00:42:50.2813666Z 
+2023-04-04T00:42:50.2813666Z
 2023-04-04T00:42:50.2814359Z Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-04T00:48:16.7392253Z In file included from subsets.c:25:
 2023-04-04T00:48:16.7857573Z subsets.c: In function ‘do_subsets_crack’:
@@ -5213,9 +5213,9 @@
 2023-04-04T00:50:41.3356037Z ar: creating secp256k1.a
 2023-04-04T00:50:48.0493399Z ar: creating ed25519-donna.a
 2023-04-04T00:50:48.5649361Z ar: creating poly1305-donna.a
-2023-04-04T00:51:18.0739142Z 
+2023-04-04T00:51:18.0739142Z
 2023-04-04T00:51:18.0909982Z Make process completed.
-2023-04-04T00:51:19.2012531Z 
+2023-04-04T00:51:19.2012531Z
 2023-04-04T00:51:19.2181870Z Make process completed.
 2023-04-04T00:51:19.2354032Z Stripping executables.
 2023-04-04T00:51:19.9445527Z Executing './configure --disable-native-tests --disable-openmp --enable-simd=avx512f  CPPFLAGS='-fno-asynchronous-unwind-tables -DCPU_FALLBACK -DCPU_FALLBACK_BINARY=\"\\\"john-avx2\\\"\" '                                                                               && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-avx512f-non-omp'
@@ -5311,7 +5311,7 @@
 2023-04-04T00:51:43.0356477Z checking for AVX512BW... no
 2023-04-04T00:51:43.0526842Z checking for arch.h alternative... x86-64.h
 2023-04-04T00:51:43.0532190Z checking for byte ordering according to target triple... little
-2023-04-04T00:51:43.0542375Z checking supplied paths for OpenSSL...  
+2023-04-04T00:51:43.0542375Z checking supplied paths for OpenSSL...
 2023-04-04T00:51:43.0546404Z checking additional paths for OpenSSL... none
 2023-04-04T00:51:43.2380593Z checking openssl/opensslv.h usability... yes
 2023-04-04T00:51:43.3236998Z checking openssl/opensslv.h presence... yes
@@ -5503,7 +5503,7 @@
 2023-04-04T00:52:32.7366465Z checking for strcasestr... yes
 2023-04-04T00:52:33.1437761Z checking for clGetKernelArgInfo... yes
 2023-04-04T00:52:33.5787547Z checking for posix_memalign... yes
-2023-04-04T00:52:33.8848445Z checking for yasm that supports "-f win64"... 
+2023-04-04T00:52:33.8848445Z checking for yasm that supports "-f win64"...
 2023-04-04T00:52:33.8860718Z checking for *2john helper type... .exe (symlink.c)
 2023-04-04T00:52:34.2255544Z checking for _get_osfhandle... yes
 2023-04-04T00:52:36.5805660Z checking for GetFileSizeEx... yes
@@ -5529,15 +5529,15 @@
 2023-04-04T00:52:43.2558940Z config.status: executing default commands
 2023-04-04T00:52:43.2741579Z configure: creating ./fmt_externs.h
 2023-04-04T00:52:51.5671691Z configure: creating ./fmt_registers.h
-2023-04-04T00:53:02.2416650Z 
+2023-04-04T00:53:02.2416650Z
 2023-04-04T00:53:02.2434854Z Configured for building John the Ripper jumbo:
-2023-04-04T00:53:02.2435747Z 
+2023-04-04T00:53:02.2435747Z
 2023-04-04T00:53:02.2436838Z Target CPU ......................................... x86_64 AVX512F, 64-bit LE
 2023-04-04T00:53:02.2437426Z AES-NI support ..................................... depends on OpenSSL
 2023-04-04T00:53:02.2438054Z Target OS .......................................... cygwin
 2023-04-04T00:53:02.2438593Z Cross compiling .................................... no
 2023-04-04T00:53:02.2439134Z Legacy arch header ................................. x86-64.h
-2023-04-04T00:53:02.2439503Z 
+2023-04-04T00:53:02.2439503Z
 2023-04-04T00:53:02.2439988Z Optional libraries/features found:
 2023-04-04T00:53:02.2440521Z Memory map (share/page large files) ................ yes
 2023-04-04T00:53:02.2441011Z Fork support ....................................... yes
@@ -5555,9 +5555,9 @@
 2023-04-04T00:53:02.2448084Z OpenMPI support (default disabled) ................. no
 2023-04-04T00:53:02.2448647Z Experimental code (default disabled) ............... no
 2023-04-04T00:53:02.2449129Z ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-04T00:53:02.2449529Z 
+2023-04-04T00:53:02.2449529Z
 2023-04-04T00:53:02.2450887Z Install missing libraries to get any needed features that were omitted.
-2023-04-04T00:53:02.2451352Z 
+2023-04-04T00:53:02.2451352Z
 2023-04-04T00:53:02.2451878Z Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-04T00:58:12.6526710Z In file included from subsets.c:25:
 2023-04-04T00:58:12.6688285Z subsets.c: In function ‘do_subsets_crack’:
@@ -5568,9 +5568,9 @@
 2023-04-04T01:00:33.0129149Z ar: creating secp256k1.a
 2023-04-04T01:00:37.4064409Z ar: creating poly1305-donna.a
 2023-04-04T01:00:39.7986314Z ar: creating ed25519-donna.a
-2023-04-04T01:01:07.6352213Z 
+2023-04-04T01:01:07.6352213Z
 2023-04-04T01:01:07.6522060Z Make process completed.
-2023-04-04T01:01:08.7489798Z 
+2023-04-04T01:01:08.7489798Z
 2023-04-04T01:01:08.7676230Z Make process completed.
 2023-04-04T01:01:08.7842866Z Stripping executables.
 2023-04-04T01:01:09.7103195Z Executing './configure --disable-native-tests --enable-simd=avx512f  CPPFLAGS='-fno-asynchronous-unwind-tables -DOMP_FALLBACK -DOMP_FALLBACK_BINARY=\"\\\"john-avx512f-non-omp\\\"\"  -DCPU_FALLBACK -DCPU_FALLBACK_BINARY=\"\\\"john-avx2\\\"\" '    && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-avx512f'
@@ -5666,7 +5666,7 @@
 2023-04-04T01:01:32.4111740Z checking for AVX512BW... no
 2023-04-04T01:01:32.4280254Z checking for arch.h alternative... x86-64.h
 2023-04-04T01:01:32.4285853Z checking for byte ordering according to target triple... little
-2023-04-04T01:01:32.4296525Z checking supplied paths for OpenSSL...  
+2023-04-04T01:01:32.4296525Z checking supplied paths for OpenSSL...
 2023-04-04T01:01:32.4300670Z checking additional paths for OpenSSL... none
 2023-04-04T01:01:32.6140709Z checking openssl/opensslv.h usability... yes
 2023-04-04T01:01:32.6994090Z checking openssl/opensslv.h presence... yes
@@ -5859,7 +5859,7 @@
 2023-04-04T01:02:22.2073460Z checking for strcasestr... yes
 2023-04-04T01:02:22.6135225Z checking for clGetKernelArgInfo... yes
 2023-04-04T01:02:23.0507268Z checking for posix_memalign... yes
-2023-04-04T01:02:23.3660868Z checking for yasm that supports "-f win64"... 
+2023-04-04T01:02:23.3660868Z checking for yasm that supports "-f win64"...
 2023-04-04T01:02:23.3673281Z checking for *2john helper type... .exe (symlink.c)
 2023-04-04T01:02:23.7091778Z checking for _get_osfhandle... yes
 2023-04-04T01:02:26.0635425Z checking for GetFileSizeEx... yes
@@ -5885,15 +5885,15 @@
 2023-04-04T01:02:32.7278256Z config.status: executing default commands
 2023-04-04T01:02:32.7457099Z configure: creating ./fmt_externs.h
 2023-04-04T01:02:41.0757426Z configure: creating ./fmt_registers.h
-2023-04-04T01:02:51.7277828Z 
+2023-04-04T01:02:51.7277828Z
 2023-04-04T01:02:51.7288025Z Configured for building John the Ripper jumbo:
-2023-04-04T01:02:51.7290410Z 
+2023-04-04T01:02:51.7290410Z
 2023-04-04T01:02:51.7291105Z Target CPU ......................................... x86_64 AVX512F, 64-bit LE
 2023-04-04T01:02:51.7291732Z AES-NI support ..................................... depends on OpenSSL
 2023-04-04T01:02:51.7292269Z Target OS .......................................... cygwin
 2023-04-04T01:02:51.7292707Z Cross compiling .................................... no
 2023-04-04T01:02:51.7293301Z Legacy arch header ................................. x86-64.h
-2023-04-04T01:02:51.7293648Z 
+2023-04-04T01:02:51.7293648Z
 2023-04-04T01:02:51.7294020Z Optional libraries/features found:
 2023-04-04T01:02:51.7294476Z Memory map (share/page large files) ................ yes
 2023-04-04T01:02:51.7294935Z Fork support ....................................... yes
@@ -5911,9 +5911,9 @@
 2023-04-04T01:02:51.7301533Z OpenMPI support (default disabled) ................. no
 2023-04-04T01:02:51.7301996Z Experimental code (default disabled) ............... no
 2023-04-04T01:02:51.7302456Z ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-04T01:02:51.7302745Z 
+2023-04-04T01:02:51.7302745Z
 2023-04-04T01:02:51.7304055Z Install missing libraries to get any needed features that were omitted.
-2023-04-04T01:02:51.7304386Z 
+2023-04-04T01:02:51.7304386Z
 2023-04-04T01:02:51.7304831Z Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-04T01:08:11.1111263Z In file included from subsets.c:25:
 2023-04-04T01:08:11.1429283Z subsets.c: In function ‘do_subsets_crack’:
@@ -5924,9 +5924,9 @@
 2023-04-04T01:10:32.4072788Z ar: creating secp256k1.a
 2023-04-04T01:10:37.7838142Z ar: creating poly1305-donna.a
 2023-04-04T01:10:39.2118173Z ar: creating ed25519-donna.a
-2023-04-04T01:11:07.4029997Z 
+2023-04-04T01:11:07.4029997Z
 2023-04-04T01:11:07.4205522Z Make process completed.
-2023-04-04T01:11:08.5383821Z 
+2023-04-04T01:11:08.5383821Z
 2023-04-04T01:11:08.5554033Z Make process completed.
 2023-04-04T01:11:08.5727599Z Stripping executables.
 2023-04-04T01:11:09.2740117Z Executing './configure --disable-native-tests --disable-openmp --enable-simd=avx512bw CPPFLAGS='-fno-asynchronous-unwind-tables -DCPU_FALLBACK -DCPU_FALLBACK_BINARY=\"\\\"john-avx512f\\\"\" '                                                                            && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-avx512bw-non-omp'
@@ -6022,7 +6022,7 @@
 2023-04-04T01:11:32.2842093Z checking for AVX512BW... yes
 2023-04-04T01:11:32.3015536Z checking for arch.h alternative... x86-64.h
 2023-04-04T01:11:32.3016801Z checking for byte ordering according to target triple... little
-2023-04-04T01:11:32.3026231Z checking supplied paths for OpenSSL...  
+2023-04-04T01:11:32.3026231Z checking supplied paths for OpenSSL...
 2023-04-04T01:11:32.3030377Z checking additional paths for OpenSSL... none
 2023-04-04T01:11:32.4873473Z checking openssl/opensslv.h usability... yes
 2023-04-04T01:11:32.5713939Z checking openssl/opensslv.h presence... yes
@@ -6214,7 +6214,7 @@
 2023-04-04T01:12:21.7206499Z checking for strcasestr... yes
 2023-04-04T01:12:22.1256389Z checking for clGetKernelArgInfo... yes
 2023-04-04T01:12:22.5629225Z checking for posix_memalign... yes
-2023-04-04T01:12:22.8716573Z checking for yasm that supports "-f win64"... 
+2023-04-04T01:12:22.8716573Z checking for yasm that supports "-f win64"...
 2023-04-04T01:12:22.8728898Z checking for *2john helper type... .exe (symlink.c)
 2023-04-04T01:12:23.2110068Z checking for _get_osfhandle... yes
 2023-04-04T01:12:25.5813633Z checking for GetFileSizeEx... yes
@@ -6240,15 +6240,15 @@
 2023-04-04T01:12:32.2828117Z config.status: executing default commands
 2023-04-04T01:12:32.3017606Z configure: creating ./fmt_externs.h
 2023-04-04T01:12:40.6557900Z configure: creating ./fmt_registers.h
-2023-04-04T01:12:51.3926547Z 
+2023-04-04T01:12:51.3926547Z
 2023-04-04T01:12:51.3939217Z Configured for building John the Ripper jumbo:
-2023-04-04T01:12:51.3939885Z 
+2023-04-04T01:12:51.3939885Z
 2023-04-04T01:12:51.3940728Z Target CPU ......................................... x86_64 AVX512BW, 64-bit LE
 2023-04-04T01:12:51.3941370Z AES-NI support ..................................... depends on OpenSSL
 2023-04-04T01:12:51.3941880Z Target OS .......................................... cygwin
 2023-04-04T01:12:51.3942347Z Cross compiling .................................... no
 2023-04-04T01:12:51.3942840Z Legacy arch header ................................. x86-64.h
-2023-04-04T01:12:51.3943192Z 
+2023-04-04T01:12:51.3943192Z
 2023-04-04T01:12:51.3943574Z Optional libraries/features found:
 2023-04-04T01:12:51.3944042Z Memory map (share/page large files) ................ yes
 2023-04-04T01:12:51.3944621Z Fork support ....................................... yes
@@ -6266,9 +6266,9 @@
 2023-04-04T01:12:51.3951043Z OpenMPI support (default disabled) ................. no
 2023-04-04T01:12:51.3951518Z Experimental code (default disabled) ............... no
 2023-04-04T01:12:51.3951996Z ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-04T01:12:51.3952298Z 
+2023-04-04T01:12:51.3952298Z
 2023-04-04T01:12:51.3953647Z Install missing libraries to get any needed features that were omitted.
-2023-04-04T01:12:51.3953993Z 
+2023-04-04T01:12:51.3953993Z
 2023-04-04T01:12:51.3954450Z Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-04T01:18:00.5729053Z In file included from subsets.c:25:
 2023-04-04T01:18:00.6977453Z subsets.c: In function ‘do_subsets_crack’:
@@ -6279,9 +6279,9 @@
 2023-04-04T01:20:19.3593865Z ar: creating secp256k1.a
 2023-04-04T01:20:24.4330510Z ar: creating poly1305-donna.a
 2023-04-04T01:20:26.1364223Z ar: creating ed25519-donna.a
-2023-04-04T01:20:54.1350452Z 
+2023-04-04T01:20:54.1350452Z
 2023-04-04T01:20:54.1516444Z Make process completed.
-2023-04-04T01:20:55.2633546Z 
+2023-04-04T01:20:55.2633546Z
 2023-04-04T01:20:55.2797908Z Make process completed.
 2023-04-04T01:20:55.2965698Z Stripping executables.
 2023-04-04T01:20:55.9966343Z Executing './configure --disable-native-tests --enable-simd=avx512bw CPPFLAGS='-fno-asynchronous-unwind-tables -DOMP_FALLBACK -DOMP_FALLBACK_BINARY=\"\\\"john-avx512bw-non-omp\\\"\" -DCPU_FALLBACK -DCPU_FALLBACK_BINARY=\"\\\"john-avx512f\\\"\" ' && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-avx512bw'
@@ -6377,7 +6377,7 @@
 2023-04-04T01:21:18.9134227Z checking for AVX512BW... yes
 2023-04-04T01:21:18.9135005Z checking for arch.h alternative... x86-64.h
 2023-04-04T01:21:18.9135431Z checking for byte ordering according to target triple... little
-2023-04-04T01:21:18.9135777Z checking supplied paths for OpenSSL...  
+2023-04-04T01:21:18.9135777Z checking supplied paths for OpenSSL...
 2023-04-04T01:21:18.9136156Z checking additional paths for OpenSSL... none
 2023-04-04T01:21:19.0202903Z checking openssl/opensslv.h usability... yes
 2023-04-04T01:21:19.1046321Z checking openssl/opensslv.h presence... yes
@@ -6570,7 +6570,7 @@
 2023-04-04T01:22:08.4518639Z checking for strcasestr... yes
 2023-04-04T01:22:08.8536432Z checking for clGetKernelArgInfo... yes
 2023-04-04T01:22:09.2898393Z checking for posix_memalign... yes
-2023-04-04T01:22:09.6084192Z checking for yasm that supports "-f win64"... 
+2023-04-04T01:22:09.6084192Z checking for yasm that supports "-f win64"...
 2023-04-04T01:22:09.6096632Z checking for *2john helper type... .exe (symlink.c)
 2023-04-04T01:22:09.9502850Z checking for _get_osfhandle... yes
 2023-04-04T01:22:12.2889854Z checking for GetFileSizeEx... yes
@@ -6596,15 +6596,15 @@
 2023-04-04T01:22:18.9449447Z config.status: executing default commands
 2023-04-04T01:22:18.9630956Z configure: creating ./fmt_externs.h
 2023-04-04T01:22:27.3815330Z configure: creating ./fmt_registers.h
-2023-04-04T01:22:38.2008676Z 
+2023-04-04T01:22:38.2008676Z
 2023-04-04T01:22:38.2020212Z Configured for building John the Ripper jumbo:
-2023-04-04T01:22:38.2021321Z 
+2023-04-04T01:22:38.2021321Z
 2023-04-04T01:22:38.2021888Z Target CPU ......................................... x86_64 AVX512BW, 64-bit LE
 2023-04-04T01:22:38.2022449Z AES-NI support ..................................... depends on OpenSSL
 2023-04-04T01:22:38.2023043Z Target OS .......................................... cygwin
 2023-04-04T01:22:38.2023525Z Cross compiling .................................... no
 2023-04-04T01:22:38.2024041Z Legacy arch header ................................. x86-64.h
-2023-04-04T01:22:38.2024432Z 
+2023-04-04T01:22:38.2024432Z
 2023-04-04T01:22:38.2024844Z Optional libraries/features found:
 2023-04-04T01:22:38.2025443Z Memory map (share/page large files) ................ yes
 2023-04-04T01:22:38.2025966Z Fork support ....................................... yes
@@ -6622,9 +6622,9 @@
 2023-04-04T01:22:38.2032130Z OpenMPI support (default disabled) ................. no
 2023-04-04T01:22:38.2032636Z Experimental code (default disabled) ............... no
 2023-04-04T01:22:38.2033137Z ZTEX USB-FPGA module 1.15y support ................. no
-2023-04-04T01:22:38.2033542Z 
+2023-04-04T01:22:38.2033542Z
 2023-04-04T01:22:38.2034101Z Install missing libraries to get any needed features that were omitted.
-2023-04-04T01:22:38.2034450Z 
+2023-04-04T01:22:38.2034450Z
 2023-04-04T01:22:38.2034921Z Configure finished.  Now "make -s clean && make -sj4" to compile.
 2023-04-04T01:27:52.4842517Z In file included from subsets.c:25:
 2023-04-04T01:27:52.5456105Z subsets.c: In function ‘do_subsets_crack’:
@@ -6635,9 +6635,9 @@
 2023-04-04T01:30:11.3376879Z ar: creating secp256k1.a
 2023-04-04T01:30:16.6537813Z ar: creating poly1305-donna.a
 2023-04-04T01:30:18.1298461Z ar: creating ed25519-donna.a
-2023-04-04T01:30:46.9618043Z 
+2023-04-04T01:30:46.9618043Z
 2023-04-04T01:30:46.9786488Z Make process completed.
-2023-04-04T01:30:48.0585825Z 
+2023-04-04T01:30:48.0585825Z
 2023-04-04T01:30:48.0748816Z Make process completed.
 2023-04-04T01:30:48.0913992Z Stripping executables.
 2023-04-04T01:30:48.7898479Z Executing 'mkdir -p ../etc/OpenCL/vendors'
@@ -6646,7 +6646,7 @@
 2023-04-04T01:30:49.2046519Z Executing 'echo 'c:\Windows\System32\IntelOpenCL64.dll' > ../etc/OpenCL/vendors/intel.icd'
 2023-04-04T01:30:49.3379895Z Executing 'cp ../run/john-avx512bw.exe ../run/john.exe'
 2023-04-04T01:30:49.4855607Z Executing 'make -s windows-package'
-2023-04-04T01:30:50.6728993Z 
+2023-04-04T01:30:50.6728993Z
 2023-04-04T01:30:50.6892130Z Make process completed.
 2023-04-04T01:30:50.7056052Z Make JtR suitable for Windows.
 2023-04-04T01:30:55.2438629Z renamed '../doc/CHANGES' -> '../doc/CHANGES.txt'
@@ -6744,14 +6744,14 @@
 2023-04-04T01:30:57.1354571Z 1 File(s) copied
 2023-04-04T01:30:57.1454844Z C:\tools\cygwin\bin\cyggcc_s-seh-1.dll
 2023-04-04T01:30:57.1490286Z 1 File(s) copied
-2023-04-04T01:30:57.2056745Z 
-2023-04-04T01:30:57.2057865Z 
+2023-04-04T01:30:57.2056745Z
+2023-04-04T01:30:57.2057865Z
 2023-04-04T01:30:57.2062012Z     Directory: D:\a\1\JtR
-2023-04-04T01:30:57.2062291Z 
-2023-04-04T01:30:57.2062373Z 
-2023-04-04T01:30:57.2067052Z Mode                LastWriteTime         Length Name                                                                  
-2023-04-04T01:30:57.2069595Z ----                -------------         ------ ----                                                                  
-2023-04-04T01:30:57.2073622Z d-----         4/4/2023   1:30 AM                lib                                                                   
+2023-04-04T01:30:57.2062291Z
+2023-04-04T01:30:57.2062373Z
+2023-04-04T01:30:57.2067052Z Mode                LastWriteTime         Length Name
+2023-04-04T01:30:57.2069595Z ----                -------------         ------ ----
+2023-04-04T01:30:57.2073622Z d-----         4/4/2023   1:30 AM                lib
 2023-04-04T01:30:57.2187381Z C:\tools\cygwin\bin\cygargp-0.dll
 2023-04-04T01:30:57.2203662Z C:\tools\cygwin\bin\cygassuan-0.dll
 2023-04-04T01:30:57.2209029Z C:\tools\cygwin\bin\cygatomic-1.dll
@@ -7070,8 +7070,8 @@
 2023-04-04T01:30:57.4672044Z Available physical host memory: 5281 MiB
 2023-04-04T01:30:57.4672435Z Terminal locale string: C.UTF-8
 2023-04-04T01:30:57.4672864Z Parsed terminal locale: UTF-8
-2023-04-04T01:30:57.4704415Z 
-2023-04-04T01:30:57.4705401Z 
+2023-04-04T01:30:57.4704415Z
+2023-04-04T01:30:57.4705401Z
 2023-04-04T01:30:57.5227004Z ##[section]Finishing: Build JtR
 2023-04-04T01:30:57.7605526Z ##[section]Starting: Save the Buid ID value
 2023-04-04T01:30:57.7716695Z ==============================================================================
@@ -7116,32 +7116,32 @@
 2023-04-04T01:31:06.2076597Z Could Not Find D:\a\1\JtR\run\john-local.conf
 2023-04-04T01:31:06.2112707Z Could Not Find D:\a\1\JtR\appveyor.yml
 2023-04-04T01:31:06.7095998Z         1 file(s) moved.
-2023-04-04T01:31:59.2504337Z 
+2023-04-04T01:31:59.2504337Z
 2023-04-04T01:31:59.2506202Z 7-Zip 22.01 (x64) : Copyright (c) 1999-2022 Igor Pavlov : 2022-07-15
-2023-04-04T01:31:59.2506587Z 
+2023-04-04T01:31:59.2506587Z
 2023-04-04T01:31:59.2506969Z Scanning the drive:
 2023-04-04T01:31:59.2507389Z 1 folder, 279 files, 161067716 bytes (154 MiB)
-2023-04-04T01:31:59.2507709Z 
+2023-04-04T01:31:59.2507709Z
 2023-04-04T01:31:59.2508074Z Creating archive: optional.7z
-2023-04-04T01:31:59.2508697Z 
+2023-04-04T01:31:59.2508697Z
 2023-04-04T01:31:59.2509690Z Add new data to archive: 1 folder, 279 files, 161067716 bytes (154 MiB)
-2023-04-04T01:31:59.2510063Z 
-2023-04-04T01:31:59.2510323Z 
+2023-04-04T01:31:59.2510063Z
+2023-04-04T01:31:59.2510323Z
 2023-04-04T01:31:59.2510708Z Files read from disk: 279
 2023-04-04T01:31:59.2511125Z Archive size: 35186787 bytes (34 MiB)
 2023-04-04T01:31:59.2511579Z Everything is Ok
 2023-04-04T01:31:59.2887845Z         1 file(s) moved.
-2023-04-04T01:32:52.5605469Z 
+2023-04-04T01:32:52.5605469Z
 2023-04-04T01:32:52.5607116Z 7-Zip 22.01 (x64) : Copyright (c) 1999-2022 Igor Pavlov : 2022-07-15
-2023-04-04T01:32:52.5607532Z 
+2023-04-04T01:32:52.5607532Z
 2023-04-04T01:32:52.5607912Z Scanning the drive:
 2023-04-04T01:32:52.5608335Z 15 folders, 515 files, 186163574 bytes (178 MiB)
-2023-04-04T01:32:52.5608644Z 
+2023-04-04T01:32:52.5608644Z
 2023-04-04T01:32:52.5609006Z Creating archive: win_x64.7z
-2023-04-04T01:32:52.5609301Z 
+2023-04-04T01:32:52.5609301Z
 2023-04-04T01:32:52.5609857Z Add new data to archive: 15 folders, 515 files, 186163574 bytes (178 MiB)
-2023-04-04T01:32:52.5610191Z 
-2023-04-04T01:32:52.5610442Z 
+2023-04-04T01:32:52.5610191Z
+2023-04-04T01:32:52.5610442Z
 2023-04-04T01:32:52.5610814Z Files read from disk: 515
 2023-04-04T01:32:52.5611299Z Archive size: 31934437 bytes (31 MiB)
 2023-04-04T01:32:52.5611733Z Everything is Ok
@@ -7159,55 +7159,55 @@
 2023-04-04T01:32:54.0116629Z ========================== Starting Command Output ===========================
 2023-04-04T01:32:54.0345893Z ##[command]"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Unrestricted -Command ". 'D:\a\_temp\ebd53d48-c936-4265-aee4-0d0a88a75da8.ps1'"
 2023-04-04T01:32:54.3062300Z --------------------------------------------------------
-2023-04-04T01:32:54.3078401Z         =====  Compute and Save Checksums  =====        
+2023-04-04T01:32:54.3078401Z         =====  Compute and Save Checksums  =====
 2023-04-04T01:32:54.3085541Z --------------------------------------------------------
-2023-04-04T01:32:54.6248439Z 
-2023-04-04T01:32:54.6254671Z Algorithm       Hash                                                                   Path                            
-2023-04-04T01:32:54.6256861Z ---------       ----                                                                   ----                            
-2023-04-04T01:32:54.6258399Z SHA256          FF530998F9CA05CF856D52BA26CD8E7737085BCCFD170122B1BFC6542E9E179A       C:\win_x64.7z                   
-2023-04-04T01:32:54.8266809Z SHA256          078EF96B8B928012CBAB3559BCFA459D2A4D2DED6E4F3D9D20F0DC1AD894C5AB       C:\optional.7z                  
+2023-04-04T01:32:54.6248439Z
+2023-04-04T01:32:54.6254671Z Algorithm       Hash                                                                   Path
+2023-04-04T01:32:54.6256861Z ---------       ----                                                                   ----
+2023-04-04T01:32:54.6258399Z SHA256          FF530998F9CA05CF856D52BA26CD8E7737085BCCFD170122B1BFC6542E9E179A       C:\win_x64.7z
+2023-04-04T01:32:54.8266809Z SHA256          078EF96B8B928012CBAB3559BCFA459D2A4D2DED6E4F3D9D20F0DC1AD894C5AB       C:\optional.7z
 2023-04-04T01:32:54.8278650Z **************************************************************************
 2023-04-04T01:32:54.8329802Z File verification is the process of using an algorithm for verifying the integrity of a computer file. A popular approach is to store checksums (hashes) of files, also known as message digests, for later comparison.
 2023-04-04T01:32:54.8344949Z **************************************************************************
-2023-04-04T01:32:54.8656852Z SHA256          E1AAEAE550E74292EB17728272636338DDDDA3F2C2A2BEE4D0BA23E17FCDF15F       D:\a\1\JtR\run\base64conv.exe   
+2023-04-04T01:32:54.8656852Z SHA256          E1AAEAE550E74292EB17728272636338DDDDA3F2C2A2BEE4D0BA23E17FCDF15F       D:\a\1\JtR\run\base64conv.exe
 2023-04-04T01:32:54.8677084Z SHA256          FB0A6810AA403FFF3BE8A5E0F416779F5CA0AA22C1BEA0194CFF1FE700A470A1       D:\a\1\JtR\run\bitlocker2john...
-2023-04-04T01:32:54.8687180Z SHA256          74530ABF8DEDFC14B9C56C4111658BECA36D8CC4B11B6C1985C6F40D753DFF97       D:\a\1\JtR\run\calc_stat.exe    
-2023-04-04T01:32:54.8701115Z SHA256          EBFC471307EE362DE17AC988DB66B679C207FFCC8C9F0D816BFF82092B9264C1       D:\a\1\JtR\run\cprepair.exe     
-2023-04-04T01:32:54.8711373Z SHA256          9A41445A70822D3239F67A972659B6022B181222316F2FAD8AAF6E38D412EE15       D:\a\1\JtR\run\dmg2john.exe     
-2023-04-04T01:32:54.8723239Z SHA256          92C213AC11D1AD2C0E7A1DA3BFCF503F6053AF707307FD9D7A27E39C77EA477D       D:\a\1\JtR\run\genmkvpwd.exe    
-2023-04-04T01:32:54.8732729Z SHA256          E1AAEAE550E74292EB17728272636338DDDDA3F2C2A2BEE4D0BA23E17FCDF15F       D:\a\1\JtR\run\gpg2john.exe     
-2023-04-04T01:32:54.8742871Z SHA256          8D9A66695353FE319AB7414FBB7A00904CDDD3FE8E4A051FB9AD2A6318D39187       D:\a\1\JtR\run\hccap2john.exe   
+2023-04-04T01:32:54.8687180Z SHA256          74530ABF8DEDFC14B9C56C4111658BECA36D8CC4B11B6C1985C6F40D753DFF97       D:\a\1\JtR\run\calc_stat.exe
+2023-04-04T01:32:54.8701115Z SHA256          EBFC471307EE362DE17AC988DB66B679C207FFCC8C9F0D816BFF82092B9264C1       D:\a\1\JtR\run\cprepair.exe
+2023-04-04T01:32:54.8711373Z SHA256          9A41445A70822D3239F67A972659B6022B181222316F2FAD8AAF6E38D412EE15       D:\a\1\JtR\run\dmg2john.exe
+2023-04-04T01:32:54.8723239Z SHA256          92C213AC11D1AD2C0E7A1DA3BFCF503F6053AF707307FD9D7A27E39C77EA477D       D:\a\1\JtR\run\genmkvpwd.exe
+2023-04-04T01:32:54.8732729Z SHA256          E1AAEAE550E74292EB17728272636338DDDDA3F2C2A2BEE4D0BA23E17FCDF15F       D:\a\1\JtR\run\gpg2john.exe
+2023-04-04T01:32:54.8742871Z SHA256          8D9A66695353FE319AB7414FBB7A00904CDDD3FE8E4A051FB9AD2A6318D39187       D:\a\1\JtR\run\hccap2john.exe
 2023-04-04T01:32:54.9183002Z SHA256          E8A8F11F06FF9CE0852BC69B444DA59AF338E3CBCC2C6EEAE40807528167741D       D:\a\1\JtR\run\john-avx-non-o...
-2023-04-04T01:32:54.9617431Z SHA256          480759250074995DC70926C7D18BDCD647EFB54D335BFC1E0401C454F43672FE       D:\a\1\JtR\run\john-avx.exe     
+2023-04-04T01:32:54.9617431Z SHA256          480759250074995DC70926C7D18BDCD647EFB54D335BFC1E0401C454F43672FE       D:\a\1\JtR\run\john-avx.exe
 2023-04-04T01:32:55.0059546Z SHA256          7C63092F18C2A791E2E7DCABF4886DDF20344E7AB856A2C28F9EA413C347AB16       D:\a\1\JtR\run\john-avx2-non-...
-2023-04-04T01:32:55.0759787Z SHA256          FE3B8A77D167BC0EADF42A28D400AC5D0376D6C98AC267595CCB8BCE6772CFC7       D:\a\1\JtR\run\john-avx2.exe    
+2023-04-04T01:32:55.0759787Z SHA256          FE3B8A77D167BC0EADF42A28D400AC5D0376D6C98AC267595CCB8BCE6772CFC7       D:\a\1\JtR\run\john-avx2.exe
 2023-04-04T01:32:55.0954326Z SHA256          0B30AAE82AAFAEB1CF1D64D70424520506584C06B8D767BCAAB32535A7CBCC46       D:\a\1\JtR\run\john-avx512bw-...
 2023-04-04T01:32:55.1393869Z SHA256          84CBA1F5F72032B0B6354665032D64033F3356933CA041B26F9CB2BB295A5CDE       D:\a\1\JtR\run\john-avx512bw.exe
 2023-04-04T01:32:55.1838335Z SHA256          75DD5434A257D7ECE5C1F42659A1ADD679AFEA3EC7CC2EA87C03A7EB5D618D5D       D:\a\1\JtR\run\john-avx512f-n...
-2023-04-04T01:32:55.2280114Z SHA256          E7EB2666DF35AB0D004B245C2F54582A7F7A5D615783648507AA948F3F4B44F7       D:\a\1\JtR\run\john-avx512f.exe 
+2023-04-04T01:32:55.2280114Z SHA256          E7EB2666DF35AB0D004B245C2F54582A7F7A5D615783648507AA948F3F4B44F7       D:\a\1\JtR\run\john-avx512f.exe
 2023-04-04T01:32:55.2724817Z SHA256          D8DD0C1B7E2AB786590CA1A1D5CCB378D6B27E1238E69E3A6377379E23E0CEAC       D:\a\1\JtR\run\john-sse2-non-...
-2023-04-04T01:32:55.3162636Z SHA256          E01B74D83CD476ADC1CBB6B69BF6B11F1471C035001DE7D9FFF4A3CFDF1112D6       D:\a\1\JtR\run\john-sse2.exe    
+2023-04-04T01:32:55.3162636Z SHA256          E01B74D83CD476ADC1CBB6B69BF6B11F1471C035001DE7D9FFF4A3CFDF1112D6       D:\a\1\JtR\run\john-sse2.exe
 2023-04-04T01:32:55.3605914Z SHA256          67918FC737E5B696CC519B0BB32A2CBBBFCDF821AF85D3959CD3569A3A85D787       D:\a\1\JtR\run\john-sse41-non...
-2023-04-04T01:32:55.4047379Z SHA256          88F7107F36D7C0BA727AC2AC3B4647F3F87AF119A6BFA869166CFF3E779FF32D       D:\a\1\JtR\run\john-sse41.exe   
+2023-04-04T01:32:55.4047379Z SHA256          88F7107F36D7C0BA727AC2AC3B4647F3F87AF119A6BFA869166CFF3E779FF32D       D:\a\1\JtR\run\john-sse41.exe
 2023-04-04T01:32:55.4492738Z SHA256          19286B1AB20E9ACE2571BC7CA735244E4CC114BA87145A9F4AC97343504C24A5       D:\a\1\JtR\run\john-xop-non-o...
-2023-04-04T01:32:55.4935377Z SHA256          E82C4D0249862CC2B8368E75B94F34C1CBFE4B3BE69A2887C8AC7495087FDF46       D:\a\1\JtR\run\john-xop.exe     
-2023-04-04T01:32:55.4947964Z SHA256          EC9E227475F0A5A4077B55F173D8EFE7A36113F89B44611D54887691CB8D1824       D:\a\1\JtR\run\john.exe         
-2023-04-04T01:32:55.4961014Z SHA256          D4E3034E3AC16A42BD09AE8416BE5EB567643A05D1306C305B42EB5962F56602       D:\a\1\JtR\run\keepass2john.exe 
-2023-04-04T01:32:55.4970593Z SHA256          D714F52EF977BA70C276B5159FB94B82884F4E2B35A69FCB6FDAFD5C2CB1337D       D:\a\1\JtR\run\mkvcalcproba.exe 
-2023-04-04T01:32:55.4980982Z SHA256          666E437ED2734A293F1955EC7157CA04EDD77DFDF5AA554A876BB24908CFDDE6       D:\a\1\JtR\run\putty2john.exe   
-2023-04-04T01:32:55.4991712Z SHA256          9554F93569E7BA8718B3AAB0772F2389A497EF3B8376E9C64E9EF83E4C0127F5       D:\a\1\JtR\run\racf2john.exe    
-2023-04-04T01:32:55.5004579Z SHA256          E1AAEAE550E74292EB17728272636338DDDDA3F2C2A2BEE4D0BA23E17FCDF15F       D:\a\1\JtR\run\rar2john.exe     
-2023-04-04T01:32:55.5014337Z SHA256          2D4E572F114CC656C41BEBC4E421627EDCDBC833392604D39D510AFEBFD1706C       D:\a\1\JtR\run\raw2dyna.exe     
-2023-04-04T01:32:55.5025399Z SHA256          4E134941A4267E5F78F752021A8E0E037D1AC820030F743ED2780BAF94C9DD8E       D:\a\1\JtR\run\tgtsnarf.exe     
-2023-04-04T01:32:55.5043166Z SHA256          F180A8D7F5ACE3AD1822578692553B6AC75CB806D52E99C1D619C0216D96F332       D:\a\1\JtR\run\uaf2john.exe     
-2023-04-04T01:32:55.5053398Z SHA256          E1AAEAE550E74292EB17728272636338DDDDA3F2C2A2BEE4D0BA23E17FCDF15F       D:\a\1\JtR\run\unafs.exe        
-2023-04-04T01:32:55.5063436Z SHA256          E1AAEAE550E74292EB17728272636338DDDDA3F2C2A2BEE4D0BA23E17FCDF15F       D:\a\1\JtR\run\undrop.exe       
-2023-04-04T01:32:55.5073386Z SHA256          E1AAEAE550E74292EB17728272636338DDDDA3F2C2A2BEE4D0BA23E17FCDF15F       D:\a\1\JtR\run\unique.exe       
-2023-04-04T01:32:55.5086620Z SHA256          E1AAEAE550E74292EB17728272636338DDDDA3F2C2A2BEE4D0BA23E17FCDF15F       D:\a\1\JtR\run\unshadow.exe     
-2023-04-04T01:32:55.5096663Z SHA256          F7D4D0C8E3A5B78989CA8A0036A9801DC931B0299AA90306BCA3556A3CDAF039       D:\a\1\JtR\run\wpapcap2john.exe 
-2023-04-04T01:32:55.5113295Z SHA256          E1AAEAE550E74292EB17728272636338DDDDA3F2C2A2BEE4D0BA23E17FCDF15F       D:\a\1\JtR\run\zip2john.exe     
-2023-04-04T01:32:55.5160935Z 
-2023-04-04T01:32:55.5163343Z 
+2023-04-04T01:32:55.4935377Z SHA256          E82C4D0249862CC2B8368E75B94F34C1CBFE4B3BE69A2887C8AC7495087FDF46       D:\a\1\JtR\run\john-xop.exe
+2023-04-04T01:32:55.4947964Z SHA256          EC9E227475F0A5A4077B55F173D8EFE7A36113F89B44611D54887691CB8D1824       D:\a\1\JtR\run\john.exe
+2023-04-04T01:32:55.4961014Z SHA256          D4E3034E3AC16A42BD09AE8416BE5EB567643A05D1306C305B42EB5962F56602       D:\a\1\JtR\run\keepass2john.exe
+2023-04-04T01:32:55.4970593Z SHA256          D714F52EF977BA70C276B5159FB94B82884F4E2B35A69FCB6FDAFD5C2CB1337D       D:\a\1\JtR\run\mkvcalcproba.exe
+2023-04-04T01:32:55.4980982Z SHA256          666E437ED2734A293F1955EC7157CA04EDD77DFDF5AA554A876BB24908CFDDE6       D:\a\1\JtR\run\putty2john.exe
+2023-04-04T01:32:55.4991712Z SHA256          9554F93569E7BA8718B3AAB0772F2389A497EF3B8376E9C64E9EF83E4C0127F5       D:\a\1\JtR\run\racf2john.exe
+2023-04-04T01:32:55.5004579Z SHA256          E1AAEAE550E74292EB17728272636338DDDDA3F2C2A2BEE4D0BA23E17FCDF15F       D:\a\1\JtR\run\rar2john.exe
+2023-04-04T01:32:55.5014337Z SHA256          2D4E572F114CC656C41BEBC4E421627EDCDBC833392604D39D510AFEBFD1706C       D:\a\1\JtR\run\raw2dyna.exe
+2023-04-04T01:32:55.5025399Z SHA256          4E134941A4267E5F78F752021A8E0E037D1AC820030F743ED2780BAF94C9DD8E       D:\a\1\JtR\run\tgtsnarf.exe
+2023-04-04T01:32:55.5043166Z SHA256          F180A8D7F5ACE3AD1822578692553B6AC75CB806D52E99C1D619C0216D96F332       D:\a\1\JtR\run\uaf2john.exe
+2023-04-04T01:32:55.5053398Z SHA256          E1AAEAE550E74292EB17728272636338DDDDA3F2C2A2BEE4D0BA23E17FCDF15F       D:\a\1\JtR\run\unafs.exe
+2023-04-04T01:32:55.5063436Z SHA256          E1AAEAE550E74292EB17728272636338DDDDA3F2C2A2BEE4D0BA23E17FCDF15F       D:\a\1\JtR\run\undrop.exe
+2023-04-04T01:32:55.5073386Z SHA256          E1AAEAE550E74292EB17728272636338DDDDA3F2C2A2BEE4D0BA23E17FCDF15F       D:\a\1\JtR\run\unique.exe
+2023-04-04T01:32:55.5086620Z SHA256          E1AAEAE550E74292EB17728272636338DDDDA3F2C2A2BEE4D0BA23E17FCDF15F       D:\a\1\JtR\run\unshadow.exe
+2023-04-04T01:32:55.5096663Z SHA256          F7D4D0C8E3A5B78989CA8A0036A9801DC931B0299AA90306BCA3556A3CDAF039       D:\a\1\JtR\run\wpapcap2john.exe
+2023-04-04T01:32:55.5113295Z SHA256          E1AAEAE550E74292EB17728272636338DDDDA3F2C2A2BEE4D0BA23E17FCDF15F       D:\a\1\JtR\run\zip2john.exe
+2023-04-04T01:32:55.5160935Z
+2023-04-04T01:32:55.5163343Z
 2023-04-04T01:32:55.5527644Z ##[section]Finishing: Compute and Save Checksums
 2023-04-04T01:32:56.8652686Z ##[section]Starting: PublishPipelineArtifact
 2023-04-04T01:32:56.8760814Z ==============================================================================
@@ -7228,7 +7228,7 @@
 2023-04-04T01:33:04.8774126Z Uploaded 11,785,803 out of 31,934,437 bytes.
 2023-04-04T01:33:05.4408047Z Uploaded 11,785,985 out of 31,934,619 bytes
 2023-04-04T01:33:05.4409004Z Content upload is done!
-2023-04-04T01:33:05.4419170Z 
+2023-04-04T01:33:05.4419170Z
 2023-04-04T01:33:05.4419613Z Content upload statistics:
 2023-04-04T01:33:05.4420255Z Total Content: 63.9 MB
 2023-04-04T01:33:05.4420705Z Physical Content Uploaded: 11.8 MB
@@ -7237,7 +7237,7 @@
 2023-04-04T01:33:05.4421951Z Deduplication Saved: 52.1 MB
 2023-04-04T01:33:05.4422384Z Number of Chunks Uploaded: 157
 2023-04-04T01:33:05.4422806Z Total Number of Chunks: 1,252
-2023-04-04T01:33:05.4423075Z 
+2023-04-04T01:33:05.4423075Z
 2023-04-04T01:33:06.0279996Z Associated artifact 1429 with build 389
 2023-04-04T01:33:06.0290892Z ApplicationInsightsTelemetrySender correlated 2 events with X-TFS-Session b6a9b020-254a-4d03-a264-aa17ff2a1d1a
 2023-04-04T01:33:06.0294032Z Uploading pipeline artifact finished.
@@ -7259,7 +7259,7 @@
 2023-04-04T01:33:08.1181163Z Processed 1 files from c:\ successfully.
 2023-04-04T01:33:10.1418994Z Uploaded 179 out of 179 bytes
 2023-04-04T01:33:10.1420024Z Content upload is done!
-2023-04-04T01:33:10.1429713Z 
+2023-04-04T01:33:10.1429713Z
 2023-04-04T01:33:10.1430140Z Content upload statistics:
 2023-04-04T01:33:10.1430591Z Total Content: 0.2 KB
 2023-04-04T01:33:10.1431070Z Physical Content Uploaded: 0.2 KB
@@ -7268,7 +7268,7 @@
 2023-04-04T01:33:10.1432405Z Deduplication Saved: 5.0 bytes
 2023-04-04T01:33:10.1432844Z Number of Chunks Uploaded: 2
 2023-04-04T01:33:10.1433279Z Total Number of Chunks: 3
-2023-04-04T01:33:10.1433703Z 
+2023-04-04T01:33:10.1433703Z
 2023-04-04T01:33:10.4806448Z Associated artifact 1430 with build 389
 2023-04-04T01:33:10.4830811Z ApplicationInsightsTelemetrySender correlated 2 events with X-TFS-Session a56f9bcf-774b-4bb6-b604-c8995355ea7a
 2023-04-04T01:33:10.4833886Z Uploading pipeline artifact finished.
@@ -7290,7 +7290,7 @@
 2023-04-04T01:33:11.8217629Z Processed 1 files from c:\ successfully.
 2023-04-04T01:33:13.7356922Z Uploaded 140,613 out of 140,613 bytes
 2023-04-04T01:33:13.7357989Z Content upload is done!
-2023-04-04T01:33:13.7366586Z 
+2023-04-04T01:33:13.7366586Z
 2023-04-04T01:33:13.7367040Z Content upload statistics:
 2023-04-04T01:33:13.7367613Z Total Content: 0.3 MB
 2023-04-04T01:33:13.7368080Z Physical Content Uploaded: 0.1 MB
@@ -7299,7 +7299,7 @@
 2023-04-04T01:33:13.7369415Z Deduplication Saved: 0.1 MB
 2023-04-04T01:33:13.7369857Z Number of Chunks Uploaded: 4
 2023-04-04T01:33:13.7370316Z Total Number of Chunks: 10
-2023-04-04T01:33:13.7370640Z 
+2023-04-04T01:33:13.7370640Z
 2023-04-04T01:33:14.0651943Z Associated artifact 1431 with build 389
 2023-04-04T01:33:14.0675989Z ApplicationInsightsTelemetrySender correlated 2 events with X-TFS-Session 8a96c716-49b0-4135-9776-982a4ad9a971
 2023-04-04T01:33:14.0679019Z Uploading pipeline artifact finished.
@@ -7321,7 +7321,7 @@
 2023-04-04T01:33:16.1435010Z Processed 1 files from c:\ successfully.
 2023-04-04T01:33:17.6101200Z Uploaded 10,220 out of 10,220 bytes
 2023-04-04T01:33:17.6102220Z Content upload is done!
-2023-04-04T01:33:17.6111886Z 
+2023-04-04T01:33:17.6111886Z
 2023-04-04T01:33:17.6112285Z Content upload statistics:
 2023-04-04T01:33:17.6112683Z Total Content: 20.3 KB
 2023-04-04T01:33:17.6113081Z Physical Content Uploaded: 3.1 KB
@@ -7330,7 +7330,7 @@
 2023-04-04T01:33:17.6114256Z Deduplication Saved: 10.0 KB
 2023-04-04T01:33:17.6114629Z Number of Chunks Uploaded: 2
 2023-04-04T01:33:17.6115010Z Total Number of Chunks: 3
-2023-04-04T01:33:17.6115275Z 
+2023-04-04T01:33:17.6115275Z
 2023-04-04T01:33:17.9423177Z Associated artifact 1432 with build 389
 2023-04-04T01:33:18.6724841Z ApplicationInsightsTelemetrySender correlated 2 events with X-TFS-Session 857c5142-6ce5-41a7-9ea7-a52f278e5877
 2023-04-04T01:33:18.6726113Z Uploading pipeline artifact finished.
@@ -7365,7 +7365,7 @@
 2023-04-04T01:33:24.4442474Z Filtered 1 files from the Minimatch filters supplied.
 2023-04-04T01:33:24.4767337Z Downloaded 0.0 MB out of 31.9 MB (0%).
 2023-04-04T01:33:27.8423814Z Downloaded 31.9 MB out of 31.9 MB (100%).
-2023-04-04T01:33:27.8431743Z 
+2023-04-04T01:33:27.8431743Z
 2023-04-04T01:33:27.8432206Z Download statistics:
 2023-04-04T01:33:27.8432694Z Total Content: 31.9 MB
 2023-04-04T01:33:27.8433188Z Physical Content Downloaded: 31.9 MB
@@ -7373,7 +7373,7 @@
 2023-04-04T01:33:27.8434084Z Local Caching Saved: 0.0 MB
 2023-04-04T01:33:27.8434528Z Chunks Downloaded: 417
 2023-04-04T01:33:27.8434964Z Nodes Downloaded: 0
-2023-04-04T01:33:27.8435563Z 
+2023-04-04T01:33:27.8435563Z
 2023-04-04T01:33:27.8556531Z Download completed.
 2023-04-04T01:33:28.0310106Z ApplicationInsightsTelemetrySender correlated 2 events with X-TFS-Session e3370376-2017-4afb-9868-4b18f91548ec
 2023-04-04T01:33:28.0318769Z Downloading artifact finished.
@@ -7389,12 +7389,12 @@
 2023-04-04T01:33:29.0877425Z Generating script.
 2023-04-04T01:33:29.1206155Z ========================== Starting Command Output ===========================
 2023-04-04T01:33:29.1436420Z ##[command]"C:\Windows\system32\cmd.exe" /D /E:ON /V:OFF /S /C "CALL "D:\a\_temp\22180b57-0fd7-42b9-842b-f7675fc9f8da.cmd""
-2023-04-04T01:33:29.1979963Z 
+2023-04-04T01:33:29.1979963Z
 2023-04-04T01:33:29.1981224Z 7-Zip 22.01 (x64) : Copyright (c) 1999-2022 Igor Pavlov : 2022-07-15
-2023-04-04T01:33:29.1981625Z 
+2023-04-04T01:33:29.1981625Z
 2023-04-04T01:33:29.1981953Z Scanning the drive for archives:
 2023-04-04T01:33:29.1982288Z 1 file, 31934437 bytes (31 MiB)
-2023-04-04T01:33:29.1982484Z 
+2023-04-04T01:33:29.1982484Z
 2023-04-04T01:33:29.1982783Z Extracting archive: win_x64.7z
 2023-04-04T01:33:31.1362266Z --
 2023-04-04T01:33:31.1363216Z Path = win_x64.7z
@@ -7404,9 +7404,9 @@
 2023-04-04T01:33:31.1365248Z Method = LZMA:27 BCJ2
 2023-04-04T01:33:31.1365624Z Solid = +
 2023-04-04T01:33:31.1365988Z Blocks = 2
-2023-04-04T01:33:31.1366261Z 
+2023-04-04T01:33:31.1366261Z
 2023-04-04T01:33:31.1366794Z Everything is Ok
-2023-04-04T01:33:31.1367072Z 
+2023-04-04T01:33:31.1367072Z
 2023-04-04T01:33:31.1367424Z Folders: 15
 2023-04-04T01:33:31.1367792Z Files: 515
 2023-04-04T01:33:31.1368166Z Size:       186163574
@@ -7433,7 +7433,7 @@
 2023-04-04T01:33:34.9108862Z CPU tests: AVX512BW
 2023-04-04T01:33:34.9109182Z CPU fallback binary: john-avx512f
 2023-04-04T01:33:34.9109519Z OMP fallback binary: john-avx512bw-non-omp
-2023-04-04T01:33:34.9109817Z $JOHN is 
+2023-04-04T01:33:34.9109817Z $JOHN is
 2023-04-04T01:33:34.9110124Z Format interface version: 14
 2023-04-04T01:33:34.9110448Z Max. number of reported tunable costs: 4
 2023-04-04T01:33:34.9110771Z Rec file version: REC4
@@ -7469,17 +7469,17 @@
 2023-04-04T01:33:44.3056923Z Benchmarking: dynamic=md5(sha1($s).md5($p)) [512/512 AVX512BW 16x3]... DONE
 2023-04-04T01:33:44.3058022Z Many salts:	5988K c/s real, 5990K c/s virtual
 2023-04-04T01:33:44.3058488Z Only one salt:	3065K c/s real, 3067K c/s virtual
-2023-04-04T01:33:44.3058780Z 
+2023-04-04T01:33:44.3058780Z
 2023-04-04T01:33:44.3219440Z "====> T6.1:"
 2023-04-04T01:33:44.4763633Z This expression will use the RDP dynamic compiler format.
 2023-04-04T01:33:51.6819292Z Benchmarking: dynamic=md5(sha1($s.$p).md5($p)) [Dynamic RDP]... DONE
 2023-04-04T01:33:51.6820358Z Many salts:	495769 c/s real, 493635 c/s virtual
 2023-04-04T01:33:51.6820930Z Only one salt:	481889 c/s real, 483112 c/s virtual
-2023-04-04T01:33:51.6821315Z 
+2023-04-04T01:33:51.6821315Z
 2023-04-04T01:33:51.6985415Z "====> T6.2:"
 2023-04-04T01:33:55.6760067Z Benchmarking: dynamic=md5($p) [512/512 AVX512BW 16x3]... DONE
 2023-04-04T01:33:55.6761135Z Raw:	59576K c/s real, 59721K c/s virtual
-2023-04-04T01:33:55.6761587Z 
+2023-04-04T01:33:55.6761587Z
 2023-04-04T01:33:55.6835549Z "====> T10:"
 2023-04-04T01:33:56.0161809Z Using default input encoding: UTF-8
 2023-04-04T01:33:56.0167303Z Loaded 2 password hashes with no different salts (NT [MD4 512/512 AVX512BW 16x3])
@@ -7489,13 +7489,13 @@
 2023-04-04T01:33:56.2501435Z Almost done: Processing the remaining buffered candidate passwords, if any.
 2023-04-04T01:33:56.2504789Z Proceeding with wordlist:password.lst
 2023-04-04T01:33:56.2525404Z Enabling duplicate candidate password suppressor
-2023-04-04T01:33:56.3909420Z password         (?)     
-2023-04-04T01:33:56.3911952Z hello            (?)     
+2023-04-04T01:33:56.3909420Z password         (?)
+2023-04-04T01:33:56.3911952Z hello            (?)
 2023-04-04T01:33:56.3929026Z 1 2g 0:00:00:00 DONE 2/3 (2023-04-04 01:33) 13.79g/s 2648p/s 2648c/s 5296C/s 123456..larry
 2023-04-04T01:33:56.3932102Z Waiting for 1 child to terminate
 2023-04-04T01:33:56.3943255Z 2 0g 0:00:00:00 DONE 2/3 (2023-04-04 01:33) 0g/s 0p/s 0c/s 0C/s
 2023-04-04T01:33:56.3957774Z Use the "--show --format=NT" options to display all of the cracked passwords reliably
-2023-04-04T01:33:56.3958180Z Session completed. 
+2023-04-04T01:33:56.3958180Z Session completed.
 2023-04-04T01:33:56.3999957Z "====> T11:"
 2023-04-04T01:33:56.7335884Z Using default input encoding: UTF-8
 2023-04-04T01:33:56.7339923Z Loaded 2 password hashes with no different salts (Raw-SHA256 [SHA256 512/512 AVX512BW 16x])
@@ -7505,24 +7505,24 @@
 2023-04-04T01:33:56.9673801Z Almost done: Processing the remaining buffered candidate passwords, if any.
 2023-04-04T01:33:56.9675770Z Proceeding with wordlist:password.lst
 2023-04-04T01:33:56.9694595Z Enabling duplicate candidate password suppressor
-2023-04-04T01:34:00.7206213Z samels           (?)     
-2023-04-04T01:34:03.8676859Z samels           (?)     
-2023-04-04T01:34:15.9921846Z momard           (?)     
+2023-04-04T01:34:00.7206213Z samels           (?)
+2023-04-04T01:34:03.8676859Z samels           (?)
+2023-04-04T01:34:15.9921846Z momard           (?)
 2023-04-04T01:34:15.9950084Z 1 2g 0:00:00:19 DONE 2/3 (2023-04-04 01:34) 0.1051g/s 3308Kp/s 3308Kc/s 4607KC/s dec1501d..element35d
 2023-04-04T01:34:15.9951756Z Waiting for 1 child to terminate
 2023-04-04T01:34:15.9991669Z 2 1g 0:00:00:19 DONE 2/3 (2023-04-04 01:34) 0.05252g/s 3363Kp/s 3363Kc/s 4131KC/s jkeesh1..jmackin3
 2023-04-04T01:34:16.0008478Z Use the "--show --format=Raw-SHA256" options to display all of the cracked passwords reliably
-2023-04-04T01:34:16.0009058Z Session completed. 
+2023-04-04T01:34:16.0009058Z Session completed.
 2023-04-04T01:34:16.0047054Z "====> T12:"
 2023-04-04T01:34:16.2159715Z Using default input encoding: UTF-8
 2023-04-04T01:34:16.2164412Z Loaded 1 password hash (sha512crypt, crypt(3) $6$ [SHA512 512/512 AVX512BW 8x])
 2023-04-04T01:34:16.2667379Z Cost 1 (iteration count) is 5000 for all loaded hashes
 2023-04-04T01:34:16.2668436Z Will run 2 OpenMP threads
 2023-04-04T01:34:16.6682398Z Press Ctrl-C to abort, or send SIGUSR1 to john process for status
-2023-04-04T01:34:16.6708988Z john             (?)     
+2023-04-04T01:34:16.6708988Z john             (?)
 2023-04-04T01:34:16.6713338Z 1g 0:00:00:00  45.45g/s 4727p/s 4727c/s 4727C/s joan..joqq
 2023-04-04T01:34:16.6713890Z Use the "--show" option to display all of the cracked passwords reliably
-2023-04-04T01:34:16.6714441Z Session completed. 
+2023-04-04T01:34:16.6714441Z Session completed.
 2023-04-04T01:34:16.7037453Z ##[section]Finishing: Testing
 2023-04-04T01:34:17.8440166Z ##[section]Starting: Checkout claudioandre-br/JohnTheRipper@bleeding-jumbo to JtR
 2023-04-04T01:34:17.8547213Z ==============================================================================
