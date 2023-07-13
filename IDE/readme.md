@@ -24,4 +24,9 @@ project
 - Debugging in action:
   - watch the breakpoint, inspection of variable contents, "step in", "step into", "step out". Stop using `printf()` while experimenting with John the Ripper.
 
-![VSCode Screen](Debugging-JtR-Using-IDE.png)
+![VS Code Screen](Debugging-JtR-Using-IDE.png)
+
+- OpenCL development:
+  - look at the device details.
+
+![VS Code Screen](OpenCL-JtR-detection.png)
