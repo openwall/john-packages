@@ -1,8 +1,7 @@
 # Subject: John the Ripper binary packages
 
 This is in fact nothing new for the list, but we would like to announce the existence of John the Ripper compiled packages:
-* git repository at [https://github.com/openwall/john-packages.](https://github.com/openwall/john-packages)
-
+- git repository at [https://github.com/openwall/john-packages.](https://github.com/openwall/john-packages)
 - there are a stable release (Jumbo 1), a rolling release [1], and a development release;
 - you can find packages:
   - in PortableApp style: for Windows and Mac;

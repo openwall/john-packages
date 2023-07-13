@@ -56,7 +56,7 @@ We produce software in short cycles, ensuring that the software can be reliably 
 
 [![Launchpad](https://media.launchpad.net/lp-badge-kit/launchpad-badge-w120px.png)](https://launchpad.net/~claudioandre.br/john/+snap/john-the-ripper)
 
-[![Virus Scan](https://github.com/openwall/john-packages/actions/workflows/virusscan.yml/badge.svg)](https://github.com/openwall/john-packages/actions/workflows/virusscan.yml)
+[![Virus Scan](https://github.com/openwall/john-packages/actions/workflows/virusscan.yml/badge.svg)](https://github.com/openwall/john-packages/releases)
 
 | **Releases** | **Latest** <br> ![GitHub Latest Release Date](https://img.shields.io/github/release-date/openwall/john-packages?label=&style=flat-square "GitHub Latest Release Date") | **Prerelease** <br> ![GitHub Latest Prerelease Date](https://img.shields.io/github/release-date-pre/openwall/john-packages?label=&style=flat-square "GitHub Latest Prerelease Date") |
 |:-:|:-:|:-:|

@@ -48,8 +48,8 @@ threatening, offensive, or harmful.
 
 ## Other sources of information
 
-For various tips and tricks, also see [the docs folder](https://github.com/openwall/john-packages/tree/main/docs), [our wiki](https://github.com/openwall/john-packages/wiki/),
-and [Openwall's wiki](https://openwall.info/wiki/john).
+For various tips and tricks, also see [the docs folder](https://github.com/openwall/john-packages/tree/main/docs),
+[our wiki](https://github.com/openwall/john-packages/wiki/), and [Openwall's wiki](https://openwall.info/wiki/john).
 
 ## Patterns
 
@@ -57,6 +57,9 @@ We adhere to standards used by the community.
 
 We use linters and static code analyzers that will complain about rule violations. Furthermore, we recommend
 that, if possible, before submitting your contribution you run the `pre-commit run --all-files` command.
+
+The row length should be between 80 and 120 columns, which is good for use on modern monitors, including
+laptops. However, there are some cases where the rule must be overcome by common sense.
 
 ## The PR review process
 
@@ -103,20 +106,20 @@ The author and the approver should run these commands. The PR on GitHub will clo
 
 Author:
 ```bash
-   # git checkout <branch>
-   # -- the PR author must have his/her branch updated --
-   # if upstream repo: git pull --rebase origin main
-   # if forked repo:   git pull --rebase git@github.com:openwall/john-packages.git
-   # commit using -S and --signoff
+  # git checkout <branch>
+  # -- the PR author must have his/her branch updated --
+  # if upstream repo: git pull --rebase origin main
+  # if forked repo:   git pull --rebase git@github.com:openwall/john-packages.git
+  # commit using -S and --signoff
 ```
 
 PR approver:
 ```bash
-   # Using upstream repository and an up-to-date local copy of the PR branch.
-   git checkout main
-   git pull --rebase origin main
-   git merge --ff-only <branch>
-   git push -u origin main
+  # Using upstream repository and an up-to-date local copy of the PR branch.
+  git checkout main
+  git pull --rebase origin main
+  git merge --ff-only <branch>
+  git push -u origin main
 ```
 
 ## License
