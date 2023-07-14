@@ -87,7 +87,7 @@ RUN ln -s /usr/local/bin/docker-entrypoint.sh . && \
 # Default startup
 # ------------------------------------------------------------------
 USER JtR
-ENV BASE ubuntu
+ENV BASE=ubuntu
 ENV VERSION="${VERSION}"
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["best"]

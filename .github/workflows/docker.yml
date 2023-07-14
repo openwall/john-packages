@@ -27,30 +27,30 @@ on:
   workflow_dispatch:
     inputs:
       release:
-        description: 'Is it a release build (needs a git checkout)?'
+        description: "Is it a release build (needs a git checkout)?"
         required: true
-        default: 'false'
+        default: "false"
       hash:
-        description: 'The commit hash to be used'
+        description: "The commit hash to be used"
         required: false
         #TODO: edit before release (JUMBO_RELEASE)
-        default: '15b3b7c25fc8ac34f2504d53f0c94bbf4ec12596'
+        default: "15b3b7c25fc8ac34f2504d53f0c94bbf4ec12596"
       VERSION:
-        description: 'The software version'
+        description: "The software version"
         required: true
-        default: '1.9.02'  #TODO: edit before release (JUMBO_RELEASE) 1.9.02304
+        default: "1.9.02" #TODO: edit before release (JUMBO_RELEASE) 1.9.02304
       VERSION_NAME:
-        description: 'The software version name'
+        description: "The software version name"
         required: true
-        default: '1.9.0-jumbo-1+'  #TODO: edit before release (JUMBO_RELEASE)
+        default: "1.9.0-jumbo-1+" #TODO: edit before release (JUMBO_RELEASE)
       tag:
-        description: 'The image tag'
+        description: "The image tag"
         required: true
-        default: 'latest'  #TODO: edit before release (JUMBO_RELEASE) rolling
+        default: "latest" #TODO: edit before release (JUMBO_RELEASE) rolling
       push:
-        description: 'Push the resulting image to Docker registry?'
+        description: "Push the resulting image to Docker registry?"
         required: true
-        default: 'true'
+        default: "true"
 
 env:
   REPO: ghcr.io/${{ github.repository_owner }}/john
@@ -66,6 +66,7 @@ jobs:
     permissions:
       packages: write
       contents: read
+      id-token: write # This is required for requesting the JWT
 
     steps:
       - name: Harden Runner
@@ -80,7 +81,10 @@ jobs:
         id: date
         run: echo "name=$(date -u)" >> "$GITHUB_OUTPUT"
 
-      - name: Log in to GitHub Docker Registry
+      - name: Install Cosign
+        uses: sigstore/cosign-installer@v3.1.1
+
+      - name: Log in to GitHub Container Registry
         uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2.2.0
         with:
           registry: ghcr.io
@@ -88,6 +92,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build container image
+        id: build-and-push
         uses: docker/build-push-action@2eb1c1961a95fc15694676618e422e8ba1d63825 # v4.1.1
         with:
           context: "${{ github.workspace }}/deploy/docker"
@@ -99,7 +104,14 @@ jobs:
             BUILD_DATE="${{ steps.date.outputs.name }}"
             VERSION="${{ github.event.inputs.VERSION }}"
             VERSION_NAME="${{ github.event.inputs.VERSION_NAME }}"
-
           tags: |
             ${{ env.REPO }}:${{ github.event.inputs.tag }}
             ${{ env.REPO }}:${{ github.event.inputs.tag }}_J${{ github.run_number }}
+
+      - name: Sign the Docker image
+        env:
+          TAGS: ${{ env.REPO }}:${{ github.event.inputs.tag }}
+          DIGEST: ${{ steps.build-and-push.outputs.digest }}
+        # This step uses the identity token to provision an ephemeral certificate
+        # against the sigstore community Fulcio instance.
+        run: cosign sign --yes "${TAGS}@${DIGEST}"
