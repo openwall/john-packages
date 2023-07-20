@@ -24,7 +24,7 @@
 
 function save_build_info() {
     (
-    cd .. || true
+    cd .. || exit 1
 
     # Get the script that computes the package version
     chmod +x package_version.sh
@@ -46,7 +46,7 @@ EOF
 
 function clean_image() {
     (
-    cd .. || true
+    cd .. || exit 1
     # shellcheck source=/dev/null
     source clean_package.sh
 
@@ -101,7 +101,7 @@ if [[ -z "$TASK" ]]; then
 
         #Create a 'john' executable
         (
-            cd ../run || true
+            cd ../run || exit 1
             ln -s john-avx512bw-omp john
         )
     else
@@ -111,7 +111,7 @@ if [[ -z "$TASK" ]]; then
 
         #Create a 'john' executable
         (
-            cd ../run || true
+            cd ../run || exit 1
             ln -s john-omp john
         )
     fi

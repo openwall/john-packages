@@ -36,12 +36,12 @@ function build_default_binaries() {
 
 function save_build_info() {
     (
-    cd john || true
+    cd john || exit 1
 
     # Get the script that computes the package version
     wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/package_version.sh
     chmod +x package_version.sh
-    echo "7a25fd926b9a7bc406dca6db5b2802a4a8a4625cc191b9ecdd1291bfcd1146ef  package_version.sh" | sha256sum -c - || exit 1
+    echo "7a25fd926b9a7bc406dca6db5b2802a4a8a4625cc191b9ecdd1291bfcd1146ef  ./package_version.sh" | sha256sum -c - || exit 1
 
     cat <<-EOF > run/Defaults
 #   File that lists how the build (binaries) were made
@@ -61,7 +61,7 @@ EOF
 
 function clean_image() {
     (
-    cd john || true
+    cd john || exit 1
     wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh
     # shellcheck source=/dev/null
     source clean_package.sh
@@ -101,13 +101,13 @@ git clone --depth 10 https://github.com/openwall/john.git
 # Make it a reproducible build
 if [ "$RELEASE" == "true" ] ; then
     (
-    cd john || true
+    cd john || exit 1
     git checkout "$COMMIT"
     )
 fi
 
 (
-cd john/src || true
+cd john/src || exit 1
 
 # Build for CPU only image
 if [ "$type" != "GPU" ] ; then

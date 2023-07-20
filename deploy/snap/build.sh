@@ -24,12 +24,12 @@
 
 function save_build_info() {
     (
-    cd .. || true
+    cd .. || exit 1
 
     # Get the script that computes the package version
     wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/package_version.sh
     chmod +x package_version.sh
-    echo "7a25fd926b9a7bc406dca6db5b2802a4a8a4625cc191b9ecdd1291bfcd1146ef  package_version.sh" | sha256sum -c - || exit 1
+    echo "7a25fd926b9a7bc406dca6db5b2802a4a8a4625cc191b9ecdd1291bfcd1146ef  ./package_version.sh" | sha256sum -c - || exit 1
 
     cat <<-EOF > run/Defaults
 #   File that lists how the build (binaries) were made
@@ -49,7 +49,7 @@ EOF
 
 function clean_image() {
     (
-    cd .. || true
+    cd .. || exit 1
     wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh
     # shellcheck source=/dev/null
     source clean_package.sh
@@ -99,7 +99,7 @@ if [[ "$1" == "PULL" ]]; then
 fi
 
 # We are in packages folder, change to JtR folder
-cd src || true
+cd src || exit 1
 
 wget https://raw.githubusercontent.com/openwall/john-packages/master/patches/0001-Handle-self-confined-system-wide-build.patch
 patch < 0001-Handle-self-confined-system-wide-build.patch
@@ -142,7 +142,7 @@ if [[ "$arch" == "x86_64" ]]; then
 
     #Create a 'john' executable
     (
-        cd ../run || true
+        cd ../run || exit 1
         ln -s john-avx512bw-omp john
     )
 else
@@ -152,7 +152,7 @@ else
 
     #Create a 'john' executable
     (
-        cd ../run || true
+        cd ../run || exit 1
         ln -s john-omp john
     )
 fi
