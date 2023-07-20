@@ -122,6 +122,13 @@ PR approver:
   git push -u origin main
 ```
 
+When releasing a new version, create a signed tag, then access and use the GitHub GUI:
+```bash
+  git tag <tag> -m "release: <tag>" # e.g., rolling-2310
+  git tag --verify <tag>
+  git push --tags
+```
+
 ## License
 
 The content of this repository is released under GNU GPL v2.
