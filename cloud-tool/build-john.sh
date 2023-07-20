@@ -22,9 +22,9 @@
 # More info at https://github.com/openwall/john-packages
 
 # Prepare the environment
-sudo apt-get -y install git build-essential libssl-dev zlib1g-dev libgmp-dev libpcap-dev libbz2-dev
+sudo apt-get -y install git=* build-essential=* libssl-dev=* zlib1g-dev=* libgmp-dev=* libpcap-dev=* libbz2-dev=*
 git clone --depth 10 https://github.com/openwall/john.git
-cd john/src
+cd john/src || exit 1
 
 # Build John the Ripper
 # TODO remove the next line

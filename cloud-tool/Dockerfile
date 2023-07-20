@@ -21,18 +21,19 @@
 # More info at https://github.com/openwall/john-packages
 
 FROM ubuntu:latest@sha256:0bced47fffa3361afa981854fcabcd4577cd43cebbb808cea2b1f33a3dd7f508
-LABEL maintainer Claudio André (c) 2021 1.0.Cloud Tools
+LABEL maintainer Claudio André (c) 2021-2023 1.0.Cloud Tools
 LABEL software automation for John the Ripper
 
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update -qq && \
     export DEBIAN_FRONTEND="noninteractive" && \
-    apt-get install -y curl gnupg software-properties-common && \
+    apt-get install -y --no-install-recommends curl=* gnupg=* software-properties-common=* ca-certificates=* && \
     curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add - && \
     apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main" && \
     apt-add-repository --yes --update ppa:ansible/ansible && \
-    apt-get install -y \
-        terraform ansible \
-        wget git nano \
+    apt-get install -y --no-install-recommends \
+        terraform=* ansible=* \
+        wget=* git=* nano=* \
         && \
     useradd -U -m usr && \
     # Clean the image
@@ -41,5 +42,5 @@ RUN apt-get update -qq && \
 
 USER usr
 WORKDIR /host/workdir
-ENV PROVIDER AWS
-CMD /bin/bash
+ENV PROVIDER=AWS
+CMD ["/bin/bash"]
