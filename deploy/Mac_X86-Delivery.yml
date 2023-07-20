@@ -56,7 +56,7 @@ jobs:
             source .ci/clean_package.sh
 
             7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=128m -ms=on JtR-macX86.7z ./
-            sha256sum -- JtR-macX86.7z || true
+            sha256sum -- JtR-macX86.7z
 
       - store_artifacts:
           path: JtR-macX86.7z

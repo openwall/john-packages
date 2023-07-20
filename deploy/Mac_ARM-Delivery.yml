@@ -59,7 +59,7 @@ macOS_task:
     - source .ci/clean_package.sh
 
     - 7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=128m -ms=on JtR-macArm.7z ./
-    - sha256sum -- JtR-macArm.7z || true
+    - sha256sum -- JtR-macArm.7z
 
   always:
     binaries_artifacts:
