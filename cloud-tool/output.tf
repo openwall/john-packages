@@ -20,12 +20,12 @@
 # Terraform configuration for john the ripper
 # More info at https://github.com/openwall/john-packages
 
-output current_environment {
+output "current_environment" {
   value = local.run_env
 }
 
 output "ip_address" {
-  value = "${aws_instance.worker.*.public_ip}"
+  value       = aws_instance.worker[*].public_ip
   description = "The IP address(es) of the instance(s)."
 }
 
@@ -33,9 +33,9 @@ output "ip_address" {
 resource "local_file" "AnsibleInventory" {
   content = templatefile("inventory.tmpl",
     {
-      public-dns = aws_instance.worker.*.public_dns,
-      public-ip = aws_instance.worker.*.public_ip,
-      public-id = aws_instance.worker.*.id
+      public-dns = aws_instance.worker[*].public_dns,
+      public-ip  = aws_instance.worker[*].public_ip,
+      public-id  = aws_instance.worker[*].id
     }
   )
   filename = "inventory"

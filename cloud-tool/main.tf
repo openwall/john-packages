@@ -21,7 +21,7 @@
 # More info at https://github.com/openwall/john-packages
 
 provider "aws" {
-  region = local.region
+  region  = local.region
   profile = local.profile
 }
 

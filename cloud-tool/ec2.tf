@@ -37,11 +37,11 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "worker" {
-  ami           = data.aws_ami.ubuntu.id
+  ami                    = data.aws_ami.ubuntu.id
   vpc_security_group_ids = [aws_security_group.jtrcrackers-sg.id]
-  key_name = aws_key_pair.deployer.key_name
-  instance_type = var.instance["instance_type"]
-  count = "${var.spot != "yes" ? var.instance["count"] : 0}"
+  key_name               = aws_key_pair.deployer.key_name
+  instance_type          = var.instance["instance_type"]
+  count                  = var.spot != "yes" ? var.instance["count"] : 0
 
   credit_specification {
     cpu_credits = "standard"
@@ -79,11 +79,11 @@ resource "aws_instance" "worker" {
   ]
 
   tags = {
-    Name = "JtRCracker${count.index + 1}-instance"
-    Environment = var.domain
-    appRole = var.role
-    Owner = var.owner
-    Customer = var.customer
+    Name            = "JtRCracker${count.index + 1}-instance"
+    Environment     = var.domain
+    appRole         = var.role
+    Owner           = var.owner
+    Customer        = var.customer
     Confidentiality = var.confidentiality
   }
 }

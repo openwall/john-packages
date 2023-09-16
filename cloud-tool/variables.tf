@@ -22,20 +22,20 @@
 
 # TODO ###############################################################
 # Update the 'cidr_blocks' below using your IP address.
-variable ingress_data {
+variable "ingress_data" {
   description = "The security groups inbound rules."
-  type = map(object({description = string, cidr_blocks = list(string)}))
+  type        = map(object({ description = string, cidr_blocks = list(string) }))
   default = {
-    22 = { description = "Inbound SSH rule", cidr_blocks = [ "YOUR_IP_HERE/32" ] }
+    22 = { description = "Inbound SSH rule", cidr_blocks = ["YOUR_IP_HERE/32"] }
   }
 }
 
-variable egress_data {
+variable "egress_data" {
   description = "The security groups outbound rules."
-  type = map(object({description = string, cidr_blocks = list(string), ipv6_cidr_blocks = list(string)}))
+  type        = map(object({ description = string, cidr_blocks = list(string), ipv6_cidr_blocks = list(string) }))
   default = {
-    80 = { description = "Outbound HTTP rule", cidr_blocks = [ "0.0.0.0/0" ], ipv6_cidr_blocks = ["::/0"] }
-    443 = { description = "Outbound HTTPS rule", cidr_blocks = [ "0.0.0.0/0" ], ipv6_cidr_blocks = ["::/0"] }
+    80  = { description = "Outbound HTTP rule", cidr_blocks = ["0.0.0.0/0"], ipv6_cidr_blocks = ["::/0"] }
+    443 = { description = "Outbound HTTPS rule", cidr_blocks = ["0.0.0.0/0"], ipv6_cidr_blocks = ["::/0"] }
   }
 }
 # ####################################################################
@@ -50,30 +50,30 @@ variable egress_data {
 # Set your AWS profile file AND/OR regions AND/OR the label.
 variable "profile_list" {
   description = "Your section inside the `~/.aws/credentials` profile file."
-  type = map(string)
+  type        = map(string)
   default = {
-    default = "usr"
-    testing = "usr-testing"
+    default    = "usr"
+    testing    = "usr-testing"
     production = "usr-production"
   }
 }
 
 variable "regions_list" {
   description = "AWS region to launch servers."
-  type = map(string)
+  type        = map(string)
   default = {
-    default = "us-east-1"
-    testing = "us-east-1"
+    default    = "us-east-1"
+    testing    = "us-east-1"
     production = "us-west-1"
   }
 }
 
 variable "environment_list" {
   description = "A label users might like to see."
-  type = map(string)
+  type        = map(string)
   default = {
-    default = "default"
-    testing = "DEV"
+    default    = "default"
+    testing    = "DEV"
     production = "PROD"
   }
 }
@@ -83,7 +83,7 @@ variable "environment_list" {
 # Change SSH information, use your own keys or create a new one.
 # Or run `$ ssh-keygen -t rsa -f workerKey`
 variable "private_key" {
-  default = "./workerKey"
+  default   = "./workerKey"
   sensitive = true
 }
 
@@ -92,19 +92,18 @@ variable "public_key" {
 }
 
 locals {
-  public_key_content = "${file("${var.public_key}")}"
+  public_key_content = file(var.public_key)
 }
 
 locals {
-  private_key_content = "${file("${var.private_key}")}"
-  sensitive = true
+  private_key_content = file(var.private_key)
 }
 # ####################################################################
 
 # TODO ###############################################################
 # Pick up your EC2 instances environment.
-variable instance {
-  type = object({instance_type = string, count = number})
+variable "instance" {
+  type = object({ instance_type = string, count = number })
   default = {
     instance_type = "t2.micro", count = 1
   }
@@ -114,9 +113,9 @@ variable instance {
 # TODO ###############################################################
 # Set your Spot preferences.
 variable "spot" {
-  type = string
+  type        = string
   description = "Use Spot instances? (yes or no)"
-  default = ""
+  default     = ""
 
   validation {
     condition = (
@@ -126,9 +125,9 @@ variable "spot" {
   }
 }
 variable "spot_price" {
-  type = number
+  type        = number
   description = "Use Spot instances?"
-  default = 0.0116
+  default     = 0.0116
 
   validation {
     condition = (
@@ -139,26 +138,26 @@ variable "spot_price" {
 }
 # ####################################################################
 
-variable domain {
-  type = string
+variable "domain" {
+  type    = string
   default = "John the Ripper cracking agent (worker)"
 }
 
-variable role {
-  type = string
+variable "role" {
+  type    = string
   default = "Cracking Session"
 }
-variable owner {
-  type = string
+variable "owner" {
+  type    = string
   default = "User name"
 }
 
-variable customer {
-  type = string
+variable "customer" {
+  type    = string
   default = "Custormer or Project Name"
 }
 
-variable confidentiality {
-  type = string
+variable "confidentiality" {
+  type    = string
   default = "Default"
 }

@@ -38,21 +38,21 @@ resource "aws_security_group" "jtrcrackers-sg" {
   dynamic "egress" {
     for_each = var.egress_data
     content {
-      description = egress.value["description"]
-      from_port   = egress.key
-      to_port     = egress.key
-      protocol    = "tcp"
-      cidr_blocks = egress.value["cidr_blocks"]
+      description      = egress.value["description"]
+      from_port        = egress.key
+      to_port          = egress.key
+      protocol         = "tcp"
+      cidr_blocks      = egress.value["cidr_blocks"]
       ipv6_cidr_blocks = egress.value["ipv6_cidr_blocks"]
     }
   }
 
   tags = {
-    Name = "JtRCracker-sg"
-    Environment = var.domain
-    appRole = var.role
-    Owner = var.owner
-    Customer = var.customer
+    Name            = "JtRCracker-sg"
+    Environment     = var.domain
+    appRole         = var.role
+    Owner           = var.owner
+    Customer        = var.customer
     Confidentiality = var.confidentiality
   }
 }

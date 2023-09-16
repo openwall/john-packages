@@ -21,16 +21,16 @@
 # More info at https://github.com/openwall/john-packages
 
 resource "aws_spot_instance_request" "worker" {
-  ami           = data.aws_ami.ubuntu.id
+  ami                    = data.aws_ami.ubuntu.id
   vpc_security_group_ids = [aws_security_group.jtrcrackers-sg.id]
-  key_name = aws_key_pair.deployer.key_name
-  instance_type = var.instance["instance_type"]
-  count = "${var.spot == "yes" ? var.instance["count"] : 0}"
+  key_name               = aws_key_pair.deployer.key_name
+  instance_type          = var.instance["instance_type"]
+  count                  = var.spot == "yes" ? var.instance["count"] : 0
 
 
-  spot_price = "${var.spot_price}"
+  spot_price           = var.spot_price
   wait_for_fulfillment = true
-  spot_type = "one-time"
+  spot_type            = "one-time"
 
   credit_specification {
     cpu_credits = "standard"
@@ -68,11 +68,11 @@ resource "aws_spot_instance_request" "worker" {
   ]
 
   tags = {
-    Name = "JtRCracker${count.index + 1}-instance"
-    Environment = var.domain
-    appRole = var.role
-    Owner = var.owner
-    Customer = var.customer
+    Name            = "JtRCracker${count.index + 1}-instance"
+    Environment     = var.domain
+    appRole         = var.role
+    Owner           = var.owner
+    Customer        = var.customer
     Confidentiality = var.confidentiality
   }
 }
