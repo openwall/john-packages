@@ -27,9 +27,9 @@ LABEL software automation for John the Ripper
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update -qq && \
     export DEBIAN_FRONTEND="noninteractive" && \
-    apt-get install -y --no-install-recommends curl=* gnupg=* software-properties-common=* ca-certificates=* && \
-    curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add - && \
-    apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main" && \
+    apt-get install -y --no-install-recommends wget=* gnupg=* software-properties-common=* ca-certificates=* && \
+    wget --progress=dot:giga -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg && \
+    echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/hashicorp.list && \
     apt-add-repository --yes --update ppa:ansible/ansible && \
     apt-get install -y --no-install-recommends \
         terraform=* ansible=* \
