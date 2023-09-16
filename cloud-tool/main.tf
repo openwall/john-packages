@@ -20,6 +20,13 @@
 # Terraform configuration for john the ripper
 # More info at https://github.com/openwall/john-packages
 
+terraform {
+  required_providers {
+    local = "~> 2.0"
+    aws   = "~> 5.0"
+  }
+}
+
 provider "aws" {
   region  = local.region
   profile = local.profile

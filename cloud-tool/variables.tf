@@ -83,11 +83,13 @@ variable "environment_list" {
 # Change SSH information, use your own keys or create a new one.
 # Or run `$ ssh-keygen -t rsa -f workerKey`
 variable "private_key" {
+  type      = string
   default   = "./workerKey"
   sensitive = true
 }
 
 variable "public_key" {
+  type    = string
   default = "./workerKey.pub"
 }
 
