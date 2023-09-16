@@ -70,7 +70,7 @@ resource "aws_spot_instance_request" "worker" {
   tags = {
     Name = "JtRCracker${count.index + 1}-instance"
     Environment = var.domain
-    "Application Role" = var.role
+    appRole = var.role
     Owner = var.owner
     Customer = var.customer
     Confidentiality = var.confidentiality

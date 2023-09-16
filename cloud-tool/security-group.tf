@@ -50,7 +50,7 @@ resource "aws_security_group" "jtrcrackers-sg" {
   tags = {
     Name = "JtRCracker-sg"
     Environment = var.domain
-    "Application Role" = var.role
+    appRole = var.role
     Owner = var.owner
     Customer = var.customer
     Confidentiality = var.confidentiality
