@@ -83,3 +83,27 @@ Binaries available on Docker image John 1.9.0 Jumbo 1 (their IDs are ztex and zt
 
 - /john/run/john-ztex (SSE2)
 - /john/run/john-ztex-no-omp (SSE2)
+
+## Docker image verification
+
+Anyone can verify the Docker image using the commands below:
+
+Simple and nice IMO:
+
+```bash
+$ ./cosign-linux-amd64 tree ghcr.io/openwall/john:latest
+📦 Supply Chain Security Related artifacts for an image: ghcr.io/openwall/john:latest
+└── 💾 Attestations for an image tag: ghcr.io/openwall/john:sha256-c9275acf784a3f19cab3ce0aab3cedefbe986dcbe70df650e5802ec23127f4da.att
+   └── 🍒 sha256:e777d619092a02e919ebe242431df428369edc22e0ccbe0a9214678343452af8
+```
+
+A more detailed list of information:
+
+```bash
+$ ./cosign-linux-amd64 verify-attestation \
+      --certificate-identity https://github.com/slsa-framework/slsa-github-generator/.github/workflows/generator_container_slsa3.yml@refs/tags/v1.7.0 \
+      --certificate-oidc-issuer https://token.actions.githubusercontent.com \
+      --type slsaprovenance \
+    ghcr.io/openwall/john:latest
+# a lot of info will be printed here
+```

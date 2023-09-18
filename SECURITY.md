@@ -5,8 +5,8 @@ Important notes:
   * it is unrealistic to have zero bugs, it is a consequence of how many formats and different parsers it has.
 * prefer sandboxed versions of packages (snap, flatpak or Docker) whenever you need "hardening";
 * reminder:
-  * the MPI library (not used by our packges) tends to open and listening ports, so it can expose itself,
-    `john`, and the underlying system to direct network-based attacks as well.
+  * the MPI library (not used by packages from this repository) tends to open and listening ports,
+    so it can expose itself, `john`, and the underlying system to direct network-based attacks as well.
 
 ## Supported Versions
 
@@ -24,7 +24,7 @@ receiving such patches depends on the version:
 
 Please just report issues in public right away:
 * if you are worried about a package or its dependencies, create a bug report [here](https://github.com/openwall/john-packages/issues);
-* otherwise, at https://github.com/openwall/john/issues.
+* otherwise, at [https://github.com/openwall/john/issues](https://github.com/openwall/john/issues).
 
 If the issue is confirmed, `john` community will release a patch as soon as possible depending on complexity.
 
