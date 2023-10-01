@@ -24,7 +24,7 @@ using:
 - Linux:
   - CentOS 7 and Fedora 38;
   - Ubuntu 16.04 (Intel OpenCL for CPUs), Ubuntu 22.04, and Ubuntu devel (the under development version);
-  - flatpak (runtime: org.freedesktop.Platform 22.08);
+  - flatpak (runtime: org.freedesktop.Platform 23.08);
   - snap (runtime: core22);
   - Android NDK r23 LTS (ANDROID_NDK_VERSION=r23b)
 - macOS:
