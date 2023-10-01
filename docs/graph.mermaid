@@ -7,7 +7,6 @@ graph TD
     C -->|Azure DevOPS| H[fa:fa-desktop <br>Fuzzing Test<br>+<br>Inspect Deploy<br>Package]
     C -..-> |investigation| K[experimental]
     K --> |Bitrise<br>Mobile DevOps| L[fa:fa-desktop <br>Android CI]
-    K --> |Circle CI| M[fa:fa-desktop <br>macOS X86]
     K --> |Cirrus CI| N[fa:fa-desktop <br>macOS ARM]
     K --> |GitHub Actions| O[fa:fa-desktop <br>Solaris CI]
     H[fa:fa-desktop <br>Fuzzing Test<br>+<br>Inspection of<br> Deployment<br>Package] -->|manual approval| X(Azure Deploys<br>the Release)
@@ -23,6 +22,4 @@ graph TD
     C -->|Launchpad| E[fa:fa-desktop <br>Snap]
     C -->|GitHub Actions| F[fa:fa-desktop <br>Docker<br>Image]
     C -->|Azure DevOPS| H[fa:fa-desktop <br>Windows<br>64bit]
-    C -..-> K[experimental]
-    K -->|Circle CI| N[fa:fa-desktop <br>macOS<br>X86]
-    K -->|Cirrus CI| O[fa:fa-desktop <br>macOS<br>ARM]
+    C -->|Cirrus CI| O[fa:fa-desktop <br>macOS<br>ARM]

@@ -28,8 +28,6 @@ using:
   - snap (runtime: core22);
   - Android NDK r23 LTS (ANDROID_NDK_VERSION=r23b)
 - macOS:
-  - macOS 12.6 21G115:
-    - Darwin 21.6.0 x86_64 i386;
   - macOS 13.5.1 22G90:
     - Darwin 22.6.0 arm64 arm;
 
@@ -43,7 +41,6 @@ using:
   - FreeBSD clang version 13.0.0;
   - FreeBSD clang version: 16.0.6;
   - FreeBSD clang version: 16.0.6;
-  - Apple clang version 14.0.0 (clang-1400.0.29.202);
   - Apple clang version 15.0.0 (clang-1500.0.40.1);
 
 ### Testing and Commissioning
@@ -99,7 +96,6 @@ and IBM System z.
 | Provider   | OS | Artifacts |
 | ------------- | ------------- | ----- |
 | Azure | Windows | ✓ Deployed to GitHub Releases |
-| Circle CI | macOS X86 | ✓ Deployed to GitHub Releases |
 | Cirrus CI | macOS M1 | ✓ Deployed to GitHub Releases |
 | GitLab CI | Linux (FlatPak app) | ✓ Deployed to GitHub Releases |
 | GitHub Actions | Linux (Docker image) | ✓ Deployed to GitHub Packages |
