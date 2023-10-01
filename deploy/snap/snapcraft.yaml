@@ -93,6 +93,11 @@ parts:
     source: .
     override-pull: |
       craftctl default
+
+      # Get latest files from upstream repository
+      wget https://raw.githubusercontent.com/openwall/john-packages/release/deploy/snap/build.sh -O build.sh
+      chmod +x build.sh
+
       ./build.sh PULL
       craftctl set version="$(./package_version.sh)"
 
@@ -112,6 +117,7 @@ parts:
       - zlib1g-dev
       - git
       - wget
+      - curl
       - patch
       # OpenCL stuff is available only in X86 architecture
       - on amd64:

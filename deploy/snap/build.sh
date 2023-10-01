@@ -29,7 +29,7 @@ function save_build_info() {
     # Get the script that computes the package version
     wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/package_version.sh
     chmod +x package_version.sh
-    echo "b57435f9e3ea9b3d36563c946752df5db3c77b6c60a95439a22e87380f1920f2  ./package_version.sh" | sha256sum -c - || exit 1
+    echo "b05ee923655f8597fe5c4266b85e450ba6cea4bf0b1922e33742032faeb6e8ed  ./package_version.sh" | sha256sum -c - || exit 1
 
     cat <<-EOF > run/Defaults
 #   File that lists how the build (binaries) were made

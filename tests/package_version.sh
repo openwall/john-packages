@@ -24,7 +24,16 @@ git_tag=$(git rev-parse --short=7 HEAD 2>/dev/null)
 ID=$(curl -s https://raw.githubusercontent.com/openwall/john-packages/release/deploy/Release.ID 2>/dev/null | tr -d '\n')
 
 if [[ -z "$ID" || "$ID" == "404: Not Found" ]]; then
-    ID="roll+"
+
+    if [[ -f ../../john/Release.ID ]]; then
+        echo "==== Using flatpak's Release.ID ====" >&2
+        ID=$(cat ../../john/Release.ID)
+    else
+        echo "==== Using the hardcoded version value ====" >&2
+        ID="roll+"
+    fi
+else
+    echo "==== Using the version from 'Release.ID' ====" >&2
 fi
 echo "$ID$git_tag"
 

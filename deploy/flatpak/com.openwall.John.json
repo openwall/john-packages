@@ -48,22 +48,17 @@
                 },
                 {
                     "type": "file",
-                    "path": "../tests/disable_formats.sh"
+                    "path": "../Release.ID"
                 },
                 {
                     "type": "file",
                     "url": "https://raw.githubusercontent.com/openwall/john-packages/release/tests/package_version.sh",
-                    "sha256": "b57435f9e3ea9b3d36563c946752df5db3c77b6c60a95439a22e87380f1920f2"
+                    "sha256": "b05ee923655f8597fe5c4266b85e450ba6cea4bf0b1922e33742032faeb6e8ed"
                 },
                 {
                     "type": "file",
                     "url": "https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh",
                     "sha256": "57ad39d297f29c2decf5233e1d5497b72af06ec43eb892423d47ca6a2e9e89f8"
-                },
-                {
-                    "type": "file",
-                    "url": "https://raw.githubusercontent.com/openwall/john-packages/main/tests/run_tests.sh",
-                    "sha256": "60c2ed7aea3c0e6809a6bf9869798202463a1c60c50b1853887b9d60f49730a6"
                 },
                 {
                     "type": "file",
