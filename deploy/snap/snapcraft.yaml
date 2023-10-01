@@ -21,7 +21,7 @@
 # More info at https://github.com/openwall/john-packages
 
 name: john-the-ripper
-version: bleeding
+version: rolling-2310
 
 confinement: strict
 grade: stable               #TODO: [stable or devel] edit before release (JUMBO_RELEASE)
@@ -34,7 +34,7 @@ license: GPL-2.0
 title: John the Ripper CE Auditing Tool
 summary: John the Ripper "Jumbo" password cracker
 description: |
-  [Openwall's](http://openwall.com/) John the Ripper (JtR) is a fast password cracker,
+  [Openwall's](https://openwall.com/) John the Ripper (JtR) is a fast password cracker,
   currently available for many flavors of Unix and for Windows. Its primary
   purpose is to detect weak Unix passwords. Besides several crypt(3) password hash
   types most commonly found on various Unix systems, supported out of the box are

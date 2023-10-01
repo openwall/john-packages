@@ -27,9 +27,9 @@ function save_build_info() {
     cd .. || exit 1
 
     # Get the script that computes the package version
-    wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/package_version.sh
+    wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/package_version.sh
     chmod +x package_version.sh
-    echo "7a25fd926b9a7bc406dca6db5b2802a4a8a4625cc191b9ecdd1291bfcd1146ef  ./package_version.sh" | sha256sum -c - || exit 1
+    echo "b57435f9e3ea9b3d36563c946752df5db3c77b6c60a95439a22e87380f1920f2  ./package_version.sh" | sha256sum -c - || exit 1
 
     cat <<-EOF > run/Defaults
 #   File that lists how the build (binaries) were made
@@ -81,7 +81,7 @@ if [[ "$1" == "PULL" ]]; then
     cp -r tmp/. .
 
     # Uncomment for a release
-    #RELEASE="15b3b7c25fc8ac34f2504d53f0c94bbf4ec12596"
+    #RELEASE="39db7dd63e3fefb343c3dbb72eaa5c7599b6c298"
 
     # Make it a reproducible build
     if [[ -n "$RELEASE" ]]; then
@@ -91,7 +91,7 @@ if [[ "$1" == "PULL" ]]; then
     fi
 
     # Get the script that computes the package version
-    wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/package_version.sh
+    wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/package_version.sh
     chmod +x package_version.sh
     cp package_version.sh ../../../package_version.sh
 

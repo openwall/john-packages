@@ -1,34 +1,0 @@
-[0KRunning with gitlab-runner 15.9.0~beta.115.g598a7c91 (598a7c91)[0;m
-[0K  on blue-1.shared.runners-manager.gitlab.com/default j1aLDqxS, system ID: s_b437a71a38f9[0;m
-[0K  feature flags: FF_USE_IMPROVED_URL_MASKING:true[0;m
-section_start:1680547214:resolve_secrets[0K[0K[36;1mResolving secrets[0;m[0;m
-section_end:1680547214:resolve_secrets[0Ksection_start:1680547214:prepare_executor[0K[0K[36;1mPreparing the "docker+machine" executor[0;m[0;m
-[0KUsing Docker executor with image ghcr.io/claudioandre-br/john-ci:fedora.37.flatpak ...[0;m
-[0KStarting service docker:dind ...[0;m
-[0KPulling docker image docker:dind ...[0;m
-[0KUsing docker image sha256:1d27856a797de93330c0d4aa94e9112d615ee5396964600ba67e86d4b4264f7b for docker:dind with digest docker@sha256:29f11c7c63c84a51c45901701c2d16336c9abc6365d3a69136884b3cf15e2cc9 ...[0;m
-[0KWaiting for services to be up and running (timeout 30 seconds)...[0;m
-[0KPulling docker image ghcr.io/claudioandre-br/john-ci:fedora.37.flatpak ...[0;m
-[0KUsing docker image sha256:30c286f6f37b72d7d4e4deff3e04bcb2255dbc03cc5951d408a341903ba1a167 for ghcr.io/claudioandre-br/john-ci:fedora.37.flatpak with digest ghcr.io/claudioandre-br/john-ci@sha256:2cbc4ef700e47bb61df9cf54c0408a056dd794f1b1a870a90d5611f7a3a9b7ca ...[0;m
-section_end:1680547330:prepare_executor[0Ksection_start:1680547330:prepare_script[0K[0K[36;1mPreparing environment[0;m[0;m
-Running on runner-j1aldqxs-project-12573246-concurrent-0 via runner-j1aldqxs-shared-1680547018-3b5f53ec...
-section_end:1680547331:prepare_script[0Ksection_start:1680547331:get_sources[0K[0K[36;1mGetting source from Git repository[0;m[0;m
-[32;1m$ eval "$CI_PRE_CLONE_SCRIPT"[0;m
-[32;1mFetching changes...[0;m
-Initialized empty Git repository in /builds/claudioandre-br/JtR-CI/.git/
-[32;1mCreated fresh repository.[0;m
-[32;1mChecking out 750de798 as detached HEAD (ref is master)...[0;m
-
-[32;1mSkipping Git submodules setup[0;m
-section_end:1680547334:get_sources[0Ksection_start:1680547334:download_artifacts[0K[0K[36;1mDownloading artifacts[0;m[0;m
-[32;1mDownloading artifacts for build (4052942751)...[0;m
-Downloading artifacts from coordinator... ok      [0;m  host[0;m=storage.googleapis.com id[0;m=4052942751 responseStatus[0;m=200 OK token[0;m=64_b7uFj
-section_end:1680547336:download_artifacts[0Ksection_start:1680547336:step_script[0K[0K[36;1mExecuting "step_script" stage of the job script[0;m[0;m
-[0KUsing docker image sha256:30c286f6f37b72d7d4e4deff3e04bcb2255dbc03cc5951d408a341903ba1a167 for ghcr.io/claudioandre-br/john-ci:fedora.37.flatpak with digest ghcr.io/claudioandre-br/john-ci@sha256:2cbc4ef700e47bb61df9cf54c0408a056dd794f1b1a870a90d5611f7a3a9b7ca ...[0;m
-[32;1m$ export TEST=';full;extra;'[0;m
-[32;1m$ export arch=$(uname -m)[0;m
-[32;1m$ export JTR_BIN='flatpak run com.openwall.John'[0;m
-[32;1m$ export JTR_CL='flatpak run com.openwall.John'[0;m
-[32;1m$ cd flatpak[0;m
-section_end:1680547337:step_script[0Ksection_start:1680547337:cleanup_file_variables[0K[0K[36;1mCleaning up project directory and file based variables[0;m[0;m
-section_end:1680547337:cleanup_file_variables[0K[32;1mJob succeeded[0;m

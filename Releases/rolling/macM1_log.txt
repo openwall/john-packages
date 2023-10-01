@@ -1,0 +1,2146 @@
+.ci/tests-ci.sh "$TARGET_ARCH" BUILD
+--2023-09-20 23:15:18--  https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/show_info.sh
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.110.133, 185.199.111.133, 185.199.108.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.110.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3122 (3.0K) [text/plain]
+Saving to: ‘show_info.sh.1’
+
+     0K ...                                                   100% 32.0M=0s
+
+2023-09-20 23:15:18 (32.0 MB/s) - ‘show_info.sh.1’ saved [3122/3122]
+
+Build system information
+--------------------------------
+Darwin
+arm64
+uid=501(admin) gid=20(staff) groups=20(staff),12(everyone),61(localaccounts),79(_appserverusr),80(admin),81(_appserveradm),98(_lpadmin),264(_webdeveloper),701(com.apple.sharepoint.group.1),33(_appstore),100(_lpoperator),204(_developer),250(_analyticsusers),395(com.apple.access_ftp),398(com.apple.access_screensharing),399(com.apple.access_ssh),400(com.apple.access_remote_ae)
+Darwin admins-Virtual-Machine.local 22.6.0 Darwin Kernel Version 22.6.0: Wed Jul  5 22:22:19 PDT 2023; root:xnu-8796.141.3~6/RELEASE_ARM64_VMAPPLE arm64
+Darwin 22.6.0 arm64 arm
+--------------------------------
+ProductName:		macOS
+ProductVersion:		13.5.1
+BuildVersion:		22G90
+--------------------------------
+FLUTTER_HOME=/Users/admin/flutter
+CIRRUS_CHANGE_TITLE=CI: test and package for Windows qua 20 set 2023 18:10:58 -03
+MANPATH=/opt/homebrew/share/man::
+MAKE_FLAGS=-sj4
+EXTRA=full;extra
+CIRRUS_ARCH=arm64
+ANDROID_HOME=/Users/admin/android-sdk
+SHELL=/bin/zsh
+TERM=xterm-256color
+CIRRUS_TASK_NAME=macOS M1
+BASE=Apple macOS M1
+CIRRUS_RESOLUTION_STRATEGY=SAME_SHA
+SSH_CLIENT=192.168.64.1 49283 22
+TMPDIR=/var/folders/n8/pp_chp6x3jlfy1n94r6hdjv40000gn/T/
+HOMEBREW_REPOSITORY=/opt/homebrew
+CIRRUS_USER_PERMISSION=admin
+CIRRUS_USER_COLLABORATOR=true
+ANDROID_SDK_ROOT=/Users/admin/android-sdk
+OLDPWD=/private/var/folders/n8/pp_chp6x3jlfy1n94r6hdjv40000gn/T/cirrus-ci-build
+CIRRUS_ENV=/var/folders/n8/pp_chp6x3jlfy1n94r6hdjv40000gn/T/cirrus-env-task-4704739347136512-7dfac301-c199-4d73-bdaa-75e87c29a57c
+OS=darwin
+GITHUB_CHECK_SUITE_ID=16389696809
+BRANCH=bleeding-jumbo
+CIRRUS_CLONE_DEPTH=10
+USER=admin
+CIRRUS_CHANGE_IN_REPO=283f8f9253e44320e850147fb62cffd5d31386d9
+CIRRUS_BUILD_ID=6131159860510720
+HOMEBREW_NO_AUTO_UPDATE=1
+CIRRUS_CHANGE_MESSAGE=CI: test and package for Windows qua 20 set 2023 18:10:58 -03
+CIRRUS_BRANCH=bleeding-jumbo
+CIRRUS_REPO_CLONE_TOKEN=HIDDEN-BY-CIRRUS-CI
+CIRRUS_WORKING_DIR=/var/folders/n8/pp_chp6x3jlfy1n94r6hdjv40000gn/T/cirrus-ci-build
+PATH=/Users/admin/flutter:/Users/admin/flutter/bin/:/Users/admin/flutter/bin/cache/dart-sdk/bin:/usr/local/bin/:/Users/admin/.rbenv/shims:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/admin/android-sdk/cmdline-tools/latest/bin:/Users/admin/android-sdk/platform-tools:/Users/admin/android-sdk/emulator
+CIRRUS_LAST_GREEN_CHANGE=7fa77afe6cf1a7ef37235535aa7c0bf47f789484
+TARGET_ARCH=macOS ARM
+CIRRUS_COMMIT_MESSAGE=CI: test and package for Windows qua 20 set 2023 18:10:58 -03
+CI_NODE_TOTAL=4
+PWD=/private/var/folders/n8/pp_chp6x3jlfy1n94r6hdjv40000gn/T/cirrus-ci-build/src
+CIRRUS_HTTP_CACHE_HOST=127.0.0.1:12321
+CIRRUS_LAST_GREEN_BUILD_ID=5783192414715904
+CONTINUOUS_INTEGRATION=true
+CIRRUS_CPU=4
+LANG=en_US.UTF-8
+CI_NODE_INDEX=3
+CIRRUS_REPO_ID=5203529139486720
+RBENV_SHELL=zsh
+CIRRUS_CHANGE_TIMESTAMP=1695244258000
+CIRRUS_CI=true
+TEST=macOS;
+HOME=/Users/admin
+SHLVL=3
+CIRRUS_OIDC_TOKEN=HIDDEN-BY-CIRRUS-CI
+CIRRUS_REPO_CLONE_URL=https://github.com/claudioandre-br/JohnTheRipper.git
+HOMEBREW_PREFIX=/opt/homebrew
+CI=true
+CIRRUS_REPO_FULL_NAME=claudioandre-br/JohnTheRipper
+BUILD_OPS=--build=aarch64-apple-darwin
+CIRRUS_REPO_CLONE_HOST=github.com
+LOGNAME=admin
+CIRRUS_REPO_OWNER=claudioandre-br
+HOMEBREW_NO_INSTALL_CLEANUP=1
+CIRRUS_TASK_ID=4704739347136512
+SSH_CONNECTION=192.168.64.1 49283 192.168.64.52 22
+CIRRUS_REPO_NAME=JohnTheRipper
+HOMEBREW_CELLAR=/opt/homebrew/Cellar
+INFOPATH=/opt/homebrew/share/info:
+CIRRUS_DEFAULT_BRANCH=bleeding-jumbo
+CC=clang
+CIRRUS_BUILD_SOURCE=github
+DEPLOY_PAK=Yes
+CIRRUS_OS=darwin
+_=/usr/bin/env
+--------------------------------
+Compiler information
+--------------------------------
+Apple clang version 15.0.0 (clang-1500.0.40.1)
+Target: arm64-apple-darwin22.6.0
+Thread model: posix
+InstalledDir: /Applications/Xcode-15.0.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+--------------------------------
+#define _LP64 1
+#define __AARCH64EL__ 1
+#define __AARCH64_CMODEL_SMALL__ 1
+#define __AARCH64_SIMD__ 1
+#define __APPLE_CC__ 6000
+#define __APPLE__ 1
+#define __ARM64_ARCH_8__ 1
+#define __ARM_64BIT_STATE 1
+#define __ARM_ACLE 200
+#define __ARM_ALIGN_MAX_STACK_PWR 4
+#define __ARM_ARCH 8
+#define __ARM_ARCH_8_3__ 1
+#define __ARM_ARCH_8_4__ 1
+#define __ARM_ARCH_8_5__ 1
+#define __ARM_ARCH_ISA_A64 1
+#define __ARM_ARCH_PROFILE 'A'
+#define __ARM_FEATURE_AES 1
+#define __ARM_FEATURE_ATOMICS 1
+#define __ARM_FEATURE_CLZ 1
+#define __ARM_FEATURE_COMPLEX 1
+#define __ARM_FEATURE_CRC32 1
+#define __ARM_FEATURE_CRYPTO 1
+#define __ARM_FEATURE_DIRECTED_ROUNDING 1
+#define __ARM_FEATURE_DIV 1
+#define __ARM_FEATURE_DOTPROD 1
+#define __ARM_FEATURE_FMA 1
+#define __ARM_FEATURE_FP16_FML 1
+#define __ARM_FEATURE_FP16_SCALAR_ARITHMETIC 1
+#define __ARM_FEATURE_FP16_VECTOR_ARITHMETIC 1
+#define __ARM_FEATURE_FRINT 1
+#define __ARM_FEATURE_IDIV 1
+#define __ARM_FEATURE_JCVT 1
+#define __ARM_FEATURE_LDREX 0xF
+#define __ARM_FEATURE_NUMERIC_MAXMIN 1
+#define __ARM_FEATURE_QRDMX 1
+#define __ARM_FEATURE_RCPC 1
+#define __ARM_FEATURE_SHA2 1
+#define __ARM_FEATURE_SHA3 1
+#define __ARM_FEATURE_SHA512 1
+#define __ARM_FEATURE_SM3 1
+#define __ARM_FEATURE_SM4 1
+#define __ARM_FEATURE_UNALIGNED 1
+#define __ARM_FP 0xE
+#define __ARM_FP16_ARGS 1
+#define __ARM_FP16_FORMAT_IEEE 1
+#define __ARM_NEON 1
+#define __ARM_NEON_FP 0xE
+#define __ARM_NEON__ 1
+#define __ARM_PCS_AAPCS64 1
+#define __ARM_SIZEOF_MINIMAL_ENUM 4
+#define __ARM_SIZEOF_WCHAR_T 4
+#define __ATOMIC_ACQUIRE 2
+#define __ATOMIC_ACQ_REL 4
+#define __ATOMIC_CONSUME 1
+#define __ATOMIC_RELAXED 0
+#define __ATOMIC_RELEASE 3
+#define __ATOMIC_SEQ_CST 5
+#define __BIGGEST_ALIGNMENT__ 8
+#define __BITINT_MAXWIDTH__ 128
+#define __BLOCKS__ 1
+#define __BOOL_WIDTH__ 8
+#define __BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__
+#define __CHAR16_TYPE__ unsigned short
+#define __CHAR32_TYPE__ unsigned int
+#define __CHAR_BIT__ 8
+#define __CLANG_ATOMIC_BOOL_LOCK_FREE 2
+#define __CLANG_ATOMIC_CHAR16_T_LOCK_FREE 2
+#define __CLANG_ATOMIC_CHAR32_T_LOCK_FREE 2
+#define __CLANG_ATOMIC_CHAR_LOCK_FREE 2
+#define __CLANG_ATOMIC_INT_LOCK_FREE 2
+#define __CLANG_ATOMIC_LLONG_LOCK_FREE 2
+#define __CLANG_ATOMIC_LONG_LOCK_FREE 2
+#define __CLANG_ATOMIC_POINTER_LOCK_FREE 2
+#define __CLANG_ATOMIC_SHORT_LOCK_FREE 2
+#define __CLANG_ATOMIC_WCHAR_T_LOCK_FREE 2
+#define __CONSTANT_CFSTRINGS__ 1
+#define __DBL_DECIMAL_DIG__ 17
+#define __DBL_DENORM_MIN__ 4.9406564584124654e-324
+#define __DBL_DIG__ 15
+#define __DBL_EPSILON__ 2.2204460492503131e-16
+#define __DBL_HAS_DENORM__ 1
+#define __DBL_HAS_INFINITY__ 1
+#define __DBL_HAS_QUIET_NAN__ 1
+#define __DBL_MANT_DIG__ 53
+#define __DBL_MAX_10_EXP__ 308
+#define __DBL_MAX_EXP__ 1024
+#define __DBL_MAX__ 1.7976931348623157e+308
+#define __DBL_MIN_10_EXP__ (-307)
+#define __DBL_MIN_EXP__ (-1021)
+#define __DBL_MIN__ 2.2250738585072014e-308
+#define __DECIMAL_DIG__ __LDBL_DECIMAL_DIG__
+#define __DYNAMIC__ 1
+#define __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ 130000
+#define __ENVIRONMENT_OS_VERSION_MIN_REQUIRED__ 130000
+#define __FINITE_MATH_ONLY__ 0
+#define __FLT16_DECIMAL_DIG__ 5
+#define __FLT16_DENORM_MIN__ 5.9604644775390625e-8F16
+#define __FLT16_DIG__ 3
+#define __FLT16_EPSILON__ 9.765625e-4F16
+#define __FLT16_HAS_DENORM__ 1
+#define __FLT16_HAS_INFINITY__ 1
+#define __FLT16_HAS_QUIET_NAN__ 1
+#define __FLT16_MANT_DIG__ 11
+#define __FLT16_MAX_10_EXP__ 4
+#define __FLT16_MAX_EXP__ 16
+#define __FLT16_MAX__ 6.5504e+4F16
+#define __FLT16_MIN_10_EXP__ (-4)
+#define __FLT16_MIN_EXP__ (-13)
+#define __FLT16_MIN__ 6.103515625e-5F16
+#define __FLT_DECIMAL_DIG__ 9
+#define __FLT_DENORM_MIN__ 1.40129846e-45F
+#define __FLT_DIG__ 6
+#define __FLT_EPSILON__ 1.19209290e-7F
+#define __FLT_HAS_DENORM__ 1
+#define __FLT_HAS_INFINITY__ 1
+#define __FLT_HAS_QUIET_NAN__ 1
+#define __FLT_MANT_DIG__ 24
+#define __FLT_MAX_10_EXP__ 38
+#define __FLT_MAX_EXP__ 128
+#define __FLT_MAX__ 3.40282347e+38F
+#define __FLT_MIN_10_EXP__ (-37)
+#define __FLT_MIN_EXP__ (-125)
+#define __FLT_MIN__ 1.17549435e-38F
+#define __FLT_RADIX__ 2
+#define __FP_FAST_FMA 1
+#define __FP_FAST_FMAF 1
+#define __GCC_ATOMIC_BOOL_LOCK_FREE 2
+#define __GCC_ATOMIC_CHAR16_T_LOCK_FREE 2
+#define __GCC_ATOMIC_CHAR32_T_LOCK_FREE 2
+#define __GCC_ATOMIC_CHAR_LOCK_FREE 2
+#define __GCC_ATOMIC_INT_LOCK_FREE 2
+#define __GCC_ATOMIC_LLONG_LOCK_FREE 2
+#define __GCC_ATOMIC_LONG_LOCK_FREE 2
+#define __GCC_ATOMIC_POINTER_LOCK_FREE 2
+#define __GCC_ATOMIC_SHORT_LOCK_FREE 2
+#define __GCC_ATOMIC_TEST_AND_SET_TRUEVAL 1
+#define __GCC_ATOMIC_WCHAR_T_LOCK_FREE 2
+#define __GCC_HAVE_DWARF2_CFI_ASM 1
+#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 1
+#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_2 1
+#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 1
+#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_8 1
+#define __GNUC_MINOR__ 2
+#define __GNUC_PATCHLEVEL__ 1
+#define __GNUC_STDC_INLINE__ 1
+#define __GNUC__ 4
+#define __GXX_ABI_VERSION 1002
+#define __INT16_C_SUFFIX__
+#define __INT16_FMTd__ "hd"
+#define __INT16_FMTi__ "hi"
+#define __INT16_MAX__ 32767
+#define __INT16_TYPE__ short
+#define __INT32_C_SUFFIX__
+#define __INT32_FMTd__ "d"
+#define __INT32_FMTi__ "i"
+#define __INT32_MAX__ 2147483647
+#define __INT32_TYPE__ int
+#define __INT64_C_SUFFIX__ LL
+#define __INT64_FMTd__ "lld"
+#define __INT64_FMTi__ "lli"
+#define __INT64_MAX__ 9223372036854775807LL
+#define __INT64_TYPE__ long long int
+#define __INT8_C_SUFFIX__
+#define __INT8_FMTd__ "hhd"
+#define __INT8_FMTi__ "hhi"
+#define __INT8_MAX__ 127
+#define __INT8_TYPE__ signed char
+#define __INTMAX_C_SUFFIX__ L
+#define __INTMAX_FMTd__ "ld"
+#define __INTMAX_FMTi__ "li"
+#define __INTMAX_MAX__ 9223372036854775807L
+#define __INTMAX_TYPE__ long int
+#define __INTMAX_WIDTH__ 64
+#define __INTPTR_FMTd__ "ld"
+#define __INTPTR_FMTi__ "li"
+#define __INTPTR_MAX__ 9223372036854775807L
+#define __INTPTR_TYPE__ long int
+#define __INTPTR_WIDTH__ 64
+#define __INT_FAST16_FMTd__ "hd"
+#define __INT_FAST16_FMTi__ "hi"
+#define __INT_FAST16_MAX__ 32767
+#define __INT_FAST16_TYPE__ short
+#define __INT_FAST16_WIDTH__ 16
+#define __INT_FAST32_FMTd__ "d"
+#define __INT_FAST32_FMTi__ "i"
+#define __INT_FAST32_MAX__ 2147483647
+#define __INT_FAST32_TYPE__ int
+#define __INT_FAST32_WIDTH__ 32
+#define __INT_FAST64_FMTd__ "lld"
+#define __INT_FAST64_FMTi__ "lli"
+#define __INT_FAST64_MAX__ 9223372036854775807LL
+#define __INT_FAST64_TYPE__ long long int
+#define __INT_FAST64_WIDTH__ 64
+#define __INT_FAST8_FMTd__ "hhd"
+#define __INT_FAST8_FMTi__ "hhi"
+#define __INT_FAST8_MAX__ 127
+#define __INT_FAST8_TYPE__ signed char
+#define __INT_FAST8_WIDTH__ 8
+#define __INT_LEAST16_FMTd__ "hd"
+#define __INT_LEAST16_FMTi__ "hi"
+#define __INT_LEAST16_MAX__ 32767
+#define __INT_LEAST16_TYPE__ short
+#define __INT_LEAST16_WIDTH__ 16
+#define __INT_LEAST32_FMTd__ "d"
+#define __INT_LEAST32_FMTi__ "i"
+#define __INT_LEAST32_MAX__ 2147483647
+#define __INT_LEAST32_TYPE__ int
+#define __INT_LEAST32_WIDTH__ 32
+#define __INT_LEAST64_FMTd__ "lld"
+#define __INT_LEAST64_FMTi__ "lli"
+#define __INT_LEAST64_MAX__ 9223372036854775807LL
+#define __INT_LEAST64_TYPE__ long long int
+#define __INT_LEAST64_WIDTH__ 64
+#define __INT_LEAST8_FMTd__ "hhd"
+#define __INT_LEAST8_FMTi__ "hhi"
+#define __INT_LEAST8_MAX__ 127
+#define __INT_LEAST8_TYPE__ signed char
+#define __INT_LEAST8_WIDTH__ 8
+#define __INT_MAX__ 2147483647
+#define __INT_WIDTH__ 32
+#define __LDBL_DECIMAL_DIG__ 17
+#define __LDBL_DENORM_MIN__ 4.9406564584124654e-324L
+#define __LDBL_DIG__ 15
+#define __LDBL_EPSILON__ 2.2204460492503131e-16L
+#define __LDBL_HAS_DENORM__ 1
+#define __LDBL_HAS_INFINITY__ 1
+#define __LDBL_HAS_QUIET_NAN__ 1
+#define __LDBL_MANT_DIG__ 53
+#define __LDBL_MAX_10_EXP__ 308
+#define __LDBL_MAX_EXP__ 1024
+#define __LDBL_MAX__ 1.7976931348623157e+308L
+#define __LDBL_MIN_10_EXP__ (-307)
+#define __LDBL_MIN_EXP__ (-1021)
+#define __LDBL_MIN__ 2.2250738585072014e-308L
+#define __LITTLE_ENDIAN__ 1
+#define __LLONG_WIDTH__ 64
+#define __LONG_LONG_MAX__ 9223372036854775807LL
+#define __LONG_MAX__ 9223372036854775807L
+#define __LONG_WIDTH__ 64
+#define __LP64__ 1
+#define __MACH__ 1
+#define __NO_INLINE__ 1
+#define __NO_MATH_ERRNO__ 1
+#define __OBJC_BOOL_IS_BOOL 1
+#define __OPENCL_MEMORY_SCOPE_ALL_SVM_DEVICES 3
+#define __OPENCL_MEMORY_SCOPE_DEVICE 2
+#define __OPENCL_MEMORY_SCOPE_SUB_GROUP 4
+#define __OPENCL_MEMORY_SCOPE_WORK_GROUP 1
+#define __OPENCL_MEMORY_SCOPE_WORK_ITEM 0
+#define __ORDER_BIG_ENDIAN__ 4321
+#define __ORDER_LITTLE_ENDIAN__ 1234
+#define __ORDER_PDP_ENDIAN__ 3412
+#define __PIC__ 2
+#define __POINTER_WIDTH__ 64
+#define __PRAGMA_REDEFINE_EXTNAME 1
+#define __PTRDIFF_FMTd__ "ld"
+#define __PTRDIFF_FMTi__ "li"
+#define __PTRDIFF_MAX__ 9223372036854775807L
+#define __PTRDIFF_TYPE__ long int
+#define __PTRDIFF_WIDTH__ 64
+#define __REGISTER_PREFIX__
+#define __SCHAR_MAX__ 127
+#define __SHRT_MAX__ 32767
+#define __SHRT_WIDTH__ 16
+#define __SIG_ATOMIC_MAX__ 2147483647
+#define __SIG_ATOMIC_WIDTH__ 32
+#define __SIZEOF_DOUBLE__ 8
+#define __SIZEOF_FLOAT__ 4
+#define __SIZEOF_INT128__ 16
+#define __SIZEOF_INT__ 4
+#define __SIZEOF_LONG_DOUBLE__ 8
+#define __SIZEOF_LONG_LONG__ 8
+#define __SIZEOF_LONG__ 8
+#define __SIZEOF_POINTER__ 8
+#define __SIZEOF_PTRDIFF_T__ 8
+#define __SIZEOF_SHORT__ 2
+#define __SIZEOF_SIZE_T__ 8
+#define __SIZEOF_WCHAR_T__ 4
+#define __SIZEOF_WINT_T__ 4
+#define __SIZE_FMTX__ "lX"
+#define __SIZE_FMTo__ "lo"
+#define __SIZE_FMTu__ "lu"
+#define __SIZE_FMTx__ "lx"
+#define __SIZE_MAX__ 18446744073709551615UL
+#define __SIZE_TYPE__ long unsigned int
+#define __SIZE_WIDTH__ 64
+#define __SSP__ 1
+#define __STDC_HOSTED__ 1
+#define __STDC_NO_THREADS__ 1
+#define __STDC_UTF_16__ 1
+#define __STDC_UTF_32__ 1
+#define __STDC_VERSION__ 201710L
+#define __STDC__ 1
+#define __UINT16_C_SUFFIX__
+#define __UINT16_FMTX__ "hX"
+#define __UINT16_FMTo__ "ho"
+#define __UINT16_FMTu__ "hu"
+#define __UINT16_FMTx__ "hx"
+#define __UINT16_MAX__ 65535
+#define __UINT16_TYPE__ unsigned short
+#define __UINT32_C_SUFFIX__ U
+#define __UINT32_FMTX__ "X"
+#define __UINT32_FMTo__ "o"
+#define __UINT32_FMTu__ "u"
+#define __UINT32_FMTx__ "x"
+#define __UINT32_MAX__ 4294967295U
+#define __UINT32_TYPE__ unsigned int
+#define __UINT64_C_SUFFIX__ ULL
+#define __UINT64_FMTX__ "llX"
+#define __UINT64_FMTo__ "llo"
+#define __UINT64_FMTu__ "llu"
+#define __UINT64_FMTx__ "llx"
+#define __UINT64_MAX__ 18446744073709551615ULL
+#define __UINT64_TYPE__ long long unsigned int
+#define __UINT8_C_SUFFIX__
+#define __UINT8_FMTX__ "hhX"
+#define __UINT8_FMTo__ "hho"
+#define __UINT8_FMTu__ "hhu"
+#define __UINT8_FMTx__ "hhx"
+#define __UINT8_MAX__ 255
+#define __UINT8_TYPE__ unsigned char
+#define __UINTMAX_C_SUFFIX__ UL
+#define __UINTMAX_FMTX__ "lX"
+#define __UINTMAX_FMTo__ "lo"
+#define __UINTMAX_FMTu__ "lu"
+#define __UINTMAX_FMTx__ "lx"
+#define __UINTMAX_MAX__ 18446744073709551615UL
+#define __UINTMAX_TYPE__ long unsigned int
+#define __UINTMAX_WIDTH__ 64
+#define __UINTPTR_FMTX__ "lX"
+#define __UINTPTR_FMTo__ "lo"
+#define __UINTPTR_FMTu__ "lu"
+#define __UINTPTR_FMTx__ "lx"
+#define __UINTPTR_MAX__ 18446744073709551615UL
+#define __UINTPTR_TYPE__ long unsigned int
+#define __UINTPTR_WIDTH__ 64
+#define __UINT_FAST16_FMTX__ "hX"
+#define __UINT_FAST16_FMTo__ "ho"
+#define __UINT_FAST16_FMTu__ "hu"
+#define __UINT_FAST16_FMTx__ "hx"
+#define __UINT_FAST16_MAX__ 65535
+#define __UINT_FAST16_TYPE__ unsigned short
+#define __UINT_FAST32_FMTX__ "X"
+#define __UINT_FAST32_FMTo__ "o"
+#define __UINT_FAST32_FMTu__ "u"
+#define __UINT_FAST32_FMTx__ "x"
+#define __UINT_FAST32_MAX__ 4294967295U
+#define __UINT_FAST32_TYPE__ unsigned int
+#define __UINT_FAST64_FMTX__ "llX"
+#define __UINT_FAST64_FMTo__ "llo"
+#define __UINT_FAST64_FMTu__ "llu"
+#define __UINT_FAST64_FMTx__ "llx"
+#define __UINT_FAST64_MAX__ 18446744073709551615ULL
+#define __UINT_FAST64_TYPE__ long long unsigned int
+#define __UINT_FAST8_FMTX__ "hhX"
+#define __UINT_FAST8_FMTo__ "hho"
+#define __UINT_FAST8_FMTu__ "hhu"
+#define __UINT_FAST8_FMTx__ "hhx"
+#define __UINT_FAST8_MAX__ 255
+#define __UINT_FAST8_TYPE__ unsigned char
+#define __UINT_LEAST16_FMTX__ "hX"
+#define __UINT_LEAST16_FMTo__ "ho"
+#define __UINT_LEAST16_FMTu__ "hu"
+#define __UINT_LEAST16_FMTx__ "hx"
+#define __UINT_LEAST16_MAX__ 65535
+#define __UINT_LEAST16_TYPE__ unsigned short
+#define __UINT_LEAST32_FMTX__ "X"
+#define __UINT_LEAST32_FMTo__ "o"
+#define __UINT_LEAST32_FMTu__ "u"
+#define __UINT_LEAST32_FMTx__ "x"
+#define __UINT_LEAST32_MAX__ 4294967295U
+#define __UINT_LEAST32_TYPE__ unsigned int
+#define __UINT_LEAST64_FMTX__ "llX"
+#define __UINT_LEAST64_FMTo__ "llo"
+#define __UINT_LEAST64_FMTu__ "llu"
+#define __UINT_LEAST64_FMTx__ "llx"
+#define __UINT_LEAST64_MAX__ 18446744073709551615ULL
+#define __UINT_LEAST64_TYPE__ long long unsigned int
+#define __UINT_LEAST8_FMTX__ "hhX"
+#define __UINT_LEAST8_FMTo__ "hho"
+#define __UINT_LEAST8_FMTu__ "hhu"
+#define __UINT_LEAST8_FMTx__ "hhx"
+#define __UINT_LEAST8_MAX__ 255
+#define __UINT_LEAST8_TYPE__ unsigned char
+#define __USER_LABEL_PREFIX__ _
+#define __VERSION__ "Apple LLVM 15.0.0 (clang-1500.0.40.1)"
+#define __WCHAR_MAX__ 2147483647
+#define __WCHAR_TYPE__ int
+#define __WCHAR_WIDTH__ 32
+#define __WINT_MAX__ 2147483647
+#define __WINT_TYPE__ int
+#define __WINT_WIDTH__ 32
+#define __aarch64__ 1
+#define __apple_build_version__ 15000040
+#define __arm64 1
+#define __arm64__ 1
+#define __block __attribute__((__blocks__(byref)))
+#define __clang__ 1
+#define __clang_literal_encoding__ "UTF-8"
+#define __clang_major__ 15
+#define __clang_minor__ 0
+#define __clang_patchlevel__ 0
+#define __clang_version__ "15.0.0 (clang-1500.0.40.1)"
+#define __clang_wide_literal_encoding__ "UTF-32"
+#define __llvm__ 1
+#define __nonnull _Nonnull
+#define __null_unspecified _Null_unspecified
+#define __nullable _Nullable
+#define __pic__ 2
+#define __strong
+#define __unsafe_unretained
+#define __weak __attribute__((objc_gc(weak)))
+--------------------------------
+------ Task ------
+Running on: Apple macOS M1
+Doing: BUILD
+--------------------------------
+==> Homebrew collects anonymous analytics.
+Read the analytics documentation (and how to opt-out) here:
+  https://docs.brew.sh/Analytics
+No analytics have been recorded yet (nor will be during this `brew` run).
+
+==> Homebrew is run entirely by unpaid volunteers. Please consider donating:
+  https://github.com/Homebrew/brew#donations
+
+==> You have set:
+  HOMEBREW_NO_AUTO_UPDATE
+but we have dramatically sped up and fixed many bugs in the way we do Homebrew updates since.
+Please consider unsetting these and tweaking the values based on the new behaviour.
+
+
+Updated 3 taps (homebrew/cask-versions, homebrew/core and homebrew/cask).
+==> New Formulae
+libimobiledevice-glue
+==> New Casks
+ava
+reqable
+spundle
+zulu21
+==> Outdated Formulae
+awscli
+carthage
+cmake
+fastlane
+gettext
+gh
+imagemagick
+libomp
+node
+ruby-build
+
+You have 10 outdated formulae installed.
+You can upgrade them with brew upgrade
+or list them with brew outdated.
+Warning: openssl@3 3.1.2 is already installed and up-to-date.
+To reinstall 3.1.2, run:
+  brew reinstall openssl@3
+libomp  is already installed but outdated (so it will be upgraded).
+Warning: gmp 6.2.1_1 is already installed and up-to-date.
+To reinstall 6.2.1_1, run:
+  brew reinstall gmp
+==> Downloading https://ghcr.io/v2/homebrew/core/libpcap/manifests/1.10.4
+==> Fetching libpcap
+==> Downloading https://ghcr.io/v2/homebrew/core/libpcap/blobs/sha256:c9ab92960280af2f6677af5adac6400c0fcbc989e10c82539abd5e6fa07ace6c
+==> Downloading https://ghcr.io/v2/homebrew/core/libomp/manifests/17.0.1
+==> Fetching libomp
+==> Downloading https://ghcr.io/v2/homebrew/core/libomp/blobs/sha256:3837963331024d9dac0d767143319e0fd8969da62e034337c252df18204b990d
+==> Downloading https://ghcr.io/v2/homebrew/core/coreutils/manifests/9.4
+==> Fetching coreutils
+==> Downloading https://ghcr.io/v2/homebrew/core/coreutils/blobs/sha256:3707a17440f54975e547469c1309b2f260ef4bfc5c2c53ddc22998ae3a7fbe19
+==> Downloading https://ghcr.io/v2/homebrew/core/p7zip/manifests/17.05-1
+==> Fetching p7zip
+==> Downloading https://ghcr.io/v2/homebrew/core/p7zip/blobs/sha256:ba7f3e60841e85ab16ae76e7f0be634e15ea1b0c4a3a631cbe57447cbc9d77b6
+==> Pouring libpcap--1.10.4.arm64_ventura.bottle.tar.gz
+==> Caveats
+libpcap is keg-only, which means it was not symlinked into /opt/homebrew,
+because macOS already provides this software and installing another version in
+parallel can cause all kinds of trouble.
+
+If you need to have libpcap first in your PATH, run:
+  echo 'export PATH="/opt/homebrew/opt/libpcap/bin:$PATH"' >> ~/.zshrc
+
+For compilers to find libpcap you may need to set:
+  export LDFLAGS="-L/opt/homebrew/opt/libpcap/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/libpcap/include"
+
+For pkg-config to find libpcap you may need to set:
+  export PKG_CONFIG_PATH="/opt/homebrew/opt/libpcap/lib/pkgconfig"
+==> Summary
+🍺  /opt/homebrew/Cellar/libpcap/1.10.4: 110 files, 1MB
+==> Pouring libomp--17.0.1.arm64_ventura.bottle.tar.gz
+==> Caveats
+libomp is keg-only, which means it was not symlinked into /opt/homebrew,
+because it can override GCC headers and result in broken builds.
+
+For compilers to find libomp you may need to set:
+  export LDFLAGS="-L/opt/homebrew/opt/libomp/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/libomp/include"
+==> Summary
+🍺  /opt/homebrew/Cellar/libomp/17.0.1: 7 files, 1.7MB
+==> Pouring coreutils--9.4.arm64_ventura.bottle.tar.gz
+==> Caveats
+Commands also provided by macOS and the commands dir, dircolors, vdir have been installed with the prefix "g".
+If you need to use these commands with their normal names, you can add a "gnubin" directory to your PATH with:
+  PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+==> Summary
+🍺  /opt/homebrew/Cellar/coreutils/9.4: 476 files, 13.5MB
+==> Pouring p7zip--17.05.arm64_ventura.bottle.1.tar.gz
+🍺  /opt/homebrew/Cellar/p7zip/17.05: 106 files, 9.5MB
+==> Upgrading 1 dependent of upgraded formulae:
+Disable this behaviour by setting HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+imagemagick 7.1.1-16 -> 7.1.1-17
+==> Downloading https://ghcr.io/v2/homebrew/core/imagemagick/manifests/7.1.1-17
+==> Checking for dependents of upgraded formulae...
+==> No broken dependents found!
+==> Caveats
+==> libpcap
+libpcap is keg-only, which means it was not symlinked into /opt/homebrew,
+because macOS already provides this software and installing another version in
+parallel can cause all kinds of trouble.
+
+If you need to have libpcap first in your PATH, run:
+  echo 'export PATH="/opt/homebrew/opt/libpcap/bin:$PATH"' >> ~/.zshrc
+
+For compilers to find libpcap you may need to set:
+  export LDFLAGS="-L/opt/homebrew/opt/libpcap/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/libpcap/include"
+
+For pkg-config to find libpcap you may need to set:
+  export PKG_CONFIG_PATH="/opt/homebrew/opt/libpcap/lib/pkgconfig"
+==> libomp
+libomp is keg-only, which means it was not symlinked into /opt/homebrew,
+because it can override GCC headers and result in broken builds.
+
+For compilers to find libomp you may need to set:
+  export LDFLAGS="-L/opt/homebrew/opt/libomp/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/libomp/include"
+==> coreutils
+Commands also provided by macOS and the commands dir, dircolors, vdir have been installed with the prefix "g".
+If you need to use these commands with their normal names, you can add a "gnubin" directory to your PATH with:
+  PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+Warning: Already linked: /opt/homebrew/Cellar/openssl@3/3.1.2
+To relink, run:
+  brew unlink openssl@3 && brew link openssl@3
+checking build system type... arm-apple-darwin22.6.0
+checking host system type... arm-apple-darwin22.6.0
+checking whether to compile using MPI... no
+checking for gcc... clang
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether clang accepts -g... yes
+checking for clang option to accept ISO C89... none needed
+checking whether clang understands -c and -o together... yes
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether clang accepts -g... (cached) yes
+checking for clang option to accept ISO C89... (cached) none needed
+checking whether clang understands -c and -o together... (cached) yes
+checking additional paths... none
+checking arg check macro for -m with clang... yes
+checking arg check macro for -Q with clang... yes
+checking if clang supports -funroll-loops... yes
+checking if clang supports -Os... yes
+checking if clang supports -finline-functions... yes
+checking if clang supports -Og... yes
+checking if clang supports -Wall... yes
+checking if clang supports -Wno-stringop-truncation... no
+checking if clang supports -Wno-format-overflow... no
+checking if clang supports -Wno-format-truncation... no
+checking if clang supports -Wno-tautological-constant-out-of-range-compare... yes
+checking if clang supports -fno-omit-frame-pointer... yes
+checking if clang supports --param allow-store-data-races=0... no
+checking if clang supports -Wno-deprecated-declarations... yes
+checking if clang supports -Wformat-extra-args... yes
+checking if clang supports -Wunused-but-set-variable... yes
+checking if clang supports -Qunused-arguments... yes
+checking if clang supports -Wdate-time... yes
+checking if gcc supports -m64... skipped
+checking for 32/64 bit... 64-bit
+checking additional paths (64 bit)... none
+checking whether ln -s works... yes
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for GNU make... make
+checking whether make sets $(MAKE)... yes
+checking how to run the C preprocessor... clang -E
+checking for a thread-safe mkdir -p... /opt/homebrew/bin/gmkdir -p
+checking for sort... /usr/bin/sort
+checking for find... /usr/bin/find
+checking for perl... /usr/bin/perl
+checking for ar... /usr/bin/ar
+checking for strip... strip
+checking for strings... strings
+checking for pkg-config... /opt/homebrew/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking if pkg-config will be used... no
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking size of short... 2
+checking size of int... 4
+checking size of long... 8
+checking size of long long... 8
+checking size of wchar_t... 4
+checking size of int *... 8
+checking size of void *... 8
+checking special compiler flags... ARM
+configure: Testing build host's native CPU features
+checking for NEON... yes
+checking for ASIMD... yes
+checking if clang supports -fno-strict-aliasing... yes
+checking for extra ASFLAGS...  -DUNDERSCORES -DBSD -DALIGN_LOG
+checking for arch.h alternative... arm64le.h
+checking for byte ordering according to target triple... little
+checking supplied paths for OpenSSL...
+checking additional paths for OpenSSL... none
+checking openssl/opensslv.h usability... yes
+checking openssl/opensslv.h presence... yes
+checking for openssl/opensslv.h... yes
+checking for SSL_CTX_new in -lssl... yes
+checking for MD5_Update in -lcrypto... yes
+checking for (non-free) ClamAV unrar code... yes
+checking for sqrt in -lm... yes
+checking for clock_gettime in -lrt... no
+checking for deflate in -lz... yes
+checking for library containing crypt... none required
+checking gmp.h usability... yes
+checking gmp.h presence... yes
+checking for gmp.h... yes
+checking for __gmpz_init in -lgmp... yes
+checking skey.h usability... no
+checking skey.h presence... no
+checking for skey.h... no
+checking for S/Key... using our own code
+checking bzlib.h usability... yes
+checking bzlib.h presence... yes
+checking for bzlib.h... yes
+checking for main in -lbz2... yes
+checking for main in -lkernel32... no
+checking for dlopen in -ldl... yes
+checking intrin.h usability... no
+checking intrin.h presence... no
+checking for intrin.h... no
+checking openssl/cmac.h usability... yes
+checking openssl/cmac.h presence... yes
+checking for openssl/cmac.h... yes
+configure: rexgen check not enabled
+checking pcap.h usability... yes
+checking pcap.h presence... yes
+checking for pcap.h... yes
+checking for pcap_compile in -lpcap... yes
+checking for pcap.h... (cached) yes
+checking for pcap_compile in -lwpcap... no
+checking whether time.h and sys/time.h may both be included... yes
+checking whether string.h and strings.h may both be included... yes
+checking for SHA256... yes
+checking for WHIRLPOOL... yes
+checking for RIPEMD160... yes
+checking for AES_encrypt... yes
+checking for DSA_get0_pqg... yes
+checking additional paths for OpenCL... none
+checking if compiler needs -Werror to reject unknown flags... yes
+checking whether pthreads work with -pthread... yes
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+checking if more special flags are required for pthreads... -D_THREAD_SAFE
+checking for PTHREAD_PRIO_INHERIT... yes
+checking whether we are using the Microsoft C compiler... no
+checking CL/cl.h usability... no
+checking CL/cl.h presence... no
+checking for CL/cl.h... no
+checking OpenCL/cl.h usability... yes
+checking OpenCL/cl.h presence... yes
+checking for OpenCL/cl.h... yes
+checking windows.h usability... no
+checking windows.h presence... no
+checking for windows.h... no
+checking for OpenCL library... -Wl,-framework,OpenCL
+checking arpa/inet.h usability... yes
+checking arpa/inet.h presence... yes
+checking for arpa/inet.h... yes
+checking crypt.h usability... no
+checking crypt.h presence... no
+checking for crypt.h... no
+checking dirent.h usability... yes
+checking dirent.h presence... yes
+checking for dirent.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking malloc.h usability... no
+checking malloc.h presence... no
+checking for malloc.h... no
+checking net/ethernet.h usability... yes
+checking net/ethernet.h presence... yes
+checking for net/ethernet.h... yes
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking netinet/in_systm.h usability... yes
+checking netinet/in_systm.h presence... yes
+checking for netinet/in_systm.h... yes
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking sys/ethernet.h usability... no
+checking sys/ethernet.h presence... no
+checking for sys/ethernet.h... no
+checking sys/file.h usability... yes
+checking sys/file.h presence... yes
+checking for sys/file.h... yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking sys/times.h usability... yes
+checking sys/times.h presence... yes
+checking for sys/times.h... yes
+checking for sys/types.h... (cached) yes
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking for unistd.h... (cached) yes
+checking unixlib/local.h usability... no
+checking unixlib/local.h presence... no
+checking for unixlib/local.h... no
+checking for windows.h... (cached) no
+checking for net/if.h... yes
+checking for net/if_arp.h... yes
+checking for netinet/if_ether.h... yes
+checking for netinet/ip.h... yes
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+checking for inline... inline
+checking for int32_t... yes
+checking for int64_t... yes
+checking for off_t... yes
+checking for size_t... yes
+checking for ssize_t... yes
+checking for uint16_t... yes
+checking for uint32_t... yes
+checking for uint64_t... yes
+checking for uint8_t... yes
+checking for ptrdiff_t... yes
+checking for int128... no
+checking for __int128... yes
+checking for __int128_t... yes
+checking for error_at_line... no
+checking for pid_t... yes
+checking vfork.h usability... no
+checking vfork.h presence... no
+checking for vfork.h... no
+checking for fork... yes
+checking for vfork... yes
+checking for working fork... yes
+checking for working vfork... (cached) yes
+checking for fseek64... no
+checking for fseeko... yes
+checking for fseeko64... no
+checking for _fseeki64... no
+checking for lseek64... no
+checking for lseek... yes
+checking for ftell64... no
+checking for ftello... yes
+checking for ftello64... no
+checking for _ftelli64... no
+checking for fopen64... no
+checking for _fopen64... no
+checking for memmem... yes
+checking for mmap... yes
+checking for sleep... yes
+checking for setenv... yes
+checking for putenv... yes
+checking for strcasecmp... yes
+checking for strncasecmp... yes
+checking for stricmp... no
+checking for strcmpi... no
+checking for _stricmp... no
+checking for _strcmpi... no
+checking for strnicmp... no
+checking for strncmpi... no
+checking for _strnicmp... no
+checking for _strncmpi... no
+checking for strnlen... yes
+checking for strlwr... no
+checking for strupr... no
+checking for strrev... no
+checking for atoll... yes
+checking for _atoi64... no
+checking for snprintf... yes
+checking for sprintf_s... no
+checking for strcasestr... yes
+checking for clGetKernelArgInfo... yes
+checking for posix_memalign... yes
+checking for OS-specific feature macros needed... none
+checking size of size_t... 8
+checking size of off_t... 8
+configure: Fuzz check disabled
+configure: Fuzzing (using libFuzzer) check disabled
+configure: creating *_plug.c and OpenCL object rules
+configure: creating Makefile dependencies
+configure: creating ./john_build_rule.h
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating aes/Makefile
+config.status: creating aes/aesni/Makefile
+config.status: creating aes/openssl/Makefile
+config.status: creating secp256k1/Makefile
+config.status: creating ed25519-donna/Makefile
+config.status: creating poly1305-donna/Makefile
+config.status: creating autoconfig.h
+config.status: linking arm64le.h to arch.h
+config.status: executing default commands
+configure: creating ./fmt_externs.h
+configure: creating ./fmt_registers.h
+
+Configured for building John the Ripper jumbo:
+
+Target CPU ......................................... arm ASIMD, 64-bit LE
+AES-NI support ..................................... no
+Target OS .......................................... darwin22.6.0
+Cross compiling .................................... no
+Legacy arch header ................................. arm64le.h
+
+Optional libraries/features found:
+Memory map (share/page large files) ................ yes
+Fork support ....................................... yes
+OpenMP support ..................................... no
+OpenCL support ..................................... yes
+Generic crypt(3) format ............................ yes
+OpenSSL (many additional formats) .................. yes
+libgmp (PRINCE mode and faster SRP formats) ........ yes
+128-bit integer (faster PRINCE mode) ............... yes
+libz (7z, pkzip and some other formats) ............ yes
+libbz2 (7z and gpg2john bz2 support) ............... yes
+libpcap (vncpcap2john and SIPdump) ................. yes
+Non-free unrar code (complete RAR support) ......... yes
+librexgen (regex mode, see doc/README.librexgen) ... no
+OpenMPI support (default disabled) ................. no
+Experimental code (default disabled) ............... no
+ZTEX USB-FPGA module 1.15y support ................. no
+
+Install missing libraries to get any needed features that were omitted.
+
+Configure finished.  Now "make -s clean && make -sj4" to compile.
+ar: creating archive poly1305-donna.a
+ar: creating archive aes.a
+ar: creating archive secp256k1.a
+ar: creating archive ed25519-donna.a
+gpg2john.c:1632:20: warning: passing arguments to a function without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+                        (*tag_func[tag])(len, 1, partial, hash);        // first packet (possibly only one if partial is false).
+                                        ^
+gpg2john.c:1654:21: warning: passing arguments to a function without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+                                (*tag_func[tag])(len, 0, partial, hash);        // subsquent packets.
+                                                ^
+gpg2john.c:1702:27: warning: passing arguments to a function without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+                        (*sigsub_func[subtype])(len);
+                                               ^
+gpg2john.c:1737:27: warning: passing arguments to a function without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+                        (*uatsub_func[subtype])(len);
+                                               ^
+4 warnings generated.
+ld: warning: ignoring duplicate libraries: '-lm'
+
+Make process completed.
+checking build system type... arm-apple-darwin22.6.0
+checking host system type... arm-apple-darwin22.6.0
+checking whether to compile using MPI... no
+checking for gcc... clang
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether clang accepts -g... yes
+checking for clang option to accept ISO C89... none needed
+checking whether clang understands -c and -o together... yes
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether clang accepts -g... (cached) yes
+checking for clang option to accept ISO C89... (cached) none needed
+checking whether clang understands -c and -o together... (cached) yes
+checking additional paths... none
+checking arg check macro for -m with clang... yes
+checking arg check macro for -Q with clang... yes
+checking if clang supports -funroll-loops... yes
+checking if clang supports -Os... yes
+checking if clang supports -finline-functions... yes
+checking if clang supports -Og... yes
+checking if clang supports -Wall... yes
+checking if clang supports -Wno-stringop-truncation... no
+checking if clang supports -Wno-format-overflow... no
+checking if clang supports -Wno-format-truncation... no
+checking if clang supports -Wno-tautological-constant-out-of-range-compare... yes
+checking if clang supports -fno-omit-frame-pointer... yes
+checking if clang supports --param allow-store-data-races=0... no
+checking if clang supports -Wno-deprecated-declarations... yes
+checking if clang supports -Wformat-extra-args... yes
+checking if clang supports -Wunused-but-set-variable... yes
+checking if clang supports -Qunused-arguments... yes
+checking if clang supports -Wdate-time... yes
+checking if gcc supports -m64... skipped
+checking for 32/64 bit... 64-bit
+checking additional paths (64 bit)... none
+checking whether ln -s works... yes
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for GNU make... make
+checking whether make sets $(MAKE)... yes
+checking how to run the C preprocessor... clang -E
+checking for a thread-safe mkdir -p... /opt/homebrew/bin/gmkdir -p
+checking for sort... /usr/bin/sort
+checking for find... /usr/bin/find
+checking for perl... /usr/bin/perl
+checking for ar... /usr/bin/ar
+checking for strip... strip
+checking for strings... strings
+checking for pkg-config... /opt/homebrew/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking if pkg-config will be used... no
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking size of short... 2
+checking size of int... 4
+checking size of long... 8
+checking size of long long... 8
+checking size of wchar_t... 4
+checking size of int *... 8
+checking size of void *... 8
+checking special compiler flags... ARM
+configure: Testing build host's native CPU features
+checking for NEON... yes
+checking for ASIMD... yes
+checking if clang supports -fno-strict-aliasing... yes
+checking for extra ASFLAGS...  -DUNDERSCORES -DBSD -DALIGN_LOG
+checking for arch.h alternative... arm64le.h
+checking for byte ordering according to target triple... little
+checking supplied paths for OpenSSL...
+checking additional paths for OpenSSL... none
+checking openssl/opensslv.h usability... yes
+checking openssl/opensslv.h presence... yes
+checking for openssl/opensslv.h... yes
+checking for SSL_CTX_new in -lssl... yes
+checking for MD5_Update in -lcrypto... yes
+checking for (non-free) ClamAV unrar code... yes
+checking for sqrt in -lm... yes
+checking for clock_gettime in -lrt... no
+checking for deflate in -lz... yes
+checking for library containing crypt... none required
+checking gmp.h usability... yes
+checking gmp.h presence... yes
+checking for gmp.h... yes
+checking for __gmpz_init in -lgmp... yes
+checking skey.h usability... no
+checking skey.h presence... no
+checking for skey.h... no
+checking for S/Key... using our own code
+checking bzlib.h usability... yes
+checking bzlib.h presence... yes
+checking for bzlib.h... yes
+checking for main in -lbz2... yes
+checking for main in -lkernel32... no
+checking for dlopen in -ldl... yes
+checking intrin.h usability... no
+checking intrin.h presence... no
+checking for intrin.h... no
+checking openssl/cmac.h usability... yes
+checking openssl/cmac.h presence... yes
+checking for openssl/cmac.h... yes
+configure: rexgen check not enabled
+checking pcap.h usability... yes
+checking pcap.h presence... yes
+checking for pcap.h... yes
+checking for pcap_compile in -lpcap... yes
+checking for pcap.h... (cached) yes
+checking for pcap_compile in -lwpcap... no
+checking whether time.h and sys/time.h may both be included... yes
+checking whether string.h and strings.h may both be included... yes
+checking for SHA256... yes
+checking for WHIRLPOOL... yes
+checking for RIPEMD160... yes
+checking for AES_encrypt... yes
+checking for DSA_get0_pqg... yes
+checking for clang option to support OpenMP... none needed
+checking additional paths for OpenCL... none
+checking if compiler needs -Werror to reject unknown flags... yes
+checking whether pthreads work with -pthread... yes
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+checking if more special flags are required for pthreads... -D_THREAD_SAFE
+checking for PTHREAD_PRIO_INHERIT... yes
+checking whether we are using the Microsoft C compiler... no
+checking CL/cl.h usability... no
+checking CL/cl.h presence... no
+checking for CL/cl.h... no
+checking OpenCL/cl.h usability... yes
+checking OpenCL/cl.h presence... yes
+checking for OpenCL/cl.h... yes
+checking windows.h usability... no
+checking windows.h presence... no
+checking for windows.h... no
+checking for OpenCL library... -Wl,-framework,OpenCL
+checking arpa/inet.h usability... yes
+checking arpa/inet.h presence... yes
+checking for arpa/inet.h... yes
+checking crypt.h usability... no
+checking crypt.h presence... no
+checking for crypt.h... no
+checking dirent.h usability... yes
+checking dirent.h presence... yes
+checking for dirent.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking malloc.h usability... no
+checking malloc.h presence... no
+checking for malloc.h... no
+checking net/ethernet.h usability... yes
+checking net/ethernet.h presence... yes
+checking for net/ethernet.h... yes
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking netinet/in_systm.h usability... yes
+checking netinet/in_systm.h presence... yes
+checking for netinet/in_systm.h... yes
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking sys/ethernet.h usability... no
+checking sys/ethernet.h presence... no
+checking for sys/ethernet.h... no
+checking sys/file.h usability... yes
+checking sys/file.h presence... yes
+checking for sys/file.h... yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking sys/times.h usability... yes
+checking sys/times.h presence... yes
+checking for sys/times.h... yes
+checking for sys/types.h... (cached) yes
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking for unistd.h... (cached) yes
+checking unixlib/local.h usability... no
+checking unixlib/local.h presence... no
+checking for unixlib/local.h... no
+checking for windows.h... (cached) no
+checking for net/if.h... yes
+checking for net/if_arp.h... yes
+checking for netinet/if_ether.h... yes
+checking for netinet/ip.h... yes
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+checking for inline... inline
+checking for int32_t... yes
+checking for int64_t... yes
+checking for off_t... yes
+checking for size_t... yes
+checking for ssize_t... yes
+checking for uint16_t... yes
+checking for uint32_t... yes
+checking for uint64_t... yes
+checking for uint8_t... yes
+checking for ptrdiff_t... yes
+checking for int128... no
+checking for __int128... yes
+checking for __int128_t... yes
+checking for error_at_line... no
+checking for pid_t... yes
+checking vfork.h usability... no
+checking vfork.h presence... no
+checking for vfork.h... no
+checking for fork... yes
+checking for vfork... yes
+checking for working fork... yes
+checking for working vfork... (cached) yes
+checking for fseek64... no
+checking for fseeko... yes
+checking for fseeko64... no
+checking for _fseeki64... no
+checking for lseek64... no
+checking for lseek... yes
+checking for ftell64... no
+checking for ftello... yes
+checking for ftello64... no
+checking for _ftelli64... no
+checking for fopen64... no
+checking for _fopen64... no
+checking for memmem... yes
+checking for mmap... yes
+checking for sleep... yes
+checking for setenv... yes
+checking for putenv... yes
+checking for strcasecmp... yes
+checking for strncasecmp... yes
+checking for stricmp... no
+checking for strcmpi... no
+checking for _stricmp... no
+checking for _strcmpi... no
+checking for strnicmp... no
+checking for strncmpi... no
+checking for _strnicmp... no
+checking for _strncmpi... no
+checking for strnlen... yes
+checking for strlwr... no
+checking for strupr... no
+checking for strrev... no
+checking for atoll... yes
+checking for _atoi64... no
+checking for snprintf... yes
+checking for sprintf_s... no
+checking for strcasestr... yes
+checking for clGetKernelArgInfo... yes
+checking for posix_memalign... yes
+checking for OS-specific feature macros needed... none
+checking size of size_t... 8
+checking size of off_t... 8
+configure: Fuzz check disabled
+configure: Fuzzing (using libFuzzer) check disabled
+configure: creating *_plug.c and OpenCL object rules
+configure: creating Makefile dependencies
+configure: creating ./john_build_rule.h
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating aes/Makefile
+config.status: creating aes/aesni/Makefile
+config.status: creating aes/openssl/Makefile
+config.status: creating secp256k1/Makefile
+config.status: creating ed25519-donna/Makefile
+config.status: creating poly1305-donna/Makefile
+config.status: creating autoconfig.h
+config.status: autoconfig.h is unchanged
+config.status: linking arm64le.h to arch.h
+config.status: executing default commands
+configure: creating ./fmt_externs.h
+configure: creating ./fmt_registers.h
+
+Configured for building John the Ripper jumbo:
+
+Target CPU ......................................... arm ASIMD, 64-bit LE
+AES-NI support ..................................... no
+Target OS .......................................... darwin22.6.0
+Cross compiling .................................... no
+Legacy arch header ................................. arm64le.h
+
+Optional libraries/features found:
+Memory map (share/page large files) ................ yes
+Fork support ....................................... yes
+OpenMP support ..................................... yes (not for fast formats)
+OpenCL support ..................................... yes
+Generic crypt(3) format ............................ yes
+OpenSSL (many additional formats) .................. yes
+libgmp (PRINCE mode and faster SRP formats) ........ yes
+128-bit integer (faster PRINCE mode) ............... yes
+libz (7z, pkzip and some other formats) ............ yes
+libbz2 (7z and gpg2john bz2 support) ............... yes
+libpcap (vncpcap2john and SIPdump) ................. yes
+Non-free unrar code (complete RAR support) ......... yes
+librexgen (regex mode, see doc/README.librexgen) ... no
+OpenMPI support (default disabled) ................. no
+Experimental code (default disabled) ............... no
+ZTEX USB-FPGA module 1.15y support ................. no
+
+Install missing libraries to get any needed features that were omitted.
+
+Configure finished.  Now "make -s clean && make -sj4" to compile.
+gpg2john.c:1632:20: warning: passing arguments to a function without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+                        (*tag_func[tag])(len, 1, partial, hash);        // first packet (possibly only one if partial is false).
+                                        ^
+gpg2john.c:1654:21: warning: passing arguments to a function without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+                                (*tag_func[tag])(len, 0, partial, hash);        // subsquent packets.
+                                                ^
+gpg2john.c:1702:27: warning: passing arguments to a function without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+                        (*sigsub_func[subtype])(len);
+                                               ^
+gpg2john.c:1737:27: warning: passing arguments to a function without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+                        (*uatsub_func[subtype])(len);
+                                               ^
+4 warnings generated.
+ar: creating archive aes.a
+ar: creating archive poly1305-donna.a
+ar: creating archive secp256k1.a
+ar: creating archive ed25519-donna.a
+ld: warning: ignoring duplicate libraries: '-lm'
+
+Make process completed.
+/private/var/folders/n8/pp_chp6x3jlfy1n94r6hdjv40000gn/T/cirrus-ci-build/src
+--2023-09-20 23:16:33--  https://raw.githubusercontent.com/openwall/john-packages/main/tests/package_version.sh
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.108.133, 185.199.109.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1489 (1.5K) [text/plain]
+Saving to: ‘package_version.sh’
+
+     0K .                                                     100% 6.34M=0s
+
+2023-09-20 23:16:33 (6.34 MB/s) - ‘package_version.sh’ saved [1489/1489]
+
+
+-- Build Info --
+Version: 1.9.0-jumbo-1+bleeding-39db7dd63e 2023-09-20 17:02:33 -0300
+Build: darwin22.6.0 64-bit arm ASIMD AC OMP OPENCL
+SIMD: ASIMD, interleaving: MD4:2 MD5:2 SHA1:1 SHA256:1 SHA512:1
+OMP fallback binary: john-arm64
+$JOHN is ../run/
+Format interface version: 14
+Max. number of reported tunable costs: 4
+Rec file version: REC4
+Charset file version: CHR3
+CHARSET_MIN: 1 (0x01)
+CHARSET_MAX: 255 (0xff)
+CHARSET_LENGTH: 24
+SALT_HASH_SIZE: 1048576
+SINGLE_IDX_MAX: 2147483648
+SINGLE_BUF_MAX: 4294967295
+Effective limit: Number of salts vs. SingleMaxBufferSize
+Max. Markov mode level: 400
+Max. Markov mode password length: 30
+clang version: 15.0.0 (clang-1500.0.40.1) (gcc 4.2.1 compatibility)
+OpenCL headers version: 1.2
+Crypto library: OpenSSL
+OpenSSL library version: 030100020
+OpenSSL 3.1.2 1 Aug 2023
+GMP library version: 6.2.1
+File locking: fcntl()
+fseek(): fseek
+ftell(): ftell
+fopen(): fopen
+memmem(): System's
+times(2) sysconf(_SC_CLK_TCK) is 100
+Using times(2) for timers, resolution 10 ms
+HR timer: mach_absolute_time(), latency 41 ns
+Total physical host memory: 8 GiB
+Available physical host memory: 4240 MiB
+Terminal locale string: en_US.UTF-8
+Parsed terminal locale: UTF-8
+echo '[Local:Disabled:Formats]' >> run/john-local.conf
+echo 'SunMD5 = Y' >> run/john-local.conf
+.ci/tests-ci.sh "$TARGET_ARCH" TEST
+--2023-09-20 23:16:33--  https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/show_info.sh
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3122 (3.0K) [text/plain]
+Saving to: ‘show_info.sh.2’
+
+     0K ...                                                   100% 38.7M=0s
+
+2023-09-20 23:16:33 (38.7 MB/s) - ‘show_info.sh.2’ saved [3122/3122]
+
+------ Task ------
+Running on: Apple macOS M1
+Doing: TEST
+--------------------------------
+--2023-09-20 23:16:33--  https://raw.githubusercontent.com/openwall/john-packages/release/tests/run_tests.sh
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 14379 (14K) [text/plain]
+Saving to: ‘run_tests.sh’
+
+     0K .......... ....                                       100% 19.1M=0.001s
+
+2023-09-20 23:16:33 (19.1 MB/s) - ‘run_tests.sh’ saved [14379/14379]
+
+---------------------------- TESTING -----------------------------
+Binary: ../run/john
+=> ../run/john --list=build-info
+Version: 1.9.0-jumbo-1+bleeding-39db7dd63e 2023-09-20 17:02:33 -0300
+Build: darwin22.6.0 64-bit arm ASIMD AC OMP OPENCL
+SIMD: ASIMD, interleaving: MD4:2 MD5:2 SHA1:1 SHA256:1 SHA512:1
+OMP fallback binary: john-arm64
+$JOHN is ../run/
+Format interface version: 14
+Max. number of reported tunable costs: 4
+Rec file version: REC4
+Charset file version: CHR3
+CHARSET_MIN: 1 (0x01)
+CHARSET_MAX: 255 (0xff)
+CHARSET_LENGTH: 24
+SALT_HASH_SIZE: 1048576
+SINGLE_IDX_MAX: 2147483648
+SINGLE_BUF_MAX: 4294967295
+Effective limit: Number of salts vs. SingleMaxBufferSize
+Max. Markov mode level: 400
+Max. Markov mode password length: 30
+clang version: 15.0.0 (clang-1500.0.40.1) (gcc 4.2.1 compatibility)
+OpenCL headers version: 1.2
+Crypto library: OpenSSL
+OpenSSL library version: 030100020
+OpenSSL 3.1.2 1 Aug 2023
+GMP library version: 6.2.1
+File locking: fcntl()
+fseek(): fseek
+ftell(): ftell
+fopen(): fopen
+memmem(): System's
+times(2) sysconf(_SC_CLK_TCK) is 100
+Using times(2) for timers, resolution 10 ms
+HR timer: mach_absolute_time(), resolution 42 ns
+Total physical host memory: 8 GiB
+Available physical host memory: 4238 MiB
+Terminal locale string: en_US.UTF-8
+Parsed terminal locale: UTF-8
+--------------------------- test full ---------------------------
+Will run 4 OpenMP threads
+Testing: descrypt, traditional crypt(3) [DES 128/128 ASIMD]... (4xOMP) PASS
+Testing: bsdicrypt, BSDI crypt(3) ("_J9..", 725 iterations) [DES 128/128 ASIMD]... (4xOMP) PASS
+Testing: md5crypt, crypt(3) $1$ (and variants) [MD5 128/128 ASIMD 4x2]... (4xOMP) PASS
+Testing: md5crypt-long, crypt(3) $1$ (and variants) [MD5 32/64]... (4xOMP) PASS
+Testing: bcrypt ("$2a$05", 32 iterations) [Blowfish 32/64 X2]... (4xOMP) PASS
+Testing: scrypt (16384, 8, 1) [Salsa20/8 32/64]... (4xOMP) PASS
+Testing: LM [DES 128/128 ASIMD]... (4xOMP) PASS
+Testing: AFS, Kerberos AFS [DES 48/64 4K]... PASS
+Testing: tripcode [DES 128/128 ASIMD]... (4xOMP) PASS
+Testing: AndroidBackup [PBKDF2-SHA1 128/128 ASIMD 4x AES]... (4xOMP) PASS
+Testing: agilekeychain, 1Password Agile Keychain [PBKDF2-SHA1 AES 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: aix-ssha1, AIX LPA {ssha1} [PBKDF2-SHA1 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: aix-ssha256, AIX LPA {ssha256} [PBKDF2-SHA256 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: aix-ssha512, AIX LPA {ssha512} [PBKDF2-SHA512 128/128 ASIMD 2x]... (4xOMP) PASS
+Testing: andOTP [SHA256 32/64]... (4xOMP) PASS
+Testing: ansible, Ansible Vault [PBKDF2-SHA256 HMAC-256 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: as400-des, AS/400 DES [DES 32/64]... PASS
+Testing: as400-ssha1, AS400-SaltedSHA1 [sha1(utf16be(space_pad_10(uc($s)).$p)) (IBM AS/400 SHA1) 128/128 ASIMD 4x1]... PASS
+Testing: asa-md5, Cisco ASA [md5($p.$s) (Cisco ASA) 128/128 ASIMD 4x2]... PASS
+Testing: AxCrypt [PBKDF2-SHA512/SHA1 AES 32/64]... (4xOMP) PASS
+Testing: AzureAD [PBKDF2-SHA256 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: BestCrypt, Jetico BestCrypt (.jbc) (SHA-256 + AES XTS mode) [PKCS#12 PBE (SHA1/SHA2) 32/64]... (4xOMP) PASS
+Testing: BestCryptVE4, BestCrypt Volume Encryption v4 (32768, 16, 1) [scrypt Salsa20/8 32/64, AES/TwoFish/Serpent/Camellia]... (4xOMP) PASS
+Testing: bfegg, Eggdrop [Blowfish 32/64]... (4xOMP) PASS
+Testing: Bitcoin, Bitcoin Core [SHA512 AES 128/128 ASIMD 2x]... (4xOMP) PASS
+Testing: BitLocker, BitLocker [SHA-256 AES 32/64]... (4xOMP) PASS
+Testing: bitshares, BitShares Wallet [SHA-512 64/64]... (4xOMP) PASS
+Testing: Bitwarden, Bitwarden Password Manager [PBKDF2-SHA256 AES 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: BKS, BouncyCastle [PKCS#12 PBE (SHA1) 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: Blackberry-ES10 (101x) [SHA-512 128/128 ASIMD 2x]... (4xOMP) PASS
+Testing: WoWSRP, Battlenet [SHA1 32/64 GMP-exp]... (4xOMP) PASS
+Testing: Blockchain, My Wallet (v2 x5000) [PBKDF2-SHA1 AES 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: cardano, Cardano Encrypted 128-byte Secret Key (a.k.a XPrv) [PBKDF2-SHA512/BLAKE2b/ChaCha20 128/128 ASIMD 2x]... (4xOMP) PASS
+Testing: chap, iSCSI CHAP authentication / EAP-MD5 [MD5 32/64]... (4xOMP) PASS
+Testing: Clipperz, SRP [SHA256 32/64 GMP-exp]... (4xOMP) PASS
+Testing: cloudkeychain, 1Password Cloud Keychain [PBKDF2-SHA512 128/128 ASIMD 2x]... (4xOMP) PASS
+Testing: dynamic=md5($p) [128/128 ASIMD 4x2]... PASS
+Testing: cq, ClearQuest [CQWeb]... (4xOMP) PASS
+Testing: CRC32 [CRC32 32/64 CRC-32C 32/64]... PASS
+Testing: cryptoSafe [AES-256-CBC]... (4xOMP) PASS
+Testing: sha1crypt, NetBSD's sha1crypt [PBKDF1-SHA1 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: sha256crypt, crypt(3) $5$ (rounds=5000) [SHA256 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: sha512crypt, crypt(3) $6$ (rounds=5000) [SHA512 128/128 ASIMD 2x]... (4xOMP) PASS
+Testing: Citrix_NS10, Netscaler 10 [SHA1 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: dahua, "MD5 based authentication" Dahua [MD5 32/64]... PASS
+Testing: dashlane, Dashlane Password Manager [AES PBKDF2-SHA1 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: diskcryptor, DiskCryptor [PBKDF2-SHA512 128/128 ASIMD 2x]... (4xOMP) PASS
+Testing: Django (x10000) [PBKDF2-SHA256 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: django-scrypt [Salsa20/8 32/64]... (4xOMP) PASS
+Testing: dmd5, DIGEST-MD5 C/R [MD5 32/64]... (4xOMP) PASS
+Testing: dominosec, Lotus Notes/Domino 6 More Secure Internet Password [8/64]... (4xOMP) PASS
+Testing: dominosec8, Lotus Notes/Domino 8 [8/64]... (4xOMP) PASS
+Testing: dragonfly3-32, DragonFly BSD $3$ w/ bug, 32-bit [SHA256 32/64]... (4xOMP) PASS
+Testing: dragonfly3-64, DragonFly BSD $3$ w/ bug, 64-bit [SHA256 32/64]... (4xOMP) PASS
+Testing: dragonfly4-32, DragonFly BSD $4$ w/ bugs, 32-bit [SHA512 64/64]... (4xOMP) PASS
+Testing: dragonfly4-64, DragonFly BSD $4$ w/ bugs, 64-bit [SHA512 64/64]... (4xOMP) PASS
+Testing: Drupal7, $S$ (x16385) [SHA512 128/128 ASIMD 2x]... (4xOMP) PASS
+Testing: eCryptfs (65536 iterations) [SHA512 128/128 ASIMD 2x]... (4xOMP) PASS
+Testing: eigrp, EIGRP MD5 / HMAC-SHA-256 authentication [MD5/SHA-256 32/64]... (4xOMP) PASS
+Testing: electrum, Electrum Wallet [SHA256 AES / PBKDF2-SHA512 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: ENCDataVault-MD5 [MD5, AES]... (4xOMP) PASS
+Testing: ENCDataVault-PBKDF2 [PBKDF2-HMAC-SHA256 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: enpass, Enpass Password Manager [PBKDF2-SHA1/SHA512 128/128 ASIMD 2x]... (4xOMP) PASS
+Testing: EPI, EPiServer SID [SHA1 32/64]... (4xOMP) PASS
+Testing: EPiServer [SHA1/SHA256 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: fde, Android FDE [PBKDF2-SHA1 128/128 ASIMD 4x SHA256/AES]... (4xOMP) PASS
+Testing: Fortigate256, FortiOS256 [SHA256 32/64]... (4xOMP) PASS
+Testing: Fortigate, FortiOS [SHA1 32/64]... (4xOMP) PASS
+Testing: FormSpring [sha256($s.$p) 128/128 ASIMD 4x]... PASS
+Testing: FVDE, FileVault 2 [PBKDF2-SHA256 AES 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: geli, FreeBSD GELI [PBKDF2-SHA512 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: gost, GOST R 34.11-94 [32/64]... (4xOMP) PASS
+Testing: HAVAL-128-4 [32/64]... PASS
+Testing: HAVAL-256-3 [32/64]... PASS
+Testing: hdaa, HTTP Digest access authentication [MD5 128/128 ASIMD 4x2]... PASS
+Testing: hMailServer [sha256($s.$p) 128/128 ASIMD 4x]... PASS
+Testing: hsrp, "MD5 authentication" HSRP, HSRPv2, VRRP, GLBP [MD5 32/64]... (4xOMP) PASS
+Testing: IKE, PSK [HMAC MD5/SHA1 32/64]... (4xOMP) PASS
+Testing: ipb2, Invision Power Board 2.x [MD5 128/128 ASIMD 4x2]... (4xOMP) PASS
+Testing: itunes-backup, Apple iTunes Backup [PBKDF2-SHA1 AES 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: KeePass [SHA256 AES 32/64]... (4xOMP) PASS
+Testing: keychain, Mac OS X Keychain [PBKDF2-SHA1 3DES 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: keyring, GNOME Keyring [SHA256 AES 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: keystore, Java KeyStore [SHA1 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: known_hosts, HashKnownHosts HMAC-SHA1 [SHA1 32/64]... (4xOMP) PASS
+Testing: krb4, Kerberos v4 TGT [DES 32/64]... PASS
+Testing: krb5, Kerberos v5 TGT [3DES 32/64]... PASS
+Testing: krb5asrep, Kerberos 5 AS-REP etype 17/18/23 [MD4 HMAC-MD5 RC4 / PBKDF2 HMAC-SHA1 AES 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: krb5pa-sha1, Kerberos 5 AS-REQ Pre-Auth etype 17/18 [PBKDF2-SHA1 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: krb5pa-md5, Kerberos 5 AS-REQ Pre-Auth etype 23 [MD4 HMAC-MD5 RC4 32/64]... (4xOMP) PASS
+Testing: krb5tgs, Kerberos 5 TGS-REP etype 23 [MD4 HMAC-MD5 RC4]... (4xOMP) PASS
+Testing: krb5tgs-sha1, Kerberos 5 TGS-REP etype 17/18 [PBKDF2 HMAC-SHA1 AES 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: krb5-17, Kerberos 5 DB etype 17 [DES / PBKDF2-SHA1 128/128 ASIMD 4x AES]... (4xOMP) PASS
+Testing: krb5-18, Kerberos 5 DB etype 18 [DES / PBKDF2-SHA1 128/128 ASIMD 4x AES]... (4xOMP) PASS
+Testing: krb5-3, Kerberos 5 DB etype 3 [DES / PBKDF2-SHA1 128/128 ASIMD 4x AES]... (4xOMP) PASS
+Testing: kwallet, KDE KWallet [SHA1 / PBKDF2-SHA512 128/128 ASIMD 2x]... (4xOMP) PASS
+Testing: lp, LastPass offline [PBKDF2-SHA256 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: lpcli, LastPass CLI [PBKDF2-SHA256 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: leet [SHA-512(128/128 ASIMD 2x) + Whirlpool(OpenSSL/64)]... (4xOMP) PASS
+Testing: lotus5, Lotus Notes/Domino 5 [8/64 X2]... (4xOMP) PASS
+Testing: lotus85, Lotus Notes/Domino 8.5 [8/64]... (4xOMP) PASS
+Testing: LUKS [PBKDF2-SHA1 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: MD2 [MD2 32/64]... (4xOMP) PASS
+Testing: mdc2, MDC-2 [MDC-2DES]... (4xOMP) PASS
+Testing: MediaWiki [md5($s.md5($p)) 128/128 ASIMD 4x2]... PASS
+Testing: monero, monero Wallet [Pseudo-AES / ChaCha / Various 32/64]... (4xOMP) PASS
+Testing: money, Microsoft Money (2002 to Money Plus) [MD5/SHA1 32/64]... (4xOMP) PASS
+Testing: MongoDB, system / network [MD5 32/64]... (4xOMP) PASS
+Testing: scram [SCRAM PBKDF2-SHA1 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: Mozilla, Mozilla key3.db [SHA1 3DES 32/64]... (4xOMP) PASS
+Testing: mscash, MS Cache Hash (DCC) [MD4 32/64]... (4xOMP) PASS
+Testing: mscash2, MS Cache Hash 2 (DCC2) [PBKDF2-SHA1 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: MSCHAPv2, C/R [MD4 DES (ESS MD5) 128/128 ASIMD 4x2]... PASS
+Testing: mschapv2-naive, MSCHAPv2 C/R [MD4 DES 128/128 ASIMD naive]... (4xOMP) PASS
+Testing: mssql, MS SQL [SHA1 128/128 ASIMD 4x]... PASS
+Testing: mssql05, MS SQL 2005 [SHA1 128/128 ASIMD 4x]... PASS
+Testing: mssql12, MS SQL 2012/2014 [SHA512 128/128 ASIMD 2x]... (4xOMP) PASS
+Testing: multibit, MultiBit or Coinomi Wallet [MD5/scrypt AES 32/64]... (4xOMP) PASS
+Testing: mysqlna, MySQL Network Authentication [SHA1 32/64]... (4xOMP) PASS
+Testing: mysql-sha1, MySQL 4.1+ [SHA1 128/128 ASIMD 4x]... PASS
+Testing: mysql, MySQL pre-4.1 [32/64]... PASS
+Testing: net-ah, IPsec AH HMAC-MD5-96 [MD5 32/64]... (4xOMP) PASS
+Testing: nethalflm, HalfLM C/R [DES 32/64]... (4xOMP) PASS
+Testing: netlm, LM C/R [DES 32/64]... (4xOMP) PASS
+Testing: netlmv2, LMv2 C/R [MD4 HMAC-MD5 32/64]... (4xOMP) PASS
+Testing: net-md5, "Keyed MD5" RIPv2, OSPF, BGP, SNMPv2 [MD5 32/64]... (4xOMP) PASS
+Testing: netntlmv2, NTLMv2 C/R [MD4 HMAC-MD5 32/64]... (4xOMP) PASS
+Testing: netntlm, NTLMv1 C/R [MD4 DES (ESS MD5) 128/128 ASIMD 4x2]... PASS
+Testing: netntlm-naive, NTLMv1 C/R [MD4 DES (ESS MD5) DES 128/128 ASIMD naive]... (4xOMP) PASS
+Testing: net-sha1, "Keyed SHA1" BFD [SHA1 32/64]... (4xOMP) PASS
+Testing: nk, Nuked-Klan CMS [SHA1 MD5 32/64]... (4xOMP) PASS
+Testing: notes, Apple Notes [PBKDF2-SHA256 AES 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: md5ns, Netscreen [md5($s.$p) (OSC) (PW > 31 bytes) 128/128 ASIMD 4x2]... PASS
+Testing: nsec3, DNSSEC NSEC3 [SHA1 32/64]... (4xOMP) PASS
+Testing: NT [MD4 128/128 ASIMD 4x2]... PASS
+Testing: NT-long [md4(utf16($p)) 128/128 ASIMD 4x2]... PASS
+Testing: o10glogon, Oracle 10g-logon protocol [DES-AES128-MD5 32/64]... (4xOMP) PASS
+Testing: o3logon, Oracle O3LOGON protocol [SHA1 DES 32/64]... (4xOMP) PASS
+Testing: o5logon, Oracle O5LOGON protocol [SHA1 AES 32/64]... (4xOMP) PASS
+Testing: ODF, OpenDocument Star/Libre/OpenOffice [PBKDF2-SHA1 128/128 ASIMD 4x BF/AES]... (4xOMP) PASS
+Testing: Office, 2007/2010/2013 [SHA1 128/128 ASIMD 4x / SHA512 128/128 ASIMD 2x AES]... (4xOMP) PASS
+Testing: oldoffice, MS Office <= 2003 [MD5/SHA1 RC4 32/64]... (4xOMP) PASS
+Testing: openssl-enc, OpenSSL "enc" encryption (AES-128, MD5) [32/64]... (4xOMP) PASS
+Testing: oracle, Oracle 10 [DES 32/64]... (4xOMP) PASS
+Testing: oracle11, Oracle 11g [SHA1 128/128 ASIMD 4x]... PASS
+Testing: Oracle12C [PBKDF2-SHA512 128/128 ASIMD 2x]... (4xOMP) PASS
+Testing: osc, osCommerce [md5($s.$p) (OSC) 128/128 ASIMD 4x2]... PASS
+Testing: ospf, OSPF / IS-IS [HMAC-SHA-X 32/64]... (4xOMP) PASS
+Testing: Padlock [PBKDF2-SHA256 AES 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: Palshop, MD5(Palshop) [MD5 + SHA1 32/64]... (4xOMP) PASS
+Testing: Panama [Panama 32/64]... (4xOMP) PASS
+Testing: PBKDF2-HMAC-SHA1 [PBKDF2-SHA1 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: PBKDF2-HMAC-SHA256 [PBKDF2-SHA256 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: PBKDF2-HMAC-SHA512, GRUB2 / OS X 10.8+ [PBKDF2-SHA512 128/128 ASIMD 2x]... (4xOMP) PASS
+Testing: PDF [MD5 SHA2 RC4/AES 32/64]... (4xOMP) PASS
+Testing: PEM, PKCS#8 private key (RSA/DSA/ECDSA) [PBKDF2-SHA1 128/128 ASIMD 4x 3DES/AES]... (4xOMP) PASS
+Testing: pfx, (.pfx, .p12) [PKCS#12 PBE (SHA1/SHA2) 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: pgpdisk, PGP Disk / Virtual Disk [SHA1 64]... (4xOMP) PASS
+Testing: pgpsda, PGP Self Decrypting Archive [SHA1 64]... (4xOMP) PASS
+Testing: pgpwde, PGP Whole Disk Encryption [S2K-SHA1 64]... (4xOMP) PASS
+Testing: phpass ($P$9) [phpass ($P$ or $H$) 128/128 ASIMD 4x2]... (4xOMP) PASS
+Testing: PHPS [md5(md5($p).$s) 128/128 ASIMD 4x2]... PASS
+Testing: PHPS2 [md5(md5($p).$s) 128/128 ASIMD 4x2]... PASS
+Testing: pix-md5, Cisco PIX [md5($p) (Cisco PIX) 128/128 ASIMD 4x2]... PASS
+Testing: PKZIP [32/64]... (4xOMP) PASS
+Testing: po, Post.Office [MD5 32/64]... PASS
+Testing: postgres, PostgreSQL C/R [MD5 32/64]... (4xOMP) PASS
+Testing: PST, custom CRC-32 [32/64]... PASS
+Testing: PuTTY, Private Key (RSA/DSA/ECDSA/ED25519) [SHA1/AES 32/64]... (4xOMP) PASS
+Testing: pwsafe, Password Safe [SHA256 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: qnx, qnx hash (rounds=1000) [QNX 32/64]... (4xOMP) PASS
+Testing: RACF [DES 32/64]... (4xOMP) PASS
+Testing: radius, RADIUS authentication [MD5 32/64]... (4xOMP) PASS
+Testing: RAdmin, v2.x [MD5 32/64]... (4xOMP) PASS
+Testing: RAKP, IPMI 2.0 RAKP (RMCP+) [HMAC-SHA1 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: RAR5 [PBKDF2-SHA256 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: Raw-SHA512 [SHA512 128/128 ASIMD 2x]... (4xOMP) PASS
+Testing: Raw-Keccak [Keccak 512 32/64]... (4xOMP) PASS
+Testing: Raw-Keccak-256 [Keccak 256 32/64]... (4xOMP) PASS
+Testing: Raw-MD4 [MD4 128/128 ASIMD 4x2]... PASS
+Testing: Raw-MD5 [MD5 128/128 ASIMD 4x2]... PASS
+Testing: Raw-MD5u [md5(utf16($p)) 128/128 ASIMD 4x2]... PASS
+Testing: Raw-SHA1 [SHA1 128/128 ASIMD 4x]... PASS
+Testing: Raw-SHA1-AxCrypt [SHA1 128/128 ASIMD 4x]... PASS
+Testing: Raw-SHA1-Linkedin [SHA1 128/128 ASIMD 4x]... PASS
+Testing: Raw-SHA224 [SHA224 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: Raw-SHA256 [SHA256 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: Raw-SHA3 [SHA3 512 32/64]... (4xOMP) PASS
+Testing: Raw-SHA384 [SHA384 128/128 ASIMD 2x]... (4xOMP) PASS
+Testing: restic, Restic Repository [scrypt Salsa20/8 32/64, Poly1305]... (4xOMP) PASS
+Testing: ripemd-128, RIPEMD 128 [32/64]... PASS
+Testing: ripemd-160, RIPEMD 160 [32/64]... PASS
+Testing: rsvp, HMAC-MD5 / HMAC-SHA1, RSVP, IS-IS, OMAPI, RNDC, TSIG [MD5 32/64]... (4xOMP) PASS
+Testing: RVARY [DES 32/64]... (4xOMP) PASS
+Testing: Siemens-S7 [HMAC-SHA1 32/64]... (4xOMP) PASS
+Testing: Salted-SHA1 [SHA1 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: SSHA512, LDAP [SHA512 128/128 ASIMD 2x]... (4xOMP) PASS
+Testing: sapb, SAP CODVN B (BCODE) [MD5 128/128 ASIMD 4x2]... (4xOMP) PASS
+Testing: sapg, SAP CODVN F/G (PASSCODE) [SHA1 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: saph, SAP CODVN H (PWDSALTEDHASH) (SHA1x1024) [SHA-1/SHA-2 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: sappse, SAP PSE [PKCS#12 PBE (SHA1) 128/128 ASIMD 4x 3DES]... (4xOMP) PASS
+Testing: securezip, PKWARE SecureZIP [SHA1 AES 32/64]... (4xOMP) PASS
+Testing: 7z, 7-Zip archive encryption (512K iterations) [SHA256 128/128 ASIMD 4x AES]... (4xOMP) PASS
+Testing: Signal, Signal Android [PKCS#12 PBE (SHA1) 32/64]... (4xOMP) PASS
+Testing: SIP [MD5 32/64]... (4xOMP) PASS
+Testing: skein-256, Skein 256 [Skein 32/64]... (4xOMP) PASS
+Testing: skein-512, Skein 512 [Skein 32/64]... (4xOMP) PASS
+Testing: skey, S/Key [MD4/MD5/SHA1/RMD160 32/64]... PASS
+Testing: SL3, Nokia operator unlock [SHA1 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: Snefru-128 [32/64]... (4xOMP) PASS
+Testing: Snefru-256 [32/64]... (4xOMP) PASS
+Testing: LastPass, sniffed sessions [PBKDF2-SHA256 AES 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: SNMP, SNMPv3 USM [HMAC-MD5-96/HMAC-SHA1-96 32/64]... (4xOMP) PASS
+Testing: solarwinds, SolarWinds Orion [PBKDF2-SHA1 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: SSH, SSH private key [RSA/DSA/EC/OPENSSH 32/64]... (4xOMP) PASS
+Testing: sspr, NetIQ SSPR / Adobe AEM [MD5/SHA1/SHA256/SHA512 32/64]... (4xOMP) PASS
+Testing: Stribog-256, raw Streebog [GOST R 34.11-2012 64/64]... (4xOMP) PASS
+Testing: Stribog-512, raw Streebog [GOST R 34.11-2012 64/64]... (4xOMP) PASS
+Testing: STRIP, Password Manager [PBKDF2-SHA1 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: SybaseASE, Sybase ASE [SHA256 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: Sybase-PROP [salted FEAL-8 32/64]... (4xOMP) PASS
+Testing: tacacs-plus, TACACS+ [MD5 32/64]... (4xOMP) PASS
+Testing: tcp-md5, TCP MD5 Signatures, BGP, MSDP [MD5 32/64]... (4xOMP) PASS
+Testing: telegram [PBKDF2-SHA1/SHA512 128/128 ASIMD 4x AES]... (4xOMP) PASS
+Testing: Tiger [Tiger 32/64]... (4xOMP) PASS
+Testing: tc_aes_xts, TrueCrypt AES256_XTS [SHA512/RIPEMD160/WHIRLPOOL 128/128 ASIMD 2x]... (4xOMP) PASS
+Testing: tc_ripemd160, TrueCrypt AES256_XTS [RIPEMD160 32/64]... (4xOMP) PASS
+Testing: tc_ripemd160boot, TrueCrypt AES/Twofish/Serpent [RIPEMD160 32/64]... (4xOMP) PASS
+Testing: tc_sha512, TrueCrypt AES256_XTS [SHA512 128/128 ASIMD 2x]... (4xOMP) PASS
+Testing: tc_whirlpool, TrueCrypt AES256_XTS [WHIRLPOOL 32/64]... (4xOMP) PASS
+Testing: vdi, VirtualBox-VDI AES_XTS [PBKDF2-SHA256 128/128 ASIMD 4x + AES_XTS]... (4xOMP) PASS
+Testing: OpenVMS, Purdy [32/64]... (4xOMP) PASS
+Testing: vmx, VMware VMX [PBKDF2-SHA1 AES 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: VNC [DES 32/64]... (4xOMP) PASS
+Testing: vtp, "MD5 based authentication" VTP [MD5 32/64]... (4xOMP) PASS
+Testing: wbb3, WoltLab BB3 [SHA1 32/64]... (4xOMP) PASS
+Testing: whirlpool [WHIRLPOOL 32/64]... (4xOMP) PASS
+Testing: whirlpool0 [WHIRLPOOL-0 32/64]... (4xOMP) PASS
+Testing: whirlpool1 [WHIRLPOOL-1 32/64]... (4xOMP) PASS
+Testing: wpapsk, WPA/WPA2/PMF/PMKID PSK [PBKDF2-SHA1 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: wpapsk-pmk, WPA/WPA2/PMF/PMKID master key [MD5/SHA-1/SHA-2]... (4xOMP) PASS
+Testing: xmpp-scram [XMPP SCRAM PBKDF2-SHA1 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: xsha, Mac OS X 10.4 - 10.6 [SHA1 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: xsha512, Mac OS X 10.7 [SHA512 128/128 ASIMD 2x]... (4xOMP) PASS
+Testing: zed, Prim'X Zed! encrypted archives [PKCS#12 PBE (SHA1/SHA256) 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: ZIP, WinZip [PBKDF2-SHA1 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: ZipMonster, MD5(ZipMonster) [MD5-128/128 ASIMD 4x2 x 50000]... (4xOMP) PASS
+Testing: plaintext, $0$ [n/a]... PASS
+Testing: has-160 [HAS-160 32/64]... PASS
+Testing: HMAC-MD5 [password is key, MD5 128/128 ASIMD 4x2]... (4xOMP) PASS
+Testing: HMAC-SHA1 [password is key, SHA1 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: HMAC-SHA224 [password is key, SHA224 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: HMAC-SHA256 [password is key, SHA256 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: HMAC-SHA384 [password is key, SHA384 128/128 ASIMD 2x]... (4xOMP) PASS
+Testing: HMAC-SHA512 [password is key, SHA512 128/128 ASIMD 2x]... (4xOMP) PASS
+Testing: dynamic_0 [md5($p) (raw-md5) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1 [md5($p.$s) (joomla) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_2 [md5(md5($p)) (e107) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_3 [md5(md5(md5($p))) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_4 [md5($s.$p) (OSC) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_5 [md5($s.$p.$s) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_6 [md5(md5($p).$s) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_8 [md5(md5($s).$p) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_9 [md5($s.md5($p)) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_10 [md5($s.md5($s.$p)) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_11 [md5($s.md5($p.$s)) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_12 [md5(md5($s).md5($p)) (IPB) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_13 [md5(md5($p).md5($s)) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_14 [md5($s.md5($p).$s) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_15 [md5($u.md5($p).$s) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_16 [md5(md5(md5($p).$s).$s2) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_18 [md5($s.Y.$p.0xF7.$s) (Post.Office MD5) 32/64 x2]... PASS
+Testing: dynamic_19 [md5($p) (Cisco PIX) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_20 [md5($p.$s) (Cisco ASA) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_22 [md5(sha1($p)) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_23 [sha1(md5($p)) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_24 [sha1($p.$s) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_25 [sha1($s.$p) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_26 [sha1($p) raw-sha1 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_29 [md5(utf16($p)) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_30 [md4($p) (raw-md4) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_31 [md4($s.$p) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_32 [md4($p.$s) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_33 [md4(utf16($p)) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_34 [md5(md4($p)) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_35 [sha1(uc($u).:.$p) (ManGOS) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_36 [sha1($u.:.$p) (ManGOS2) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_37 [sha1(lc($u).$p) (SMF) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_38 [sha1($s.sha1($s.sha1($p))) (Wolt3BB, OpenCart) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_39 [md5($s.pad16($p)) (net-md5) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_40 [sha1($s.pad20($p)) (net-sha1) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_41 [sha1($s.utf16($p)) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_50 [sha224($p) 128/128 ASIMD 4x]... PASS
+Testing: dynamic_60 [sha256($p) 128/128 ASIMD 4x]... PASS
+Testing: dynamic_61 [sha256($s.$p) 128/128 ASIMD 4x]... PASS
+Testing: dynamic_62 [sha256($p.$s) 128/128 ASIMD 4x]... PASS
+Testing: dynamic_70 [sha384($p) 128/128 ASIMD 2x]... PASS
+Testing: dynamic_80 [sha512($p) 128/128 ASIMD 2x]... PASS
+Testing: dynamic_82 [sha512($p.$s) 128/128 ASIMD 2x]... PASS
+Testing: dynamic_90 [gost($p) 32/64]... PASS
+Testing: dynamic_100 [whirlpool($p) 32/64 OpenSSL]... PASS
+Testing: dynamic_110 [tiger($p) 32/64 sph_tiger]... PASS
+Testing: dynamic_120 [ripemd128($p) 32/64 sph_ripemd]... PASS
+Testing: dynamic_130 [ripemd160($p) 32/64 sph_ripemd]... PASS
+Testing: dynamic_140 [ripemd256($p) 32/64 sph_ripemd]... PASS
+Testing: dynamic_150 [ripemd320($p) 32/64 sph_ripemd]... PASS
+Testing: dynamic_160 [haval128_3($p) 32/64 sph_haval]... PASS
+Testing: dynamic_170 [haval128_4($p) 32/64 sph_haval]... PASS
+Testing: dynamic_180 [haval128_5($p) 32/64 sph_haval]... PASS
+Testing: dynamic_190 [haval160_3($p) 32/64 sph_haval]... PASS
+Testing: dynamic_200 [haval160_4($p) 32/64 sph_haval]... PASS
+Testing: dynamic_210 [haval160_5($p) 32/64 sph_haval]... PASS
+Testing: dynamic_220 [haval192_3($p) 32/64 sph_haval]... PASS
+Testing: dynamic_230 [haval192_4($p) 32/64 sph_haval]... PASS
+Testing: dynamic_240 [haval192_5($p) 32/64 sph_haval]... PASS
+Testing: dynamic_250 [haval224_3($p) 32/64 sph_haval]... PASS
+Testing: dynamic_260 [haval224_4($p) 32/64 sph_haval]... PASS
+Testing: dynamic_270 [haval224_5($p) 32/64 sph_haval]... PASS
+Testing: dynamic_280 [haval256_3($p) 32/64 sph_haval]... PASS
+Testing: dynamic_290 [haval256_4($p) 32/64 sph_haval]... PASS
+Testing: dynamic_300 [haval256_5($p) 32/64 sph_haval]... PASS
+Testing: dynamic_310 [md2($p) 32/64 sph_md2]... PASS
+Testing: dynamic_320 [panama($p) 32/64 sph_panama]... PASS
+Testing: dynamic_330 [skein224($p) 32/64 sph_skein]... PASS
+Testing: dynamic_340 [skein256($p) 32/64 sph_skein]... PASS
+Testing: dynamic_350 [skein384($p) 32/64 sph_skein]... PASS
+Testing: dynamic_360 [skein512($p) 32/64 sph_skein]... PASS
+Testing: dynamic_370 [sha3_224($p) 64/64 keccak]... PASS
+Testing: dynamic_380 [sha3_256($p) 64/64 keccak]... PASS
+Testing: dynamic_390 [sha3_384($p) 64/64 keccak]... PASS
+Testing: dynamic_400 [sha3_512($p) 64/64 keccak]... PASS
+Testing: dynamic_410 [keccak_256($p) 64/64 keccak]... PASS
+Testing: dynamic_420 [keccak_512($p) 64/64 keccak]... PASS
+Testing: dynamic_430 [keccak_224($p) 64/64 keccak]... PASS
+Testing: dynamic_440 [keccak_384($p) 64/64 keccak]... PASS
+Testing: dynamic_1001 [md5(md5(md5(md5($p)))) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1002 [md5(md5(md5(md5(md5($p))))) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1003 [md5(md5($p).md5($p)) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1004 [md5(md5(md5(md5(md5(md5($p)))))) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1005 [md5(md5(md5(md5(md5(md5(md5($p))))))) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1006 [md5(md5(md5(md5(md5(md5(md5(md5($p)))))))) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1007 [md5(md5($p).$s) (vBulletin) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1008 [md5($p.$s) (RADIUS User-Password) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1009 [md5($s.$p) (RADIUS Responses) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1010 [md5($p null_padded_to_len_100) RAdmin v2.x MD5 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1011 [md5($p.md5($s)) (webEdition CMS) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1012 [md5($p.md5($s)) (webEdition CMS) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1013 [md5($p.PMD5(username)) (webEdition CMS) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1014 [md5($p.$s) (long salt) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1015 [md5(md5($p.$u).$s) (PostgreSQL 'pass the hash') 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1016 [md5($p.$s) (long salt) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1017 [md5($s.$p) (long salt) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1018 [md5(sha1(sha1($p))) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_1019 [md5(sha1(sha1(md5($p)))) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_1020 [md5(sha1(md5($p))) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_1021 [md5(sha1(md5(sha1($p)))) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_1022 [md5(sha1(md5(sha1(md5($p))))) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_1023 [sha1($p) (hash truncated to length 32) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_1024 [sha1(md5($p)) (hash truncated to length 32) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_1025 [sha1(md5(md5($p))) (hash truncated to length 32) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_1026 [sha1(sha1($p)) (hash truncated to length 32) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_1027 [sha1(sha1(sha1($p))) (hash truncated to length 32) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_1028 [sha1(sha1_raw($p)) (hash truncated to length 32) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_1029 [sha256($p) (hash truncated to length 32) 128/128 ASIMD 4x]... PASS
+Testing: dynamic_1030 [whirlpool($p) (hash truncated to length 32) 32/64 OpenSSL]... PASS
+Testing: dynamic_1031 [gost($p) (hash truncated to length 32) 32/64]... PASS
+Testing: dynamic_1032 [sha1_64(utf16($p)) (PeopleSoft) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_1034 [md5($p.$u) (PostgreSQL MD5) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1300 [md5(md5_raw($p)) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1350 [md5(md5($s.$p):$s) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1400 [sha1(utf16($p)) (Microsoft CREDHIST) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_1401 [md5($u.\nskyper\n.$p) (Skype MD5) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1501 [sha1($s.sha1($p)) (Redmine) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_1502 [sha1(sha1($p).$s) (XenForo SHA-1) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_1503 [sha256(sha256($p).$s) (XenForo SHA-256) 128/128 ASIMD 4x]... PASS
+Testing: dynamic_1504 [sha1($s.$p.$s) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_1505 [md5($p.$s.md5($p.$s)) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1506 [md5($u.:XDB:.$p) (Oracle 12c "H" hash) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1507 [sha1(utf16($const.$p)) (Mcafee master pass) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_1518 [md5(sha1($p).md5($p).sha1($p)) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_1528 [sha256($s.$p.$s) (Telegram for Android) 128/128 ASIMD 4x]... PASS
+Testing: dynamic_1529 [sha1($p null_padded_to_len_32) (DeepSound) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_1550 [md5($u.:mongo:.$p) (MONGODB-CR system hash) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1551 [md5($s.$u.(md5($u.:mongo:.$p)) (MONGODB-CR network hash) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1552 [md5($s.$u.(md5($u.:mongo:.$p)) (MONGODB-CR network hash) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1560 [md5($s.$p.$s2) (SocialEngine) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_1588 [sha256($s.sha1($p)) (ColdFusion 11) 128/128 ASIMD 4x]... PASS
+Testing: dynamic_1590 [sha1(utf16be(space_pad_10(uc($s)).$p)) (IBM AS/400 SHA1) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_1592 [sha1($s.sha1($s.sha1($p))) (wbb3) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_1600 [sha1($s.utf16le($p)) (Oracle PeopleSoft PS_TOKEN) 128/128 ASIMD 4x1]... PASS
+Testing: dynamic_1602 [sha256(#.$salt.-.$pass) (QAS vas_auth) 128/128 ASIMD 4x]... PASS
+Testing: dynamic_1608 [sha256(sha256_raw(sha256_raw($p))) (Neo Wallet) 128/128 ASIMD 4x]... PASS
+Testing: dynamic_2000 [md5($p) (PW > 55 bytes) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_2001 [md5($p.$s) (joomla) (PW > 23 bytes) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_2002 [md5(md5($p)) (e107) (PW > 55 bytes) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_2003 [md5(md5(md5($p))) (PW > 55 bytes) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_2004 [md5($s.$p) (OSC) (PW > 31 bytes) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_2005 [md5($s.$p.$s) (PW > 31 bytes) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_2006 [md5(md5($p).$s) (vBulletin, PW > 55 bytes or/and salt > 23 bytes) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_2008 [md5(md5($s).$p) (PW > 23 bytes) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_2009 [md5($s.md5($p)) (salt > 23 bytes) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_2010 [md5($s.md5($s.$p)) (PW > 32 or salt > 23 bytes) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_2011 [md5($s.md5($p.$s)) (PW > 32 or salt > 23 bytes) 128/128 ASIMD 4x2]... PASS
+Testing: dynamic_2014 [md5($s.md5($p).$s) (PW > 55 or salt > 11 bytes) 128/128 ASIMD 4x2]... PASS
+Testing: dummy [N/A]... PASS
+Testing: crypt, generic crypt(3) [?/64]... (4xOMP) PASS
+All 406 formats passed self-tests!
+ Ok: -test-full=0 --format=cpu
+--------------------------- extras ---------------------------
+====> mask T1 A: 9 lines
+Press Ctrl-C to abort, or send SIGUSR1 to john process for status
+9p 0:00:00:00 100.00% (2023-09-20 23:22) 225.0p/s 2passwordC
+0passwordA
+1passwordA
+2passwordA
+0passwordB
+1passwordB
+2passwordB
+0passwordC
+1passwordC
+2passwordC
+====> mask T1 C: 7 lines, 7 special characters, quotation marks
+Press Ctrl-C to abort, or send SIGUSR1 to john process for status
+7p 0:00:00:00 100.00% (2023-09-20 23:22) 233.3p/s abÉ
+ab£
+abö
+abç
+abü
+abà
+abñ
+abÉ
+====> mask T1 E: 3 lines, 1 special character, vertical bar
+Press Ctrl-C to abort, or send SIGUSR1 to john process for status
+3p 0:00:00:00 100.00% (2023-09-20 23:22) 150.0p/s abc
+abö
+ab|
+abc
+====> mask T1 F: 8 lines, 5 special characters, vertical bar
+Press Ctrl-C to abort, or send SIGUSR1 to john process for status
+8p 0:00:00:00 100.00% (2023-09-20 23:22) 400.0p/s ab!
+abö
+ab,
+ab¿
+ab|
+ab?
+abe
+ab¡
+ab!
+====> mask T2: 2 lines, at the end
+Using default input encoding: UTF-8
+Press Ctrl-C to abort, or send SIGUSR1 to john process for status
+2p 0:00:00:00 0.00% 100.0p/s magnum1
+magnum0
+magnum1
+====> mask T3 A: 2 lines, at the end, encoding
+Press Ctrl-C to abort, or send SIGUSR1 to john process for status
+2p 0:00:00:00 0.00% 66.67p/s M�LLER1
+M�LLER0
+M�LLER1
+====> mask T3 B: 3 lines, encoding
+Target encoding: CP437
+Press Ctrl-C to abort, or send SIGUSR1 to john process for status
+3p 0:00:00:00 100.00% (2023-09-20 23:22) 100.0p/s abc
+ab�
+ab|
+abc
+
+====> T4:
+Testing: NT [MD4 128/128 ASIMD 4x2]... PASS
+ Ok: -test-full=0 --format=nt
+====> T5:
+Will run 4 OpenMP threads
+Testing: sha256crypt, crypt(3) $5$ (rounds=5000) [SHA256 128/128 ASIMD 4x]... (4xOMP) PASS
+ Ok: -test-full=0 --format=sha256crypt
+====> T6.0:
+Benchmarking: dynamic=md5(sha1($s).md5($p)) [128/128 ASIMD 4x2]... DONE
+Many salts:	14113K c/s real, 14113K c/s virtual
+Only one salt:	7292K c/s real, 7292K c/s virtual
+
+ Ok: -test=3 -form="dynamic=md5(sha1($s).md5($p))"
+====> T6.1:
+This expression will use the RDP dynamic compiler format.
+Benchmarking: dynamic=md5(sha1($s.$p).md5($p)) [Dynamic RDP]... DONE
+Many salts:	1380K c/s real, 1380K c/s virtual
+Only one salt:	1325K c/s real, 1325K c/s virtual
+
+ Ok: -test=3 -form="dynamic=md5(sha1($s.$p).md5($p))"
+====> T6.2:
+Benchmarking: dynamic=md5($p) [128/128 ASIMD 4x2]... DONE
+Raw:	31441K c/s real, 31337K c/s virtual
+
+ Ok: -test=3 -form="dynamic=md5($p)"
+
+====> T10:
+Using default input encoding: UTF-8
+Loaded 2 password hashes with no different salts (NT [MD4 128/128 ASIMD 4x2])
+Node numbers 1-2 of 2 (fork)
+Proceeding with single, rules:Single
+Press Ctrl-C to abort, or send SIGUSR1 to john process for status
+Almost done: Processing the remaining buffered candidate passwords, if any.
+Proceeding with wordlist:../run/password.lst
+Enabling duplicate candidate password suppressor
+password         (?)
+hello            (?)
+1 2g 0:00:00:00 DONE 2/3 (2023-09-20 23:23) 100.0g/s 409600p/s 409600c/s 819200C/s 123456..nelly1
+Waiting for 1 child to terminate
+password         (?)
+hello            (?)
+2 2g 0:00:00:02 DONE 2/3 (2023-09-20 23:24) 0g/s 5412Kp/s 5412Kc/s 10808KC/s kicer12..pudy1
+Use the "--show --format=NT" options to display all of the cracked passwords reliably
+Session completed.
+ Ok: tests.in --format=nt --fork=2
+====> T11:
+Using default input encoding: UTF-8
+Loaded 2 password hashes with no different salts (Raw-SHA256 [SHA256 128/128 ASIMD 4x])
+Will run 2 OpenMP threads per process (4 total across 2 processes)
+Node numbers 1-2 of 2 (fork)
+Proceeding with single, rules:Single
+Press Ctrl-C to abort, or send SIGUSR1 to john process for status
+Almost done: Processing the remaining buffered candidate passwords, if any.
+Proceeding with wordlist:../run/password.lst
+Enabling duplicate candidate password suppressor
+samels           (?)
+samels           (?)
+2: Disabling duplicate candidate password suppressor
+1: Disabling duplicate candidate password suppressor
+momard           (?)
+1 2g 0:00:00:13 DONE 2/3 (2023-09-20 23:24) 0g/s 4884Kp/s 4884Kc/s 6715KC/s hello105d..kulit2191
+Waiting for 1 child to terminate
+2 1g 0:00:00:14 DONE 2/3 (2023-09-20 23:24) 0g/s 5863Kp/s 5863Kc/s 6874KC/s baxter8429..cr1tt3r29
+Use the "--show --format=Raw-SHA256" options to display all of the cracked passwords reliably
+Session completed.
+ Ok: --format=raw-sha256 --fork=2
+====> T12:
+Using default input encoding: UTF-8
+Loaded 1 password hash (sha512crypt, crypt(3) $6$ [SHA512 128/128 ASIMD 2x])
+Cost 1 (iteration count) is 5000 for all loaded hashes
+Will run 4 OpenMP threads
+Press Ctrl-C to abort, or send SIGUSR1 to john process for status
+john             (?)
+1g 0:00:00:00  33.33g/s 3466p/s 3466c/s 3466C/s joan..joqq
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed.
+ Ok: --format=sha512crypt --mask=jo?l[n-q]
+====> T13: tune
+------------------------------------------------------------------
+initUnicode(UNICODE, RAW/RAW)
+RAW -> RAW -> RAW
+Will run 4 OpenMP threads
+Testing: sha1crypt, NetBSD's sha1crypt [PBKDF1-SHA1 128/128 ASIMD 4x]... (4xOMP) Loaded 5 hashes with 3 different salts to test db from test vectors
+
+sha1crypt OMP autotune using test db with iteration count of 64000
+
+OMP scale 1: 32 crypts (1x32) in 54.461 ms, 587 c/s +
+OMP scale 2: 64 crypts (1x64) in 108.755 ms, 588 c/s
+Autotuned OMP scale 1, preset is 4
+PASS
+ Ok: --format=sha1crypt --verb=5 --tune=report
+initUnicode(UNICODE, RAW/RAW)
+RAW -> RAW -> RAW
+Will run 4 OpenMP threads
+Testing: sha256crypt, crypt(3) $5$ (rounds=5000) [SHA256 128/128 ASIMD 4x]... (4xOMP) Loaded 7 hashes with 5 different salts to test db from test vectors
+
+sha256crypt OMP autotune using test db with iteration count of 5000
+
+OMP scale 1: 512 crypts (1x512) in 79.072 ms, 6475 c/s +
+OMP scale 2: 1024 crypts (1x1024) in 158.181 ms, 6473 c/s
+Autotuned OMP scale 1, preset is 2
+PASS
+ Ok: --format=sha256crypt --verb=5 --tune=report
+initUnicode(UNICODE, RAW/RAW)
+RAW -> RAW -> RAW
+Will run 4 OpenMP threads
+Testing: sha512crypt, crypt(3) $6$ (rounds=5000) [SHA512 128/128 ASIMD 2x]... (4xOMP) Loaded 6 hashes with 4 different salts to test db from test vectors
+
+sha512crypt OMP autotune using test db with iteration count of 5000
+
+OMP scale 1: 256 crypts (1x256) in 57.971 ms, 4415 c/s +
+OMP scale 2: 512 crypts (1x512) in 115.582 ms, 4429 c/s
+PASS
+ Ok: --format=sha512crypt --verb=5 --tune=report
+------------------------------------------------------------------
+
+====> T14: OMP fallback
+Version: 1.9.0-jumbo-1+bleeding-39db7dd63e 2023-09-20 17:02:33 -0300
+Build: darwin22.6.0 64-bit arm ASIMD AC OPENCL
+SIMD: ASIMD, interleaving: MD4:2 MD5:2 SHA1:1 SHA256:1 SHA512:1
+$JOHN is ../run/
+Format interface version: 14
+Max. number of reported tunable costs: 4
+Rec file version: REC4
+Charset file version: CHR3
+CHARSET_MIN: 1 (0x01)
+CHARSET_MAX: 255 (0xff)
+CHARSET_LENGTH: 24
+SALT_HASH_SIZE: 1048576
+SINGLE_IDX_MAX: 2147483648
+SINGLE_BUF_MAX: 4294967295
+Effective limit: Number of salts vs. SingleMaxBufferSize
+Max. Markov mode level: 400
+Max. Markov mode password length: 30
+clang version: 15.0.0 (clang-1500.0.40.1) (gcc 4.2.1 compatibility)
+OpenCL headers version: 1.2
+Crypto library: OpenSSL
+OpenSSL library version: 030100020
+OpenSSL 3.1.2 1 Aug 2023
+GMP library version: 6.2.1
+File locking: fcntl()
+fseek(): fseek
+ftell(): ftell
+fopen(): fopen
+memmem(): System's
+times(2) sysconf(_SC_CLK_TCK) is 100
+Using times(2) for timers, resolution 10 ms
+HR timer: mach_absolute_time(), latency 41 ns
+Total physical host memory: 8 GiB
+Available physical host memory: 4794 MiB
+Terminal locale string: en_US.UTF-8
+Parsed terminal locale: UTF-8
+ Ok: OMP_NUM_THREADS=1 --list=build-info
+-------------------------------------------
+###  Performed 14 tests in 493 seconds  ###
+-------------------------------------------
+----------------- arm64 ------------------
+                                                    wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh -O .ci/clean_package.sh
+--2023-09-20 23:24:47--  https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1638 (1.6K) [text/plain]
+Saving to: ‘.ci/clean_package.sh’
+
+     0K .                                                     100% 13.9M=0s
+
+2023-09-20 23:24:47 (13.9 MB/s) - ‘.ci/clean_package.sh’ saved [1638/1638]
+
+source .ci/clean_package.sh
+#!/bin/bash
+
+###############################################################################
+#        _       _             _   _            _____  _
+#       | |     | |           | | | |          |  __ \(_)
+#       | | ___ | |__  _ __   | |_| |__   ___  | |__) |_ _ __  _ __   ___ _ __
+#   _   | |/ _ \| '_ \| '_ \  | __| '_ \ / _ \ |  _  /| | '_ \| '_ \ / _ \ '__|
+#  | |__| | (_) | | | | | | | | |_| | | |  __/ | | \ \| | |_) | |_) |  __/ |
+#   \____/ \___/|_| |_|_| |_|  \__|_| |_|\___| |_|  \_\_| .__/| .__/ \___|_|
+#                                                       | |   | |
+#                                                       |_|   |_|
+#
+# Copyright (c) 2019 Claudio André <claudioandre.br at gmail.com>
+#
+# This program comes with ABSOLUTELY NO WARRANTY; express or implied.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, as expressed in version 2, seen at
+# http://www.gnu.org/licenses/gpl-2.0.html
+###############################################################################
+# Script to remove unnecessary stuff from John the Ripper package
+# More info at https://github.com/openwall/john-packages
+
+# Remove the left-over from testing
+rm -f run/john.log
+rm -f run/john.pot
+rm -f run/john-local.conf
+
+# Remove unused stuff
+rm -rf run/ztex
+
+# Cleanup to deploy
+if [[ -n "$DEPLOY_PAK"  ]]; then
+    rm -rf src appveyor.yml azure-pipelines.yml .git .ci .circleci .cirrus.yml .azure .editorconfig .gitattributes \
+          .github .gitignore .mailmap .pre-commit.sh .travis .travis.yml
+fi
+7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=128m -ms=on JtR-macArm.7z ./
+
+7-Zip [64] 17.05 : Copyright (c) 1999-2021 Igor Pavlov : 2017-08-28
+p7zip Version 17.05 (locale=utf8,Utf16=on,HugeFiles=on,64 bits,4 CPUs LE)
+
+Scanning the drive:
+23 folders, 505 files, 86435901 bytes (83 MiB)
+
+Creating archive: JtR-macArm.7z
+
+Items to compress: 528
+
+
+Files read from disk: 505
+Archive size: 23183269 bytes (23 MiB)
+Everything is Ok
+sha256sum -- JtR-macArm.7z || true
+60210080f8e22158ec1f6d377e51f25a8d2eafe28d484ca138afd5539a57d853  JtR-macArm.7z
+         

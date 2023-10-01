@@ -4,7 +4,7 @@
     "runtime-version": "22.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "john",
-    "tags": [ "bleeding" ],
+    "tags": [ "rolling-2310" ],
     "finish-args": [
         "--filesystem=home"
     ],
@@ -52,8 +52,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://raw.githubusercontent.com/openwall/john-packages/main/tests/package_version.sh",
-                    "sha256": "7a25fd926b9a7bc406dca6db5b2802a4a8a4625cc191b9ecdd1291bfcd1146ef"
+                    "url": "https://raw.githubusercontent.com/openwall/john-packages/release/tests/package_version.sh",
+                    "sha256": "b57435f9e3ea9b3d36563c946752df5db3c77b6c60a95439a22e87380f1920f2"
                 },
                 {
                     "type": "file",

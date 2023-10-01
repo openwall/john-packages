@@ -10,7 +10,7 @@
   <summary>John the Ripper "Jumbo" password cracker</summary>
   <description>
     <p>
-      [Openwall's](http://openwall.com/) John the Ripper (JtR) is a fast password cracker,
+      [Openwall's](https://openwall.com/) John the Ripper (JtR) is a fast password cracker,
       currently available for many flavors of Unix and for Windows. Its primary
       purpose is to detect weak Unix passwords. Besides several crypt(3) password hash
       types most commonly found on various Unix systems, supported out of the box are
@@ -97,7 +97,7 @@
       </artifacts>
     </release>
 
-    <release type="stable" version="rolling-2304" date="2023-04-05" urgency="high">
+    <release type="stable" version="rolling-2310" date="2023-10-05" urgency="high">
       <description>
         <p>
           This is a rolling release based on John the Ripper 1.9.0-jumbo-1+.
@@ -110,19 +110,16 @@
 
       <artifacts>
         <artifact type="binary" platform="x86_64-linux-gnu">
-          <location>https://github.com/openwall/john-packages/releases/download/rolling-2304/flatpak_1_JtR.zip</location>
-        </artifact>
-        <artifact type="binary" platform="flatpak">
-          <location>https://flathub.org/apps/detais/com.openwall.John</location>
+          <location>https://github.com/openwall/john-packages/releases/download/rolling-2310/flatpak_1_JtR.zip</location>
         </artifact>
         <artifact type="binary" platform="snap">
           <location>https://snapcraft.io/john-the-ripper</location>
         </artifact>
         <artifact type="binary" platform="win64">
-          <location>https://github.com/openwall/john-packages/releases/download/rolling-2304/winX64_1_JtR.7z</location>
+          <location>https://github.com/openwall/john-packages/releases/download/rolling-2310/winX64_1_JtR.7z</location>
         </artifact>
         <artifact type="source">
-          <location>https://github.com/openwall/john/commit/15b3b7c25fc8ac34f2504d53f0c94bbf4ec12596</location>
+          <location>https://github.com/openwall/john/commit/39db7dd63e3fefb343c3dbb72eaa5c7599b6c298</location>
         </artifact>
       </artifacts>
     </release>

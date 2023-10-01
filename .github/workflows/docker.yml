@@ -34,7 +34,7 @@ on:
         description: "The commit hash to be used"
         required: false
         #TODO: edit before release (JUMBO_RELEASE)
-        default: "15b3b7c25fc8ac34f2504d53f0c94bbf4ec12596"
+        default: "39db7dd63e3fefb343c3dbb72eaa5c7599b6c298"
       VERSION:
         description: "The software version"
         required: true

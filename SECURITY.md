@@ -16,7 +16,7 @@ receiving such patches depends on the version:
 | Version | Supported          | Note                                      |
 | ------- | ------------------ | ----------------------------------------- |
 | upstream bleeding code | :heavy_check_mark: | Under development version  |
-| rolling 15b3b7c        | :white_check_mark: | Most recent release        |
+| rolling 39db7dd        | :white_check_mark: | Most recent release        |
 | jumbo 1                | :x: | Stable released version                   |
 | < jumbo 1              | :x: | No longer maintained                      |
 

@@ -11,7 +11,7 @@
 
 </div>
 
-[Openwall's](http://openwall.com/) John the Ripper (JtR) is a fast password cracker,
+[Openwall's](https://openwall.com/) John the Ripper (JtR) is a fast password cracker,
 currently available for many flavors of Unix and for Windows. Its primary
 purpose is to detect weak Unix passwords. Besides several crypt(3) password hash
 types most commonly found on various Unix systems, supported out of the box are
@@ -50,11 +50,13 @@ We produce software in short cycles, ensuring that the software can be reliably 
 
 <div id="CD" align="center">
 
-[![Docker image](https://github.com/openwall/john-packages/actions/workflows/docker.yml/badge.svg)](https://github.com/openwall/john-packages/actions/workflows/docker.yml)
-[![Flatpak Build](https://gitlab.com/claudioandre-br/JtR-CI/badges/master/pipeline.svg?key_text=Flatpak)](https://gitlab.com/claudioandre-br/JtR-CI/pipelines)
-[![Build Status](https://dev.azure.com/claudioandre-br/JohnTheRipper/_apis/build/status/JohnTheRipper?label=Windows)](https://dev.azure.com/claudioandre-br/JohnTheRipper/_build/latest?definitionId=2)
+![Docker image](https://github.com/openwall/john-packages/actions/workflows/docker.yml/badge.svg)
+![Flatpak Build](https://gitlab.com/claudioandre-br/JtR-CI/badges/master/pipeline.svg?key_text=Flatpak)
+![Mac M1](https://img.shields.io/cirrus/github/claudioandre-br/JohnTheRipper/bleeding-jumbo?label=Mac%20M1)
+![Build Status](https://dev.azure.com/claudioandre-br/JohnTheRipper/_apis/build/status/JohnTheRipper?label=Windows)
 
-[![Launchpad](https://media.launchpad.net/lp-badge-kit/launchpad-badge-w120px.png)](https://launchpad.net/~claudioandre.br/john/+snap/john-the-ripper)
+[![Launchpad](https://media.launchpad.net/lp-badge-kit/launchpad-badge-w120px.png)](https://snapcraft.io/john-the-ripper)
+<a href='https://flathub.org/apps/com.openwall.John'><img height='27' alt='Download on Flathub' src='https://dl.flathub.org/assets/badges/flathub-badge-i-en.svg'/></a>
 
 [![Virus Scan](https://github.com/openwall/john-packages/actions/workflows/virusscan.yml/badge.svg)](https://github.com/openwall/john-packages/releases)
 
@@ -118,10 +120,8 @@ The highlights (👀):
 - generic crypt(3) format available;
 - security feature Address Space Layout Randomisation (ASLR) enabled;
 - security feature Data Execution Prevention (DEP) enabled;
-- the rolling version of John 1.9.0 Jumbo 1+:
+- the released version of John 1.9.0 Jumbo 1+ (rolling release):
   - is available for X86_64;
-- the stable John 1.9.0 Jumbo 1:
-  - is available for X86_64 and i386;
 - a development version:
   - is available for X86_64.
 
@@ -210,11 +210,8 @@ The highlights (👀):
 - John the Ripper is tagged as safe, confined and auditable software on Canonical Snap Store;
 - John the Ripper supports and has a package for all architectures supported by Ubuntu itself.
 - also available via the alias **john**, e.g. `john -list=build-info`;
-- the rolling version of John 1.9.0 Jumbo 1+:
-  - is available for X86_64, armhf, arm64, ppc64el, i386, riscv64, and s390x;
-- the stable John 1.9.0 Jumbo 1:
-  - is available for X86_64, armhf, arm64, ppc64el, i386, powerpc, and s390x;
-  - has regular expression mode available;
+- the released version of John 1.9.0 Jumbo 1+ (rolling release):
+  - is available for X86_64, armhf, arm64, ppc64el, riscv64, and s390x;
 - a development version:
   - is available for X86_64, arm64, ppc64el, and s390x.
 
@@ -313,9 +310,11 @@ The highlights (👀):
 - prince mode available;
 - OpenCL available;
 - built using clang from the official XCode toolchain plus non-system libraries from Homebrew;
+- the released version of John 1.9.0 Jumbo 1+ (rolling release):
+  - is available for X86_64 (on Intel);
+  - is available for ARM (on M1 and above).
 - a development version:
-  - is available for X86_64 (on Intel).
-  - is available for ARM (on M1 and M2).
+  - is available for ARM (on M1 and above).
 
 [*] John the Ripper runs using the best SIMD instructions available on the host
 it's running on.
@@ -324,8 +323,8 @@ it's running on.
 
 [![macOS Downloads](https://img.shields.io/badge/Download-Mac%20Build-blue.svg)](https://github.com/openwall/john-packages/releases)
 
-Using the above instructions you can install the hot and bleeding version
-in your system.
+Using the above instructions you can install the rolling version of John
+the Ripper Jumbo 1+ or the hot and bleeding version in your system.
 
 The package contains the necessary executables to run a fresh install of John the Ripper.
 You must install required Homebrew libraries.
@@ -373,11 +372,10 @@ The highlights (👀):
 
 - fallback for CPU[*] and OMP;
 - prince mode available.
-- the rolling version of John 1.9.0 Jumbo 1+:
+- the released version of John 1.9.0 Jumbo 1+ (rolling release):
   - is available for X86_64;
-- the stable John 1.9.0 Jumbo 1:
-  - is available for X86_64, arm, aarch64, and i386;
-  - has regular expression mode available;
+  - is also available via FlatHub (for X86_64 and aarch64);
+    - see [https://flathub.org/apps/com.openwall.John](https://flathub.org/apps/com.openwall.John).
 - a development version:
   - is available for X86_64.
 
@@ -419,14 +417,15 @@ Run John the Ripper and check if it is working:
 
 The highlights (👀):
 
+- OpenSSF SLSA 3 compliant;
 - prince mode available;
-- the rolling version of John 1.9.0 Jumbo 1+ (`ghcr.io/openwall/john:rolling`):
-  - has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`.
-- the stable John 1.9.0 Jumbo 1 (`ghcr.io/openwall/john:v1.9.0J1`):
-  - has ztex formats available.
-- the development version (`ghcr.io/openwall/john:latest`):
-  - has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`;
-  - has NVIDIA OpenCL available (GPU driver is required on the host).
+- has NVIDIA OpenCL available (GPU driver is required on the host);
+- has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`;
+  - example: `docker run ghcr.io/openwall/john:latest best -list=build-info`.
+- the released version of John 1.9.0 Jumbo 1+ (rolling release):
+  - install from the command line: `docker pull ghcr.io/openwall/john:rolling`.
+- the development version:
+  - install from the command line: `docker pull ghcr.io/openwall/john:latest`.
 
 ### Docker Image Deployments
 

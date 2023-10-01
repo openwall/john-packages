@@ -30,21 +30,21 @@ using:
 - macOS:
   - macOS 12.6 21G115:
     - Darwin 21.6.0 x86_64 i386;
-  - macOS 13.4 22F66:
-    - Darwin 22.4.0 arm64 arm;
+  - macOS 13.5.1 22G90:
+    - Darwin 22.6.0 arm64 arm;
 
 ### Toolchains
 
 - Compilers:
-  - gcc 4.8 (CentOS), gcc 5.4 (Ubuntu 16, Android), gcc 7.4 (Win 2016);
-  - gcc 11.3 (Ubuntu 22, Snap), gcc 11.4 (Win 2019/2022);
-  - gcc 12.2 (Flatpak, fuzzing), gcc 12.3 (Ubuntu Dev), and gcc 13.1 (Fedora 38);
+  - gcc 4.8 (CentOS), gcc 5.4 (Ubuntu 16), gcc 7.4 (Win 2016), gcc 9.4 (Android);
+  - gcc 11.4 (Ubuntu 22, Snap), gcc 11.4 (Win 2019/2022);
+  - gcc 12.2 (Flatpak, fuzzing), gcc 13.2 (Ubuntu Dev, Fedora 38);
   - Solaris gcc (GCC) 7.3.0;
   - FreeBSD clang version 13.0.0;
-  - FreeBSD clang version 14.0.5;
-  - FreeBSD clang version 15.0.7;
+  - FreeBSD clang version: 16.0.6;
+  - FreeBSD clang version: 16.0.6;
   - Apple clang version 14.0.0 (clang-1400.0.29.202);
-  - Apple clang version 14.0.3 (clang-1403.0.22.14.1);
+  - Apple clang version 15.0.0 (clang-1500.0.40.1);
 
 ### Testing and Commissioning
 
@@ -112,6 +112,6 @@ We can no longer build and test for these environments:
 * Any 32-bit build (e.g. i386, i686, and powerpc);
 * Windows 8 or older (64-bit);
 * Windows Server 2012 or older (64-bit);
-
+* Intel-based macOS;
 
 If you need such a build, use a previous stable or rolling release.

@@ -29,7 +29,7 @@ COPY build.sh .
 
 # To build a release run a (docker build [...] --build-arg release=true)
 ARG RELEASE=false
-ARG COMMIT=15b3b7c25fc8ac34f2504d53f0c94bbf4ec12596
+ARG COMMIT=39db7dd63e3fefb343c3dbb72eaa5c7599b6c298
 ARG TYPE=ALL
 
 RUN ./build.sh "${TYPE}"
@@ -76,7 +76,7 @@ RUN ln -s /usr/local/bin/docker-entrypoint.sh . && \
     useradd -U -m JtR && \
     apt-get update -qq && \
     export DEBIAN_FRONTEND="noninteractive" && \
-    apt-get install -y --no-install-recommends libssl3=3.0* libgomp1=12.1* ocl-icd-opencl-dev=2.2* && \
+    apt-get install -y --no-install-recommends libssl3=3.0* libgomp1=12.3* ocl-icd-opencl-dev=2.2* && \
 # ==================================================================
 # Clean up the image (shrink the Docker image)
 # ------------------------------------------------------------------

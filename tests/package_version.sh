@@ -24,12 +24,15 @@ git_tag=$(git rev-parse --short=7 HEAD 2>/dev/null)
 ID=$(curl -s https://raw.githubusercontent.com/openwall/john-packages/release/deploy/Release.ID 2>/dev/null | tr -d '\n')
 
 if [[ -z "$ID" || "$ID" == "404: Not Found" ]]; then
-    ID="1.9J1+"
+    ID="roll+"
 fi
 echo "$ID$git_tag"
 
 # Release example
 # 1.9J2-07f7216
+
+# Rolling example
+# roll+39db7dd
 
 # Develepment example (post Jumbo 2)
 # 1.9J2+c9825e6
