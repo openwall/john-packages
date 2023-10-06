@@ -3,7 +3,7 @@
 <div id="header" align="center">
 
 [![john-the-ripper](https://snapcraft.io/john-the-ripper/badge.svg)](https://snapcraft.io/john-the-ripper)
-[![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://github.com/openwall/john-packages/blob/master/LICENSE.txt)
+[![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://github.com/openwall/john-packages/blob/main/LICENSE.txt)
 
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/openwall/john-packages/badge)](https://api.securityscorecards.dev/projects/github.com/openwall/john-packages)
 [![Best Practices](https://bestpractices.coreinfrastructure.org/projects/7525/badge)](https://bestpractices.coreinfrastructure.org/projects/7525)
@@ -68,7 +68,7 @@ We produce software in short cycles, ensuring that the software can be reliably 
 
 ### Package Building Environments
 
-Click on the link to learn more about our packages [Building Environments](https://github.com/openwall/john-packages/tree/master/deploy#deployments).
+Click on the link to learn more about our packages [Building Environments](https://github.com/openwall/john-packages/tree/main/deploy#deployments).
 
 ### Testing and Continuous Integration
 
@@ -76,7 +76,7 @@ All continuous integration (CI) and continuous delivery (CD) procedures are full
 performed whenever requested by the packager. Manual procedures are required just to
 start the process.
 
-Click on the link to learn more about our [Continuous Integration and Continuous Delivery](https://github.com/openwall/john-packages/tree/master/tests#continuous-integration-and-continuous-delivery) procedures.
+Click on the link to learn more about our [Continuous Integration and Continuous Delivery](https://github.com/openwall/john-packages/tree/main/tests#continuous-integration-and-continuous-delivery) procedures.
 
 [![Graph](https://mermaid.ink/img/pako:eNqVk01vGjEQhv_KyKdEDTlWFaoiLWzTRCkFAVUjQQ6Dd1gsvLblD1pg-e-xFyJIuz10D6v98PPOzDsze8Z1QazLSotmBdN8riBe2eyHcd4SVtDXVSX8C3Q6dzVfEV-DC8LjQkjhtzX0rsZBAUKhf6kTYWmBjsBrKMmDXxFI9OQ88BWqktz1MUYvSUJ_n3ihPi_sHYzQopQkD8cT_SZoZsyGttpC_7GGfLbE7hI7Bbm11wYS9lOoGN3F_y-XXF9YLqmhvrRQueZrsi2QDa6B7luge0vUm-R_UtkuWIKcNsPRpIaHNjDsdkKVMI0-pPcP6faonCHuI2ik3qYvI-RrLOksfnsbPaqF2kROlOiFVjU8zei3ISsqUh7l6fBTY2fdE94KR0lsoGOTjmkZV8O3lrQyVVgtinM9J5UL7wYtWIV8OIHnTx__ot7M-_5PKhsP3lNfhX8IC8h4Ki7mOWxBJ1piLOuc5_96HKVBL5shO7qdvLt0vOljhSqgBDTG6g3KGp6v3lqbGJeANM9jkhRH_Ppdm-qCeNoV52IwKmoYteQ4tbg51sFuWEW2QlHE7dsnpTmL2hXNWTc-FrTEIP2czdUhHsXg9WSrOOt6G-iGBVPEncoFxr2tWIwiHR1eAamZRMU?type=png)](tests#continuous-integration-and-continuous-delivery)
 

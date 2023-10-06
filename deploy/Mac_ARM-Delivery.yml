@@ -41,7 +41,7 @@ macOS_task:
     - git clone --depth 10 https://github.com/openwall/john.git ~/tmp
     - cp -r ~/tmp/. .
 
-    - wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/tests-ci.sh -O .ci/tests-ci.sh
+    - wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/main/tests/tests-ci.sh -O .ci/tests-ci.sh
     - chmod +x .ci/tests-ci.sh
     - .ci/tests-ci.sh "$TARGET_ARCH" INFO
     - echo  "$CIRRUS_TASK_ID" > Build._ID

@@ -101,7 +101,7 @@ fi
 # We are in packages folder, change to JtR folder
 cd src || exit 1
 
-wget https://raw.githubusercontent.com/openwall/john-packages/master/patches/0001-Handle-self-confined-system-wide-build.patch
+wget https://raw.githubusercontent.com/openwall/john-packages/main/patches/0001-Handle-self-confined-system-wide-build.patch
 patch < 0001-Handle-self-confined-system-wide-build.patch
 
 wget https://raw.githubusercontent.com/claudioandre-br/JohnTheRipper/bleeding-jumbo/be.patch; _BE_TEST=$?
@@ -115,7 +115,7 @@ fi
 export CFLAGS="-O2 $CFLAGS"
 
 # Show environment information
-wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/show_info.sh
+wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/main/tests/show_info.sh
 # shellcheck source=/dev/null
 source show_info.sh
 
@@ -166,7 +166,7 @@ mkdir --parents /snap/john-the-ripper/current/
 ln -s "$(realpath ../run)" /snap/john-the-ripper/current/run
 
 # Adjust the testing environment, import and run some testing
-wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/disable_formats.sh
+wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/main/tests/disable_formats.sh
 # shellcheck source=/dev/null
 source disable_formats.sh
 
