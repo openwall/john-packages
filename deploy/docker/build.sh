@@ -27,13 +27,6 @@ function install_nvidia_opencl() {
         nvidia-opencl-dev=*
 }
 
-function build_default_binaries() {
-    do_configure "$X86_NO_OPENMP" --enable-simd=avx2   && do_build ../run/john-avx2
-    do_configure "$X86_REGULAR"   --enable-simd=avx2   && do_build ../run/john-avx2-omp
-    do_configure "$X86_NO_OPENMP" --enable-simd=avx512bw && do_build ../run/john-avx512bw
-    do_configure "$X86_REGULAR"   --enable-simd=avx512bw && do_build ../run/john-avx512bw-omp
-}
-
 function save_build_info() {
     (
     cd john || exit 1
@@ -73,11 +66,15 @@ function clean_image() {
 echo "Release $RELEASE"
 type="$1"
 export DEPLOY_PAK="Yes"
+arch=$(uname -m)
 
 # Build options (system wide, disable checks, etc.)
 SYSTEM_WIDE='--with-systemwide'
 X86_REGULAR="--disable-native-tests $SYSTEM_WIDE"
 X86_NO_OPENMP="--disable-native-tests $SYSTEM_WIDE --disable-openmp"
+
+OTHER_REGULAR="$SYSTEM_WIDE"
+OTHER_NO_OPENMP="$SYSTEM_WIDE --disable-openmp"
 
 # Install build dependencies
 apt-get update -qq
@@ -109,16 +106,23 @@ fi
 (
 cd john/src || exit 1
 
-# Build for CPU only image
-if [ "$type" != "GPU" ] ; then
-   do_configure "$X86_NO_OPENMP" --enable-simd=sse2     && do_build ../run/john-sse2
-   do_configure "$X86_REGULAR"   --enable-simd=sse2     && do_build ../run/john-sse2-omp
-   do_configure "$X86_NO_OPENMP" --enable-simd=avx      && do_build ../run/john-avx
-   do_configure "$X86_REGULAR"   --enable-simd=avx      && do_build ../run/john-avx-omp
-   do_configure "$X86_NO_OPENMP" --enable-simd=avx512f  && do_build ../run/john-avx512f
-   do_configure "$X86_REGULAR"   --enable-simd=avx512f  && do_build ../run/john-avx512f-omp
+if [ "$arch" == "x86_64" ]; then
+    # x86_64 CPU (OMP and SIMD binaries)
+    do_configure "$X86_NO_OPENMP" --enable-simd=sse2     && do_build ../run/john-sse2
+    do_configure "$X86_REGULAR"   --enable-simd=sse2     && do_build ../run/john-sse2-omp
+    do_configure "$X86_NO_OPENMP" --enable-simd=avx      && do_build ../run/john-avx
+    do_configure "$X86_REGULAR"   --enable-simd=avx      && do_build ../run/john-avx-omp
+    do_configure "$X86_NO_OPENMP" --enable-simd=avx2     && do_build ../run/john-avx2
+    do_configure "$X86_REGULAR"   --enable-simd=avx2     && do_build ../run/john-avx2-omp
+    do_configure "$X86_NO_OPENMP" --enable-simd=avx512f  && do_build ../run/john-avx512f
+    do_configure "$X86_REGULAR"   --enable-simd=avx512f  && do_build ../run/john-avx512f-omp
+    do_configure "$X86_NO_OPENMP" --enable-simd=avx512bw && do_build ../run/john-avx512bw
+    do_configure "$X86_REGULAR"   --enable-simd=avx512bw && do_build ../run/john-avx512bw-omp
+else
+    # Non X86 CPU (OMP fallback)
+    do_configure "$OTHER_NO_OPENMP"                      && do_build "../run/john-$arch"
+    do_configure "$OTHER_REGULAR"                        && do_build ../run/john-omp
 fi
-build_default_binaries
 )
 
 save_build_info

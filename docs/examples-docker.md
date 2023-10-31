@@ -66,7 +66,7 @@
 
 ## Binaries
 
-The available binaries (their IDs are sse2-omp, sse2, avx-omp, etc) are:
+The available linux/amd64 binaries (their IDs are sse2-omp, sse2, avx-omp, etc) are:
 
 - /john/run/john-sse2-omp (default binary)
 - /john/run/john-sse2
@@ -78,6 +78,11 @@ The available binaries (their IDs are sse2-omp, sse2, avx-omp, etc) are:
 - /john/run/john-avx512f
 - /john/run/john-avx512bw-omp
 - /john/run/john-avx512bw
+
+The available linux/arm64 binaries (their IDs are john-omp and john-aarch64) are:
+
+- /john/run/john-omp (default binary)
+- /john/run/john-aarch64
 
 Binaries available on Docker image John 1.9.0 Jumbo 1 (their IDs are ztex and ztex-no-omp) are:
 
