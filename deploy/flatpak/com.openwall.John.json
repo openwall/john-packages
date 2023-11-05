@@ -58,7 +58,7 @@
                 {
                     "type": "file",
                     "url": "https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh",
-                    "sha256": "57ad39d297f29c2decf5233e1d5497b72af06ec43eb892423d47ca6a2e9e89f8"
+                    "sha256": "2b5b21ff3b60da6e679a9f32406ff7a51386c1f642fadba23e916a228d263233"
                 },
                 {
                     "type": "file",
