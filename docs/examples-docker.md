@@ -12,13 +12,15 @@
 
 ## Basic usage
 
+Using the `--rm` flag to clean up the container and remove the file system after the container exits.
+
 ```bash
- docker run ghcr.io/openwall/john # => uses the best SIMD available, tag 'latest' can be ommited
- docker run ghcr.io/openwall/john:rolling # => uses the latest rolling release
- docker run ghcr.io/openwall/john:latest best # => uses the best SIMD available
- docker run ghcr.io/openwall/john:latest avx2 -list=build-info
- docker run ghcr.io/openwall/john:latest avx2-omp -list=build-info
- docker run ghcr.io/openwall/john:latest avx512bw -test=0 -format=cpu
+ docker run --rm ghcr.io/openwall/john # => uses the best SIMD available, tag 'latest' can be ommited
+ docker run --rm ghcr.io/openwall/john:rolling # => uses the latest rolling release
+ docker run --rm ghcr.io/openwall/john:latest best # => uses the best SIMD available
+ docker run --rm ghcr.io/openwall/john:latest avx2 -list=build-info
+ docker run --rm ghcr.io/openwall/john:latest avx2-omp -list=build-info
+ docker run --rm ghcr.io/openwall/john:latest avx512bw -test=0 -format=cpu
 ```
 
 ## Run a real cracking session
