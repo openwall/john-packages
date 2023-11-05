@@ -19,11 +19,8 @@
 # the Free Software Foundation, as expressed in version 2, seen at
 # http://www.gnu.org/licenses/gpl-2.0.html
 ###############################################################################
-
-#########################################################################
-# Runs a build and change the file name
-#
-#########################################################################
+# Script with helpers to build binaries and packages
+# More info at https://github.com/openwall/john-packages
 
 function do_build () {
     set -e
