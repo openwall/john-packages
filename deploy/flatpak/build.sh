@@ -41,6 +41,7 @@ Version="$(./package_version.sh)"
 EOF
 
     rm -f package_version.sh
+    cat run/Defaults
     )
 }
 
@@ -113,8 +114,6 @@ if [[ -z "$TASK" ]]; then
             ln -s john-omp john
         )
     fi
-    # List build info logs
-    ../run/john-omp
 
 elif [[ "$TASK" == "test" ]]; then
     # "---------------------------- TESTING -----------------------------"
