@@ -96,7 +96,7 @@ and IBM System z.
 | Provider   | OS | Artifacts |
 | ------------- | ------------- | ----- |
 | Azure | Windows | ✓ Deployed to GitHub Releases |
-| Cirrus CI | macOS M1 | ✓ Deployed to GitHub Releases |
+| Cirrus CI | macOS M2 | ✓ Deployed to GitHub Releases |
 | GitLab CI | Linux (FlatPak app) | ✓ Deployed to GitHub Releases |
 | GitHub Actions | Linux (Docker image) | ✓ Deployed to GitHub Packages |
 | LaunchPad | Linux (Snap app) | ✓ Deployed to Snap Store |

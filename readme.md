@@ -52,7 +52,7 @@ We produce software in short cycles, ensuring that the software can be reliably 
 
 ![Docker image](https://github.com/openwall/john-packages/actions/workflows/docker.yml/badge.svg)
 ![Flatpak Build](https://gitlab.com/claudioandre-br/JtR-CI/badges/master/pipeline.svg?key_text=Flatpak)
-![Mac M1](https://img.shields.io/cirrus/github/claudioandre-br/JohnTheRipper/bleeding-jumbo?label=Mac%20M1)
+![Mac M2](https://img.shields.io/cirrus/github/claudioandre-br/JohnTheRipper/bleeding-jumbo?label=Mac%20M2)
 ![Build Status](https://dev.azure.com/claudioandre-br/JohnTheRipper/_apis/build/status/JohnTheRipper?label=Windows)
 
 [![Launchpad](https://media.launchpad.net/lp-badge-kit/launchpad-badge-w120px.png)](https://snapcraft.io/john-the-ripper)

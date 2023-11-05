@@ -47,7 +47,7 @@ All except the s390x binaries support SIMD.
   * bundle (for X86_64);
   * via FlatHub (for X86_64 and aarch64).
 * macOS X86 (Intel Hardware): via AVX and AVX2;
-* macOS M1: via ASIMD;
+* macOS M1 and above: via ASIMD;
 * Snap (for X86_64, armhf, arm64, ppc64el, riscv64, and s390x);
 * Windows (for X86_64).
 

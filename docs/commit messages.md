@@ -32,7 +32,7 @@ For example, we fixed a bug or added a feature, or perhaps documentation. The ty
 | :-: | :-: |
 | CI: | CI tasks. E.g, commit to allow the Docker image to be built without being deployed |
 | cloud:| any changes to the cloud tool |
-| deploy: | e.g, add the recipe to create a new Mac M1 build/deploy |
+| deploy: | e.g, add the recipe to create a new macOS build/deploy |
 | Docker: | any changes to the Docker recipe or package |
 | docs: | any changes to .md files or mermaid files |
 | flatpak: | any changes to the flapak recipe or package |
