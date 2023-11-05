@@ -115,7 +115,7 @@ jobs:
             ${{ env.REPO }}:${{ github.event.inputs.tag }}_J${{ github.run_number }}
 
   provenance:
-    if: ${{ github.event.inputs.push }} == 'true'
+    if: ${{ github.event.inputs.push == 'true' }}
     needs: [build]
     permissions:
       actions: read # for detecting the Github Actions environment.
