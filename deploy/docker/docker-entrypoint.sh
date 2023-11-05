@@ -23,13 +23,13 @@
 
 set -e
 echo "$@"
-ids="sse2-omp sse2 avx-omp avx avx2-omp avx2
+ids="avx-omp avx avx2-omp avx2
           avx512f-omp avx512f avx512bw-omp avx512bw
           ztex-omp ztex best
           john-omp john-aarch64
           "
 binaries="/john/run/john-avx512bw-omp /john/run/john-avx512f-omp /john/run/john-avx2-omp
-          /john/run/john-avx-omp /john/run/john-sse2-omp
+          /john/run/john-avx-omp
           /john/run/john-omp
           "
 requested="$1"
@@ -39,9 +39,7 @@ if [[ $# -gt 0 && "$ids" == *"$requested"* ]]; then
     shift
 fi
 
-if [[ "$requested" = 'sse2-omp' || "$requested" = 'sse2' ]]; then
-    exec "/john/run/john-$requested" "$@"
-elif [[ "$requested" = 'avx-omp' || "$requested" = 'avx' || "$requested" = 'avx2-omp' || "$requested" = 'avx2' ]]; then
+if [[ "$requested" = 'avx-omp' || "$requested" = 'avx' || "$requested" = 'avx2-omp' || "$requested" = 'avx2' ]]; then
     exec "/john/run/john-$requested" "$@"
 elif [[ "$requested" = 'john-omp' || "$requested" = 'john-aarch64' ]]; then
     exec "/john/run/john-$requested" "$@"
@@ -60,8 +58,8 @@ elif [[ "$requested" = 'best' ]]; then
     done
     echo 'No suitable john binary found'
 else
-    if [[ -f /john/run/john-sse2-omp ]]; then
-        exec /john/run/john-sse2-omp "$@"
+    if [[ -f /john/run/john-avx-omp ]]; then
+        exec /john/run/john-avx-omp "$@"
     else
         exec /john/run/john-omp "$@"
     fi

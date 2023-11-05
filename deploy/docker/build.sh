@@ -108,8 +108,6 @@ cd john/src || exit 1
 
 if [ "$arch" == "x86_64" ]; then
     # x86_64 CPU (OMP and SIMD binaries)
-    do_configure "$X86_NO_OPENMP" --enable-simd=sse2     && do_build ../run/john-sse2
-    do_configure "$X86_REGULAR"   --enable-simd=sse2     && do_build ../run/john-sse2-omp
     do_configure "$X86_NO_OPENMP" --enable-simd=avx      && do_build ../run/john-avx
     do_configure "$X86_REGULAR"   --enable-simd=avx      && do_build ../run/john-avx-omp
     do_configure "$X86_NO_OPENMP" --enable-simd=avx2     && do_build ../run/john-avx2

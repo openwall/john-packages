@@ -58,7 +58,6 @@
 ## Compare the performance of SIMD extensions
 
 ```bash
- docker run ghcr.io/openwall/john:latest sse2     --test=10 --format=SHA512crypt
  docker run ghcr.io/openwall/john:latest avx      --test=10 --format=SHA512crypt
  docker run ghcr.io/openwall/john:latest avx2     --test=10 --format=SHA512crypt
  docker run ghcr.io/openwall/john:latest avx512bw --test=10 --format=SHA512crypt
@@ -66,11 +65,9 @@
 
 ## Binaries
 
-The available linux/amd64 binaries (their IDs are sse2-omp, sse2, avx-omp, etc) are:
+The available linux/amd64 binaries (their IDs are avx-omp, avx, etc) are:
 
-- /john/run/john-sse2-omp (default binary)
-- /john/run/john-sse2
-- /john/run/john-avx-omp
+- /john/run/john-avx-omp (default binary)
 - /john/run/john-avx
 - /john/run/john-avx2-omp
 - /john/run/john-avx2

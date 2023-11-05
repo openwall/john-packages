@@ -72,11 +72,11 @@ and IBM System z.
 | PowerPC | Altivec |
 | RISC-V 64 | SIMD is not supported |
 | S390x | SIMD is not supported |
-| x86| AVX512BW, AVX512F, AVX2, AVX, SSE2 |
+| x86| AVX512BW, AVX512F, AVX2, AVX |
 
 | Architecture | Supported but not tested |
 | :-: | :-: |
-| x86| XOP, SSE4.2, SSE4.1, SSSE3 |
+| x86| XOP, SSE4.2, SSE4.1, SSSE3, SSE2 |
 
 #### CI Builds and Artifacts
 

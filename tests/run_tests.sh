@@ -276,8 +276,6 @@ if [[ -z "${TEST##*MY_FULL*}" ]]; then
 fi
 
 if [[ -z "${TEST##*SIMD*}" ]]; then
-    /john/run/john-sse2-omp      --test=10 --format=SHA512crypt
-    /john/run/john-sse2          --test=10 --format=SHA512crypt
     /john/run/john-avx-omp       --test=10 --format=SHA512crypt
     /john/run/john-avx           --test=10 --format=SHA512crypt
     /john/run/john-avx2-omp      --test=10 --format=SHA512crypt
