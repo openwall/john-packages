@@ -115,15 +115,12 @@ follow these steps:
 The highlights (👀):
 
 - fallback for CPU[*] and OMP;
-- prince mode available;
 - OpenCL available (GPU driver installation is needed);
 - generic crypt(3) format available;
 - security feature Address Space Layout Randomisation (ASLR) enabled;
 - security feature Data Execution Prevention (DEP) enabled;
-- the released version of John 1.9.0 Jumbo 1+ (rolling release):
-  - is available for X86_64;
-- a development version:
-  - is available for X86_64.
+- the released version of John 1.9.0 Jumbo 1+ (is a rolling release);
+- a development version is also available.
 
 [*] John the Ripper runs using the best SIMD instructions available on the host
 it's running on.
@@ -203,17 +200,14 @@ points to its build log.
 The highlights (👀):
 
 - fallback for CPU[*] and OMP;
-- prince mode available;
 - OpenCL available (GPU driver installation is needed);
 - John the Ripper is a "featured software" in the security category on Canonical Snap Store;
 - John the Ripper is a software with 4-star (⭐⭐⭐⭐) user reviews on Canonical Snap Store;
 - John the Ripper is tagged as safe, confined and auditable software on Canonical Snap Store;
 - John the Ripper supports and has a package for all architectures supported by Ubuntu itself.
 - also available via the alias **john**, e.g. `john -list=build-info`;
-- the released version of John 1.9.0 Jumbo 1+ (rolling release):
-  - is available for X86_64, armhf, arm64, ppc64el, riscv64, and s390x;
-- a development version:
-  - is available for X86_64, arm64, ppc64el, and s390x.
+- the released version of John 1.9.0 Jumbo 1+ (is a rolling release);
+- a development version is also available.
 
 [*] John the Ripper runs using the best SIMD instructions available on the host
 it's running on.
@@ -307,14 +301,10 @@ Execute John the Ripper:
 The highlights (👀):
 
 - fallback for CPU[*] (if that makes sense) and OMP;
-- prince mode available;
 - OpenCL available;
 - built using clang from the official XCode toolchain plus non-system libraries from Homebrew;
-- the released version of John 1.9.0 Jumbo 1+ (rolling release):
-  - is available for X86_64 (on Intel);
-  - is available for ARM (on M1 and above).
-- a development version:
-  - is available for ARM (on M1 and above).
+- the released version of John 1.9.0 Jumbo 1+ (is a rolling release);
+- a development version is also available.
 
 [*] John the Ripper runs using the best SIMD instructions available on the host
 it's running on.
@@ -371,13 +361,9 @@ you can access and audit any file located in your home. Below, an usage example:
 The highlights (👀):
 
 - fallback for CPU[*] and OMP;
-- prince mode available.
-- the released version of John 1.9.0 Jumbo 1+ (rolling release):
-  - is available for X86_64;
-  - is also available via FlatHub (for X86_64 and aarch64);
-    - see [https://flathub.org/apps/com.openwall.John](https://flathub.org/apps/com.openwall.John).
-- a development version:
-  - is available for X86_64.
+- the released version of John 1.9.0 Jumbo 1+ (is a rolling release):
+  - is also available via FlatHub at [https://flathub.org/apps/com.openwall.John](https://flathub.org/apps/com.openwall.John).
+- a development version is also available.
 
 [*] John the Ripper runs using the best SIMD instructions available on the host
 it's running on.
@@ -418,11 +404,10 @@ Run John the Ripper and check if it is working:
 The highlights (👀):
 
 - OpenSSF SLSA 3 compliant;
-- prince mode available;
 - has NVIDIA OpenCL available (GPU driver is required on the host);
 - has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`;
   - example: `docker run ghcr.io/openwall/john:latest best -list=build-info`.
-- the released version of John 1.9.0 Jumbo 1+ (rolling release):
+- the released version of John 1.9.0 Jumbo 1+ (is a rolling release):
   - install from the command line: `docker pull ghcr.io/openwall/john:rolling`.
 - the development version:
   - install from the command line: `docker pull ghcr.io/openwall/john:latest`.
