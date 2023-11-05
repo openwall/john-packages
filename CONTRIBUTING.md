@@ -82,7 +82,7 @@ We are going to do our best to follow [these advices.](https://phauer.com/2018/c
 ### During review, Pull Requests should be checked against these requirements
 
 - The change provides enough value to be worth merging, and is coherent with the rest of the project.
-- The is code clear enough, and it includes all the necessary comments to understand it.
+- The code is clear enough, and it includes all the necessary comments to understand it.
 - The PR complies with the contribution guidelines, including:
   - The PR targets right branch.
   - The nature of the change and the author’s reasoning is clear.
