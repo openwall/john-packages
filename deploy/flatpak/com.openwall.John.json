@@ -44,7 +44,7 @@
                 },
                 {
                     "type": "file",
-                    "path": "../tests/show_info.sh"
+                    "path": "../../tests/show_info.sh"
                 },
                 {
                     "type": "file",
