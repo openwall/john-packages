@@ -20,6 +20,7 @@
 # Cirrus CI configuration
 # More info at https://github.com/openwall/john-packages
 
+---
 macOS_task:
   name: macOS M1
   trigger_type: manual
@@ -29,30 +30,30 @@ macOS_task:
   env:
     CIRRUS_CLONE_DEPTH: "10"
     BUILD_OPS: "--build=aarch64-apple-darwin"
-    CC : "clang"
+    CC: "clang"
     MAKE_FLAGS: "-sj4"
-    TARGET_ARCH : "macOS ARM"
+    TARGET_ARCH: "macOS ARM"
     EXTRA: "full;extra"
-    TEST : "macOS;"
-    BASE : "Apple macOS M1"
-    DEPLOY_PAK : "Yes"
+    TEST: "macOS;"
+    BASE: "Apple macOS M1"
+    DEPLOY_PAK: "Yes"
 
   info_script:
     - git clone --depth 10 https://github.com/openwall/john.git ~/tmp
     - cp -r ~/tmp/. .
 
-    - wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/main/tests/tests-ci.sh -O .ci/tests-ci.sh
-    - chmod +x .ci/tests-ci.sh
-    - .ci/tests-ci.sh "$TARGET_ARCH" INFO
+    - wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/ci_controler.sh -O .ci/ci_controler.sh
+    - chmod +x .ci/ci_controler.sh
+    - .ci/ci_controler.sh "$TARGET_ARCH" INFO
     - echo  "$CIRRUS_TASK_ID" > Build._ID
 
   build_script:
-    - .ci/tests-ci.sh "$TARGET_ARCH" BUILD
+    - .ci/ci_controler.sh "$TARGET_ARCH" BUILD
 
     # Format crash on M1
     - echo '[Local:Disabled:Formats]' >> run/john-local.conf
     - echo 'SunMD5 = Y' >> run/john-local.conf
-    - .ci/tests-ci.sh "$TARGET_ARCH" TEST
+    - .ci/ci_controler.sh "$TARGET_ARCH" TEST
 
   package_script:
     - wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh -O .ci/clean_package.sh

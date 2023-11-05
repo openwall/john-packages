@@ -37,7 +37,7 @@ function do_build () {
     if [[ -z "$MAKE_FLAGS" ]]; then
         MAKE_FLAGS="-sj$(nproc)"
     fi
-    echo "flags: $MAKE_FLAGS"
+    echo "$MAKE with flags: $MAKE_FLAGS"
 
     if [[ -n "$1" ]]; then
         $MAKE -s clean && $MAKE "$MAKE_FLAGS" && mv ../run/john "$1"
@@ -53,4 +53,32 @@ function do_configure() {
     # shellcheck disable=SC2086
     set -- $param "$@"
     ./configure "$@"
+}
+
+function do_release () {
+    set -e
+
+    #Create a 'john' executable
+    cd ../run
+    ln -s "$1" john
+    cd -
+
+    # The script that computes the package version
+    wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/package_version.sh
+    chmod +x package_version.sh
+
+    # Save information about how the binaries were built
+    cat <<-EOF > ../run/Defaults
+#   File that lists how the build (binaries) were made
+[Build Configuration]
+System Wide Build=No
+Architecture="$(uname -m)"
+OpenMP=No
+OpenCL=Yes
+Optional Libraries=Yes
+Regex, OpenMPI, Experimental Code, ZTEX=No
+Version="$(./package_version.sh)"
+EOF
+
+    set +e
 }

@@ -20,6 +20,7 @@
 # GitHub Actions CI configuration
 # More info at https://github.com/openwall/john-packages
 
+---
 name: Extra CI
 
 on:
@@ -35,39 +36,35 @@ jobs:
     runs-on: macos-12
     name: Solaris 11
     env:
-      TARGET_ARCH : "SOLARIS"
+      TARGET_ARCH: "SOLARIS"
       EXTRA: "full;extra"
       BUILD_OPTS: ""
-      BASE : "Oracle Solaris"
+      BASE: "Oracle Solaris"
       _JUMBO_RELEASE: ${{ github.event.inputs.release }}
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build on Solaris
-      id: test
-      uses: vmactions/solaris-vm@v0
-      with:
-        envs: 'TARGET_ARCH EXTRA BUILD_OPTS TEST BASE'
-        usesh: true
-        copyback: false
-        mem: 2048
-        prepare: |
-          pkgutil -y -i socat
-          pkgutil -y -i git
+      - uses: actions/checkout@v3
+      - name: Build on Solaris
+        id: test
+        uses: vmactions/solaris-vm@v0
+        with:
+          envs: 'TARGET_ARCH EXTRA BUILD_OPTS TEST BASE'
+          usesh: true
+          copyback: false
+          mem: 2048
+          prepare: |
+            pkgutil -y -i socat
+            pkgutil -y -i git
 
-        run: |
-          echo '--------------------------------'
-          echo "      Solaris Environment"
-          echo '--------------------------------'
-          psrinfo -vp
-          echo
-          cat /etc/release
-          echo '--------------------------------'
-          git clone --depth 10 https://github.com/openwall/john.git ~/tmp
-          cd ~/tmp
+          run: |
+            echo '--------------------------------'
+            echo "      Solaris Environment"
+            echo '--------------------------------'
+            git clone --depth 10 https://github.com/openwall/john.git ~/tmp
+            cd ~/tmp
 
-          wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/main/tests/tests-ci.sh -O .ci/tests-ci.sh
-          chmod +x .ci/tests-ci.sh
+            wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/ci_controler.sh -O .ci/ci_controler.sh
+            chmod +x .ci/ci_controler.sh
 
-          .ci/tests-ci.sh $TARGET_ARCH BUILD
-          .ci/tests-ci.sh $TARGET_ARCH TEST
+            .ci/ci_controler.sh $TARGET_ARCH BUILD
+            .ci/ci_controler.sh $TARGET_ARCH TEST

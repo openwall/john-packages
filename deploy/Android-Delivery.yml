@@ -19,6 +19,7 @@
 ###############################################################################
 # Bitrise CI configuration
 # More info at https://github.com/openwall/john-packages
+# Bitrise validation conflicts with our linters, but the difference is basically spaces
 
 ---
 format_version: '11'
@@ -26,67 +27,67 @@ default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 project_type: other
 app:
   envs:
-  - default_apk_name: john-app.apk
-  - TARGET_ARCH: NIX
-  - EXTRA: full;extra
-  # BUILD_OPTS: --disable-native-tests --build=arm-linux-gnueabi
-  #   => FAILS: --build=aarch64-linux-gnueabi (pseudo_intrinsics.h:48:22: fatal error: arm_neon.h: No such file or directory)
-  - BASE: Android
+    - default_apk_name: john-app.apk
+    - TARGET_ARCH: NIX
+    - EXTRA: full;extra
+    # BUILD_OPTS: --disable-native-tests --build=arm-linux-gnueabi
+    #   => FAILS: --build=aarch64-linux-gnueabi (pseudo_intrinsics.h:48:22: fatal error: arm_neon.h: No such file or directory)
+    - BASE: Android
 
 workflows:
   deploy-ARM:
     envs:
-    - BUILD_OPTS: "--disable-native-tests --build=arm-linux-gnueabi"
+      - BUILD_OPTS: "--disable-native-tests --build=arm-linux-gnueabi"
     after_run:
-    - _deploy
+      - _deploy
 
   deploy-X86:
     envs:
-    - BUILD_OPTS: "--disable-native-tests"
+      - BUILD_OPTS: "--disable-native-tests"
     after_run:
-    - _deploy
+      - _deploy
 
   _deploy:
     steps:
-    - activate-ssh-key@4:
+      - activate-ssh-key@4:
         run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
-    - git-clone@8: {}
-    - script@1.2:
+      - git-clone@8: { }
+      - script@1.2:
         title: Checkout code
         inputs:
-        - content: |-
-            #!/bin/bash
-            set -ex
+          - content: |-
+              #!/bin/bash
+              set -ex
 
-            rm -rf tmp
-            git clone --depth 10 https://github.com/openwall/john.git tmp
-            cp -r tmp/. .
-    - script@1.2:
+              rm -rf tmp
+              git clone --depth 10 https://github.com/openwall/john.git tmp
+              cp -r tmp/. .
+      - script@1.2:
         title: Building JtR
         inputs:
-        - content: |-
-            #!/bin/bash
-            set -ex
+          - content: |-
+              #!/bin/bash
+              set -ex
 
-            echo "----------------------------------------------------------------------"
-            echo "Build options: $BUILD_OPTS"
-            echo "----------------------------------------------------------------------"
+              echo "----------------------------------------------------------------------"
+              echo "Build options: $BUILD_OPTS"
+              echo "----------------------------------------------------------------------"
 
-            wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/main/tests/tests-ci.sh -O .ci/tests-ci.sh
-            chmod +x .ci/tests-ci.sh
+              wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/ci_controler.sh -O .ci/ci_controler.sh
+              chmod +x .ci/ci_controler.sh
 
-            .ci/tests-ci.sh $TARGET_ARCH BUILD
-            .ci/tests-ci.sh $TARGET_ARCH TEST
+              .ci/ci_controler.sh $TARGET_ARCH BUILD
+              .ci/ci_controler.sh $TARGET_ARCH TEST
 
-            mkdir -p "${BITRISE_DEPLOY_DIR}/${default_apk_name}/"
-            mv README.md "${BITRISE_DEPLOY_DIR}/${default_apk_name}/"
-            mv run "${BITRISE_DEPLOY_DIR}/${default_apk_name}/run"
-            mv doc "${BITRISE_DEPLOY_DIR}/${default_apk_name}/doc"
-    - deploy-to-bitrise-io:
+              mkdir -p "${BITRISE_DEPLOY_DIR}/${default_apk_name}/"
+              mv README.md "${BITRISE_DEPLOY_DIR}/${default_apk_name}/"
+              mv run "${BITRISE_DEPLOY_DIR}/${default_apk_name}/run"
+              mv doc "${BITRISE_DEPLOY_DIR}/${default_apk_name}/doc"
+      - deploy-to-bitrise-io:
         run_if: ".IsCI"
         inputs:
-        - is_compress: 'true'
-        - deploy_path: "${BITRISE_DEPLOY_DIR}/${default_apk_name}"
+          - is_compress: 'true'
+          - deploy_path: "${BITRISE_DEPLOY_DIR}/${default_apk_name}"
 meta:
   bitrise.io:
     stack: linux-docker-android-20.04
