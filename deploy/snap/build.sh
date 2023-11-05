@@ -129,10 +129,8 @@ echo "---------------------------- BUILDING -----------------------------"
 
 if [[ "$arch" == "x86_64" ]]; then
     # x86_64 CPU (OMP and SIMD fallback)
-    do_configure "$X86_NO_OPENMP" --enable-simd=sse2   CPPFLAGS="-D_SNAP -D_BOXED" && do_build ../run/john-sse2
-    do_configure "$X86_REGULAR"   --enable-simd=sse2   CPPFLAGS="-D_SNAP -D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-sse2\\\"\"" && do_build ../run/john-sse2-omp
     do_configure "$X86_NO_OPENMP" --enable-simd=avx    CPPFLAGS="-D_SNAP -D_BOXED" && do_build ../run/john-avx
-    do_configure "$X86_REGULAR"   --enable-simd=avx    CPPFLAGS="-D_SNAP -D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-sse2-omp\\\"\"" && do_build ../run/john-avx-omp
+    do_configure "$X86_REGULAR"   --enable-simd=avx    CPPFLAGS="-D_SNAP -D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx\\\"\"" && do_build ../run/john-avx-omp
     do_configure "$X86_NO_OPENMP" --enable-simd=avx2   CPPFLAGS="-D_SNAP -D_BOXED" && do_build ../run/john-avx2
     do_configure "$X86_REGULAR"   --enable-simd=avx2   CPPFLAGS="-D_SNAP -D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx2\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx-omp\\\"\"" && do_build ../run/john-avx2-omp
     do_configure "$X86_NO_OPENMP" --enable-simd=avx512f  CPPFLAGS="-D_SNAP -D_BOXED" && do_build ../run/john-avx512f
