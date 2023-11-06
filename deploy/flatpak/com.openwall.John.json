@@ -63,7 +63,7 @@
                 {
                     "type": "file",
                     "url": "https://raw.githubusercontent.com/openwall/john-packages/main/tests/run_build.sh",
-                    "sha256": "06a1a477773a7d80131ca1e883efcedfa56af963caac1108090a84c49cc4b450"
+                    "sha256": "00a928cbd426eff8db25e623dda863b28c4e7daf2c79eee6aae7b47d7f1a55b8"
                 },
                 {
                     "type": "file",
