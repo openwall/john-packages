@@ -26,7 +26,7 @@ echo "$@"
 ids="avx-omp avx avx2-omp avx2
           avx512f-omp avx512f avx512bw-omp avx512bw
           ztex-omp ztex best
-          john-omp john-aarch64
+          omp aarch64
           "
 binaries="/john/run/john-avx512bw-omp /john/run/john-avx512f-omp /john/run/john-avx2-omp
           /john/run/john-avx-omp
@@ -41,7 +41,7 @@ fi
 
 if [[ "$requested" = 'avx-omp' || "$requested" = 'avx' || "$requested" = 'avx2-omp' || "$requested" = 'avx2' ]]; then
     exec "/john/run/john-$requested" "$@"
-elif [[ "$requested" = 'john-omp' || "$requested" = 'john-aarch64' ]]; then
+elif [[ "$requested" = 'omp' || "$requested" = 'aarch64' ]]; then
     exec "/john/run/john-$requested" "$@"
 elif [[ "$requested" = 'avx512f-omp'  || "$requested" = 'avx512f'  || "$requested" = 'avx512bw-omp'  || "$requested" = 'avx512bw' ]]; then
     exec "/john/run/john-$requested" "$@"

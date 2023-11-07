@@ -78,7 +78,7 @@ The available linux/amd64 binaries (their IDs are avx-omp, avx, etc) are:
 - /john/run/john-avx512bw-omp
 - /john/run/john-avx512bw
 
-The available linux/arm64 binaries (their IDs are john-omp and john-aarch64) are:
+The available linux/arm64 binaries (their IDs are omp and aarch64) are:
 
 - /john/run/john-omp (default binary)
 - /john/run/john-aarch64
