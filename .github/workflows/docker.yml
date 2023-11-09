@@ -77,6 +77,20 @@ jobs:
         with:
           egress-policy: audit
 
+      - name: Current date
+        id: date
+        run: echo "name=$(date -u)" >> "$GITHUB_OUTPUT"
+
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@96383f45573cb7f253c731d3b3ab81c87ef81934 # v5.0.0
+        with:
+          images: ${{ env.REPO }}:${{ github.event.inputs.tag }}
+          labels: |
+            maintainer="Claudio André (c) 2019-2023"
+            software="John the Ripper ${{ github.event.inputs.VERSION_NAME }}"
+            org.opencontainers.image.description="John the Ripper is an Open Source password security auditing and password recovery tool. See https://www.openwall.com/john/"
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3 # v3.0.0
 
@@ -85,10 +99,6 @@ jobs:
 
       - name: Check out the repo
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-
-      - name: Current date
-        id: date
-        run: echo "name=$(date -u)" >> "$GITHUB_OUTPUT"
 
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d # v3.0.0
@@ -107,12 +117,24 @@ jobs:
           build-args: |
             RELEASE="${{ github.event.inputs.release }}"
             COMMIT="${{ github.event.inputs.hash }}"
-            BUILD_DATE="${{ steps.date.outputs.name }}"
-            VERSION="${{ github.event.inputs.VERSION }}"
-            VERSION_NAME="${{ github.event.inputs.VERSION_NAME }}"
           tags: |
             ${{ env.REPO }}:${{ github.event.inputs.tag }}
             ${{ env.REPO }}:${{ github.event.inputs.tag }}_J${{ github.run_number }}
+          labels: |
+            ${{ steps.meta.outputs.labels }}
+          outputs: "type=image,name=target,\
+            annotation-index.maintainer=Claudio André (c) 2019-2023,\
+            annotation-index.software=John the Ripper ${{ github.event.inputs.VERSION_NAME }},\
+            annotation-index.org.opencontainers.image.authors=Claudio André <claudioandre.br at gmail com>,\
+            annotation-index.org.opencontainers.image.created=${{ steps.date.outputs.name }},\
+            annotation-index.org.opencontainers.image.description=John the Ripper is an Open Source password security auditing and password recovery tool. See https://www.openwall.com/john/,\
+            annotation-index.org.opencontainers.image.licenses=GPL-2.0,\
+            annotation-index.org.opencontainers.image.revision=bleeding,\
+            annotation-index.org.opencontainers.image.source=https://github.com/openwall/john-packages,\
+            annotation-index.org.opencontainers.image.title=John the Ripper CE Auditing Tool,\
+            annotation-index.org.opencontainers.image.url=https://github.com/openwall/john-packages.git,\
+            annotation-index.org.opencontainers.image.vendor=Openwall,\
+            annotation-index.org.opencontainers.image.version=${{ github.event.inputs.VERSION }}"
 
   provenance:
     if: ${{ github.event.inputs.push == 'true' }}

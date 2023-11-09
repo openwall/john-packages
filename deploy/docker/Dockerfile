@@ -35,31 +35,9 @@ ARG TYPE=ALL
 RUN ./build.sh "${TYPE}"
 
 # ==================================================================
-# Tagging
+# Build the final lean Docker image
 # ------------------------------------------------------------------
 FROM nvidia/cuda:12.3.0-base-ubuntu22.04@sha256:ab701cbe9784a586949674dac46a83cd4bed19944fbc9324619317be865ea678
-LABEL maintainer="Claudio André (c) 2019-2023"
-
-ARG VERSION_NAME
-LABEL software="John the Ripper ${VERSION_NAME}"
-
-LABEL org.opencontainers.image.revision="bleeding"
-
-ARG BUILD_DATE
-LABEL org.opencontainers.image.created="${BUILD_DATE}"
-
-ARG VERSION
-LABEL org.opencontainers.image.version="${VERSION}"
-
-LABEL org.opencontainers.image.source="https://github.com/openwall/john-packages"
-
-LABEL \
-    org.opencontainers.image.authors="Claudio André <claudioandre.br at gmail com>" \
-    org.opencontainers.image.url="https://github.com/openwall/john-packages.git" \
-    org.opencontainers.image.vendor="Openwall" \
-    org.opencontainers.image.licenses="GPL-2.0" \
-    org.opencontainers.image.title="John the Ripper CE Auditing Tool" \
-    org.opencontainers.image.description="John the Ripper is an Open Source password security auditing and password recovery tool. See https://www.openwall.com/john/"
 
 # ==================================================================
 # Runtime setup and libraries
