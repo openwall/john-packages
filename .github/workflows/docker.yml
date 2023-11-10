@@ -79,10 +79,12 @@ jobs:
       - name: Get data
         id: data
         run: |
-          echo "now=$(date -u)" >> "$GITHUB_OUTPUT"
-          echo "revision=$(git rev-parse --short=7 HEAD 2>/dev/null)" >> "$GITHUB_OUTPUT"
           #TODO: edit before release (JUMBO_RELEASE)
-          echo "version=1.9.$(date +%Y%m%d)" >> "$GITHUB_OUTPUT"
+          {
+            echo "now=$(date -u)"
+            echo "revision=$(git rev-parse --short=7 HEAD 2>/dev/null)"
+            echo "version=1.9.$(date +%Y%m%d)"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Docker meta
         id: meta
