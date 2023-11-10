@@ -35,10 +35,6 @@ on:
         required: false
         #TODO: edit before release (JUMBO_RELEASE)
         default: "39db7dd63e3fefb343c3dbb72eaa5c7599b6c298"
-      VERSION:
-        description: "The software version"
-        required: true
-        default: "1.9.02" #TODO: edit before release (JUMBO_RELEASE) 1.9.02304
       VERSION_NAME:
         description: "The software version name"
         required: true
@@ -85,6 +81,8 @@ jobs:
         run: |
           echo "now=$(date -u)" >> "$GITHUB_OUTPUT"
           echo "revision=$(git rev-parse --short=7 HEAD 2>/dev/null)" >> "$GITHUB_OUTPUT"
+          #TODO: edit before release (JUMBO_RELEASE)
+          echo "version=1.9.$(date +%Y%m%d)" >> "$GITHUB_OUTPUT"
 
       - name: Docker meta
         id: meta
@@ -122,6 +120,7 @@ jobs:
           tags: |
             ${{ env.REPO }}:${{ github.event.inputs.tag }}
             ${{ env.REPO }}:${{ github.event.inputs.tag }}_J${{ github.run_number }}
+            ${{ env.REPO }}:${{ github.event.inputs.tag }}_${{ steps.data.outputs.version }}
           labels: |
             ${{ steps.meta.outputs.labels }}
           outputs: "type=image,name=target,\
@@ -136,7 +135,7 @@ jobs:
             annotation-index.org.opencontainers.image.title=John the Ripper CE Auditing Tool,\
             annotation-index.org.opencontainers.image.url=https://github.com/openwall/john-packages.git,\
             annotation-index.org.opencontainers.image.vendor=Openwall,\
-            annotation-index.org.opencontainers.image.version=${{ github.event.inputs.VERSION }}"
+            annotation-index.org.opencontainers.image.version=${{ steps.data.outputs.version }}"
 
   provenance:
     if: ${{ github.event.inputs.push == 'true' }}
