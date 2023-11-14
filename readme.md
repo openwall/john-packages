@@ -107,6 +107,13 @@ follow these steps:
 
 ```powershell
  C:\john-the-ripper\run>john --list=build-info
+ [...]
+ Build: cygwin 64-bit x86_64 AVX512BW AC OMP OPENCL
+ SIMD: AVX512BW, interleaving: MD4:3 MD5:3 SHA1:1 SHA256:1 SHA512:1
+ [...]
+```
+
+```powershell
  C:\john-the-ripper\run>john --test --format=SHA512crypt
 ```
 
@@ -295,7 +302,12 @@ Install required Homebrew packages (if not already installed):
 Execute John the Ripper:
 
 ```bash
- run/john -list=build-info
+ $ run/john -list=build-info
+ [...]
+ Build: darwin22.6.0 64-bit arm ASIMD AC OMP OPENCL
+ SIMD: ASIMD, interleaving: MD4:2 MD5:2 SHA1:1 SHA256:1 SHA512:1
+ OMP fallback binary: john-arm64
+ [...]
 ```
 
 The highlights (👀):
