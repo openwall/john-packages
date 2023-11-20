@@ -40,7 +40,7 @@ This is the `john-packages` (itself) 0.9 release 'v0.9.0'. October 2023 (version
 
 ### Binaries Available
 
-All except the s390x binaries support SIMD.
+All except s390x and riscv64 binaries support SIMD.
 
 * Docker (for X86_64);
 * Flatpak;
