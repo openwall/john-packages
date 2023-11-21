@@ -71,6 +71,9 @@ SYSTEM_WIDE='--with-systemwide'
 X86_REGULAR="--disable-native-tests $SYSTEM_WIDE"
 X86_NO_OPENMP="--disable-native-tests $SYSTEM_WIDE --disable-openmp"
 
+if [[ "$arch" == "riscv64" ]]; then
+    SYSTEM_WIDE="--build=riscv64-unknown-linux-gnu $SYSTEM_WIDE"
+fi
 OTHER_REGULAR="$SYSTEM_WIDE"
 OTHER_NO_OPENMP="$SYSTEM_WIDE --disable-openmp"
 
