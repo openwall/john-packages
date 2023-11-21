@@ -44,6 +44,8 @@ if [[ -z "$MUTE_SYS_INFO" ]]; then
     if [[ "$HOST_OS" == "Darwin" ]]; then
         sw_vers || true
         echo '--------------------------------'
+        brew -v || true
+        echo '--------------------------------'
         sysctl -n machdep.cpu.brand_string || true
         echo '--------------------------------'
     fi
