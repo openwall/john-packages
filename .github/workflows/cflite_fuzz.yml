@@ -40,9 +40,14 @@ jobs:
           - address
 
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        with:
+          egress-policy: audit
+
       - name: Build Fuzzers (${{ matrix.sanitizer }})
         id: build
-        uses: google/clusterfuzzlite/actions/build_fuzzers@v1
+        uses: google/clusterfuzzlite/actions/build_fuzzers@884713a6c30a92e5e8544c39945cd7cb630abcd1 # v1
         with:
           language: c
           dry-run: true
@@ -51,7 +56,7 @@ jobs:
 
       - name: Run Fuzzers (${{ matrix.sanitizer }})
         id: run
-        uses: google/clusterfuzzlite/actions/run_fuzzers@v1
+        uses: google/clusterfuzzlite/actions/run_fuzzers@884713a6c30a92e5e8544c39945cd7cb630abcd1 # v1
         with:
           language: c
           dry-run: true

@@ -24,3 +24,8 @@ updates:
     directory: /deploy/docker
     schedule:
       interval: daily
+
+  - package-ecosystem: docker
+    directory: /.clusterfuzzlite
+    schedule:
+      interval: daily
