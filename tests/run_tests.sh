@@ -289,6 +289,8 @@ if [[ -z "${TEST##*SIMD*}" ]]; then
 fi
 
 if [[ -z "${TEST##*OpenCL-full*}" ]]; then
+    echo "---------------------------- OpenCL Devices ----------------------------"
+    "$JTR_BIN" --list=opencl-devices
     echo "--------------------------- OpenCL test full ---------------------------"
     "$JTR_BIN" -test-full=0 --format=opencl
     report "-test-full=0 --format=opencl"
