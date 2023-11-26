@@ -92,7 +92,7 @@ jobs:
         with:
           images: ${{ env.REPO }}:${{ github.event.inputs.tag }}
           labels: |
-            maintainer="Claudio André (c) 2019-2023"
+            org.opencontainers.image.authors="Claudio André <claudioandre.br at gmail com>"
             software="John the Ripper ${{ github.event.inputs.VERSION_NAME }}"
             org.opencontainers.image.description="John the Ripper is an Open Source password security auditing and password recovery tool. See https://www.openwall.com/john/"
 
@@ -126,7 +126,6 @@ jobs:
           labels: |
             ${{ steps.meta.outputs.labels }}
           outputs: "type=image,name=target,\
-            annotation-index.maintainer=Claudio André (c) 2019-2023,\
             annotation-index.software=John the Ripper ${{ github.event.inputs.VERSION_NAME }},\
             annotation-index.org.opencontainers.image.authors=Claudio André <claudioandre.br at gmail com>,\
             annotation-index.org.opencontainers.image.created=${{ steps.data.outputs.now }},\

@@ -16,9 +16,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     #/tmp/l_opencl_p_18.1.0.013/install.sh -s /tmp/l_opencl_p_18.1.0.013/silent.cfg \
     #
     # Clean up-
-    && apt-get autoremove -y \
-    && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get -y clean \
+    && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
 USER vscode
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]

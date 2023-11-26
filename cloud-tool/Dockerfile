@@ -21,8 +21,8 @@
 # More info at https://github.com/openwall/john-packages
 
 FROM ubuntu:latest@sha256:2b7412e6465c3c7fc5bb21d3e6f1917c167358449fecac8176c6e496e5c1f05f
-LABEL maintainer Claudio André (c) 2021-2023 1.0.Cloud Tools
-LABEL software automation for John the Ripper
+LABEL org.opencontainers.image.authors="Claudio André <claudioandre.br at gmail com>"
+LABEL description="IDE automation for John the Ripper (1.0.Cloud Tools)"
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update -qq && \
@@ -34,11 +34,10 @@ RUN apt-get update -qq && \
     apt-get install -y --no-install-recommends \
         terraform=* ansible=* \
         wget=* git=* nano=* \
-        && \
-    useradd -U -m usr && \
+    && useradd -U -m usr \
     # Clean the image
-    apt-get -y clean && \
-    rm -rf /var/lib/apt/lists
+    && apt-get -y clean \
+    && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
 USER usr
 WORKDIR /host/workdir
