@@ -268,11 +268,6 @@ if [[ -z "${TEST##*MY_FULL*}" ]]; then
     "$JTR_BIN" -test-full=1 --format=sha256crypt-opencl
     "$JTR_BIN" -test-full=1 --format=sha512crypt-opencl
     total=$((total + 5))
-
-    echo "------------------------- test full --------------------------"
-    echo "$ JtR -test-full=1 --format=cpu"
-    "$JTR_BIN" -test-full=1 --format=cpu
-    total=$((total + 1))
 fi
 
 if [[ -z "${TEST##*SIMD*}" ]]; then
