@@ -33,7 +33,7 @@ on:
 
 jobs:
   test:
-    runs-on: macos-12
+    runs-on: ubuntu-latest
     name: Solaris 11
     env:
       TARGET_ARCH: "SOLARIS"
