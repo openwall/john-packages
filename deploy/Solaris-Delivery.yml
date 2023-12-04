@@ -51,7 +51,6 @@ jobs:
           envs: 'TARGET_ARCH EXTRA BUILD_OPTS TEST BASE'
           usesh: true
           copyback: false
-          mem: 2048
           prepare: |
             pkgutil -y -i socat
             pkgutil -y -i git
