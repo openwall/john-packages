@@ -81,7 +81,7 @@ apt-get update -qq
 export DEBIAN_FRONTEND="noninteractive"
 apt-get install -y --no-install-recommends \
     build-essential=* libssl-dev=* zlib1g-dev=* yasm=* libgmp-dev=* libpcap-dev=* pkg-config=* \
-    libbz2-dev=* wget=* git=* libusb-1.0-0-dev=* ca-certificates=*
+    libbz2-dev=* wget=* git=* libusb-1.0-0-dev=* ca-certificates=* curl=*
 
 if [ "$type" == "ALL" ] || [ "$type" == "GPU"  ] ; then
     install_nvidia_opencl
