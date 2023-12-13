@@ -305,15 +305,13 @@ if [[ -z "${TEST##*OpenCL-crack*}" ]]; then
     "$JTR_BIN" -form=SHA512crypt-opencl alltests.in -w:solucao
     report "-form=SHA512crypt-opencl alltests.in -w:solucao"
 
-    if [[ "$SYSTEM_PHASENAME" != "intel_opencl" ]]; then
-        "$JTR_BIN" -list=format-tests | cut -f3 > alltests.in
-        "$JTR_BIN" -form=SHA256crypt-opencl alltests.in --max-len=2 --progress=30
-        report "-form=SHA256crypt-opencl alltests.in --max-len=2 --progress=30"
+    "$JTR_BIN" -list=format-tests | cut -f3 > alltests.in
+    "$JTR_BIN" -form=SHA256crypt-opencl alltests.in --max-len=2 --progress=30
+    report "-form=SHA256crypt-opencl alltests.in --max-len=2 --progress=30"
 
-        "$JTR_BIN" -list=format-tests --format=SHA256crypt | cut -f4 | head > solucao
-        "$JTR_BIN" -form=SHA256crypt-opencl alltests.in -w:solucao
-        report "-form=SHA256crypt-opencl alltests.in -w:solucao"
-    fi
+    "$JTR_BIN" -list=format-tests --format=SHA256crypt | cut -f4 | head > solucao
+    "$JTR_BIN" -form=SHA256crypt-opencl alltests.in -w:solucao
+    report "-form=SHA256crypt-opencl alltests.in -w:solucao"
 
     "$JTR_BIN" -list=format-tests | cut -f3 > alltests.in
     "$JTR_BIN" -list=format-tests | cut -f4 > solucao
