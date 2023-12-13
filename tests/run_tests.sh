@@ -64,12 +64,18 @@ fi
 # Variable initialization
 total=1
 error=0
+HOST_OS=$(uname)
 
 echo "---------------------------- TESTING -----------------------------"
 echo "Binary: $JTR_BIN"
 echo "=> $JTR_BIN --list=build-info"
 
 "$JTR_BIN" --list=build-info
+
+if [[ "$HOST_OS" == "Darwin" || -z "${TEST##*OpenCL-full*}" ]]; then
+    echo "---------------------------- OpenCL Devices ----------------------------"
+    "$JTR_BIN" --list=opencl-devices
+fi
 
 # shellcheck disable=SC2016
 {
@@ -284,8 +290,6 @@ if [[ -z "${TEST##*SIMD*}" ]]; then
 fi
 
 if [[ -z "${TEST##*OpenCL-full*}" ]]; then
-    echo "---------------------------- OpenCL Devices ----------------------------"
-    "$JTR_BIN" --list=opencl-devices
     echo "--------------------------- OpenCL test full ---------------------------"
     "$JTR_BIN" -test-full=0 --format=opencl
     report "-test-full=0 --format=opencl"
