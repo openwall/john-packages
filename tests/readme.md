@@ -22,7 +22,7 @@ using:
 - Solaris:
   - SunOS Release 5.11 Version 11.4.0.15.0 64-bit;
 - Linux:
-  - CentOS 7 and Fedora 38;
+  - Red Hat Enterprise Linux 8 and Fedora 39;
   - Ubuntu 16.04 (Intel OpenCL for CPUs), Ubuntu 22.04, and Ubuntu devel (the under development version);
   - flatpak (runtime: org.freedesktop.Platform 23.08);
   - snap (runtime: core22);
@@ -34,9 +34,9 @@ using:
 ### Toolchains
 
 - Compilers:
-  - gcc 4.8 (CentOS), gcc 5.4 (Ubuntu 16), gcc 7.4 (Win 2016), gcc 9.4 (Android);
+  - gcc 5.4 (Ubuntu 16), gcc 7.4 (Win 2016), gcc 8.5 (Red Hat Enterprise Linux 8), gcc 9.4 (Android);
   - gcc 11.4 (Ubuntu 22, Snap), gcc 11.4 (Win 2019/2022);
-  - gcc 12.2 (Flatpak, fuzzing), gcc 13.2 (Ubuntu Dev, Fedora 38);
+  - gcc 12.2 (Flatpak, fuzzing), gcc 13.2 (Ubuntu Dev, Fedora 39);
   - Solaris gcc (GCC) 7.3.0;
   - FreeBSD clang version 13.0.0;
   - FreeBSD clang version: 16.0.6;
