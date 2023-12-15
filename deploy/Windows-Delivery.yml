@@ -145,7 +145,7 @@ steps:
         # Required dlls (Windows 10 64 bits)
         xcopy $cygwinFolder\cygwin1.dll         ..\run\
         xcopy $cygwinFolder\cygbz2-1.dll        ..\run\
-        xcopy $cygwinFolder\cygcrypto-1.1.dll   ..\run\
+        xcopy $cygwinFolder\cygcrypto-3.dll     ..\run\
         xcopy $cygwinFolder\cyggomp-1.dll       ..\run\
         xcopy $cygwinFolder\cyggmp-10.dll       ..\run\
         xcopy $cygwinFolder\cygz.dll            ..\run\
