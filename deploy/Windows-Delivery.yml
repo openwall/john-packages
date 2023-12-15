@@ -161,7 +161,7 @@ steps:
       displayName: 'Build JtR'
 
     - powershell: |
-        "$env:BUILD_BUILDID" | Out-File -FilePath C:\Build._ID -Encoding ASCII -Append
+        "$env:BUILD_BUILDID" | Out-File -FilePath C:\Build._ID -NoNewline -Encoding ASCII -Append
 
       displayName: 'Save the Buid ID value'
 
@@ -233,7 +233,6 @@ steps:
         if ($Zipfile = Get-ChildItem "c:\win_x$env:Bits.7z") {
             # Print files hashes
             Get-FileHash "c:\win_x$env:Bits.7z"
-            Get-FileHash "c:\optional.7z"
         }
 
         Write-Output "**************************************************************************"
