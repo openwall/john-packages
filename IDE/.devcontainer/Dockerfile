@@ -6,9 +6,9 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:jammy@sha256:58455121a1914fc23f
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
            build-essential=* libssl-dev=* zlib1g-dev=* libgmp-dev=* libpcap-dev=* libbz2-dev=* \
-           yasm=* pkg-config=* ocl-icd-opencl-dev=* opencl-headers=* \
+           yasm=* pkg-config=* \
            gdb=* cpio=* pre-commit=* \
-           libpocl-dev=* ocl-icd-libopencl1=* pocl-opencl-icd=* \
+           libpocl-dev=* ocl-icd-opencl-dev=* pocl-opencl-icd=* \
            golang=* shellcheck=* \
     #wget -q http://registrationcenter-download.intel.com/akdlm/irc_nas/vcp/13793/l_opencl_p_18.1.0.013.tgz -O /tmp/opencl_runtime.tgz && \
     #tar -xzf /tmp/opencl_runtime.tgz -C /tmp && \

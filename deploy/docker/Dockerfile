@@ -54,7 +54,7 @@ RUN ln -s /usr/local/bin/docker-entrypoint.sh . && \
     useradd -U -m JtR && \
     apt-get update -qq && \
     export DEBIAN_FRONTEND="noninteractive" && \
-    apt-get install -y --no-install-recommends libssl3=3.0* libgomp1=12.3* ocl-icd-opencl-dev=2.2* \
+    apt-get install -y --no-install-recommends libssl3=3.0* libgomp1=12.3* ocl-icd-libopencl1=2.2* \
 # ==================================================================
 # Clean up the image (shrink the Docker image)
 # ------------------------------------------------------------------

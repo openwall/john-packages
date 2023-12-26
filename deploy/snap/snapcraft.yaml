@@ -123,9 +123,7 @@ parts:
       - on amd64:
         - libpocl-dev
         - ocl-icd-opencl-dev
-        - ocl-icd-libopencl1
         - pocl-opencl-icd
-        - opencl-headers
 
     organize:
       ../build/run/: run/
