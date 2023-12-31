@@ -64,7 +64,7 @@ export TEST
 export JTR_CL
 
 # Build options (system wide, disable checks, etc.)
-SYSTEM_WIDE='--with-systemwide'
+SYSTEM_WIDE='--with-systemwide --disable-opencl'
 X86_REGULAR="--disable-native-tests $SYSTEM_WIDE"
 X86_NO_OPENMP="--disable-native-tests $SYSTEM_WIDE --disable-openmp"
 
