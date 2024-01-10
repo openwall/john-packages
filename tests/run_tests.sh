@@ -255,11 +255,11 @@ if [[ -z "${TEST##*MY_INTERNAL*}" ]]; then
     echo "$ JtR --fuzz @@ "
 
     # Check if all formats passes self-test
-    "$JTR_BIN" --fuzz --format=raw-sha256-opencl
-    "$JTR_BIN" --fuzz --format=raw-sha512-opencl
-    "$JTR_BIN" --fuzz --format=xsha512-opencl
-    "$JTR_BIN" --fuzz --format=sha256crypt-opencl
-    "$JTR_BIN" --fuzz --format=sha512crypt-opencl
+    "$JTR_BIN" --fuzz=65535 --format=raw-sha256-opencl
+    "$JTR_BIN" --fuzz=65535 --format=raw-sha512-opencl
+    "$JTR_BIN" --fuzz=65535 --format=xsha512-opencl
+    "$JTR_BIN" --fuzz=65535 --format=sha256crypt-opencl
+    "$JTR_BIN" --fuzz=65535 --format=sha512crypt-opencl
     total=$((total + 5))
 fi
 
