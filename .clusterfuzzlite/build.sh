@@ -24,9 +24,22 @@
 
 cd /upstream/src || exit 1
 
-./configure --enable-asan --enable-ubsan --enable-fuzz
+# Asan
+./configure --enable-asan
 make -sj4
 
 cp ../run/john "$OUT"/
 
+echo "------------------------- ASAN fuzzing --------------------------"
+echo "$ JtR ASAN --test=0"
+../run/john --test=0
+
+# Ubsan
+make -sj4 distclean
+
+./configure --enable-ubsan
+make -sj4
+
+echo "------------------------- UBSAN fuzzing --------------------------"
+echo "$ JtR UBSAN --test=0"
 ../run/john --test=0
