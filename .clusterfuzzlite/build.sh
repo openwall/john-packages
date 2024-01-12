@@ -43,3 +43,11 @@ make -sj4
 echo "------------------------- UBSAN fuzzing --------------------------"
 echo "$ JtR UBSAN --test=0"
 ../run/john --test=0
+
+#                                   ##########
+# This task targets libFuzzer fuzz, but libFuzzer is broken upstream;
+# To use libFuzzer properly, we should do something like this (for each fuzz target).
+#
+# ./configure --enable-libfuzzer
+# make clean && make wpapcap2john # && ./wpapcap2john => just copy to $OUT
+# => the execution is done by the action itself.
