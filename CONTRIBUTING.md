@@ -99,8 +99,8 @@ We are going to do our best to follow [these advices.](https://phauer.com/2018/c
 
 ## Merging procedures
 
-We prefer fast-forward merges, and in the case of GitHub, this requires the CLI. But this only makes sense
-for signed (and verified) commits, otherwise the approver should use the GitHub GUI.
+We prefer signed (and verified) commits and fast-forward merges. On GitHub this requires the CLI, however,
+for now, **there are no restrictions** on using merges through the GitHub GUI.
 
 The author and the approver should run these commands. The PR on GitHub will close automatically.
 
@@ -113,9 +113,37 @@ Author:
 # commit using -S and --signoff
 ```
 
-PR approver:
+PR approver and committer:
 ```bash
-# Using upstream repository and an up-to-date local copy of the PR branch.
+# If the commit is not signed, the reviewer should sign and add himself (or herself)
+# indicating the activity carried out, using something like this in the commit message:
+Reviewed-by: Your Name <your.email@example.com>
+Signed-off-by: Your Name <your.email@example.com>
+Tested-by: Your Name <your.email@example.com>
+
+# You can add the text manually or use git to add it for you:
+
+# First of all:
+  # Add this two alias to your git config file:
+trailer-add = "!f() { GIT_EDITOR=\"git interpret-trailers --trailer='$1: $2' --in-place\" git commit --amend; }; f"
+trailer-add-me = "!f() { git trailer-add \"$1\" \"$(git config user.name) <$(git config user.email)>\"; }; f"
+
+# Or, using the git CLI, run:
+git config --global alias.trailer-add    '!f() { GIT_EDITOR='\"'git interpret-trailers --trailer='\''$1: $2'\'' --in-place'\"' git commit --amend; }; f'
+git config --global alias.trailer-add-me '!f() { git trailer-add '\"'$1'\"' '\"'$(git config user.name) <$(git config user.email)>'\"'; }; f'
+
+# Then, use git to add it for you:
+  # The 'X' is the number of commits you are reviewing. For a single commit, use `HEAD~1`.
+git rebase -x 'git trailer-add-me "Acked-by"' HEAD~X
+git rebase -x 'git trailer-add-me "Co-authored-by"' HEAD~X
+git rebase -x 'git trailer-add-me "Mentored-by"' HEAD~X
+git rebase -x 'git trailer-add-me "Reviewed-by"' HEAD~X
+git rebase -x 'git trailer-add-me "Signed-off-by"' HEAD~X
+git rebase -x 'git trailer-add-me "Tested-by"' HEAD~X
+
+# Finally, using upstream repository and an up-to-date local copy of the PR branch.
+  # IMPORTANT NOTE: update the remote branch before merging it if you changed anything locally.
+  # To do so, run a `git push [...] -f`
 git checkout main
 git pull --rebase origin main
 git merge --ff-only <branch>
