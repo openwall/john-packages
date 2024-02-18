@@ -25,6 +25,9 @@ name: ClusterFuzzLite fuzzing
 on:
   schedule:
     - cron: '0 4 * * MON'
+  push:
+    branches:
+      - "fuzz"
 
 permissions: read-all
 jobs:
@@ -38,6 +41,7 @@ jobs:
       matrix:
         sanitizer:
           - address
+          - undefined
 
     steps:
       - name: Harden Runner
@@ -51,6 +55,7 @@ jobs:
             github.com:443
             security.ubuntu.com:80
             storage.googleapis.com:443
+            raw.githubusercontent.com:443
 
       - name: Build Fuzzers (${{ matrix.sanitizer }})
         id: build

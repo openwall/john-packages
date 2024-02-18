@@ -24,29 +24,35 @@
 
 cd /upstream/src || exit 1
 
-# Asan
-./configure --enable-asan
-make -sj4
+wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/show_info.sh -O show_info.sh
+# shellcheck source=/dev/null
+source show_info.sh
 
-cp ../run/john "$OUT"/
+if [[ "$SANITIZER" == "address" ]]; then
+    # Asan
+    ./configure --enable-asan
+    make -sj4
 
-echo "------------------ Disable problematic formats -------------------"
-echo '[Local:Disabled:Formats]' >> ../run/john-local.conf
-echo 'crypt = Y' >> ../run/john-local.conf
+    cp ../run/john "$OUT"/
 
-echo "-------------------------- ASAN fuzzing --------------------------"
-echo "$ JtR ASAN --test=0"
-../run/john --test=0
+    echo "------------------ Disable problematic formats -------------------"
+    echo '[Local:Disabled:Formats]' >> ../run/john-local.conf
+    echo 'crypt = Y' >> ../run/john-local.conf
 
-# Ubsan
-make -sj4 distclean
+    echo "-------------------------- ASAN fuzzing --------------------------"
+    echo "$ JtR ASAN --test=0"
+    ../run/john --test=0
+fi
 
-./configure --enable-ubsan
-make -sj4
+if [[ "$SANITIZER" == "undefined" ]]; then
+    # Ubsan
+    ./configure --enable-ubsan
+    make -sj4
 
-echo "------------------------- UBSAN fuzzing --------------------------"
-echo "$ JtR UBSAN --test=0"
-../run/john --test=0
+    echo "------------------------- UBSAN fuzzing --------------------------"
+    echo "$ JtR UBSAN --test=0"
+    ../run/john --test=0
+fi
 
 #                                   ##########
 # This task targets libFuzzer fuzz, but libFuzzer is broken upstream;

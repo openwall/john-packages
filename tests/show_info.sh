@@ -22,9 +22,9 @@
 # Script to show information about the build environment
 # More info at https://github.com/openwall/john-packages
 
-if [[ -z "$MUTE_SYS_INFO" ]]; then
+if [[ -z "${MUTE_SYS_INFO-}" ]]; then
 
-    if [[ -n "$TRAVIS_COMPILER" ]]; then
+    if [[ -n "${TRAVIS_COMPILER-}" ]]; then
         echo -en 'travis_fold:start:build_environment\r'
     fi
     echo 'Build system information'
@@ -62,19 +62,19 @@ if [[ -z "$MUTE_SYS_INFO" ]]; then
     env || true
     echo '--------------------------------'
 
-    if [[ -n "$TRAVIS_COMPILER" ]]; then
+    if [[ -n "${TRAVIS_COMPILER-}" ]]; then
         echo -en 'travis_fold:end:build_environment\r'
     fi
 
-    if [[ -n "$CCO" ]]; then
+    if [[ -n "${CCO-}" ]]; then
         TMP_CC="$CCO"
-    elif [[ -n "$CC" ]]; then
+    elif [[ -n "${CC-}" ]]; then
         TMP_CC="$CC"
     else
         TMP_CC="gcc"
     fi
 
-    if [[ -n "$TRAVIS_COMPILER" ]]; then
+    if [[ -n "${TRAVIS_COMPILER-}" ]]; then
         echo -en 'travis_fold:start:compiler_info\r'
     fi
     echo 'Compiler information'
@@ -87,12 +87,12 @@ if [[ -z "$MUTE_SYS_INFO" ]]; then
         echo '--------------------------------'
     fi
 
-    if [[ -n "$TRAVIS_COMPILER" ]]; then
+    if [[ -n "${TRAVIS_COMPILER-}" ]]; then
         echo -en 'travis_fold:end:compiler_info\r'
     fi
 fi
 
 echo '------ Task ------'
-echo "Running on: $BASE"
-echo "Doing: $TASK_RUNNING"
+echo "Running on: ${BASE-unknown}"
+echo "Doing: ${TASK_RUNNING-unknown}"
 echo '--------------------------------'
