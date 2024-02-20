@@ -24,12 +24,7 @@
 
 function save_build_info() {
     (
-    cd .. || exit 1
-
-    # Get the script that computes the package version
-    chmod +x package_version.sh
-
-    cat <<-EOF > run/Defaults
+    cat <<-EOF > ../run/Defaults
 #   File that lists how the build (binaries) were made
 [Build Configuration]
 System Wide Build=Yes
@@ -37,11 +32,10 @@ Architecture="$(uname -m)"
 OpenMP, OpenCL=No
 Optional Libraries=Yes
 Regex, OpenMPI, Experimental Code, ZTEX=No
-Version="$(./package_version.sh)"
+Version="$1"
 EOF
 
-    rm -f package_version.sh
-    cat run/Defaults
+    cat ../run/Defaults
     )
 }
 
@@ -50,8 +44,6 @@ function clean_image() {
     cd .. || exit 1
     # shellcheck source=/dev/null
     source clean_package.sh
-
-    rm -f clean_package.sh
     )
 }
 
@@ -82,7 +74,9 @@ source ../run_build.sh
 if [[ -z "$TASK" ]]; then
     # The script that computes the package version
     # shellcheck source=/dev/null
-    source ../package_version.sh
+    chmod +x ../package_version.sh
+    Version="$(../package_version.sh)"
+    echo "$Version"
 
     echo ""
     echo "---------------------------- BUILDING -----------------------------"
@@ -125,5 +119,5 @@ elif [[ "$TASK" == "test" ]]; then
     # shellcheck source=/dev/null
     source ../run_tests.sh
 fi
-save_build_info
+save_build_info "$Version"
 clean_image
