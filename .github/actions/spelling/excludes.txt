@@ -1,0 +1,14 @@
+# Ignore 'Releases' directory (it contains output logs only)
+(?:^|/)Releases/
+(?:^|/).github/actions/spelling
+
+^\Qcloud-tool/hashes.txt\E$
+^\Qdeploy/metadata/128.png\E$
+^\Qdeploy/metadata/64.png\E$
+^\Qdeploy/metadata/build-info.png\E$
+^\Qdeploy/metadata/com.openwall.John.png\E$
+^\Qdeploy/metadata/help.png\E$
+^\Qdocs/deployment.png\E$
+^\QIDE/Debugging-JtR-Using-IDE.png\E$
+^\QIDE/OpenCL-JtR-detection.png\E$
+^\Qtests/CI-workflow.pdf\E$
