@@ -80,7 +80,7 @@
           <location>https://github.com/openwall/john-packages/releases/download/1.9.0-jumbo-1/john.flatpak.zip</location>
         </artifact>
         <artifact type="binary" platform="flatpak">
-          <location>https://flathub.org/apps/detais/com.openwall.John</location>
+          <location>https://flathub.org/apps/details/com.openwall.John</location>
         </artifact>
         <artifact type="binary" platform="snap">
           <location>https://snapcraft.io/john-the-ripper</location>

@@ -43,5 +43,5 @@ echo "$ID$git_tag"
 # Rolling example
 # roll+39db7dd
 
-# Develepment example (post Jumbo 2)
+# Development example (post Jumbo 2)
 # 1.9J2+c9825e6

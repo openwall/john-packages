@@ -40,7 +40,7 @@ aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 ### Adjust it to your use case
 You need to open and edit the file `variables.tf`.
 
-1. Find your public IP adress using, for instance, [https://www.myip.com/](https://www.myip.com/).
+1. Find your public IP address using, for instance, [https://www.myip.com/](https://www.myip.com/).
    Update the `cidr_blocks inside` session `variable "ingress_data"` in `variable.tf`.
 2. You can also make adjustments to `variable "regions_list"`.
 

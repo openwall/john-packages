@@ -156,7 +156,7 @@ variable "owner" {
 
 variable "customer" {
   type    = string
-  default = "Custormer or Project Name"
+  default = "Customer or Project Name"
 }
 
 variable "confidentiality" {

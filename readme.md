@@ -85,7 +85,7 @@ Click on the link to learn more about our [Continuous Integration and Continuous
 
 [Snap](https://snapcraft.io/) and [Flatpak](https://flatpak.org/) are cool new ways
 of distributing Linux applications among a wide range of different distros. They
-are technologies to deploy applications in a secure, sandboxed and containerised way.
+are technologies to deploy applications in a secure, sandboxed and containerized way.
 
 A [Docker](https://www.docker.com/) image is a read-only template used to execute code in a Docker container. An image is an immutable file that contains the binaries, configuration files, libraries, dependencies, tools, and other files needed for John the Ripper application to run.
 
@@ -154,7 +154,7 @@ You avail the best SIMD instructions at one's disposal without any OpenMP stuff.
  PS C:\john-the-ripper\run> .\john --list=build-info
 ```
 
-### Acessing OpenCL on Windows
+### Accessing OpenCL on Windows
 
 Some adjustments may be necessary to allow John the Ripper detect your GPU
 hardware. If you are facing problems, please read:
@@ -250,7 +250,7 @@ You avail the best SIMD instructions at one's disposal without any OpenMP stuff.
  OMP_NUM_THREADS=1 john --list=build-info
 ```
 
-### Acessing OpenCL on Snap
+### Accessing OpenCL on Snap
 
 As noted at [https://forum.snapcraft.io/t/snaps-and-opencl/8509/17](https://forum.snapcraft.io/t/snaps-and-opencl/8509/17), the use of
 OpenCL by snaps is a problem. Support for NVIDIA cards is under development.
@@ -406,7 +406,7 @@ To use it:
 Run John the Ripper and check if it is working:
 
 ```bash
- docker run ghcr.io/openwall/john # => uses the best SIMD available, tag 'latest' can be ommited
+ docker run ghcr.io/openwall/john # => uses the best SIMD available, tag 'latest' can be omitted
  docker run ghcr.io/openwall/john:rolling # => uses the latest rolling release
  docker run ghcr.io/openwall/john:latest best # => uses the best SIMD available
 ```

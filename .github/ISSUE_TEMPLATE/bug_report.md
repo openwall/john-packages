@@ -25,7 +25,7 @@ Steps to reproduce the behavior:
 
 If applicable, add the full command line and, if possible, a demo file or a hash to reproduce the bug.
 
-**4. Environement (please complete the following information):**
+**4. Environment (please complete the following information):**
  - OS: [e.g. Windows 10]
  - Version [e.g. 22H2 + CUDA 10 + restarted to test (all new libs are loaded)]
  - The output of `./john --list=build-info`

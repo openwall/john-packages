@@ -163,7 +163,7 @@ steps:
     - powershell: |
         "$env:BUILD_BUILDID" | Out-File -FilePath C:\Build._ID -NoNewline -Encoding ASCII -Append
 
-      displayName: 'Save the Buid ID value'
+      displayName: 'Save the Build ID value'
 
     - script: |
         powershell -command 'Write-Host "---------------------------------------------------------"'

@@ -42,18 +42,18 @@ macOS_task:
     - git clone --depth 10 https://github.com/openwall/john.git ~/tmp
     - cp -r ~/tmp/. .
 
-    - wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/ci_controler.sh -O .ci/ci_controler.sh
-    - chmod +x .ci/ci_controler.sh
-    - .ci/ci_controler.sh "$TARGET_ARCH" INFO
+    - wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/ci_controller.sh -O .ci/ci_controller.sh
+    - chmod +x .ci/ci_controller.sh
+    - .ci/ci_controller.sh "$TARGET_ARCH" INFO
     - echo  "$CIRRUS_TASK_ID" > Build._ID
 
   build_script:
-    - .ci/ci_controler.sh "$TARGET_ARCH" BUILD
+    - .ci/ci_controller.sh "$TARGET_ARCH" BUILD
 
     # Format crash on ARM
     - echo '[Local:Disabled:Formats]' >> run/john-local.conf
     - echo 'SunMD5 = Y' >> run/john-local.conf
-    - .ci/ci_controler.sh "$TARGET_ARCH" TEST
+    - .ci/ci_controller.sh "$TARGET_ARCH" TEST
 
   package_script:
     - wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh -O .ci/clean_package.sh

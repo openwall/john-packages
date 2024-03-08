@@ -7,7 +7,7 @@ This is the `john-packages` (itself) 0.9 release 'v0.9.0'. October 2023 (version
 ### Breaking Changes
 
 - Due to changes in Cygwin, plus OS and hardware unavailability in common cloud build environments,
-  we deprecate 32 bits architetures.
+  we deprecate 32 bits architectures.
   - For now, Canonical snap packages for armhf can still be created.
 - Intel-based macOS resources are sunsetting everywhere.
   - Probably the rolling-2310 will be the last release for this architecture.
