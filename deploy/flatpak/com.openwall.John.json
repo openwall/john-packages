@@ -53,7 +53,7 @@
                 {
                     "type": "file",
                     "url": "https://raw.githubusercontent.com/openwall/john-packages/release/tests/package_version.sh",
-                    "sha256": "b05ee923655f8597fe5c4266b85e450ba6cea4bf0b1922e33742032faeb6e8ed"
+                    "sha256": "b5fa2248661fd39d9075585077111b285cc805ac10bc3157880d270951e007a4"
                 },
                 {
                     "type": "file",
