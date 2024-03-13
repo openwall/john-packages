@@ -115,7 +115,7 @@ if [[ -z "${TEST##*extra*}" ]]; then
     if [[ -z "$SNAP_REVISION" ]]; then
         #   UnicodeDecodeError: 'utf-8' codec can't decode byte 0x9a in position 30: invalid start byte
         echo "====> mask T3 A: 2 lines, at the end, encoding"
-        echo müller | iconv -f UTF-8 -t cp850 | "$JTR_BIN" -inp=cp850 -stdout -stdin -mask='?W[01]'
+        echo müller | iconv -f UTF-8 -t cp850 | "$JTR_BIN" --input-encoding=cp850 -stdout -stdin --mask='?W[01]'
 
         #   UnicodeDecodeError: 'utf-8' codec can't decode byte 0x94 in position 2: invalid start byte
         echo "====> mask T3 B: 3 lines, encoding"
@@ -132,14 +132,14 @@ if [[ -z "${TEST##*extra*}" ]]; then
     "$JTR_BIN" -test-full=0 --format=sha256crypt
     report "-test-full=0 --format=sha256crypt"
     echo "====> T6.0:"
-    "$JTR_BIN" -test=3 -form='dynamic=md5(sha1($s).md5($p))'
-    report '-test=3 -form="dynamic=md5(sha1($s).md5($p))"'
+    "$JTR_BIN" -test=3 --format='dynamic=md5(sha1($s).md5($p))'
+    report '-test=3 --format="dynamic=md5(sha1($s).md5($p))"'
     echo "====> T6.1:"
-    "$JTR_BIN" -test=3 -form='dynamic=md5(sha1($s.$p).md5($p))'
-    report '-test=3 -form="dynamic=md5(sha1($s.$p).md5($p))"'
+    "$JTR_BIN" -test=3 --format='dynamic=md5(sha1($s.$p).md5($p))'
+    report '-test=3 --format="dynamic=md5(sha1($s.$p).md5($p))"'
     echo "====> T6.2:"
-    "$JTR_BIN" -test=3 -form='dynamic=md5($p)'
-    report '-test=3 -form="dynamic=md5($p)"'
+    "$JTR_BIN" -test=3 --format='dynamic=md5($p)'
+    report '-test=3 --format="dynamic=md5($p)"'
     echo
     }
 
@@ -180,13 +180,13 @@ fi
 
 if [[ -z "${TEST##*;crack;*}" ]]; then
     echo "--------------------------- real cracking ---------------------------"
-    "$JTR_BIN" -list=format-tests | cut -f3 > alltests.in
-    "$JTR_BIN" -form=SHA512crypt alltests.in --max-len=2 --progress=30
-    report "-form=SHA512crypt alltests.in --max-len=2 --progress=30"
+    "$JTR_BIN" -list=format-tests | cut -f3 > allTests.in
+    "$JTR_BIN" --format=SHA512crypt allTests.in --max-len=2 --progress=30
+    report "--format=SHA512crypt allTests.in --max-len=2 --progress=30"
 
     "$JTR_BIN" -list=format-tests --format=sha512crypt | cut -f4 | head > solucao
-    "$JTR_BIN" -form=SHA512crypt alltests.in -w:solucao
-    report "-form=SHA512crypt alltests.in -w:solucao"
+    "$JTR_BIN" --format=SHA512crypt allTests.in -w:solucao
+    report "--format=SHA512crypt allTests.in -w:solucao"
 
     "$JTR_BIN" --incremental=digits --mask='?w?d?d?d' --min-len=8 --max-len=8 --stdout | head
     "$JTR_BIN" --incremental=digits --mask='?w?d?d?d' --min-len=4 --max-len=5 --stdout | head
@@ -213,12 +213,12 @@ if [[ -z "${TEST##*AFL_FUZZ*}" ]]; then
 
     #echo core >/proc/sys/kernel/core_pattern
 
-    "$JTR_BIN" -form:raw-sha256  --list=format-tests 2> /dev/null | cut -f3 | sed -n '11p' 1> in/test_hash1
-    "$JTR_BIN" -form:raw-sha256  --list=format-tests 2> /dev/null | cut -f3 | sed -n '2p'  1> in/test_hash2
-    "$JTR_BIN" -form:raw-sha512  --list=format-tests 2> /dev/null | cut -f3 | sed -n '2p'  1> in/test_hash3
-    "$JTR_BIN" -form:Xsha512     --list=format-tests 2> /dev/null | cut -f3 | sed -n '2p'  1> in/test_hash4
-    "$JTR_BIN" -form:sha256crypt --list=format-tests 2> /dev/null | cut -f3 | sed -n '3p'  1> in/test_hash5
-    "$JTR_BIN" -form:sha512crypt --list=format-tests 2> /dev/null | cut -f3 | sed -n '3p'  1> in/test_hash6
+    "$JTR_BIN" --format:raw-sha256  --list=format-tests 2> /dev/null | cut -f3 | sed -n '11p' 1> in/test_hash1
+    "$JTR_BIN" --format:raw-sha256  --list=format-tests 2> /dev/null | cut -f3 | sed -n '2p'  1> in/test_hash2
+    "$JTR_BIN" --format:raw-sha512  --list=format-tests 2> /dev/null | cut -f3 | sed -n '2p'  1> in/test_hash3
+    "$JTR_BIN" --format:Xsha512     --list=format-tests 2> /dev/null | cut -f3 | sed -n '2p'  1> in/test_hash4
+    "$JTR_BIN" --format:sha256crypt --list=format-tests 2> /dev/null | cut -f3 | sed -n '3p'  1> in/test_hash5
+    "$JTR_BIN" --format:sha512crypt --list=format-tests 2> /dev/null | cut -f3 | sed -n '3p'  1> in/test_hash6
     afl-fuzz -m none -t 5000+ -i in -o out -d "$JTR_BIN" --format=opencl --nolog --verb=1 @@
     echo $?
 
@@ -231,19 +231,19 @@ if [[ -z "${TEST##*ZZUF_FUZZ*}" ]]; then
     export LWS=8
     export GWS=64
 
-    "$JTR_BIN" -form:raw-sha256 --list=format-tests 2> /dev/null | cut -f3 | sed -n '7p' 1> test_hash
+    "$JTR_BIN" --format:raw-sha256 --list=format-tests 2> /dev/null | cut -f3 | sed -n '7p' 1> test_hash
     zzuf -s 0:1000 -c -C 1 -T 3 "$JTR_BIN" --format=raw-sha256-opencl --skip --max-run=1 --verb=1 test_hash
     echo $?
 
-    "$JTR_BIN" -form:raw-sha512 --list=format-tests 2> /dev/null | cut -f3 | sed -n '7p' 1> test_hash
+    "$JTR_BIN" --format:raw-sha512 --list=format-tests 2> /dev/null | cut -f3 | sed -n '7p' 1> test_hash
     zzuf -s 0:1000 -c -C 1 -T 3 "$JTR_BIN" --format=raw-sha256-opencl --skip --max-run=1 --verb=1 test_hash
     echo $?
 
-    "$JTR_BIN" -form:sha256crypt --list=format-tests 2> /dev/null | cut -f3 | sed -n '3p' 1> test_hash
+    "$JTR_BIN" --format:sha256crypt --list=format-tests 2> /dev/null | cut -f3 | sed -n '3p' 1> test_hash
     zzuf -s 0:1000 -c -C 1 -T 3 "$JTR_BIN" --format=sha512crypt-opencl --skip --max-run=1 --verb=1 test_hash
     echo $?
 
-    "$JTR_BIN" -form:sha512crypt --list=format-tests 2> /dev/null | cut -f3 | sed -n '3p' 1> test_hash
+    "$JTR_BIN" --format:sha512crypt --list=format-tests 2> /dev/null | cut -f3 | sed -n '3p' 1> test_hash
     zzuf -s 0:1000 -c -C 1 -T 3 "$JTR_BIN" --format=sha512crypt-opencl --skip --max-run=1 --verb=1 test_hash
     echo $?
 
@@ -297,42 +297,42 @@ fi
 
 if [[ -z "${TEST##*OpenCL-crack*}" ]]; then
     echo "--------------------------- OpenCL real cracking ---------------------------"
-    "$JTR_BIN" -list=format-tests | cut -f3 > alltests.in
-    "$JTR_BIN" -form=SHA512crypt-opencl alltests.in --max-len=2 --progress=30
-    report "-form=SHA512crypt-opencl alltests.in --max-len=2 --progress=30"
+    "$JTR_BIN" -list=format-tests | cut -f3 > allTests.in
+    "$JTR_BIN" --format=SHA512crypt-opencl allTests.in --max-len=2 --progress=30
+    report "--format=SHA512crypt-opencl allTests.in --max-len=2 --progress=30"
 
     "$JTR_BIN" -list=format-tests --format=sha512crypt | cut -f4 | head > solucao
-    "$JTR_BIN" -form=SHA512crypt-opencl alltests.in -w:solucao
-    report "-form=SHA512crypt-opencl alltests.in -w:solucao"
+    "$JTR_BIN" --format=SHA512crypt-opencl allTests.in -w:solucao
+    report "--format=SHA512crypt-opencl allTests.in -w:solucao"
 
-    "$JTR_BIN" -list=format-tests | cut -f3 > alltests.in
-    "$JTR_BIN" -form=SHA256crypt-opencl alltests.in --max-len=2 --progress=30
-    report "-form=SHA256crypt-opencl alltests.in --max-len=2 --progress=30"
+    "$JTR_BIN" -list=format-tests | cut -f3 > allTests.in
+    "$JTR_BIN" --format=SHA256crypt-opencl allTests.in --max-len=2 --progress=30
+    report "--format=SHA256crypt-opencl allTests.in --max-len=2 --progress=30"
 
     "$JTR_BIN" -list=format-tests --format=SHA256crypt | cut -f4 | head > solucao
-    "$JTR_BIN" -form=SHA256crypt-opencl alltests.in -w:solucao
-    report "-form=SHA256crypt-opencl alltests.in -w:solucao"
+    "$JTR_BIN" --format=SHA256crypt-opencl allTests.in -w:solucao
+    report "--format=SHA256crypt-opencl allTests.in -w:solucao"
 
-    "$JTR_BIN" -list=format-tests | cut -f3 > alltests.in
+    "$JTR_BIN" -list=format-tests | cut -f3 > allTests.in
     "$JTR_BIN" -list=format-tests | cut -f4 > solucao
 
-    "$JTR_BIN" -form=RAW-SHA256-opencl alltests.in --max-len=2 --progress=30
-    report "-form=RAW-SHA256-opencl alltests.in --max-len=2 --progress=30"
+    "$JTR_BIN" --format=RAW-SHA256-opencl allTests.in --max-len=2 --progress=30
+    report "--format=RAW-SHA256-opencl allTests.in --max-len=2 --progress=30"
 
-    "$JTR_BIN" -form=RAW-SHA256-opencl alltests.in -w:solucao
-    report "-form=RAW-SHA256-opencl alltests.in -w:solucao"
+    "$JTR_BIN" --format=RAW-SHA256-opencl allTests.in -w:solucao
+    report "--format=RAW-SHA256-opencl allTests.in -w:solucao"
 
-    "$JTR_BIN" -form=RAW-SHA512-opencl alltests.in --max-len=2 --progress=30
-    report "-form=RAW-SHA512-opencl alltests.in --max-len=2 --progress=30"
+    "$JTR_BIN" --format=RAW-SHA512-opencl allTests.in --max-len=2 --progress=30
+    report "--format=RAW-SHA512-opencl allTests.in --max-len=2 --progress=30"
 
-    "$JTR_BIN" -form=RAW-SHA512-opencl alltests.in -w:solucao
-    report "-form=RAW-SHA512-opencl alltests.in -w:solucao"
+    "$JTR_BIN" --format=RAW-SHA512-opencl allTests.in -w:solucao
+    report "--format=RAW-SHA512-opencl allTests.in -w:solucao"
 
-    "$JTR_BIN" -form=xSHA512-opencl alltests.in --max-len=2 --progress=30
-    report "-form=xSHA512-opencl alltests.in --max-len=2 --progress=30"
+    "$JTR_BIN" --format=xSHA512-opencl allTests.in --max-len=2 --progress=30
+    report "--format=xSHA512-opencl allTests.in --max-len=2 --progress=30"
 
-    "$JTR_BIN" -form=xSHA512-opencl alltests.in -w:solucao
-    report "-form=xSHA512-opencl alltests.in -w:solucao"
+    "$JTR_BIN" --format=xSHA512-opencl allTests.in -w:solucao
+    report "--format=xSHA512-opencl allTests.in -w:solucao"
 fi
 
 echo '-------------------------------------------'

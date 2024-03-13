@@ -17,7 +17,7 @@
 # the Free Software Foundation, as expressed in version 2, seen at
 # http://www.gnu.org/licenses/gpl-2.0.html
 ###############################################################################
-# Github Action to close old issues automatically
+# GitHub Action to close old issues automatically
 # More info at https://github.com/openwall/john-packages
 
 ---

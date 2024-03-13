@@ -68,7 +68,7 @@
      Raw:    287571K c/s real, 2857M c/s virtual
     ```
 
-## OpenCL compilation erros
+## OpenCL compilation errors
 
 - if you get errors like `Error building kernel /run/opencl/cryptsha512_kernel_GPU.cl`
   try running john from the subdirectory `opencl` (e.g. from `JtR\run\opencl` run `..\john.exe`).

@@ -46,10 +46,10 @@ steps:
             git checkout $JUMBO_RELEASE
         }
 
-        # If needed (CygWin is not installed) or as a workaround (CygWin update is required)
+        # If needed (Cygwin is not installed) or as a workaround (Cygwin update is required)
         if ($env:Cygwin -eq "install") {
             Write-Host "--------------------------------------------------------"
-            Write-Host "             =====  Installing CygWin  =====            " -ForegroundColor White
+            Write-Host "             =====  Installing Cygwin  =====            " -ForegroundColor White
             Write-Host "--------------------------------------------------------"
             choco install -y cygwin cyg-get
             cyg-get libssl-devel libbz2-devel libgmp-devel zlib-devel gcc-core libOpenCL-devel libcrypt-devel make wget rebase perl

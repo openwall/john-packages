@@ -15,7 +15,7 @@ specifically mark them "keep open". Reopened issues will receive attention.
 
 Contributors donate their free time to work on the project because they enjoy it. If nobody cares about
 a problem it will likely remain open forever, lost in a list of issues that no one minds. The
-contributors have other things to do, like live theis lives.
+contributors have other things to do, like live their lives.
 
 I think it's reasonable to expect users to try a little harder to help, if they care about something.
 

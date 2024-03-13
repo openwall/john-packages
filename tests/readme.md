@@ -49,7 +49,7 @@ using:
   - LE (Little Endian) and BE (Big Endian) builds;
   - ASAN (address sanitizer) and UBSAN (undefined behavior sanitizer);
   - Fuzzing (<https://en.wikipedia.org/wiki/Fuzzing>);
-  - CygWin on Windows Server;
+  - Cygwin on Windows Server;
   - OpenCL on CPU using Intel, and POCL (<http://portablecl.org/>) runtimes;
   - OpenCL on GPU using Azure cloud (_work in progress_);
   - And a final assessment using ARMv7 (armhf), ARMv8 (aarch64), PowerPC64 Little-Endian,

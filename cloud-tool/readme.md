@@ -98,13 +98,13 @@ ansible-playbook -i inventory --private-key=workerKey playbook/install-john.yml
 ansible --private-key workerKey -u ubuntu -i inventory -a "john/run/john --list=build-info" all
 
 # Use ansible to run the same cracking session in all instances:
-ansible all -i inventory --private-key workerKey -u ubuntu -B 1800 -P 0 -a "john/run/john -form:md5crypt ~/hashes.txt"
+ansible all -i inventory --private-key workerKey -u ubuntu -B 1800 -P 0 -a "john/run/john --format:md5crypt ~/hashes.txt"
 
 # Get the status of john from all running instances:
 ansible all -i inventory --private-key workerKey -u ubuntu -a "john/run/john -status"
 
 # Show cracked passwords in all running instances:
-ansible all -i inventory --private-key workerKey -u ubuntu -a "john/run/john --show ~/hashes.txt -form:md5crypt"
+ansible all -i inventory --private-key workerKey -u ubuntu -a "john/run/john --show ~/hashes.txt --format:md5crypt"
 == Output ==
 ec2-34-230-75-137.compute-1.amazonaws.com | CHANGED | rc=0 >>
 ?:12345

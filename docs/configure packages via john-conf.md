@@ -34,13 +34,13 @@ $JOHN is /snap/john-the-ripper/current/run/
 ```
 
 ```bash
-$ john --format=sha512crypt -list=format-tests | cut -f3 > ~/alltests.in
+$ john --format=sha512crypt -list=format-tests | cut -f3 > ~/allTests.in
 # Create some sample hashes
 ```
 
 * Crack it using the "regular" packaged `john`
 ```bash
-$ rm -f ~/snap/john-the-ripper/current/.john/john.pot; john ~/alltests.in --max-run=10 --mask
+$ rm -f ~/snap/john-the-ripper/current/.john/john.pot; john ~/allTests.in --max-run=10 --mask
 Warning: detected hash type "sha512crypt", but the string is also recognized as "sha512crypt-opencl"
 Use the "--format=sha512crypt-opencl" option to force loading these as that type instead
 Using default input encoding: UTF-8
@@ -68,7 +68,7 @@ $ sed -i 's/DefaultMask = ?1?2?2?2?2?2?2?3?3?3?3?d?d?d?d/DefaultMask = Hello?awo
 
 * Try it again (compare the mask value used)
 ```bash
-$ rm -f ~/snap/john-the-ripper/current/.john/john.pot; john ~/alltests.in --max-run=10 --mask
+$ rm -f ~/snap/john-the-ripper/current/.john/john.pot; john ~/allTests.in --max-run=10 --mask
 [...]
 Using default mask: Hello?awor?l?l?a   ## <===== HERE *********************************************************************
 [...]
@@ -96,6 +96,6 @@ You will need add the following option to the `docker run` command line:
 
 Example:
 ```bash
-$ docker run -v "$(pwd)":/home/JtR ghcr.io/openwall/john best -form=SHA512crypt --incrementa:digits /home/JtR/alltests.in --max-run=20
+$ docker run -v "$(pwd)":/home/JtR ghcr.io/openwall/john best --format=SHA512crypt --incremental:digits /home/JtR/allTests.in --max-run=20
 # john is executed in a Docker container
 ```

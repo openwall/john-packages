@@ -196,8 +196,8 @@ John runs confined under a restrictive security sandbox by default. Nevertheless
 you can access and audit any file located in your home. Below, an usage example:
 
 ```bash
- john -list=format-tests | cut -f3 > ~/alltests.in
- john -form=SHA512crypt ~/alltests.in
+ john -list=format-tests | cut -f3 > ~/allTests.in
+ john --format=SHA512crypt ~/allTests.in
 ```
 
 For your convenience, the snap installed on your system contains the file
@@ -366,8 +366,8 @@ you can access and audit any file located in your home. Below, an usage example:
 
 ```bash
  flatpak run com.openwall.John -list=build-info
- flatpak run com.openwall.John -list=format-tests | cut -f3 > ~/alltests.in
- flatpak run com.openwall.John -form=SHA512crypt ~/alltests.in
+ flatpak run com.openwall.John -list=format-tests | cut -f3 > ~/allTests.in
+ flatpak run com.openwall.John --format=SHA512crypt ~/allTests.in
 ```
 
 The highlights (👀):

@@ -17,7 +17,7 @@
 # the Free Software Foundation, as expressed in version 2, seen at
 # http://www.gnu.org/licenses/gpl-2.0.html
 ###############################################################################
-# Github Action to scan a release using VirusTotal
+# GitHub Action to scan a release using VirusTotal
 # More info at https://github.com/openwall/john-packages
 
 ---
@@ -34,7 +34,7 @@ jobs:
     name: Virus Scan
     runs-on: ubuntu-latest
     permissions:
-      # required to update the release. But it is a secutiry issue.
+      # required to update the release. But it is a security issue.
       contents: write
       id-token: write
 

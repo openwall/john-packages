@@ -2,7 +2,10 @@
 (?:^|/)Releases/
 (?:^|/).github/actions/spelling
 
+# Files containing hashes
 ^\Qcloud-tool/hashes.txt\E$
+
+# Binary files
 ^\Qdeploy/metadata/128.png\E$
 ^\Qdeploy/metadata/64.png\E$
 ^\Qdeploy/metadata/build-info.png\E$

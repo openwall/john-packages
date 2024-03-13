@@ -17,7 +17,7 @@
 # the Free Software Foundation, as expressed in version 2, seen at
 # http://www.gnu.org/licenses/gpl-2.0.html
 ###############################################################################
-# Github Action to scan dependency manifest files
+# GitHub Action to scan dependency manifest files
 # More info at https://github.com/openwall/john-packages
 
 ---
