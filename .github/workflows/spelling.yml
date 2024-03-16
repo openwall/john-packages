@@ -102,7 +102,11 @@ jobs:
     - name: Harden Runner
       uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
       with:
-        egress-policy: audit
+        egress-policy: block
+        allowed-endpoints: >
+          api.github.com:443
+          github.com:443
+          raw.githubusercontent.com:443
 
     - name: comment
       uses: check-spelling/check-spelling@26b46adbdebd5dd0b34c7155113d50c40f43fb22 # main
@@ -123,7 +127,11 @@ jobs:
     - name: Harden Runner
       uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
       with:
-        egress-policy: audit
+        egress-policy: block
+        allowed-endpoints: >
+          api.github.com:443
+          github.com:443
+          raw.githubusercontent.com:443
 
     - name: comment
       uses: check-spelling/check-spelling@26b46adbdebd5dd0b34c7155113d50c40f43fb22 # main
