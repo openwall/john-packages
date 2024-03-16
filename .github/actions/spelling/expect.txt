@@ -162,6 +162,7 @@ securityscorecards
 seh
 sigstore
 simd
+slmail
 slsa
 slsaprovenance
 snapcraft
