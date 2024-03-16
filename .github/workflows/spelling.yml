@@ -39,6 +39,9 @@ on:
     types:
     - 'created'
 
+permissions:
+  contents: read
+
 jobs:
   spelling:
     name: Check Spelling
@@ -57,9 +60,14 @@ jobs:
       cancel-in-progress: true
       #only_check_changed_files: true
     steps:
+    - name: Harden Runner
+      uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+      with:
+        egress-policy: audit
+
     - name: check-spelling
       id: spelling
-      uses: check-spelling/check-spelling@main
+      uses: check-spelling/check-spelling@26b46adbdebd5dd0b34c7155113d50c40f43fb22 # main
       with:
         suppress_push_for_open_pull_request: ${{ github.actor != 'dependabot[bot]' && 1 }}
         checkout: true
@@ -86,8 +94,13 @@ jobs:
       contents: write
     if: (success() || failure()) && needs.spelling.outputs.followup && github.event_name == 'push'
     steps:
+    - name: Harden Runner
+      uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+      with:
+        egress-policy: audit
+
     - name: comment
-      uses: check-spelling/check-spelling@main
+      uses: check-spelling/check-spelling@26b46adbdebd5dd0b34c7155113d50c40f43fb22 # main
       with:
         checkout: true
         spell_check_this: check-spelling/spell-check-this@prerelease
@@ -102,8 +115,13 @@ jobs:
       pull-requests: write
     if: (success() || failure()) && needs.spelling.outputs.followup && contains(github.event_name, 'pull_request')
     steps:
+    - name: Harden Runner
+      uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+      with:
+        egress-policy: audit
+
     - name: comment
-      uses: check-spelling/check-spelling@main
+      uses: check-spelling/check-spelling@26b46adbdebd5dd0b34c7155113d50c40f43fb22 # main
       with:
         checkout: true
         spell_check_this: check-spelling/spell-check-this@prerelease
@@ -126,8 +144,13 @@ jobs:
       group: spelling-update-${{ github.event.issue.number }}
       cancel-in-progress: false
     steps:
+    - name: Harden Runner
+      uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+      with:
+        egress-policy: audit
+
     - name: apply spelling updates
-      uses: check-spelling/check-spelling@main
+      uses: check-spelling/check-spelling@26b46adbdebd5dd0b34c7155113d50c40f43fb22 # main
       with:
         experimental_apply_changes_via_bot: 1
         checkout: true
