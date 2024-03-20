@@ -38,13 +38,11 @@ For example, we fixed a bug or added a feature, or perhaps documentation. The ty
 | flatpak: | any changes to the flapak recipe or package |
 | IDE: | any changes to the IDE's folder or files |
 | maint:  | general maintenance tasks. E.g., linters |
-| packages: * | e.g., when you create a new GitHub Action or a patch to apply to all packages |
+| packages: | e.g., when you create a new GitHub Action or a patch to apply to all packages |
 | release: | when a new version is created |
 | snap: | any changes to the snap recipe or package |
 | tests: | any changes to test scripts or strategy |
 | virustotal: | any changes to virustotal procedures |
-
-[*] Maybe, think better.
 
 Should we add, e.g., "fix"?
 

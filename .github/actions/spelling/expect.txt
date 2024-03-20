@@ -1,13 +1,10 @@
 aarch
-ADL
 AESNI
 afl
 AKIAIOSFODNN
-alloc
 Altivec
 amazonaws
 amd
-AMDGPU
 amdocl
 ansible
 apk
@@ -29,12 +26,12 @@ buildsystem
 CCO
 CFLAGS
 cflite
-Childitem
 cidr
 circleci
 cirruslabs
 claudio
 claudioandre
+clinfo
 cloudflare
 clusterfuzzlite
 codeql
@@ -68,7 +65,6 @@ dynamicbase
 editorconfig
 endfor
 exe
-FilePath
 filesystems
 flapak
 fulcio
@@ -78,7 +74,6 @@ galarius
 gcr
 gdb
 GFDL
-gfx
 gitattributes
 gitleaks
 gmake
@@ -92,10 +87,8 @@ GPUs
 hashicorp
 hccap
 hicolor
-HSAIL
 hvm
 icd
-ieq
 ifndef
 img
 IMO
@@ -103,6 +96,7 @@ intrinsics
 JTR
 jtrcrackers
 keepass
+Keplr
 keygen
 keyring
 LASTEXITCODE
@@ -139,6 +133,7 @@ oss
 osv
 Pak
 passphrase
+pdf
 peflags
 pocl
 ppc

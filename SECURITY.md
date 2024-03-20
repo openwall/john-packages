@@ -16,9 +16,8 @@ receiving such patches depends on the version:
 | Version | Supported          | Note                                      |
 | ------- | ------------------ | ----------------------------------------- |
 | upstream bleeding code | :heavy_check_mark: | Under development version  |
-| rolling 39db7dd        | :white_check_mark: | Most recent release        |
-| jumbo 1                | :x: | Stable released version                   |
-| < jumbo 1              | :x: | No longer maintained                      |
+| rolling 1.9J1+2404     | :heavy_check_mark: | Most recent release        |
+| jumbo 1 or older       | :x: | No longer maintained                      |
 
 ## Reporting a Vulnerability
 

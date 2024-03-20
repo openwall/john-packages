@@ -4,7 +4,7 @@
     "runtime-version": "23.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "john",
-    "tags": [ "rolling-2310" ],
+    "tags": [ "1.9J1+2404" ],
     "finish-args": [
         "--filesystem=home"
     ],

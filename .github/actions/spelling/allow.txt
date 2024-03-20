@@ -13,6 +13,7 @@ gcc
 github
 gmail
 https
+Khronos
 listconf
 mozilla
 MPI
