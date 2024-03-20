@@ -4,8 +4,8 @@ Type=Application
 Terminal=true
 Name=John the Ripper Community Edition
 GenericName=John the Ripper Jumbo
-Comment=John the Ripper "Jumbo" password cracker
+Comment=John the Ripper password security auditing and recovery tool
 TryExec=john
-Exec=john --test=0
+Exec=run-john.sh
 Icon=com.openwall.John
-Categories=Security
+Categories=System;Security

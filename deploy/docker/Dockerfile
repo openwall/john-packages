@@ -29,7 +29,7 @@ COPY build.sh .
 
 # To build a release run a (docker build [...] --build-arg release=true)
 ARG RELEASE=false
-ARG COMMIT=39db7dd63e3fefb343c3dbb72eaa5c7599b6c298
+ARG COMMIT=f9fedd238b0b1d69181c1fef033b85c787e96e57
 ARG TYPE=ALL
 
 RUN ./build.sh "${TYPE}"

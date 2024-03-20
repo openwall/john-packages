@@ -4,11 +4,11 @@ We use premium build providers like Azure Cloud, Launchpad, and GitLab.
 
 At the time of this writing, `john` is known to build and work on:
 
-* Linux (kernel 6 or later recommended)
 * Android NDK r23b (on ARM and X86)
-* FreeBSD (tested with 12 and later on X86)
-* Solaris (tested with 11 on X86)
+* FreeBSD (tested with 13 and later on X86)
+* Linux (kernel 6 or later recommended)
 * macOS (on ARM)
+* Solaris (tested with 11 on X86)
 
 Also in the following Windows environments:
 * Microsoft Windows (Windows 10 / Windows Server 2016) or later
@@ -17,6 +17,7 @@ Also in the following Windows environments:
 
 At previous version rolling-2310, `john` is also known to build and work on:
 
+* FreeBSD 12
 * macOS (on X86)
 * Mingw + Wine (32-bit), using an ancient Fedora Docker image
 
@@ -26,25 +27,25 @@ At previous version rolling-2310, `john` is also known to build and work on:
 
 ## John the Ripper rolling (1.9.0 Jumbo 1+) release build environments
 
-Build date: 2023-09-20 (rolling-2310)
+Build date: 2024-04-01 (rolling-2404)
 
 ### Docker Image
 
 ```text
-FROM nvidia/cuda:12.2.0-base-ubuntu22.04@sha256:f8870283bea6a85ba4b4a5e1b65158dd15e8009e433539e7c83c94707e703a1b
+FROM nvidia/cuda:12.3.2-base-ubuntu22.04@sha256:8cecfe099315f73127d6d5cc43fce32c7ffff4ea0460eefac48f2b7d811ce857
 ```
 
 ### Flatpak
 
 ```text
-runtime: org.freedesktop.Platform 22.08
+Freedesktop.org SDK 23.08 (Flatpak runtime)
 ```
 
 ### macOS
 
 ```text
-Darwin 21.6.0 x86_64 i386
 Darwin 22.6.0 arm64 arm
+Homebrew 4.2.10
 ```
 
 ### Snap
@@ -59,7 +60,8 @@ Launchpad --series=jammy
 ```text
 OS Name:                   Microsoft Windows Server 2019 Datacenter
 OS Version:                10.0.17763 N/A Build 17763
-Current image version: '20230912.1.0'
+Current image version: '20240322.1.0'
+Cygwin 3.5.1
 ```
 
 ## Deprecation Note (Obsolete Software or Hardware)
@@ -70,5 +72,6 @@ We can no longer build and package for these environments:
 * Windows 8 or older (64-bit);
 * Windows Server 2012 or older (64-bit);
 * Intel-based macOS;
+* Older X86_64 CPUs (AVX required);
 
 If you need such a build, use a previous stable or rolling release.

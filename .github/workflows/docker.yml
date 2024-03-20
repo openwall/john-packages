@@ -29,16 +29,17 @@ on:
       release:
         description: "Is it a release build (needs a git checkout)?"
         required: true
-        default: "false"
+        type: boolean
+        default: false
       hash:
         description: "The commit hash to be used"
         required: false
         #TODO: edit before release (JUMBO_RELEASE)
-        default: "39db7dd63e3fefb343c3dbb72eaa5c7599b6c298"
+        default: "f9fedd238b0b1d69181c1fef033b85c787e96e57"
       VERSION_NAME:
         description: "The software version name"
         required: true
-        default: "1.9.0-jumbo-1+" #TODO: edit before release (JUMBO_RELEASE)
+        default: "1.9.0-jumbo-1+"
       tag:
         description: "The image tag"
         required: true
@@ -46,7 +47,8 @@ on:
       push:
         description: "Push the resulting image to Docker registry?"
         required: true
-        default: "true"
+        type: boolean
+        default: true
 
 env:
   REPO: ghcr.io/${{ github.repository_owner }}/john
@@ -147,7 +149,7 @@ jobs:
             annotation-index.org.opencontainers.image.revision=${{ steps.data.outputs.revision }},\
             annotation-index.org.opencontainers.image.source=https://github.com/openwall/john-packages.git,\
             annotation-index.org.opencontainers.image.title=John the Ripper CE Auditing Tool,\
-            annotation-index.org.opencontainers.image.url=https://github.com/openwall/john-packages,\
+            annotation-index.org.opencontainers.image.url=https://www.openwall.com/john,\
             annotation-index.org.opencontainers.image.vendor=Openwall,\
             annotation-index.org.opencontainers.image.version=${{ steps.data.outputs.version }}"
 

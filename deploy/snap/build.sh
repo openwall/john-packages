@@ -84,7 +84,7 @@ if [[ "$1" == "PULL" ]]; then
     cp -r tmp/. .
 
     # Uncomment for a release
-    #RELEASE="39db7dd63e3fefb343c3dbb72eaa5c7599b6c298"
+    #RELEASE="f9fedd238b0b1d69181c1fef033b85c787e96e57"
 
     # Make it a reproducible build
     if [[ -n "$RELEASE" ]]; then

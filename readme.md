@@ -108,8 +108,8 @@ follow these steps:
 ```powershell
  C:\john-the-ripper\run>john --list=build-info
  [...]
- Build: cygwin 64-bit x86_64 AVX512BW AC OMP OPENCL
- SIMD: AVX512BW, interleaving: MD4:3 MD5:3 SHA1:1 SHA256:1 SHA512:1
+ Build: cygwin 64-bit x86_64 AVX2 AC OMP OPENCL
+ SIMD: AVX2, interleaving: MD4:3 MD5:3 SHA1:1 SHA256:1 SHA512:1
  [...]
 ```
 
@@ -156,10 +156,10 @@ You avail the best SIMD instructions at one's disposal without any OpenMP stuff.
 
 ### Accessing OpenCL on Windows
 
-Some adjustments may be necessary to allow John the Ripper detect your GPU
-hardware. If you are facing problems, please read:
+If John the Ripper is not recognizing your GPU card:
 
-| 📑 **Workarounds for** [OpenCL issues on Windows](docs/opencl-issues.md#advices-to-anyone-facing-opencl-windows-problems).
+- make sure all required GPU drivers are installed;
+- restart your PC, if you have just installed the drivers.
 
 ## 📂 Snap
 
@@ -326,7 +326,8 @@ it's running on.
 [![macOS Downloads](https://img.shields.io/badge/Download-Mac%20Build-blue.svg)](https://github.com/openwall/john-packages/releases)
 
 Using the above instructions you can install the rolling version of John
-the Ripper Jumbo 1+ or the hot and bleeding version in your system.
+the Ripper Jumbo 1+, the hot and bleeding version, or a previous stable
+version in your system.
 
 The package contains the necessary executables to run a fresh install of John the Ripper.
 You must install required Homebrew libraries.

@@ -96,6 +96,9 @@ if [[ -z "$TASK" ]]; then
         (
             cd ../run || exit 1
             ln -s john-avx512bw-omp john
+
+            # This is able to test whether the fallback works.
+            ./john || true
         )
     else
         # Non X86 CPU (OMP fallback)

@@ -1,17 +1,13 @@
 aarch
-ADL
 AESNI
 afl
 AKIAIOSFODNN
-alloc
 Altivec
 amazonaws
 amd
-AMDGPU
 amdocl
 ansible
 apk
-appdata
 apps
 appveyor
 archs
@@ -29,12 +25,12 @@ buildsystem
 CCO
 CFLAGS
 cflite
-Childitem
 cidr
 circleci
 cirruslabs
 claudio
 claudioandre
+clinfo
 cloudflare
 clusterfuzzlite
 codeql
@@ -68,7 +64,7 @@ dynamicbase
 editorconfig
 endfor
 exe
-FilePath
+faa
 filesystems
 flapak
 fulcio
@@ -78,7 +74,6 @@ galarius
 gcr
 gdb
 GFDL
-gfx
 gitattributes
 gitleaks
 gmake
@@ -92,10 +87,8 @@ GPUs
 hashicorp
 hccap
 hicolor
-HSAIL
 hvm
 icd
-ieq
 ifndef
 img
 IMO
@@ -103,6 +96,7 @@ intrinsics
 JTR
 jtrcrackers
 keepass
+Keplr
 keygen
 keyring
 LASTEXITCODE
@@ -124,6 +118,7 @@ lsb
 LWS
 lzma
 machdep
+metainfo
 mfb
 mrsp
 nproc
@@ -139,6 +134,7 @@ oss
 osv
 Pak
 passphrase
+pdf
 peflags
 pocl
 ppc
@@ -183,6 +179,7 @@ templatefile
 terraform
 tfstate
 thumbsup
+tld
 tls
 tmp
 tmpl
@@ -192,6 +189,7 @@ ubsan
 usesh
 usr
 utf
+vcs
 ventura
 Veyor
 virusscan

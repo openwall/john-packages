@@ -4,7 +4,7 @@
     "runtime-version": "23.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "john",
-    "tags": [ "rolling-2310" ],
+    "tags": [ "1.9J1+2404" ],
     "finish-args": [
         "--filesystem=home"
     ],
@@ -27,10 +27,17 @@
         {
             "name": "john",
             "buildsystem": "simple",
-            "subdir": "src",
+            "subdir": "./src",
             "build-commands": [
                 "###### build script ######",
-                "../build.sh"
+                "../build.sh",
+                "###### Install JtR system wide ######",
+                "cp -r ../run/.   /app/bin",
+                "cp -r ../doc/    /app/",
+                "cp    ../README* /app/",
+                "###### Bash Completion ######",
+                "mkdir -p /app/share/bash-completion/completions",
+                "cp ../run/john.*_completion /app/share/bash-completion/completions"
             ],
             "sources": [
                 {
@@ -71,7 +78,11 @@
                 },
                 {
                     "type": "file",
-                    "path": "com.openwall.John.appdata.xml"
+                    "path": "run-john.sh"
+                },
+                {
+                    "type": "file",
+                    "path": "com.openwall.John.metainfo.xml"
                 },
                 {
                     "type": "file",
@@ -80,30 +91,14 @@
                 {
                     "type": "file",
                     "path": "com.openwall.John.png"
-                },
-                {
-                    "type": "file",
-                    "path": "64.png"
-                },
-                {
-                    "type": "file",
-                    "path": "128.png"
                 }
             ],
             "post-install": [
-                "###### Install JtR system wide ######",
-                "cp -r ../run/.   /app/bin",
-                "cp -r ../doc/    /app/",
-                "cp    ../README* /app/",
-                "###### Bash Completion ######",
-                "mkdir -p /app/share/bash-completion/completions",
-                "cp ../run/john.*_completion /app/share/bash-completion/completions",
-                "###### Environment ######",
+                "install -Dm644 ../com.openwall.John.metainfo.xml /app/share/metainfo/com.openwall.John.metainfo.xml",
+
                 "install -Dm644 ../com.openwall.John.png /app/share/icons/hicolor/256x256/apps/com.openwall.John.png",
-                "install -Dm644 ../128.png               /app/share/icons/hicolor/128x128/apps/com.openwall.John.png",
-                "install -Dm644 ../64.png                /app/share/icons/hicolor/64x64/apps/com.openwall.John.png",
-                "install -Dm644 ../com.openwall.John.desktop /app/share/applications/com.openwall.John.desktop",
-                "install -Dm644 ../com.openwall.John.appdata.xml /app/share/appdata/com.openwall.John.appdata.xml"
+                "install -Dm644 ../com.openwall.John.desktop    /app/share/applications/com.openwall.John.desktop",
+                "install -Dm744 ../run-john.sh                  /app/bin/run-john.sh"
             ]
         }
     ]

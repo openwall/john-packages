@@ -29,7 +29,7 @@ on:
       hash:
         description: 'The commit hash to be used'
         required: false
-        default: '39db7dd63e3fefb343c3dbb72eaa5c7599b6c298'
+        default: 'f9fedd238b0b1d69181c1fef033b85c787e96e57'
 
 jobs:
   test:

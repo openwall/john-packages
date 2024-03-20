@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2019-2024 Claudio André <dev at claudioandre.slmail.me> -->
+<component type="console-application">
+  <id>com.openwall.John</id>
+  <metadata_license>GFDL-1.3</metadata_license>
+  <project_license>GPL-2.0-only</project_license>
+  <content_rating type="oars-1.0" />
+
+  <branding>
+    <color type="primary" scheme_preference="light">#faa298</color>
+    <color type="primary" scheme_preference="dark">#7f2c22</color>
+  </branding>
+
+  <name>John the Ripper CE</name>
+  <summary>Security auditing and recovery tool</summary>
+  <description>
+    <p>
+      Openwall's John the Ripper (JtR) is a fast password cracker,
+      currently available for many flavors of Unix and for Windows. Its primary
+      purpose is to detect weak Unix passwords. Besides several crypt(3) password hash
+      types most commonly found on various Unix systems, supported out of the box are
+      Windows LM hashes, various macOS password hashes, as well as many
+      non-hashes such as SSH private keys, encrypted filesystems such as macOS .dmg files
+      and "sparse bundles", encrypted archives such as ZIP, RAR, and 7z,
+      encrypted document files such as PDF and Microsoft Office's, plus lots of
+      other hashes and ciphers.
+    </p>
+  </description>
+
+  <icon type="stock">com.openwall.John</icon>
+  <icon type="remote">https://raw.githubusercontent.com/openwall/john-packages/main/deploy/metadata/com.openwall.John.png</icon>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/openwall/john-packages/main/deploy/metadata/help.png</image>
+      <caption>The --help screen</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/openwall/john-packages/main/deploy/metadata/build-info.png</image>
+      <caption>The --list=build-info screen</caption>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://www.openwall.com/john/</url>
+  <url type="bugtracker">https://github.com/openwall/john/issues</url>
+  <url type="contact">https://github.com/openwall/john-packages/issues</url>
+  <url type="faq">https://github.com/openwall/john/blob/bleeding-jumbo/doc/FAQ</url>
+  <url type="vcs-browser">https://github.com/openwall/john</url>
+
+  <developer id="tld.vendor">
+    <name>Openwall and others</name>
+  </developer>
+  <update_contact>https://github.com/openwall/john-packages/issues</update_contact>
+
+  <categories>
+    <category>System</category>
+    <category>Security</category>
+  </categories>
+
+  <launchable type="desktop-id">com.openwall.John.desktop</launchable>
+  <provides>
+    <binary>john</binary>
+    <binary>dmg2john</binary>
+    <binary>hccap2john</binary>
+    <binary>racf2john</binary>
+    <binary>vncpcap2john</binary>
+    <binary>zip2john</binary>
+    <binary>gpg2john</binary>
+    <binary>keepass2john</binary>
+    <binary>putty2john</binary>
+    <binary>rar2john</binary>
+    <binary>uaf2john</binary>
+    <binary>wpapcap2john</binary>
+  </provides>
+
+  <releases>
+    <release type="stable" version="1.9J1+2404" date="2024-04-01" urgency="high">
+      <description>
+        <p>
+          This is a maintenance release:
+        </p>
+
+        <p>
+          Based on upstream commit f9fedd238b0b1d69181c1fef033b85c787e96e57.
+        </p>
+
+        <ul>
+          <li>Add arm64 Docker image (with NVIDIA GPU support);</li>
+          <li>Add new formats and/or implementations;</li>
+            <li>  Armory wallet, Keplr wallet, Argon2 OpenCL.</li>
+          <li>*2john improvements;</li>
+            <li>  Add a modern version of pdf2john (.py; Python 3).</li>
+          <li>Improve OpenCL detection;</li>
+            <li>  Start using dynamic OpenCL binding (dynamically load OpenCL library);</li>
+            <li>  Add Khronos Group OpenCL header files (use this local copy of the OpenCL headers);</li>
+          <li>Some random optimizations here and there;</li>
+          <li>Minor documentations tweaks.</li>
+        </ul>
+
+        <ul>
+          <li>All binaries support SIMD:</li>
+            <li>  The aarch64 binaries support ASIMD</li>
+            <li>  The X86_64 binaries support AVX, AVX2, AVX512F and AVX512BW</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+
+</component>
