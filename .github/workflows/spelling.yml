@@ -25,19 +25,19 @@ name: Check Spelling
 on:
   push:
     branches:
-    - "**"
+      - "**"
     tags-ignore:
-    - "**"
+      - "**"
   pull_request_target:
     branches:
-    - "**"
+      - "**"
     types:
-    - 'opened'
-    - 'reopened'
-    - 'synchronize'
+      - 'opened'
+      - 'reopened'
+      - 'synchronize'
   issue_comment:
     types:
-    - 'created'
+      - 'created'
 
 permissions:
   contents: read
@@ -60,36 +60,36 @@ jobs:
       cancel-in-progress: true
       #only_check_changed_files: true
     steps:
-    - name: Harden Runner
-      uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
-      with:
-        egress-policy: block
-        allowed-endpoints: >
-          api.github.com:443
-          azure.archive.ubuntu.com:80
-          github.com:443
-          raw.githubusercontent.com:443
+      - name: Harden Runner
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            azure.archive.ubuntu.com:80
+            github.com:443
+            raw.githubusercontent.com:443
 
-    - name: check-spelling
-      id: spelling
-      uses: check-spelling/check-spelling@26b46adbdebd5dd0b34c7155113d50c40f43fb22 # main
-      with:
-        suppress_push_for_open_pull_request: ${{ github.actor != 'dependabot[bot]' && 1 }}
-        checkout: true
-        check_file_names: 1
-        spell_check_this: check-spelling/spell-check-this@prerelease
-        post_comment: 0
-        use_magic_file: 1
-        report-timing: 1
-        warnings: bad-regex,binary-file,deprecated-feature,large-file,limited-references,no-newline-at-eof,noisy-file,non-alpha-in-dictionary,token-is-substring,unexpected-line-ending,whitespace-in-dictionary,minified-file,unsupported-configuration,no-files-to-check
-        experimental_apply_changes_via_bot: 1
-        use_sarif: ${{ (!github.event.pull_request || (github.event.pull_request.head.repo.full_name == github.repository)) && 1 }}
-        extra_dictionary_limit: 20
-        extra_dictionaries:
-          cspell:software-terms/dict/softwareTerms.txt
-          cspell:cpp/src/stdlib-c.txt
-          cspell:docker/src/docker-words.txt
-          cspell:shell/dict/shell-all-words.txt
+      - name: check-spelling
+        id: spelling
+        uses: check-spelling/check-spelling@26b46adbdebd5dd0b34c7155113d50c40f43fb22 # main
+        with:
+          suppress_push_for_open_pull_request: ${{ github.actor != 'dependabot[bot]' && 1 }}
+          checkout: true
+          check_file_names: 1
+          spell_check_this: check-spelling/spell-check-this@prerelease
+          post_comment: 0
+          use_magic_file: 1
+          report-timing: 1
+          warnings: bad-regex,binary-file,deprecated-feature,large-file,limited-references,no-newline-at-eof,noisy-file,non-alpha-in-dictionary,token-is-substring,unexpected-line-ending,whitespace-in-dictionary,minified-file,unsupported-configuration,no-files-to-check
+          experimental_apply_changes_via_bot: 1
+          use_sarif: ${{ (!github.event.pull_request || (github.event.pull_request.head.repo.full_name == github.repository)) && 1 }}
+          extra_dictionary_limit: 20
+          extra_dictionaries:
+            cspell:software-terms/dict/softwareTerms.txt
+            cspell:cpp/src/stdlib-c.txt
+            cspell:docker/src/docker-words.txt
+            cspell:shell/dict/shell-all-words.txt
 
   comment-push:
     name: Report (Push)
@@ -99,21 +99,21 @@ jobs:
       contents: write
     if: (success() || failure()) && needs.spelling.outputs.followup && github.event_name == 'push'
     steps:
-    - name: Harden Runner
-      uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
-      with:
-        egress-policy: block
-        allowed-endpoints: >
-          api.github.com:443
-          github.com:443
-          raw.githubusercontent.com:443
+      - name: Harden Runner
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            github.com:443
+            raw.githubusercontent.com:443
 
-    - name: comment
-      uses: check-spelling/check-spelling@26b46adbdebd5dd0b34c7155113d50c40f43fb22 # main
-      with:
-        checkout: true
-        spell_check_this: check-spelling/spell-check-this@prerelease
-        task: ${{ needs.spelling.outputs.followup }}
+      - name: comment
+        uses: check-spelling/check-spelling@26b46adbdebd5dd0b34c7155113d50c40f43fb22 # main
+        with:
+          checkout: true
+          spell_check_this: check-spelling/spell-check-this@prerelease
+          task: ${{ needs.spelling.outputs.followup }}
 
   comment-pr:
     name: Report (PR)
@@ -124,22 +124,22 @@ jobs:
       pull-requests: write
     if: (success() || failure()) && needs.spelling.outputs.followup && contains(github.event_name, 'pull_request')
     steps:
-    - name: Harden Runner
-      uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
-      with:
-        egress-policy: block
-        allowed-endpoints: >
-          api.github.com:443
-          github.com:443
-          raw.githubusercontent.com:443
+      - name: Harden Runner
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            github.com:443
+            raw.githubusercontent.com:443
 
-    - name: comment
-      uses: check-spelling/check-spelling@26b46adbdebd5dd0b34c7155113d50c40f43fb22 # main
-      with:
-        checkout: true
-        spell_check_this: check-spelling/spell-check-this@prerelease
-        task: ${{ needs.spelling.outputs.followup }}
-        experimental_apply_changes_via_bot: 1
+      - name: comment
+        uses: check-spelling/check-spelling@26b46adbdebd5dd0b34c7155113d50c40f43fb22 # main
+        with:
+          checkout: true
+          spell_check_this: check-spelling/spell-check-this@prerelease
+          task: ${{ needs.spelling.outputs.followup }}
+          experimental_apply_changes_via_bot: 1
 
   update:
     name: Update PR
@@ -157,14 +157,14 @@ jobs:
       group: spelling-update-${{ github.event.issue.number }}
       cancel-in-progress: false
     steps:
-    - name: Harden Runner
-      uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
-      with:
-        egress-policy: audit
+      - name: Harden Runner
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          egress-policy: audit
 
-    - name: apply spelling updates
-      uses: check-spelling/check-spelling@26b46adbdebd5dd0b34c7155113d50c40f43fb22 # main
-      with:
-        experimental_apply_changes_via_bot: 1
-        checkout: true
-        ssh_key: "${{ secrets.CHECK_SPELLING }}"
+      - name: apply spelling updates
+        uses: check-spelling/check-spelling@26b46adbdebd5dd0b34c7155113d50c40f43fb22 # main
+        with:
+          experimental_apply_changes_via_bot: 1
+          checkout: true
+          ssh_key: "${{ secrets.CHECK_SPELLING }}"
