@@ -26,6 +26,7 @@ language: c
 primary_contact: "https://github.com/openwall/john-packages/issues"
 sanitizers:
   - address
+  - undefined
 
 architectures:
   - x86_64

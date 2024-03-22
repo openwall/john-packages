@@ -4,11 +4,11 @@ We use premium build providers like Azure Cloud, Launchpad, and GitLab.
 
 At the time of this writing, `john` is known to build and work on:
 
-* Linux (kernel 6 or later recommended)
 * Android NDK r23b (on ARM and X86)
-* FreeBSD (tested with 12 and later on X86)
-* Solaris (tested with 11 on X86)
+* FreeBSD (tested with 13 and later on X86)
+* Linux (kernel 6 or later recommended)
 * macOS (on ARM)
+* Solaris (tested with 11 on X86)
 
 Also in the following Windows environments:
 * Microsoft Windows (Windows 10 / Windows Server 2016) or later
@@ -17,6 +17,7 @@ Also in the following Windows environments:
 
 At previous version rolling-2310, `john` is also known to build and work on:
 
+* FreeBSD 12
 * macOS (on X86)
 * Mingw + Wine (32-bit), using an ancient Fedora Docker image
 
@@ -43,8 +44,8 @@ runtime: org.freedesktop.Platform 22.08
 ### macOS
 
 ```text
-Darwin 21.6.0 x86_64 i386
 Darwin 22.6.0 arm64 arm
+Homebrew 4.2.10
 ```
 
 ### Snap
@@ -60,6 +61,7 @@ Launchpad --series=jammy
 OS Name:                   Microsoft Windows Server 2019 Datacenter
 OS Version:                10.0.17763 N/A Build 17763
 Current image version: '20230912.1.0'
+Cygwin 3.4.10
 ```
 
 ## Deprecation Note (Obsolete Software or Hardware)
@@ -70,5 +72,6 @@ We can no longer build and package for these environments:
 * Windows 8 or older (64-bit);
 * Windows Server 2012 or older (64-bit);
 * Intel-based macOS;
+* Older X86_64 CPUs (AVX required);
 
 If you need such a build, use a previous stable or rolling release.
