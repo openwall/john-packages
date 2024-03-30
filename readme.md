@@ -62,7 +62,7 @@ We produce software in short cycles, ensuring that the software can be reliably 
 
 | **Releases** | **Latest**<br> ![Latest Release Version](https://img.shields.io/github/release/openwall/john-packages?sort=date&label=&style=flat-square&color=blue "Latest Release Version") | **Prerelease**<br> ![Latest Prerelease Version](https://img.shields.io/github/release/openwall/john-packages?include_prereleases&sort=date&label=&style=flat-square&color=blue "Latest Prerelease Version") |
 |:-:|:-:|:-:|
-![GitHub Total Downloads](https://img.shields.io/github/downloads/openwall/john-packages/total?label=downloads "Total Downloads") | ![Latest Release Date](https://img.shields.io/github/release-date/openwall/john-packages?label=when "Latest Release Date") | ![Latest Prerelease Date](https://img.shields.io/github/release-date-pre/openwall/john-packages?label=when "Latest Prerelease Date") |
+![GitHub Total Downloads](https://img.shields.io/github/downloads/openwall/john-packages/total?label=downloads&color=white "Total Downloads") | ![Latest Release Date](https://img.shields.io/github/release-date/openwall/john-packages?label=when&color=green "Latest Release Date") | ![Latest Prerelease Date](https://img.shields.io/github/release-date-pre/openwall/john-packages?label=when&color=green "Latest Prerelease Date") |
 
 </div>
 
