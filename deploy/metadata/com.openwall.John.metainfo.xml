@@ -79,26 +79,8 @@
           This is a maintenance release:
         </p>
 
-        <p>
-          Based on upstream commit f9fedd238b0b1d69181c1fef033b85c787e96e57.
-        </p>
-
-        <ul>
-          <li>Add arm64 Docker image (with NVIDIA GPU support);</li>
-          <li>Add new formats and/or implementations;</li>
-            <li>  Armory wallet, Keplr wallet, Argon2 OpenCL.</li>
-          <li>*2john improvements;</li>
-            <li>  Add a modern version of pdf2john (.py; Python 3).</li>
-          <li>Improve OpenCL detection;</li>
-            <li>  Start using dynamic OpenCL binding (dynamically load OpenCL library);</li>
-            <li>  Add Khronos Group OpenCL header files (use this local copy of the OpenCL headers);</li>
-          <li>Some random optimizations here and there;</li>
-          <li>Minor documentations tweaks.</li>
-        </ul>
-
         <ul>
           <li>All binaries support SIMD:</li>
-            <li>  The aarch64 binaries support ASIMD</li>
             <li>  The X86_64 binaries support AVX, AVX2, AVX512F and AVX512BW</li>
         </ul>
       </description>
