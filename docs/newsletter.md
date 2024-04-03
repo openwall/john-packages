@@ -1,8 +1,10 @@
 # News and Plans
 
-Welcome to July’s edition of the Newsletter!
+Welcome to June’s edition of the Newsletter!
 
-**Everyone should upgrade to `1.9J1+2404`** or its corresponding upstream commit:
+**John the Ripper release mode is on!**. Let's welcome `1.9.1-ce` version, the **latest release**.
+
+**Everyone should upgrade to `1.9.1-ce`** or its corresponding upstream commit:
 
 - it contains several bugfixes, including some important ones related to formats bugs and OpenCL NVIDIA on Windows;
 - it contains several important improvements such as "opportunistic dupe suppression".
@@ -41,5 +43,5 @@ Also:
 
 ## Recommendation
 
-Install (or update your installation to) `1.9J1+2404` (**rolling-2404**) or to the upstream commit
+Install (or update your installation to) `1.9.1-ce` or to the upstream commit
 [f9fedd2](https://github.com/openwall/john/commit/f9fedd238b0b1d69181c1fef033b85c787e96e57).
