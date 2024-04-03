@@ -91,6 +91,7 @@ Gnomovision
 gnueabi
 gnupg
 google
+GOST
 gpg
 GPUs
 hashicorp
