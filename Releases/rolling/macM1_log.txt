@@ -1,79 +1,85 @@
-.ci/tests-ci.sh "$TARGET_ARCH" BUILD
---2023-09-20 23:15:18--  https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/show_info.sh
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.110.133, 185.199.111.133, 185.199.108.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.110.133|:443... connected.
+.ci/ci_controller.sh "$TARGET_ARCH" BUILD
+--2024-04-01 12:02:58--  https://raw.githubusercontent.com/openwall/john-packages/release/tests/show_info.sh
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
 HTTP request sent, awaiting response... 200 OK
-Length: 3122 (3.0K) [text/plain]
-Saving to: ‘show_info.sh.1’
+Length: 3358 (3.3K) [text/plain]
+Saving to: ‘show_info.sh’
 
-     0K ...                                                   100% 32.0M=0s
+     0K ...                                                   100% 61.6M=0s
 
-2023-09-20 23:15:18 (32.0 MB/s) - ‘show_info.sh.1’ saved [3122/3122]
+2024-04-01 12:02:58 (61.6 MB/s) - ‘show_info.sh’ saved [3358/3358]
 
 Build system information
 --------------------------------
 Darwin
 arm64
 uid=501(admin) gid=20(staff) groups=20(staff),12(everyone),61(localaccounts),79(_appserverusr),80(admin),81(_appserveradm),98(_lpadmin),264(_webdeveloper),701(com.apple.sharepoint.group.1),33(_appstore),100(_lpoperator),204(_developer),250(_analyticsusers),395(com.apple.access_ftp),398(com.apple.access_screensharing),399(com.apple.access_ssh),400(com.apple.access_remote_ae)
-Darwin admins-Virtual-Machine.local 22.6.0 Darwin Kernel Version 22.6.0: Wed Jul  5 22:22:19 PDT 2023; root:xnu-8796.141.3~6/RELEASE_ARM64_VMAPPLE arm64
+Darwin admins-Virtual-Machine.local 22.6.0 Darwin Kernel Version 22.6.0: Fri Sep 15 13:39:33 PDT 2023; root:xnu-8796.141.3.700.8~1/RELEASE_ARM64_VMAPPLE arm64
 Darwin 22.6.0 arm64 arm
 --------------------------------
 ProductName:		macOS
-ProductVersion:		13.5.1
-BuildVersion:		22G90
+ProductVersion:		13.6
+BuildVersion:		22G120
+--------------------------------
+Homebrew 4.2.10
+--------------------------------
+Apple M2 (Virtual)
 --------------------------------
 FLUTTER_HOME=/Users/admin/flutter
-CIRRUS_CHANGE_TITLE=CI: test and package for Windows qua 20 set 2023 18:10:58 -03
+CIRRUS_CHANGE_TITLE=CI: test and package for Windows seg 01 abr 2024 08:51:30 -03
 MANPATH=/opt/homebrew/share/man::
-MAKE_FLAGS=-sj4
 EXTRA=full;extra
+MAKE_FLAGS=-sj4
 CIRRUS_ARCH=arm64
 ANDROID_HOME=/Users/admin/android-sdk
 SHELL=/bin/zsh
 TERM=xterm-256color
-CIRRUS_TASK_NAME=macOS M1
-BASE=Apple macOS M1
+CIRRUS_TASK_NAME=macOS M2
+BASE=Apple macOS M2
 CIRRUS_RESOLUTION_STRATEGY=SAME_SHA
-SSH_CLIENT=192.168.64.1 49283 22
-TMPDIR=/var/folders/n8/pp_chp6x3jlfy1n94r6hdjv40000gn/T/
+SSH_CLIENT=192.168.64.1 49366 22
+TMPDIR=/var/folders/xc/tpssff9959345bnqq4c6tlww0000gn/T/
 HOMEBREW_REPOSITORY=/opt/homebrew
 CIRRUS_USER_PERMISSION=admin
 CIRRUS_USER_COLLABORATOR=true
 ANDROID_SDK_ROOT=/Users/admin/android-sdk
-OLDPWD=/private/var/folders/n8/pp_chp6x3jlfy1n94r6hdjv40000gn/T/cirrus-ci-build
-CIRRUS_ENV=/var/folders/n8/pp_chp6x3jlfy1n94r6hdjv40000gn/T/cirrus-env-task-4704739347136512-7dfac301-c199-4d73-bdaa-75e87c29a57c
+OLDPWD=/private/var/folders/xc/tpssff9959345bnqq4c6tlww0000gn/T/cirrus-ci-build
+CIRRUS_ENV=/var/folders/xc/tpssff9959345bnqq4c6tlww0000gn/T/cirrus-env-task-4652265359802368-664cae86-e9ec-49af-881c-90f67630babc
 OS=darwin
-GITHUB_CHECK_SUITE_ID=16389696809
-BRANCH=bleeding-jumbo
+GITHUB_CHECK_SUITE_ID=22296787570
 CIRRUS_CLONE_DEPTH=10
+BRANCH=bleeding-jumbo
 USER=admin
-CIRRUS_CHANGE_IN_REPO=283f8f9253e44320e850147fb62cffd5d31386d9
-CIRRUS_BUILD_ID=6131159860510720
+CIRRUS_CHANGE_IN_REPO=60b83c8f46722dfa145f1891fb004803874002fc
+CIRRUS_BUILD_ID=5431777227964416
+CIRRUS_VM_ID=cirrus-cli-4652265359802368-09fbbba7-27e8-4f91-b502-ba7088981332
 HOMEBREW_NO_AUTO_UPDATE=1
-CIRRUS_CHANGE_MESSAGE=CI: test and package for Windows qua 20 set 2023 18:10:58 -03
 CIRRUS_BRANCH=bleeding-jumbo
+CIRRUS_CHANGE_MESSAGE=CI: test and package for Windows seg 01 abr 2024 08:51:30 -03
 CIRRUS_REPO_CLONE_TOKEN=HIDDEN-BY-CIRRUS-CI
-CIRRUS_WORKING_DIR=/var/folders/n8/pp_chp6x3jlfy1n94r6hdjv40000gn/T/cirrus-ci-build
-PATH=/Users/admin/flutter:/Users/admin/flutter/bin/:/Users/admin/flutter/bin/cache/dart-sdk/bin:/usr/local/bin/:/Users/admin/.rbenv/shims:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/admin/android-sdk/cmdline-tools/latest/bin:/Users/admin/android-sdk/platform-tools:/Users/admin/android-sdk/emulator
-CIRRUS_LAST_GREEN_CHANGE=7fa77afe6cf1a7ef37235535aa7c0bf47f789484
+CIRRUS_WORKING_DIR=/var/folders/xc/tpssff9959345bnqq4c6tlww0000gn/T/cirrus-ci-build
+PATH=/Users/admin/flutter:/Users/admin/flutter/bin/:/Users/admin/flutter/bin/cache/dart-sdk/bin:/Users/admin/.rbenv/shims:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/admin/android-sdk/cmdline-tools/latest/bin:/Users/admin/android-sdk/platform-tools:/Users/admin/android-sdk/emulator
 TARGET_ARCH=macOS ARM
-CIRRUS_COMMIT_MESSAGE=CI: test and package for Windows qua 20 set 2023 18:10:58 -03
+CIRRUS_LAST_GREEN_CHANGE=03c6e0780894be45515e252147845f78c249e37d
 CI_NODE_TOTAL=4
-PWD=/private/var/folders/n8/pp_chp6x3jlfy1n94r6hdjv40000gn/T/cirrus-ci-build/src
+CIRRUS_COMMIT_MESSAGE=CI: test and package for Windows seg 01 abr 2024 08:51:30 -03
+PWD=/private/var/folders/xc/tpssff9959345bnqq4c6tlww0000gn/T/cirrus-ci-build/src
 CIRRUS_HTTP_CACHE_HOST=127.0.0.1:12321
-CIRRUS_LAST_GREEN_BUILD_ID=5783192414715904
 CONTINUOUS_INTEGRATION=true
+CIRRUS_LAST_GREEN_BUILD_ID=5047111702544384
 CIRRUS_CPU=4
 LANG=en_US.UTF-8
 CI_NODE_INDEX=3
 CIRRUS_REPO_ID=5203529139486720
 RBENV_SHELL=zsh
-CIRRUS_CHANGE_TIMESTAMP=1695244258000
+CIRRUS_CHANGE_TIMESTAMP=1711972290000
 CIRRUS_CI=true
 TEST=macOS;
 HOME=/Users/admin
 SHLVL=3
 CIRRUS_OIDC_TOKEN=HIDDEN-BY-CIRRUS-CI
+TASK_RUNNING=BUILD
 CIRRUS_REPO_CLONE_URL=https://github.com/claudioandre-br/JohnTheRipper.git
 HOMEBREW_PREFIX=/opt/homebrew
 CI=true
@@ -83,8 +89,8 @@ CIRRUS_REPO_CLONE_HOST=github.com
 LOGNAME=admin
 CIRRUS_REPO_OWNER=claudioandre-br
 HOMEBREW_NO_INSTALL_CLEANUP=1
-CIRRUS_TASK_ID=4704739347136512
-SSH_CONNECTION=192.168.64.1 49283 192.168.64.52 22
+CIRRUS_TASK_ID=4652265359802368
+SSH_CONNECTION=192.168.64.1 49366 192.168.64.4 22
 CIRRUS_REPO_NAME=JohnTheRipper
 HOMEBREW_CELLAR=/opt/homebrew/Cellar
 INFOPATH=/opt/homebrew/share/info:
@@ -97,10 +103,10 @@ _=/usr/bin/env
 --------------------------------
 Compiler information
 --------------------------------
-Apple clang version 15.0.0 (clang-1500.0.40.1)
+Apple clang version 14.0.3 (clang-1403.0.22.14.1)
 Target: arm64-apple-darwin22.6.0
 Thread model: posix
-InstalledDir: /Applications/Xcode-15.0.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+InstalledDir: /Applications/Xcode-14.3.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
 --------------------------------
 #define _LP64 1
 #define __AARCH64EL__ 1
@@ -137,7 +143,6 @@ InstalledDir: /Applications/Xcode-15.0.0.app/Contents/Developer/Toolchains/Xcode
 #define __ARM_FEATURE_LDREX 0xF
 #define __ARM_FEATURE_NUMERIC_MAXMIN 1
 #define __ARM_FEATURE_QRDMX 1
-#define __ARM_FEATURE_RCPC 1
 #define __ARM_FEATURE_SHA2 1
 #define __ARM_FEATURE_SHA3 1
 #define __ARM_FEATURE_SHA512 1
@@ -226,8 +231,6 @@ InstalledDir: /Applications/Xcode-15.0.0.app/Contents/Developer/Toolchains/Xcode
 #define __FLT_MIN_EXP__ (-125)
 #define __FLT_MIN__ 1.17549435e-38F
 #define __FLT_RADIX__ 2
-#define __FP_FAST_FMA 1
-#define __FP_FAST_FMAF 1
 #define __GCC_ATOMIC_BOOL_LOCK_FREE 2
 #define __GCC_ATOMIC_CHAR16_T_LOCK_FREE 2
 #define __GCC_ATOMIC_CHAR32_T_LOCK_FREE 2
@@ -487,7 +490,7 @@ InstalledDir: /Applications/Xcode-15.0.0.app/Contents/Developer/Toolchains/Xcode
 #define __UINT_LEAST8_MAX__ 255
 #define __UINT_LEAST8_TYPE__ unsigned char
 #define __USER_LABEL_PREFIX__ _
-#define __VERSION__ "Apple LLVM 15.0.0 (clang-1500.0.40.1)"
+#define __VERSION__ "Apple LLVM 14.0.3 (clang-1403.0.22.14.1)"
 #define __WCHAR_MAX__ 2147483647
 #define __WCHAR_TYPE__ int
 #define __WCHAR_WIDTH__ 32
@@ -495,16 +498,16 @@ InstalledDir: /Applications/Xcode-15.0.0.app/Contents/Developer/Toolchains/Xcode
 #define __WINT_TYPE__ int
 #define __WINT_WIDTH__ 32
 #define __aarch64__ 1
-#define __apple_build_version__ 15000040
+#define __apple_build_version__ 14030022
 #define __arm64 1
 #define __arm64__ 1
 #define __block __attribute__((__blocks__(byref)))
 #define __clang__ 1
 #define __clang_literal_encoding__ "UTF-8"
-#define __clang_major__ 15
+#define __clang_major__ 14
 #define __clang_minor__ 0
-#define __clang_patchlevel__ 0
-#define __clang_version__ "15.0.0 (clang-1500.0.40.1)"
+#define __clang_patchlevel__ 3
+#define __clang_version__ "14.0.3 (clang-1403.0.22.14.1)"
 #define __clang_wide_literal_encoding__ "UTF-32"
 #define __llvm__ 1
 #define __nonnull _Nonnull
@@ -516,9 +519,20 @@ InstalledDir: /Applications/Xcode-15.0.0.app/Contents/Developer/Toolchains/Xcode
 #define __weak __attribute__((objc_gc(weak)))
 --------------------------------
 ------ Task ------
-Running on: Apple macOS M1
+Running on: Apple macOS M2
 Doing: BUILD
 --------------------------------
+--2024-04-01 12:02:59--  https://raw.githubusercontent.com/openwall/john-packages/release/tests/run_build.sh
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2567 (2.5K) [text/plain]
+Saving to: ‘run_build.sh’
+
+     0K ..                                                    100% 42.2M=0s
+
+2024-04-01 12:02:59 (42.2 MB/s) - ‘run_build.sh’ saved [2567/2567]
+
 ==> Homebrew collects anonymous analytics.
 Read the analytics documentation (and how to opt-out) here:
   https://docs.brew.sh/Analytics
@@ -527,51 +541,110 @@ No analytics have been recorded yet (nor will be during this `brew` run).
 ==> Homebrew is run entirely by unpaid volunteers. Please consider donating:
   https://github.com/Homebrew/brew#donations
 
-==> You have set:
-  HOMEBREW_NO_AUTO_UPDATE
-but we have dramatically sped up and fixed many bugs in the way we do Homebrew updates since.
-Please consider unsetting these and tweaking the values based on the new behaviour.
-
-
 Updated 3 taps (homebrew/cask-versions, homebrew/core and homebrew/cask).
 ==> New Formulae
-libimobiledevice-glue
+appwrite
+c-blosc2
+c4core
+cmake-language-server
+cotp
+dissent
+edgevpn
+erlang_ls
+git-split-diffs
+gnmic
+ingress2gateway
+inlyne
+jnv
+libsql
+mubeng
+prjtrellis
+protoc-gen-js
+ratchet
+rtabmap
+scala@3.3
+srgn
+tartufo
+whisperkit-cli
+wstunnel
+yo
 ==> New Casks
-ava
-reqable
-spundle
-zulu21
+ableton-live-intro11
+ableton-live-lite11
+ableton-live-standard11
+ableton-live-suite11
+arturia-software-center
+bbedit14
+cahier
+corretto21
+galaxybudsclient
+godspeed
+graalvm-jdk21
+ibkr
+instantview
+ireal-pro
+irpf2024
+jan
+juxtacode
+lookaway
+loungy
+nperf
+posture-pal
+proton-mail
+steinberg-activation-manager
+timelapze
+wifiman
+xcodepilot
+yes24-ebook
 ==> Outdated Formulae
+aom
 awscli
-carthage
+c-ares
+ca-certificates
 cmake
-fastlane
-gettext
+curl
 gh
+ghostscript
+git-lfs
+gitlab-runner
+glib
+graphicsmagick
 imagemagick
+imath
+jasper
+jpeg-turbo
+jpeg-xl
+libimobiledevice
 libomp
+libunistring
+libusbmuxd
 node
+openexr
 ruby-build
+sqlite
+wget
+xz
+zstd
 
-You have 10 outdated formulae installed.
+You have 28 outdated formulae installed.
 You can upgrade them with brew upgrade
 or list them with brew outdated.
-Warning: openssl@3 3.1.2 is already installed and up-to-date.
-To reinstall 3.1.2, run:
+Warning: openssl@3 3.2.1 is already installed and up-to-date.
+To reinstall 3.2.1, run:
   brew reinstall openssl@3
 libomp  is already installed but outdated (so it will be upgraded).
-Warning: gmp 6.2.1_1 is already installed and up-to-date.
-To reinstall 6.2.1_1, run:
+Warning: gmp 6.3.0 is already installed and up-to-date.
+To reinstall 6.3.0, run:
   brew reinstall gmp
 ==> Downloading https://ghcr.io/v2/homebrew/core/libpcap/manifests/1.10.4
 ==> Fetching libpcap
 ==> Downloading https://ghcr.io/v2/homebrew/core/libpcap/blobs/sha256:c9ab92960280af2f6677af5adac6400c0fcbc989e10c82539abd5e6fa07ace6c
-==> Downloading https://ghcr.io/v2/homebrew/core/libomp/manifests/17.0.1
+==> Downloading https://ghcr.io/v2/homebrew/core/libomp/manifests/18.1.2
 ==> Fetching libomp
-==> Downloading https://ghcr.io/v2/homebrew/core/libomp/blobs/sha256:3837963331024d9dac0d767143319e0fd8969da62e034337c252df18204b990d
-==> Downloading https://ghcr.io/v2/homebrew/core/coreutils/manifests/9.4
+==> Downloading https://ghcr.io/v2/homebrew/core/libomp/blobs/sha256:0b9eaa1939489aeb6607afc906c5ef01133b40c53d3888e54ce78592cb5ccfb2
+==> Downloading https://ghcr.io/v2/homebrew/core/coreutils/manifests/9.5
 ==> Fetching coreutils
-==> Downloading https://ghcr.io/v2/homebrew/core/coreutils/blobs/sha256:3707a17440f54975e547469c1309b2f260ef4bfc5c2c53ddc22998ae3a7fbe19
+==> Downloading https://ghcr.io/v2/homebrew/core/coreutils/blobs/sha256:0f889fb75ebc8e96aa1f38aff6ed1bc7e87c45b70f7644c7e1492f1f9480f352
 ==> Downloading https://ghcr.io/v2/homebrew/core/p7zip/manifests/17.05-1
 ==> Fetching p7zip
 ==> Downloading https://ghcr.io/v2/homebrew/core/p7zip/blobs/sha256:ba7f3e60841e85ab16ae76e7f0be634e15ea1b0c4a3a631cbe57447cbc9d77b6
@@ -592,7 +665,7 @@ For pkg-config to find libpcap you may need to set:
   export PKG_CONFIG_PATH="/opt/homebrew/opt/libpcap/lib/pkgconfig"
 ==> Summary
 🍺  /opt/homebrew/Cellar/libpcap/1.10.4: 110 files, 1MB
-==> Pouring libomp--17.0.1.arm64_ventura.bottle.tar.gz
+==> Pouring libomp--18.1.2.arm64_ventura.bottle.tar.gz
 ==> Caveats
 libomp is keg-only, which means it was not symlinked into /opt/homebrew,
 because it can override GCC headers and result in broken builds.
@@ -601,23 +674,94 @@ For compilers to find libomp you may need to set:
   export LDFLAGS="-L/opt/homebrew/opt/libomp/lib"
   export CPPFLAGS="-I/opt/homebrew/opt/libomp/include"
 ==> Summary
-🍺  /opt/homebrew/Cellar/libomp/17.0.1: 7 files, 1.7MB
-==> Pouring coreutils--9.4.arm64_ventura.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libomp/18.1.2: 8 files, 1.7MB
+==> Pouring coreutils--9.5.arm64_ventura.bottle.tar.gz
 ==> Caveats
 Commands also provided by macOS and the commands dir, dircolors, vdir have been installed with the prefix "g".
 If you need to use these commands with their normal names, you can add a "gnubin" directory to your PATH with:
   PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 ==> Summary
-🍺  /opt/homebrew/Cellar/coreutils/9.4: 476 files, 13.5MB
+🍺  /opt/homebrew/Cellar/coreutils/9.5: 476 files, 13.5MB
 ==> Pouring p7zip--17.05.arm64_ventura.bottle.1.tar.gz
 🍺  /opt/homebrew/Cellar/p7zip/17.05: 106 files, 9.5MB
 ==> Upgrading 1 dependent of upgraded formulae:
 Disable this behaviour by setting HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK.
 Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
-imagemagick 7.1.1-16 -> 7.1.1-17
-==> Downloading https://ghcr.io/v2/homebrew/core/imagemagick/manifests/7.1.1-17
+imagemagick 7.1.1-29 -> 7.1.1-29_1
+==> Downloading https://ghcr.io/v2/homebrew/core/imagemagick/manifests/7.1.1-29_1
+==> Fetching dependencies for imagemagick: jpeg-xl, ca-certificates, sqlite and python@3.12
+==> Downloading https://ghcr.io/v2/homebrew/core/jpeg-xl/manifests/0.10.2
+==> Fetching dependencies for jpeg-xl: imath, xz and openexr
+==> Downloading https://ghcr.io/v2/homebrew/core/imath/manifests/3.1.11
+==> Fetching imath
+==> Downloading https://ghcr.io/v2/homebrew/core/imath/blobs/sha256:82dadfb3bbfa4c9305c0f289ad13475b5205acd8394ea13c2880458abb0465d5
+==> Downloading https://ghcr.io/v2/homebrew/core/xz/manifests/5.4.6
+==> Fetching xz
+==> Downloading https://ghcr.io/v2/homebrew/core/xz/blobs/sha256:baba463d36447d4c858e51dfac347792eb65216e21eedab7b98fe79793335f28
+==> Downloading https://ghcr.io/v2/homebrew/core/openexr/manifests/3.2.4
+==> Fetching openexr
+==> Downloading https://ghcr.io/v2/homebrew/core/openexr/blobs/sha256:690f103efb1ab0a421cc8c7aa4c0eb0c1715f3e35e26b05f54820bc7896c16ef
+==> Fetching jpeg-xl
+==> Downloading https://ghcr.io/v2/homebrew/core/jpeg-xl/blobs/sha256:136444e6e6c21514af90cd1b4abdaa95a9559b3996fe4710deba5edb825af2cf
+==> Downloading https://ghcr.io/v2/homebrew/core/ca-certificates/manifests/2024-03-11
+==> Fetching ca-certificates
+==> Downloading https://ghcr.io/v2/homebrew/core/ca-certificates/blobs/sha256:cab828953672906e00a8f25db751977b8dc4115f021f8dfe82b644ade03dacdb
+==> Downloading https://ghcr.io/v2/homebrew/core/sqlite/manifests/3.45.2
+==> Fetching sqlite
+==> Downloading https://ghcr.io/v2/homebrew/core/sqlite/blobs/sha256:59c2a2bf11f1acd5726d9b5e0962dbc0d78e5f06af1723e85e5d06b86740c32e
+==> Downloading https://ghcr.io/v2/homebrew/core/python/3.12/manifests/3.12.2_1
+==> Fetching python@3.12
+==> Downloading https://ghcr.io/v2/homebrew/core/python/3.12/blobs/sha256:312729d7f0c6f95b573cbab483db01aaf2ca577392405d0e0b5ea6717ebb916a
+==> Fetching imagemagick
+==> Downloading https://ghcr.io/v2/homebrew/core/imagemagick/blobs/sha256:7f580faf153ef92c97c9101d81011bf5770cd2e1cf0a380855a5b4cf3a8d3125
+==> Upgrading imagemagick
+  7.1.1-29 -> 7.1.1-29_1
+==> Installing dependencies for imagemagick: jpeg-xl, ca-certificates, sqlite and python@3.12
+==> Installing imagemagick dependency: jpeg-xl
+==> Downloading https://ghcr.io/v2/homebrew/core/jpeg-xl/manifests/0.10.2
+Already downloaded: /Users/admin/Library/Caches/Homebrew/downloads/bd35692a6aaa0c23209e0c97b1aaaf97ba9e81f1646e1b231a4fa9339259583e--jpeg-xl-0.10.2.bottle_manifest.json
+==> Installing dependencies for jpeg-xl: imath, xz and openexr
+==> Installing jpeg-xl dependency: imath
+==> Downloading https://ghcr.io/v2/homebrew/core/imath/manifests/3.1.11
+Already downloaded: /Users/admin/Library/Caches/Homebrew/downloads/4738c3b3aeed35cc9103ddfda8626c334457672a7e704d000247ccc8f1fddee9--imath-3.1.11.bottle_manifest.json
+==> Pouring imath--3.1.11.arm64_ventura.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/imath/3.1.11: 49 files, 940.4KB
+==> Installing jpeg-xl dependency: xz
+==> Downloading https://ghcr.io/v2/homebrew/core/xz/manifests/5.4.6
+Already downloaded: /Users/admin/Library/Caches/Homebrew/downloads/b2cc4077807c100af6e0253f51d186f187ff55165638cbe3a4aa16d1c4762660--xz-5.4.6.bottle_manifest.json
+==> Pouring xz--5.4.6.arm64_ventura.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/xz/5.4.6: 163 files, 2.6MB
+==> Installing jpeg-xl dependency: openexr
+==> Downloading https://ghcr.io/v2/homebrew/core/openexr/manifests/3.2.4
+Already downloaded: /Users/admin/Library/Caches/Homebrew/downloads/64b203875dbfc58a68a1ab1bee0b9dcfa77a93c55c283a295b618ea0434c8060--openexr-3.2.4.bottle_manifest.json
+==> Pouring openexr--3.2.4.arm64_ventura.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/openexr/3.2.4: 205 files, 7.9MB
+==> Installing jpeg-xl
+==> Pouring jpeg-xl--0.10.2.arm64_ventura.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/jpeg-xl/0.10.2: 47 files, 3.9MB
+==> Installing imagemagick dependency: ca-certificates
+==> Downloading https://ghcr.io/v2/homebrew/core/ca-certificates/manifests/2024-03-11
+Already downloaded: /Users/admin/Library/Caches/Homebrew/downloads/c431e0186df2ccc2ea942b34a3c26c2cebebec8e07ad6abdae48447a52c5f506--ca-certificates-2024-03-11.bottle_manifest.json
+==> Pouring ca-certificates--2024-03-11.all.bottle.tar.gz
+[34m==>[0m [1mRegenerating CA certificate bundle from keychain, this may take a while...[0m
+🍺  /opt/homebrew/Cellar/ca-certificates/2024-03-11: 3 files, 229.6KB
+==> Installing imagemagick dependency: sqlite
+==> Downloading https://ghcr.io/v2/homebrew/core/sqlite/manifests/3.45.2
+Already downloaded: /Users/admin/Library/Caches/Homebrew/downloads/52aeccef7dfe87a5156de420a9e1f4b5b62f61b6c2b57633a5e6f04518b50edf--sqlite-3.45.2.bottle_manifest.json
+==> Pouring sqlite--3.45.2.arm64_ventura.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/sqlite/3.45.2: 11 files, 4.8MB
+==> Installing imagemagick dependency: python@3.12
+==> Downloading https://ghcr.io/v2/homebrew/core/python/3.12/manifests/3.12.2_1
+Already downloaded: /Users/admin/Library/Caches/Homebrew/downloads/db6a7027cff95a641d6d0c07e00f7b8fa26b0733b6d215c3752b745a381ebcb8--python@3.12-3.12.2_1.bottle_manifest.json
+==> Pouring python@3.12--3.12.2_1.arm64_ventura.bottle.tar.gz
+[34m==>[0m [1m/opt/homebrew/Cellar/python@3.12/3.12.2_1/bin/python3.12 -Im ensurepip[0m
+[34m==>[0m [1m/opt/homebrew/Cellar/python@3.12/3.12.2_1/bin/python3.12 -Im pip install -v [0m
+🍺  /opt/homebrew/Cellar/python@3.12/3.12.2_1: 3,239 files, 65.5MB
+==> Installing imagemagick
+==> Pouring imagemagick--7.1.1-29_1.arm64_ventura.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/imagemagick/7.1.1-29_1: 809 files, 31.3MB
 ==> Checking for dependents of upgraded formulae...
-==> No broken dependents found!
+==> No broken dependents to reinstall!
 ==> Caveats
 ==> libpcap
 libpcap is keg-only, which means it was not symlinked into /opt/homebrew,
@@ -644,7 +788,7 @@ For compilers to find libomp you may need to set:
 Commands also provided by macOS and the commands dir, dircolors, vdir have been installed with the prefix "g".
 If you need to use these commands with their normal names, you can add a "gnubin" directory to your PATH with:
   PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-Warning: Already linked: /opt/homebrew/Cellar/openssl@3/3.1.2
+Warning: Already linked: /opt/homebrew/Cellar/openssl@3/3.2.1
 To relink, run:
   brew unlink openssl@3 && brew link openssl@3
 checking build system type... arm-apple-darwin22.6.0
@@ -781,12 +925,6 @@ checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
 checking if more special flags are required for pthreads... -D_THREAD_SAFE
 checking for PTHREAD_PRIO_INHERIT... yes
 checking whether we are using the Microsoft C compiler... no
-checking CL/cl.h usability... no
-checking CL/cl.h presence... no
-checking for CL/cl.h... no
-checking OpenCL/cl.h usability... yes
-checking OpenCL/cl.h presence... yes
-checking for OpenCL/cl.h... yes
 checking windows.h usability... no
 checking windows.h presence... no
 checking for windows.h... no
@@ -915,7 +1053,7 @@ checking for _atoi64... no
 checking for snprintf... yes
 checking for sprintf_s... no
 checking for strcasestr... yes
-checking for clGetKernelArgInfo... yes
+checking for clGetKernelArgInfo... no
 checking for posix_memalign... yes
 checking for OS-specific feature macros needed... none
 checking size of size_t... 8
@@ -968,6 +1106,7 @@ ZTEX USB-FPGA module 1.15y support ................. no
 Install missing libraries to get any needed features that were omitted.
 
 Configure finished.  Now "make -s clean && make -sj4" to compile.
+make with flags: -sj4
 ar: creating archive poly1305-donna.a
 ar: creating archive aes.a
 ar: creating archive secp256k1.a
@@ -985,7 +1124,6 @@ gpg2john.c:1737:27: warning: passing arguments to a function without a prototype
                         (*uatsub_func[subtype])(len);
                                                ^
 4 warnings generated.
-ld: warning: ignoring duplicate libraries: '-lm'
 
 Make process completed.
 checking build system type... arm-apple-darwin22.6.0
@@ -1123,12 +1261,6 @@ checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
 checking if more special flags are required for pthreads... -D_THREAD_SAFE
 checking for PTHREAD_PRIO_INHERIT... yes
 checking whether we are using the Microsoft C compiler... no
-checking CL/cl.h usability... no
-checking CL/cl.h presence... no
-checking for CL/cl.h... no
-checking OpenCL/cl.h usability... yes
-checking OpenCL/cl.h presence... yes
-checking for OpenCL/cl.h... yes
 checking windows.h usability... no
 checking windows.h presence... no
 checking for windows.h... no
@@ -1257,7 +1389,7 @@ checking for _atoi64... no
 checking for snprintf... yes
 checking for sprintf_s... no
 checking for strcasestr... yes
-checking for clGetKernelArgInfo... yes
+checking for clGetKernelArgInfo... no
 checking for posix_memalign... yes
 checking for OS-specific feature macros needed... none
 checking size of size_t... 8
@@ -1311,6 +1443,7 @@ ZTEX USB-FPGA module 1.15y support ................. no
 Install missing libraries to get any needed features that were omitted.
 
 Configure finished.  Now "make -s clean && make -sj4" to compile.
+make with flags: -sj4
 gpg2john.c:1632:20: warning: passing arguments to a function without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
                         (*tag_func[tag])(len, 1, partial, hash);        // first packet (possibly only one if partial is false).
                                         ^
@@ -1328,24 +1461,25 @@ ar: creating archive aes.a
 ar: creating archive poly1305-donna.a
 ar: creating archive secp256k1.a
 ar: creating archive ed25519-donna.a
-ld: warning: ignoring duplicate libraries: '-lm'
 
 Make process completed.
-/private/var/folders/n8/pp_chp6x3jlfy1n94r6hdjv40000gn/T/cirrus-ci-build/src
---2023-09-20 23:16:33--  https://raw.githubusercontent.com/openwall/john-packages/main/tests/package_version.sh
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.108.133, 185.199.109.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.133|:443... connected.
+/private/var/folders/xc/tpssff9959345bnqq4c6tlww0000gn/T/cirrus-ci-build/src
+--2024-04-01 12:04:40--  https://raw.githubusercontent.com/openwall/john-packages/main/tests/package_version.sh
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
 HTTP request sent, awaiting response... 200 OK
-Length: 1489 (1.5K) [text/plain]
+Length: 1812 (1.8K) [text/plain]
 Saving to: ‘package_version.sh’
 
-     0K .                                                     100% 6.34M=0s
+     0K .                                                     100% 17.5M=0s
 
-2023-09-20 23:16:33 (6.34 MB/s) - ‘package_version.sh’ saved [1489/1489]
+2024-04-01 12:04:40 (17.5 MB/s) - ‘package_version.sh’ saved [1812/1812]
 
+./package_version.sh: OK
+==== Using the version from 'Release.ID' ====
 
 -- Build Info --
-Version: 1.9.0-jumbo-1+bleeding-39db7dd63e 2023-09-20 17:02:33 -0300
+Version: 1.9.0-jumbo-1+bleeding-f9fedd238b 2024-04-01 13:35:37 +0200
 Build: darwin22.6.0 64-bit arm ASIMD AC OMP OPENCL
 SIMD: ASIMD, interleaving: MD4:2 MD5:2 SHA1:1 SHA256:1 SHA512:1
 OMP fallback binary: john-arm64
@@ -1363,12 +1497,12 @@ SINGLE_BUF_MAX: 4294967295
 Effective limit: Number of salts vs. SingleMaxBufferSize
 Max. Markov mode level: 400
 Max. Markov mode password length: 30
-clang version: 15.0.0 (clang-1500.0.40.1) (gcc 4.2.1 compatibility)
+clang version: 14.0.3 (clang-1403.0.22.14.1) (gcc 4.2.1 compatibility)
 OpenCL headers version: 1.2
 Crypto library: OpenSSL
-OpenSSL library version: 030100020
-OpenSSL 3.1.2 1 Aug 2023
-GMP library version: 6.2.1
+OpenSSL library version: 030200010
+OpenSSL 3.2.1 30 Jan 2024
+GMP library version: 6.3.0
 File locking: fcntl()
 fseek(): fseek
 ftell(): ftell
@@ -1377,43 +1511,43 @@ memmem(): System's
 times(2) sysconf(_SC_CLK_TCK) is 100
 Using times(2) for timers, resolution 10 ms
 HR timer: mach_absolute_time(), latency 41 ns
-Total physical host memory: 8 GiB
-Available physical host memory: 4240 MiB
+Total physical host memory: 12 GiB
+Available physical host memory: 8093 MiB
 Terminal locale string: en_US.UTF-8
 Parsed terminal locale: UTF-8
 echo '[Local:Disabled:Formats]' >> run/john-local.conf
 echo 'SunMD5 = Y' >> run/john-local.conf
-.ci/tests-ci.sh "$TARGET_ARCH" TEST
---2023-09-20 23:16:33--  https://raw.githubusercontent.com/claudioandre-br/JtR-CI/master/tests/show_info.sh
+.ci/ci_controller.sh "$TARGET_ARCH" TEST
+--2024-04-01 12:04:40--  https://raw.githubusercontent.com/openwall/john-packages/release/tests/show_info.sh
 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
 HTTP request sent, awaiting response... 200 OK
-Length: 3122 (3.0K) [text/plain]
-Saving to: ‘show_info.sh.2’
+Length: 3358 (3.3K) [text/plain]
+Saving to: ‘show_info.sh’
 
-     0K ...                                                   100% 38.7M=0s
+     0K ...                                                   100% 35.6M=0s
 
-2023-09-20 23:16:33 (38.7 MB/s) - ‘show_info.sh.2’ saved [3122/3122]
+2024-04-01 12:04:40 (35.6 MB/s) - ‘show_info.sh’ saved [3358/3358]
 
 ------ Task ------
-Running on: Apple macOS M1
+Running on: Apple macOS M2
 Doing: TEST
 --------------------------------
---2023-09-20 23:16:33--  https://raw.githubusercontent.com/openwall/john-packages/release/tests/run_tests.sh
+--2024-04-01 12:04:40--  https://raw.githubusercontent.com/openwall/john-packages/release/tests/run_tests.sh
 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
 HTTP request sent, awaiting response... 200 OK
-Length: 14379 (14K) [text/plain]
+Length: 14353 (14K) [text/plain]
 Saving to: ‘run_tests.sh’
 
-     0K .......... ....                                       100% 19.1M=0.001s
+     0K .......... ....                                       100% 17.5M=0.001s
 
-2023-09-20 23:16:33 (19.1 MB/s) - ‘run_tests.sh’ saved [14379/14379]
+2024-04-01 12:04:41 (17.5 MB/s) - ‘run_tests.sh’ saved [14353/14353]
 
 ---------------------------- TESTING -----------------------------
 Binary: ../run/john
 => ../run/john --list=build-info
-Version: 1.9.0-jumbo-1+bleeding-39db7dd63e 2023-09-20 17:02:33 -0300
+Version: 1.9.0-jumbo-1+bleeding-f9fedd238b 2024-04-01 13:35:37 +0200
 Build: darwin22.6.0 64-bit arm ASIMD AC OMP OPENCL
 SIMD: ASIMD, interleaving: MD4:2 MD5:2 SHA1:1 SHA256:1 SHA512:1
 OMP fallback binary: john-arm64
@@ -1431,12 +1565,12 @@ SINGLE_BUF_MAX: 4294967295
 Effective limit: Number of salts vs. SingleMaxBufferSize
 Max. Markov mode level: 400
 Max. Markov mode password length: 30
-clang version: 15.0.0 (clang-1500.0.40.1) (gcc 4.2.1 compatibility)
+clang version: 14.0.3 (clang-1403.0.22.14.1) (gcc 4.2.1 compatibility)
 OpenCL headers version: 1.2
 Crypto library: OpenSSL
-OpenSSL library version: 030100020
-OpenSSL 3.1.2 1 Aug 2023
-GMP library version: 6.2.1
+OpenSSL library version: 030200010
+OpenSSL 3.2.1 30 Jan 2024
+GMP library version: 6.3.0
 File locking: fcntl()
 fseek(): fseek
 ftell(): ftell
@@ -1444,11 +1578,15 @@ fopen(): fopen
 memmem(): System's
 times(2) sysconf(_SC_CLK_TCK) is 100
 Using times(2) for timers, resolution 10 ms
-HR timer: mach_absolute_time(), resolution 42 ns
-Total physical host memory: 8 GiB
-Available physical host memory: 4238 MiB
+HR timer: mach_absolute_time(), latency 42 ns
+Total physical host memory: 12 GiB
+Available physical host memory: 8095 MiB
 Terminal locale string: en_US.UTF-8
 Parsed terminal locale: UTF-8
+---------------------------- OpenCL Devices ----------------------------
+Platform #0 name: Apple, version: OpenCL 1.2 (Jun 23 2023 20:24:12)
+Error: No OpenCL-capable devices were detected by the installed OpenCL driver.
+
 --------------------------- test full ---------------------------
 Will run 4 OpenMP threads
 Testing: descrypt, traditional crypt(3) [DES 128/128 ASIMD]... (4xOMP) PASS
@@ -1467,6 +1605,7 @@ Testing: aix-ssha256, AIX LPA {ssha256} [PBKDF2-SHA256 128/128 ASIMD 4x]... (4xO
 Testing: aix-ssha512, AIX LPA {ssha512} [PBKDF2-SHA512 128/128 ASIMD 2x]... (4xOMP) PASS
 Testing: andOTP [SHA256 32/64]... (4xOMP) PASS
 Testing: ansible, Ansible Vault [PBKDF2-SHA256 HMAC-256 128/128 ASIMD 4x]... (4xOMP) PASS
+Testing: armory, Armory wallet [SHA512/AES/secp256k1/SHA256/RIPEMD160 128/128 ASIMD 2x]... (4xOMP) PASS
 Testing: as400-des, AS/400 DES [DES 32/64]... PASS
 Testing: as400-ssha1, AS400-SaltedSHA1 [sha1(utf16be(space_pad_10(uc($s)).$p)) (IBM AS/400 SHA1) 128/128 ASIMD 4x1]... PASS
 Testing: asa-md5, Cisco ASA [md5($p.$s) (Cisco ASA) 128/128 ASIMD 4x2]... PASS
@@ -1532,6 +1671,7 @@ Testing: IKE, PSK [HMAC MD5/SHA1 32/64]... (4xOMP) PASS
 Testing: ipb2, Invision Power Board 2.x [MD5 128/128 ASIMD 4x2]... (4xOMP) PASS
 Testing: itunes-backup, Apple iTunes Backup [PBKDF2-SHA1 AES 128/128 ASIMD 4x]... (4xOMP) PASS
 Testing: KeePass [SHA256 AES 32/64]... (4xOMP) PASS
+Testing: keplr, Keplr Wallet (131072, 8, 1) [scrypt Salsa20/8 32/64, SHA256 32/64]... (4xOMP) PASS
 Testing: keychain, Mac OS X Keychain [PBKDF2-SHA1 3DES 128/128 ASIMD 4x]... (4xOMP) PASS
 Testing: keyring, GNOME Keyring [SHA256 AES 128/128 ASIMD 4x]... (4xOMP) PASS
 Testing: keystore, Java KeyStore [SHA1 128/128 ASIMD 4x]... (4xOMP) PASS
@@ -1610,7 +1750,7 @@ Testing: PEM, PKCS#8 private key (RSA/DSA/ECDSA) [PBKDF2-SHA1 128/128 ASIMD 4x 3
 Testing: pfx, (.pfx, .p12) [PKCS#12 PBE (SHA1/SHA2) 128/128 ASIMD 4x]... (4xOMP) PASS
 Testing: pgpdisk, PGP Disk / Virtual Disk [SHA1 64]... (4xOMP) PASS
 Testing: pgpsda, PGP Self Decrypting Archive [SHA1 64]... (4xOMP) PASS
-Testing: pgpwde, PGP Whole Disk Encryption [S2K-SHA1 64]... (4xOMP) PASS
+Testing: pgpwde, PGP Whole Disk Encryption [S2K-SHA1 32/64]... (4xOMP) PASS
 Testing: phpass ($P$9) [phpass ($P$ or $H$) 128/128 ASIMD 4x2]... (4xOMP) PASS
 Testing: PHPS [md5(md5($p).$s) 128/128 ASIMD 4x2]... PASS
 Testing: PHPS2 [md5(md5($p).$s) 128/128 ASIMD 4x2]... PASS
@@ -1857,12 +1997,12 @@ Testing: dynamic_2011 [md5($s.md5($p.$s)) (PW > 32 or salt > 23 bytes) 128/128 A
 Testing: dynamic_2014 [md5($s.md5($p).$s) (PW > 55 or salt > 11 bytes) 128/128 ASIMD 4x2]... PASS
 Testing: dummy [N/A]... PASS
 Testing: crypt, generic crypt(3) [?/64]... (4xOMP) PASS
-All 406 formats passed self-tests!
+All 408 formats passed self-tests
  Ok: -test-full=0 --format=cpu
 --------------------------- extras ---------------------------
 ====> mask T1 A: 9 lines
 Press Ctrl-C to abort, or send SIGUSR1 to john process for status
-9p 0:00:00:00 100.00% (2023-09-20 23:22) 225.0p/s 2passwordC
+9p 0:00:00:00 100.00% (2024-04-01 12:16) 300.0p/s 2passwordC
 0passwordA
 1passwordA
 2passwordA
@@ -1874,7 +2014,7 @@ Press Ctrl-C to abort, or send SIGUSR1 to john process for status
 2passwordC
 ====> mask T1 C: 7 lines, 7 special characters, quotation marks
 Press Ctrl-C to abort, or send SIGUSR1 to john process for status
-7p 0:00:00:00 100.00% (2023-09-20 23:22) 233.3p/s abÉ
+7p 0:00:00:00 100.00% (2024-04-01 12:16) 350.0p/s abÉ
 ab£
 abö
 abç
@@ -1884,13 +2024,13 @@ abñ
 abÉ
 ====> mask T1 E: 3 lines, 1 special character, vertical bar
 Press Ctrl-C to abort, or send SIGUSR1 to john process for status
-3p 0:00:00:00 100.00% (2023-09-20 23:22) 150.0p/s abc
+3p 0:00:00:00 100.00% (2024-04-01 12:16) 150.0p/s abc
 abö
 ab|
 abc
 ====> mask T1 F: 8 lines, 5 special characters, vertical bar
 Press Ctrl-C to abort, or send SIGUSR1 to john process for status
-8p 0:00:00:00 100.00% (2023-09-20 23:22) 400.0p/s ab!
+8p 0:00:00:00 100.00% (2024-04-01 12:16) 266.7p/s ab!
 abö
 ab,
 ab¿
@@ -1902,7 +2042,7 @@ ab!
 ====> mask T2: 2 lines, at the end
 Using default input encoding: UTF-8
 Press Ctrl-C to abort, or send SIGUSR1 to john process for status
-2p 0:00:00:00 0.00% 100.0p/s magnum1
+2p 0:00:00:00 0.00% 66.67p/s magnum1
 magnum0
 magnum1
 ====> mask T3 A: 2 lines, at the end, encoding
@@ -1913,7 +2053,7 @@ M�LLER1
 ====> mask T3 B: 3 lines, encoding
 Target encoding: CP437
 Press Ctrl-C to abort, or send SIGUSR1 to john process for status
-3p 0:00:00:00 100.00% (2023-09-20 23:22) 100.0p/s abc
+3p 0:00:00:00 100.00% (2024-04-01 12:16) 100.0p/s abc
 ab�
 ab|
 abc
@@ -1927,22 +2067,22 @@ Testing: sha256crypt, crypt(3) $5$ (rounds=5000) [SHA256 128/128 ASIMD 4x]... (4
  Ok: -test-full=0 --format=sha256crypt
 ====> T6.0:
 Benchmarking: dynamic=md5(sha1($s).md5($p)) [128/128 ASIMD 4x2]... DONE
-Many salts:	14113K c/s real, 14113K c/s virtual
-Only one salt:	7292K c/s real, 7292K c/s virtual
+Many salts:	12540K c/s real, 12540K c/s virtual
+Only one salt:	6769K c/s real, 6769K c/s virtual
 
- Ok: -test=3 -form="dynamic=md5(sha1($s).md5($p))"
+ Ok: -test=3 --format="dynamic=md5(sha1($s).md5($p))"
 ====> T6.1:
 This expression will use the RDP dynamic compiler format.
 Benchmarking: dynamic=md5(sha1($s.$p).md5($p)) [Dynamic RDP]... DONE
-Many salts:	1380K c/s real, 1380K c/s virtual
-Only one salt:	1325K c/s real, 1325K c/s virtual
+Many salts:	1203K c/s real, 1203K c/s virtual
+Only one salt:	1096K c/s real, 1100K c/s virtual
 
- Ok: -test=3 -form="dynamic=md5(sha1($s.$p).md5($p))"
+ Ok: -test=3 --format="dynamic=md5(sha1($s.$p).md5($p))"
 ====> T6.2:
 Benchmarking: dynamic=md5($p) [128/128 ASIMD 4x2]... DONE
-Raw:	31441K c/s real, 31337K c/s virtual
+Raw:	27072K c/s real, 26982K c/s virtual
 
- Ok: -test=3 -form="dynamic=md5($p)"
+ Ok: -test=3 --format="dynamic=md5($p)"
 
 ====> T10:
 Using default input encoding: UTF-8
@@ -1955,11 +2095,9 @@ Proceeding with wordlist:../run/password.lst
 Enabling duplicate candidate password suppressor
 password         (?)
 hello            (?)
-1 2g 0:00:00:00 DONE 2/3 (2023-09-20 23:23) 100.0g/s 409600p/s 409600c/s 819200C/s 123456..nelly1
+1 2g 0:00:00:00 DONE 2/3 (2024-04-01 12:16) 100.0g/s 25600p/s 25600c/s 51200C/s 123456..crawford
 Waiting for 1 child to terminate
-password         (?)
-hello            (?)
-2 2g 0:00:00:02 DONE 2/3 (2023-09-20 23:24) 0g/s 5412Kp/s 5412Kc/s 10808KC/s kicer12..pudy1
+2 0g 0:00:00:00 DONE 2/3 (2024-04-01 12:16) 0g/s 0p/s 0c/s 0C/s
 Use the "--show --format=NT" options to display all of the cracked passwords reliably
 Session completed.
  Ok: tests.in --format=nt --fork=2
@@ -1976,11 +2114,10 @@ Enabling duplicate candidate password suppressor
 samels           (?)
 samels           (?)
 2: Disabling duplicate candidate password suppressor
-1: Disabling duplicate candidate password suppressor
 momard           (?)
-1 2g 0:00:00:13 DONE 2/3 (2023-09-20 23:24) 0g/s 4884Kp/s 4884Kc/s 6715KC/s hello105d..kulit2191
+1 2g 0:00:00:13 DONE 2/3 (2024-04-01 12:16) 0.1444g/s 4693Kp/s 4693Kc/s 6511KC/s hello105d..acura428
 Waiting for 1 child to terminate
-2 1g 0:00:00:14 DONE 2/3 (2023-09-20 23:24) 0g/s 5863Kp/s 5863Kc/s 6874KC/s baxter8429..cr1tt3r29
+2 1g 0:00:00:14 DONE 2/3 (2024-04-01 12:16) 0.07018g/s 5077Kp/s 5077Kc/s 6107KC/s tuomas192..theboss8892
 Use the "--show --format=Raw-SHA256" options to display all of the cracked passwords reliably
 Session completed.
  Ok: --format=raw-sha256 --fork=2
@@ -2004,38 +2141,37 @@ Testing: sha1crypt, NetBSD's sha1crypt [PBKDF1-SHA1 128/128 ASIMD 4x]... (4xOMP)
 
 sha1crypt OMP autotune using test db with iteration count of 64000
 
-OMP scale 1: 32 crypts (1x32) in 54.461 ms, 587 c/s +
-OMP scale 2: 64 crypts (1x64) in 108.755 ms, 588 c/s
+OMP scale 1: 32 crypts (1x32) in 54.480 ms, 587 c/s +
+OMP scale 2: 64 crypts (1x64) in 109.434 ms, 584 c/s
 Autotuned OMP scale 1, preset is 4
 PASS
  Ok: --format=sha1crypt --verb=5 --tune=report
 initUnicode(UNICODE, RAW/RAW)
 RAW -> RAW -> RAW
 Will run 4 OpenMP threads
-Testing: sha256crypt, crypt(3) $5$ (rounds=5000) [SHA256 128/128 ASIMD 4x]... (4xOMP) Loaded 7 hashes with 5 different salts to test db from test vectors
+Testing: sha256crypt, crypt(3) $5$ (rounds=5000) [SHA256 128/128 ASIMD 4x]... (4xOMP) Loaded 47 hashes with 29 different salts to test db from test vectors
 
-sha256crypt OMP autotune using test db with iteration count of 5000
+sha256crypt OMP autotune using test db with iteration count of 50000
 
-OMP scale 1: 512 crypts (1x512) in 79.072 ms, 6475 c/s +
-OMP scale 2: 1024 crypts (1x1024) in 158.181 ms, 6473 c/s
+OMP scale 1: 512 crypts (1x512) in 746.835 ms, 685 c/s +
 Autotuned OMP scale 1, preset is 2
 PASS
  Ok: --format=sha256crypt --verb=5 --tune=report
 initUnicode(UNICODE, RAW/RAW)
 RAW -> RAW -> RAW
 Will run 4 OpenMP threads
-Testing: sha512crypt, crypt(3) $6$ (rounds=5000) [SHA512 128/128 ASIMD 2x]... (4xOMP) Loaded 6 hashes with 4 different salts to test db from test vectors
+Testing: sha512crypt, crypt(3) $6$ (rounds=5000) [SHA512 128/128 ASIMD 2x]... (4xOMP) Loaded 33 hashes with 15 different salts to test db from test vectors
 
 sha512crypt OMP autotune using test db with iteration count of 5000
 
-OMP scale 1: 256 crypts (1x256) in 57.971 ms, 4415 c/s +
-OMP scale 2: 512 crypts (1x512) in 115.582 ms, 4429 c/s
+OMP scale 1: 256 crypts (1x256) in 61.731 ms, 4146 c/s +
+OMP scale 2: 512 crypts (1x512) in 124.400 ms, 4115 c/s
 PASS
  Ok: --format=sha512crypt --verb=5 --tune=report
 ------------------------------------------------------------------
 
 ====> T14: OMP fallback
-Version: 1.9.0-jumbo-1+bleeding-39db7dd63e 2023-09-20 17:02:33 -0300
+Version: 1.9.0-jumbo-1+bleeding-f9fedd238b 2024-04-01 13:35:37 +0200
 Build: darwin22.6.0 64-bit arm ASIMD AC OPENCL
 SIMD: ASIMD, interleaving: MD4:2 MD5:2 SHA1:1 SHA256:1 SHA512:1
 $JOHN is ../run/
@@ -2052,12 +2188,12 @@ SINGLE_BUF_MAX: 4294967295
 Effective limit: Number of salts vs. SingleMaxBufferSize
 Max. Markov mode level: 400
 Max. Markov mode password length: 30
-clang version: 15.0.0 (clang-1500.0.40.1) (gcc 4.2.1 compatibility)
+clang version: 14.0.3 (clang-1403.0.22.14.1) (gcc 4.2.1 compatibility)
 OpenCL headers version: 1.2
 Crypto library: OpenSSL
-OpenSSL library version: 030100020
-OpenSSL 3.1.2 1 Aug 2023
-GMP library version: 6.2.1
+OpenSSL library version: 030200010
+OpenSSL 3.2.1 30 Jan 2024
+GMP library version: 6.3.0
 File locking: fcntl()
 fseek(): fseek
 ftell(): ftell
@@ -2065,27 +2201,27 @@ fopen(): fopen
 memmem(): System's
 times(2) sysconf(_SC_CLK_TCK) is 100
 Using times(2) for timers, resolution 10 ms
-HR timer: mach_absolute_time(), latency 41 ns
-Total physical host memory: 8 GiB
-Available physical host memory: 4794 MiB
+HR timer: mach_absolute_time(), resolution 42 ns
+Total physical host memory: 12 GiB
+Available physical host memory: 7637 MiB
 Terminal locale string: en_US.UTF-8
 Parsed terminal locale: UTF-8
  Ok: OMP_NUM_THREADS=1 --list=build-info
 -------------------------------------------
-###  Performed 14 tests in 493 seconds  ###
+###  Performed 14 tests in 737 seconds  ###
 -------------------------------------------
 ----------------- arm64 ------------------
-                                                    wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh -O .ci/clean_package.sh
---2023-09-20 23:24:47--  https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh
+                                                                            wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh -O .ci/clean_package.sh
+--2024-04-01 12:16:57--  https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh
 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
 HTTP request sent, awaiting response... 200 OK
-Length: 1638 (1.6K) [text/plain]
+Length: 1648 (1.6K) [text/plain]
 Saving to: ‘.ci/clean_package.sh’
 
-     0K .                                                     100% 13.9M=0s
+     0K .                                                     100% 7.08M=0s
 
-2023-09-20 23:24:47 (13.9 MB/s) - ‘.ci/clean_package.sh’ saved [1638/1638]
+2024-04-01 12:16:58 (7.08 MB/s) - ‘.ci/clean_package.sh’ saved [1648/1648]
 
 source .ci/clean_package.sh
 #!/bin/bash
@@ -2123,7 +2259,7 @@ rm -rf run/ztex
 # Cleanup to deploy
 if [[ -n "$DEPLOY_PAK"  ]]; then
     rm -rf src appveyor.yml azure-pipelines.yml .git .ci .circleci .cirrus.yml .azure .editorconfig .gitattributes \
-          .github .gitignore .mailmap .pre-commit.sh .travis .travis.yml
+          .github .gitignore .mailmap .pre-commit.sh .travis .travis.yml shell.nix
 fi
 7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=128m -ms=on JtR-macArm.7z ./
 
@@ -2131,16 +2267,16 @@ fi
 p7zip Version 17.05 (locale=utf8,Utf16=on,HugeFiles=on,64 bits,4 CPUs LE)
 
 Scanning the drive:
-23 folders, 505 files, 86435901 bytes (83 MiB)
+20 folders, 520 files, 83066328 bytes (80 MiB)
 
 Creating archive: JtR-macArm.7z
 
-Items to compress: 528
+Items to compress: 540
 
 
-Files read from disk: 505
-Archive size: 23183269 bytes (23 MiB)
+Files read from disk: 520
+Archive size: 22530116 bytes (22 MiB)
 Everything is Ok
-sha256sum -- JtR-macArm.7z || true
-60210080f8e22158ec1f6d377e51f25a8d2eafe28d484ca138afd5539a57d853  JtR-macArm.7z
+sha256sum -- JtR-macArm.7z
+06a1f381e40c5dd8b3f25fd8f9063541c21ab1ab154cf9f894bcb133390ad43a  JtR-macArm.7z
          
