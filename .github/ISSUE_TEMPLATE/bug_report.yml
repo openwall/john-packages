@@ -16,7 +16,7 @@ body:
       description: Select the appropriate versions.
       multiple: true
       options:
-        - 1.9J1+2404
+        - 1.9.1-ce
         - latest bleeding
     validations:
       required: true
