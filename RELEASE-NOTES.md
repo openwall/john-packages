@@ -1,32 +1,34 @@
 # Release Notes
 
-## Release [rolling-2404](https://github.com/openwall/john-packages/releases/tag/rolling-2404) (2024-04-05)
+The X86_64 binaries require either AVX, AVX2, or AVX512BW.
 
-Version `1.9J1+2404`. This is a maintenance release:
+This is the `john-packages` (itself) 0.99 release 'v0.9.9'. August 2024 (version 0.9.9).
 
-April’s bugfix release.
+## Release [1.9.1-ce](https://github.com/openwall/john-packages/releases/tag/v1.9.1-ce) (2024-08-01)
+
+Version `1.9.1-ce`. This is a bugfix, renovate, and update release intended to provide a
+modernized version to end users and packagers:
 
 ### Breaking Changes
 
-- Due to hardware unavailability, we have stopped building the macOS X86 (Intel CPU) package;
-- Due to hardware limitations, we have stopped building SSE2 binaries (only on Linux for now).
+- From now on, we have stopped building SSE2 binaries;
+- From now on, we have stopped building AVX512F binaries;
+- From now on, we will discontinue all builds for 32-bit architectures.
 
 ### Bugfixes
 
-- Some random bugfixes here and there.
+- Minor and important bugfixes.
 
 ### Improvements
 
-- Add arm64 Docker image (with NVIDIA GPU support);
 - Add new formats and/or implementations;
-  - Armory wallet, Keplr wallet, Argon2 OpenCL.
-- \*2john improvements;
-  - Add a modern version of pdf2john (.py; Python 3).
-- Improve OpenCL detection;
-  - Start using dynamic OpenCL binding (dynamically load OpenCL library);
-  - Add Khronos Group OpenCL header files (use this local copy of the OpenCL headers);
-- Some random optimizations here and there;
-- Minor documentations tweaks.
+  - Add a new SM3 hash function.
+- Add SLSA level 1 to GitHub Releases;
+- Add more details and traceability to the produced build logs;
+- Update dependencies and pin dependency versions to improve repeatability and security;
+- Add `Combinator` external mode (combines words in pairs);
+- Add `Shuffle` external mode (tries permutations of characters);
+- Provide packages via `zip` archive and avoid the risk and need of using `7zip`.
 
 ### Binaries Available
 
@@ -35,7 +37,7 @@ April’s bugfix release.
   - bundle (for X86_64);
   - via FlatHub (for X86_64 and aarch64).
 - macOS (for M1 and above);
-- Snap (for X86_64, armhf, arm64, ppc64el, riscv64, and s390x);
+- Snap (for X86_64, arm64, ppc64el, riscv64, and s390x);
 - Windows (for X86_64).
 
 All except s390x and riscv64 binaries support SIMD.

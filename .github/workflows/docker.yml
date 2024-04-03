@@ -31,7 +31,7 @@ name: Docker
       VERSION_NAME:
         description: "The software version name"
         required: true
-        default: "1.9J1+"
+        default: "1.9.1-ce"
       tag:
         description: "The image tag"
         required: true
