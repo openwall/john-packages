@@ -43,3 +43,8 @@ wget "https://api.cirrus-ci.com/v1/task/4652265359802368/logs/package.log" \
 rm buildlog*.gz
 
 wget https://launchpad.net/~claudioandre.br/john/+snap/john-the-ripper/+build/2438416/+files/buildlog_snap_ubuntu_jammy_amd64_john-the-ripper_BUILDING.txt.gz
+wget https://launchpad.net/~claudioandre.br/john/+snap/john-the-ripper/+build/2438417/+files/buildlog_snap_ubuntu_jammy_armhf_john-the-ripper_BUILDING.txt.gz
+wget https://launchpad.net/~claudioandre.br/john/+snap/john-the-ripper/+build/2438418/+files/buildlog_snap_ubuntu_jammy_arm64_john-the-ripper_BUILDING.txt.gz
+wget https://launchpad.net/~claudioandre.br/john/+snap/john-the-ripper/+build/2438419/+files/buildlog_snap_ubuntu_jammy_ppc64el_john-the-ripper_BUILDING.txt.gz
+wget https://launchpad.net/~claudioandre.br/john/+snap/john-the-ripper/+build/2438420/+files/buildlog_snap_ubuntu_jammy_s390x_john-the-ripper_BUILDING.txt.gz
+wget https://launchpad.net/~claudioandre.br/john/+snap/john-the-ripper/+build/2438421/+files/buildlog_snap_ubuntu_jammy_riscv64_john-the-ripper_BUILDING.txt.gz
