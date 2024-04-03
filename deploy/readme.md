@@ -39,41 +39,39 @@ See also [how to become a maintainer](../docs/become-maintainer.md).
 
 ## John the Ripper release build environments
 
-Build date: 2024-04-01 (rolling-2404)
+Build date: 2025-01-29 (v1.9.1-ce)
 
 ### Docker Image
 
 ```text
-FROM nvidia/cuda:12.3.2-base-ubuntu22.04@sha256:8cecfe099315f73127d6d5cc43fce32c7ffff4ea0460eefac48f2b7d811ce857
+FROM nvidia/cuda:12.6.3-base-ubuntu24.04@sha256:c87e78933f4c16e3272123bf2f75537306596d0fbaa395a29696a22786e5ee0e
 ```
 
 ### Flatpak
 
 ```text
-Freedesktop.org SDK 23.08 (Flatpak runtime)
+Freedesktop.org SDK 24.08 (Flatpak runtime)
 ```
 
 ### macOS
 
 ```text
-Darwin 22.6.0 arm64 arm
-Homebrew 4.2.10
+Darwin 23.6.0 arm64 arm;
+Homebrew 4.4.19;
 ```
 
 ### Snap
 
 ```text
-runtime: core22
-Launchpad --series=jammy
+runtime: core24
 ```
 
 ### Windows
 
 ```text
-OS Name:                   Microsoft Windows Server 2019 Datacenter
-OS Version:                10.0.17763 N/A Build 17763
-Current image version: '20240322.1.0'
-Cygwin 3.5.1
+OS Name:        Microsoft Windows Server 2022 Datacenter
+ImageVersion    20250120.2.0
+Cygwin          3.5.5;
 ```
 
 <!--

@@ -56,8 +56,10 @@ This is the `john-packages` (itself) 0.9 release 'v0.9.0'. October 2023 (version
 
 ### Bugfixes (2310)
 
-- Important bugfixes in ZIP and Office formats;
+- Important bugfixes in ZIP and Office formats; [1]
 - A lot of minor and important bugfixes everywhere.
+
+[1] A correction like this in a format can imply that false negatives may have occurred in the past.
 
 ### Improvements (2310)
 

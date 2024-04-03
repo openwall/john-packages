@@ -1,14 +1,12 @@
 aarch
 Acked
 adxcrypt
-AESNI
 afl
 Altivec
 amazonaws
 amd
 amdocl
 ansible
-apk
 apps
 appveyor
 aquasecurity
@@ -100,6 +98,7 @@ flapak
 fulcio
 fullname
 fuzzer
+fvde
 galarius
 gcr
 gdb
@@ -110,10 +109,9 @@ glxqk
 gmake
 gmp
 Gnomovision
-gnueabi
 gnupg
 google
-gost
+GOST
 gpg
 GPUs
 hashicorp
@@ -124,15 +122,14 @@ icd
 ifndef
 img
 IMO
-intrinsics
 ipc
 jscpd
 JTR
 jtrcrackers
 jtrts
+KDBX
 KDFAES
 keepass
-Keplr
 keygen
 keyring
 krb
@@ -163,6 +160,7 @@ LWS
 lzma
 machdep
 markdownlint
+mbed
 metainfo
 mfb
 microsoft
@@ -192,7 +190,6 @@ oss
 osv
 Pak
 passphrase
-pdf
 peflags
 PGP
 pgpdisk
@@ -241,7 +238,6 @@ ssd
 SSSE
 stdlib
 strderr
-streebog
 subdir
 sys
 tarball

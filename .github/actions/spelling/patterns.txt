@@ -14,7 +14,7 @@
 # E.g. FROM mcr.microsoft.com/vscode/devcontainers/base:jammy@sha256:58455121a1914fc23fa3440ef505e63776b889b667245c00de3ab3176be07ab7
 (FROM [a-z0-9./:]*@sha256:)([0-9a-z]{64})
 
-# A page or extension
+# Odd strings
 tuf-repo-cdn.sigstore.dev:443
 jeff-hykin.better-cpp-syntax
 
@@ -27,9 +27,6 @@ jeff-hykin.better-cpp-syntax
 
 # Hash
 [a-zA-Z0-9]{86}
-
-# AWS example key
-aws_secret_access_key=[a-zA-Z0-9\/]{40}
 
 # Automatically suggested patterns
 # hit-count: 107 file-count: 11
