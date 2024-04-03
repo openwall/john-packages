@@ -127,9 +127,9 @@ jscpd
 JTR
 jtrcrackers
 jtrts
+KDBX
 KDFAES
 keepass
-Keplr
 keygen
 keyring
 krb
@@ -159,6 +159,7 @@ LWS
 lzma
 machdep
 markdownlint
+mbed
 metainfo
 mfb
 misconfig
@@ -186,7 +187,6 @@ oss
 osv
 Pak
 passphrase
-pdf
 peflags
 PGP
 pgpdisk
