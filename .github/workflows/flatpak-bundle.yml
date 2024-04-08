@@ -1,0 +1,116 @@
+###############################################################################
+#        _       _             _   _            _____  _
+#       | |     | |           | | | |          |  __ \(_)
+#       | | ___ | |__  _ __   | |_| |__   ___  | |__) |_ _ __  _ __   ___ _ __
+#   _   | |/ _ \| '_ \| '_ \  | __| '_ \ / _ \ |  _  /| | '_ \| '_ \ / _ \ '__|
+#  | |__| | (_) | | | | | | | | |_| | | |  __/ | | \ \| | |_) | |_) |  __/ |
+#   \____/ \___/|_| |_|_| |_|  \__|_| |_|\___| |_|  \_\_| .__/| .__/ \___|_|
+#                                                       | |   | |
+#                                                       |_|   |_|
+#
+# Copyright (c) 2024 Claudio André <dev@claudioandre.slmail.me>
+#
+# This program comes with ABSOLUTELY NO WARRANTY; express or implied.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, as expressed in version 2, seen at
+# http://www.gnu.org/licenses/gpl-2.0.html
+###############################################################################
+# GitHub Action to build John the Ripper's flatpak bundle
+# More info at https://github.com/openwall/john-packages
+
+---
+name: Flatpak Bundle
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - "flatpak"
+
+env:
+  DISPLAY: ":0.0"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build bundle
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          egress-policy: block
+          allowed-endpoints: >
+            azure.archive.ubuntu.com:80
+            ciscobinary.openh264.org:80
+            dl.flathub.org:443
+            esm.ubuntu.com:443
+            flathub.org:443
+            github.com:443
+            motd.ubuntu.com:443
+            packages.microsoft.com:443
+            ppa.launchpadcontent.net:443
+            raw.githubusercontent.com:443
+            www.tcpdump.org:443
+
+      - name: Check out the repo
+        uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
+
+      - name: Get data
+        id: data
+        run: |
+          {
+            echo "now=$(date -u)"
+            echo "revision=$(git rev-parse --short=7 HEAD 2>/dev/null)"
+            echo "version=1.9.$(date +%Y%m%d)"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Dependencies
+        run: |
+          sudo apt-get update -yq
+          sudo apt-get install -y flatpak dbus-x11
+
+      - name: Build
+        run: |
+          wget https://github.com/openwall/john-packages/archive/refs/heads/release.zip -O main.zip #TODO undo Me
+          unzip main.zip
+          cp -r scripts/ john-packages-release/deploy/ #TODO undo Me
+
+          # To build the package, go to the place the recipe lives
+          cd john-packages-release/deploy/flatpak
+
+          flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+          flatpak install -y --user flathub org.flatpak.Builder
+          dbus-launch flatpak run org.flatpak.Builder --force-clean --user --install --install-deps-from=flathub \
+            --ccache --mirror-screenshots-url=https://dl.flathub.org/media/ --repo=repo builddir com.openwall.John.json
+          flatpak build-bundle repo john.flatpak com.openwall.John
+
+          flatpak run com.openwall.John
+
+          cp john.flatpak "$GITHUB_WORKSPACE"
+          sha256sum john.flatpak
+        shell: bash
+
+      - name: "Upload Artifact"
+        uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
+        with:
+          name: bundle
+          path: john.flatpak
+          retention-days: 15
+
+      - name: Test
+        run: |
+          # Required defines
+          export FLATPAK='true'
+          export JTR_BIN='john'
+          export TEST=';full;extra;OpenCL-info;' # Controls how the test will happen
+
+          wget https://raw.githubusercontent.com/openwall/john-packages/main/scripts/run_tests.sh
+          source run_tests.sh
+        shell: bash
