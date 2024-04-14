@@ -219,6 +219,8 @@ steps:
       REM # Save John the Ripper zip file
       if exist "%JTR_FOLDER%\run\john.exe" 7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=128m -ms=on "win_x%bits%.7z" "%JTR_FOLDER%"
       move "win_x%bits%.7z" c:\
+      if exist "%JTR_FOLDER%\run\john.exe" 7z a -tzip -mx=9 "win_x%bits%.zip" "%JTR_FOLDER%"
+      move "win_x%bits%.zip" c:\
     displayName: "Clean Up the Package"
 
   # Compute checksums ########################################################
@@ -232,7 +234,7 @@ steps:
 
       if ($Zipfile = Get-ChildItem "c:\win_x$env:Bits.7z") {
           # Print files hashes
-          Get-FileHash "c:\win_x$env:Bits.7z"
+          Get-FileHash "c:\win_x$env:Bits.*"
       }
 
       Write-Output "**************************************************************************"

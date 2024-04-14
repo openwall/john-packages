@@ -60,11 +60,12 @@ macOS_task:
     - source .ci/clean_package.sh
 
     - 7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=128m -ms=on JtR-macArm.7z ./
-    - sha256sum -- JtR-macArm.7z
+    - 7z a -tzip -mx=9 JtR-macArm.zip ./
+    - sha256sum -- JtR-macArm.*
 
   always:
     binaries_artifacts:
-      path: "JtR-macArm.7z"
+      path: "JtR-macArm.*"
 
     id_artifacts:
       path: "Build._ID"
