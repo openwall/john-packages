@@ -44,17 +44,20 @@ jobs:
           egress-policy: block
           allowed-endpoints: >
             api.github.com:443
+            api0.prismacloud.io:443
             checkpoint-api.hashicorp.com:443
             github.com:443
+            pypi.org:443
             raw.githubusercontent.com:443
+            registry.terraform.io:443
 
       - name: Checkout Code
         uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
         with:
           fetch-depth: 0
 
-      - name: Lint Code Base
-        uses: github/super-linter@45fc0d88288beee4701c62761281edfee85655d7 # v5.0.0
+      - name: Linter
+        uses: github/super-linter@92e2606383320f72e6129f8a50d8537cf9c84ed6 # v6.3.1
         env:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: main

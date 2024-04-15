@@ -142,9 +142,11 @@ pdf
 peflags
 pocl
 ppc
+prismacloud
 PROJ
 psrinfo
 PTRACE
+pypi
 racf
 Randomisation
 rar
