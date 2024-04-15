@@ -89,7 +89,7 @@ $ cp YOUR-FILE/john.conf $(pwd)/.john/john.conf
 
 Then connect the 'host' file system to the running container (linking the host current folder to `/home/JtR`).
 
-You will need add the following option to the `docker run` command line:
+You will need add the following option to the `docker run` command-line:
 ```bash
 -v "$(pwd)":/home/JtR
 ```

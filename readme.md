@@ -23,7 +23,7 @@ other hashes and ciphers.
 
 ## Table of Contents
 
-<img align="right" src="https://www.openwall.com/logo.png" width="182" height="80">
+<img align="right" src="https://www.openwall.com/logo.png" width="182" height="80" alt="Openwall logo">
 
 1. [Introduction](#introduction)
    1. [Continuous Delivery Status](#continuous-delivery-status)
@@ -62,7 +62,7 @@ We produce software in short cycles, ensuring that the software can be reliably 
 
 | **Releases** | **Latest**<br> ![Latest Release Version](https://img.shields.io/github/release/openwall/john-packages?sort=date&label=&style=flat-square&color=blue "Latest Release Version") | **Prerelease**<br> ![Latest Prerelease Version](https://img.shields.io/github/release/openwall/john-packages?include_prereleases&sort=date&label=&style=flat-square&color=blue "Latest Prerelease Version") |
 |:-:|:-:|:-:|
-![GitHub Total Downloads](https://img.shields.io/github/downloads/openwall/john-packages/total?label=downloads&color=white "Total Downloads") | ![Latest Release Date](https://img.shields.io/github/release-date/openwall/john-packages?label=when&color=green "Latest Release Date") | ![Latest Prerelease Date](https://img.shields.io/github/release-date-pre/openwall/john-packages?label=when&color=green "Latest Prerelease Date") |
+| ![GitHub Total Downloads](https://img.shields.io/github/downloads/openwall/john-packages/total?label=downloads&color=white "Total Downloads") | ![Latest Release Date](https://img.shields.io/github/release-date/openwall/john-packages?label=when&color=green "Latest Release Date") | ![Latest Prerelease Date](https://img.shields.io/github/release-date-pre/openwall/john-packages?label=when&color=green "Latest Prerelease Date") |
 
 </div>
 
@@ -146,7 +146,7 @@ John the Ripper installation.
 ### Running a non-OpenMP build on Windows
 
 In some situations a non-OpenMP build may be faster. You can ask to fallback to
-a non-OpenMP build specifying the value of OMP_NUM_THREADS in the command line.
+a non-OpenMP build specifying the value of OMP_NUM_THREADS in the command-line.
 You avail the best SIMD instructions at one's disposal without any OpenMP stuff. E.g.:
 
 ```powershell
@@ -243,7 +243,7 @@ In the example, to run John type `john-snap`.
 ### Running a non-OpenMP build
 
 In some situations a non-OpenMP build may be faster. You can ask to fallback to a
-non-OpenMP build specifying `OMP_NUM_THREADS=1 john <options>` in the command line.
+non-OpenMP build specifying `OMP_NUM_THREADS=1 john <options>` in the command-line.
 You avail the best SIMD instructions at one's disposal without any OpenMP stuff. E.g.:
 
 ```bash
@@ -335,7 +335,7 @@ You must install required Homebrew libraries.
 ### Running a non-OpenMP build on macOS
 
 In some situations a non-OpenMP build may be faster. You can ask to fallback to
-a non-OpenMP build specifying the value of OMP_NUM_THREADS in the command line.
+a non-OpenMP build specifying the value of OMP_NUM_THREADS in the command-line.
 You avail the best SIMD instructions at one's disposal without any OpenMP stuff. E.g.:
 
 ```bash
@@ -421,9 +421,9 @@ The highlights (👀):
 - has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`;
   - example: `docker run ghcr.io/openwall/john:latest best -list=build-info`.
 - the released version of John 1.9.0 Jumbo 1+ (is a rolling release):
-  - install from the command line: `docker pull ghcr.io/openwall/john:rolling`.
+  - install from the command-line: `docker pull ghcr.io/openwall/john:rolling`.
 - the development version:
-  - install from the command line: `docker pull ghcr.io/openwall/john:latest`.
+  - install from the command-line: `docker pull ghcr.io/openwall/john:latest`.
 
 ### Docker Image Deployments
 

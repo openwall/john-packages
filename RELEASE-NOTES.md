@@ -56,7 +56,7 @@ This is the `john-packages` (itself) 0.9 release 'v0.9.0'. October 2023 (version
 
 ### Bugfixes (2310)
 
-- Important bugfixes in Zip and Office formats;
+- Important bugfixes in ZIP and Office formats;
 - A lot of minor and important bugfixes everywhere.
 
 ### Improvements (2310)
@@ -76,7 +76,7 @@ This is the `john-packages` (itself) 0.9 release 'v0.9.0'. October 2023 (version
 - Improvements and tweaks to john's usage of autoconf;
 - A lot of minor and important improvements everywhere.
 
-### Other Changes
+### Other Changes (2310)
 
 - None.
 
