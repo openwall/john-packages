@@ -20,3 +20,4 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 USER vscode
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | bash -s -- -y
+HEALTHCHECK NONE

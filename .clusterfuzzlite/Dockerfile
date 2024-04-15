@@ -34,3 +34,4 @@ RUN apt-get update -qq && \
 
 WORKDIR $SRC/john
 COPY .clusterfuzzlite/build.sh $SRC/
+HEALTHCHECK NONE

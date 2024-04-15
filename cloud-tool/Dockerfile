@@ -43,3 +43,4 @@ USER usr
 WORKDIR /host/workdir
 ENV PROVIDER=AWS
 CMD ["/bin/bash"]
+HEALTHCHECK NONE

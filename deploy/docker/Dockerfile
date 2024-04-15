@@ -69,3 +69,4 @@ ENV BASE=ubuntu
 ENV VERSION="${VERSION}"
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["best"]
+HEALTHCHECK --interval=1m CMD docker-entrypoint.sh
