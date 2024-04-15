@@ -14,10 +14,12 @@
 	},
 
 	"extensions": [
-		"ms-vscode.cpptools",
-		"jeff-hykin.better-cpp-syntax",
-		"ms-vscode.cpptools-themes",
+		"davidanson.vscode-markdownlint",
+		"esbenp.prettier-vscode",
 		"galarius.vscode-opencl",
-		"ms-vscode.cpptools-extension-pack"
+		"jeff-hykin.better-cpp-syntax",
+		"ms-vscode.cpptools-extension-pack",
+		"ms-vscode.cpptools-themes",
+		"ms-vscode.cpptools"
 	]
 }
