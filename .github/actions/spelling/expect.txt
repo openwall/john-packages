@@ -26,6 +26,7 @@ buildsystem
 CCO
 CFLAGS
 cflite
+CHECKOV
 cidr
 circleci
 cirruslabs
