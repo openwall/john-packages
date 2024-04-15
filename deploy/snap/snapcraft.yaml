@@ -19,7 +19,7 @@
 ###############################################################################
 # Recipe to create the snap package
 # More info at https://github.com/openwall/john-packages
-
+---
 name: john-the-ripper
 version: 1.9J1+2404
 

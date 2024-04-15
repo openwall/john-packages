@@ -19,7 +19,7 @@
 ###############################################################################
 # Azure DevOps CI configuration
 # More info at https://github.com/openwall/john-packages
-
+---
 steps:
     - powershell: |
         # Setup image environment ##############################################
