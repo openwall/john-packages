@@ -36,33 +36,33 @@ requested="$1"
 
 # If a valid ID was requested.
 if [[ $# -gt 0 && "$ids" == *"$requested"* ]]; then
-    shift
+	shift
 fi
 
 if [[ "$requested" = 'avx-omp' || "$requested" = 'avx' || "$requested" = 'avx2-omp' || "$requested" = 'avx2' ]]; then
-    exec "/john/run/john-$requested" "$@"
+	exec "/john/run/john-$requested" "$@"
 elif [[ "$requested" = 'omp' || "$requested" = 'aarch64' ]]; then
-    exec "/john/run/john-$requested" "$@"
-elif [[ "$requested" = 'avx512f-omp'  || "$requested" = 'avx512f'  || "$requested" = 'avx512bw-omp'  || "$requested" = 'avx512bw' ]]; then
-    exec "/john/run/john-$requested" "$@"
+	exec "/john/run/john-$requested" "$@"
+elif [[ "$requested" = 'avx512f-omp' || "$requested" = 'avx512f' || "$requested" = 'avx512bw-omp' || "$requested" = 'avx512bw' ]]; then
+	exec "/john/run/john-$requested" "$@"
 elif [[ "$requested" = 'ztex-omp' || "$requested" = 'ztex' ]]; then
-    echo "Binary /john/run/john-$requested  disabled (please, open a bug report)"
+	echo "Binary /john/run/john-$requested  disabled (please, open a bug report)"
 elif [[ "$requested" = 'best' ]]; then
 
-    for john in $binaries; do
-        if $john | grep -q ^Usage:; then
-            echo "Will use $john"
-            exec $john "$@"
-            exit
-        fi
-    done
-    echo 'No suitable john binary found'
+	for john in $binaries; do
+		if $john | grep -q ^Usage:; then
+			echo "Will use $john"
+			exec $john "$@"
+			exit
+		fi
+	done
+	echo 'No suitable john binary found'
 else
-    if [[ -f /john/run/john-avx-omp ]]; then
-        exec /john/run/john-avx-omp "$@"
-    else
-        exec /john/run/john-omp "$@"
-    fi
+	if [[ -f /john/run/john-avx-omp ]]; then
+		exec /john/run/john-avx-omp "$@"
+	else
+		exec /john/run/john-omp "$@"
+	fi
 fi
 message='### See you soon! ###'
 printf "%*s\n" $(((${#message} + $(tput cols)) / 2)) "$message"

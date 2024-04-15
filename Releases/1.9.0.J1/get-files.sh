@@ -27,19 +27,19 @@ wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/557704/
 wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/557700/+files/buildlog_snap_ubuntu_xenial_powerpc_john-the-ripper_BUILDING.txt.gz
 wget https://launchpad.net/~claudioandre.br/+snap/john-the-ripper/+build/557705/+files/buildlog_snap_ubuntu_xenial_s390x_john-the-ripper_BUILDING.txt.gz
 
-wget https://ci.appveyor.com/api/buildjobs/uauet2ejqx0742d3/artifacts/win_x64.zip  -O x64_win.zip
+wget https://ci.appveyor.com/api/buildjobs/uauet2ejqx0742d3/artifacts/win_x64.zip -O x64_win.zip
 wget https://ci.appveyor.com/api/buildjobs/uauet2ejqx0742d3/artifacts/optional.zip -O x64_optional.zip
-wget https://ci.appveyor.com/api/buildjobs/uauet2ejqx0742d3/log                    -O x64_log.txt
+wget https://ci.appveyor.com/api/buildjobs/uauet2ejqx0742d3/log -O x64_log.txt
 
-wget https://ci.appveyor.com/api/buildjobs/dq1hp9jbkmyo0sc4/artifacts/win_x32.zip  -O x32_win.zip
+wget https://ci.appveyor.com/api/buildjobs/dq1hp9jbkmyo0sc4/artifacts/win_x32.zip -O x32_win.zip
 wget https://ci.appveyor.com/api/buildjobs/dq1hp9jbkmyo0sc4/artifacts/optional.zip -O x32_optional.zip
-wget https://ci.appveyor.com/api/buildjobs/dq1hp9jbkmyo0sc4/log                    -O x32_log.txt
+wget https://ci.appveyor.com/api/buildjobs/dq1hp9jbkmyo0sc4/log -O x32_log.txt
 
-wget https://gitlab.com/claudioandre-br/packages/-/jobs/212460694/artifacts/download  -O john.flatpak.zip
-wget https://gitlab.com/claudioandre-br/packages/-/jobs/212460694/raw                 -O bundle_log.txt
-wget https://gitlab.com/claudioandre-br/packages/-/jobs/212460695/raw                 -O bundle_test.txt
+wget https://gitlab.com/claudioandre-br/packages/-/jobs/212460694/artifacts/download -O john.flatpak.zip
+wget https://gitlab.com/claudioandre-br/packages/-/jobs/212460694/raw -O bundle_log.txt
+wget https://gitlab.com/claudioandre-br/packages/-/jobs/212460695/raw -O bundle_test.txt
 
-wget https://api.travis-ci.org/v3/job/532480502/log.txt    -O docker_log.txt
+wget https://api.travis-ci.org/v3/job/532480502/log.txt -O docker_log.txt
 
 unzip john.flatpak.zip
 sha256sum -- *.zip

@@ -23,44 +23,44 @@
 # More info at https://github.com/openwall/john-packages
 
 function install_nvidia_opencl() {
-    apt-get install -y --no-install-recommends \
-        nvidia-opencl-dev=*
+	apt-get install -y --no-install-recommends \
+		nvidia-opencl-dev=*
 }
 
 function save_build_info() {
-    (
-    cd john || exit 1
+	(
+		cd john || exit 1
 
-    # Get the script that computes the package version
-    wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/package_version.sh
-    chmod +x package_version.sh
-    echo "b5fa2248661fd39d9075585077111b285cc805ac10bc3157880d270951e007a4  ./package_version.sh" | sha256sum -c - || exit 1
+		# Get the script that computes the package version
+		wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/package_version.sh
+		chmod +x package_version.sh
+		echo "b5fa2248661fd39d9075585077111b285cc805ac10bc3157880d270951e007a4  ./package_version.sh" | sha256sum -c - || exit 1
 
-    cat <<-EOF > run/Defaults
-#   File that lists how the build (binaries) were made
-[Build Configuration]
-System Wide Build=Yes
-Architecture="$(uname -m)"
-OpenMP=No
-OpenCL=Yes
-Optional Libraries=Yes
-Regex, OpenMPI, Experimental Code, ZTEX=No
-Version="$(./package_version.sh)"
-EOF
+		cat <<-EOF >run/Defaults
+			#   File that lists how the build (binaries) were made
+			[Build Configuration]
+			System Wide Build=Yes
+			Architecture="$(uname -m)"
+			OpenMP=No
+			OpenCL=Yes
+			Optional Libraries=Yes
+			Regex, OpenMPI, Experimental Code, ZTEX=No
+			Version="$(./package_version.sh)"
+		EOF
 
-    rm -f package_version.sh
-    )
+		rm -f package_version.sh
+	)
 }
 
 function clean_image() {
-    (
-    cd john || exit 1
-    wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh
-    # shellcheck source=/dev/null
-    source clean_package.sh
+	(
+		cd john || exit 1
+		wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh
+		# shellcheck source=/dev/null
+		source clean_package.sh
 
-    rm -f clean_package.sh
-    )
+		rm -f clean_package.sh
+	)
 }
 
 echo "Release $RELEASE"
@@ -80,11 +80,11 @@ OTHER_NO_OPENMP="$SYSTEM_WIDE --disable-openmp"
 apt-get update -qq
 export DEBIAN_FRONTEND="noninteractive"
 apt-get install -y --no-install-recommends \
-    build-essential=* libssl-dev=* zlib1g-dev=* yasm=* libgmp-dev=* libpcap-dev=* pkg-config=* \
-    libbz2-dev=* wget=* git=* libusb-1.0-0-dev=* ca-certificates=* curl=*
+	build-essential=* libssl-dev=* zlib1g-dev=* yasm=* libgmp-dev=* libpcap-dev=* pkg-config=* \
+	libbz2-dev=* wget=* git=* libusb-1.0-0-dev=* ca-certificates=* curl=*
 
-if [ "$type" == "ALL" ] || [ "$type" == "GPU"  ] ; then
-    install_nvidia_opencl
+if [ "$type" == "ALL" ] || [ "$type" == "GPU" ]; then
+	install_nvidia_opencl
 fi
 
 # Build helper
@@ -96,31 +96,31 @@ source run_build.sh
 git clone --depth 10 https://github.com/openwall/john.git
 
 # Make it a reproducible build
-if [ "$RELEASE" == "true" ] ; then
-    (
-    cd john || exit 1
-    git checkout "$COMMIT"
-    )
+if [ "$RELEASE" == "true" ]; then
+	(
+		cd john || exit 1
+		git checkout "$COMMIT"
+	)
 fi
 
 (
-cd john/src || exit 1
+	cd john/src || exit 1
 
-if [ "$arch" == "x86_64" ]; then
-    # x86_64 CPU (OMP and SIMD binaries)
-    do_configure "$X86_NO_OPENMP" --enable-simd=avx      && do_build ../run/john-avx
-    do_configure "$X86_REGULAR"   --enable-simd=avx      && do_build ../run/john-avx-omp
-    do_configure "$X86_NO_OPENMP" --enable-simd=avx2     && do_build ../run/john-avx2
-    do_configure "$X86_REGULAR"   --enable-simd=avx2     && do_build ../run/john-avx2-omp
-    do_configure "$X86_NO_OPENMP" --enable-simd=avx512f  && do_build ../run/john-avx512f
-    do_configure "$X86_REGULAR"   --enable-simd=avx512f  && do_build ../run/john-avx512f-omp
-    do_configure "$X86_NO_OPENMP" --enable-simd=avx512bw && do_build ../run/john-avx512bw
-    do_configure "$X86_REGULAR"   --enable-simd=avx512bw && do_build ../run/john-avx512bw-omp
-else
-    # Non X86 CPU (OMP fallback)
-    do_configure "$OTHER_NO_OPENMP"                      && do_build "../run/john-$arch"
-    do_configure "$OTHER_REGULAR"                        && do_build ../run/john-omp
-fi
+	if [ "$arch" == "x86_64" ]; then
+		# x86_64 CPU (OMP and SIMD binaries)
+		do_configure "$X86_NO_OPENMP" --enable-simd=avx && do_build ../run/john-avx
+		do_configure "$X86_REGULAR" --enable-simd=avx && do_build ../run/john-avx-omp
+		do_configure "$X86_NO_OPENMP" --enable-simd=avx2 && do_build ../run/john-avx2
+		do_configure "$X86_REGULAR" --enable-simd=avx2 && do_build ../run/john-avx2-omp
+		do_configure "$X86_NO_OPENMP" --enable-simd=avx512f && do_build ../run/john-avx512f
+		do_configure "$X86_REGULAR" --enable-simd=avx512f && do_build ../run/john-avx512f-omp
+		do_configure "$X86_NO_OPENMP" --enable-simd=avx512bw && do_build ../run/john-avx512bw
+		do_configure "$X86_REGULAR" --enable-simd=avx512bw && do_build ../run/john-avx512bw-omp
+	else
+		# Non X86 CPU (OMP fallback)
+		do_configure "$OTHER_NO_OPENMP" && do_build "../run/john-$arch"
+		do_configure "$OTHER_REGULAR" && do_build ../run/john-omp
+	fi
 )
 
 save_build_info

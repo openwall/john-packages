@@ -27,17 +27,17 @@ AZURE_ID="482"
 
 # Azure Windows package (64 bits) ##############################################
 wget "https://dev.azure.com/claudioandre-br/40224313-b91e-465d-852b-fc4ea516f33e/_apis/build/builds/$AZURE_ID/logs/128" \
-    -O windows_log.txt
+	-O windows_log.txt
 
 # GitLab (Linux Flatpak app) ###################################################
 wget "https://gitlab.com/claudioandre-br/JtR-CI/-/jobs/$FLATPAK/raw" \
-    -O bundle_log.txt
+	-O bundle_log.txt
 
 # macOS ########################################################################
 wget "https://api.cirrus-ci.com/v1/task/4652265359802368/logs/build.log" \
-    -O macM1_log.txt
+	-O macM1_log.txt
 wget "https://api.cirrus-ci.com/v1/task/4652265359802368/logs/package.log" \
-    -O ->> macM1_log.txt
+	-O - >>macM1_log.txt
 
 # Snap App #####################################################################
 rm buildlog*.gz

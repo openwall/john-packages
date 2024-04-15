@@ -23,28 +23,28 @@
 # More info at https://github.com/openwall/john-packages
 
 function save_build_info() {
-    (
-    cat <<-EOF > ../run/Defaults
-#   File that lists how the build (binaries) were made
-[Build Configuration]
-System Wide Build=Yes
-Architecture="$(uname -m)"
-OpenMP, OpenCL=No
-Optional Libraries=Yes
-Regex, OpenMPI, Experimental Code, ZTEX=No
-Version="$1"
-EOF
+	(
+		cat <<-EOF >../run/Defaults
+			#   File that lists how the build (binaries) were made
+			[Build Configuration]
+			System Wide Build=Yes
+			Architecture="$(uname -m)"
+			OpenMP, OpenCL=No
+			Optional Libraries=Yes
+			Regex, OpenMPI, Experimental Code, ZTEX=No
+			Version="$1"
+		EOF
 
-    cat ../run/Defaults
-    )
+		cat ../run/Defaults
+	)
 }
 
 function clean_image() {
-    (
-    cd .. || exit 1
-    # shellcheck source=/dev/null
-    source clean_package.sh
-    )
+	(
+		cd .. || exit 1
+		# shellcheck source=/dev/null
+		source clean_package.sh
+	)
 }
 
 # Required defines
@@ -72,55 +72,55 @@ source ../show_info.sh
 source ../run_build.sh
 
 if [[ -z "$TASK" ]]; then
-    # The script that computes the package version
-    # shellcheck source=/dev/null
-    chmod +x ../package_version.sh
-    Version="$(../package_version.sh)"
-    echo "$Version"
+	# The script that computes the package version
+	# shellcheck source=/dev/null
+	chmod +x ../package_version.sh
+	Version="$(../package_version.sh)"
+	echo "$Version"
 
-    echo ""
-    echo "---------------------------- BUILDING -----------------------------"
+	echo ""
+	echo "---------------------------- BUILDING -----------------------------"
 
-    if [[ "$arch" == "x86_64" ]]; then
-        # x86_64 CPU (OMP and SIMD fallback)
-        do_configure "$X86_NO_OPENMP" --enable-simd=avx    CPPFLAGS="-D_BOXED" && do_build ../run/john-avx
-        do_configure "$X86_REGULAR"   --enable-simd=avx    CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx\\\"\" " && do_build ../run/john-avx-omp
-        do_configure "$X86_NO_OPENMP" --enable-simd=avx2   CPPFLAGS="-D_BOXED" && do_build ../run/john-avx2
-        do_configure "$X86_REGULAR"   --enable-simd=avx2   CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx2\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx-omp\\\"\"" && do_build ../run/john-avx2-omp
-        do_configure "$X86_NO_OPENMP" --enable-simd=avx512f  CPPFLAGS="-D_BOXED" && do_build ../run/john-avx512f
-        do_configure "$X86_REGULAR"   --enable-simd=avx512f  CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx512f\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx2-omp\\\"\"" && do_build ../run/john-avx512f-omp
-        do_configure "$X86_NO_OPENMP" --enable-simd=avx512bw CPPFLAGS="-D_BOXED" && do_build ../run/john-avx512bw
-        do_configure "$X86_REGULAR"   --enable-simd=avx512bw CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx512bw\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx512f-omp\\\"\"" && do_build ../run/john-avx512bw-omp
+	if [[ "$arch" == "x86_64" ]]; then
+		# x86_64 CPU (OMP and SIMD fallback)
+		do_configure "$X86_NO_OPENMP" --enable-simd=avx CPPFLAGS="-D_BOXED" && do_build ../run/john-avx
+		do_configure "$X86_REGULAR" --enable-simd=avx CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx\\\"\" " && do_build ../run/john-avx-omp
+		do_configure "$X86_NO_OPENMP" --enable-simd=avx2 CPPFLAGS="-D_BOXED" && do_build ../run/john-avx2
+		do_configure "$X86_REGULAR" --enable-simd=avx2 CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx2\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx-omp\\\"\"" && do_build ../run/john-avx2-omp
+		do_configure "$X86_NO_OPENMP" --enable-simd=avx512f CPPFLAGS="-D_BOXED" && do_build ../run/john-avx512f
+		do_configure "$X86_REGULAR" --enable-simd=avx512f CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx512f\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx2-omp\\\"\"" && do_build ../run/john-avx512f-omp
+		do_configure "$X86_NO_OPENMP" --enable-simd=avx512bw CPPFLAGS="-D_BOXED" && do_build ../run/john-avx512bw
+		do_configure "$X86_REGULAR" --enable-simd=avx512bw CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx512bw\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx512f-omp\\\"\"" && do_build ../run/john-avx512bw-omp
 
-        #Create a 'john' executable
-        (
-            cd ../run || exit 1
-            ln -s john-avx512bw-omp john
+		#Create a 'john' executable
+		(
+			cd ../run || exit 1
+			ln -s john-avx512bw-omp john
 
-            # This is able to test whether the fallback works.
-            ./john || true
-        )
-    else
-        # Non X86 CPU (OMP fallback)
-        do_configure "$OTHER_NO_OPENMP"   CPPFLAGS="-D_BOXED" && do_build "../run/john-$arch"
-        do_configure "$OTHER_REGULAR"     CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-$arch\\\"\"" && do_build ../run/john-omp
+			# This is able to test whether the fallback works.
+			./john || true
+		)
+	else
+		# Non X86 CPU (OMP fallback)
+		do_configure "$OTHER_NO_OPENMP" CPPFLAGS="-D_BOXED" && do_build "../run/john-$arch"
+		do_configure "$OTHER_REGULAR" CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-$arch\\\"\"" && do_build ../run/john-omp
 
-        #Create a 'john' executable
-        (
-            cd ../run || exit 1
-            ln -s john-omp john
-        )
-    fi
+		#Create a 'john' executable
+		(
+			cd ../run || exit 1
+			ln -s john-omp john
+		)
+	fi
 
 elif [[ "$TASK" == "test" ]]; then
-    # "---------------------------- TESTING -----------------------------"
+	# "---------------------------- TESTING -----------------------------"
 
-    # Adjust the testing environment, import and run some testing
-    # shellcheck source=/dev/null
-    source ../disable_formats.sh
+	# Adjust the testing environment, import and run some testing
+	# shellcheck source=/dev/null
+	source ../disable_formats.sh
 
-    # shellcheck source=/dev/null
-    source ../run_tests.sh
+	# shellcheck source=/dev/null
+	source ../run_tests.sh
 fi
 save_build_info "$Version"
 clean_image

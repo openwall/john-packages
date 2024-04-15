@@ -25,15 +25,15 @@ ID=$(curl -s https://raw.githubusercontent.com/openwall/john-packages/release/de
 
 if [[ -z "$ID" || "$ID" == "404: Not Found" ]]; then
 
-    if [[ -f ../../john/Release.ID ]]; then
-        echo "==== Using flatpak's Release.ID ====" >&2
-        ID=$(cat ../../john/Release.ID)
-    else
-        echo "==== Using the hardcoded version value ====" >&2
-        ID="roll+"
-    fi
+	if [[ -f ../../john/Release.ID ]]; then
+		echo "==== Using flatpak's Release.ID ====" >&2
+		ID=$(cat ../../john/Release.ID)
+	else
+		echo "==== Using the hardcoded version value ====" >&2
+		ID="roll+"
+	fi
 else
-    echo "==== Using the version from 'Release.ID' ====" >&2
+	echo "==== Using the version from 'Release.ID' ====" >&2
 fi
 echo "$ID$git_tag"
 

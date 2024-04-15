@@ -29,29 +29,29 @@ wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/show
 source show_info.sh
 
 if [[ "$SANITIZER" == "address" ]]; then
-    # Asan
-    ./configure --enable-asan
-    make -sj4
+	# Asan
+	./configure --enable-asan
+	make -sj4
 
-    cp ../run/john "$OUT"/
+	cp ../run/john "$OUT"/
 
-    echo "------------------ Disable problematic formats -------------------"
-    echo '[Local:Disabled:Formats]' >> ../run/john-local.conf
-    echo 'crypt = Y' >> ../run/john-local.conf
+	echo "------------------ Disable problematic formats -------------------"
+	echo '[Local:Disabled:Formats]' >>../run/john-local.conf
+	echo 'crypt = Y' >>../run/john-local.conf
 
-    echo "-------------------------- ASAN fuzzing --------------------------"
-    echo "$ JtR ASAN --test=0"
-    ../run/john --test=0
+	echo "-------------------------- ASAN fuzzing --------------------------"
+	echo "$ JtR ASAN --test=0"
+	../run/john --test=0
 fi
 
 if [[ "$SANITIZER" == "undefined" ]]; then
-    # Ubsan
-    ./configure --enable-ubsan
-    make -sj4
+	# Ubsan
+	./configure --enable-ubsan
+	make -sj4
 
-    echo "------------------------- UBSAN fuzzing --------------------------"
-    echo "$ JtR UBSAN --test=0"
-    ../run/john --test=0
+	echo "------------------------- UBSAN fuzzing --------------------------"
+	echo "$ JtR UBSAN --test=0"
+	../run/john --test=0
 fi
 
 #                                   ##########
