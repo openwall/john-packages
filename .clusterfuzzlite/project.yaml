@@ -30,4 +30,4 @@ sanitizers:
 
 architectures:
   - x86_64
-main_repo: 'https://github.com/openwall/john-packages.git'
+main_repo: "https://github.com/openwall/john-packages.git"

@@ -24,10 +24,10 @@ name: john-the-ripper
 version: 1.9J1+2404
 
 confinement: strict
-grade: stable               #TODO: [stable or devel] edit before release (JUMBO_RELEASE)
+grade: stable #TODO: [stable or devel] edit before release (JUMBO_RELEASE)
 base: core22
 
-assumes: [ snapd2.41 ]
+assumes: [snapd2.41]
 adopt-info: john-the-ripper
 
 license: GPL-2.0
@@ -121,9 +121,9 @@ parts:
       - patch
       # OpenCL stuff is available only in X86 architecture
       - on amd64:
-        - libpocl-dev
-        - ocl-icd-opencl-dev
-        - pocl-opencl-icd
+          - libpocl-dev
+          - ocl-icd-opencl-dev
+          - pocl-opencl-icd
 
     organize:
       ../build/run/: run/
@@ -137,4 +137,4 @@ parts:
       - libgomp1
       - libpcap0.8
       - on amd64:
-        - ocl-icd-libopencl1
+          - ocl-icd-libopencl1

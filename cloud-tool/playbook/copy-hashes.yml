@@ -24,10 +24,10 @@
 - hosts: all
   remote_user: ubuntu
   tasks:
-     - name: Copy a file called 'hashes.txt' to all requested remote servers.
-       copy:
-         src: ../hashes.txt
-         dest: /home/ubuntu/hashes.txt
-         owner: ubuntu
-         group: ubuntu
-         mode: '0600'
+    - name: Copy a file called 'hashes.txt' to all requested remote servers.
+      copy:
+        src: ../hashes.txt
+        dest: /home/ubuntu/hashes.txt
+        owner: ubuntu
+        group: ubuntu
+        mode: "0600"

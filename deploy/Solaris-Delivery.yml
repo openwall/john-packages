@@ -27,9 +27,9 @@ on:
   workflow_dispatch:
     inputs:
       hash:
-        description: 'The commit hash to be used'
+        description: "The commit hash to be used"
         required: false
-        default: 'f9fedd238b0b1d69181c1fef033b85c787e96e57'
+        default: "f9fedd238b0b1d69181c1fef033b85c787e96e57"
 
 jobs:
   test:
@@ -48,7 +48,7 @@ jobs:
         id: test
         uses: vmactions/solaris-vm@v1
         with:
-          envs: 'TARGET_ARCH EXTRA BUILD_OPTS TEST BASE'
+          envs: "TARGET_ARCH EXTRA BUILD_OPTS TEST BASE"
           usesh: true
           copyback: false
           prepare: |

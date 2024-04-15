@@ -32,12 +32,12 @@ on:
     branches:
       - "**"
     types:
-      - 'opened'
-      - 'reopened'
-      - 'synchronize'
+      - "opened"
+      - "reopened"
+      - "synchronize"
   issue_comment:
     types:
-      - 'created'
+      - "created"
 
 permissions:
   contents: read
@@ -85,8 +85,7 @@ jobs:
           experimental_apply_changes_via_bot: 1
           use_sarif: ${{ (!github.event.pull_request || (github.event.pull_request.head.repo.full_name == github.repository)) && 1 }}
           extra_dictionary_limit: 20
-          extra_dictionaries:
-            cspell:software-terms/dict/softwareTerms.txt
+          extra_dictionaries: cspell:software-terms/dict/softwareTerms.txt
             cspell:cpp/src/stdlib-c.txt
             cspell:docker/src/docker-words.txt
             cspell:shell/dict/shell-all-words.txt
@@ -149,9 +148,9 @@ jobs:
       actions: read
     runs-on: ubuntu-latest
     if: ${{
-        github.event_name == 'issue_comment' &&
-        github.event.issue.pull_request &&
-        contains(github.event.comment.body, '@check-spelling-bot apply')
+      github.event_name == 'issue_comment' &&
+      github.event.issue.pull_request &&
+      contains(github.event.comment.body, '@check-spelling-bot apply')
       }}
     concurrency:
       group: spelling-update-${{ github.event.issue.number }}

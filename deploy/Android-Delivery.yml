@@ -22,7 +22,7 @@
 # Bitrise validation conflicts with our linters, but the difference is basically spaces
 
 ---
-format_version: '11'
+format_version: "11"
 default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 project_type: other
 app:
@@ -51,7 +51,7 @@ workflows:
     steps:
       - activate-ssh-key@4:
         run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
-      - git-clone@8: { }
+      - git-clone@8: {}
       - script@1.2:
         title: Checkout code
         inputs:
@@ -86,7 +86,7 @@ workflows:
       - deploy-to-bitrise-io:
         run_if: ".IsCI"
         inputs:
-          - is_compress: 'true'
+          - is_compress: "true"
           - deploy_path: "${BITRISE_DEPLOY_DIR}/${default_apk_name}"
 meta:
   bitrise.io:

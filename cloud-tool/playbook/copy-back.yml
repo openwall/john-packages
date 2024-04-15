@@ -25,17 +25,17 @@
   gather_facts: no
   remote_user: ubuntu
   tasks:
-     - name: Copy file(s) from all requested remote servers to local.
-       fetch:
-         src: /home/ubuntu/john/run/john.pot
-         dest: ..
+    - name: Copy file(s) from all requested remote servers to local.
+      fetch:
+        src: /home/ubuntu/john/run/john.pot
+        dest: ..
 
-     - name: Copy file(s) from all requested remote servers to local.
-       fetch:
-         src: /home/ubuntu/john/run/john.rec
-         dest: ..
+    - name: Copy file(s) from all requested remote servers to local.
+      fetch:
+        src: /home/ubuntu/john/run/john.rec
+        dest: ..
 
-     - name: Copy file(s) from all requested remote servers to local.
-       fetch:
-         src: /home/ubuntu/john/run/john.log
-         dest: ..
+    - name: Copy file(s) from all requested remote servers to local.
+      fetch:
+        src: /home/ubuntu/john/run/john.log
+        dest: ..
