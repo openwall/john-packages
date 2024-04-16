@@ -1,4 +1,5 @@
 aarch
+Acked
 AESNI
 afl
 AKIAIOSFODNN
@@ -52,6 +53,7 @@ cyggcc
 cyggmp
 cyggomp
 cygz
+davidanson
 devcontainer
 distro
 dmg
@@ -63,6 +65,7 @@ drwxrwxr
 dynamicbase
 editorconfig
 endfor
+esbenp
 exe
 faa
 filesystems
@@ -118,6 +121,7 @@ lsb
 LWS
 lzma
 machdep
+markdownlint
 metainfo
 mfb
 mrsp

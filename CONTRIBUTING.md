@@ -56,10 +56,19 @@ For various tips and tricks, also see [the docs folder](https://github.com/openw
 We adhere to standards used by the community.
 
 We use linters and static code analyzers that will complain about rule violations. Furthermore, we recommend
-that, if possible, before submitting your contribution you run the `pre-commit run --all-files` command.
+that, if possible, before submitting your contribution, you perform all the steps listed in the "create a
+suitable PR" topic below.
 
 The row length should be between 80 and 120 columns, which is good for use on modern monitors, including
 laptops. However, there are some cases where the rule must be overcome by common sense.
+
+## Create a suitable PR
+
+- Run the `pre-commit run --all-files` command.
+- Format all edited or new shell scripts using shfmt.
+- Fix all issues detected by markdownlint VSCode extension (davidanson.vscode-markdownlint).
+- Format all edited Yaml or Markdown files using "Prettier - Code formatter" VSCode extension (esbenp.prettier-vscode).
+- Verify to see if PR checks have passed, or if there are any new or attention-worthy warning.
 
 ## The PR review process
 
