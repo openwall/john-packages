@@ -19,15 +19,18 @@ awor
 aws
 bestpractices
 bugtracker
+builddir
 BUILDID
 buildlog
 buildsystem
+ccache
 CCO
 CFLAGS
 cflite
 cidr
 circleci
 cirruslabs
+ciscobinary
 claudio
 claudioandre
 clinfo
@@ -63,6 +66,7 @@ drwxrwxr
 dynamicbase
 editorconfig
 endfor
+esm
 exe
 faa
 filesystems
@@ -101,6 +105,7 @@ keygen
 keyring
 LASTEXITCODE
 Lauchpad
+launchpadcontent
 LDFLAGS
 len
 libbz
@@ -120,6 +125,7 @@ lzma
 machdep
 metainfo
 mfb
+microsoft
 mrsp
 nproc
 nvidia
@@ -129,6 +135,7 @@ OBJS
 ocl
 oidc
 omp
+openh
 openmp
 oss
 osv
@@ -175,6 +182,7 @@ subdir
 sys
 tarball
 tcp
+tcpdump
 templatefile
 terraform
 tfstate
