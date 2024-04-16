@@ -31,7 +31,8 @@ app:
     - TARGET_ARCH: NIX
     - EXTRA: full;extra
     # BUILD_OPTS: --disable-native-tests --build=arm-linux-gnueabi
-    #   => FAILS: --build=aarch64-linux-gnueabi (pseudo_intrinsics.h:48:22: fatal error: arm_neon.h: No such file or directory)
+    #   => FAILS: --build=aarch64-linux-gnueabi
+    #               (pseudo_intrinsics.h:48:22: fatal error: arm_neon.h: No such file or directory)
     - BASE: Android
 
 workflows:
@@ -73,7 +74,8 @@ workflows:
               echo "Build options: $BUILD_OPTS"
               echo "----------------------------------------------------------------------"
 
-              wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/ci_controller.sh -O .ci/ci_controller.sh
+              wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/ci_controller.sh \
+                -O .ci/ci_controller.sh
               chmod +x .ci/ci_controller.sh
 
               .ci/ci_controller.sh $TARGET_ARCH BUILD
