@@ -23,7 +23,7 @@
 ---
 name: Virus Scan
 
-on:
+"on":
   release:
     types: [published]
 

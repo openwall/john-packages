@@ -23,7 +23,7 @@
 ---
 name: Linter
 
-on:
+"on":
   push:
     branches-ignore: [main]
   pull_request:

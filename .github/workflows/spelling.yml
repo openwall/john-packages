@@ -22,7 +22,7 @@
 
 ---
 name: Check Spelling
-on:
+"on":
   push:
     branches:
       - "**"

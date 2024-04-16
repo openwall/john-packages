@@ -23,7 +23,7 @@
 ---
 name: Extra CI
 
-on:
+"on":
   workflow_dispatch:
     inputs:
       hash:

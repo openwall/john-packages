@@ -23,7 +23,7 @@
 ---
 name: Docker Image
 
-on:
+"on":
   workflow_dispatch:
     inputs:
       release:

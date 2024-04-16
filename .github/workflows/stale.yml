@@ -29,7 +29,7 @@
 # Discussing things that nobody cares about is not pleasant and takes a lot of time.
 # And we can't force them to do it either. The issue will most likely remain open forever.
 name: Close inactive issues
-on:
+"on":
   schedule:
     - cron: "30 1 * * *"
 
