@@ -14,9 +14,10 @@ So let's see how it works using an example:
 
 DO NOT REMOVE YOUR `john.pot` IF IT MATTERS TO YOU. Save it first, at least.
 
-****
+---
 
-* It works the same whether you are using the edge channel or the stable channel.
+- It works the same whether you are using the edge channel or the stable channel.
+
 ```shell
 $ cd ~
 
@@ -38,7 +39,8 @@ $ john --format=sha512crypt -list=format-tests | cut -f3 > ~/allTests.in
 # Create some sample hashes
 ```
 
-* Crack it using the "regular" packaged `john`
+- Crack it using the "regular" packaged `john`
+
 ```bash
 $ rm -f ~/snap/john-the-ripper/current/.john/john.pot; john ~/allTests.in --max-run=10 --mask
 Warning: detected hash type "sha512crypt", but the string is also recognized as "sha512crypt-opencl"
@@ -57,7 +59,8 @@ Use the "--show" option to display all of the cracked passwords reliably
 Session stopped (max run-time reached)
 ```
 
-* Use your personal/edited `john.conf`
+- Use your personal/edited `john.conf`
+
 ```bash
 $ cp /snap/john-the-ripper/current/run/john.conf ~/snap/john-the-ripper/current/.john/john.conf
 # File copied.
@@ -66,7 +69,8 @@ $ sed -i 's/DefaultMask = ?1?2?2?2?2?2?2?3?3?3?3?d?d?d?d/DefaultMask = Hello?awo
 # File edited.
 ```
 
-* Try it again (compare the mask value used)
+- Try it again (compare the mask value used)
+
 ```bash
 $ rm -f ~/snap/john-the-ripper/current/.john/john.pot; john ~/allTests.in --max-run=10 --mask
 [...]
@@ -90,11 +94,13 @@ $ cp YOUR-FILE/john.conf $(pwd)/.john/john.conf
 Then connect the 'host' file system to the running container (linking the host current folder to `/home/JtR`).
 
 You will need add the following option to the `docker run` command-line:
+
 ```bash
 -v "$(pwd)":/home/JtR
 ```
 
 Example:
+
 ```bash
 $ docker run -v "$(pwd)":/home/JtR ghcr.io/openwall/john best --format=SHA512crypt --incremental:digits /home/JtR/allTests.in --max-run=20
 # john is executed in a Docker container

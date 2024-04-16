@@ -9,6 +9,7 @@ Note that you may create resources which cost money. Run `terraform destroy` whe
 ## Use Cases
 
 It is useful for provisioning and destroying instances: it is fast, repeatable and reduces the risk of human error. There is no possibility to forget to delete an instance or the EBS disk. It makes sense if someone wants to start a few instances and try a wordlist here, or a mask there, maybe incremental over there.
+
 - you provision all instances at once;
 - use can use SSH to perform your intended test on each instance;
 - obtain the status of all instances at once;
@@ -19,18 +20,22 @@ With the tool, it is feasible that someone can safely run a cracking session tha
 IMPORTANT: The total cost of your cracking sessions on AWS will vary depending on your usage and whether you are outside the AWS Free Tier limits.
 
 ### Dependencies
+
 [Terraform](http://www.terraform.io/downloads.html) and [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html). The following docker image has all dependencies installed:
 
 ```bash
 cd PROJECT_FOLDER && \
   docker run -it --rm -v $(pwd):/host/workdir -v ~/.aws/:/home/usr/.aws/:ro claudioandre/cloud-tool
 ```
+
 Hint: create an alias for the command.
 
 ### AWS Credentials Profile
+
 Create your [AWS profile](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html).
 
 Example `~/.aws/credentials`
+
 ```text
 [usr]
 aws_access_key_id=AKIAIOSFODNN7EXAMPLE
@@ -38,6 +43,7 @@ aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 ```
 
 ### Adjust it to your use case
+
 You need to open and edit the file `variables.tf`.
 
 1. Find your public IP address using, for instance, [https://www.myip.com/](https://www.myip.com/).
@@ -45,7 +51,9 @@ You need to open and edit the file `variables.tf`.
 2. You can also make adjustments to `variable "regions_list"`.
 
 ## Key and server
+
 You can use your own ssh keys or create new ones. You will use the ssh keys only during your cracking session, so it can be disposable. Do NOT use a passphrase to create it.
+
 ```bash
 ssh-keygen -t rsa -f workerKey
 # key was created
@@ -135,7 +143,8 @@ $ terraform apply --var "spot=yes" --var "spot_price=0.23"
 ```
 
 If you need information about Spot pricing, please visit:
-* [https://aws.amazon.com/ec2/spot/pricing/?nc1=h_ls](https://aws.amazon.com/ec2/spot/pricing/?nc1=h_ls)
-* Also, there is a Pricing history button at [https://console.aws.amazon.com/ec2sp/v2/home?region=us-east-1#/spot](https://console.aws.amazon.com/ec2sp/v2/home?region=us-east-1#/spot) where you can see a nice "Spot Instance pricing history" graphic.
+
+- [https://aws.amazon.com/ec2/spot/pricing/?nc1=h_ls](https://aws.amazon.com/ec2/spot/pricing/?nc1=h_ls)
+- Also, there is a Pricing history button at [https://console.aws.amazon.com/ec2sp/v2/home?region=us-east-1#/spot](https://console.aws.amazon.com/ec2sp/v2/home?region=us-east-1#/spot) where you can see a nice "Spot Instance pricing history" graphic.
 
 Remember that your instance can be stopped by Amazon at any time.

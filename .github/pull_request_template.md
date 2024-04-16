@@ -7,6 +7,7 @@ Add your text here.
 Add your text here.
 
 ## Checklist before requesting a review
+
 - [ ] I have performed a self-review of my code
 - [ ] Will this be part of a product update? If yes, please write one phrase about this update.
 - [ ] I have added tests that prove my fix is effective or that my feature works

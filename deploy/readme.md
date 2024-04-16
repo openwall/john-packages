@@ -4,22 +4,23 @@ We use premium build providers like Azure Cloud, Launchpad, and GitLab.
 
 At the time of this writing, `john` is known to build and work on:
 
-* Android NDK r23b (on ARM and X86)
-* FreeBSD (tested with 13 and later on X86)
-* Linux (kernel 6 or later recommended)
-* macOS (on ARM)
-* Solaris (tested with 11 on X86)
+- Android NDK r23b (on ARM and X86)
+- FreeBSD (tested with 13 and later on X86)
+- Linux (kernel 6 or later recommended)
+- macOS (on ARM)
+- Solaris (tested with 11 on X86)
 
 Also in the following Windows environments:
-* Microsoft Windows (Windows 10 / Windows Server 2016) or later
-* Mingw + Wine (64-bit), using an ancient Fedora Docker image
-* Cygwin (64-bit)
+
+- Microsoft Windows (Windows 10 / Windows Server 2016) or later
+- Mingw + Wine (64-bit), using an ancient Fedora Docker image
+- Cygwin (64-bit)
 
 At previous version rolling-2310, `john` is also known to build and work on:
 
-* FreeBSD 12
-* macOS (on X86)
-* Mingw + Wine (32-bit), using an ancient Fedora Docker image
+- FreeBSD 12
+- macOS (on X86)
+- Mingw + Wine (32-bit), using an ancient Fedora Docker image
 
 ## Release Process
 
@@ -68,10 +69,10 @@ Cygwin 3.5.1
 
 We can no longer build and package for these environments:
 
-* Any 32-bit build (e.g. i386, i686, and powerpc);
-* Windows 8 or older (64-bit);
-* Windows Server 2012 or older (64-bit);
-* Intel-based macOS;
-* Older X86_64 CPUs (AVX required);
+- Any 32-bit build (e.g. i386, i686, and powerpc);
+- Windows 8 or older (64-bit);
+- Windows Server 2012 or older (64-bit);
+- Intel-based macOS;
+- Older X86_64 CPUs (AVX required);
 
 If you need such a build, use a previous stable or rolling release.

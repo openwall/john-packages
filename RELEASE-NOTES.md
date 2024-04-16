@@ -20,7 +20,7 @@ April’s bugfix release.
 - Add arm64 Docker image (with NVIDIA GPU support);
 - Add new formats and/or implementations;
   - Armory wallet, Keplr wallet, Argon2 OpenCL.
-- *2john improvements;
+- \*2john improvements;
   - Add a modern version of pdf2john (.py; Python 3).
 - Improve OpenCL detection;
   - Start using dynamic OpenCL binding (dynamically load OpenCL library);
@@ -30,17 +30,17 @@ April’s bugfix release.
 
 ### Binaries Available
 
-* Docker (for X86_64 and aarch64) with NVIDIA GPU support (via OpenCL);
-* Flatpak;
-  * bundle (for X86_64);
-  * via FlatHub (for X86_64 and aarch64).
-* macOS (for M1 and above);
-* Snap (for X86_64, armhf, arm64, ppc64el, riscv64, and s390x);
-* Windows (for X86_64).
+- Docker (for X86_64 and aarch64) with NVIDIA GPU support (via OpenCL);
+- Flatpak;
+  - bundle (for X86_64);
+  - via FlatHub (for X86_64 and aarch64).
+- macOS (for M1 and above);
+- Snap (for X86_64, armhf, arm64, ppc64el, riscv64, and s390x);
+- Windows (for X86_64).
 
 All except s390x and riscv64 binaries support SIMD.
 
-------
+---
 
 ## Release [rolling-2310](https://github.com/openwall/john-packages/releases/tag/rolling-2310) (2023-10-05)
 
@@ -84,37 +84,41 @@ This is the `john-packages` (itself) 0.9 release 'v0.9.0'. October 2023 (version
 
 All except s390x and riscv64 binaries support SIMD.
 
-* Docker (for X86_64);
-* Flatpak;
-  * bundle (for X86_64);
-  * via FlatHub (for X86_64 and aarch64).
-* macOS X86 (Intel Hardware): via AVX and AVX2;
-* macOS M1 and above: via ASIMD;
-* Snap (for X86_64, armhf, arm64, ppc64el, riscv64, and s390x);
-* Windows (for X86_64).
+- Docker (for X86_64);
+- Flatpak;
+  - bundle (for X86_64);
+  - via FlatHub (for X86_64 and aarch64).
+- macOS X86 (Intel Hardware): via AVX and AVX2;
+- macOS M1 and above: via ASIMD;
+- Snap (for X86_64, armhf, arm64, ppc64el, riscv64, and s390x);
+- Windows (for X86_64).
 
-------
+---
 
 ## Old "stable" release [1.9.0-jumbo-1](https://github.com/openwall/john-packages/releases/tag/1.9.0-jumbo-1)
 
 Notes and general information
 
 ### Windows package
+
 - the stable John 1.9.0 Jumbo 1:
   - is available for X86_64 and i386;
 
 ### Snap package
+
 - the stable John 1.9.0 Jumbo 1:
   - is available for X86_64, armhf, arm64, ppc64el, i386, powerpc, and s390x;
   - has regular expression mode available;
 
 ### Flatpak package
+
 - the stable John 1.9.0 Jumbo 1:
   - is available for X86_64, arm, aarch64, and i386 (available in Flathub);
   - has regular expression mode available;
 
 ### Docker Image
+
 - the stable John 1.9.0 Jumbo 1 (`ghcr.io/openwall/john:v1.9.0J1`):
   - has ztex formats available.
 
-------
+---

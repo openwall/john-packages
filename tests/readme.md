@@ -45,6 +45,7 @@ using:
 ### Testing and Commissioning
 
 - Builds:
+
   - LE (Little Endian) and BE (Big Endian) builds;
   - ASAN (address sanitizer) and UBSAN (undefined behavior sanitizer);
   - Fuzzing (<https://en.wikipedia.org/wiki/Fuzzing>);
@@ -52,7 +53,7 @@ using:
   - OpenCL on CPU using Intel, and POCL (<http://portablecl.org/>) runtimes;
   - OpenCL on GPU using Azure cloud (_work in progress_);
   - And a final assessment using ARMv7 (armhf), ARMv8 (aarch64), PowerPC64 Little-Endian,
-RISC-V 64-bit, and IBM System z.
+    RISC-V 64-bit, and IBM System z.
 
 - Plans and future vision:
   - Develop a fully automated build and release pipeline using Azure DevOps Services
@@ -64,50 +65,50 @@ RISC-V 64-bit, and IBM System z.
 
 #### Supported SIMD Extensions
 
-| Architecture | Tested SIMD |
-| :-: | :-: |
-| ARM v7 | NEON |
-| ARM v8 | ASIMD |
-| PowerPC | Altivec |
-| RISC-V 64 | SIMD is not supported |
-| S390x | SIMD is not supported |
-| x86| AVX512BW, AVX512F, AVX2, AVX |
+| Architecture |         Tested SIMD          |
+| :----------: | :--------------------------: |
+|    ARM v7    |             NEON             |
+|    ARM v8    |            ASIMD             |
+|   PowerPC    |           Altivec            |
+|  RISC-V 64   |    SIMD is not supported     |
+|    S390x     |    SIMD is not supported     |
+|     x86      | AVX512BW, AVX512F, AVX2, AVX |
 
-| Architecture | Supported but not tested |
-| :-: | :-: |
-| x86| XOP, SSE4.2, SSE4.1, SSSE3, SSE2 |
+| Architecture |     Supported but not tested     |
+| :----------: | :------------------------------: |
+|     x86      | XOP, SSE4.2, SSE4.1, SSSE3, SSE2 |
 
 #### CI Builds and Artifacts
 
-| Provider   | OS | Artifacts |
-| ------------- | ------------- | ----- |
-| AppVeyor CI | Windows | ✓ Build artifacts available |
-| Azure | Linux | ✗ No build artifacts |
-| Azure | Windows | ✗ No build artifacts |
-| Azure | OpenCL on GPU | ∅ Under development |
-| Bitrise Mobile DevOps | Android | ✓ Build artifacts available |
-| Circle CI | Linux | ✗ No build artifacts |
-| Cirrus CI | FreeBSD | ✗ No build artifacts |
-| GitHub Actions | Solaris | ✗ No build artifacts |
+| Provider              | OS            | Artifacts                   |
+| --------------------- | ------------- | --------------------------- |
+| AppVeyor CI           | Windows       | ✓ Build artifacts available |
+| Azure                 | Linux         | ✗ No build artifacts        |
+| Azure                 | Windows       | ✗ No build artifacts        |
+| Azure                 | OpenCL on GPU | ∅ Under development         |
+| Bitrise Mobile DevOps | Android       | ✓ Build artifacts available |
+| Circle CI             | Linux         | ✗ No build artifacts        |
+| Cirrus CI             | FreeBSD       | ✗ No build artifacts        |
+| GitHub Actions        | Solaris       | ✗ No build artifacts        |
 
 #### Delivery Builds and Artifacts
 
-| Provider   | OS | Artifacts |
-| ------------- | ------------- | ----- |
-| Azure | Windows | ✓ Deployed to GitHub Releases |
-| Cirrus CI | macOS M2 | ✓ Deployed to GitHub Releases |
-| GitLab CI | Linux (FlatPak app) | ✓ Deployed to GitHub Releases |
+| Provider       | OS                   | Artifacts                     |
+| -------------- | -------------------- | ----------------------------- |
+| Azure          | Windows              | ✓ Deployed to GitHub Releases |
+| Cirrus CI      | macOS M2             | ✓ Deployed to GitHub Releases |
+| GitLab CI      | Linux (FlatPak app)  | ✓ Deployed to GitHub Releases |
 | GitHub Actions | Linux (Docker image) | ✓ Deployed to GitHub Packages |
-| LaunchPad | Linux (Snap app) | ✓ Deployed to Snap Store |
+| LaunchPad      | Linux (Snap app)     | ✓ Deployed to Snap Store      |
 
 ## Obsolete Architectures
 
 We can no longer build and test for these environments:
 
-* Any 32-bit build (e.g. i386, i686, and powerpc);
-* Windows 8 or older (64-bit);
-* Windows Server 2012 or older (64-bit);
-* Intel-based macOS;
-* Older X86_64 CPUs (AVX required);
+- Any 32-bit build (e.g. i386, i686, and powerpc);
+- Windows 8 or older (64-bit);
+- Windows Server 2012 or older (64-bit);
+- Intel-based macOS;
+- Older X86_64 CPUs (AVX required);
 
 If you need such a build, use a previous stable or rolling release.
