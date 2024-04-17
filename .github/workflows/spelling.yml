@@ -56,9 +56,7 @@ jobs:
     if: ${{ contains(github.event_name, 'pull_request') || github.event_name == 'push' }}
     concurrency:
       group: spelling-${{ github.event.pull_request.number || github.ref }}
-      # note: If you use only_check_changed_files, you do not want cancel-in-progress
       cancel-in-progress: true
-      #only_check_changed_files: true
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0

@@ -38,30 +38,32 @@ macOS_task:
     BASE: "Apple macOS M2"
     DEPLOY_PAK: "Yes"
 
-  info_script:
-    - git clone --depth 10 https://github.com/openwall/john.git ~/tmp
-    - cp -r ~/tmp/. .
+  info_script: |
+    git clone --depth 10 https://github.com/openwall/john.git ~/tmp
+    cp -r ~/tmp/. .
 
-    - wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/ci_controller.sh -O .ci/ci_controller.sh
-    - chmod +x .ci/ci_controller.sh
-    - .ci/ci_controller.sh "$TARGET_ARCH" INFO
-    - echo  "$CIRRUS_TASK_ID" > Build._ID
+    wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/ci_controller.sh \
+      -O .ci/ci_controller.sh
+    chmod +x .ci/ci_controller.sh
+    .ci/ci_controller.sh "$TARGET_ARCH" INFO
+    echo  "$CIRRUS_TASK_ID" > Build._ID
 
-  build_script:
-    - .ci/ci_controller.sh "$TARGET_ARCH" BUILD
+  build_script: |
+    .ci/ci_controller.sh "$TARGET_ARCH" BUILD
 
     # Format crash on ARM
-    - echo '[Local:Disabled:Formats]' >> run/john-local.conf
-    - echo 'SunMD5 = Y' >> run/john-local.conf
-    - .ci/ci_controller.sh "$TARGET_ARCH" TEST
+    echo '[Local:Disabled:Formats]' >> run/john-local.conf
+    echo 'SunMD5 = Y' >> run/john-local.conf
+    .ci/ci_controller.sh "$TARGET_ARCH" TEST
 
-  package_script:
-    - wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh -O .ci/clean_package.sh
-    - source .ci/clean_package.sh
+  package_script: |
+    wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh \
+      -O .ci/clean_package.sh
+    source .ci/clean_package.sh
 
-    - 7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=128m -ms=on JtR-macArm.7z ./
-    - 7z a -tzip -mx=9 JtR-macArm.zip ./
-    - sha256sum -- JtR-macArm.*
+    7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=128m -ms=on JtR-macArm.7z ./
+    7z a -tzip -mx=9 JtR-macArm.zip ./
+    sha256sum -- JtR-macArm.*
 
   always:
     binaries_artifacts:

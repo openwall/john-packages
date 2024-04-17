@@ -62,7 +62,8 @@ jobs:
             git clone --depth 10 https://github.com/openwall/john.git ~/tmp
             cd ~/tmp
 
-            wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/ci_controller.sh -O .ci/ci_controller.sh
+            wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/ci_controller.sh \
+              -O .ci/ci_controller.sh
             chmod +x .ci/ci_controller.sh
 
             .ci/ci_controller.sh $TARGET_ARCH BUILD
