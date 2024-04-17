@@ -27,43 +27,6 @@ function install_nvidia_opencl() {
 		nvidia-opencl-dev=*
 }
 
-function save_build_info() {
-	(
-		cd john || exit 1
-
-		# Get the script that computes the package version
-		wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/package_version.sh
-		chmod +x package_version.sh
-		echo "e1a7e9691bfaba3398eb28ac724a79df5e76f66d243c97f142b2aa415b9bc27f  ./package_version.sh" | sha256sum -c - || exit 1
-
-		cat <<-EOF >run/Defaults
-			#   File that lists how the build (binaries) were made
-			[Build Configuration]
-			System Wide Build=Yes
-			Architecture="$(uname -m)"
-			OpenMP=No
-			OpenCL=Yes
-			Optional Libraries=Yes
-			Regex, OpenMPI, Experimental Code, ZTEX=No
-			Version="$(./package_version.sh)"
-		EOF
-
-		rm -f package_version.sh
-	)
-}
-
-function clean_image() {
-	(
-		cd john || exit 1
-		wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh
-		# shellcheck source=/dev/null
-		source clean_package.sh
-
-		rm -f clean_package.sh
-	)
-}
-
-echo "Release $RELEASE"
 type="$1"
 export DEPLOY_PAK="Yes"
 arch=$(uname -m)
@@ -88,7 +51,8 @@ if [ "$type" == "ALL" ] || [ "$type" == "GPU" ]; then
 fi
 
 # Build helper
-wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/run_build.sh
+wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/run_build.sh
+echo "8685dea557376611040ce02b1bd6bec92062ed27b81bcdd4949fc186090b75f7  ./run_build.sh" | sha256sum -c - || exit 1
 # shellcheck source=/dev/null
 source run_build.sh
 
@@ -105,6 +69,7 @@ fi
 
 (
 	cd john/src || exit 1
+	do_get_version
 
 	if [ "$arch" == "x86_64" ]; then
 		# x86_64 CPU (OMP and SIMD binaries)
@@ -121,7 +86,6 @@ fi
 		do_configure "$OTHER_NO_OPENMP" && do_build "../run/john-$arch"
 		do_configure "$OTHER_REGULAR" && do_build ../run/john-omp
 	fi
+	do_release "Yes" "Yes" # --system-wide, --support-opencl, --binary-name
+	do_clean_package
 )
-
-save_build_info
-clean_image

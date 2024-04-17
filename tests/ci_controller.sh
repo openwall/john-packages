@@ -44,9 +44,6 @@ if [[ $TARGET_ARCH == *"SOLARIS"* && $2 == "BUILD" ]]; then
 fi
 
 export TASK_RUNNING="$2"
-wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/show_info.sh -O show_info.sh
-# shellcheck source=/dev/null
-source show_info.sh
 
 # Build and testing
 if [[ "$2" == "BUILD" ]]; then
@@ -58,6 +55,7 @@ if [[ "$2" == "BUILD" ]]; then
 		git checkout "$_JUMBO_RELEASE"
 	fi
 	wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/run_build.sh -O run_build.sh
+	echo "8685dea557376611040ce02b1bd6bec92062ed27b81bcdd4949fc186090b75f7  ./run_build.sh" | sha256sum -c - || exit 1
 	# shellcheck source=/dev/null
 	source run_build.sh
 
@@ -98,7 +96,7 @@ if [[ "$2" == "BUILD" ]]; then
 			do_configure "$REGULAR" LDFLAGS="$LDFLAGS_ssl $LDFLAGS_gmp $LDFLAGS_omp" CPPFLAGS="-Xclang -fopenmp $CFLAGS_ssl $CFLAGS_gmp $CFLAGS_omp -DOMP_FALLBACK_BINARY=\"\\\"john-$arch\\\"\" " && do_build ../run/john-omp
 			BINARY="john-omp"
 		fi
-		do_release $BINARY
+		do_release "No" "Yes" $BINARY # --system-wide, --support-opencl, --binary-name
 	fi
 
 	if [[ $TARGET_ARCH == *"SOLARIS"* ]]; then
@@ -125,6 +123,7 @@ elif [[ "$2" == "TEST" ]]; then
 	fi
 
 	wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/run_tests.sh -O run_tests.sh
+	echo "6877e23f9225f4d80cbc98de68e37784817e0a9f96b0ca2831f62533bb15f80e  ./run_tests.sh" | sha256sum -c - || exit 1
 	# shellcheck source=/dev/null
 	source run_tests.sh
 fi

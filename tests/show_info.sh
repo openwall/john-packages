@@ -100,3 +100,5 @@ echo '------ Task ------'
 echo "Running on: ${BASE-unknown}"
 echo "Doing: ${TASK_RUNNING-unknown}"
 echo '--------------------------------'
+echo "Release: ${RELEASE-none}"
+echo '--------------------------------'

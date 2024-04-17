@@ -99,9 +99,10 @@ parts:
       chmod +x build.sh
 
       ./build.sh PULL
-      craftctl set version="$(./package_version.sh)"
+      craftctl set version="$(cat version.txt)"
 
     override-build: |
+      export PACKAGE_VERSION="$(cat version.txt)"
       ./build.sh
       mkdir -p ../install/etc/bash_completion
       cp run/john.*_completion ../install/etc/bash_completion/
