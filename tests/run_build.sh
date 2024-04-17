@@ -63,7 +63,7 @@ function do_release() {
 	# The script that computes the package version
 	wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/package_version.sh
 	chmod +x package_version.sh
-	echo "b5fa2248661fd39d9075585077111b285cc805ac10bc3157880d270951e007a4  ./package_version.sh" | sha256sum -c - || exit 1
+	echo "e1a7e9691bfaba3398eb28ac724a79df5e76f66d243c97f142b2aa415b9bc27f  ./package_version.sh" | sha256sum -c - || exit 1
 
 	# Save information about how the binaries were built
 	cat <<-EOF >../run/Defaults

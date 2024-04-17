@@ -10,7 +10,7 @@
 #                                                       | |   | |
 #                                                       |_|   |_|
 #
-# Copyright (c) 2019-2023 Claudio André <claudioandre.br at gmail.com>
+# Copyright (c) 2019-2024 Claudio André <claudioandre.br at gmail.com>
 #
 # This program comes with ABSOLUTELY NO WARRANTY; express or implied.
 #
@@ -29,7 +29,7 @@ function save_build_info() {
 		# Get the script that computes the package version
 		wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/package_version.sh
 		chmod +x package_version.sh
-		echo "b5fa2248661fd39d9075585077111b285cc805ac10bc3157880d270951e007a4  ./package_version.sh" | sha256sum -c - || exit 1
+		echo "e1a7e9691bfaba3398eb28ac724a79df5e76f66d243c97f142b2aa415b9bc27f  ./package_version.sh" | sha256sum -c - || exit 1
 
 		cat <<-EOF >run/Defaults
 			#   File that lists how the build (binaries) were made

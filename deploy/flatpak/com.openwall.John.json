@@ -60,17 +60,17 @@
                 {
                     "type": "file",
                     "url": "https://raw.githubusercontent.com/openwall/john-packages/release/tests/package_version.sh",
-                    "sha256": "b5fa2248661fd39d9075585077111b285cc805ac10bc3157880d270951e007a4"
+                    "sha256": "e1a7e9691bfaba3398eb28ac724a79df5e76f66d243c97f142b2aa415b9bc27f"
                 },
                 {
                     "type": "file",
                     "url": "https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh",
-                    "sha256": "2b5b21ff3b60da6e679a9f32406ff7a51386c1f642fadba23e916a228d263233"
+                    "sha256": "3ecb71634242b0b0478dc2c2bae563daf64a886f78e1341c592ddab17d6eb576"
                 },
                 {
                     "type": "file",
                     "url": "https://raw.githubusercontent.com/openwall/john-packages/main/tests/run_build.sh",
-                    "sha256": "83dad83a7f696ebcf37b562da2ab7c9c70b0f45f0302246509cd5be122608298"
+                    "sha256": "e8b910233bd9a81b168615ddfaebaed2eed87a2637861e19fd6c2d1c3272ca9b"
                 },
                 {
                     "type": "file",
