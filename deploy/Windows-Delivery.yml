@@ -73,8 +73,8 @@ steps:
       }
 
       # Apply patch(es) ######################################################
-      wget "https://raw.githubusercontent.com/openwall/john-packages/main/patches/0001-Remove-peflags-from-the-default-target.patch" -O 0001.patch
-      git apply 0001.patch
+      wget "https://raw.githubusercontent.com/openwall/john-packages/main/patches/Remove-peflags-from-the-default-target.patch" -O peflags.patch
+      git apply peflags.patch
       # 1. Remove peflags from the default target on Windows
 
       # Build ################################################################

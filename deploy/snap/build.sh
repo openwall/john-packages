@@ -104,8 +104,8 @@ fi
 # We are in packages folder, change to JtR folder
 cd src || exit 1
 
-wget https://raw.githubusercontent.com/openwall/john-packages/main/patches/0001-Handle-self-confined-system-wide-build.patch
-patch <0001-Handle-self-confined-system-wide-build.patch
+wget https://raw.githubusercontent.com/openwall/john-packages/main/patches/Handle-self-confined-system-wide-build.patch
+patch <Handle-self-confined-system-wide-build.patch
 
 wget https://raw.githubusercontent.com/claudioandre-br/JohnTheRipper/bleeding-jumbo/be.patch
 _BE_TEST=$?

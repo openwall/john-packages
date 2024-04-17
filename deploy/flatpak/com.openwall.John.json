@@ -47,7 +47,7 @@
                 },
                 {
                     "type": "patch",
-                    "path": "../../patches/0001-Handle-self-confined-system-wide-build.patch"
+                    "path": "../../patches/Handle-self-confined-system-wide-build.patch"
                 },
                 {
                     "type": "file",
