@@ -144,13 +144,21 @@ function do_validate_checksum() {
 	echo "-----------------------------------------------------------"
 }
 
+function do_show_environment() {
+
+	if [[ ${FLATPAK_BUILD-0} -eq 1 ]]; then
+		# shellcheck source=/dev/null
+		source ../show_info.sh
+	else
+		do_validate_checksum \
+			https://raw.githubusercontent.com/openwall/john-packages/release/scripts/show_info.sh
+		# shellcheck source=/dev/null
+		source show_info.sh
+	fi
+}
+
 # Show environment information
-if [[ ${FLATPAK_BUILD-0} -eq 1 ]]; then
-	# shellcheck source=/dev/null
-	source ../show_info.sh
-else
-	do_validate_checksum \
-		https://raw.githubusercontent.com/openwall/john-packages/release/scripts/show_info.sh
-	# shellcheck source=/dev/null
-	source show_info.sh
+if [[ ${INFO_SHOWN-0} -eq 0 ]]; then
+	do_show_environment
+	export INFO_SHOWN=1
 fi
