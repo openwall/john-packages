@@ -57,7 +57,7 @@ jobs:
           fetch-depth: 0
 
       - name: Linter
-        uses: github/super-linter@92e2606383320f72e6129f8a50d8537cf9c84ed6 # v6.3.1
+        uses: github/super-linter@2bf52ff3efef9acb8d56f1840e72984339f0d2a8 # v6.3.1
         env:
           VALIDATE_ALL_CODEBASE: false
           VALIDATE_CHECKOV: false
