@@ -55,9 +55,9 @@ if [[ "$2" == "BUILD" ]]; then
 		git checkout "$_JUMBO_RELEASE"
 	fi
 	do_validate_checksum \
-		https://raw.githubusercontent.com/openwall/john-packages/release/scripts/run_build.sh
+		https://raw.githubusercontent.com/openwall/john-packages/release/scripts/helper.sh
 	# shellcheck source=/dev/null
-	source run_build.sh
+	source helper.sh
 
 	if [[ "$TARGET_ARCH" == *"macOS"* ]]; then
 		SYSTEM_WIDE=''

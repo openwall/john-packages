@@ -43,7 +43,7 @@ OTHER_NO_OPENMP="$SYSTEM_WIDE --disable-openmp"
 
 # Build helper
 # shellcheck source=/dev/null
-source ../run_build.sh
+source ../helper.sh
 
 if [[ -z "$TASK" ]]; then
 	do_get_version

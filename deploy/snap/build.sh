@@ -45,9 +45,9 @@ OTHER_NO_OPENMP="$SYSTEM_WIDE --disable-openmp"
 
 # Build helper
 do_validate_checksum \
-	https://raw.githubusercontent.com/openwall/john-packages/release/scripts/run_build.sh
+	https://raw.githubusercontent.com/openwall/john-packages/release/scripts/helper.sh
 # shellcheck source=/dev/null
-source run_build.sh
+source helper.sh
 
 if [[ "$1" == "PULL" ]]; then
 	# Get upstream JtR source code and adjust it to create a SNAP package

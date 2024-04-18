@@ -67,7 +67,7 @@
                 },
                 {
                     "type": "file",
-                    "path": "../../scripts/run_build.sh"
+                    "path": "../../scripts/helper.sh"
                 },
                 {
                     "type": "file",

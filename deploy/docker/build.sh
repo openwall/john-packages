@@ -52,9 +52,9 @@ fi
 
 # Build helper
 do_validate_checksum \
-	https://raw.githubusercontent.com/openwall/john-packages/release/scripts/run_build.sh
+	https://raw.githubusercontent.com/openwall/john-packages/release/scripts/helper.sh
 # shellcheck source=/dev/null
-source run_build.sh
+source helper.sh
 
 # Get upstream source code
 git clone --depth 10 https://github.com/openwall/john.git
