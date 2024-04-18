@@ -34,4 +34,6 @@ RUN apt-get update -qq && \
 
 WORKDIR $SRC/john
 COPY .clusterfuzzlite/build.sh $SRC/
+COPY scripts/helper.sh /upstream/src
+COPY requirements.txt /upstream/src
 HEALTHCHECK NONE

@@ -145,7 +145,7 @@ function do_validate_checksum() {
 }
 
 # Show environment information
-if [[ $FLATPAK_BUILD -eq 1 ]]; then
+if [[ ${FLATPAK_BUILD-0} -eq 1 ]]; then
 	# shellcheck source=/dev/null
 	source ../show_info.sh
 else
