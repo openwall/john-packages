@@ -1,0 +1,9 @@
+{
+    "threshold":0,
+    "noSymlinks":true,
+    "ignore":[
+       "**/Releases/**",
+       "**/.git/**",
+       "**/spelling.yml"
+    ]
+}

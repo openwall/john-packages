@@ -97,6 +97,7 @@ ifndef
 img
 IMO
 intrinsics
+jscpd
 JTR
 jtrcrackers
 keepass
