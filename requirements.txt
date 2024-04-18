@@ -1,0 +1,8 @@
+0b261897959bce01ba3ba2833b20e71117b0cdf7bca4f25898a90f82d9709196  ./ci_controller.sh
+3ecb71634242b0b0478dc2c2bae563daf64a886f78e1341c592ddab17d6eb576  ./clean_package.sh
+e1a7e9691bfaba3398eb28ac724a79df5e76f66d243c97f142b2aa415b9bc27f  ./package_version.sh
+f16f834345bb32f95a94a6b4d20c2372ac4ff3580524752a73414c0b2e5be9d3  ./run_build.sh
+6877e23f9225f4d80cbc98de68e37784817e0a9f96b0ca2831f62533bb15f80e  ./run_tests.sh
+de6aab236ca5dd5e3f1b647b540d65a5740953e8d7c206755848fbfb65634cdb  ./show_info.sh
+aab7868a06d5a06745a234907f4e26cbe794610fe14198674d595a638529e7bd  ./Handle-self-confined-system-wide-build.patch
+1f93d80dd97a5450c6e36759148d2767e29bbf987c078d5e5089b702e77aece5  ./Remove-peflags-from-the-default-target.patch

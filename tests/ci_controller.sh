@@ -54,8 +54,8 @@ if [[ "$2" == "BUILD" ]]; then
 		git pull --unshallow
 		git checkout "$_JUMBO_RELEASE"
 	fi
-	wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/run_build.sh -O run_build.sh
-	echo "8685dea557376611040ce02b1bd6bec92062ed27b81bcdd4949fc186090b75f7  ./run_build.sh" | sha256sum -c - || exit 1
+	do_validate_checksum \
+		https://raw.githubusercontent.com/openwall/john-packages/release/tests/run_build.sh
 	# shellcheck source=/dev/null
 	source run_build.sh
 
@@ -122,8 +122,8 @@ elif [[ "$2" == "TEST" ]]; then
 		export JTR_BIN="/john/run/john-avx"
 	fi
 
-	wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/run_tests.sh -O run_tests.sh
-	echo "6877e23f9225f4d80cbc98de68e37784817e0a9f96b0ca2831f62533bb15f80e  ./run_tests.sh" | sha256sum -c - || exit 1
+	do_validate_checksum \
+		https://raw.githubusercontent.com/openwall/john-packages/release/tests/run_tests.sh
 	# shellcheck source=/dev/null
 	source run_tests.sh
 fi

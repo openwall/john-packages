@@ -57,8 +57,8 @@ function do_get_version() {
 	(
 		if [[ $FLATPAK_BUILD -ne 1 ]]; then
 			cd .. || exit 1
-			wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/package_version.sh
-			echo "e1a7e9691bfaba3398eb28ac724a79df5e76f66d243c97f142b2aa415b9bc27f  ./package_version.sh" | sha256sum -c - || exit 1
+			do_validate_checksum \
+				https://raw.githubusercontent.com/openwall/john-packages/main/tests/package_version.sh
 			chmod +x package_version.sh
 		fi
 	)
@@ -73,8 +73,8 @@ function do_clean_package() {
 	(
 		cd .. || exit 1
 		if [[ $FLATPAK_BUILD -ne 1 ]]; then
-			wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh
-			echo "3ecb71634242b0b0478dc2c2bae563daf64a886f78e1341c592ddab17d6eb576  ./clean_package.sh" | sha256sum -c - || exit 1
+			do_validate_checksum \
+				https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh
 		fi
 		# shellcheck source=/dev/null
 		source clean_package.sh
@@ -120,13 +120,37 @@ function do_release() {
 	fi
 }
 
+function do_validate_checksum() {
+	FILE_URL="$1"
+	FILE_BASENAME=$(basename "$FILE_URL")
+	URL_LOCATION=$(dirname "$FILE_URL")
+
+	echo "-----------------------------------------------------------"
+	wget "$FILE_URL" -O "$FILE_BASENAME"
+	echo "-----------------------------------------------------------"
+	echo "Downloading and validating $FILE_BASENAME:"
+	echo "- from $URL_LOCATION;"
+	CHECKSUM_VALUE=$(grep "$FILE_BASENAME" requirements.txt | cut -d' ' -f1)
+	echo "- expecting: $CHECKSUM_VALUE;"
+
+	# Validate data
+	echo "$CHECKSUM_VALUE  $FILE_BASENAME" | sha256sum -c -
+	RETURN_VALUE=$?
+
+	if [[ RETURN_VALUE -ne 0 ]]; then
+		echo "-----------------------------------------------------------"
+		exit 1
+	fi
+	echo "-----------------------------------------------------------"
+}
+
 # Show environment information
 if [[ $FLATPAK_BUILD -eq 1 ]]; then
 	# shellcheck source=/dev/null
 	source ../show_info.sh
 else
-	wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/show_info.sh -O show_info.sh
-	echo "de6aab236ca5dd5e3f1b647b540d65a5740953e8d7c206755848fbfb65634cdb  ./show_info.sh" | sha256sum -c - || exit 1
+	do_validate_checksum \
+		https://raw.githubusercontent.com/openwall/john-packages/release/tests/show_info.sh
 	# shellcheck source=/dev/null
 	source show_info.sh
 fi

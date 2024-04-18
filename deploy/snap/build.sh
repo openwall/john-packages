@@ -44,8 +44,8 @@ OTHER_REGULAR="$SYSTEM_WIDE"
 OTHER_NO_OPENMP="$SYSTEM_WIDE --disable-openmp"
 
 # Build helper
-wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/run_build.sh
-echo "8685dea557376611040ce02b1bd6bec92062ed27b81bcdd4949fc186090b75f7  ./run_build.sh" | sha256sum -c - || exit 1
+do_validate_checksum \
+	https://raw.githubusercontent.com/openwall/john-packages/release/tests/run_build.sh
 # shellcheck source=/dev/null
 source run_build.sh
 
@@ -72,8 +72,8 @@ fi
 # We are in packages folder, change to JtR folder
 cd src || exit 1
 
-wget https://raw.githubusercontent.com/openwall/john-packages/release/patches/Handle-self-confined-system-wide-build.patch
-echo "aab7868a06d5a06745a234907f4e26cbe794610fe14198674d595a638529e7bd  ./Handle-self-confined-system-wide-build.patch" | sha256sum -c - || exit 1
+do_validate_checksum \
+	https://raw.githubusercontent.com/openwall/john-packages/release/patches/Handle-self-confined-system-wide-build.patch
 patch <Handle-self-confined-system-wide-build.patch
 
 # Testing only purposes
@@ -128,8 +128,8 @@ if [[ $CI_TEST -ne 0 ]]; then
 	# shellcheck source=/dev/null
 	source disable_formats.sh
 
-	wget https://raw.githubusercontent.com/openwall/john-packages/main/tests/run_tests.sh
-	echo "6877e23f9225f4d80cbc98de68e37784817e0a9f96b0ca2831f62533bb15f80e  ./run_tests.sh" | sha256sum -c - || exit 1
+	do_validate_checksum \
+		https://raw.githubusercontent.com/openwall/john-packages/main/tests/run_tests.sh
 	# shellcheck source=/dev/null
 	source run_tests.sh
 fi

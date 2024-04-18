@@ -24,8 +24,8 @@
 
 cd /upstream/src || exit 1
 
-wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/show_info.sh -O show_info.sh
-echo "de6aab236ca5dd5e3f1b647b540d65a5740953e8d7c206755848fbfb65634cdb  ./show_info.sh" | sha256sum -c - || exit 1
+do_validate_checksum \
+	https://raw.githubusercontent.com/openwall/john-packages/release/tests/show_info.sh
 # shellcheck source=/dev/null
 source show_info.sh
 

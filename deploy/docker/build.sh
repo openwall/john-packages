@@ -51,8 +51,8 @@ if [ "$type" == "ALL" ] || [ "$type" == "GPU" ]; then
 fi
 
 # Build helper
-wget https://raw.githubusercontent.com/openwall/john-packages/release/tests/run_build.sh
-echo "8685dea557376611040ce02b1bd6bec92062ed27b81bcdd4949fc186090b75f7  ./run_build.sh" | sha256sum -c - || exit 1
+do_validate_checksum \
+	https://raw.githubusercontent.com/openwall/john-packages/release/tests/run_build.sh
 # shellcheck source=/dev/null
 source run_build.sh
 
