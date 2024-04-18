@@ -76,7 +76,7 @@ All continuous integration (CI) and continuous delivery (CD) procedures are full
 performed whenever requested by the packager. Manual procedures are required just to
 start the process.
 
-Click on the link to learn more about our [Continuous Integration and Continuous Delivery](https://github.com/openwall/john-packages/tree/main/tests#continuous-integration-and-continuous-delivery) procedures.
+Click on the link to learn more about our [Continuous Integration and Continuous Delivery](https://github.com/openwall/john-packages/tree/main/scripts#continuous-integration-and-continuous-delivery) procedures.
 
 [![Graph](https://mermaid.ink/img/pako:eNqVk99u2jAUxl_lyFetVvoAaKoUknWtug4ETKsEvTg4h2Dh2JbtsAHm3WcnTNApN8tFlD_-fd_x53OOjOuS2JBVFs0G5sVSQbyyxQ_jvCWsIdd1Lfw7DAYPgW-Ib8E1wuNKSOH3AUY300YBQql_qTNhaYWOwGuoyIPfEEj05DzwDaqK3G3nMUqSkB8TL9TnlX2ACVqUkuSpW5G3ppkxO9prC_lzgGKxxuEaByW5rdcGEvZTqOju4v_3ay4XlktqqS89VKH5lmwPZBvXQo890KMlGs2Kf6ns0FiCgnbjySzAUx_YHA5CVTCPOaT3T-n2rJwh7iNopN6nLxPkW6zoIn5_HzMKQu0iJyr0QqsALwv6bciKmpRHeV780sYZRsJb4SiJvep4SF1ZxgX41lNWpkqrRXnZz1nlKobvPViNfDyDbPr6kfoq_FOzgoynMqPjuAedaYmxwIvj_6YVpUGv23bpckspXGfXnkiNqkEJaIzVO5QB3m7-HlJiXAJSZ05JUmzW2w-Bh5J46nrnohmVASY9Nc4t7rp9sDtWk61RlHGOjklpyaJ2TUs2jI8l2u2SLdUprsPG69lecTb0tqE71pgyjkYhMI5fzaKFdHT6A-rVMuQ?type=png)](tests#continuous-integration-and-continuous-delivery)
 

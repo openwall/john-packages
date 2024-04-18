@@ -55,7 +55,7 @@ if [[ "$2" == "BUILD" ]]; then
 		git checkout "$_JUMBO_RELEASE"
 	fi
 	do_validate_checksum \
-		https://raw.githubusercontent.com/openwall/john-packages/release/tests/run_build.sh
+		https://raw.githubusercontent.com/openwall/john-packages/release/scripts/run_build.sh
 	# shellcheck source=/dev/null
 	source run_build.sh
 
@@ -123,7 +123,7 @@ elif [[ "$2" == "TEST" ]]; then
 	fi
 
 	do_validate_checksum \
-		https://raw.githubusercontent.com/openwall/john-packages/release/tests/run_tests.sh
+		https://raw.githubusercontent.com/openwall/john-packages/release/scripts/run_tests.sh
 	# shellcheck source=/dev/null
 	source run_tests.sh
 fi

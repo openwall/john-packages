@@ -45,7 +45,7 @@ OTHER_NO_OPENMP="$SYSTEM_WIDE --disable-openmp"
 
 # Build helper
 do_validate_checksum \
-	https://raw.githubusercontent.com/openwall/john-packages/release/tests/run_build.sh
+	https://raw.githubusercontent.com/openwall/john-packages/release/scripts/run_build.sh
 # shellcheck source=/dev/null
 source run_build.sh
 
@@ -124,12 +124,12 @@ if [[ $CI_TEST -ne 0 ]]; then
 	ln -s "$(realpath ../run)" /snap/john-the-ripper/current/run
 
 	# Adjust the testing environment, import and run some testing
-	wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/main/tests/disable_formats.sh
+	wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/main/scripts/disable_formats.sh
 	# shellcheck source=/dev/null
 	source disable_formats.sh
 
 	do_validate_checksum \
-		https://raw.githubusercontent.com/openwall/john-packages/main/tests/run_tests.sh
+		https://raw.githubusercontent.com/openwall/john-packages/main/scripts/run_tests.sh
 	# shellcheck source=/dev/null
 	source run_tests.sh
 fi

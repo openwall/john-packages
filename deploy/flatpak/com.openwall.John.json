@@ -51,7 +51,7 @@
                 },
                 {
                     "type": "file",
-                    "path": "../../tests/show_info.sh"
+                    "path": "../../scripts/show_info.sh"
                 },
                 {
                     "type": "file",
@@ -59,15 +59,15 @@
                 },
                 {
                     "type": "file",
-                    "path": "../../tests/package_version.sh"
+                    "path": "../../scripts/package_version.sh"
                 },
                 {
                     "type": "file",
-                    "path": "../../tests/clean_package.sh"
+                    "path": "../../scripts/clean_package.sh"
                 },
                 {
                     "type": "file",
-                    "path": "../../tests/run_build.sh"
+                    "path": "../../scripts/run_build.sh"
                 },
                 {
                     "type": "file",

@@ -25,7 +25,7 @@
 cd /upstream/src || exit 1
 
 do_validate_checksum \
-	https://raw.githubusercontent.com/openwall/john-packages/release/tests/show_info.sh
+	https://raw.githubusercontent.com/openwall/john-packages/release/scripts/show_info.sh
 # shellcheck source=/dev/null
 source show_info.sh
 

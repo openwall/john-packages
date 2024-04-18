@@ -52,7 +52,7 @@ fi
 
 # Build helper
 do_validate_checksum \
-	https://raw.githubusercontent.com/openwall/john-packages/release/tests/run_build.sh
+	https://raw.githubusercontent.com/openwall/john-packages/release/scripts/run_build.sh
 # shellcheck source=/dev/null
 source run_build.sh
 

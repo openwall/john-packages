@@ -67,7 +67,7 @@ This is the `john-packages` (itself) 0.9 release 'v0.9.0'. October 2023 (version
   - Make it compliant with OpenSSF SLSA 3.
 - Add a macOS package;
 - Add OpenCL support to the John the Ripper Docker image;
-- Add extensive use of Continuous Integration (CI). See [the CI and CD](https://github.com/openwall/john-packages/tree/main/tests#continuous-integration-and-continuous-delivery) procedures;
+- Add extensive use of Continuous Integration (CI). See [the CI and CD](https://github.com/openwall/john-packages/tree/main/scripts#continuous-integration-and-continuous-delivery) procedures;
 - Add a lot of automatic QA checking to the john-packages repository;
 - Add new formats and/or implementations;
 - Improve formats detection and valid() implementations;

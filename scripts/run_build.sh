@@ -58,7 +58,7 @@ function do_get_version() {
 		if [[ $FLATPAK_BUILD -ne 1 ]]; then
 			cd .. || exit 1
 			do_validate_checksum \
-				https://raw.githubusercontent.com/openwall/john-packages/main/tests/package_version.sh
+				https://raw.githubusercontent.com/openwall/john-packages/main/scripts/package_version.sh
 			chmod +x package_version.sh
 		fi
 	)
@@ -74,7 +74,7 @@ function do_clean_package() {
 		cd .. || exit 1
 		if [[ $FLATPAK_BUILD -ne 1 ]]; then
 			do_validate_checksum \
-				https://raw.githubusercontent.com/openwall/john-packages/main/tests/clean_package.sh
+				https://raw.githubusercontent.com/openwall/john-packages/main/scripts/clean_package.sh
 		fi
 		# shellcheck source=/dev/null
 		source clean_package.sh
@@ -150,7 +150,7 @@ if [[ $FLATPAK_BUILD -eq 1 ]]; then
 	source ../show_info.sh
 else
 	do_validate_checksum \
-		https://raw.githubusercontent.com/openwall/john-packages/release/tests/show_info.sh
+		https://raw.githubusercontent.com/openwall/john-packages/release/scripts/show_info.sh
 	# shellcheck source=/dev/null
 	source show_info.sh
 fi
