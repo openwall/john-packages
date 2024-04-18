@@ -26,10 +26,14 @@ function install_nvidia_opencl() {
 	apt-get install -y --no-install-recommends \
 		nvidia-opencl-dev=*
 }
-
 type="$1"
-export DEPLOY_PAK="Yes"
+
+# Required defines
 arch=$(uname -m)
+DEPLOY_PAK="Yes"
+BASE="CUDA on Ubuntu"
+TASK_RUNNING="Docker build"
+export -p DEPLOY_PAK BASE TASK_RUNNING
 
 # Build options (system wide, disable checks, etc.)
 SYSTEM_WIDE='--with-systemwide'
@@ -49,43 +53,50 @@ apt-get install -y --no-install-recommends \
 if [ "$type" == "ALL" ] || [ "$type" == "GPU" ]; then
 	install_nvidia_opencl
 fi
+# Download the required and missing file
+wget https://raw.githubusercontent.com/openwall/john-packages/release/scripts/helper.sh \
+	-O helper.sh
+mkdir -p src
+cd src || exit 1
 
-# Build helper
-do_validate_checksum \
-	https://raw.githubusercontent.com/openwall/john-packages/release/scripts/helper.sh
 # shellcheck source=/dev/null
-source helper.sh
+source ../helper.sh
 
-# Get upstream source code
-git clone --depth 10 https://github.com/openwall/john.git
-
-# Make it a reproducible build
-if [ "$RELEASE" == "true" ]; then
+if true; then
+	# Get upstream JtR source code and the version string
+	#RELEASE="f9fedd238b0b1d69181c1fef033b85c787e96e57" # Remove line comment for a release
 	(
-		cd john || exit 1
-		git checkout "$COMMIT"
+		cd .. || exit 1
+		rm -rf tmp
+		git clone --depth 10 https://github.com/openwall/john.git tmp
+		cp -r tmp/. . && rm -rf tmp/
+
+		# Make it a reproducible build
+		if [[ -n "$RELEASE" ]]; then
+			echo "Deploying the release $RELEASE"
+			git pull --unshallow
+			git checkout "$RELEASE"
+		fi
 	)
-fi
-
-(
-	cd john/src || exit 1
 	do_get_version
+fi
+echo ""
+echo "---------------------------- BUILDING -----------------------------"
 
-	if [ "$arch" == "x86_64" ]; then
-		# x86_64 CPU (OMP and SIMD binaries)
-		do_configure "$X86_NO_OPENMP" --enable-simd=avx && do_build ../run/john-avx
-		do_configure "$X86_REGULAR" --enable-simd=avx && do_build ../run/john-avx-omp
-		do_configure "$X86_NO_OPENMP" --enable-simd=avx2 && do_build ../run/john-avx2
-		do_configure "$X86_REGULAR" --enable-simd=avx2 && do_build ../run/john-avx2-omp
-		do_configure "$X86_NO_OPENMP" --enable-simd=avx512f && do_build ../run/john-avx512f
-		do_configure "$X86_REGULAR" --enable-simd=avx512f && do_build ../run/john-avx512f-omp
-		do_configure "$X86_NO_OPENMP" --enable-simd=avx512bw && do_build ../run/john-avx512bw
-		do_configure "$X86_REGULAR" --enable-simd=avx512bw && do_build ../run/john-avx512bw-omp
-	else
-		# Non X86 CPU (OMP fallback)
-		do_configure "$OTHER_NO_OPENMP" && do_build "../run/john-$arch"
-		do_configure "$OTHER_REGULAR" && do_build ../run/john-omp
-	fi
-	do_release "Yes" "Yes" # --system-wide, --support-opencl, --binary-name
-	do_clean_package
-)
+if [ "$arch" == "x86_64" ]; then
+	# x86_64 CPU (OMP and SIMD binaries)
+	do_configure "$X86_NO_OPENMP" --enable-simd=avx && do_build ../run/john-avx
+	do_configure "$X86_REGULAR" --enable-simd=avx && do_build ../run/john-avx-omp
+	do_configure "$X86_NO_OPENMP" --enable-simd=avx2 && do_build ../run/john-avx2
+	do_configure "$X86_REGULAR" --enable-simd=avx2 && do_build ../run/john-avx2-omp
+	do_configure "$X86_NO_OPENMP" --enable-simd=avx512f && do_build ../run/john-avx512f
+	do_configure "$X86_REGULAR" --enable-simd=avx512f && do_build ../run/john-avx512f-omp
+	do_configure "$X86_NO_OPENMP" --enable-simd=avx512bw && do_build ../run/john-avx512bw
+	do_configure "$X86_REGULAR" --enable-simd=avx512bw && do_build ../run/john-avx512bw-omp
+else
+	# Non X86 CPU (OMP fallback)
+	do_configure "$OTHER_NO_OPENMP" && do_build "../run/john-$arch"
+	do_configure "$OTHER_REGULAR" && do_build ../run/john-omp
+fi
+do_release "Yes" "Yes" # --system-wide, --support-opencl, --binary-name
+do_clean_package

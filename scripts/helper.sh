@@ -52,34 +52,36 @@ function do_build() {
 	set +e
 }
 
+# Computes the package version string
 function do_get_version() {
-	# Computes the package version
-	(
-		if [[ $FLATPAK_BUILD -ne 1 ]]; then
+
+	if [[ ${FLATPAK_BUILD-0} -ne 1 ]]; then
+		(
 			cd .. || exit 1
 			do_validate_checksum \
 				https://raw.githubusercontent.com/openwall/john-packages/main/scripts/package_version.sh
 			chmod +x package_version.sh
-		fi
-	)
+		)
+	fi
 	PACKAGE_VERSION="$(../package_version.sh)"
 	export PACKAGE_VERSION
 	echo "$PACKAGE_VERSION" >version.txt
 	rm -f ../package_version.sh
 }
 
+# Removes files that should not be in the final package version
 function do_clean_package() {
-	# Removes files that should not be in the final package version
 	(
 		cd .. || exit 1
-		if [[ $FLATPAK_BUILD -ne 1 ]]; then
+
+		if [[ ${FLATPAK_BUILD-0} -ne 1 ]]; then
 			do_validate_checksum \
 				https://raw.githubusercontent.com/openwall/john-packages/main/scripts/clean_package.sh
 		fi
 		# shellcheck source=/dev/null
-		source clean_package.sh
-		rm -f clean_package.sh
+		source ./clean_package.sh
 	)
+	rm -f ../clean_package.sh
 }
 
 function do_release() {
@@ -111,7 +113,7 @@ function do_release() {
 	ls -l ../run/john || true
 	echo "-----------------------------------------------------------"
 
-	if [[ $FLATPAK_BUILD -eq 1 ]]; then
+	if [[ ${FLATPAK_BUILD-0} -eq 1 ]]; then
 		# Test whether the fallback works.
 		../run/john || true
 		echo "-----------------------------------------------------------"
@@ -120,15 +122,30 @@ function do_release() {
 	fi
 }
 
+function do_show_environment() {
+
+	if [[ ${FLATPAK_BUILD-0} -ne 1 ]]; then
+		(
+			cd .. || exit 1
+			do_validate_checksum \
+				https://raw.githubusercontent.com/openwall/john-packages/release/scripts/show_info.sh
+		)
+	fi
+	# shellcheck source=/dev/null
+	source ../show_info.sh
+}
+
 function do_validate_checksum() {
 	FILE_URL="$1"
 	FILE_BASENAME=$(basename "$FILE_URL")
 	URL_LOCATION=$(dirname "$FILE_URL")
 
-	echo "-----------------------------------------------------------"
-	wget "$FILE_URL" -O "$FILE_BASENAME"
-	echo "-----------------------------------------------------------"
-	echo "Downloading and validating $FILE_BASENAME:"
+	if [[ -z "$2" ]]; then
+		echo "-----------------------------------------------------------"
+		wget "$FILE_URL" -O "$FILE_BASENAME"
+		echo "-----------------------------------------------------------"
+	fi
+	echo "Validating $FILE_BASENAME:"
 	echo "- from $URL_LOCATION;"
 	CHECKSUM_VALUE=$(grep "$FILE_BASENAME" requirements.txt | cut -d' ' -f1)
 	echo "- expecting: $CHECKSUM_VALUE;"
@@ -144,21 +161,22 @@ function do_validate_checksum() {
 	echo "-----------------------------------------------------------"
 }
 
-function do_show_environment() {
-
-	if [[ ${FLATPAK_BUILD-0} -eq 1 ]]; then
-		# shellcheck source=/dev/null
-		source ../show_info.sh
-	else
-		do_validate_checksum \
-			https://raw.githubusercontent.com/openwall/john-packages/release/scripts/show_info.sh
-		# shellcheck source=/dev/null
-		source show_info.sh
-	fi
-}
-
-# Show environment information
+# Show environment information once
 if [[ ${INFO_SHOWN-0} -eq 0 ]]; then
-	do_show_environment
+	# Some packages like snap and Docker use a clean context to build the package
+	# Therefore, essential and missing files must be downloaded from here
+
+	if [[ ${FLATPAK_BUILD-0} -ne 1 ]]; then
+		# Flatpak does not access the network and has these files
+		(
+			cd .. || exit 1
+			wget https://raw.githubusercontent.com/openwall/john-packages/release/requirements.txt \
+				-O requirements.txt
+			do_validate_checksum helper.sh "no-download"
+		)
+		# This file is also required in 'src' (current) directory
+		ln -s -f ../requirements.txt requirements.txt
+	fi
 	export INFO_SHOWN=1
+	do_show_environment
 fi

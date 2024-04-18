@@ -23,15 +23,14 @@
 # More info at https://github.com/openwall/john-packages
 
 # Required defines
-TEST=';full;extra;' # Controls how the test will happen
 arch=$(uname -m)
+DEPLOY_PAK="No"
+FLATPAK_BUILD=1
 JTR_BIN='/app/bin/john'
-JTR_CL="$JTR_BIN"
-export TEST
-export JTR_CL
-export FLATPAK_BUILD=1
-export BASE="Flatpak SDK"
-export TASK_RUNNING="Flatpak build"
+TEST=';full;extra;' # Controls how the test will happen
+BASE="Flatpak SDK"
+TASK_RUNNING="Flatpak build"
+export -p DEPLOY_PAK FLATPAK_BUILD JTR_BIN TEST BASE TASK_RUNNING
 
 # Build options (system wide, disable checks, etc.)
 SYSTEM_WIDE='--with-systemwide --disable-opencl'
@@ -41,7 +40,6 @@ X86_NO_OPENMP="--disable-native-tests $SYSTEM_WIDE --disable-openmp"
 OTHER_REGULAR="$SYSTEM_WIDE"
 OTHER_NO_OPENMP="$SYSTEM_WIDE --disable-openmp"
 
-# Build helper
 # shellcheck source=/dev/null
 source ../helper.sh
 

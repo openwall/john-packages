@@ -23,14 +23,14 @@
 # More info at https://github.com/openwall/john-packages
 
 # Required defines
-TEST=';full;extra;' # Controls how the test will happen
 arch=$(uname -m)
+DEPLOY_PAK="Yes"
 JTR_BIN='../run/john'
 JTR_CL="$JTR_BIN"
-export TEST
-export JTR_CL
-export BASE="Ubuntu"
-export TASK_RUNNING="Snap build"
+TEST=';full;extra;' # Controls how the test will happen
+BASE="Ubuntu"
+TASK_RUNNING="Snap build"
+export -p DEPLOY_PAK JTR_BIN JTR_CL TEST BASE TASK_RUNNING
 
 # Build options (system wide, disable checks, etc.)
 SYSTEM_WIDE='--with-systemwide'
@@ -43,35 +43,34 @@ fi
 OTHER_REGULAR="$SYSTEM_WIDE"
 OTHER_NO_OPENMP="$SYSTEM_WIDE --disable-openmp"
 
-# Build helper
-do_validate_checksum \
-	https://raw.githubusercontent.com/openwall/john-packages/release/scripts/helper.sh
+# Download the required and missing file
+wget https://raw.githubusercontent.com/openwall/john-packages/release/scripts/helper.sh \
+	-O helper.sh
+mkdir -p src
+cd src || exit 1
+
 # shellcheck source=/dev/null
-source helper.sh
+source ../helper.sh
 
 if [[ "$1" == "PULL" ]]; then
-	# Get upstream JtR source code and adjust it to create a SNAP package
-	rm -rf tmp
-	git clone --depth 10 https://github.com/openwall/john.git tmp
-	cp -r tmp/. .
+	# The pull phase will get upstream JtR source code and the version string
+	#RELEASE="f9fedd238b0b1d69181c1fef033b85c787e96e57" # Remove line comment for a release
+	(
+		cd .. || exit 1
+		rm -rf tmp
+		git clone --depth 10 https://github.com/openwall/john.git tmp
+		cp -r tmp/. .
 
-	# Uncomment for a release
-	#RELEASE="f9fedd238b0b1d69181c1fef033b85c787e96e57"
-
-	# Make it a reproducible build
-	if [[ -n "$RELEASE" ]]; then
-		echo "Deploying the release $RELEASE"
-		git pull --unshallow
-		git checkout "$RELEASE"
-	fi
-
+		# Make it a reproducible build
+		if [[ -n "$RELEASE" ]]; then
+			echo "Deploying the release $RELEASE"
+			git pull --unshallow
+			git checkout "$RELEASE"
+		fi
+	)
 	do_get_version
 	exit 0
 fi
-
-# We are in packages folder, change to JtR folder
-cd src || exit 1
-
 do_validate_checksum \
 	https://raw.githubusercontent.com/openwall/john-packages/release/patches/Handle-self-confined-system-wide-build.patch
 patch <Handle-self-confined-system-wide-build.patch
@@ -109,13 +108,13 @@ fi
 do_release "Yes" "$OPENCL_SUPPORT" "$BINARY" # --system-wide, --support-opencl, --binary-name
 do_clean_package
 
-# "------------------- Run CI OR enforce security -------------------"
-# For security reasons, allow to skip the testing procedures, on a release
-wget --spider https://raw.githubusercontent.com/claudioandre-br/JohnTheRipper/bleeding-jumbo/CI.patch
+# "------------------- Run CI OR avoid to install extra packages -------------------"
+# Allow to skip the testing procedures, on a release
+wget --spider https://raw.githubusercontent.com/claudioandre-br/JohnTheRipper/bleeding-jumbo/run-CI.patch
 CI_TEST=$?
 
-if [[ $CI_TEST -ne 0 ]]; then
-	# To be able to run testing
+if [[ $CI_TEST -eq 0 ]]; then
+	# Needed to be able to run testing
 	sudo apt-get install -y language-pack-en
 
 	# "---------------------------- TESTING -----------------------------"
@@ -124,7 +123,7 @@ if [[ $CI_TEST -ne 0 ]]; then
 	ln -s "$(realpath ../run)" /snap/john-the-ripper/current/run
 
 	# Adjust the testing environment, import and run some testing
-	wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/main/scripts/disable_formats.sh
+	wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/main/tests/disable_formats.sh
 	# shellcheck source=/dev/null
 	source disable_formats.sh
 

@@ -22,11 +22,11 @@
 # Script to control the build of John the Ripper packages
 # More info at https://github.com/openwall/john-packages
 
-cd src
-
-# Setup testing environment
-JTR=../run/john
+# Required defines
 arch=$(uname -m)
+JTR='../run/john'
+TASK_RUNNING="$2"
+export -p JTR TASK_RUNNING
 
 # Mute the system Information on testing
 if [[ "$2" == "TEST" ]]; then
@@ -43,10 +43,22 @@ if [[ $TARGET_ARCH == *"SOLARIS"* && $2 == "BUILD" ]]; then
 	pkg install --accept gcc
 fi
 
-export TASK_RUNNING="$2"
+if [[ "$TARGET_ARCH" == *"macOS"* && $2 == "INFO" ]]; then
+	brew update
+	brew install openssl libpcap libomp gmp coreutils p7zip
+fi
+
+# Download the required and missing file
+wget https://raw.githubusercontent.com/openwall/john-packages/release/scripts/helper.sh \
+	-O helper.sh
+cd src || exit 1
+
+# shellcheck source=/dev/null
+source ../helper.sh
 
 # Build and testing
 if [[ "$2" == "BUILD" ]]; then
+	do_get_version
 
 	# Make it a reproducible build
 	if [[ -n "$_JUMBO_RELEASE" ]]; then
@@ -54,10 +66,8 @@ if [[ "$2" == "BUILD" ]]; then
 		git pull --unshallow
 		git checkout "$_JUMBO_RELEASE"
 	fi
-	do_validate_checksum \
-		https://raw.githubusercontent.com/openwall/john-packages/release/scripts/helper.sh
-	# shellcheck source=/dev/null
-	source helper.sh
+	echo ""
+	echo "---------------------------- BUILDING -----------------------------"
 
 	if [[ "$TARGET_ARCH" == *"macOS"* ]]; then
 		SYSTEM_WIDE=''
@@ -77,9 +87,6 @@ if [[ "$2" == "BUILD" ]]; then
 		CFLAGS_ssl="-I/$MAC_LOCAL_PATH/openssl/include"
 		CFLAGS_gmp="-I/$MAC_LOCAL_PATH/gmp/include"
 		CFLAGS_omp="-I/$MAC_LOCAL_PATH/libomp/include"
-
-		brew update
-		brew install openssl libpcap libomp gmp coreutils p7zip
 
 		if [[ $TARGET_ARCH == *"macOS ARM"* ]]; then
 			brew link openssl --force
@@ -115,12 +122,13 @@ if [[ "$2" == "BUILD" ]]; then
 
 elif [[ "$2" == "TEST" ]]; then
 	# Required defines
-	export TEST=";$EXTRA;" # Controls how the test will happen
-	export JTR_BIN="$JTR"
+	JTR_BIN="$JTR"
+	TEST=";$EXTRA;" # Controls how the test will happen
 
 	if [[ "$TARGET_ARCH" == "DOCKER" ]]; then
-		export JTR_BIN="/john/run/john-avx"
+		JTR_BIN="/john/run/john-avx"
 	fi
+	export -p JTR_BIN TEST
 
 	do_validate_checksum \
 		https://raw.githubusercontent.com/openwall/john-packages/release/scripts/run_tests.sh

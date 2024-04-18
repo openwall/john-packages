@@ -26,16 +26,10 @@ name: Docker Image
 "on":
   workflow_dispatch:
     inputs:
-      release:
-        description: "Is it a release build (needs a git checkout)?"
+      type:
+        description: "The image must contain"
         required: true
-        type: boolean
-        default: false
-      hash:
-        description: "The commit hash to be used"
-        required: false
-        #TODO: edit before release (JUMBO_RELEASE)
-        default: "f9fedd238b0b1d69181c1fef033b85c787e96e57"
+        default: "ALL"
       VERSION_NAME:
         description: "The software version name"
         required: true
@@ -132,8 +126,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event.inputs.push }}
           build-args: |
-            RELEASE="${{ github.event.inputs.release }}"
-            COMMIT="${{ github.event.inputs.hash }}"
+            TYPE="${{ github.event.inputs.type }}"
           tags: |
             ${{ env.REPO }}:${{ github.event.inputs.tag }}
             ${{ env.REPO }}:${{ github.event.inputs.tag }}_J${{ github.run_number }}

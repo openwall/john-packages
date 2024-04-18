@@ -27,9 +27,7 @@ FROM nvidia/cuda:12.4.1-base-ubuntu22.04@sha256:ee758c4b748a2f121a80dab16f394c60
 WORKDIR /build/
 COPY build.sh .
 
-# To build a release run a (docker build [...] --build-arg release=true)
-ARG RELEASE=false
-ARG COMMIT=f9fedd238b0b1d69181c1fef033b85c787e96e57
+# To build a release run a (docker build [...] --build-arg TYPE=ALL)
 ARG TYPE=ALL
 
 RUN ./build.sh "${TYPE}"
@@ -46,7 +44,7 @@ FROM nvidia/cuda:12.4.1-base-ubuntu22.04@sha256:ee758c4b748a2f121a80dab16f394c60
 # libgomp1                         (apt)
 # Default user is JtR
 
-COPY --from=build /build/john /john
+COPY --from=build /build /john
 RUN mkdir -p /usr/share/ && ln -s /john/run /usr/share/john
 COPY docker-entrypoint.sh /usr/local/bin/
 
