@@ -14,4 +14,4 @@
 ^\Qdocs/deployment.png\E$
 ^\QIDE/Debugging-JtR-Using-IDE.png\E$
 ^\QIDE/OpenCL-JtR-detection.png\E$
-^\Qtests/CI-workflow.pdf\E$
+^\QCI/workflow.pdf\E$

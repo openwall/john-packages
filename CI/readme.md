@@ -59,7 +59,7 @@ using:
   - Develop a fully automated build and release pipeline using Azure DevOps Services
     to create the CI/CD pipeline and Azure Services for deploying to development/staging and
     production.
-    See the [release workflow here](https://github.com/openwall/john-packages/blob/main/scripts/CI-workflow.pdf);
+    See the [release workflow here](https://github.com/openwall/john-packages/blob/main/CI/workflow.pdf);
   - Add support to ClusterFuzz (OSS-Fuzz);
   - Add support to static code quality analyzer.
 
