@@ -69,7 +69,13 @@ laptops. However, there are some cases where the rule must be overcome by common
 - Format all edited or new shell scripts using shfmt.
 - Fix all issues detected by markdownlint VSCode extension (davidanson.vscode-markdownlint).
 - Format all edited Yaml or Markdown files using "Prettier - Code formatter" VSCode extension (esbenp.prettier-vscode).
-- Verify to see if PR checks have passed, or if there are any new or attention-worthy warning.
+- Verify to see if PR checks have passed, or if there are any new or attention-worthy warning;
+- Update checksums using the command:
+
+```bash
+cd scripts && sha256sum ./*.sh > ../requirements.txt  && cd -
+cd patches && sha256sum ./* >> ../requirements.txt && cd -
+```
 
 ## The PR review process
 
