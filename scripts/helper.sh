@@ -107,6 +107,15 @@ function do_release() {
 		Version="$PACKAGE_VERSION"
 	EOF
 
+	if [[ ${FLATPAK_BUILD-0} -ne 1 ]]; then
+		cat <<-EOF >>../run/Defaults
+			#
+			#   Hashes of extra or external files used
+			[Extra Files]
+			$(cat requirements.txt)
+		EOF
+	fi
+
 	echo "-----------------------------------------------------------"
 	cat ../run/Defaults
 	echo "-----------------------------------------------------------"
