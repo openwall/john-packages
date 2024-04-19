@@ -33,5 +33,5 @@ rm -rf run/ztex
 # Cleanup to deploy
 if [[ "${DEPLOY_PAK-No}" == "Yes" ]]; then
 	rm -rf .[!.]*.yml ./*.yml src .git .ci .circleci .azure .editorconfig .gitattributes \
-		.github .gitignore .mailmap ./*.sh .travis .travis.yml shell.nix
+		.github .gitignore .mailmap .[!.]*.sh ./*.sh .travis .travis.yml shell.nix
 fi
