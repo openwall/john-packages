@@ -131,6 +131,7 @@ Author:
 ```
 
 PR approver and committer:
+
 ```bash
 # If the commit is not signed, the reviewer should sign and add himself (or herself)
 # indicating the activity carried out, using something like this in the commit message:
@@ -168,6 +169,7 @@ git push -u origin main
 ```
 
 When releasing a new version, create a signed tag, then access and use the GitHub GUI as usual:
+
 ```bash
 # E.g., for a rolling release in Oct 2023, the <tag> value should be rolling-2310
 git tag <tag> -m "release: <tag> $(date +%Y%m%d)"
