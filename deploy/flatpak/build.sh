@@ -26,11 +26,9 @@
 arch=$(uname -m)
 DEPLOY_PAK="No"
 FLATPAK_BUILD=1
-JTR_BIN='/app/bin/john'
-TEST=';full;extra;' # Controls how the test will happen
 BASE="Flatpak SDK"
 TASK_RUNNING="Flatpak build"
-export -p DEPLOY_PAK FLATPAK_BUILD JTR_BIN TEST BASE TASK_RUNNING
+export -p DEPLOY_PAK FLATPAK_BUILD BASE TASK_RUNNING
 
 # Build options (system wide, disable checks, etc.)
 SYSTEM_WIDE='--with-systemwide --disable-opencl'
@@ -43,39 +41,27 @@ OTHER_NO_OPENMP="$SYSTEM_WIDE --disable-openmp"
 # shellcheck source=/dev/null
 source ../helper.sh
 
-if [[ -z "$TASK" ]]; then
-	do_get_version
+do_get_version
 
-	echo ""
-	echo "---------------------------- BUILDING -----------------------------"
+echo ""
+echo "---------------------------- BUILDING -----------------------------"
 
-	if [[ "$arch" == "x86_64" ]]; then
-		# x86_64 CPU (OMP and SIMD fallback)
-		do_configure "$X86_NO_OPENMP" --enable-simd=avx CPPFLAGS="-D_BOXED" && do_build ../run/john-avx
-		do_configure "$X86_REGULAR" --enable-simd=avx CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx\\\"\" " && do_build ../run/john-avx-omp
-		do_configure "$X86_NO_OPENMP" --enable-simd=avx2 CPPFLAGS="-D_BOXED" && do_build ../run/john-avx2
-		do_configure "$X86_REGULAR" --enable-simd=avx2 CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx2\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx-omp\\\"\"" && do_build ../run/john-avx2-omp
-		do_configure "$X86_NO_OPENMP" --enable-simd=avx512f CPPFLAGS="-D_BOXED" && do_build ../run/john-avx512f
-		do_configure "$X86_REGULAR" --enable-simd=avx512f CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx512f\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx2-omp\\\"\"" && do_build ../run/john-avx512f-omp
-		do_configure "$X86_NO_OPENMP" --enable-simd=avx512bw CPPFLAGS="-D_BOXED" && do_build ../run/john-avx512bw
-		do_configure "$X86_REGULAR" --enable-simd=avx512bw CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx512bw\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx512f-omp\\\"\"" && do_build ../run/john-avx512bw-omp
-		BINARY="john-avx512bw-omp"
-	else
-		# Non X86 CPU (OMP fallback)
-		do_configure "$OTHER_NO_OPENMP" CPPFLAGS="-D_BOXED" && do_build "../run/john-$arch"
-		do_configure "$OTHER_REGULAR" CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-$arch\\\"\"" && do_build ../run/john-omp
-		BINARY="john-omp"
-	fi
-	do_release "Yes" "No" "$BINARY" # --system-wide, --support-opencl, --binary-name
-	do_clean_package
-
-elif [[ "$TASK" == "test" ]]; then
-	# "---------------------------- TESTING -----------------------------"
-
-	# Adjust the testing environment, import and run some testing
-	# shellcheck source=/dev/null
-	source ../disable_formats.sh
-
-	# shellcheck source=/dev/null
-	source ../run_tests.sh
+if [[ "$arch" == "x86_64" ]]; then
+	# x86_64 CPU (OMP and SIMD fallback)
+	do_configure "$X86_NO_OPENMP" --enable-simd=avx CPPFLAGS="-D_BOXED" && do_build ../run/john-avx
+	do_configure "$X86_REGULAR" --enable-simd=avx CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx\\\"\" " && do_build ../run/john-avx-omp
+	do_configure "$X86_NO_OPENMP" --enable-simd=avx2 CPPFLAGS="-D_BOXED" && do_build ../run/john-avx2
+	do_configure "$X86_REGULAR" --enable-simd=avx2 CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx2\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx-omp\\\"\"" && do_build ../run/john-avx2-omp
+	do_configure "$X86_NO_OPENMP" --enable-simd=avx512f CPPFLAGS="-D_BOXED" && do_build ../run/john-avx512f
+	do_configure "$X86_REGULAR" --enable-simd=avx512f CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx512f\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx2-omp\\\"\"" && do_build ../run/john-avx512f-omp
+	do_configure "$X86_NO_OPENMP" --enable-simd=avx512bw CPPFLAGS="-D_BOXED" && do_build ../run/john-avx512bw
+	do_configure "$X86_REGULAR" --enable-simd=avx512bw CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-avx512bw\\\"\" -DCPU_FALLBACK_BINARY=\"\\\"john-avx512f-omp\\\"\"" && do_build ../run/john-avx512bw-omp
+	BINARY="john-avx512bw-omp"
+else
+	# Non X86 CPU (OMP fallback)
+	do_configure "$OTHER_NO_OPENMP" CPPFLAGS="-D_BOXED" && do_build "../run/john-$arch"
+	do_configure "$OTHER_REGULAR" CPPFLAGS="-D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-$arch\\\"\"" && do_build ../run/john-omp
+	BINARY="john-omp"
 fi
+do_release "Yes" "No" "$BINARY" # --system-wide, --support-opencl, --binary-name
+do_clean_package
