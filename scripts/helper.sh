@@ -149,7 +149,7 @@ function do_validate_checksum() {
 	FILE_BASENAME=$(basename "$FILE_URL")
 	URL_LOCATION=$(dirname "$FILE_URL")
 
-	if [[ -z "$2" ]]; then
+	if [[ -z "${2-}" ]]; then
 		echo "-----------------------------------------------------------"
 		wget "$FILE_URL" -O "$FILE_BASENAME"
 		echo "-----------------------------------------------------------"
