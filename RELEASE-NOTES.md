@@ -45,4 +45,4 @@ All except s390x and riscv64 binaries support SIMD.
 ## Release Notes for Previous Versions
 
 - [Jumbo 1 release](Releases/1.9.0.J1/RELEASE-NOTES.md)
-- [Previous rolling releases](Releases/rolling/RELEASE-NOTES.md)
+- [Rolling releases](Releases/rolling/RELEASE-NOTES.md)
