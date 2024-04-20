@@ -54,9 +54,18 @@ if [[ "$SANITIZER" == "undefined" ]]; then
 fi
 
 #                                   ##########
+#
+# To use this feature properly, a series of changes are required upstream. Here, we
+# just do something simple to check the current status of the code.
+#
 # This task targets libFuzzer fuzz, but libFuzzer is broken upstream;
 # To use libFuzzer properly, we should do something like this (for each fuzz target).
 #
 # ./configure --enable-libfuzzer
 # make clean && make wpapcap2john # && ./wpapcap2john => just copy to $OUT
 # => the execution is done by the action itself.
+#
+# How to integrate with OSS-Fuzz. Examples:
+# - https://google.github.io/oss-fuzz/advanced-topics/ideal-integration/
+# - https://github.com/google/oss-fuzz/tree/master/projects/example/my-api-repo
+# - https://github.com/jonathanmetzman/clusterfuzzlite-example
