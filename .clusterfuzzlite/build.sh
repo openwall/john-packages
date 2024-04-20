@@ -25,7 +25,7 @@
 cd /upstream/src || exit 1
 
 # shellcheck source=/dev/null
-source ./helper.sh
+source ../helper.sh
 
 if [[ "$SANITIZER" == "address" ]]; then
 	# Asan
