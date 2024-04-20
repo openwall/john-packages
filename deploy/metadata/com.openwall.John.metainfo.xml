@@ -76,12 +76,13 @@
     <release type="stable" version="1.9J1+2404" date="2024-04-01" urgency="high">
       <description>
         <p>
-          This is a maintenance release:
+          This is a maintenance release. Based on upstream bleeding.
         </p>
 
+        <p>All binaries support SIMD:</p>
         <ul>
-          <li>All binaries support SIMD:</li>
-            <li>  The X86_64 binaries support AVX, AVX2, AVX512F and AVX512BW</li>
+          <li>The aarch64 binaries support ASIMD</li>
+          <li>The X86_64 binaries support AVX, AVX2, AVX512F and AVX512BW</li>
         </ul>
       </description>
     </release>
