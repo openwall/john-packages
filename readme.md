@@ -2,7 +2,7 @@
 
 <div id="header" align="center">
 
-[![john-the-ripper](https://snapcraft.io/john-the-ripper/badge.svg)](https://snapcraft.io/john-the-ripper)
+[![john-the-ripper](https://snapcraft.io/john-the-ripper/badge.svg)][linkSnapcraftJohn]
 [![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://github.com/openwall/john-packages/blob/main/LICENSE.txt)
 
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/openwall/john-packages/badge)](https://api.securityscorecards.dev/projects/github.com/openwall/john-packages)
@@ -30,8 +30,8 @@ other hashes and ciphers.
    2. [Package Build Environments](#package-building-environments)
    3. [Testing, Continuous Integration, and Continuous Delivery](#testing-and-continuous-integration)
    4. [Packaging and Application Distribution](#packaging-and-application-distribution)
-   5. [The commits feed of this repository ![New Commits Feed](https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Feed-icon.svg/16px-Feed-icon.svg.png)](https://github.com/openwall/john-packages/commits/main.atom)
-   6. [The feed of John the Ripper releases ![New Releases Feed](https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Feed-icon.svg/16px-Feed-icon.svg.png)](https://github.com/openwall/john-packages/releases.atom)
+   5. [The commits feed of this repository ![New Commits Feed][linkFeedIcon]](https://github.com/openwall/john-packages/commits/main.atom)
+   6. [The feed of John the Ripper releases ![New Releases Feed][linkFeedIcon]](https://github.com/openwall/john-packages/releases.atom)
 2. [Windows Package](#-windows)
 3. [Snap Package](#-snap)
 4. [macOS Package](#-macos)
@@ -46,23 +46,24 @@ other hashes and ciphers.
 
 ### Continuous Delivery Status
 
-We produce software in short cycles, ensuring that the software can be reliably released at any time, following a pipeline through a "production-like environment".
+We produce software in short cycles, ensuring that the software can be reliably released at any time,
+following a pipeline through a "production-like environment".
 
 <div id="CD" align="center">
 
-![Docker image](https://github.com/openwall/john-packages/actions/workflows/docker.yml/badge.svg)
-![Flatpak Build](https://gitlab.com/claudioandre-br/JtR-CI/badges/master/pipeline.svg?key_text=Flatpak)
-![Mac M2](https://img.shields.io/cirrus/github/claudioandre-br/JohnTheRipper/bleeding-jumbo?label=Mac%20M2)
-![Build Status](https://dev.azure.com/claudioandre-br/JohnTheRipper/_apis/build/status/JohnTheRipper?label=Windows)
+![Docker](https://github.com/openwall/john-packages/actions/workflows/docker.yml/badge.svg)
+![Flatpak](https://gitlab.com/claudioandre-br/JtR-CI/badges/master/pipeline.svg?key_text=Flatpak)
+![macOS](https://img.shields.io/cirrus/github/claudioandre-br/JohnTheRipper/bleeding-jumbo?label=macOS)
+![Windows](https://dev.azure.com/claudioandre-br/JohnTheRipper/_apis/build/status/JohnTheRipper?label=Windows)
 
-[![Launchpad](https://media.launchpad.net/lp-badge-kit/launchpad-badge-w120px.png)](https://snapcraft.io/john-the-ripper)
+[![Launchpad](https://media.launchpad.net/lp-badge-kit/launchpad-badge-w120px.png)][linkSnapcraftJohn]
 <a href='https://flathub.org/apps/com.openwall.John'><img height='27' alt='Download on Flathub' src='https://dl.flathub.org/assets/badges/flathub-badge-i-en.svg'/></a>
 
-[![Virus Scan](https://github.com/openwall/john-packages/actions/workflows/virusscan.yml/badge.svg)](https://github.com/openwall/john-packages/releases)
+[![Virus Scan](https://github.com/openwall/john-packages/actions/workflows/virusscan.yml/badge.svg)][linkReleases]
 
-|                                                                 **Releases**                                                                  | **Latest**<br> ![Latest Release Version](https://img.shields.io/github/release/openwall/john-packages?sort=date&label=&style=flat-square&color=blue "Latest Release Version") | **Prerelease**<br> ![Latest Prerelease Version](https://img.shields.io/github/release/openwall/john-packages?include_prereleases&sort=date&label=&style=flat-square&color=blue "Latest Prerelease Version") |
-| :-------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| ![GitHub Total Downloads](https://img.shields.io/github/downloads/openwall/john-packages/total?label=downloads&color=white "Total Downloads") |                    ![Latest Release Date](https://img.shields.io/github/release-date/openwall/john-packages?label=when&color=green "Latest Release Date")                     |                              ![Latest Prerelease Date](https://img.shields.io/github/release-date-pre/openwall/john-packages?label=when&color=green "Latest Prerelease Date")                               |
+|                 **Releases**                  | **Latest**<br> ![Release Version][linkLatestReleaseVersion] | **Prerelease**<br> ![Prerelease Version][linkLatestPrereleaseVersion] |
+| :-------------------------------------------: | :---------------------------------------------------------: | :-------------------------------------------------------------------: |
+| ![GitHub Total Downloads][linkTotalDownloads] |           ![Release Date][linkLatestReleaseDate]            |             ![Prerelease Date][linkLatestPrereleaseDate]              |
 
 </div>
 
@@ -78,17 +79,20 @@ start the process.
 
 Click on the link to learn more about our [Continuous Integration and Continuous Delivery](CI/readme.md#continuous-integration-and-continuous-delivery) procedures.
 
-[![Graph](https://mermaid.ink/img/pako:eNqVk99u2jAUxl_lyFetVvoAaKoUknWtug4ETKsEvTg4h2Dh2JbtsAHm3WcnTNApN8tFlD_-fd_x53OOjOuS2JBVFs0G5sVSQbyyxQ_jvCWsIdd1Lfw7DAYPgW-Ib8E1wuNKSOH3AUY300YBQql_qTNhaYWOwGuoyIPfEEj05DzwDaqK3G3nMUqSkB8TL9TnlX2ACVqUkuSpW5G3ppkxO9prC_lzgGKxxuEaByW5rdcGEvZTqOju4v_3ay4XlktqqS89VKH5lmwPZBvXQo890KMlGs2Kf6ns0FiCgnbjySzAUx_YHA5CVTCPOaT3T-n2rJwh7iNopN6nLxPkW6zoIn5_HzMKQu0iJyr0QqsALwv6bciKmpRHeV780sYZRsJb4SiJvep4SF1ZxgX41lNWpkqrRXnZz1nlKobvPViNfDyDbPr6kfoq_FOzgoynMqPjuAedaYmxwIvj_6YVpUGv23bpckspXGfXnkiNqkEJaIzVO5QB3m7-HlJiXAJSZ05JUmzW2w-Bh5J46nrnohmVASY9Nc4t7rp9sDtWk61RlHGOjklpyaJ2TUs2jI8l2u2SLdUprsPG69lecTb0tqE71pgyjkYhMI5fzaKFdHT6A-rVMuQ?type=png)](CI/readme.md#continuous-integration-and-continuous-delivery)
+[![Graph][linkProcedureCI]](CI/readme.md#continuous-integration-and-continuous-delivery)
 
 ### Packaging and Application Distribution
 
-[Snap](https://snapcraft.io/) and [Flatpak](https://flatpak.org/) are cool new ways
+[Snap][linkSnapcraftSite] and [Flatpak][linkFlatpakSite] are cool new ways
 of distributing Linux applications among a wide range of different distros. They
 are technologies to deploy applications in a secure, sandboxed and containerized way.
 
-A [Docker](https://www.docker.com/) image is a read-only template used to execute code in a Docker container. An image is an immutable file that contains the binaries, configuration files, libraries, dependencies, tools, and other files needed for John the Ripper application to run.
+A [Docker](https://www.docker.com/) image is a read-only template used to execute code in a Docker container.
+An image is an immutable file that contains the binaries, configuration files, libraries, dependencies, tools,
+and other files needed for John the Ripper application to run.
 
-When the Docker user runs an image, it becomes one instance (it becomes a container, in other words, a running instance of the application).
+When the Docker user runs an image, it becomes one instance (it becomes a container, in other words, a running
+instance of the application).
 
 ## 📂 Windows
 
@@ -133,7 +137,7 @@ it's running on.
 
 ### Windows Deployments
 
-[![Windows Downloads](https://img.shields.io/badge/Download-Windows%20Build-blue.svg)](https://github.com/openwall/john-packages/releases)
+[![Windows Downloads][linkBadgeDownloadWindows]][linkReleases]
 
 Using the above instructions you can install the rolling version of John
 the Ripper Jumbo 1+, the hot and bleeding version, or a previous stable
@@ -164,13 +168,13 @@ If John the Ripper is not recognizing your GPU card:
 
 > Delivered using Launchpad [ supports up to AVX512BW ]
 
-[**A Snap**](https://snapcraft.io/) is a gpg signed squashfs file containing an application
+[**A Snap**][linkSnapcraftSite] is a gpg signed squashfs file containing an application
 together with its dependencies, and a description of how it should safely be run
 on your system.
 
-You can install `john` by following the instructions at
-[https://snapcraft.io/john-the-ripper](https://snapcraft.io/john-the-ripper). For distributions without snap
-pre-installed, users should [enable snap support](https://docs.snapcraft.io/core/install), then install:
+You can install `john` by following the instructions at <https://snapcraft.io/john-the-ripper>.
+For distributions without snap pre-installed, users should
+[enable snap support](https://docs.snapcraft.io/core/install), then install:
 
 ```bash
  sudo snap install john-the-ripper
@@ -253,7 +257,7 @@ You avail the best SIMD instructions at one's disposal without any OpenMP stuff.
 
 ### Accessing OpenCL on Snap
 
-As noted at [https://forum.snapcraft.io/t/snaps-and-opencl/8509/17](https://forum.snapcraft.io/t/snaps-and-opencl/8509/17), the use of
+As noted at <https://forum.snapcraft.io/t/snaps-and-opencl/8509/17>, the use of
 OpenCL by snaps is a problem. Support for NVIDIA cards is under development.
 
 As a "general" solution (or in the case of AMD hardware), the user can run john
@@ -261,7 +265,7 @@ out of the sandbox, unconfined (e.g., run `/snap/john-the-ripper/current/run/joh
 
 ### Snap Deployments
 
-[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/john-the-ripper)
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)][linkSnapcraftJohn]
 
 If you followed the above instructions, you installed the stable (or rolling) version of John
 the Ripper Jumbo 1+ in your system. If you want to access the hot and bleeding
@@ -324,7 +328,7 @@ it's running on.
 
 ### macOS Deployments
 
-[![macOS Downloads](https://img.shields.io/badge/Download-Mac%20Build-blue.svg)](https://github.com/openwall/john-packages/releases)
+[![macOS Downloads][linkBadgeDownloadMac]][linkReleases]
 
 Using the above instructions you can install the rolling version of John
 the Ripper Jumbo 1+, the hot and bleeding version, or a previous stable
@@ -347,7 +351,7 @@ OMP_NUM_THREADS=1 run/john --list=build-info
 
 > Delivered using GitLab CI [ supports up to AVX512BW ]
 
-[**Flatpak**](http://flatpak.org//) is a new framework for desktop applications
+[**Flatpak**][linkFlatpakSite] is a new framework for desktop applications
 on Linux, built to be distribution agnostic and allow deployment on any Linux
 operating system out there.
 
@@ -376,7 +380,7 @@ The highlights (👀):
 
 - fallback for CPU[*] and OMP;
 - the released version of John 1.9.0 Jumbo 1+ (is a rolling release):
-  - is also available via FlatHub at [https://flathub.org/apps/com.openwall.John](https://flathub.org/apps/com.openwall.John).
+  - is also available via FlatHub at <https://flathub.org/apps/com.openwall.John>.
 - a development version is also available.
 
 [*] John the Ripper runs using the best SIMD instructions available on the host
@@ -384,7 +388,7 @@ it's running on.
 
 ### Flatpak Deployments
 
-[![Flatpak Download](https://img.shields.io/badge/Download-Flatpak%20Package-blue)](https://github.com/openwall/john-packages/releases)
+[![Flatpak Download][linkBadgeDownloadFlatpak]][linkReleases]
 
 Using the above instructions you can install the rolling version of John
 the Ripper Jumbo 1+, the hot and bleeding version, or a previous stable
@@ -394,7 +398,9 @@ version in your system.
 
 > Delivered using GitHub Actions [ supports up to AVX512BW ]
 
-For testing and future reference, we have a Docker image of John the Ripper.
+[**Docker**](https://www.docker.com/) provides the ability to package and run an application
+in a loosely isolated environment called a container.
+
 To use it:
 
 ```bash
@@ -428,7 +434,7 @@ The highlights (👀):
 
 ### Docker Image Deployments
 
-[![Docker Image Downloads](https://img.shields.io/badge/Download-Docker%20Build-blue.svg)](https://github.com/openwall/john-packages/pkgs/container/john)
+[![Docker Image Downloads][linkBadgeDownloadDocker]](https://github.com/openwall/john-packages/pkgs/container/john)
 
 Using the above instructions you can install the rolling version of John
 the Ripper Jumbo 1+, the hot and bleeding version, or a previous stable
@@ -461,3 +467,19 @@ We love contributions in the form of issues and pull requests. Read the [Contrib
 ## License
 
 GNU General Public License v2.0
+
+[linkBadgeDownloadDocker]: https://img.shields.io/badge/Download-Docker%20Image-blue.svg
+[linkBadgeDownloadFlatpak]: https://img.shields.io/badge/Download-Flatpak%20Package-blue
+[linkBadgeDownloadMac]: https://img.shields.io/badge/Download-macOS%20Package-blue.svg
+[linkBadgeDownloadWindows]: https://img.shields.io/badge/Download-Windows%20Package-blue.svg
+[linkFeedIcon]: https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Feed-icon.svg/16px-Feed-icon.svg.png
+[linkFlatpakSite]: https://flatpak.org/
+[linkLatestPrereleaseDate]: https://img.shields.io/github/release-date-pre/openwall/john-packages?label=when&color=green "Latest Prerelease Date"
+[linkLatestPrereleaseVersion]: https://img.shields.io/github/release/openwall/john-packages?include_prereleases&sort=date&label=&style=flat-square&color=blue "Latest Prerelease Version"
+[linkLatestReleaseDate]: https://img.shields.io/github/release-date/openwall/john-packages?label=when&color=green "Latest Release Date"
+[linkLatestReleaseVersion]: https://img.shields.io/github/release/openwall/john-packages?sort=date&label=&style=flat-square&color=blue "Latest Release Version"
+[linkReleases]: https://github.com/openwall/john-packages/releases "The Release List"
+[linkSnapcraftJohn]: https://snapcraft.io/john-the-ripper "John Snap Package"
+[linkSnapcraftSite]: https://snapcraft.io/ "Snapcraft Main Site"
+[linkTotalDownloads]: https://img.shields.io/github/downloads/openwall/john-packages/total?label=downloads&color=white "Total Downloads"
+[linkProcedureCI]: https://mermaid.ink/img/pako:eNqVk99u2jAUxl_lyFetVvoAaKoUknWtug4ETKsEvTg4h2Dh2JbtsAHm3WcnTNApN8tFlD_-fd_x53OOjOuS2JBVFs0G5sVSQbyyxQ_jvCWsIdd1Lfw7DAYPgW-Ib8E1wuNKSOH3AUY300YBQql_qTNhaYWOwGuoyIPfEEj05DzwDaqK3G3nMUqSkB8TL9TnlX2ACVqUkuSpW5G3ppkxO9prC_lzgGKxxuEaByW5rdcGEvZTqOju4v_3ay4XlktqqS89VKH5lmwPZBvXQo890KMlGs2Kf6ns0FiCgnbjySzAUx_YHA5CVTCPOaT3T-n2rJwh7iNopN6nLxPkW6zoIn5_HzMKQu0iJyr0QqsALwv6bciKmpRHeV780sYZRsJb4SiJvep4SF1ZxgX41lNWpkqrRXnZz1nlKobvPViNfDyDbPr6kfoq_FOzgoynMqPjuAedaYmxwIvj_6YVpUGv23bpckspXGfXnkiNqkEJaIzVO5QB3m7-HlJiXAJSZ05JUmzW2w-Bh5J46nrnohmVASY9Nc4t7rp9sDtWk61RlHGOjklpyaJ2TUs2jI8l2u2SLdUprsPG69lecTb0tqE71pgyjkYhMI5fzaKFdHT6A-rVMuQ?type=png "CI and CD Procedures"
