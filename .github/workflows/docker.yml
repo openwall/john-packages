@@ -42,7 +42,10 @@ name: Docker
         description: "Push the resulting image to Docker registry?"
         required: true
         type: boolean
-        default: true
+        default: false
+  push:
+    branches:
+      - "docker"
 
 env:
   REPO: ghcr.io/${{ github.repository_owner }}/john
@@ -124,11 +127,13 @@ jobs:
         with:
           context: "${{ github.workspace }}/deploy/docker"
           platforms: linux/amd64,linux/arm64
-          push: ${{ github.event.inputs.push }}
+          push: ${{
+            (github.event.inputs.push || false)
+            }}
           build-args: |
             TYPE="${{ github.event.inputs.type }}"
           tags: |
-            ${{ env.REPO }}:${{ github.event.inputs.tag }}
+            ${{ env.REPO }}:${{ github.event.inputs.tag || 'test' }}
             ${{ env.REPO }}:${{ github.event.inputs.tag }}_J${{ github.run_number }}
             ${{ env.REPO }}:${{ github.event.inputs.tag }}_${{ steps.data.outputs.version }}
           labels: |
