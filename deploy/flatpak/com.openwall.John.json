@@ -1,4 +1,5 @@
 {
+    "$schema": "https://raw.githubusercontent.com/flatpak/flatpak-builder/main/data/flatpak-manifest.schema.json",
     "id": "com.openwall.John",
     "runtime": "org.freedesktop.Platform",
     "runtime-version": "23.08",
