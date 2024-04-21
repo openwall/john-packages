@@ -73,8 +73,8 @@ laptops. However, there are some cases where the rule must be overcome by common
 - Update checksums using the command:
 
 ```bash
-cd scripts && sha256sum ./*.sh > ../requirements.txt  && cd -
-cd patches && sha256sum ./* >> ../requirements.txt && cd -
+cd scripts && sha256sum ./*.sh > ../requirements.hash  && cd - && \
+cd patches && sha256sum ./* >> ../requirements.hash && cd -
 ```
 
 ## The PR review process

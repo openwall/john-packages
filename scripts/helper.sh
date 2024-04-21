@@ -112,7 +112,7 @@ function do_release() {
 			#
 			#   Hashes of extra or external files used
 			[Extra Files]
-			$(cat requirements.txt)
+			$(cat requirements.hash)
 		EOF
 	fi
 
@@ -156,7 +156,7 @@ function do_validate_checksum() {
 	fi
 	echo "Validating $FILE_BASENAME:"
 	echo "- from $URL_LOCATION;"
-	CHECKSUM_VALUE=$(grep "$FILE_BASENAME" requirements.txt | cut -d' ' -f1)
+	CHECKSUM_VALUE=$(grep "$FILE_BASENAME" requirements.hash | cut -d' ' -f1)
 	echo "- expecting: $CHECKSUM_VALUE;"
 
 	# Validate data
@@ -179,12 +179,12 @@ if [[ ${INFO_SHOWN-0} -eq 0 ]]; then
 		# Flatpak does not access the network and has these files
 		(
 			cd .. || exit 1
-			wget https://raw.githubusercontent.com/openwall/john-packages/release/requirements.txt \
-				-O requirements.txt
+			wget https://raw.githubusercontent.com/openwall/john-packages/release/requirements.hash \
+				-O requirements.hash
 			do_validate_checksum helper.sh "no-download"
 		)
 		# This file is also required in 'src' (current) directory
-		ln -s -f ../requirements.txt requirements.txt
+		ln -s -f ../requirements.hash requirements.hash
 	fi
 	export INFO_SHOWN=1
 	do_show_environment
