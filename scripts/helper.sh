@@ -100,21 +100,29 @@ function do_release() {
 		[Build Configuration]
 		System Wide Build="$1"
 		Architecture="$(uname -m)"
-		OpenMP=No
+		OpenMP="No"
 		OpenCL="$2"
-		Optional Libraries=Yes
-		Regex, OpenMPI, Experimental Code, ZTEX=No
+		Optional Libraries="Yes"
+		Regex, OpenMPI, Experimental Code, ZTEX="No"
 		Version="$PACKAGE_VERSION"
 	EOF
 
 	if [[ ${FLATPAK_BUILD-0} -ne 1 ]]; then
 		cat <<-EOF >>../run/Defaults
 			#
-			#   Hashes of extra or external files used
-			[Extra Files]
-			$(cat requirements.hash)
+			#   The john-packages repository reference
+			[john-packages]
+			Commit="$(git ls-remote -q https://github.com/openwall/john-packages.git HEAD | cut -f1)"
+			Date="$(LANG=C date -u)"
 		EOF
 	fi
+
+	cat <<-EOF >>../run/Defaults
+		#
+		#   Hashes of extra or external files used
+		[Extra Files]
+		$(cat requirements.hash)
+	EOF
 
 	echo "-----------------------------------------------------------"
 	cat ../run/Defaults
@@ -183,9 +191,10 @@ if [[ ${INFO_SHOWN-0} -eq 0 ]]; then
 				-O requirements.hash
 			do_validate_checksum helper.sh "no-download"
 		)
-		# This file is also required in 'src' (current) directory
-		ln -s -f ../requirements.hash requirements.hash
 	fi
+	# This file is also required in 'src' (current) directory
+	ln -s -f ../requirements.hash requirements.hash
+
 	export INFO_SHOWN=1
 	do_show_environment
 fi

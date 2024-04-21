@@ -60,6 +60,10 @@
                 },
                 {
                     "type": "file",
+                    "path": "../../requirements.hash"
+                },
+                {
+                    "type": "file",
                     "path": "../../scripts/package_version.sh"
                 },
                 {
