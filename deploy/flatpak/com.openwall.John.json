@@ -47,14 +47,6 @@
                     "branch": "bleeding-jumbo"
                 },
                 {
-                    "type": "patch",
-                    "path": "../../patches/Handle-self-confined-system-wide-build.patch"
-                },
-                {
-                    "type": "file",
-                    "path": "../../scripts/show_info.sh"
-                },
-                {
                     "type": "file",
                     "path": "../Release.ID"
                 },
@@ -63,8 +55,8 @@
                     "path": "../../requirements.hash"
                 },
                 {
-                    "type": "file",
-                    "path": "../../scripts/package_version.sh"
+                    "type": "patch",
+                    "path": "../../patches/Handle-self-confined-system-wide-build.patch"
                 },
                 {
                     "type": "file",
@@ -73,6 +65,14 @@
                 {
                     "type": "file",
                     "path": "../../scripts/helper.sh"
+                },
+                {
+                    "type": "file",
+                    "path": "../../scripts/package_version.sh"
+                },
+                {
+                    "type": "file",
+                    "path": "../../scripts/show_info.sh"
                 },
                 {
                     "type": "file",
