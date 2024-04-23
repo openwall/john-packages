@@ -24,6 +24,8 @@
 name: Docker
 
 "on":
+  push:
+    branches: [docker]
   workflow_dispatch:
     inputs:
       type:
@@ -43,9 +45,6 @@ name: Docker
         required: true
         type: boolean
         default: false
-  push:
-    branches:
-      - "docker"
 
 env:
   REPO: ghcr.io/${{ github.repository_owner }}/john
