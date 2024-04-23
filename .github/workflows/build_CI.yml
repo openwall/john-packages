@@ -1,0 +1,108 @@
+###############################################################################
+#        _       _             _   _            _____  _
+#       | |     | |           | | | |          |  __ \(_)
+#       | | ___ | |__  _ __   | |_| |__   ___  | |__) |_ _ __  _ __   ___ _ __
+#   _   | |/ _ \| '_ \| '_ \  | __| '_ \ / _ \ |  _  /| | '_ \| '_ \ / _ \ '__|
+#  | |__| | (_) | | | | | | | | |_| | | |  __/ | | \ \| | |_) | |_) |  __/ |
+#   \____/ \___/|_| |_|_| |_|  \__|_| |_|\___| |_|  \_\_| .__/| .__/ \___|_|
+#                                                       | |   | |
+#                                                       |_|   |_|
+#
+# Copyright (c) 2024 Claudio André <dev@claudioandre.slmail.me>
+#
+# This program comes with ABSOLUTELY NO WARRANTY; express or implied.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, as expressed in version 2, seen at
+# http://www.gnu.org/licenses/gpl-2.0.html
+###############################################################################
+
+---
+name: CI Docker image
+
+"on":
+  push:
+    branches: [images]
+  workflow_dispatch:
+
+env:
+  REPO: ghcr.io/${{ github.repository_owner }}/john-ci
+
+permissions: read-all
+jobs:
+  build:
+    name: Build image
+    runs-on: ubuntu-latest
+    continue-on-error: true
+
+    strategy:
+      matrix:
+        include:
+          - image-tag: fedora.latest
+            dockerfile: Dockerfile.FedoraLatest
+          - image-tag: fedora.flatpak
+            dockerfile: Dockerfile.flatpak.package
+          - image-tag: ubuntu.opencl
+            dockerfile: Dockerfile.OpenCL
+          - image-tag: ubuntu.devel
+            dockerfile: Dockerfile.UbuntuDevel
+          - image-tag: ubuntu.rolling
+            dockerfile: Dockerfile.UbuntuRolling
+          - image-tag: redhat.ubi8
+            dockerfile: Dockerfile.RHUbi8
+
+    permissions:
+      packages: write
+      contents: read
+
+    outputs:
+      image: ${{ steps.image.outputs.image }}
+      digest: ${{ steps.build-and-push.outputs.digest }}
+
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@44c2b7a8a4ea60a981eaca3cf939b5f4305c123b # v4.1.5
+
+      - name: Log in to GitHub Docker Registry
+        uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20 # v3.1.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build container image
+        id: build-and-push
+        uses: docker/build-push-action@2cdde995de11925a030ce8070c3d77a52ffcf1c0 # v5.3.0
+        with:
+          push: true
+          file: "${{ github.workspace }}/CI/Dockerfiles/${{ matrix.dockerfile }}"
+          tags: |
+            ${{ env.REPO }}:${{ matrix.image-tag }}
+            ${{ env.REPO }}:${{ matrix.image-tag }}J${{ github.run_number }}
+          outputs: "type=image,name=target,\
+            annotation-index.org.opencontainers.image.authors=Claudio André <dev@claudioandre.slmail.me>,\
+            annotation-index.org.opencontainers.image.description=John the Ripper CI"
+
+      - name: Output image
+        id: image
+        run: |
+          image_name="${{ env.REPO }}:${{ matrix.image-tag }}"
+          echo "The image is $image_name"
+          echo "image=$image_name" >> "$GITHUB_OUTPUT"
+
+  # It's unclear whether provenance can work with a matrix of Docker images
+  provenance:
+    if: ${{ false }}
+    needs: [build]
+    permissions:
+      actions: read # for detecting the GitHub Actions environment.
+      id-token: write # for creating OIDC tokens for signing.
+      packages: write # for uploading attestations.
+    uses: slsa-framework/slsa-github-generator/.github/workflows/generator_container_slsa3.yml@v2.0.0
+    with:
+      image: ${{ needs.build.outputs.image }}
+      digest: ${{ needs.build.outputs.digest }}
+      registry-username: ${{ github.actor }}
+    secrets:
+      registry-password: ${{ secrets.GITHUB_TOKEN }}

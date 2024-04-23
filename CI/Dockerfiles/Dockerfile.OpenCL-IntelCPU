@@ -1,0 +1,48 @@
+###############################################################################
+#        _       _             _   _            _____  _
+#       | |     | |           | | | |          |  __ \(_)
+#       | | ___ | |__  _ __   | |_| |__   ___  | |__) |_ _ __  _ __   ___ _ __
+#   _   | |/ _ \| '_ \| '_ \  | __| '_ \ / _ \ |  _  /| | '_ \| '_ \ / _ \ '__|
+#  | |__| | (_) | | | | | | | | |_| | | |  __/ | | \ \| | |_) | |_) |  __/ |
+#   \____/ \___/|_| |_|_| |_|  \__|_| |_|\___| |_|  \_\_| .__/| .__/ \___|_|
+#                                                       | |   | |
+#                                                       |_|   |_|
+#
+# Copyright (c) 2023-2024 Claudio André <dev@claudioandre.slmail.me>
+#
+# This program comes with ABSOLUTELY NO WARRANTY; express or implied.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, as expressed in version 2, seen at
+# http://www.gnu.org/licenses/gpl-2.0.html
+###############################################################################
+# Dockerfile for Continuous Integration
+# More info at https://github.com/openwall/john-packages
+
+FROM ubuntu:22.04@sha256:6d7b5d3317a71adb5e175640150e44b8b9a9401a7dd394f44840626aff9fa94d
+LABEL org.opencontainers.image.authors="Claudio André <dev@claudioandre.slmail.me>"
+LABEL description="Docker images for John the Ripper CI (1.0.Ubuntu 22 Intel OpenCL)"
+LABEL org.opencontainers.image.source="https://github.com/openwall/john-packages"
+
+# DO NOT update this automatically. OpenCL drivers are fragile and must be maintained very carefully.
+# RUN apt-get update -qq \
+#     && apt-get install -y \
+#         build-essential libssl-dev zlib1g-dev yasm libgmp-dev libpcap-dev \
+#         pkg-config libbz2-dev wget \
+#         ocl-icd-opencl-dev clinfo git \
+#     && wget -O- https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB \
+#         | gpg --dearmor | tee /usr/share/keyrings/oneapi-archive-keyring.gpg > /dev/null \
+#     && echo "deb [signed-by=/usr/share/keyrings/oneapi-archive-keyring.gpg] https://apt.repos.intel.com/oneapi all main" \
+#         | tee /etc/apt/sources.list.d/oneAPI.list \
+#     && apt-get update -qq \
+#     && apt-get install -y \
+#         intel-oneapi-runtime-opencl intel-basekit \
+#     && useradd -U -m JtR \
+#     && apt-get -y clean \
+#     && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
+
+# Workaround for an issue in Intel libraries installation script
+ENV LD_LIBRARY_PATH=/opt/intel/oneapi/2024.0/lib/:"$LD_LIBRARY_PATH"
+ENV BASE ubuntu
+CMD /bin/bash

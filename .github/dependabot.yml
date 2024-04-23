@@ -30,3 +30,8 @@ updates:
     directory: /.clusterfuzzlite
     schedule:
       interval: daily
+
+  - package-ecosystem: docker
+    directory: /CI/Dockerfiles
+    schedule:
+      interval: daily
