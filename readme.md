@@ -2,12 +2,12 @@
 
 <div id="header" align="center">
 
-[![john-the-ripper](https://snapcraft.io/john-the-ripper/badge.svg)][linkSnapcraftJohn]
-[![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://github.com/openwall/john-packages/blob/main/LICENSE.txt)
+[![john-the-ripper][shieldSnap]][linkSnapcraftJohn]
+[![License][shieldLicense]](https://github.com/openwall/john-packages/blob/main/LICENSE.txt)
 
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/openwall/john-packages/badge)](https://api.securityscorecards.dev/projects/github.com/openwall/john-packages)
-[![Best Practices](https://bestpractices.coreinfrastructure.org/projects/7525/badge)](https://bestpractices.coreinfrastructure.org/projects/7525)
-[![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/openwall/john-packages?label=Grade&logo=codefactor&logoColor=ffffff&style=flat-square "CodeFactor Grade")](https://www.codefactor.io/repository/github/openwall/john-packages)
+[![OpenSSF Scorecard][shieldScore]](https://api.securityscorecards.dev/projects/github.com/openwall/john-packages)
+[![Best Practices][shieldPractices]](https://bestpractices.coreinfrastructure.org/projects/7525)
+[![CodeFactor Grade][shieldCodeFactor]](https://www.codefactor.io/repository/github/openwall/john-packages)
 
 </div>
 
@@ -39,8 +39,12 @@ other hashes and ciphers.
 6. [Docker Image](#-docker-image)
 7. [Checksums](#packages-checksums)
 8. [Package Security](#-security)
-9. [Contribute](#contribute)
-10. [License](#license)
+9. [About This Project](#about-this-project)
+10. [Contribute](#contribute)
+11. [License](#license)
+12. [Acknowledgments and Contact](#acknowledgments-and-contact)
+
+<p align="right">(<a href="#header">back to top</a>)</p>
 
 ## Introduction
 
@@ -94,6 +98,8 @@ and other files needed for John the Ripper application to run.
 When the Docker user runs an image, it becomes one instance (it becomes a container, in other words, a running
 instance of the application).
 
+<p align="right">(<a href="#header">back to top</a>)</p>
+
 ## 📂 Windows
 
 > Delivered using Microsoft-hosted Windows 2019 Server in Azure [ supports up to AVX512BW ]
@@ -146,6 +152,22 @@ version in your system.
 The package contains all the executables and libraries needed to run a fresh
 John the Ripper installation.
 
+<details>
+  <summary>OpenSSF SLSA</summary>
+
+  SLSA is a framework intended to codify and promote secure software supply-chain practices,
+  it helps trace software artifacts back to the build and source control systems that
+  produced them.
+
+  > :warning: **NOTE:** the release assets from our GitHub Releases are level 1 compliant.
+  <div align="center">
+    <a href="https://github.com/openwall/john-packages/releases?q=Windows&expanded=true">
+      <img src="https://slsa.dev/images/levelBadge1.svg" alt="Logo" width="80" height="80">
+    </a>
+    <h3>SLSA Provenance Traceability</h3>
+  </div>
+</details>
+
 ### Running a non-OpenMP build on Windows
 
 In some situations a non-OpenMP build may be faster. You can ask to fallback to
@@ -163,6 +185,8 @@ If John the Ripper is not recognizing your GPU card:
 
 - make sure all required GPU drivers are installed;
 - restart your PC, if you have just installed the drivers.
+
+<p align="right">(<a href="#header">back to top</a>)</p>
 
 ## 📂 Snap
 
@@ -284,9 +308,11 @@ If you already has JtR installed:
 
 If you do so, you will be running the development version available on GitHub.
 
+<p align="right">(<a href="#header">back to top</a>)</p>
+
 ## 📂 macOS
 
-> Delivered using Circle CI and Cirrus CI [ supports ASIMD (on ARM), AVX and AVX2 (on x86) ]
+> Delivered using Cirrus CI [ supports ASIMD (on ARM) ]
 
 To install John the Ripper by downloading the .7z file and installing it manually,
 follow these steps:
@@ -337,6 +363,22 @@ version in your system.
 The package contains the necessary executables to run a fresh install of John the Ripper.
 You must install required Homebrew libraries.
 
+<details>
+  <summary>OpenSSF SLSA</summary>
+
+  SLSA is a framework intended to codify and promote secure software supply-chain practices,
+  it helps trace software artifacts back to the build and source control systems that
+  produced them.
+
+  > :warning: **NOTE:** the release assets from our GitHub Releases are level 1 compliant.
+  <div align="center">
+    <a href="https://github.com/openwall/john-packages/releases?q=macOS&expanded=true">
+      <img src="https://slsa.dev/images/levelBadge1.svg" alt="Logo" width="80" height="80">
+    </a>
+    <h3>SLSA Provenance Traceability</h3>
+  </div>
+</details>
+
 ### Running a non-OpenMP build on macOS
 
 In some situations a non-OpenMP build may be faster. You can ask to fallback to
@@ -346,6 +388,8 @@ You avail the best SIMD instructions at one's disposal without any OpenMP stuff.
 ```bash
 OMP_NUM_THREADS=1 run/john --list=build-info
 ```
+
+<p align="right">(<a href="#header">back to top</a>)</p>
 
 ## 📂 Flatpak
 
@@ -394,6 +438,24 @@ Using the above instructions you can install the rolling version of John
 the Ripper Jumbo 1+, the hot and bleeding version, or a previous stable
 version in your system.
 
+<details>
+  <summary>OpenSSF SLSA</summary>
+
+  SLSA is a framework intended to codify and promote secure software supply-chain practices,
+  it helps trace software artifacts back to the build and source control systems that
+  produced them.
+
+  > :warning: **NOTE:** the release assets from our GitHub Releases are level 1 compliant.
+  <div align="center">
+    <a href="https://github.com/openwall/john-packages/releases?q=Flatpak&expanded=true">
+      <img src="https://slsa.dev/images/levelBadge1.svg" alt="Logo" width="80" height="80">
+    </a>
+    <h3>SLSA Provenance Traceability</h3>
+  </div>
+</details>
+
+<p align="right">(<a href="#header">back to top</a>)</p>
+
 ## 📂 Docker Image
 
 > Delivered using GitHub Actions [ supports up to AVX512BW ]
@@ -434,11 +496,29 @@ The highlights (👀):
 
 ### Docker Image Deployments
 
-[![Docker Image Downloads][linkBadgeDownloadDocker]](https://github.com/openwall/john-packages/pkgs/container/john)
+[![Docker Image Downloads][linkBadgeDownloadDocker]][linkRegistry]
 
 Using the above instructions you can install the rolling version of John
 the Ripper Jumbo 1+, the hot and bleeding version, or a previous stable
 version in your system.
+
+<details>
+  <summary>OpenSSF SLSA</summary>
+
+  SLSA is a framework intended to codify and promote secure software supply-chain practices,
+  it helps trace software artifacts back to the build and source control systems that
+  produced them.
+
+  > :warning: **NOTE:** the Docker images from our GitHub Packages are level 3 compliant.
+  <div align="center">
+    <a href="https://github.com/openwall/john-packages/pkgs/container/john">
+      <img src="https://slsa.dev/images/levelBadge3.svg" alt="Logo" width="80" height="80">
+    </a>
+    <h3>SLSA Provenance Traceability</h3>
+  </div>
+</details>
+
+<p align="right">(<a href="#header">back to top</a>)</p>
 
 ## Packages Checksums
 
@@ -452,6 +532,8 @@ are computed by the CI servers.
 By accessing the build logs for each release on GitHub releases you can view the hashes of all
 relevant files.
 
+<p align="right">(<a href="#header">back to top</a>)</p>
+
 ## ⚠ Security
 
 Please inspect all packages prior to running any of them to ensure safety.
@@ -460,26 +542,55 @@ binary from the internet you are not familiar with.
 
 We take security very seriously.
 
+<p align="right">(<a href="#header">back to top</a>)</p>
+
+<!-- ABOUT THE PROJECT -->
+## About This Project
+
+This project aims to create tools and procedures to automate the creation and enable
+traceability of packages for John the Ripper software, developing a CI and CD pipeline.
+
+<p align="right">(<a href="#header">back to top</a>)</p>
+
 ## Contribute
 
 We love contributions in the form of issues and pull requests. Read the [Contributor Guide](CONTRIBUTING.md) before contributing.
+
+<p align="right">(<a href="#header">back to top</a>)</p>
 
 ## License
 
 GNU General Public License v2.0
 
-[linkBadgeDownloadDocker]: https://img.shields.io/badge/Download-Docker%20Image-blue.svg
-[linkBadgeDownloadFlatpak]: https://img.shields.io/badge/Download-Flatpak%20Package-blue
-[linkBadgeDownloadMac]: https://img.shields.io/badge/Download-macOS%20Package-blue.svg
-[linkBadgeDownloadWindows]: https://img.shields.io/badge/Download-Windows%20Package-blue.svg
+<p align="right">(<a href="#header">back to top</a>)</p>
+
+## Acknowledgments and Contact
+
+John the Ripper is proudly *Powered by Open Source Community*
+
+- [Openwall](https://www.openwall.com/john/) and others.
+
+<p align="right">(<a href="#header">back to top</a>)</p>
+
+[linkBadgeDownloadDocker]: https://img.shields.io/badge/Download-Docker%20Image-blue.svg?style=for-the-badge
+[linkBadgeDownloadFlatpak]: https://img.shields.io/badge/Download-Flatpak%20Package-blue?style=for-the-badge
+[linkBadgeDownloadMac]: https://img.shields.io/badge/Download-macOS%20Package-blue.svg?style=for-the-badge
+[linkBadgeDownloadWindows]: https://img.shields.io/badge/Download-Windows%20Package-blue.svg?style=for-the-badge
 [linkFeedIcon]: https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Feed-icon.svg/16px-Feed-icon.svg.png
 [linkFlatpakSite]: https://flatpak.org/
 [linkLatestPrereleaseDate]: https://img.shields.io/github/release-date-pre/openwall/john-packages?label=when&color=green "Latest Prerelease Date"
 [linkLatestPrereleaseVersion]: https://img.shields.io/github/release/openwall/john-packages?include_prereleases&sort=date&label=&style=flat-square&color=blue "Latest Prerelease Version"
 [linkLatestReleaseDate]: https://img.shields.io/github/release-date/openwall/john-packages?label=when&color=green "Latest Release Date"
 [linkLatestReleaseVersion]: https://img.shields.io/github/release/openwall/john-packages?sort=date&label=&style=flat-square&color=blue "Latest Release Version"
+[linkRegistry]: https://github.com/openwall/john-packages/pkgs/container/john "Our Docker image registry"
 [linkReleases]: https://github.com/openwall/john-packages/releases "The Release List"
 [linkSnapcraftJohn]: https://snapcraft.io/john-the-ripper "John Snap Package"
 [linkSnapcraftSite]: https://snapcraft.io/ "Snapcraft Main Site"
 [linkTotalDownloads]: https://img.shields.io/github/downloads/openwall/john-packages/total?label=downloads&color=white "Total Downloads"
 [linkProcedureCI]: https://mermaid.ink/img/pako:eNqVk99u2jAUxl_lyFetVvoAaKoUknWtug4ETKsEvTg4h2Dh2JbtsAHm3WcnTNApN8tFlD_-fd_x53OOjOuS2JBVFs0G5sVSQbyyxQ_jvCWsIdd1Lfw7DAYPgW-Ib8E1wuNKSOH3AUY300YBQql_qTNhaYWOwGuoyIPfEEj05DzwDaqK3G3nMUqSkB8TL9TnlX2ACVqUkuSpW5G3ppkxO9prC_lzgGKxxuEaByW5rdcGEvZTqOju4v_3ay4XlktqqS89VKH5lmwPZBvXQo890KMlGs2Kf6ns0FiCgnbjySzAUx_YHA5CVTCPOaT3T-n2rJwh7iNopN6nLxPkW6zoIn5_HzMKQu0iJyr0QqsALwv6bciKmpRHeV780sYZRsJb4SiJvep4SF1ZxgX41lNWpkqrRXnZz1nlKobvPViNfDyDbPr6kfoq_FOzgoynMqPjuAedaYmxwIvj_6YVpUGv23bpckspXGfXnkiNqkEJaIzVO5QB3m7-HlJiXAJSZ05JUmzW2w-Bh5J46nrnohmVASY9Nc4t7rp9sDtWk61RlHGOjklpyaJ2TUs2jI8l2u2SLdUprsPG69lecTb0tqE71pgyjkYhMI5fzaKFdHT6A-rVMuQ?type=png "CI and CD Procedures"
+
+[shieldSnap]: https://snapcraft.io/john-the-ripper/badge.svg
+[shieldLicense]: https://img.shields.io/badge/License-GPL%20v2-blue.svg
+[shieldScore]: https://api.securityscorecards.dev/projects/github.com/openwall/john-packages/badge
+[shieldPractices]: https://bestpractices.coreinfrastructure.org/projects/7525/badge
+[shieldCodeFactor]: https://img.shields.io/codefactor/grade/github/openwall/john-packages?label=Grade&logo=codefactor&logoColor=ffffff&style=flat-square "CodeFactor Grade"
