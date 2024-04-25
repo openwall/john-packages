@@ -4,7 +4,6 @@
     "ignore":[
        "**/Releases/**",
        "**/.git/**",
-       "**/spelling.yml",
-       "**/readme.md"
+       "**/spelling.yml"
     ]
 }

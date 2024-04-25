@@ -152,6 +152,9 @@ version in your system.
 The package contains all the executables and libraries needed to run a fresh
 John the Ripper installation.
 
+<!--
+// jscpd:ignore-start
+-->
 <details>
   <summary>OpenSSF SLSA</summary>
 
@@ -167,6 +170,9 @@ John the Ripper installation.
     <h3>SLSA Provenance Traceability</h3>
   </div>
 </details>
+<!--
+// jscpd:ignore-end
+-->
 
 ### Running a non-OpenMP build on Windows
 
@@ -363,6 +369,9 @@ version in your system.
 The package contains the necessary executables to run a fresh install of John the Ripper.
 You must install required Homebrew libraries.
 
+<!--
+// jscpd:ignore-start
+-->
 <details>
   <summary>OpenSSF SLSA</summary>
 
@@ -378,6 +387,9 @@ You must install required Homebrew libraries.
     <h3>SLSA Provenance Traceability</h3>
   </div>
 </details>
+<!--
+// jscpd:ignore-end
+-->
 
 ### Running a non-OpenMP build on macOS
 
@@ -434,6 +446,9 @@ it's running on.
 
 [![Flatpak Download][linkBadgeDownloadFlatpak]][linkReleases]
 
+<!--
+// jscpd:ignore-start
+-->
 Using the above instructions you can install the rolling version of John
 the Ripper Jumbo 1+, the hot and bleeding version, or a previous stable
 version in your system.
@@ -453,6 +468,9 @@ version in your system.
     <h3>SLSA Provenance Traceability</h3>
   </div>
 </details>
+<!--
+// jscpd:ignore-end
+-->
 
 <p align="right">(<a href="#header">back to top</a>)</p>
 
@@ -498,6 +516,9 @@ The highlights (👀):
 
 [![Docker Image Downloads][linkBadgeDownloadDocker]][linkRegistry]
 
+<!--
+// jscpd:ignore-start
+-->
 Using the above instructions you can install the rolling version of John
 the Ripper Jumbo 1+, the hot and bleeding version, or a previous stable
 version in your system.
@@ -517,6 +538,9 @@ version in your system.
     <h3>SLSA Provenance Traceability</h3>
   </div>
 </details>
+<!--
+// jscpd:ignore-end
+-->
 
 <p align="right">(<a href="#header">back to top</a>)</p>
 
