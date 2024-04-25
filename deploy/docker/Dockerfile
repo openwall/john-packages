@@ -23,7 +23,7 @@
 # John the Ripper Docker image is hosted at GitHub Packages
 #   https://github.com/openwall/john-packages/pkgs/container/john
 
-FROM nvidia/cuda:12.4.1-base-ubuntu22.04@sha256:ee758c4b748a2f121a80dab16f394c6079d2faa8184e8a506f716bc3b870d3db AS build
+FROM nvidia/cuda:12.4.1-base-ubuntu22.04@sha256:0f6bfcbf267e65123bcc2287e2153dedfc0f24772fb5ce84afe16ac4b2fada95 AS build
 WORKDIR /build/
 COPY build.sh .
 
@@ -35,7 +35,7 @@ RUN ./build.sh "${TYPE}"
 # ==================================================================
 # Build the final lean Docker image
 # ------------------------------------------------------------------
-FROM nvidia/cuda:12.4.1-base-ubuntu22.04@sha256:ee758c4b748a2f121a80dab16f394c6079d2faa8184e8a506f716bc3b870d3db
+FROM nvidia/cuda:12.4.1-base-ubuntu22.04@sha256:0f6bfcbf267e65123bcc2287e2153dedfc0f24772fb5ce84afe16ac4b2fada95
 
 # ==================================================================
 # Runtime setup and libraries
