@@ -41,8 +41,8 @@ other hashes and ciphers.
 8. [Package Security](#-security)
 9. [About This Project](#about-this-project)
 10. [Contribute](#contribute)
-11. [License](#license)
-12. [Acknowledgments and Contact](#acknowledgments-and-contact)
+11. [Acknowledgments and Contact](#acknowledgments-and-contact)
+12. [License](#license)
 
 <p align="right">(<a href="#header">back to top</a>)</p>
 
@@ -558,17 +558,17 @@ We love contributions in the form of issues and pull requests. Read the [Contrib
 
 <p align="right">(<a href="#header">back to top</a>)</p>
 
-## License
-
-GNU General Public License v2.0
-
-<p align="right">(<a href="#header">back to top</a>)</p>
-
 ## Acknowledgments and Contact
 
 John the Ripper is proudly *Powered by Open Source Community*
 
 - [Openwall](https://www.openwall.com/john/) and others.
+
+<p align="right">(<a href="#header">back to top</a>)</p>
+
+## License
+
+GNU General Public License v2.0
 
 <p align="right">(<a href="#header">back to top</a>)</p>
 
