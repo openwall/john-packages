@@ -8,7 +8,7 @@
 #                                                       | |   | |
 #                                                       |_|   |_|
 #
-# Copyright (c) 2019-2023 Claudio André <claudioandre.br at gmail.com>
+# Copyright (c) 2019-2024 Claudio André <dev at claudioandre.slmail.me>
 #
 # This program comes with ABSOLUTELY NO WARRANTY; express or implied.
 #
@@ -40,19 +40,18 @@ FROM nvidia/cuda:12.4.1-base-ubuntu22.04@sha256:0f6bfcbf267e65123bcc2287e2153ded
 # ==================================================================
 # Runtime setup and libraries
 # ------------------------------------------------------------------
-# libssl3                          (apt)
-# libgomp1                         (apt)
-# Default user is JtR
-
 COPY --from=build /build /john
-RUN mkdir -p /usr/share/ && ln -s /john/run /usr/share/john
 COPY docker-entrypoint.sh /usr/local/bin/
+RUN mkdir -p /usr/share/ \
+    && ln -s /john/run /usr/share/john
 
-RUN ln -s /usr/local/bin/docker-entrypoint.sh . && \
-    useradd -U -m JtR && \
-    apt-get update -qq && \
-    export DEBIAN_FRONTEND="noninteractive" && \
-    apt-get install -y --no-install-recommends libssl3=3.0* libgomp1=12.3* ocl-icd-libopencl1=2.2* \
+RUN useradd -U -m JtR \
+    && export DEBIAN_FRONTEND="noninteractive" \
+    && apt-get update -qq \
+    && apt-get install -y --no-install-recommends \
+        libssl3=3.0* \
+        libgomp1=12.3* \
+        ocl-icd-libopencl1=2.2* \
 # ==================================================================
 # Clean up the image (shrink the Docker image)
 # ------------------------------------------------------------------
@@ -64,7 +63,6 @@ RUN ln -s /usr/local/bin/docker-entrypoint.sh . && \
 # ------------------------------------------------------------------
 USER JtR
 ENV BASE=ubuntu
-ENV VERSION="${VERSION}"
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["best"]
 HEALTHCHECK --interval=1m CMD docker-entrypoint.sh
