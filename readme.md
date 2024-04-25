@@ -63,7 +63,7 @@ following a pipeline through a "production-like environment".
 [![Launchpad](https://media.launchpad.net/lp-badge-kit/launchpad-badge-w120px.png)][linkSnapcraftJohn]
 <a href='https://flathub.org/apps/com.openwall.John'><img height='27' alt='Download on Flathub' src='https://dl.flathub.org/assets/badges/flathub-badge-i-en.svg'/></a>
 
-[![Virus Scan](https://github.com/openwall/john-packages/actions/workflows/virusscan.yml/badge.svg)][linkReleases]
+[![Virus Scan](https://github.com/openwall/john-packages/actions/workflows/release.yml/badge.svg)][linkReleases]
 
 |                 **Releases**                  | **Latest**<br> ![Release Version][linkLatestReleaseVersion] | **Prerelease**<br> ![Prerelease Version][linkLatestPrereleaseVersion] |
 | :-------------------------------------------: | :---------------------------------------------------------: | :-------------------------------------------------------------------: |
