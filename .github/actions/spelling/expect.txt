@@ -126,6 +126,7 @@ machdep
 markdownlint
 metainfo
 mfb
+mktemp
 mrsp
 nproc
 nvidia
