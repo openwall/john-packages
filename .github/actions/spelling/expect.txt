@@ -173,6 +173,8 @@ snapcraft
 socat
 socio
 solucao
+sonarlint
+sonarsource
 squashfs
 ssd
 sse
