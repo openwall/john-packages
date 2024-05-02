@@ -79,9 +79,10 @@ Cygwin 3.5.1
 
 ## Deprecation Note (Obsolete Software or Hardware)
 
-We can no longer build and package for these environments:
+> [!IMPORTANT]
+> We can no longer build and package for these environments:
 
-- Any 32-bit build (e.g. i386, i686, and powerpc);
+- Any 32-bit build (e.g. i386, ARM v7, and powerpc);
 - Windows 8 or older (64-bit);
 - Windows Server 2012 or older (64-bit);
 - Intel-based macOS;

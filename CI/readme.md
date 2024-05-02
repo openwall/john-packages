@@ -53,7 +53,7 @@ using:
   - Cygwin on Windows Server;
   - OpenCL on CPU using Intel, and POCL (<http://portablecl.org/>) runtimes;
   - OpenCL on GPU using Azure cloud (_work in progress_);
-  - And a final assessment using ARMv7 (armhf), ARMv8 (aarch64), PowerPC64 Little-Endian,
+  - And a final assessment using ARMv8 (aarch64), PowerPC64 Little-Endian,
     RISC-V 64-bit, and IBM System z.
 
 - Plans and future vision:
@@ -68,7 +68,6 @@ using:
 
 | Architecture |         Tested SIMD          |
 | :----------: | :--------------------------: |
-|    ARM v7    |             NEON             |
 |    ARM v8    |            ASIMD             |
 |   PowerPC    |           Altivec            |
 |  RISC-V 64   |    SIMD is not supported     |
@@ -77,6 +76,7 @@ using:
 
 | Architecture |     Supported but not tested     |
 | :----------: | :------------------------------: |
+|    ARM v7    |               NEON               |
 |     x86      | XOP, SSE4.2, SSE4.1, SSSE3, SSE2 |
 
 #### CI Builds and Artifacts
@@ -104,9 +104,10 @@ using:
 
 ## Obsolete Architectures
 
-We can no longer build and test for these environments:
+> [!IMPORTANT]
+> We can no longer build and package for these environments:
 
-- Any 32-bit build (e.g. i386, i686, and powerpc);
+- Any 32-bit build (e.g. i386, ARM v7, and powerpc);
 - Windows 8 or older (64-bit);
 - Windows Server 2012 or older (64-bit);
 - Intel-based macOS;
