@@ -42,6 +42,7 @@ coreutils
 cpio
 cppdbg
 CPPFLAGS
+cpplint
 cpptools
 craftctl
 cryptsha
