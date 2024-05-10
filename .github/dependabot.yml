@@ -27,11 +27,14 @@ updates:
       interval: daily
 
   - package-ecosystem: docker
-    directory: /.clusterfuzzlite
+    directory: /CI/Dockerfiles
     schedule:
       interval: daily
 
   - package-ecosystem: docker
-    directory: /CI/Dockerfiles
+    directory: /.clusterfuzzlite
     schedule:
-      interval: daily
+      interval: "weekly"
+      day: "sunday"
+    assignees:
+      - "claudioandre-br"
