@@ -49,8 +49,7 @@ name: Docker
 env:
   REPO: ghcr.io/${{ github.repository_owner }}/john
 
-permissions:
-  contents: read
+permissions: read-all
 
 jobs:
   build:
@@ -58,8 +57,9 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
+      attestations: write
+      id-token: write
       packages: write
-      contents: read
 
     outputs:
       image: ${{ env.REPO }}:${{ github.event.inputs.tag }}
@@ -76,12 +76,15 @@ jobs:
             archive.ubuntu.com:80
             auth.docker.io:443
             developer.download.nvidia.com:443
+            fulcio.sigstore.dev:443
             ghcr.io:443
             github.com:443
+            objects.githubusercontent.com:443
             ports.ubuntu.com:80
             production.cloudflare.docker.com:443
             raw.githubusercontent.com:443
             registry-1.docker.io:443
+            rekor.sigstore.dev:443
             security.ubuntu.com:80
 
       - name: Check out the repo
@@ -150,6 +153,13 @@ jobs:
             annotation-index.org.opencontainers.image.vendor=Openwall,\
             annotation-index.org.opencontainers.image.version=${{ steps.data.outputs.version }}"
 
+      - name: Upload attestation
+        uses: actions/attest-build-provenance@951c0c5f8e375ad4efad33405ab77f7ded2358e4 # v1.1.1
+        if: ${{ github.event.inputs.push == 'true' }}
+        with:
+          subject-name: ${{ env.REPO }}:${{ github.event.inputs.tag }}
+          subject-digest: ${{ steps.build-and-push.outputs.digest }}
+
   provenance:
     if: ${{ github.event.inputs.push == 'true' }}
     needs: [build]
@@ -157,6 +167,7 @@ jobs:
       actions: read # for detecting the GitHub Actions environment.
       id-token: write # for creating OIDC tokens for signing.
       packages: write # for uploading attestations.
+
     uses: slsa-framework/slsa-github-generator/.github/workflows/generator_container_slsa3.yml@v2.0.0
     with:
       image: ${{ needs.build.outputs.image }}
