@@ -66,6 +66,7 @@ Dockerfiles
 drwx
 drwxr
 drwxrwxr
+dsaltares
 dynamicbase
 editorconfig
 elfutils
