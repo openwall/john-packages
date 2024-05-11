@@ -20,7 +20,7 @@
 # Dockerfile for Continuous Integration
 # More info at https://github.com/openwall/john-packages
 
-FROM fedora:latest@sha256:4e007f288dce23966216be81ef62ba05d139b9338f327c1d1c73b7167dd47312
+FROM fedora:latest@sha256:5ce8497aeea599bf6b54ab3979133923d82aaa4f6ca5ced1812611b197c79eb0
 LABEL org.opencontainers.image.authors="Claudio André <dev@claudioandre.slmail.me>"
 LABEL description="Docker images for John the Ripper CI (1.0.Fedora Latest Flatpak)"
 LABEL org.opencontainers.image.source="https://github.com/openwall/john-packages"
