@@ -54,13 +54,13 @@ jobs:
 
       - uses: actions/stale@28ca1036281a5e5922ead5184a1bbf96e5fc984e # v9.0.0
         with:
-          days-before-issue-stale: 30
-          days-before-issue-close: 14
+          days-before-issue-stale: 14
+          days-before-issue-close: 7
           exempt-issue-labels: "keep open"
           stale-issue-label: "stale"
-          stale-issue-message: "This issue is stale because it has been open for 30 days with no activity."
+          stale-issue-message: "This issue is stale because it has been open for 14 days with no activity."
           close-issue-message: >
-            "This issue was closed because it has been inactive for 14 days since being marked as stale."
+            "This issue was closed because it has been inactive for 7 days since being marked as stale."
           days-before-pr-stale: -1
           days-before-pr-close: -1
           repo-token: ${{ secrets.GITHUB_TOKEN }}
