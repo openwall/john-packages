@@ -1,0 +1,104 @@
+###############################################################################
+#        _       _             _   _            _____  _
+#       | |     | |           | | | |          |  __ \(_)
+#       | | ___ | |__  _ __   | |_| |__   ___  | |__) |_ _ __  _ __   ___ _ __
+#   _   | |/ _ \| '_ \| '_ \  | __| '_ \ / _ \ |  _  /| | '_ \| '_ \ / _ \ '__|
+#  | |__| | (_) | | | | | | | | |_| | | |  __/ | | \ \| | |_) | |_) |  __/ |
+#   \____/ \___/|_| |_|_| |_|  \__|_| |_|\___| |_|  \_\_| .__/| .__/ \___|_|
+#                                                       | |   | |
+#                                                       |_|   |_|
+#
+# Copyright (c) 2024 Claudio André <dev at claudioandre.slmail.me>
+#
+# This program comes with ABSOLUTELY NO WARRANTY; express or implied.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, as expressed in version 2, seen at
+# http://www.gnu.org/licenses/gpl-2.0.html
+###############################################################################
+# GitHub Action to generate signed build provenance attestations
+# - files uploaded to https://github.com/openwall/john-packages/attestations
+# More info at https://github.com/openwall/john-packages
+
+---
+name: Build attestation
+
+"on":
+  push:
+    branches: [attest]
+  workflow_dispatch:
+    inputs:
+      image:
+        description: "The Docker image"
+        required: true
+        default: "ghcr.io/openwall/john"
+      release:
+        description: "The release path"
+        required: true
+        default: "https://github.com/openwall/john-packages/releases/download/bleeding/"
+
+permissions: read-all
+
+jobs:
+  build:
+    name: Attestation
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
+      attestations: write
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@a4aa98b93cab29d9b1101a6143fb8bce00e2eac4 # v2.7.1
+        with:
+          disable-sudo: true
+          egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            fulcio.sigstore.dev:443
+            ghcr.io:443
+            github.com:443
+            objects.githubusercontent.com:443
+            pkg-containers.githubusercontent.com:443
+            rekor.sigstore.dev:443
+
+      - name: Release artifact
+        id: data
+        run: |
+          mkdir -p "${{ github.workspace }}/local-app"
+
+          packages="flatpak_1_JtR.zip macOS-ARM_1_JtR.7z macOS-ARM_1_JtR.zip winX64_1_JtR.7z winX64_1_JtR.zip
+                    Created-on_2024-04-25.txt"
+          remote="${{ github.event.inputs.release || 'https://github.com/openwall/john-packages/releases/download/bleeding/' }}"
+
+          for file in $packages; do
+            echo ":: $remote$file"
+            wget "$remote$file" -O "${{ github.workspace }}/local-app/$file"
+          done
+
+      - name: Attest release
+        uses: actions/attest-build-provenance@951c0c5f8e375ad4efad33405ab77f7ded2358e4 # v1.1.1
+        with:
+          subject-path: '${{ github.workspace }}//local-app'
+
+      - name: Docker image
+        id: image
+        run: |
+          IMAGE="${{ github.event.inputs.image || 'ghcr.io/openwall/john' }}"
+          docker pull $IMAGE
+          DIGEST="$(docker inspect --format='{{index .RepoDigests 0}}' $IMAGE | grep -o 'sha256:[^;]*')"
+
+          echo "The image is $IMAGE"
+          echo ". digest $DIGEST"
+          echo "image=$IMAGE" >> "$GITHUB_OUTPUT"
+          echo "digest=$DIGEST" >> "$GITHUB_OUTPUT"
+
+      - name: Attest image
+        uses: actions/attest-build-provenance@951c0c5f8e375ad4efad33405ab77f7ded2358e4 # v1.1.1
+        id: attest
+        with:
+          subject-name: ${{ steps.image.outputs.image }}
+          subject-digest: ${{ steps.image.outputs.digest }}
