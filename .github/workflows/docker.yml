@@ -28,10 +28,6 @@ name: Docker
     branches: [docker]
   workflow_dispatch:
     inputs:
-      type:
-        description: "The image must contain"
-        required: true
-        default: "ALL"
       VERSION_NAME:
         description: "The software version name"
         required: true
@@ -39,10 +35,17 @@ name: Docker
       tag:
         description: "The image tag"
         required: true
-        default: "latest" #TODO: edit before release (JUMBO_RELEASE) rolling
+        type: choice
+        default: "latest"
+        options:
+          - latest
+          - rolling
+      extra:
+        description: "Add another image tag"
+        type: string
+
       push:
-        description: "Push the resulting image to Docker registry?"
-        required: true
+        description: "Push the image to Docker registry?"
         type: boolean
         default: false
 
@@ -93,11 +96,22 @@ jobs:
       - name: Get data
         id: data
         run: |
+          image_name="${{ env.REPO }}:${{ github.event.inputs.tag || 'test' }}"
+          version="1.9.$(date +%Y%m%d)"
+
+          image_tags="${image_name},"
+          image_tags+="${image_name}_J${{ github.run_number }},"
+          image_tags+="${image_name}_${version}"
+
+          if [[ -n "${{ github.event.inputs.extra }}" ]]; then
+            image_tags+=",${{ env.REPO }}:${{ github.event.inputs.extra }}"
+          fi
           #TODO: edit before release (JUMBO_RELEASE)
           {
             echo "now=$(date -u)"
             echo "revision=$(git rev-parse --short=7 HEAD 2>/dev/null)"
-            echo "version=1.9.$(date +%Y%m%d)"
+            echo "version=$version"
+            echo "image_tags=$image_tags"
           } >> "$GITHUB_OUTPUT"
 
       - name: Docker meta
@@ -123,7 +137,7 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build container image
+      - name: Build image
         id: build-and-push
         uses: docker/build-push-action@2cdde995de11925a030ce8070c3d77a52ffcf1c0 # v5.3.0
         with:
@@ -133,11 +147,8 @@ jobs:
             (github.event.inputs.push || false)
             }}
           build-args: |
-            TYPE="${{ github.event.inputs.type }}"
-          tags: |
-            ${{ env.REPO }}:${{ github.event.inputs.tag || 'test' }}
-            ${{ env.REPO }}:${{ github.event.inputs.tag }}_J${{ github.run_number }}
-            ${{ env.REPO }}:${{ github.event.inputs.tag }}_${{ steps.data.outputs.version }}
+            TYPE="ALL"
+          tags: ${{ steps.data.outputs.image_tags }}
           labels: |
             ${{ steps.meta.outputs.labels }}
           outputs: "type=image,name=target,\
