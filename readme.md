@@ -556,6 +556,9 @@ are computed by the CI servers.
 By accessing the build logs for each release on GitHub releases you can view the hashes of all
 relevant files.
 
+You can also go to <https://github.com/openwall/john-packages/attestations> for a list of our
+named artifacts along with their digest.
+
 <p align="right">(<a href="#header">back to top</a>)</p>
 
 ## ⚠ Security

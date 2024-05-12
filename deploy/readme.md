@@ -16,9 +16,9 @@ Also in the following Windows environments:
 - Mingw + Wine (64-bit), using an ancient Fedora Docker image
 - Cygwin (64-bit)
 
-At previous version rolling-2310, `john` is also known to build and work on:
+In previous versions `john` is also known to build and work on:
 
-- FreeBSD 12
+- FreeBSD 12 and above
 - macOS (on X86)
 - Mingw + Wine (32-bit), using an ancient Fedora Docker image
 

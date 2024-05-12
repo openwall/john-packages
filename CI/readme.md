@@ -1,6 +1,7 @@
 # Continuous Integration and Continuous Delivery
 
-The usage of Continuous Integration and Continuous Delivery is a method to frequently deliver software to users by introducing automation into the stages of application development.
+The usage of Continuous Integration and Continuous Delivery is a method to frequently deliver
+software to users by introducing automation into the stages of application development.
 
 ## Testing
 

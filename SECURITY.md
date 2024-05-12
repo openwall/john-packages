@@ -1,16 +1,20 @@
 # Security Policy
 
-Important notes:
+Keep in mind:
 
-- `john` isn't to be used on untrusted input and should be run with the lowest privileges necessary;
-  - it is unrealistic to have zero bugs, it is a consequence of how many formats and different parsers it has.
-- prefer sandboxed versions of packages (snap, flatpak or Docker) whenever you need "hardening";
-- reminder:
-  - the MPI library (not used by packages from this repository) tends to open and listening ports,
-    so it can expose itself, `john`, and the underlying system to direct network-based attacks as well;
-  - use the `--format` option to reduce parsing of input files;
-  - if you are compiling `john` yourself, you can also reduce dependencies by removing plugin formats or
-    ignoring optional libraries/features, thus minimizing the attack surface for potential security threats.
+> [!WARNING]
+> - `john` isn't to be used on untrusted input and should be run with the lowest privileges necessary;
+>   - it is unrealistic to have zero bugs, it is a consequence of how many formats and different parsers it has.
+> - prefer sandboxed versions of packages (snap, flatpak or Docker) whenever you need "hardening".
+
+Additionally:
+
+> [!IMPORTANT]
+> - the MPI library (not used by packages from this repository) tends to open and listening ports,
+>   so it can expose itself, `john`, and the underlying system to direct network-based attacks as well;
+> - use the `--format` option to reduce parsing of input files;
+> - if you are compiling `john` yourself, you can also reduce dependencies by removing plugin formats or
+>   ignoring optional libraries/features, thus minimizing the attack surface for potential security threats.
 
 ## Supported Versions
 
