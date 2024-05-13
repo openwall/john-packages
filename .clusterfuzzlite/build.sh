@@ -31,7 +31,6 @@ if [[ "$SANITIZER" == "address" ]]; then
 	# Asan
 	./configure --enable-asan
 	make -sj4
-
 	cp ../run/john "$OUT"/
 
 	echo "------------------ Disable problematic formats -------------------"
@@ -47,7 +46,14 @@ if [[ "$SANITIZER" == "undefined" ]]; then
 	# Ubsan
 	./configure --enable-ubsan
 	make -sj4
+	cp ../run/john "$OUT"/
 
+	echo "------------------ Disable problematic formats -------------------"
+	{
+		echo '[Local:Disabled:Formats]'
+		echo 'RACF-KDFAES = Y'
+		echo 'ZIP = Y'
+	} >>../run/john-local.conf
 	echo "------------------------- UBSAN fuzzing --------------------------"
 	echo "$ JtR UBSAN --test=0"
 	../run/john --test=0
