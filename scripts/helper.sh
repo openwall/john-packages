@@ -108,14 +108,24 @@ function do_release() {
 	EOF
 
 	if [[ ${FLATPAK_BUILD-0} -ne 1 ]]; then
-		cat <<-EOF >>../run/Defaults
-			#
-			#   The john-packages repository reference
-			[Repository john-packages]
-			Commit="$(git ls-remote -q https://github.com/openwall/john-packages.git HEAD | cut -f1)"
-			Date="$(LANG=C date -u)"
-		EOF
+		JOHN_PACKAGES_COMMIT="$(git ls-remote -q https://github.com/openwall/john-packages.git HEAD | cut -f1)"
+		JOHN_RELEASE_COMMIT="$(git ls-remote -q https://github.com/openwall/john-packages.git release | cut -f1)"
 	fi
+
+	cat <<-EOF >>../run/Defaults
+		#
+		#   The john-packages repository reference
+		[Repository john-packages]
+		Commit="${JOHN_PACKAGES_COMMIT-Unknown}"
+		Date="$(LANG=C date -u)"
+	EOF
+
+	cat <<-EOF >>../run/Defaults
+		#
+		#   Temporary 'release' branch reference
+		[Repository john-packages, branch release]
+		Commit="${JOHN_RELEASE_COMMIT-Unknown}"
+	EOF
 
 	cat <<-EOF >>../run/Defaults
 		#

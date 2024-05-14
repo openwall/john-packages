@@ -40,6 +40,10 @@
                 "mkdir -p /app/share/bash-completion/completions",
                 "cp ../run/john.*_completion /app/share/bash-completion/completions"
             ],
+            "secret-env": [
+                "JOHN_PACKAGES_COMMIT",
+                "JOHN_RELEASE_COMMIT"
+            ],
             "sources": [
                 {
                     "type": "git",
