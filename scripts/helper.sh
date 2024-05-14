@@ -111,11 +111,18 @@ function do_release() {
 		cat <<-EOF >>../run/Defaults
 			#
 			#   The john-packages repository reference
-			[john-packages]
+			[Repository john-packages]
 			Commit="$(git ls-remote -q https://github.com/openwall/john-packages.git HEAD | cut -f1)"
 			Date="$(LANG=C date -u)"
 		EOF
 	fi
+
+	cat <<-EOF >>../run/Defaults
+		#
+		#   The john (upstream) repository reference
+		[Repository john]
+		Commit="f9fedd238b0b1d69181c1fef033b85c787e96e57"
+	EOF
 
 	cat <<-EOF >>../run/Defaults
 		#

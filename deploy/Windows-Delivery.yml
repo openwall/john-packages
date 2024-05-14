@@ -126,6 +126,10 @@ steps:
       shell "echo 'libpcap=No' >> ../run/Defaults"
       shell "echo 'Other Optional Libraries=Yes' >> ../run/Defaults"
       shell "echo 'Regex, OpenMPI, Experimental Code, ZTEX=No' >> ../run/Defaults"
+      shell "echo '#' >> ../run/Defaults"
+      shell "echo '#   The john (upstream) repository reference' >> ../run/Defaults"
+      shell "echo '[Repository john]' >> ../run/Defaults"
+      shell "echo 'Commit=f9fedd238b0b1d69181c1fef033b85c787e96e57' >> ../run/Defaults"
 
       # Use symlink.c to produce a tiny john.exe that executes the best SIMD
       shell "make windows-tiny-link-to-john MAIN_NAME=$EXE_NAME "
