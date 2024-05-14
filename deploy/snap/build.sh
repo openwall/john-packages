@@ -54,7 +54,6 @@ source ../helper.sh
 
 if [[ "$1" == "PULL" ]]; then
 	# The pull phase will get upstream JtR source code and the version string
-	#RELEASE="f9fedd238b0b1d69181c1fef033b85c787e96e57" # Remove line comment for a release
 	(
 		cd .. || exit 1
 		rm -rf tmp
@@ -62,10 +61,10 @@ if [[ "$1" == "PULL" ]]; then
 		cp -r tmp/. .
 
 		# Make it a reproducible build
-		if [[ -n "$RELEASE" ]]; then
-			echo "Deploying the release $RELEASE"
+		if [[ -n "$RELEASE_COMMIT" ]]; then
+			echo "Deploying the release $RELEASE_COMMIT"
 			git pull --unshallow
-			git checkout "$RELEASE"
+			git checkout "$RELEASE_COMMIT"
 		fi
 	)
 	do_get_version

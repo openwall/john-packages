@@ -61,10 +61,10 @@ if [[ "$2" == "BUILD" ]]; then
 	do_get_version
 
 	# Make it a reproducible build
-	if [[ -n "$_JUMBO_RELEASE" ]]; then
-		echo "Deploying the release $_JUMBO_RELEASE"
+	if [[ -n "$RELEASE_COMMIT" ]]; then
+		echo "Deploying the release $RELEASE_COMMIT"
 		git pull --unshallow
-		git checkout "$_JUMBO_RELEASE"
+		git checkout "$RELEASE_COMMIT"
 	fi
 	echo ""
 	echo "---------------------------- BUILDING -----------------------------"

@@ -44,7 +44,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/openwall/john.git",
-                    "branch": "bleeding-jumbo"
+                    "commit": "f9fedd238b0b1d69181c1fef033b85c787e96e57"
                 },
                 {
                     "type": "file",

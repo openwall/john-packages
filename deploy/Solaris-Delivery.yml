@@ -40,7 +40,7 @@ jobs:
       EXTRA: "full;extra"
       BUILD_OPTS: ""
       BASE: "Oracle Solaris"
-      _JUMBO_RELEASE: ${{ github.event.inputs.release }}
+      RELEASE_COMMIT: ${{ github.event.inputs.hash }}
 
     steps:
       - uses: actions/checkout@v4
@@ -48,7 +48,7 @@ jobs:
         id: test
         uses: vmactions/solaris-vm@v1
         with:
-          envs: "TARGET_ARCH EXTRA BUILD_OPTS TEST BASE"
+          envs: "TARGET_ARCH EXTRA BUILD_OPTS TEST BASE RELEASE_COMMIT"
           usesh: true
           copyback: false
           prepare: |

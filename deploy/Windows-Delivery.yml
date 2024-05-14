@@ -25,26 +25,19 @@ steps:
       # Setup image environment ##############################################
       $cygwinFolder = "C:\$env:cygwinPath"
 
-      if ($env:Test -eq "package") {
-          # Use upstream source code
-          cd $env:PROJ_FOLDER
-          Remove-Item ./JtR -Force -Recurse -ErrorAction SilentlyContinue
-          git clone -q --depth 1 https://github.com/openwall/john.git JtR
-      }
+      # Get upstream JtR source code
+      cd $env:PROJ_FOLDER
+      Remove-Item ./JtR -Force -Recurse -ErrorAction SilentlyContinue
+      git clone https://github.com/openwall/john.git JtR
+
       cd $env:BUILD_FOLDER
-      git describe --dirty=+ --always
-      echo '--------------------------------'
 
-      # $JUMBO_RELEASE = "f9fedd238b0b1d69181c1fef033b85c787e96e57"
+      # Force the build to be repeatable
+      git checkout "f9fedd238b0b1d69181c1fef033b85c787e96e57"
 
-      # Make it a reproducible build
-      if ($JUMBO_RELEASE) {
-          Write-Host "--------------------------------------------------------"
-          Write-Host "   =====  Deploying the release $JUMBO_RELEASE  =====   " -ForegroundColor White
-          Write-Host "--------------------------------------------------------"
-          git pull --unshallow
-          git checkout $JUMBO_RELEASE
-      }
+      Write-Host "--------------------------------------------------------"
+      Write-Host "   =====  Deploying the release $RELEASE_COMMIT  =====  " -ForegroundColor White
+      Write-Host "--------------------------------------------------------"
 
       # If needed (Cygwin is not installed) or as a workaround (Cygwin update is required)
       if ($env:Cygwin -eq "install") {

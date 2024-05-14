@@ -27,13 +27,14 @@ function install_nvidia_opencl() {
 		nvidia-opencl-dev=*
 }
 type="$1"
+RELEASE_COMMIT="$2"
 
 # Required defines
 arch=$(uname -m)
 DEPLOY_PAK="Yes"
 BASE="CUDA on Ubuntu"
 TASK_RUNNING="Docker build"
-export -p DEPLOY_PAK BASE TASK_RUNNING
+export -p DEPLOY_PAK BASE TASK_RUNNING RELEASE_COMMIT
 
 # Build options (system wide, disable checks, etc.)
 SYSTEM_WIDE='--with-systemwide'
@@ -64,7 +65,6 @@ source ../helper.sh
 
 if true; then
 	# Get upstream JtR source code and the version string
-	#RELEASE="f9fedd238b0b1d69181c1fef033b85c787e96e57" # Remove line comment for a release
 	(
 		cd .. || exit 1
 		rm -rf tmp
@@ -72,10 +72,10 @@ if true; then
 		cp -r tmp/. . && rm -rf tmp/
 
 		# Make it a reproducible build
-		if [[ -n "$RELEASE" ]]; then
-			echo "Deploying the release $RELEASE"
+		if [[ -n "$RELEASE_COMMIT" ]]; then
+			echo "Deploying the release $RELEASE_COMMIT"
 			git pull --unshallow
-			git checkout "$RELEASE"
+			git checkout "$RELEASE_COMMIT"
 		fi
 	)
 	do_get_version

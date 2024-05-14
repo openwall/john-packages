@@ -29,8 +29,9 @@ COPY build.sh .
 
 # To build a release run a (docker build [...] --build-arg TYPE=ALL)
 ARG TYPE=ALL
+ARG RELEASE_COMMIT
 
-RUN ./build.sh "${TYPE}"
+RUN ./build.sh "$TYPE" "$RELEASE_COMMIT"
 
 # ==================================================================
 # Build the final lean Docker image
