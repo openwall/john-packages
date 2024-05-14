@@ -55,7 +55,7 @@ if [ "$type" == "ALL" ] || [ "$type" == "GPU" ]; then
 	install_nvidia_opencl
 fi
 # Download the required and missing file
-wget https://raw.githubusercontent.com/openwall/john-packages/release/scripts/helper.sh \
+wget https://raw.githubusercontent.com/openwall/john-packages/main/scripts/helper.sh \
 	-O helper.sh
 mkdir -p src
 cd src || exit 1

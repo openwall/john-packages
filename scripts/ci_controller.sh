@@ -49,7 +49,7 @@ if [[ "$TARGET_ARCH" == *"macOS"* && $2 == "INFO" ]]; then
 fi
 
 # Download the required and missing file
-wget https://raw.githubusercontent.com/openwall/john-packages/release/scripts/helper.sh \
+wget https://raw.githubusercontent.com/openwall/john-packages/main/scripts/helper.sh \
 	-O helper.sh
 cd src || exit 1
 
@@ -130,7 +130,7 @@ elif [[ "$2" == "TEST" ]]; then
 	export -p JTR_BIN TEST
 
 	do_validate_checksum \
-		https://raw.githubusercontent.com/openwall/john-packages/release/scripts/run_tests.sh
+		https://raw.githubusercontent.com/openwall/john-packages/main/scripts/run_tests.sh
 	# shellcheck source=/dev/null
 	source run_tests.sh
 fi

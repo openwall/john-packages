@@ -43,7 +43,7 @@ macOS_task:
     git clone --depth 10 https://github.com/openwall/john.git ~/tmp
     cp -r ~/tmp/. .
 
-    wget https://raw.githubusercontent.com/openwall/john-packages/release/scripts/ci_controller.sh \
+    wget https://raw.githubusercontent.com/openwall/john-packages/main/scripts/ci_controller.sh \
       -O .ci/ci_controller.sh
     chmod +x .ci/ci_controller.sh
     .ci/ci_controller.sh "$TARGET_ARCH" INFO

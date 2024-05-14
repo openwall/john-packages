@@ -74,7 +74,7 @@ workflows:
               echo "Build options: $BUILD_OPTS"
               echo "----------------------------------------------------------------------"
 
-              wget https://raw.githubusercontent.com/openwall/john-packages/release/scripts/ci_controller.sh \
+              wget https://raw.githubusercontent.com/openwall/john-packages/main/scripts/ci_controller.sh \
                 -O .ci/ci_controller.sh
               chmod +x .ci/ci_controller.sh
 

@@ -163,7 +163,7 @@ function do_show_environment() {
 		(
 			cd .. || exit 1
 			do_validate_checksum \
-				https://raw.githubusercontent.com/openwall/john-packages/release/scripts/show_info.sh
+				https://raw.githubusercontent.com/openwall/john-packages/main/scripts/show_info.sh
 		)
 	fi
 	# shellcheck source=/dev/null
@@ -205,7 +205,7 @@ if [[ ${INFO_SHOWN-0} -eq 0 ]]; then
 		# Flatpak does not access the network and has these files
 		(
 			cd .. || exit 1
-			wget https://raw.githubusercontent.com/openwall/john-packages/release/requirements.hash \
+			wget https://raw.githubusercontent.com/openwall/john-packages/main/requirements.hash \
 				-O requirements.hash
 			do_validate_checksum helper.sh "no-download"
 		)
