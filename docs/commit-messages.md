@@ -25,26 +25,34 @@ feat(lang): add french language
 
 ## Commit Types
 
-The type of a commit message specifies that the change was made for a specific issue.
-For example, we fixed a bug or added a feature, or perhaps documentation. The type would be “fix”,
-“feat”, or “docs”.
+The type of a commit message specifies that the change was made for a specific issue or
+subsystem. For example, we fixed a bug or added a feature, or perhaps documentation; for
+this list of cases the type would be “fix”, “feat” or “docs”.
 
-|     ID      |                                      Meaning                                       |
-| :---------: | :--------------------------------------------------------------------------------: |
-|     CI:     | CI tasks. E.g, commit to allow the Docker image to be built without being deployed |
-|   cloud:    |                           any changes to the cloud tool                            |
-|   deploy:   |               e.g, add the recipe to create a new macOS build/deploy               |
-|   Docker:   |                    any changes to the Docker recipe or package                     |
-|    docs:    |                     any changes to .md files or mermaid files                      |
-|  flatpak:   |                    any changes to the flapak recipe or package                     |
-|    IDE:     |                      any changes to the IDE's folder or files                      |
-|   maint:    |                      general maintenance tasks. E.g., linters                      |
-|  packages:  |   e.g., when you create a new GitHub Action or a patch to apply to all packages    |
-|  release:   |                           when a new version is created                            |
-|    snap:    |                     any changes to the snap recipe or package                      |
-|   tests:    |                      any changes to test scripts or strategy                       |
-| virustotal: |                        any changes to virustotal procedures                        |
+To automate the release note or changelog production process we need to ensure that only
+the IDs seen in the list below will be used to identify commits.
 
-Should we add, e.g., "fix"?
+IDs are used to automatically classify commits and place them into categories that will
+be listed in the release.
 
-I prefer to use something like `Docker: fix build.sh script`
+|    ID    |                 Meaning                  |                          Example                          |
+| :------: | :--------------------------------------: | :-------------------------------------------------------: |
+|   CI:    |                 CI tasks                 | allow the Docker image to be built without being deployed |
+|   IDE:   |   changes to the IDE's folder or files   |                                                           |
+|  cloud:  |        changes to the cloud tool         |                                                           |
+|  docs:   |  changes to .md files or mermaid files   |                                                           |
+|  maint:  |        general maintenance tasks         |                          linters                          |
+|  snap:   |  changes to the snap recipe or package   |                                                           |
+|  tests:  |   changes to test scripts or strategy    |                                                           |
+| deploy:  | changes to the delivery/release process  |     add the recipe to create a new macOS build/deploy     |
+| Docker:  | changes to the Docker recipe or package  |                                                           |
+| flatpak: | changes to the flapak recipe or package  |                                                           |
+| release: |  when a new release version is created   |                                                           |
+| Windows: | changes to the Windows recipe or package |                                                           |
+
+Final thoughts:
+
+- It is mandatory to use only the IDs seen in the list;
+- Never use a text like `obscure-resource.TYPE: [MESSAGE]` as the classes/subsystems are only those listed above;
+- Should we add, e.g., "fix" or “feat”?
+  - I prefer to use something like `Docker: fix build.sh script`.
