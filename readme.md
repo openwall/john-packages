@@ -145,7 +145,7 @@ it's running on.
 
 [![Windows Downloads][linkBadgeDownloadWindows]][linkReleases]
 
-Using the above instructions you can install the rolling version of John
+Using the above instructions you can install the released version of John
 the Ripper Jumbo 1+, the hot and bleeding version, or a previous stable
 version in your system.
 
@@ -297,7 +297,7 @@ out of the sandbox, unconfined (e.g., run `/snap/john-the-ripper/current/run/joh
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)][linkSnapcraftJohn]
 
-If you followed the above instructions, you installed the stable (or rolling) version of John
+If you followed the above instructions, you installed the released version of John
 the Ripper Jumbo 1+ in your system. If you want to access the hot and bleeding
 developing version of JtR, you must follow a development channel. For a clean
 installation:
@@ -362,7 +362,7 @@ it's running on.
 
 [![macOS Downloads][linkBadgeDownloadMac]][linkReleases]
 
-Using the above instructions you can install the rolling version of John
+Using the above instructions you can install the released version of John
 the Ripper Jumbo 1+, the hot and bleeding version, or a previous stable
 version in your system.
 
@@ -449,7 +449,7 @@ it's running on.
 <!--
 // jscpd:ignore-start
 -->
-Using the above instructions you can install the rolling version of John
+Using the above instructions you can install the released version of John
 the Ripper Jumbo 1+, the hot and bleeding version, or a previous stable
 version in your system.
 
@@ -519,7 +519,7 @@ The highlights (👀):
 <!--
 // jscpd:ignore-start
 -->
-Using the above instructions you can install the rolling version of John
+Using the above instructions you can install the released version of John
 the Ripper Jumbo 1+, the hot and bleeding version, or a previous stable
 version in your system.
 
