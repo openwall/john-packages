@@ -495,7 +495,7 @@ Run John the Ripper and check if it is working:
 
 ```bash
  docker run ghcr.io/openwall/john # => uses the best SIMD available, tag 'latest' can be omitted
- docker run ghcr.io/openwall/john:rolling # => uses the latest rolling release
+ docker run ghcr.io/openwall/john:bleeding # => uses the latest bleeding release
  docker run ghcr.io/openwall/john:latest best # => uses the best SIMD available
 ```
 
@@ -508,9 +508,9 @@ The highlights (👀):
 - has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`;
   - example: `docker run ghcr.io/openwall/john:latest best -list=build-info`.
 - the released version of John 1.9.0 Jumbo 1+ (is a rolling release):
-  - install from the command-line: `docker pull ghcr.io/openwall/john:rolling`.
-- the development version:
   - install from the command-line: `docker pull ghcr.io/openwall/john:latest`.
+- the development version:
+  - install from the command-line: `docker pull ghcr.io/openwall/john:bleeding`.
 
 ### Docker Image Deployments
 

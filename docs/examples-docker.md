@@ -16,7 +16,7 @@ Using the `--rm` flag to clean up the container and remove the file system after
 
 ```bash
  docker run --rm ghcr.io/openwall/john # => uses the best SIMD available, tag 'latest' can be omitted
- docker run --rm ghcr.io/openwall/john:rolling # => uses the latest rolling release
+ docker run --rm ghcr.io/openwall/john:bleeding # => uses the latest bleeding release
  docker run --rm ghcr.io/openwall/john:latest best # => uses the best SIMD available
  docker run --rm ghcr.io/openwall/john:latest avx2 --list=build-info
  docker run --rm ghcr.io/openwall/john:latest avx2-omp --list=build-info

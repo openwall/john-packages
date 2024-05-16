@@ -36,10 +36,10 @@ name: Docker
         description: "The image tag"
         required: true
         type: choice
-        default: "latest"
+        default: "bleeding"
         options:
+          - bleeding
           - latest
-          - rolling
       extra:
         description: "Add another image tag"
         type: string
