@@ -58,14 +58,14 @@ source ../helper.sh
 
 # Build and testing
 if [[ "$2" == "BUILD" ]]; then
-	do_get_version
-
 	# Make it a reproducible build
 	if [[ -n "$RELEASE_COMMIT" ]]; then
 		echo "Deploying the release $RELEASE_COMMIT"
 		git pull --unshallow
 		git checkout "$RELEASE_COMMIT"
 	fi
+	do_get_version
+
 	echo ""
 	echo "---------------------------- BUILDING -----------------------------"
 
