@@ -1,8 +1,8 @@
 # The Release Process
 
 - When releasing, create signed commits and tags;
-  - You will need to use the CLI, but then just access and use the GitHub GUI as usual:
-- To sign the source code:
+  - You will need to use the CLI, but then just access and use the GitHub GUI as usual.
+- To sign the source code tarball:
 
   ```bash
   # Create a release
@@ -10,35 +10,53 @@
   gpg --armor --detach-sign --output Digitally-signed.tar.gz.asc THE-DOWNLOADED-TARBALL-RELEASE-FILE.tar.gz
   ```
 
-- Upload the Digitally-signed.tar.gz.asc file to the newly created GitHub release.
+- Then, upload the Digitally-signed.tar.gz.asc file to the newly created GitHub release.
 
-The list of tasks:
+## Tasks for Creating a Release
 
 - [ ] Ensure the `release` branch is up to date and clean;
   - The `release` branch is a copy of the `main` branch;
+  - From this point onwards, changes to the source code that are not listed must cause a restart from
+    the beginning.
+- [ ] Add a new commit to the `release` branch;
+  - This is the "pin upstream commit".
+- [ ] Update the commit that will be used to build;
+  - Replace all occurrences of `f9fedd238b0b1d69181c1fef033b85c787e96e57` with the proper commit hash;
+  - Replace all occurrences of `f9fedd2` with the proper short commit hash;
+  - Update bash script [file hashes](../CONTRIBUTING.md#create-a-suitable-pr);
+  - Amend and push the "pin upstream commit".
+
+The "pin upstream commit" is ready.
+
 - [ ] Add a new commit to the `release` branch;
   - This is the "release commit".
-- [ ] The `main` and `release` branches are synchronized;
-  - `git checkout release; git pull --rebase origin main`
-  - Only amend the "release commit"; we will use a fast forward merge;
-  - Any other changes to the source code from this point onwards must cause a restart from the beginning.
 - [ ] Update all release-related documentation;
-  - Amend and push the "release commit";
+  - Amend and push the "release commit".
+
+The "release commit" is almost ready.
+
 - [ ] Run all CI (standard, macOS, GitLab, Solaris and Android); [1]
-  - Confirm that all builds are OK;
+  - Confirm that all builds are OK.
 - [ ] Build the snap (use Launchpad); [2]
-  - Confirm that all builds are OK;
+  - Confirm that all builds are OK.
 - [ ] Build the Docker image (bleeding or latest); [3]
-  - Confirm that all builds are OK;
+  - Run the workflow from the `release` branch (`main` doesn't know the proper commit hash yet).
+    See note [*];
+  - Confirm that all builds are OK.
+- [ ] Release to snap store and flathub;
+
+All binaries are ready.
+
 - [ ] Update versions of the software used for packaging (in deploy/readme and CI/readme); [4]
   - Amend and push the "release commit";
-- [ ] Release to snap store and flathub;
+  - This is also a valid point for performing the merge. See note [*].
 
 The "release commit" is ready.
 
-- [ ] Add a new commit to update the logs in /Releases/[RELEASE]; [5]
-- [ ] Update all logs;
-  - Amend and push the "logs commit";
+- [ ] Add a new commit to the `release` branch;
+  - This is the "logs commit".
+- [ ] Update all logs in /Releases/[RELEASE]; [5]
+  - Amend and push the "logs commit".
 
 The "logs commit" is ready.
 
@@ -48,17 +66,26 @@ The "logs commit" is ready.
 - [ ] Create the release tag; [7]
   - `git tag <tag> -m "release: <tag> $(date +%Y%m%d)"`.
 - [ ] Update the repository;
-  - `git push -u origin main`.
+  - `git push -u origin main`;
   - `git push --tags`.
 - [ ] Release the GitHub release.
   - Use Azure to release it.
 
 Footnotes:
 
-1. all files that will be in the GitHub release are ready to go. still need to be released;
-2. all snap packages are ready to go. still need to be released;
+1. all files that will be in the GitHub release are ready to go. Still need to be released;
+2. all snap packages are ready to go. Still need to be released;
 3. the Docker image has been released;
 4. manual task of accessing logs and copying information;
 5. update and run get-files.sh;
-6. the release itself is based on the last commit and its git tag.
-7. e.g., for a rolling release in Oct 2023, the `<tag>` value should be rolling-2310
+6. the release itself is based on the last commit and its git tag;
+7. e.g., for a rolling release in Oct 2023, the `<tag>` value should be rolling-2310.
+
+> [!NOTE]
+>
+> Note [*]:
+> we use the `release` branch as a staging area, so that we can build development packages
+> without polluting the `main` branch. However, if you merge at the point where the "release
+> commit" is ready, you can release an official version without relying on a working branch
+> like the `release` branch. Of course, the lack of a `release` branch would make it
+> impossible to create a development and test package version.
