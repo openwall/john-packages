@@ -11,6 +11,18 @@ The commit message must follow the format:
 - The body or description should be restricted to 72 characters per line.
   - It should explain the motivation for the change.
 
+A commit message must refer to its purpose and to the problem that motivated its development:
+
+- If the issue a commit refers to is a bug report, add the following text to the
+  commit message:
+  - Fix #VALUE.
+- If the issue a commit refers to is a feature request, add the following text to
+  the commit message:
+  - Close #VALUE.
+- Commits may not be exactly a fix or implementation of a feature, but they can be
+  related to any issue, in this case, add the following text to the commit message:
+  - See #VALUE.
+
 Examples:
 
 ```text
