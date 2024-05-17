@@ -1,11 +1,3 @@
----
-name: PR
-about: Create a pull request
-title: ""
-labels: ""
-assignees: ""
----
-
 ## Describe your changes
 
 Add your text here.
