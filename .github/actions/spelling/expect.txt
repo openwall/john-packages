@@ -66,7 +66,6 @@ Dockerfiles
 drwx
 drwxr
 drwxrwxr
-dsaltares
 dynamicbase
 editorconfig
 elfutils
@@ -215,7 +214,6 @@ utf
 vcs
 ventura
 Veyor
-virusscan
 virustotal
 vmactions
 vncpcap
