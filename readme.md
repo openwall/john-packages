@@ -587,7 +587,7 @@ We love contributions in the form of issues and pull requests. Read the [Contrib
 
 ## Acknowledgments and Contact
 
-John the Ripper is proudly *Powered by Open Source Community*
+John the Ripper is proudly *Powered by Open Source Community*:
 
 - [Openwall](https://www.openwall.com/john/) and others.
 
@@ -595,7 +595,7 @@ John the Ripper is proudly *Powered by Open Source Community*
 
 ## License
 
-GNU General Public License v2.0
+GNU General Public License v2.0.
 
 <p align="right">(<a href="#header">back to top</a>)</p>
 
