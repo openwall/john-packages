@@ -18,6 +18,9 @@
 tuf-repo-cdn.sigstore.dev:443
 jeff-hykin.better-cpp-syntax
 
+# Short commit hash
+`[0-9a-f]{7}`
+
 # Status session line
 # 1g 0:00:05:06 DONE (2018-01-01 15:08) 0.003265g/s 11369p/s 11369c/s 11369C/s HelloYworik_..HelloLworurU
 \d+g[A-Za-z0-9:()-.\/\s]+ [\w]+\.\.[\w]+
