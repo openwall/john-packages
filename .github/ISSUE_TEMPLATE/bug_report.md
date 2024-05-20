@@ -14,6 +14,9 @@ We expect only reports of issues with the latest revision found in
 [https://github.com/openwall/john](https://github.com/openwall/john) GitHub repository. We do not expect in here,
 and have little use for, reports of issues only seen in a release or in a distro package.
 
+In our complaint history we have cases where the OP was doing the wrong thing and complaining about `john`.
+So please show us the commands you are using and do so using a demo file/hash that you can share with us.
+
 ## 2. To Reproduce
 
 Steps to reproduce the behavior:
