@@ -195,9 +195,15 @@ if [[ -z "${TEST##*;crack;*}" ]]; then
 fi
 
 if [[ -z "${TEST##*CHECK*}" ]]; then
-	echo "--------------------------- make check ---------------------------"
-	make check
-	report "make check"
+
+	if [[ -n "$MAKE_CMD" ]]; then
+		MAKE="$MAKE_CMD"
+	else
+		MAKE="make"
+	fi
+	echo "--------------------------- $MAKE check ---------------------------"
+	$MAKE check
+	report "$MAKE check"
 fi
 
 if [[ -z "${TEST##*AFL_FUZZ*}" ]]; then

@@ -108,7 +108,6 @@ if [[ "$2" == "BUILD" ]]; then
 
 	if [[ $TARGET_ARCH == *"SOLARIS"* ]]; then
 		do_configure "$ASAN $BUILD_OPTS"
-		export MAKE_CMD=gmake
 		do_build
 	fi
 
