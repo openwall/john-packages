@@ -25,7 +25,7 @@
 # Required defines
 arch=$(uname -m)
 DEPLOY_PAK="Yes"
-JTR_BIN='../run/john'
+JTR_BIN='/snap/john-the-ripper/current/run/john'
 JTR_CL="$JTR_BIN"
 TEST=';full;extra;' # Controls how the test will happen
 BASE="Ubuntu"
@@ -105,10 +105,9 @@ else
 	OPENCL_SUPPORT="No"
 fi
 do_release "Yes" "$OPENCL_SUPPORT" "$BINARY" # --system-wide, --support-opencl, --binary-name
-do_clean_package
 
-# "------------------- Run CI OR avoid to install extra packages -------------------"
-# Allow to skip the testing procedures, on a release
+# "------------------- Run CI -------------------"
+# Default to bypass test procedures
 wget --spider https://raw.githubusercontent.com/claudioandre-br/JohnTheRipper/bleeding-jumbo/run-CI.patch
 CI_TEST=$?
 
@@ -116,7 +115,7 @@ if [[ $CI_TEST -eq 0 ]]; then
 	# Needed to be able to run testing
 	sudo apt-get install -y language-pack-en
 
-	# "---------------------------- TESTING -----------------------------"
+	echo "---------------------------- TESTING -----------------------------"
 	# Allow to test a system wide build
 	mkdir --parents /snap/john-the-ripper/current/
 	ln -s "$(realpath ../run)" /snap/john-the-ripper/current/run
@@ -126,8 +125,8 @@ if [[ $CI_TEST -eq 0 ]]; then
 	# shellcheck source=/dev/null
 	source disable_formats.sh
 
-	do_validate_checksum \
-		https://raw.githubusercontent.com/openwall/john-packages/main/scripts/run_tests.sh
+	wget https://raw.githubusercontent.com/openwall/john-packages/main/scripts/run_tests.sh
 	# shellcheck source=/dev/null
 	source run_tests.sh
 fi
+do_clean_package
