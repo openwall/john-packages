@@ -8,7 +8,7 @@
 #                                                       | |   | |
 #                                                       |_|   |_|
 #
-# Copyright (c) 2019-2023 Claudio André <claudioandre.br at gmail.com>
+# Copyright (c) 2019-2024 Claudio André <dev at claudioandre.slmail.me>
 #
 # This program comes with ABSOLUTELY NO WARRANTY; express or implied.
 #
@@ -23,9 +23,9 @@
 name: john-the-ripper
 version: 1.9J1+2404
 
+base: core22
 confinement: strict
 grade: stable #TODO: [stable or devel] edit before release (JUMBO_RELEASE)
-base: core22
 
 assumes: [snapd2.41]
 adopt-info: john-the-ripper
@@ -44,74 +44,68 @@ description: |
   encrypted document files such as PDF and Microsoft Office's, plus lots of
   other hashes and ciphers.
 
-icon: icon.png
+icon: com.openwall.John.png
 
 apps:
   john-the-ripper:
-    command: run/john
+    command: bin/john
+    desktop: com.openwall.John.desktop
     plugs: [home, removable-media]
   opencl:
-    command: run/john
+    command: bin/john
     plugs: [home, removable-media]
   dmg2john:
-    command: run/dmg2john
+    command: bin/dmg2john
     plugs: [home, removable-media]
   hccap2john:
-    command: run/hccap2john
+    command: bin/hccap2john
     plugs: [home, removable-media]
   racf2john:
-    command: run/racf2john
+    command: bin/racf2john
     plugs: [home, removable-media]
   vncpcap2john:
-    command: run/vncpcap2john
+    command: bin/vncpcap2john
     plugs: [home, removable-media]
   zip2john:
-    command: run/zip2john
+    command: bin/zip2john
     plugs: [home, removable-media]
   gpg2john:
-    command: run/gpg2john
+    command: bin/gpg2john
     plugs: [home, removable-media]
   keepass2john:
-    command: run/keepass2john
+    command: bin/keepass2john
     plugs: [home, removable-media]
   putty2john:
-    command: run/putty2john
+    command: bin/putty2john
     plugs: [home, removable-media]
   rar2john:
-    command: run/rar2john
+    command: bin/rar2john
     plugs: [home, removable-media]
   uaf2john:
-    command: run/uaf2john
+    command: bin/uaf2john
     plugs: [home, removable-media]
   wpapcap2john:
-    command: run/wpapcap2john
+    command: bin/wpapcap2john
     plugs: [home, removable-media]
+  info:
+    command: bin/run-john.sh
 
 parts:
   john-the-ripper:
     plugin: nil
-    source: .
-    override-pull: |
-      craftctl default
-
-      # Force the build to be repeatable
-      export RELEASE_COMMIT="f9fedd238b0b1d69181c1fef033b85c787e96e57"
-
-      # Get latest files from upstream repository
-      wget https://raw.githubusercontent.com/openwall/john-packages/release/deploy/snap/build.sh -O build.sh
-      chmod +x build.sh
-
-      ./build.sh PULL
-      craftctl set version="$(cat src/version.txt)"
+    after: [john-packages]
+    source: https://github.com/openwall/john.git
+    source-commit: f9fedd238b0b1d69181c1fef033b85c787e96e57
+    source-depth: 10
 
     override-build: |
-      export PACKAGE_VERSION="$(cat src/version.txt)"
-      export INFO_SHOWN=1
+      cp "$SNAPCRAFT_STAGE"/build.sh .
       ./build.sh
+
+      craftctl set version="$(cat version.txt)"
+
       mkdir -p ../install/etc/bash_completion
       cp run/john.*_completion ../install/etc/bash_completion/
-      mkdir -p ../install/share/icons
-      cp icon.png ../install/share/icons/icon.png
 
     build-packages:
       - build-essential
@@ -131,7 +125,7 @@ parts:
           - pocl-opencl-icd
 
     organize:
-      ../build/run/: run/
+      ../build/run/: bin/
       ../build/doc/: doc/
       ../build/README.md: README.md
 
@@ -143,3 +137,16 @@ parts:
       - libpcap0.8
       - on amd64:
           - ocl-icd-libopencl1
+
+  john-packages:
+    plugin: nil
+    source: .
+
+    override-build: |
+      cp deploy/metadata/com.openwall.John.desktop .
+      cp deploy/metadata/run-john.sh .
+      cp deploy/snap/build.sh $SNAPCRAFT_STAGE
+
+    organize:
+      ../build/com.openwall.John.desktop: com.openwall.John.desktop
+      ../build/run-john.sh: bin/run-john.sh

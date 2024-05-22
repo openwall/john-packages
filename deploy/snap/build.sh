@@ -10,7 +10,7 @@
 #                                                       | |   | |
 #                                                       |_|   |_|
 #
-# Copyright (c) 2019-2024 Claudio André <claudioandre.br at gmail.com>
+# Copyright (c) 2019-2024 Claudio André <dev at claudioandre.slmail.me>
 #
 # This program comes with ABSOLUTELY NO WARRANTY; express or implied.
 #
@@ -51,25 +51,10 @@ cd src || exit 1
 
 # shellcheck source=/dev/null
 source ../helper.sh
+do_get_version
 
-if [[ "$1" == "PULL" ]]; then
-	# The pull phase will get upstream JtR source code and the version string
-	(
-		cd .. || exit 1
-		rm -rf tmp
-		git clone --depth 10 https://github.com/openwall/john.git tmp
-		cp -r tmp/. .
+cp version.txt ..
 
-		# Make it a reproducible build
-		if [[ -n "$RELEASE_COMMIT" ]]; then
-			echo "Deploying the release $RELEASE_COMMIT"
-			git pull --unshallow
-			git checkout "$RELEASE_COMMIT"
-		fi
-	)
-	do_get_version
-	exit 0
-fi
 do_validate_checksum \
 	https://raw.githubusercontent.com/openwall/john-packages/release/patches/Handle-self-confined-system-wide-build.patch
 patch <Handle-self-confined-system-wide-build.patch
