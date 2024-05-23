@@ -1,8 +1,7 @@
 # Security Policy
 
-Keep in mind:
-
 > [!WARNING]
+>
 > - `john` isn't to be used on untrusted input and should be run with the lowest privileges necessary;
 >   - it is unrealistic to have zero bugs, it is a consequence of how many formats and different parsers it has.
 > - prefer sandboxed versions of packages (snap, flatpak or Docker) whenever you need "hardening".
@@ -10,6 +9,7 @@ Keep in mind:
 Additionally:
 
 > [!IMPORTANT]
+>
 > - the MPI library (not used by packages from this repository) tends to open and listening ports,
 >   so it can expose itself, `john`, and the underlying system to direct network-based attacks as well;
 > - use the `--format` option to reduce parsing of input files;
@@ -21,11 +21,11 @@ Additionally:
 The `john` community releases patches for security vulnerabilities. Which versions are eligible for
 receiving such patches depends on the version:
 
-| Version                | Supported          | Note                      |
-| ---------------------- | ------------------ | ------------------------- |
-| upstream bleeding code | :heavy_check_mark: | Under development version |
-| rolling 1.9J1+2404     | :heavy_check_mark: | Most recent release       |
-| jumbo 1 or older       | :x:                | No longer maintained      |
+| Version                | Supported | Note                      |
+| ---------------------- | :-------: | ------------------------- |
+| upstream bleeding code |     ✔     | Under development version |
+| rolling 1.9J1+2404     |     ✔     | Most recent release       |
+| jumbo 1 or older       |    ❌     | No longer maintained      |
 
 ## Reporting a Vulnerability
 
@@ -41,7 +41,7 @@ be assumed that input can control the program in arbitrary ways. In cases where 
 use the snap, the flatpak or the Docker version; you can also use the `--format` option to reduce parsing
 of input files.
 
-## When to report a vulnerability
+## When to Report a Vulnerability
 
 When you think John The Ripper has a potential security vulnerability.
 
