@@ -1,4 +1,4 @@
-From 5c8522ff234ce7012484c52576c4ce156327b180 Mon Sep 17 00:00:00 2001
+From a323a4bd1e72eea54b14291f409e8772bd9b7902 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Claudio=20Andr=C3=A9?= <claudioandre.br@gmail.com>
 Date: Sat, 15 Dec 2018 23:35:51 -0200
 Subject: [PATCH] Handle self confined system wide build.
@@ -9,10 +9,10 @@ Subject: [PATCH] Handle self confined system wide build.
  2 files changed, 22 insertions(+), 2 deletions(-)
 
 diff --git a/src/listconf.c b/src/listconf.c
-index d33e993f0..bd2e403a4 100644
+index 319288ca7b..cc958100b9 100644
 --- a/src/listconf.c
 +++ b/src/listconf.c
-@@ -151,6 +151,18 @@ static void listconf_list_build_info(void)
+@@ -155,6 +155,18 @@ static void listconf_list_build_info(void)
  	       SIMD_PARA_SHA256, SIMD_PARA_SHA512);
  #endif
  #if JOHN_SYSTEMWIDE
@@ -32,16 +32,16 @@ index d33e993f0..bd2e403a4 100644
  	puts("System-wide home: " JOHN_SYSTEMWIDE_HOME);
  	puts("Private home: " JOHN_PRIVATE_HOME);
 diff --git a/src/params.h b/src/params.h
-index 83afed9eb..fa7d43f58 100644
+index 74726debd1..711b13dd21 100644
 --- a/src/params.h
 +++ b/src/params.h
-@@ -106,10 +106,18 @@
+@@ -104,10 +104,18 @@
 
  #if JOHN_SYSTEMWIDE
  #ifndef JOHN_SYSTEMWIDE_EXEC /* please refer to the notes above */
 -#define JOHN_SYSTEMWIDE_EXEC		"/usr/libexec/john"
 +#if defined(_SNAP)
-+#define JOHN_SYSTEMWIDE_EXEC		"/snap/john-the-ripper/current/run"
++#define JOHN_SYSTEMWIDE_EXEC		"/snap/john-the-ripper/current/bin"
 +#else
 +#define JOHN_SYSTEMWIDE_EXEC		"/app/bin"
 +#endif
@@ -49,7 +49,7 @@ index 83afed9eb..fa7d43f58 100644
  #ifndef JOHN_SYSTEMWIDE_HOME
 -#define JOHN_SYSTEMWIDE_HOME		"/usr/share/john"
 +#if defined(_SNAP)
-+#define JOHN_SYSTEMWIDE_HOME		"/snap/john-the-ripper/current/run"
++#define JOHN_SYSTEMWIDE_HOME		"/snap/john-the-ripper/current/bin"
 +#else
 +#define JOHN_SYSTEMWIDE_HOME		"/app/bin"
 +#endif
@@ -57,4 +57,4 @@ index 83afed9eb..fa7d43f58 100644
  #define JOHN_PRIVATE_HOME		"~/.john"
  #endif
 --
-2.39.2
+2.43.0
