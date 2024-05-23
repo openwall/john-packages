@@ -108,6 +108,7 @@ function do_release() {
 	EOF
 
 	if [[ ${FLATPAK_BUILD-0} -ne 1 ]]; then
+		JOHN_COMMIT="$(git rev-parse HEAD 2>/dev/null)"
 		JOHN_PACKAGES_COMMIT="$(git ls-remote -q https://github.com/openwall/john-packages.git HEAD | cut -f1)"
 		JOHN_RELEASE_COMMIT="$(git ls-remote -q https://github.com/openwall/john-packages.git release | cut -f1)"
 	fi
@@ -131,7 +132,7 @@ function do_release() {
 			#
 			#   The john (upstream) repository reference
 			[Repository john]
-			Commit="f9fedd238b0b1d69181c1fef033b85c787e96e57"
+			Commit="${JOHN_COMMIT-Unknown}"
 		EOF
 
 		cat <<-EOF

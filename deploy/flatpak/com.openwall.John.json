@@ -41,6 +41,7 @@
                 "cp ../run/john.*_completion /app/share/bash-completion/completions"
             ],
             "secret-env": [
+                "JOHN_COMMIT",
                 "JOHN_PACKAGES_COMMIT",
                 "JOHN_RELEASE_COMMIT"
             ],
