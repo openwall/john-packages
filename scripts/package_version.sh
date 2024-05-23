@@ -28,20 +28,19 @@ if [[ -z "$ID" || "$ID" == "404: Not Found" ]]; then
 	if [[ -f ../../john/Release.ID ]]; then
 		echo "==== Using flatpak's Release.ID ====" >&2
 		ID=$(cat ../../john/Release.ID)
-	else
-		echo "==== Using the hardcoded version value ====" >&2
-		ID="roll+"
 	fi
 else
 	echo "==== Using the version from 'Release.ID' ====" >&2
 fi
-echo "$ID$git_tag"
+size=${#ID}
 
-# Release example
-# 1.9J2-07f7216
+if [[ $size -gt 6 || "$ID" == v* ]]; then
+	echo "$ID"
+else
+	echo "$ID$git_tag"
+fi
 
-# Rolling example
-# roll+39db7dd
-
-# Development example (post Jumbo 2)
-# 1.9J2+c9825e6
+# Examples
+# 1.9J1+2404     # Rolling release
+# 1.9J1+c9825e6  # Development version
+# v1.10.0        # A real release (without the name Jumbo)

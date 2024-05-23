@@ -31,6 +31,16 @@ The "pin upstream commit" is ready.
 - [ ] Add a new commit to the `release` branch;
   - This is the "release commit".
 - [ ] Update all release-related documentation;
+  - Update all texts that need to be changed;
+  - Update the `Release.ID` file;
+
+    ```text
+    Examples:
+    1.9J1+         # Development version
+    1.9J1+2404     # Rolling release
+    v1.10.0        # A real release (without the name Jumbo)
+    ```
+
   - Amend and push the "release commit".
 
 The "release commit" is almost ready.

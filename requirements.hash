@@ -1,7 +1,7 @@
 b2496e6aa32484facbc0404e10636437de5ab93884f5e014538b298f1f68a7de  ./ci_controller.sh
 a1788258b118178c77e6d7de16723e07b2aa9191e7414a84e756fa831d02d0aa  ./clean_package.sh
 dbb14cb56af2895d5cf5aced0d39fbc5aa20c5ac690430a4baebc17bdb6e5e2b  ./helper.sh
-e1a7e9691bfaba3398eb28ac724a79df5e76f66d243c97f142b2aa415b9bc27f  ./package_version.sh
+a11e89f1d10be4235e247bc815e0549f06bef22fb5414acecf7d3e82cee0a70a  ./package_version.sh
 508aa12b1fa9bce92ef494c4d8a24cd68f6ee8d7c008c05c2d5e55a9d788b046  ./run_tests.sh
 5e4629cce7b4552876dc308a659e878b1b196df60327df50f462ec899d6d28ed  ./show_info.sh
 11aa0fb376310c49eb5c915f5db2c066d2e8b35950e8a6b604d75104994ec04f  ./Handle-self-confined-system-wide-build.patch
