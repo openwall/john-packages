@@ -34,6 +34,10 @@ Please just report issues in public right away:
 - if you are worried about a package or its dependencies, create a bug report [here](https://github.com/openwall/john-packages/issues);
 - otherwise, at [https://github.com/openwall/john/issues](https://github.com/openwall/john/issues).
 
+The `john` community will send you a response indicating the next steps in handling your report. After the initial
+response to your report, the security team will keep you informed of progress and may request additional
+information or guidance.
+
 If the issue is confirmed, `john` community will release a patch as soon as possible depending on complexity.
 
 Please note that for security purposes all inputs are considered trusted by upstream `john`, and it should
