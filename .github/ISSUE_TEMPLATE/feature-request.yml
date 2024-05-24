@@ -1,0 +1,38 @@
+---
+name: Feature Request
+description: Request a new feature.
+title: "[FEAT]: "
+labels: "Type: Feature Request"
+
+body:
+  - type: markdown
+    id: header
+    attributes:
+      value: |
+        Thanks for filling out this feature request.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A brief description of the feature request.
+      placeholder: |
+        Provide a clear and concise description of the new feature you'd like to see.
+        For example: I'm always frustrated when [...]
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Alternatives Considered
+      description: Alternatives to this feature request.
+      placeholder: Provide details around any alternative solutions or features you've considered.
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Additional Context
+      description: Other relevant context.
+      placeholder: |
+        Add any other context about your feature request here. E.g. paste a screenshot, or provide a link.

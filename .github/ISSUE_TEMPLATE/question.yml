@@ -1,0 +1,23 @@
+name: Question
+description: Ask us a question.
+labels: ["question"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for asking a question!
+
+        - Remember to include sufficient details and context.
+        - If you have multiple questions please submit them separately so we can track resolution.
+        - If you're trying to start a conversation on a topic, consider using [Discussions](https://github.com/openwall/john-packages/discussions).
+          We want to close every issue as quickly as possible, but discussions are intended for longer conversations.
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: What would you like to know?
+      placeholder: The more details, the better
+    validations:
+      required: true

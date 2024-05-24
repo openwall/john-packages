@@ -199,7 +199,6 @@ tcp
 templatefile
 terraform
 tfstate
-thumbsup
 tld
 tls
 tmp

@@ -1,0 +1,50 @@
+name: Bug Report
+description: Create a report to help us improve.
+title: "[BUG]: "
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We expect reports of issues from the latest revision found in GitHub repository. We do not expect in here, and
+        have little use for, reports of issues only seen in an ancient release or in a distro package.
+
+  - type: dropdown
+    attributes:
+      label: Which version of the application are you using?
+      description: Select the appropriate versions.
+      multiple: true
+      options:
+        - 1.9J1+2404
+        - latest bleeding
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Description of the bug
+      description: Tell us what bug you encountered and what should have happened.
+      placeholder: |
+        The more information you can provide, the easier it will be to reproduce the issue and find a fix.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Steps To Reproduce
+      description: |
+        The command-line you executed and the output you got.
+      placeholder: Please write the steps in a list form
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Your execution environment
+      placeholder: |
+        The output of './john --list=build-info'
+        The output of './john --list=opencl-devices' (if applicable)
+    validations:
+      required: false
