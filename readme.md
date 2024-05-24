@@ -130,12 +130,12 @@ follow these steps:
 
 The highlights (👀):
 
-- fallback for CPU[*] and OMP;
-- OpenCL available (GPU driver installation is needed);
+- has fallback for CPU[*] and OMP;
+- has OpenCL available (GPU driver installation is needed);
 - generic crypt(3) format available;
 - security feature Address Space Layout Randomisation (ASLR) enabled;
 - security feature Data Execution Prevention (DEP) enabled;
-- the released version of John 1.9.0 Jumbo 1+ (is a rolling release);
+- there is a recently released version (it is a rolling release);
 - a development version is also available.
 
 [*] John the Ripper runs using the best SIMD instructions available on the host
@@ -145,9 +145,8 @@ it's running on.
 
 [![Windows Downloads][linkBadgeDownloadWindows]][linkReleases]
 
-Using the above instructions you can install the released version of John
-the Ripper Jumbo 1+, the hot and bleeding version, or a previous stable
-version in your system.
+Using the instructions above, you can install the released version of `john`,
+or the bleeding development version, or an earlier stable version on your system.
 
 The package contains all the executables and libraries needed to run a fresh
 John the Ripper installation.
@@ -241,14 +240,14 @@ points to its build log.
 
 The highlights (👀):
 
-- fallback for CPU[*] and OMP;
-- OpenCL available (GPU driver installation is needed);
+- has fallback for CPU[*] and OMP;
+- has OpenCL available (GPU driver installation is needed);
 - John the Ripper is a "featured software" in the security category on Canonical Snap Store;
 - John the Ripper is a software with 4-star (⭐⭐⭐⭐) user reviews on Canonical Snap Store;
 - John the Ripper is tagged as safe, confined and auditable software on Canonical Snap Store;
 - John the Ripper supports and has a package for all architectures supported by Ubuntu itself.
 - also available via the alias **john**, e.g. `john -list=build-info`;
-- the released version of John 1.9.0 Jumbo 1+ (is a rolling release);
+- there is a recently released version (it is a rolling release);
 - a development version is also available.
 
 [*] John the Ripper runs using the best SIMD instructions available on the host
@@ -297,16 +296,15 @@ out of the sandbox, unconfined (e.g., run `/snap/john-the-ripper/current/run/joh
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)][linkSnapcraftJohn]
 
-If you followed the above instructions, you installed the released version of John
-the Ripper Jumbo 1+ in your system. If you want to access the hot and bleeding
-developing version of JtR, you must follow a development channel. For a clean
-installation:
+If you followed the instructions above, you have installed the released version of `john`
+on your system. If you want to access the hot and bleeding development version of JtR,
+you must follow the edge channel. For a clean install:
 
 ```bash
  sudo snap install --channel=edge john-the-ripper
 ```
 
-If you already has JtR installed:
+If you already have JtR installed:
 
 ```bash
  sudo snap refresh --channel=edge john-the-ripper
@@ -349,10 +347,10 @@ Execute John the Ripper:
 
 The highlights (👀):
 
-- fallback for CPU[*] (if that makes sense) and OMP;
-- OpenCL available;
+- has fallback for CPU[*] (if that makes sense) and OMP;
+- has OpenCL available;
 - built using clang from the official XCode toolchain plus non-system libraries from Homebrew;
-- the released version of John 1.9.0 Jumbo 1+ (is a rolling release);
+- there is a recently released version (it is a rolling release);
 - a development version is also available.
 
 [*] John the Ripper runs using the best SIMD instructions available on the host
@@ -362,9 +360,8 @@ it's running on.
 
 [![macOS Downloads][linkBadgeDownloadMac]][linkReleases]
 
-Using the above instructions you can install the released version of John
-the Ripper Jumbo 1+, the hot and bleeding version, or a previous stable
-version in your system.
+Using the instructions above, you can install the released version of `john`,
+or the bleeding development version, or an earlier stable version on your system.
 
 The package contains the necessary executables to run a fresh install of John the Ripper.
 You must install required Homebrew libraries.
@@ -434,9 +431,9 @@ you can access and audit any file located in your home. Below, an usage example:
 
 The highlights (👀):
 
-- fallback for CPU[*] and OMP;
-- the released version of John 1.9.0 Jumbo 1+ (is a rolling release):
-  - is also available via FlatHub at <https://flathub.org/apps/com.openwall.John>.
+- has fallback for CPU[*] and OMP;
+- there is a recently released version (it is a rolling release):
+  - also available via FlatHub at <https://flathub.org/apps/com.openwall.John>.
 - a development version is also available.
 
 [*] John the Ripper runs using the best SIMD instructions available on the host
@@ -449,9 +446,8 @@ it's running on.
 <!--
 // jscpd:ignore-start
 -->
-Using the above instructions you can install the released version of John
-the Ripper Jumbo 1+, the hot and bleeding version, or a previous stable
-version in your system.
+Using the instructions above, you can install the released version of `john`,
+or the bleeding development version, or an earlier stable version on your system.
 
 <details>
   <summary>OpenSSF SLSA</summary>
@@ -507,9 +503,9 @@ The highlights (👀):
 - has NVIDIA OpenCL available (GPU driver is required on the host);
 - has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`;
   - example: `docker run ghcr.io/openwall/john:latest best -list=build-info`.
-- the released version of John 1.9.0 Jumbo 1+ (is a rolling release):
+- there is a recently released version (it is a rolling release):
   - install from the command-line: `docker pull ghcr.io/openwall/john:latest`.
-- the development version:
+- a development version is also available:
   - install from the command-line: `docker pull ghcr.io/openwall/john:bleeding`.
 
 ### Docker Image Deployments
@@ -519,9 +515,8 @@ The highlights (👀):
 <!--
 // jscpd:ignore-start
 -->
-Using the above instructions you can install the released version of John
-the Ripper Jumbo 1+, the hot and bleeding version, or a previous stable
-version in your system.
+Using the instructions above, you can install the released version of `john`,
+or the bleeding development version, or an earlier stable version on your system.
 
 <details>
   <summary>OpenSSF SLSA</summary>

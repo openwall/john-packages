@@ -25,7 +25,7 @@ version: 1.9J1+2404
 
 base: core22
 confinement: strict
-grade: stable #TODO: [stable or devel] edit before release (JUMBO_RELEASE)
+grade: stable #TODO: [stable or devel] edit before release (BLEEDING_RELEASE)
 
 assumes: [snapd2.41]
 adopt-info: john-the-ripper
