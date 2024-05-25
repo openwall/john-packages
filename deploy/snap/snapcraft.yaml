@@ -49,7 +49,6 @@ icon: com.openwall.John.png
 apps:
   john-the-ripper:
     command: bin/john
-    desktop: com.openwall.John.desktop
     plugs: [home, removable-media]
   opencl:
     command: bin/john
@@ -89,6 +88,7 @@ apps:
     plugs: [home, removable-media]
   info:
     command: bin/run-john.sh
+    desktop: com.openwall.John.desktop
 
 parts:
   john-the-ripper:
