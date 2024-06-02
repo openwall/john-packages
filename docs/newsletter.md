@@ -9,12 +9,18 @@ I emphasize that **everyone should upgrade to `1.9J1+2404` (rolling-2404)**, the
 - is stable and reliable at this time:
   - only small and "safe" changes were introduced recently.
 
-Important note: _create a backup of your pot and session files_ before updating:
+> [!IMPORTANT]
+>
+> _Create a backup of your pot and session files_ before updating:
+>
+> - these files reside in the `.john` folder within your home folder;
+> - for snap package users, find the `.john` folder inside `$HOME/snap/john-the-ripper`.
 
-- these files reside in the `.john` folder within your home folder;
-- for snap package users, find the `.john` folder inside `$HOME/snap/john-the-ripper`.
+Besides:
 
-| 🔍 Please **use caution when accessing sites that claim to be sources for John the Ripper download**.
+> [!CAUTION]
+>
+> 🔍 Please **use discretion when accessing sites that claim to be sources for John the Ripper download**.
 
 Also:
 
@@ -32,8 +38,6 @@ Also:
 - Remove 32-bit snap armhf build; i386 is already deprecated in ubuntu-core; [2024]
 - Stop building SSE2 binaries. Spare hardware and build time; [2024]
   - AVX is already required for a list of well-known consumer software.
-- I intend to stop merging unreviewed (non-essential) commits [1]. As we produce binaries,
-  it is mandatory to apply good policies. [2024]
 - Update flatpak package runtime to Flatpak SDK 24.08. [2025]
 - Update snap package runtime to Ubuntu 24.04. [2025]
 - Update macOS build environment to macOS 14 Sonoma. [2025]
