@@ -4,15 +4,15 @@ Please, also check the [Wiki](https://github.com/openwall/john-packages/wiki) fo
 
 ## End User Documentation
 
-- [Advices to anyone facing OpenCL issues](opencl-issues.md)
-- [Configuring packages via john.conf](configure%20packages%20via%20john-conf.md)
-- [Enabling alias for John The Ripper snap](examples-snap-alias.md)
-- [Our newsletter](newsletter.md)
-- [Running John The Ripper on Docker](examples-docker.md)
-- [Running John The Ripper on Windows](examples-windows.md)
+1. [Advices to anyone facing OpenCL issues](opencl-issues.md)
+2. [Configuring packages via john.conf](configure%20packages%20via%20john-conf.md)
+3. [Enabling alias for John The Ripper snap](examples-snap-alias.md)
+4. [Our newsletter](newsletter.md)
+5. [Running John The Ripper on Docker](examples-docker.md)
+6. [Running John The Ripper on Windows](examples-windows.md)
 
 ## Developer Documentation
 
-- [How a commit message should be?](commit-messages.md)
-- [How to become a maintainer?](become-maintainer.md)
-- [Our release process](release-process.md)
+1. [How a commit message should be?](commit-messages.md)
+2. [How to become a maintainer?](become-maintainer.md)
+3. [Our release process](release-process.md)
