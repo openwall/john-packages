@@ -25,7 +25,7 @@
 # Required defines
 arch=$(uname -m)
 DEPLOY_PAK="Yes"
-JTR_BIN='/snap/john-the-ripper/current/run/john'
+JTR_BIN='/snap/john-the-ripper/current/bin/john'
 JTR_CL="$JTR_BIN"
 TEST=';full;extra;' # Controls how the test will happen
 BASE="Ubuntu"
@@ -103,7 +103,7 @@ if [[ $CI_TEST -eq 0 ]]; then
 	echo "---------------------------- TESTING -----------------------------"
 	# Allow to test a system wide build
 	mkdir --parents /snap/john-the-ripper/current/
-	ln -s "$(realpath ../run)" /snap/john-the-ripper/current/run
+	ln -s "$(realpath ../run)" /snap/john-the-ripper/current/bin
 
 	# Adjust the testing environment, import and run some testing
 	wget https://raw.githubusercontent.com/claudioandre-br/JtR-CI/main/tests/disable_formats.sh

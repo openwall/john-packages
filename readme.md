@@ -290,7 +290,7 @@ As noted at <https://forum.snapcraft.io/t/snaps-and-opencl/8509/17>, the use of
 OpenCL by snaps is a problem. Support for NVIDIA cards is under development.
 
 As a "general" solution (or in the case of AMD hardware), the user can run john
-out of the sandbox, unconfined (e.g., run `/snap/john-the-ripper/current/run/john`).
+out of the sandbox, unconfined (e.g., run `/snap/john-the-ripper/current/bin/john`).
 
 ### Snap Deployments
 
