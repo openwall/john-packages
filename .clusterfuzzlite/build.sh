@@ -34,9 +34,9 @@ if [[ "$SANITIZER" == "address" ]]; then
 	cp ../run/john "$OUT"/
 
 	echo "------------------ Disable problematic formats -------------------"
-	echo '[Local:Disabled:Formats]' >>../run/john-local.conf
-	echo 'crypt = Y' >>../run/john-local.conf
-
+	{
+		echo '[Local:Disabled:Formats]'
+	} >>../run/john-local.conf
 	echo "-------------------------- ASAN fuzzing --------------------------"
 	echo "$ JtR ASAN --test=0"
 	../run/john --test=0
