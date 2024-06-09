@@ -51,7 +51,6 @@ if [[ "$SANITIZER" == "undefined" ]]; then
 	echo "------------------ Disable problematic formats -------------------"
 	{
 		echo '[Local:Disabled:Formats]'
-		echo 'ZIP = Y'
 	} >>../run/john-local.conf
 	echo "------------------------- UBSAN fuzzing --------------------------"
 	echo "$ JtR UBSAN --test=0"
