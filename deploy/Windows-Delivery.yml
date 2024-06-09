@@ -187,18 +187,20 @@ steps:
       REM # Remove unused/unneeded stuff
       rmdir "%JTR_FOLDER%\run\ztex" /s /Q
 
-      REM # Remove hidden .name files and folders
+      REM # Cleanup. Remove unnecessary files and folders
       del "%JTR_FOLDER%\appveyor.yml"
-      if NOT "%test%" == "package" del "%JTR_FOLDER%\azure-pipelines.yml"
-      if NOT "%test%" == "package" del "%JTR_FOLDER%\.cirrus.yml"
+      del "%JTR_FOLDER%\azure-pipelines.yml"
+      del "%JTR_FOLDER%\.cirrus.yml"
       del "%JTR_FOLDER%\.editorconfig"
       del "%JTR_FOLDER%\.gitattributes"
       del "%JTR_FOLDER%\.gitignore"
       del "%JTR_FOLDER%\.mailmap"
       del "%JTR_FOLDER%\.pre-commit.sh"
       del "%JTR_FOLDER%\.travis.yml"
+      del "%JTR_FOLDER%\shell.nix"
+      del "%JTR_FOLDER%\requirements.txt"
 
-      if NOT "%test%" == "package" rmdir "%JTR_FOLDER%\.azure"    /s /Q
+      rmdir "%JTR_FOLDER%\.azure"    /s /Q
       rmdir "%JTR_FOLDER%\.ci"       /s /Q
       rmdir "%JTR_FOLDER%\.circleci" /s /Q
       rmdir "%JTR_FOLDER%\.github"   /s /Q
