@@ -36,9 +36,9 @@ The "pin upstream commit" is ready.
 
     ```text
     Examples:
-    1.9J1+         # Development version
-    1.9J1+2404     # Rolling release
-    v1.10.0        # A real release (without the name Jumbo)
+    1.9+           # Development version
+    1.9+2404       # Rolling release
+    v1.10.0        # A real release
     ```
 
   - Amend and push the "release commit".

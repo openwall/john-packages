@@ -24,8 +24,8 @@ receiving such patches depends on the version:
 | Version                | Supported | Note                      |
 | ---------------------- | :-------: | ------------------------- |
 | upstream bleeding code |     ✔     | Under development version |
-| rolling 1.9J1+2404     |     ✔     | Most recent release       |
-| jumbo 1 or older       |    ❌     | No longer maintained      |
+| latest release         |     ✔     | Most recent release       |
+| any previous release   |    ❌     | No longer maintained      |
 
 ## Reporting a Vulnerability
 
