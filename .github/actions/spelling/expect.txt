@@ -186,6 +186,7 @@ socio
 solucao
 sonarlint
 sonarsource
+sonoma
 squashfs
 ssd
 sse
@@ -210,7 +211,6 @@ usesh
 usr
 utf
 vcs
-ventura
 Veyor
 virustotal
 vmactions
