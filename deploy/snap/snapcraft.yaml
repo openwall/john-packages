@@ -23,7 +23,7 @@
 name: john-the-ripper
 version: 1.9J1+2404
 
-base: core22
+base: core24
 confinement: strict
 grade: stable #TODO: [stable or devel] edit before release (BLEEDING_RELEASE)
 
