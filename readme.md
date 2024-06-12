@@ -416,7 +416,7 @@ To install JtR download the john.flatpak file and run:
  # Note that root privileges are required for some operations.
  sudo dnf install -y flatpak # or 'yum install', 'apt-get install', etc.
  sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo # flatpak repository
- sudo flatpak install -y flathub org.freedesktop.Platform//23.08 # install the runtime (base "container")
+ sudo flatpak install -y flathub org.freedesktop.Platform//24.08 # install the runtime (base "container")
  flatpak --user install --bundle john.flatpak # per-user installation (not system wide)
 ```
 
