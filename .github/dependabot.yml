@@ -4,37 +4,35 @@ updates:
   - package-ecosystem: github-actions
     directory: /
     schedule:
-      interval: daily
-
-  - package-ecosystem: docker
-    directory: /
-    schedule:
-      interval: daily
+      interval: "weekly"
+      day: "saturday"
 
   - package-ecosystem: docker
     directory: /IDE/.devcontainer
     schedule:
-      interval: daily
+      interval: "weekly"
+      day: "saturday"
 
   - package-ecosystem: docker
     directory: /cloud-tool
     schedule:
-      interval: daily
+      interval: "weekly"
+      day: "saturday"
 
   - package-ecosystem: docker
     directory: /deploy/docker
     schedule:
-      interval: daily
+      interval: "weekly"
+      day: "saturday"
 
   - package-ecosystem: docker
     directory: /CI/Dockerfiles
     schedule:
-      interval: daily
+      interval: "weekly"
+      day: "saturday"
 
   - package-ecosystem: docker
     directory: /.clusterfuzzlite
     schedule:
       interval: "weekly"
-      day: "sunday"
-    assignees:
-      - "claudioandre-br"
+      day: "saturday"
