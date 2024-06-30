@@ -46,3 +46,17 @@ All except s390x and riscv64 binaries support SIMD.
 
 - [Jumbo 1 release](Releases/1.9.0.J1/RELEASE-NOTES.md)
 - [Rolling releases](Releases/rolling/RELEASE-NOTES.md)
+
+---
+
+## Monitoring and Controlling Phase
+
+All the features we were interested in implementing were implemented. We consider it done!
+
+Therefore, the repository now enters a **frozen stage**. Nothing new will be developed.
+
+The bots will continue to select and submit updates for all dependencies, and a human will
+evaluate and integrate them. But only this.
+
+Rolling releases will no longer be published: it is not correct to choose a version at random;
+this kind of thing needs to happen in the upstream repository.
