@@ -1,13 +1,11 @@
 # News and Plans
 
-Welcome to May’s edition of the Newsletter!
+Welcome to July’s edition of the Newsletter!
 
-I emphasize that **everyone should upgrade to `1.9J1+2404` (rolling-2404)**, the latest release, or its corresponding upstream commit:
+**Everyone should upgrade to `1.9J1+2404`** or its corresponding upstream commit:
 
 - it contains several bugfixes, including some important ones related to formats bugs and OpenCL NVIDIA on Windows;
-- it contains several important improvements such as "opportunistic dupe suppression";
-- is stable and reliable at this time:
-  - only small and "safe" changes were introduced recently.
+- it contains several important improvements such as "opportunistic dupe suppression".
 
 > [!IMPORTANT]
 >
@@ -35,15 +33,7 @@ Also:
 
 ## Project Next Steps: what will happen
 
-- Remove 32-bit snap armhf build; i386 is already deprecated in ubuntu-core; [2024]
-- Stop building SSE2 binaries. Spare hardware and build time; [2024]
-  - AVX is already required for a list of well-known consumer software.
-- Update flatpak package runtime to Flatpak SDK 24.08. [2025]
-- Update snap package runtime to Ubuntu 24.04. [2025]
-- Update macOS build environment to macOS 14 Sonoma. [2025]
-
-[1] If a commit is not essential for maintaining the repository, it will wait for a reviewer.
-Pull requests related to this rule/criteria are labeled 'help wanted'.
+- [NOTHING yet];
 
 ## Project Expectations: what will probably (is expect to) happen
 
