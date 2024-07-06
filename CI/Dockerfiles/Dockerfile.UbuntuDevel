@@ -20,7 +20,7 @@
 # Dockerfile for Continuous Integration
 # More info at https://github.com/openwall/john-packages
 
-FROM ubuntu:devel@sha256:1cb75bbc36738eec8f60ae12d71cd3a191bf4e6256f2fd5706bd8480257d0cee
+FROM ubuntu:devel@sha256:25895062172a2f39ae36da530f3db244b507d7ffb1c4dd42a3a487b5b446e996
 LABEL org.opencontainers.image.authors="Claudio André <dev@claudioandre.slmail.me>"
 LABEL description="Docker images for John the Ripper CI (1.0.Ubuntu Devel)"
 LABEL org.opencontainers.image.source="https://github.com/openwall/john-packages"
