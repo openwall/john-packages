@@ -82,7 +82,7 @@
         <p>All binaries support SIMD:</p>
         <ul>
           <li>The aarch64 binaries support ASIMD</li>
-          <li>The X86_64 binaries support AVX, AVX2, AVX512F and AVX512BW</li>
+          <li>The X86_64 binaries support AVX, AVX2, and AVX512BW</li>
         </ul>
       </description>
     </release>

@@ -24,11 +24,11 @@
 set -e
 echo "$@"
 ids="avx-omp avx avx2-omp avx2
-          avx512f-omp avx512f avx512bw-omp avx512bw
+          avx512bw-omp avx512bw
           ztex-omp ztex best
           omp aarch64
           "
-binaries="/john/run/john-avx512bw-omp /john/run/john-avx512f-omp /john/run/john-avx2-omp
+binaries="/john/run/john-avx512bw-omp /john/run/john-avx2-omp
           /john/run/john-avx-omp
           /john/run/john-omp
           "
@@ -43,7 +43,7 @@ if [[ "$requested" = 'avx-omp' || "$requested" = 'avx' || "$requested" = 'avx2-o
 	exec "/john/run/john-$requested" "$@"
 elif [[ "$requested" = 'omp' || "$requested" = 'aarch64' ]]; then
 	exec "/john/run/john-$requested" "$@"
-elif [[ "$requested" = 'avx512f-omp' || "$requested" = 'avx512f' || "$requested" = 'avx512bw-omp' || "$requested" = 'avx512bw' ]]; then
+elif [[ "$requested" = 'avx512bw-omp' || "$requested" = 'avx512bw' ]]; then
 	exec "/john/run/john-$requested" "$@"
 elif [[ "$requested" = 'ztex-omp' || "$requested" = 'ztex' ]]; then
 	echo "Binary /john/run/john-$requested  disabled (please, open a bug report)"
