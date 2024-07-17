@@ -22,15 +22,15 @@ DO NOT REMOVE YOUR `john.pot` IF IT MATTERS TO YOU. Save it first, at least.
 $ cd ~
 
 $ john --list=build-info
-Version: 1.9.0-jumbo-1+bleeding-3553509ce9 2023-05-08 13:39:36 +0200
+Version: 1.9.0-jumbo-1+bleeding-9950d782a7 2024-06-08 16:38:48 +0200
 Build: linux-gnu 64-bit x86_64 AVX2 AC OMP OPENCL
 SIMD: AVX2, interleaving: MD4:3 MD5:3 SHA1:1 SHA256:1 SHA512:1
 Deploy: sandboxed as a Snap app
-System-wide exec: /snap/john-the-ripper/current/run
-System-wide home: /snap/john-the-ripper/current/run
+System-wide exec: /snap/john-the-ripper/current/bin
+System-wide home: /snap/john-the-ripper/current/bin
 Private home: ~/.john
 [...]
-$JOHN is /snap/john-the-ripper/current/run/
+$JOHN is /snap/john-the-ripper/current/bin/
 [...]
 ```
 
@@ -62,7 +62,7 @@ Session stopped (max run-time reached)
 - Use your personal/edited `john.conf`
 
 ```bash
-$ cp /snap/john-the-ripper/current/run/john.conf ~/snap/john-the-ripper/current/.john/john.conf
+$ cp /snap/john-the-ripper/current/bin/john.conf ~/snap/john-the-ripper/current/.john/john.conf
 # File copied.
 
 $ sed -i 's/DefaultMask = ?1?2?2?2?2?2?2?3?3?3?3?d?d?d?d/DefaultMask = Hello?awor?l?l?a/g' ~/snap/john-the-ripper/current/.john/john.conf
