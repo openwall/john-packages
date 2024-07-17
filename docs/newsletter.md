@@ -33,7 +33,7 @@ Also:
 
 ## Project Next Steps: what will happen
 
-- [NOTHING yet];
+- drop the obsolete and exotic AVX512F.
 
 ## Project Expectations: what will probably (is expect to) happen
 
