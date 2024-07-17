@@ -102,7 +102,7 @@ instance of the application).
 
 ## 📂 Windows
 
-> Delivered using Microsoft-hosted Windows 2019 Server in Azure [ supports up to AVX512BW ]
+> Delivered using Microsoft-hosted Windows 2022 Server in Azure [ supports up to AVX512BW ]
 
 To install John the Ripper by downloading the .7z file and installing it manually,
 follow these steps:
