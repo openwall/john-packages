@@ -349,7 +349,7 @@ The highlights (👀):
 
 - has fallback for CPU[*] (if that makes sense) and OMP;
 - has OpenCL available;
-- built using clang from the official XCode toolchain plus non-system libraries from Homebrew;
+- built using clang from the official Xcode toolchain plus non-system libraries from Homebrew;
 - there is a recently released version (it is a rolling release);
 - a development version is also available.
 
