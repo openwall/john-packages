@@ -2,7 +2,7 @@
 
 - When releasing, create signed commits and tags;
   - You will need to use the CLI, but then just access and use the GitHub GUI as usual.
-- To sign the source code tarball:
+- We do create OpenPGP-signed releases on GitHub [1]. To sign the source code tarball:
 
   ```bash
   # Create a release
@@ -45,19 +45,23 @@ The "pin upstream commit" is ready.
 
 The "release commit" is almost ready.
 
-- [ ] Run all CI (standard, macOS, GitLab, Solaris and Android); [1]
+- [ ] Run all CI (standard, macOS, GitLab, Solaris and Android); [2]
   - Confirm that all builds are OK.
-- [ ] Build the snap (use Launchpad); [2]
+- [ ] Build the snap (use Launchpad); [3]
   - Confirm that all builds are OK.
-- [ ] Build the Docker image (bleeding or latest); [3]
-  - Run the workflow from the `release` branch (`main` doesn't know the proper commit hash yet).
-    See note [*];
+
+If you are creating a "real release", perform a cherry-pick, merge, and push the "pin upstream commit"
+into the main branch. See note [*].
+
+- [ ] Build the Docker image (bleeding or latest); [4]
+  - If you are creating a bleeding version, run the workflow from the `release` branch
+   (`main` doesn't know the proper commit hash). See note [*];
   - Confirm that all builds are OK.
 - [ ] Release to snap store and flathub;
 
 All binaries are ready.
 
-- [ ] Update versions of the software used for packaging (in deploy/readme and CI/readme); [4]
+- [ ] Update versions of the software used for packaging (in deploy/readme and CI/readme); [5]
   - Amend and push the "release commit";
   - This is also a valid point for performing the merge. See note [*].
 
@@ -65,15 +69,15 @@ The "release commit" is ready.
 
 - [ ] Add a new commit to the `release` branch;
   - This is the "logs commit".
-- [ ] Update all logs in /Releases/[RELEASE]; [5]
+- [ ] Update all logs in /Releases/[RELEASE]; [6]
   - Amend and push the "logs commit".
 
 The "logs commit" is ready.
 
-- [ ] Merge the PR; [6]
+- [ ] Merge the PR; [7]
   - Go to the `main` branch and use a fast forward merge;
   - `git checkout main; git merge --ff-only release`.
-- [ ] Create the release tag; [7]
+- [ ] Create the release tag; [8]
   - `git tag <tag> -m "release: <tag> $(date +%Y%m%d)"`.
 - [ ] Update the repository;
   - `git push -u origin main`;
@@ -83,19 +87,24 @@ The "logs commit" is ready.
 
 Footnotes:
 
-1. all files that will be in the GitHub release are ready to go. Still need to be released;
-2. all snap packages are ready to go. Still need to be released;
-3. the Docker image has been released;
-4. manual task of accessing logs and copying information;
-5. update and run get-files.sh;
-6. the release itself is based on the last commit and its git tag;
-7. e.g., for a rolling release in Oct 2023, the `<tag>` value should be rolling-2310.
+1. this way users can verify whether what they received matches the same tarball we have released;
+2. all files that will be in the GitHub release are ready to go. Still need to be released;
+3. all snap packages are ready to go. Still need to be released;
+4. the Docker image will be automatically deployed;
+5. manual task of accessing logs and copying information;
+6. update and run get-files.sh;
+7. the release itself is based on the last commit and its Git tag;
+   naturally, you will only merge if you are working in a "real release".
+8. e.g., for a rolling release in Oct 2023, the `<tag>` value should be rolling-2310.
 
 > [!NOTE]
 >
-> Note [*]:
+> [*]:
 > we use the `release` branch as a staging area, so that we can build development packages
-> without polluting the `main` branch. However, if you merge at the point where the "release
-> commit" is ready, you can release an official version without relying on a working branch
-> like the `release` branch. Of course, the lack of a `release` branch would make it
-> impossible to create a development and test package version.
+> without polluting the `main` branch. In case of real releases, the maintainer is free to
+> merge the changes as soon as they are ready, on the other hand, incomplete and staging
+> release changes cannot be added to the main branch.
+>
+> Of course, you can release an official version without relying on a working branch
+> like the `release` branch. Note, however, that the lack of a `release` branch would make it
+> impossible to create a development and test version of the package (the bleeding release).

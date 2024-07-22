@@ -152,6 +152,7 @@ Pak
 passphrase
 pdf
 peflags
+PGP
 pocl
 ppc
 prismacloud
@@ -189,7 +190,6 @@ sonarsource
 sonoma
 squashfs
 ssd
-sse
 SSSE
 stdlib
 strderr
