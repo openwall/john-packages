@@ -23,7 +23,7 @@
 # John the Ripper Docker image is hosted at GitHub Packages
 #   https://github.com/openwall/john-packages/pkgs/container/john
 
-FROM nvidia/cuda:12.5.1-base-ubuntu22.04@sha256:47181750209e68cab2e36c3e0e8ab0ab8d76bdabbb418e56e4b0ac7b08b97d34 AS build
+FROM nvidia/cuda:12.5.1-base-ubuntu24.04@sha256:3c873cb78e31c983287909538738aca572887a919dae789bd04219e1d702c294 AS build
 WORKDIR /build/
 COPY build.sh .
 
@@ -36,7 +36,7 @@ RUN ./build.sh "$TYPE" "$RELEASE_COMMIT"
 # ==================================================================
 # Build the final lean Docker image
 # ------------------------------------------------------------------
-FROM nvidia/cuda:12.5.1-base-ubuntu22.04@sha256:47181750209e68cab2e36c3e0e8ab0ab8d76bdabbb418e56e4b0ac7b08b97d34
+FROM nvidia/cuda:12.5.1-base-ubuntu24.04@sha256:3c873cb78e31c983287909538738aca572887a919dae789bd04219e1d702c294
 
 # ==================================================================
 # Runtime setup and libraries
@@ -50,9 +50,9 @@ RUN useradd -U -m JtR \
     && export DEBIAN_FRONTEND="noninteractive" \
     && apt-get update -qq \
     && apt-get install -y --no-install-recommends \
-        libssl3=3.0* \
-        libgomp1=12.3* \
-        ocl-icd-libopencl1=2.2* \
+        libssl3t64=3.0* \
+        libgomp1=14* \
+        ocl-icd-libopencl1=2.3* \
 # ==================================================================
 # Clean up the image (shrink the Docker image)
 # ------------------------------------------------------------------
