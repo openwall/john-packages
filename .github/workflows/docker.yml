@@ -120,9 +120,13 @@ jobs:
         with:
           images: ${{ env.REPO }}:${{ github.event.inputs.tag }}
           labels: |
-            org.opencontainers.image.authors="Claudio André <claudioandre.br at gmail com>"
-            software="John the Ripper ${{ github.event.inputs.VERSION_NAME }}"
-            org.opencontainers.image.description="John the Ripper is an Open Source password security auditing and password recovery tool. See https://www.openwall.com/john/"
+            software=John the Ripper ${{ github.event.inputs.VERSION_NAME }}
+            org.opencontainers.image.authors=Claudio André <claudioandre.br at gmail com>
+            org.opencontainers.image.description=John the Ripper is an Open Source password security auditing and password recovery tool. See https://www.openwall.com/john/
+            org.opencontainers.image.title=John the Ripper CE Auditing Tool
+            org.opencontainers.image.url=https://www.openwall.com/john
+            org.opencontainers.image.version=${{ steps.data.outputs.version }}
+            org.opencontainers.image.vendor=Openwall
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@5927c834f5b4fdf503fca6f4c7eccda82949e1ee # v3.1.0
@@ -153,17 +157,7 @@ jobs:
           labels: |
             ${{ steps.meta.outputs.labels }}
           outputs: "type=image,name=target,\
-            annotation-index.software=John the Ripper ${{ github.event.inputs.VERSION_NAME }},\
-            annotation-index.org.opencontainers.image.authors=Claudio André <claudioandre.br at gmail com>,\
-            annotation-index.org.opencontainers.image.created=${{ steps.data.outputs.now }},\
-            annotation-index.org.opencontainers.image.description=John the Ripper is an Open Source password security auditing and password recovery tool. See https://www.openwall.com/john/,\
-            annotation-index.org.opencontainers.image.licenses=GPL-2.0,\
-            annotation-index.org.opencontainers.image.revision=${{ steps.data.outputs.revision }},\
-            annotation-index.org.opencontainers.image.source=https://github.com/openwall/john-packages.git,\
-            annotation-index.org.opencontainers.image.title=John the Ripper CE Auditing Tool,\
-            annotation-index.org.opencontainers.image.url=https://www.openwall.com/john,\
-            annotation-index.org.opencontainers.image.vendor=Openwall,\
-            annotation-index.org.opencontainers.image.version=${{ steps.data.outputs.version }}"
+            annotation-index.org.opencontainers.image.description=John the Ripper is an Open Source password security auditing and password recovery tool. See https://www.openwall.com/john/"
 
       - name: Upload attestation
         uses: actions/attest-build-provenance@5e9cb68e95676991667494a6a4e59b8a2f13e1d0 # v1.3.3
