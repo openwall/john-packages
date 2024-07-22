@@ -12,6 +12,16 @@
 
 - Then, upload the Digitally-signed.tar.gz.asc file to the newly created GitHub release.
 
+## The Bleeding Release
+
+We emphasize that the bleeding version is a trial version. Whenever a new "bleeding" release is created,
+all logs and binaries previously called "bleeding" are erased and lost. Therefore, there is an obvious
+traceability problem; in addition, it is necessary to highlight the possibility that the bleeding
+package is based on commits not suitable for use in production.
+
+Thus, using the bleeding package in temporary test environments is fine, but the end user should
+not use it for day by day tasks, which, by the way, is exactly what is happening in the Windows version.
+
 ## Tasks for Creating a Release
 
 - [ ] Ensure the `release` branch is up to date and clean;

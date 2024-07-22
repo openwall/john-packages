@@ -22,6 +22,8 @@ Besides:
 
 Also:
 
+- end users should NOT use the "bleeding" prerelease for day-to-day tasks;
+  - instead, they should use the latest released version. See [more here](release-process.md#the-bleeding-release).
 - we are trying to attract contributors. We need pull request (PR) reviewers;
   - easy task to do:
     - if you find something: good;
