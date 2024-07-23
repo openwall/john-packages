@@ -94,3 +94,8 @@ If you need such a build, use a previous stable or rolling release.
 <!--
 // jscpd:ignore-end
 -->
+
+One of the most attractive things about running an application in a container
+(like Flatpak, Snap or Docker) is that once it’s built successfully, you can expect
+it to keep working for a long time, even as you upgrade your OS. Obviously there are
+limits to that.
