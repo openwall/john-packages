@@ -6,7 +6,7 @@
 
 	"build": {
 		"dockerfile": "Dockerfile",
-		"args": { "VARIANT": "jammy" }
+		"args": { "VARIANT": "noble" }
 	},
 
 	"settings": {
