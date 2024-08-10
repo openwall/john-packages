@@ -1,6 +1,6 @@
 # See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/master/containers
 
-FROM mcr.microsoft.com/vscode/devcontainers/base:noble@sha256:4584130239525059f7afd0014db436c4e9775872e4db0ec903c6e628480b9f6e
+FROM mcr.microsoft.com/vscode/devcontainers/base:noble@sha256:0726560e7005578d778ccb965a9e5e3f1295c637111425ffe4ab21785a6044b7
 
 ENV NODE_DOWNLOAD_SHA256="74908c4272d48941f93aa66e7f366be632b76a77fbdcb8899a63821af6e85bb9"
 
