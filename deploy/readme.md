@@ -76,9 +76,11 @@ OS Version:                10.0.17763 N/A Build 17763
 Current image version: '20240322.1.0'
 Cygwin 3.5.1
 ```
+
 <!--
 // jscpd:ignore-start
 -->
+
 ## Deprecation Note (Obsolete Software or Hardware)
 
 > [!IMPORTANT]
@@ -91,6 +93,7 @@ Cygwin 3.5.1
 - Older X86_64 CPUs (AVX required);
 
 If you need such a build, use a previous stable or rolling release.
+
 <!--
 // jscpd:ignore-end
 -->

@@ -157,11 +157,12 @@ John the Ripper installation.
 <details>
   <summary>OpenSSF SLSA</summary>
 
-  SLSA is a framework intended to codify and promote secure software supply-chain practices,
-  it helps trace software artifacts back to the build and source control systems that
-  produced them.
+SLSA is a framework intended to codify and promote secure software supply-chain practices,
+it helps trace software artifacts back to the build and source control systems that
+produced them.
 
-  > :warning: **NOTE:** the release assets from our GitHub Releases are level 1 compliant.
+> :warning: **NOTE:** the release assets from our GitHub Releases are level 1 compliant.
+
   <div align="center">
     <a href="https://github.com/openwall/john-packages/releases?q=Windows&expanded=true">
       <img src="https://slsa.dev/images/levelBadge1.svg" alt="Logo" width="80" height="80">
@@ -372,11 +373,12 @@ You must install required Homebrew libraries.
 <details>
   <summary>OpenSSF SLSA</summary>
 
-  SLSA is a framework intended to codify and promote secure software supply-chain practices,
-  it helps trace software artifacts back to the build and source control systems that
-  produced them.
+SLSA is a framework intended to codify and promote secure software supply-chain practices,
+it helps trace software artifacts back to the build and source control systems that
+produced them.
 
-  > :warning: **NOTE:** the release assets from our GitHub Releases are level 1 compliant.
+> :warning: **NOTE:** the release assets from our GitHub Releases are level 1 compliant.
+
   <div align="center">
     <a href="https://github.com/openwall/john-packages/releases?q=macOS&expanded=true">
       <img src="https://slsa.dev/images/levelBadge1.svg" alt="Logo" width="80" height="80">
@@ -446,17 +448,19 @@ it's running on.
 <!--
 // jscpd:ignore-start
 -->
+
 Using the instructions above, you can install the released version of `john`,
 or the bleeding development version, or an earlier stable version on your system.
 
 <details>
   <summary>OpenSSF SLSA</summary>
 
-  SLSA is a framework intended to codify and promote secure software supply-chain practices,
-  it helps trace software artifacts back to the build and source control systems that
-  produced them.
+SLSA is a framework intended to codify and promote secure software supply-chain practices,
+it helps trace software artifacts back to the build and source control systems that
+produced them.
 
-  > :warning: **NOTE:** the release assets from our GitHub Releases are level 1 compliant.
+> :warning: **NOTE:** the release assets from our GitHub Releases are level 1 compliant.
+
   <div align="center">
     <a href="https://github.com/openwall/john-packages/releases?q=Flatpak&expanded=true">
       <img src="https://slsa.dev/images/levelBadge1.svg" alt="Logo" width="80" height="80">
@@ -515,17 +519,19 @@ The highlights (👀):
 <!--
 // jscpd:ignore-start
 -->
+
 Using the instructions above, you can install the released version of `john`,
 or the bleeding development version, or an earlier stable version on your system.
 
 <details>
   <summary>OpenSSF SLSA</summary>
 
-  SLSA is a framework intended to codify and promote secure software supply-chain practices,
-  it helps trace software artifacts back to the build and source control systems that
-  produced them.
+SLSA is a framework intended to codify and promote secure software supply-chain practices,
+it helps trace software artifacts back to the build and source control systems that
+produced them.
 
-  > :warning: **NOTE:** the Docker images from our GitHub Packages are level 3 compliant.
+> :warning: **NOTE:** the Docker images from our GitHub Packages are level 3 compliant.
+
   <div align="center">
     <a href="https://github.com/openwall/john-packages/pkgs/container/john">
       <img src="https://slsa.dev/images/levelBadge3.svg" alt="Logo" width="80" height="80">
@@ -567,6 +573,7 @@ We take security very seriously.
 <p align="right">(<a href="#header">back to top</a>)</p>
 
 <!-- ABOUT THE PROJECT -->
+
 ## About This Project
 
 This project aims to create tools and procedures to automate the creation and enable
@@ -582,7 +589,7 @@ We love contributions in the form of issues and pull requests. Read the [Contrib
 
 ## Acknowledgments and Contact
 
-John the Ripper is proudly *Powered by Open Source Community*:
+John the Ripper is proudly _Powered by Open Source Community_:
 
 - [Openwall](https://www.openwall.com/john/) and others.
 
@@ -610,7 +617,6 @@ GNU General Public License v2.0.
 [linkSnapcraftSite]: https://snapcraft.io/ "Snapcraft Main Site"
 [linkTotalDownloads]: https://img.shields.io/github/downloads/openwall/john-packages/total?label=downloads&color=white "Total Downloads"
 [linkProcedureCI]: https://mermaid.ink/img/pako:eNqVk99u2jAUxl_lyFetVvoAaKoUknWtug4ETKsEvTg4h2Dh2JbtsAHm3WcnTNApN8tFlD_-fd_x53OOjOuS2JBVFs0G5sVSQbyyxQ_jvCWsIdd1Lfw7DAYPgW-Ib8E1wuNKSOH3AUY300YBQql_qTNhaYWOwGuoyIPfEEj05DzwDaqK3G3nMUqSkB8TL9TnlX2ACVqUkuSpW5G3ppkxO9prC_lzgGKxxuEaByW5rdcGEvZTqOju4v_3ay4XlktqqS89VKH5lmwPZBvXQo890KMlGs2Kf6ns0FiCgnbjySzAUx_YHA5CVTCPOaT3T-n2rJwh7iNopN6nLxPkW6zoIn5_HzMKQu0iJyr0QqsALwv6bciKmpRHeV780sYZRsJb4SiJvep4SF1ZxgX41lNWpkqrRXnZz1nlKobvPViNfDyDbPr6kfoq_FOzgoynMqPjuAedaYmxwIvj_6YVpUGv23bpckspXGfXnkiNqkEJaIzVO5QB3m7-HlJiXAJSZ05JUmzW2w-Bh5J46nrnohmVASY9Nc4t7rp9sDtWk61RlHGOjklpyaJ2TUs2jI8l2u2SLdUprsPG69lecTb0tqE71pgyjkYhMI5fzaKFdHT6A-rVMuQ?type=png "CI and CD Procedures"
-
 [shieldSnap]: https://snapcraft.io/john-the-ripper/badge.svg
 [shieldLicense]: https://img.shields.io/badge/License-GPL%20v2-blue.svg
 [shieldScore]: https://api.securityscorecards.dev/projects/github.com/openwall/john-packages/badge
