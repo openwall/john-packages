@@ -108,7 +108,7 @@ To install John the Ripper by downloading the .7z file and installing it manuall
 follow these steps:
 
 - Download the compressed file to your machine.
-- Navigate to where you downloaded the file and double click the compressed file.
+- Navigate to where you downloaded the file and double-click the compressed file.
 - Extract it to a directory such as `C:\john-the-ripper`.
 - Start a command prompt.
 - Navigate to the directory you extracted the compressed file, e.g., `cd C:\john-the-ripper\run`.
