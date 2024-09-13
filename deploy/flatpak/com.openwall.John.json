@@ -1,112 +1,105 @@
 {
-    "$schema": "https://raw.githubusercontent.com/flatpak/flatpak-builder/main/data/flatpak-manifest.schema.json",
-    "id": "com.openwall.John",
-    "runtime": "org.freedesktop.Platform",
-    "runtime-version": "24.08",
-    "sdk": "org.freedesktop.Sdk",
-    "command": "john",
-    "tags": [ "1.9J1+2404" ],
-    "finish-args": [
-        "--filesystem=home"
-    ],
-    "cleanup" : [
-        "/include",
-        "*.la",
-        "*.a"
-    ],
-    "modules": [
+  "$schema": "https://raw.githubusercontent.com/flatpak/flatpak-builder/main/data/flatpak-manifest.schema.json",
+  "id": "com.openwall.John",
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "24.08",
+  "sdk": "org.freedesktop.Sdk",
+  "command": "john",
+  "tags": ["1.9J1+2404"],
+  "finish-args": ["--filesystem=home"],
+  "cleanup": ["/include", "*.la", "*.a"],
+  "modules": [
+    {
+      "name": "libpcap",
+      "sources": [
         {
-            "name": "libpcap",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://www.tcpdump.org/release/libpcap-1.10.5.tar.gz",
-                    "sha256": "37ced90a19a302a7f32e458224a00c365c117905c2cd35ac544b6880a81488f0"
-                }
-            ]
+          "type": "archive",
+          "url": "https://www.tcpdump.org/release/libpcap-1.10.5.tar.gz",
+          "sha256": "37ced90a19a302a7f32e458224a00c365c117905c2cd35ac544b6880a81488f0"
+        }
+      ]
+    },
+    {
+      "name": "john",
+      "buildsystem": "simple",
+      "subdir": "./src",
+      "build-commands": [
+        "###### build script ######",
+        "../build.sh",
+        "###### Install JtR system wide ######",
+        "cp -r ../run/.   /app/bin",
+        "cp -r ../doc/    /app/",
+        "cp    ../README* /app/",
+        "###### Bash Completion ######",
+        "mkdir -p /app/share/bash-completion/completions",
+        "cp ../run/john.*_completion /app/share/bash-completion/completions"
+      ],
+      "secret-env": [
+        "JOHN_COMMIT",
+        "JOHN_PACKAGES_COMMIT",
+        "JOHN_RELEASE_COMMIT"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/openwall/john.git",
+          "commit": "f9fedd238b0b1d69181c1fef033b85c787e96e57"
         },
         {
-            "name": "john",
-            "buildsystem": "simple",
-            "subdir": "./src",
-            "build-commands": [
-                "###### build script ######",
-                "../build.sh",
-                "###### Install JtR system wide ######",
-                "cp -r ../run/.   /app/bin",
-                "cp -r ../doc/    /app/",
-                "cp    ../README* /app/",
-                "###### Bash Completion ######",
-                "mkdir -p /app/share/bash-completion/completions",
-                "cp ../run/john.*_completion /app/share/bash-completion/completions"
-            ],
-            "secret-env": [
-                "JOHN_COMMIT",
-                "JOHN_PACKAGES_COMMIT",
-                "JOHN_RELEASE_COMMIT"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/openwall/john.git",
-                    "commit": "f9fedd238b0b1d69181c1fef033b85c787e96e57"
-                },
-                {
-                    "type": "file",
-                    "path": "../Release.ID"
-                },
-                {
-                    "type": "file",
-                    "path": "../../requirements.hash"
-                },
-                {
-                    "type": "patch",
-                    "path": "../../patches/Handle-self-confined-system-wide-build.patch"
-                },
-                {
-                    "type": "file",
-                    "path": "../../scripts/clean_package.sh"
-                },
-                {
-                    "type": "file",
-                    "path": "../../scripts/helper.sh"
-                },
-                {
-                    "type": "file",
-                    "path": "../../scripts/package_version.sh"
-                },
-                {
-                    "type": "file",
-                    "path": "../../scripts/show_info.sh"
-                },
-                {
-                    "type": "file",
-                    "path": "build.sh"
-                },
-                {
-                    "type": "file",
-                    "path": "run-john.sh"
-                },
-                {
-                    "type": "file",
-                    "path": "com.openwall.John.metainfo.xml"
-                },
-                {
-                    "type": "file",
-                    "path": "com.openwall.John.desktop"
-                },
-                {
-                    "type": "file",
-                    "path": "com.openwall.John.png"
-                }
-            ],
-            "post-install": [
-                "install -Dm644 ../com.openwall.John.metainfo.xml /app/share/metainfo/com.openwall.John.metainfo.xml",
-
-                "install -Dm644 ../com.openwall.John.png /app/share/icons/hicolor/256x256/apps/com.openwall.John.png",
-                "install -Dm644 ../com.openwall.John.desktop    /app/share/applications/com.openwall.John.desktop",
-                "install -Dm744 ../run-john.sh                  /app/bin/run-john.sh"
-            ]
+          "type": "file",
+          "path": "../Release.ID"
+        },
+        {
+          "type": "file",
+          "path": "../../requirements.hash"
+        },
+        {
+          "type": "patch",
+          "path": "../../patches/Handle-self-confined-system-wide-build.patch"
+        },
+        {
+          "type": "file",
+          "path": "../../scripts/clean_package.sh"
+        },
+        {
+          "type": "file",
+          "path": "../../scripts/helper.sh"
+        },
+        {
+          "type": "file",
+          "path": "../../scripts/package_version.sh"
+        },
+        {
+          "type": "file",
+          "path": "../../scripts/show_info.sh"
+        },
+        {
+          "type": "file",
+          "path": "build.sh"
+        },
+        {
+          "type": "file",
+          "path": "run-john.sh"
+        },
+        {
+          "type": "file",
+          "path": "com.openwall.John.metainfo.xml"
+        },
+        {
+          "type": "file",
+          "path": "com.openwall.John.desktop"
+        },
+        {
+          "type": "file",
+          "path": "com.openwall.John.png"
         }
-    ]
+      ],
+      "post-install": [
+        "install -Dm644 ../com.openwall.John.metainfo.xml /app/share/metainfo/com.openwall.John.metainfo.xml",
+        "install -Dm644 ../com.openwall.John.png /app/share/icons/hicolor/256x256/apps/com.openwall.John.png",
+        "install -Dm644 ../com.openwall.John.desktop    /app/share/applications/com.openwall.John.desktop",
+        "install -Dm744 ../run-john.sh                  /app/bin/run-john.sh"
+      ]
+    }
+  ]
 }
