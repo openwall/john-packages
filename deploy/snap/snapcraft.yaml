@@ -27,7 +27,7 @@ base: core24
 confinement: strict
 grade: stable #TODO: [stable or devel] edit before release (BLEEDING_RELEASE)
 
-assumes: [snapd2.41]
+assumes: [snapd2.65]
 adopt-info: john-the-ripper
 
 license: GPL-2.0
