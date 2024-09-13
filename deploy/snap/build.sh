@@ -91,7 +91,7 @@ do_release "Yes" "$OPENCL_SUPPORT" "$BINARY" # --system-wide, --support-opencl, 
 
 # "------------------- Run CI -------------------"
 # Default to bypass test procedures
-wget --spider https://raw.githubusercontent.com/claudioandre-br/JohnTheRipper/bleeding-jumbo/run-CI.patch
+wget --spider https://raw.githubusercontent.com/openwall/john-packages/release/patches/run-CI.patch
 CI_TEST=$?
 
 if [[ $CI_TEST -eq 0 ]]; then
