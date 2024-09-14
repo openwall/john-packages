@@ -41,6 +41,7 @@ The "pin upstream commit" is ready.
 - [ ] Add a new commit to the `release` branch;
   - This is the "release commit".
 - [ ] Update all release-related documentation;
+
   - Update all texts that need to be changed;
   - Update the `Release.ID` file;
 
@@ -65,7 +66,7 @@ into the main branch. See note [*].
 
 - [ ] Build the Docker image (bleeding or latest); [4]
   - If you are creating a bleeding version, run the workflow from the `release` branch
-   (`main` doesn't know the proper commit hash). See note [*];
+    (`main` doesn't know the proper commit hash). See note [*];
   - Confirm that all builds are OK.
 - [ ] Release to snap store and flathub;
 
