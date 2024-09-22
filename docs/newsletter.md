@@ -1,6 +1,6 @@
 # News and Plans
 
-Welcome to July’s edition of the Newsletter!
+Welcome to September’s edition of the Newsletter!
 
 **Everyone should upgrade to `1.9J1+2404`** or its corresponding upstream commit:
 
@@ -22,8 +22,12 @@ Besides:
 
 Also:
 
-- end users should NOT use the "bleeding" prerelease for day-to-day tasks;
-  - instead, they should use the latest released version. See [more here](release-process.md#the-bleeding-release).
+- end users should **NOT** use the "bleeding" prerelease for day-to-day tasks;
+  - instead, they should use the latest released version. See [more here](release-process.md#the-bleeding-release);
+  - if you want to use a development version of `john`, use:
+    - the snap from the edge channel OR;
+    - the docker image labeled bleeding (`ghcr.io/openwall/john:bleeding`);
+  - for the time being, we will avoid releasing bleeding versions for Windows or macOS.
 - we are trying to attract contributors. We need pull request (PR) reviewers;
   - easy task to do:
     - if you find something: good;
@@ -35,11 +39,11 @@ Also:
 
 ## Project Next Steps: what will happen
 
-- drop the obsolete and exotic AVX512F.
+- [NOTHING yet].
 
 ## Project Expectations: what will probably (is expect to) happen
 
-- [NOTHING yet];
+- [NOTHING yet].
 
 ## Recommendation
 
