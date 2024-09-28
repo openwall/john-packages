@@ -43,7 +43,7 @@
         {
           "type": "git",
           "url": "https://github.com/openwall/john.git",
-          "commit": "f9fedd238b0b1d69181c1fef033b85c787e96e57"
+          "commit": "3e2282a936b1461fe16625bb41861540e16b8ca3"
         },
         {
           "type": "file",
