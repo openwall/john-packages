@@ -50,4 +50,4 @@ Also:
 ## Recommendation
 
 Install (or update your installation to) `1.9.1-ce` or to the upstream commit
-[f9fedd2](https://github.com/openwall/john/commit/f9fedd238b0b1d69181c1fef033b85c787e96e57).
+[3e2282a](https://github.com/openwall/john/commit/3e2282a936b1461fe16625bb41861540e16b8ca3).

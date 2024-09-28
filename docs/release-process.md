@@ -31,8 +31,8 @@ not use it for day by day tasks, which, by the way, is exactly what is happening
 - [ ] Add a new commit to the `release` branch;
   - This is the "pin upstream commit".
 - [ ] Update the commit that will be used to build;
-  - Replace all occurrences of `f9fedd238b0b1d69181c1fef033b85c787e96e57` with the proper commit hash;
-  - Replace all occurrences of `f9fedd2` with the proper short commit hash;
+  - Replace all occurrences of `3e2282a936b1461fe16625bb41861540e16b8ca3` with the proper commit hash;
+  - Replace all occurrences of `3e2282a` with the proper short commit hash;
   - Update bash script [file hashes](../CONTRIBUTING.md#create-a-suitable-pr);
   - Amend and push the "pin upstream commit".
 

@@ -29,7 +29,7 @@ name: Solaris CI
       hash:
         description: "The commit hash to be used"
         required: false
-        default: "f9fedd238b0b1d69181c1fef033b85c787e96e57"
+        default: "3e2282a936b1461fe16625bb41861540e16b8ca3"
 
 jobs:
   test:
