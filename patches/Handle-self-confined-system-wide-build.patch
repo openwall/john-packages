@@ -1,5 +1,5 @@
 From a323a4bd1e72eea54b14291f409e8772bd9b7902 Mon Sep 17 00:00:00 2001
-From: =?UTF-8?q?Claudio=20Andr=C3=A9?= <claudioandre.br@gmail.com>
+From: =?UTF-8?q?Claudio=20Andr=C3=A9?= <dev@claudioandre.slmail.me>
 Date: Sat, 15 Dec 2018 23:35:51 -0200
 Subject: [PATCH] Handle self confined system wide build.
 

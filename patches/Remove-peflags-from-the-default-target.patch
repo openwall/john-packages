@@ -1,5 +1,5 @@
 From 1ec450a35631b7c140dcbcb2f8be3fa62b037157 Mon Sep 17 00:00:00 2001
-From: =?UTF-8?q?Claudio=20Andr=C3=A9?= <claudioandre.br@gmail.com>
+From: =?UTF-8?q?Claudio=20Andr=C3=A9?= <dev@claudioandre.slmail.me>
 Date: Tue, 2 Apr 2019 11:00:02 -0300
 Subject: [PATCH] Remove peflags from the default target
 

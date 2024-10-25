@@ -8,7 +8,7 @@
 #                                                       | |   | |
 #                                                       |_|   |_|
 #
-# Copyright (c) 2021-2023 Claudio André <claudioandre.br at gmail.com>
+# Copyright (c) 2021-2024 Claudio André <dev at claudioandre.slmail.me>
 #
 # This program comes with ABSOLUTELY NO WARRANTY; express or implied.
 #
@@ -122,7 +122,7 @@ jobs:
           images: ${{ env.REPO }}:${{ github.event.inputs.tag }}
           labels: |
             software=John the Ripper ${{ github.event.inputs.VERSION_NAME }}
-            org.opencontainers.image.authors=Claudio André <claudioandre.br at gmail com>
+            org.opencontainers.image.authors=Claudio André <dev at claudioandre.slmail.me>
             org.opencontainers.image.description=John the Ripper is an Open Source password security auditing and password recovery tool. See https://www.openwall.com/john/
             org.opencontainers.image.title=John the Ripper CE Auditing Tool
             org.opencontainers.image.url=https://www.openwall.com/john
