@@ -59,15 +59,23 @@ following a pipeline through a "production-like environment".
 ![Flatpak](https://gitlab.com/claudioandre-br/JtR-CI/badges/master/pipeline.svg?key_text=Flatpak)
 ![macOS](https://img.shields.io/cirrus/github/claudioandre-br/JohnTheRipper/bleeding-jumbo?label=macOS)
 ![Windows](https://dev.azure.com/claudioandre-br/JohnTheRipper/_apis/build/status/JohnTheRipper?label=Windows)
+[![Virus Scan](https://github.com/openwall/john-packages/actions/workflows/release.yml/badge.svg)][linkReleases]
 
 [![Launchpad](https://media.launchpad.net/lp-badge-kit/launchpad-badge-w120px.png)][linkSnapcraftJohn]
 <a href='https://flathub.org/apps/com.openwall.John'><img height='27' alt='Download on Flathub' src='https://dl.flathub.org/assets/badges/flathub-badge-i-en.svg'/></a>
 
-[![Virus Scan](https://github.com/openwall/john-packages/actions/workflows/release.yml/badge.svg)][linkReleases]
+### Proper Releases
 
-|                 **Releases**                  | **Latest**<br> ![Release Version][linkLatestReleaseVersion] | **Prerelease**<br> ![Prerelease Version][linkLatestPrereleaseVersion] |
+|                                               | **Latest**<br> ![Release Version][linkLatestReleaseVersion] | **Prerelease**<br> ![Prerelease Version][linkLatestPrereleaseVersion] |
 | :-------------------------------------------: | :---------------------------------------------------------: | :-------------------------------------------------------------------: |
 | ![GitHub Total Downloads][linkTotalDownloads] |           ![Release Date][linkLatestReleaseDate]            |             ![Prerelease Date][linkLatestPrereleaseDate]              |
+
+### Testing Packages
+
+| Available Technology                 | Rollout Status                    |
+| ------------------------------------ | --------------------------------- |
+| Docker image with the tag `bleeding` | ![Endpoint Badge][bleedingDocker] |
+| Snap package from the `edge` channel | ![Endpoint Badge][bleedingSnap]   |
 
 </div>
 
@@ -609,6 +617,8 @@ GNU General Public License v2.0.
 
 <p align="right">(<a href="#header">back to top</a>)</p>
 
+[bleedingDocker]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fopenwall%2Fjohn-packages%2Frelease%2Fdeploy%2Fdocker.json
+[bleedingSnap]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fopenwall%2Fjohn-packages%2Frelease%2Fdeploy%2Fsnap.json
 [linkBadgeDownloadDocker]: https://img.shields.io/badge/Download-Docker%20Image-blue.svg?style=for-the-badge
 [linkBadgeDownloadFlatpak]: https://img.shields.io/badge/Download-Flatpak%20Package-blue?style=for-the-badge
 [linkBadgeDownloadMac]: https://img.shields.io/badge/Download-macOS%20Package-blue.svg?style=for-the-badge
