@@ -70,7 +70,7 @@ jobs:
 
       - name: check-spelling
         id: spelling
-        uses: check-spelling/check-spelling@26b46adbdebd5dd0b34c7155113d50c40f43fb22 # main
+        uses: check-spelling/check-spelling@b365ac888c4713bf3a082b07b342feed0f3438fe # main
         with:
           suppress_push_for_open_pull_request: ${{ github.actor != 'dependabot[bot]' && 1 }}
           checkout: true
@@ -110,7 +110,7 @@ jobs:
             raw.githubusercontent.com:443
 
       - name: comment
-        uses: check-spelling/check-spelling@26b46adbdebd5dd0b34c7155113d50c40f43fb22 # main
+        uses: check-spelling/check-spelling@b365ac888c4713bf3a082b07b342feed0f3438fe # main
         with:
           checkout: true
           spell_check_this: check-spelling/spell-check-this@prerelease
@@ -135,7 +135,7 @@ jobs:
             raw.githubusercontent.com:443
 
       - name: comment
-        uses: check-spelling/check-spelling@26b46adbdebd5dd0b34c7155113d50c40f43fb22 # main
+        uses: check-spelling/check-spelling@b365ac888c4713bf3a082b07b342feed0f3438fe # main
         with:
           checkout: true
           spell_check_this: check-spelling/spell-check-this@prerelease
@@ -164,7 +164,7 @@ jobs:
           egress-policy: audit
 
       - name: apply spelling updates
-        uses: check-spelling/check-spelling@26b46adbdebd5dd0b34c7155113d50c40f43fb22 # main
+        uses: check-spelling/check-spelling@b365ac888c4713bf3a082b07b342feed0f3438fe # main
         with:
           experimental_apply_changes_via_bot: 1
           checkout: true
