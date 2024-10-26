@@ -42,9 +42,15 @@ resource "aws_instance" "worker" {
   key_name               = aws_key_pair.deployer.key_name
   instance_type          = var.instance["instance_type"]
   count                  = var.spot != "yes" ? var.instance["count"] : 0
+  monitoring             = true
 
   credit_specification {
     cpu_credits = "standard"
+  }
+
+  metadata_options {
+    http_tokens                 = "required"
+    http_put_response_hop_limit = 2
   }
 
   # The connection uses the local SSH agent for authentication.
