@@ -14,6 +14,11 @@ appveyor
 asan
 ASLR
 ath
+autodelete
+autodownload
+autogen
+autoprune
+autoreconf
 avx
 awor
 aws
@@ -63,6 +68,7 @@ dmg
 dnf
 dns
 Dockerfiles
+dri
 drwx
 drwxr
 drwxrwxr
@@ -102,6 +108,7 @@ ifndef
 img
 IMO
 intrinsics
+ipc
 jscpd
 JTR
 jtrcrackers

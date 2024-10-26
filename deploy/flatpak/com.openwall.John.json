@@ -6,9 +6,66 @@
   "sdk": "org.freedesktop.Sdk",
   "command": "john",
   "tags": ["1.9J1+2404"],
-  "finish-args": ["--filesystem=home"],
+  "finish-args": ["--filesystem=home", "--share=ipc", "--device=dri"],
+  "add-extensions": {
+    "org.freedesktop.Platform.GL": {
+      "version": "1.4",
+      "versions": "%{branch};%{branch-extra};1.4",
+      "directory": "%{lib}/GL",
+      "add-ld-path": "lib",
+      "merge-dirs": "%{gl_merge_dirs}",
+      "subdirectories": true,
+      "no-autodownload": true,
+      "autodelete": true,
+      "download-if": "active-gl-driver",
+      "enable-if": "active-gl-driver",
+      "autoprune-unless": "active-gl-driver"
+    }
+  },
   "cleanup": ["/include", "*.la", "*.a"],
   "modules": [
+    {
+      "name": "clinfo",
+      "no-autogen": true,
+      "no-make-install": true,
+      "build-commands": ["install -Dm755 -t /app/bin/ clinfo"],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/Oblomov/clinfo/archive/refs/tags/3.0.23.01.25.tar.gz",
+          "sha256": "6dcdada6c115873db78c7ffc62b9fc1ee7a2d08854a3bccea396df312e7331e3"
+        }
+      ],
+      "modules": [
+        {
+          "name": "ocl-icd",
+          "sources": [
+            {
+              "type": "archive",
+              "url": "https://github.com/OCL-dev/ocl-icd/archive/refs/tags/v2.3.2.tar.gz",
+              "sha256": "ec47d7dcd961ea06695b067e8b7edb82e420ddce03e0081a908c62fd0b8535c5"
+            },
+            {
+              "type": "script",
+              "dest-filename": "autogen.sh",
+              "commands": ["autoreconf -fiv"]
+            }
+          ]
+        },
+        {
+          "name": "opencl-headers",
+          "buildsystem": "simple",
+          "build-commands": ["cp -av opencl22/CL /app/include"],
+          "sources": [
+            {
+              "type": "git",
+              "url": "https://github.com/KhronosGroup/OpenCL-Headers.git",
+              "commit": "e986688daf750633898dfd3994e14a9e618f2aa5"
+            }
+          ]
+        }
+      ]
+    },
     {
       "name": "libpcap",
       "sources": [

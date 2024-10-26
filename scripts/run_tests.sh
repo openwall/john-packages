@@ -72,9 +72,13 @@ echo "=> $JTR_BIN --list=build-info"
 
 "$JTR_BIN" --list=build-info
 
-if [[ "$HOST_OS" == "Darwin" || -z "${TEST##*OpenCL-full*}" ]]; then
+if [[ "$HOST_OS" == "Darwin" || -z "${TEST##*OpenCL-full*}" || -z "${TEST##*OpenCL-info*}" ]]; then
 	echo "---------------------------- OpenCL Devices ----------------------------"
 	"$JTR_BIN" --list=opencl-devices
+
+	if [[ "$FLATPAK" == "true" ]]; then
+		flatpak run --command=clinfo com.openwall.John
+	fi
 fi
 
 # shellcheck disable=SC2016

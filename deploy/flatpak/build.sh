@@ -31,7 +31,7 @@ TASK_RUNNING="Flatpak build"
 export -p DEPLOY_PAK FLATPAK_BUILD BASE TASK_RUNNING
 
 # Build options (system wide, disable checks, etc.)
-SYSTEM_WIDE='--with-systemwide --disable-opencl'
+SYSTEM_WIDE="--with-systemwide"
 X86_REGULAR="--disable-native-tests $SYSTEM_WIDE"
 X86_NO_OPENMP="--disable-native-tests $SYSTEM_WIDE --disable-openmp"
 
