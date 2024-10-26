@@ -2,7 +2,7 @@
 
 FROM mcr.microsoft.com/vscode/devcontainers/base:noble@sha256:436147909915f53a19b33104ac9d3055ae54782f7e236920852c2c4443d516ac
 
-ENV NODE_DOWNLOAD_SHA256="74908c4272d48941f93aa66e7f366be632b76a77fbdcb8899a63821af6e85bb9"
+ENV NODE_DOWNLOAD_SHA256="dd3bc508520fcdfdc8c4360902eac90cba411a7e59189a80fb61fcbea8f4199c"
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
