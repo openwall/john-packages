@@ -106,8 +106,14 @@ jobs:
           egress-policy: block
           allowed-endpoints: >
             api.github.com:443
+            archive.ubuntu.com:80
+            azure.archive.ubuntu.com:80
+            esm.ubuntu.com:443
+            esm.ubuntu.com:80
             github.com:443
+            motd.ubuntu.com:80
             raw.githubusercontent.com:443
+            security.ubuntu.com:80
 
       - name: comment
         uses: check-spelling/check-spelling@b365ac888c4713bf3a082b07b342feed0f3438fe # main
@@ -131,8 +137,14 @@ jobs:
           egress-policy: block
           allowed-endpoints: >
             api.github.com:443
+            archive.ubuntu.com:80
+            azure.archive.ubuntu.com:80
+            esm.ubuntu.com:443
+            esm.ubuntu.com:80
             github.com:443
+            motd.ubuntu.com:80
             raw.githubusercontent.com:443
+            security.ubuntu.com:80
 
       - name: comment
         uses: check-spelling/check-spelling@b365ac888c4713bf3a082b07b342feed0f3438fe # main
