@@ -57,7 +57,6 @@ cyggomp
 cygz
 davidanson
 debhelper
-deluser
 devcontainer
 distro
 dmg
