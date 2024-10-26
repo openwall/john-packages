@@ -21,9 +21,16 @@
 # More info at https://github.com/openwall/john-packages
 
 terraform {
+  required_version = ">= 1.9"
   required_providers {
-    local = "~> 2.0"
-    aws   = "~> 5.0"
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.0"
+    }
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
   }
 }
 
@@ -34,13 +41,13 @@ provider "aws" {
 
 # Create workspaces to run the same set of instruction on different environments
 locals {
-  profile = lookup(var.profile_list, terraform.workspace)
+  profile = var.profile_list[terraform.workspace]
 }
 locals {
-  region = lookup(var.regions_list, terraform.workspace)
+  region = var.regions_list[terraform.workspace]
 }
 locals {
-  run_env = lookup(var.environment_list, terraform.workspace)
+  run_env = var.environment_list[terraform.workspace]
 }
 
 # Save terraform state remotely (if needed).
