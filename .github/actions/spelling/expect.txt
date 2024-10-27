@@ -116,6 +116,7 @@ keepass
 Keplr
 keygen
 keyring
+kvm
 LASTEXITCODE
 Lauchpad
 LDFLAGS

@@ -17,31 +17,37 @@ using:
   - Windows Server 2019 Datacenter (10.0.17763 N/A Build 17763);
   - Windows Server 2022 Datacenter (10.0.20348 N/A Build 20348);
 - Unix®-like BSD:
-  - FreeBSD 13 (13.2-STABLE);
-  - FreeBSD 14 (14.0-STABLE);
+  - FreeBSD 13 (13.4-STABLE);
+  - FreeBSD 14 (14.2-PRERELEASE);
   - FreeBSD 15 (15.0-CURRENT);
 - Solaris:
-  - SunOS solaris 5.11 11.4.0.15.0 i86pc i386 i86pc;
+  - SunOS solaris 5.11 11.4.42.111.0 i86pc i386 i86pc kvm;
 - Linux:
-  - Red Hat Enterprise Linux 8 and Fedora 39;
-  - Ubuntu 22.04 and Ubuntu devel (the under development version);
-  - flatpak (runtime: org.freedesktop.Platform 23.08);
-  - snap (runtime: core22);
-  - Android NDK r23 LTS (ANDROID_NDK_VERSION=r23b);
+  - Red Hat Enterprise Linux 8 and Fedora 40;
+  - Ubuntu 22.04, Ubuntu 24.04, and Ubuntu devel (the under development version);
+  - flatpak (runtime: org.freedesktop.Platform 24.08);
+  - snap (runtime: core24);
+  - Android SDK 34 (on ARM and X86);
 - macOS:
-  - macOS 13.6 22G120:
-    - Darwin 22.6.0 arm64 arm;
-    - Homebrew 4.2.10.
+  - macOS 14.6 23G80:
+    - Darwin 23.6.0 arm64 arm;
+    - Homebrew 4.4.2;
+- Windows:
+  - Cygwin 3.5.4;
+  - Chocolatey v2.3.0.
 
 ### Toolchains
 
 - Compilers:
-  - gcc 7.4 (Win 2016), gcc 8.5 (Red Hat Enterprise Linux 8), gcc 9.4 (Android);
-  - gcc 11.4 (Ubuntu 22, Snap), gcc 11.4 (Win 2019/2022);
-  - gcc 12.3 (fuzzing), gcc 13.2 (Flatpak), gcc 13.2 (Ubuntu Dev, Fedora 39);
-  - Solaris gcc (GCC) 7.3.0;
-  - FreeBSD clang version 17.0.6; (FreeBSD 13, FreeBSD 14, and FreeBSD 15)
-  - Apple clang version 14.0.3 (clang-1403.0.22.14.1);
+  - gcc 7.4 (Win 2016), gcc 8.5 (Red Hat Enterprise Linux 8);
+  - gcc 11.4 (Android), gcc 11.4 (Ubuntu 22 - Intel CPU);
+  - gcc 12.4 (Win 2019/2022);
+  - gcc 13.2 (Ubuntu 24, snap, fuzzing);
+  - gcc 14.2 (Fedora 40, Ubuntu Dev), gcc 14.2 (Flatpak);
+  - Apple clang version 16.0.0 (clang-1600.0.26.3);
+  - FreeBSD clang version 18.1.6 (FreeBSD 13, FreeBSD 14);
+  - FreeBSD clang version 19.1.2 (FreeBSD 15);
+  - Solaris (GCC) 11.2.0.
 
 ### Testing and Commissioning
 
