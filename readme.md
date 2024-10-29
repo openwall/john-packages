@@ -1,5 +1,7 @@
 # John the Ripper Packages
 
+<!-- markdownlint-disable MD033 -->
+
 <div id="header" align="center">
 
 [![john-the-ripper][shieldSnap]][linkSnapcraftJohn]
@@ -110,7 +112,13 @@ instance of the application).
 
 ## 📂 Windows
 
-> Delivered using Microsoft-hosted Windows 2022 Server in Azure [ supports up to AVX512BW ]
+<!-- markdownlint-disable MD042 -->
+
+> Delivered using Microsoft-hosted Windows 2022 Server in Azure \
+> Supported architecture:
+> [amd64](# "[ backed by AVX, AVX2, and AVX512BW ]")
+
+<!-- markdownlint-enable MD042 -->
 
 To install John the Ripper by downloading the .7z file and installing it manually,
 follow these steps:
@@ -142,9 +150,7 @@ The highlights (👀):
 - has OpenCL available (GPU driver installation is needed);
 - generic crypt(3) format available;
 - security feature Address Space Layout Randomisation (ASLR) enabled;
-- security feature Data Execution Prevention (DEP) enabled;
-- there is a recently released version (it is a rolling release);
-- a development version is also available.
+- security feature Data Execution Prevention (DEP) enabled.
 
 [*] John the Ripper runs using the best SIMD instructions available on the host
 it's running on.
@@ -204,7 +210,16 @@ If John the Ripper is not recognizing your GPU card:
 
 ## 📂 Snap
 
-> Delivered using Launchpad [ supports up to AVX512BW ]
+<!-- markdownlint-disable MD042 -->
+
+> Delivered using Launchpad \
+> Supported architectures:
+> [amd64](# "[ backed by AVX, AVX2, and AVX512BW ]"),
+> [arm64v8](# "[ backed by ASIMD ]"),
+> [ppc64le](# "[ backed by Altivec ]"),
+> riscv64, and s390x
+
+<!-- markdownlint-enable MD042 -->
 
 [**A Snap**][linkSnapcraftSite] is a gpg signed squashfs file containing an application
 together with its dependencies, and a description of how it should safely be run
@@ -256,8 +271,10 @@ The highlights (👀):
 - John the Ripper is tagged as safe, confined and auditable software on Canonical Snap Store;
 - John the Ripper supports and has a package for all architectures supported by Ubuntu itself.
 - also available via the alias **john**, e.g. `john -list=build-info`;
-- there is a recently released version (it is a rolling release);
-- a development version is also available.
+- the latest released version:
+  - install from the Snapcraft `stable` channel.
+- a development version is also available:
+  - install from the Snapcraft `edge` channel.
 
 [*] John the Ripper runs using the best SIMD instructions available on the host
 it's running on.
@@ -325,7 +342,13 @@ If you do so, you will be running the development version available on GitHub.
 
 ## 📂 macOS
 
-> Delivered using Cirrus CI [ supports ASIMD (on ARM) ]
+<!-- markdownlint-disable MD042 -->
+
+> Delivered using Cirrus CI \
+> Supported architecture:
+> [arm64](# "[ backed by ASIMD ]")
+
+<!-- markdownlint-enable MD042 -->
 
 To install John the Ripper by downloading the .7z file and installing it manually,
 follow these steps:
@@ -358,9 +381,7 @@ The highlights (👀):
 
 - has fallback for CPU[*] (if that makes sense) and OMP;
 - has OpenCL available;
-- built using clang from the official Xcode toolchain plus non-system libraries from Homebrew;
-- there is a recently released version (it is a rolling release);
-- a development version is also available.
+- built using clang from the official Xcode toolchain plus non-system libraries from Homebrew.
 
 [*] John the Ripper runs using the best SIMD instructions available on the host
 it's running on.
@@ -412,7 +433,14 @@ OMP_NUM_THREADS=1 run/john --list=build-info
 
 ## 📂 Flatpak
 
-> Delivered using GitLab CI [ supports up to AVX512BW ]
+<!-- markdownlint-disable MD042 -->
+
+> Delivered using GitLab CI \
+> Supported architectures:
+> [amd64](# "[ backed by AVX, AVX2, and AVX512BW ]") and
+> [arm64v8](# "[ backed by ASIMD ]")
+
+<!-- markdownlint-enable MD042 -->
 
 [**Flatpak**][linkFlatpakSite] is a new framework for desktop applications
 on Linux, built to be distribution agnostic and allow deployment on any Linux
@@ -442,9 +470,7 @@ you can access and audit any file located in your home. Below, an usage example:
 The highlights (👀):
 
 - has fallback for CPU[*] and OMP;
-- there is a recently released version (it is a rolling release):
-  - also available via FlatHub at <https://flathub.org/apps/com.openwall.John>.
-- a development version is also available.
+- also available via FlatHub at <https://flathub.org/apps/com.openwall.John>.
 
 [*] John the Ripper runs using the best SIMD instructions available on the host
 it's running on.
@@ -484,7 +510,14 @@ produced them.
 
 ## 📂 Docker Image
 
-> Delivered using GitHub Actions [ supports up to AVX512BW ]
+<!-- markdownlint-disable MD042 -->
+
+> Delivered using GitHub Actions \
+> Supported architectures:
+> [amd64](# "[ backed by AVX, AVX2, and AVX512BW ]") and
+> [arm64v8](# "[ backed by ASIMD ]")
+
+<!-- markdownlint-enable MD042 -->
 
 [**Docker**](https://www.docker.com/) provides the ability to package and run an application
 in a loosely isolated environment called a container.
@@ -513,9 +546,9 @@ The highlights (👀):
 
 - OpenSSF SLSA 3 compliant;
 - has NVIDIA OpenCL available (GPU driver is required on the host);
-- has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`;
+- has auto-selection of the best SIMD if user specifies `best` as the `<binary id>`:
   - example: `docker run ghcr.io/openwall/john:latest best -list=build-info`.
-- there is a recently released version (it is a rolling release):
+- the latest released version:
   - install from the command-line: `docker pull ghcr.io/openwall/john:latest`.
 - a development version is also available:
   - install from the command-line: `docker pull ghcr.io/openwall/john:bleeding`.
@@ -616,6 +649,8 @@ John the Ripper is proudly _Powered by Open Source Community_:
 GNU General Public License v2.0.
 
 <p align="right">(<a href="#header">back to top</a>)</p>
+
+<!-- markdownlint-enable MD033 -->
 
 [bleedingDocker]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fopenwall%2Fjohn-packages%2Frelease%2Fdeploy%2Fdocker.json
 [bleedingSnap]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fopenwall%2Fjohn-packages%2Frelease%2Fdeploy%2Fsnap.json
