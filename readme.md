@@ -55,10 +55,10 @@ following a pipeline through a "production-like environment".
 
 <div id="CD" align="center">
 
-![Docker](https://github.com/openwall/john-packages/actions/workflows/docker.yml/badge.svg)
-![Flatpak](https://gitlab.com/claudioandre-br/JtR-CI/badges/master/pipeline.svg?key_text=Flatpak)
-![macOS](https://img.shields.io/cirrus/github/claudioandre-br/JohnTheRipper/bleeding-jumbo?label=macOS)
-![Windows](https://dev.azure.com/claudioandre-br/JohnTheRipper/_apis/build/status/JohnTheRipper?label=Windows)
+[![Docker](https://github.com/openwall/john-packages/actions/workflows/docker.yml/badge.svg)][linkRegistry]
+[![Flatpak](https://gitlab.com/claudioandre-br/JtR-CI/badges/master/pipeline.svg?key_text=Flatpak)][linkReleases]
+[![macOS](https://img.shields.io/cirrus/github/claudioandre-br/JohnTheRipper/bleeding-jumbo?label=macOS)][linkReleases]
+[![Windows](https://dev.azure.com/claudioandre-br/JohnTheRipper/_apis/build/status/JohnTheRipper?label=Windows)][linkReleases]
 [![Virus Scan](https://github.com/openwall/john-packages/actions/workflows/release.yml/badge.svg)][linkReleases]
 
 [![Launchpad](https://media.launchpad.net/lp-badge-kit/launchpad-badge-w120px.png)][linkSnapcraftJohn]
@@ -72,10 +72,10 @@ following a pipeline through a "production-like environment".
 
 ### Testing Packages
 
-| Available Technology                 | Rollout Status                    |
-| ------------------------------------ | --------------------------------- |
-| Docker image with the tag `bleeding` | ![Endpoint Badge][bleedingDocker] |
-| Snap package from the `edge` channel | ![Endpoint Badge][bleedingSnap]   |
+| Available Technology                 | Rollout Status                                       |
+| ------------------------------------ | ---------------------------------------------------- |
+| Docker image with the tag `bleeding` | [![Endpoint Badge][bleedingDocker]][linkRegistry]    |
+| Snap package from the `edge` channel | [![Endpoint Badge][bleedingSnap]][linkSnapcraftJohn] |
 
 </div>
 
