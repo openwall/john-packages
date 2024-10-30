@@ -2,12 +2,15 @@
 
 The commit message must follow the format:
 
-`git commit -m "<title>" -m "<description>"`
+`git commit -m "<title> (#PR)" -m "<description>"`
 
 - The description is optional.
+- The pull request ID (#PR) is strongly recommended, but not mandatory.
 - The first line (title) should ideally be no longer than 50 characters.
   - The title completes the sentence: if applied, this commit will `<title>`.
   - Use the imperative, present tense, not capitalized, no period in the end.
+- The pull request ID (#PR) relates the commits to the pull request that contains them.
+  - There may have been some discussion that needs to be easily referenced in each commit.
 - The body or description should be restricted to 72 characters per line.
   - It should explain the motivation for the change.
 
