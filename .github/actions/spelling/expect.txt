@@ -41,6 +41,7 @@ clinfo
 cloudflare
 clusterfuzzlite
 codeql
+commitlint
 committers
 copyback
 coreutils

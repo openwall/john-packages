@@ -59,7 +59,10 @@ jobs:
       - name: Linter
         uses: super-linter/super-linter@b92721f792f381cedc002ecdbb9847a15ece5bb8 # v7.1.0
         env:
+          ENABLE_COMMITLINT_STRICT_MODE: true
+          ENFORCE_COMMITLINT_CONFIGURATION_CHECK: true
           VALIDATE_ALL_CODEBASE: false
           VALIDATE_CHECKOV: false
+          VALIDATE_GIT_COMMITLINT: true
           DEFAULT_BRANCH: "main"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
