@@ -15,10 +15,10 @@ Add your text here.
 - [ ] If it is a core feature, I have added comprehensive tests.
 - [ ] If the issue this PR refers to is a bug report, add the following text to each of the commits
       that make it up:
-  - Fix #VALUE.
-- [ ]  If the issue this PR refers to is a feature request, add the following text to each of the
-       commits that make it up:
-  - Close #VALUE.
-- [ ]  Commits may not be exactly a fix or implementation of a feature, but they can be related
-       to any issue, in this case, add the following text to each of the commits that make it up:
-  - See #VALUE.
+  - Fix: #VALUE.
+- [ ] If the issue this PR refers to is a feature request, add the following text to each of the
+      commits that make it up:
+  - Close: #VALUE.
+- [ ] Commits may not be exactly a fix or implementation of a feature, but they can be related
+      to any issue, in this case, add the following text to each of the commits that make it up:
+  - See: #VALUE.
