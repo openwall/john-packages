@@ -50,7 +50,7 @@ jobs:
             www.virustotal.com:443
 
       - name: VirusTotal Scan
-        uses: crazy-max/ghaction-virustotal@92a6081d9aab8f8ef3d9081e8bb264aaccc9e74d # v4.0.0
+        uses: crazy-max/ghaction-virustotal@93ce6fb8ca09fed3d3d2010a8be65552ae5d3854 # v4.1.0
 
         with:
           vt_api_key: ${{ secrets.VT_API_KEY }}
