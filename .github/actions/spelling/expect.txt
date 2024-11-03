@@ -11,6 +11,7 @@ ansible
 apk
 apps
 appveyor
+aquasecurity
 asan
 ASLR
 ath
@@ -75,6 +76,7 @@ drwx
 drwxr
 drwxrwxr
 dynamicbase
+ecr
 editorconfig
 elfutils
 endfor
@@ -145,6 +147,7 @@ machdep
 markdownlint
 metainfo
 mfb
+misconfig
 mktemp
 mrsp
 nproc
@@ -179,11 +182,14 @@ realpath
 redhat
 redistributors
 rekor
+rootfs
 rsa
 runtimes
 saltstring
 sandboxing
 sanitizers
+sbom
+scanfs
 seccomp
 securityscorecards
 seh
@@ -215,6 +221,7 @@ tld
 tls
 tmp
 tmpl
+trivy
 tzip
 uaf
 ubsan

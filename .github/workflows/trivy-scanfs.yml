@@ -1,0 +1,55 @@
+###############################################################################
+#        _       _             _   _            _____  _
+#       | |     | |           | | | |          |  __ \(_)
+#       | | ___ | |__  _ __   | |_| |__   ___  | |__) |_ _ __  _ __   ___ _ __
+#   _   | |/ _ \| '_ \| '_ \  | __| '_ \ / _ \ |  _  /| | '_ \| '_ \ / _ \ '__|
+#  | |__| | (_) | | | | | | | | |_| | | |  __/ | | \ \| | |_) | |_) |  __/ |
+#   \____/ \___/|_| |_|_| |_|  \__|_| |_|\___| |_|  \_\_| .__/| .__/ \___|_|
+#                                                       | |   | |
+#                                                       |_|   |_|
+#
+# Copyright (c) 2024 Claudio André <dev@claudioandre.slmail.me>
+#
+# This program comes with ABSOLUTELY NO WARRANTY; express or implied.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, as expressed in version 2, seen at
+# http://www.gnu.org/licenses/gpl-2.0.html
+###############################################################################
+# GitHub Action to run Trivy scanner
+# More info at https://github.com/openwall/john-packages
+
+---
+name: Trivy Scan fs
+"on":
+  pull_request:
+
+permissions: read-all
+jobs:
+  trivy-code-security-scan:
+    runs-on: ubuntu-latest
+    name: Scan fs
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
+        with:
+          disable-sudo: true
+          egress-policy: block
+          allowed-endpoints: >
+            github.com:443
+
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Security Scan
+        uses: aquasecurity/trivy-action@915b19bbe73b92a6cf82a1bc12b087c9a19a5fe2 # 0.28.0
+        with:
+          scan-type: "fs"
+          scanners: vuln,secret # misconfig,license
+          exit-code: 1
+          ignore-unfixed: true
+        env:
+          TRIVY_DB_REPOSITORY: ghcr.io/aquasecurity/trivy-db,public.ecr.aws/aquasecurity/trivy-db
+          TRIVY_USERNAME: ${{ github.actor }}
+          TRIVY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
