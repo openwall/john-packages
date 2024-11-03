@@ -46,11 +46,13 @@ jobs:
       - uses: actions/first-interaction@34f15e814fe48ac9312ccf29db4e74fa767cbab7 # v1.3.0
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          issue-message: >
-            Welcome and thank you for helping us improve our software.\n
-            Please make sure you read and understand the CODE_OF_CONDUCT.md and CONTRIBUTING.md\n
+          issue-message: |
+            Welcome and thank you for helping us improve our software.
+
+            Please make sure you read and understand the CODE_OF_CONDUCT.md and CONTRIBUTING.md.
             We hope to see you soon!
-          pr-message: >
-            Wow, your first PR. Thank you.\n
-            Please make sure you read and understand the CODE_OF_CONDUCT.md and CONTRIBUTING.md\n
+          pr-message: |
+            Wow, your first PR. Thank you.
+
+            Please make sure you read and understand the CODE_OF_CONDUCT.md and CONTRIBUTING.md.
             We hope to see you soon!
