@@ -28,13 +28,15 @@ name: Trivy SBOM
     branches:
       - main
 
-permissions:
-  contents: write
+permissions: read-all
 
 jobs:
   trivy-code-security-scan:
     name: Check SBOM
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
