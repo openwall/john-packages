@@ -22,10 +22,11 @@
 
 FROM gcr.io/oss-fuzz-base/base-builder:v1@sha256:92851d384e2525f2b8c63922994610de685438778883987a50a3509f0bf08917
 
-RUN git clone --depth 1 https://github.com/openwall/john.git /upstream
-RUN apt-get update -qq && \
-    apt-get install -y --no-install-recommends libssl-dev=* zlib1g-dev=* && \
-    apt-get install -y --no-install-recommends libgmp-dev=* libpcap-dev=* libbz2-dev=* \
+RUN git clone --depth 1 https://github.com/openwall/john.git /upstream \
+    && apt-get update -qq \
+    && apt-get install -y --no-install-recommends \
+        libbz2-dev=* libgmp-dev=* libpcap-dev=* \
+        libssl-dev=* zlib1g-dev=* \
 # ==================================================================
 # Clean up the image (shrink the Docker image)
 # ------------------------------------------------------------------
@@ -35,4 +36,6 @@ RUN apt-get update -qq && \
 WORKDIR $SRC/john
 COPY .clusterfuzzlite/build.sh $SRC/
 COPY scripts/helper.sh /upstream
+
+USER tester
 HEALTHCHECK NONE

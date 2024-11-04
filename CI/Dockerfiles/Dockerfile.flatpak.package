@@ -26,12 +26,14 @@ LABEL description="Docker images for John the Ripper CI (1.0.Fedora Latest Flatp
 LABEL org.opencontainers.image.source="https://github.com/openwall/john-packages"
 
 RUN dnf -y -q update \
-    && dnf -y    install \
+    && dnf -y install \
         flatpak flatpak-builder elfutils wget git \
     && flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo \
     && flatpak install -y flathub org.freedesktop.Platform//24.08 org.freedesktop.Sdk//24.08 \
-    && useradd -U -m JtR
+    && useradd -U -m tester
 
-USER JtR
 ENV BASE fedora
-CMD /bin/bash
+CMD [ "/bin/bash" ]
+
+USER tester
+HEALTHCHECK NONE

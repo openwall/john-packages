@@ -27,17 +27,20 @@ LABEL org.opencontainers.image.source="https://github.com/openwall/john-packages
 
 RUN apt-get update -qq \
     && export DEBIAN_FRONTEND="noninteractive" \
-    && apt-get install -y \
-        build-essential libssl-dev yasm libgmp-dev libpcap-dev pkg-config debhelper libnet1-dev \
-        libbz2-dev wget llvm libomp-dev zlib1g-dev git clang afl++ zzuf \
-        libpocl-dev ocl-icd-opencl-dev ocl-icd-libopencl1 pocl-opencl-icd opencl-headers \
-    && useradd -U -m JtR \
+    && apt-get install -y --no-install-recommends \
+        afl++ build-essential ca-certificates clang debhelper git libbz2-dev libgmp-dev libnet1-dev libomp-dev \
+        libpcap-dev libpocl-dev libssl-dev llvm ocl-icd-libopencl1 ocl-icd-opencl-dev \
+        opencl-headers pkg-config pocl-opencl-icd wget yasm zlib1g-dev zzuf \
+    # Azure DevOps requires a root user
+    && useradd --uid 0 --non-unique --gid 0 -m tester \
 # ==================================================================
 # Clean up the image (shrink the Docker image)
 # ------------------------------------------------------------------
     && apt-get -y clean \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
-# USER JtR => it is much better to use root on Travis
-ENV BASE ubuntu
-CMD /bin/bash
+ENV BASE ubuntu-pocl
+CMD [ "/bin/bash" ]
+
+USER tester
+HEALTHCHECK NONE

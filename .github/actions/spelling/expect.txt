@@ -225,6 +225,7 @@ trivy
 tzip
 uaf
 ubsan
+uid
 usesh
 usr
 utf

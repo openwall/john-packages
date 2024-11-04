@@ -30,8 +30,11 @@ RUN dnf -y -q update \
         @development-tools openssl-devel gmp-devel libpcap-devel bzip2-devel wget \
         clang libasan libubsan libtsan american-fuzzy-lop zzuf pocl-devel \
         american-fuzzy-lop-clang \
-    && useradd -U -m JtR
+    # Azure DevOps requires a root user
+    && useradd --uid 0 --non-unique --gid 0 -m tester
 
-USER JtR
 ENV BASE fedora
-CMD /bin/bash
+CMD [ "/bin/bash" ]
+
+USER tester
+HEALTHCHECK NONE

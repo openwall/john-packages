@@ -27,7 +27,7 @@ LABEL org.opencontainers.image.source="https://github.com/openwall/john-packages
 
 # DO NOT update this automatically. OpenCL drivers are fragile and must be maintained very carefully.
 # RUN apt-get update -qq \
-#     && apt-get install -y \
+#     && apt-get install -y --no-install-recommends \
 #         build-essential libssl-dev zlib1g-dev yasm libgmp-dev libpcap-dev \
 #         pkg-config libbz2-dev wget \
 #         ocl-icd-opencl-dev clinfo git \
@@ -38,11 +38,14 @@ LABEL org.opencontainers.image.source="https://github.com/openwall/john-packages
 #     && apt-get update -qq \
 #     && apt-get install -y \
 #         intel-oneapi-runtime-opencl intel-basekit \
-#     && useradd -U -m JtR \
+#     && useradd -U -m tester \
 #     && apt-get -y clean \
 #     && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
 # Workaround for an issue in Intel libraries installation script
 ENV LD_LIBRARY_PATH=/opt/intel/oneapi/2024.0/lib/:"$LD_LIBRARY_PATH"
 ENV BASE ubuntu
-CMD /bin/bash
+CMD [ "/bin/bash" ]
+
+USER tester
+HEALTHCHECK NONE
