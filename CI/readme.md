@@ -23,7 +23,7 @@ using:
 - Solaris:
   - SunOS solaris 5.11 11.4.42.111.0 i86pc i386 i86pc kvm;
 - Linux:
-  - Red Hat Enterprise Linux 8 and Fedora 40;
+  - Red Hat Enterprise Linux 8 and Fedora 41;
   - Ubuntu 22.04, Ubuntu 24.04, and Ubuntu devel (the under development version);
   - flatpak (runtime: org.freedesktop.Platform 24.08);
   - snap (runtime: core24);
@@ -43,7 +43,7 @@ using:
   - gcc 11.4 (Android), gcc 11.4 (Ubuntu 22 - Intel CPU);
   - gcc 12.4 (Win 2019/2022);
   - gcc 13.2 (Ubuntu 24, snap, fuzzing);
-  - gcc 14.2 (Fedora 40, Ubuntu Dev), gcc 14.2 (Flatpak);
+  - gcc 14.2 (Fedora 41, Ubuntu Dev), gcc 14.2 (Flatpak);
   - Apple clang version 16.0.0 (clang-1600.0.26.3);
   - FreeBSD clang version 18.1.6 (FreeBSD 13, FreeBSD 14);
   - FreeBSD clang version 19.1.2 (FreeBSD 15);
