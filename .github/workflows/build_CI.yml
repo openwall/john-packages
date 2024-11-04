@@ -29,7 +29,9 @@ name: CI Docker image
 env:
   REPO: ghcr.io/${{ github.repository_owner }}/john-ci
 
-permissions: read-all
+permissions:
+  contents: read
+
 jobs:
   build:
     name: Build image

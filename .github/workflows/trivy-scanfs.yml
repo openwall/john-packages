@@ -25,7 +25,9 @@ name: Trivy Scan fs
 "on":
   pull_request:
 
-permissions: read-all
+permissions:
+  contents: read
+
 jobs:
   trivy-code-security-scan:
     runs-on: ubuntu-latest

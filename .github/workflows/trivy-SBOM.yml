@@ -28,7 +28,8 @@ name: Trivy SBOM
     branches:
       - main
 
-permissions: read-all
+permissions:
+  contents: read
 
 jobs:
   trivy-code-security-scan:

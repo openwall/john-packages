@@ -29,7 +29,9 @@ name: ClusterFuzzLite fuzzing
     branches:
       - "fuzz"
 
-permissions: read-all
+permissions:
+  contents: read
+
 jobs:
   PR:
     runs-on: ubuntu-latest

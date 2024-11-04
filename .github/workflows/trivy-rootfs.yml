@@ -29,7 +29,9 @@ name: Trivy Scan rootfs
       - main
   pull_request:
 
-permissions: read-all
+permissions:
+  contents: read
+
 jobs:
   trivy-code-security-scan:
     name: Scan rootfs

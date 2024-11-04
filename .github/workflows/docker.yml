@@ -52,7 +52,8 @@ name: Docker
 env:
   REPO: ghcr.io/${{ github.repository_owner }}/john
 
-permissions: read-all
+permissions:
+  contents: read
 
 jobs:
   build:
