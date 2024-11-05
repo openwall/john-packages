@@ -28,8 +28,8 @@ LABEL org.opencontainers.image.source="https://github.com/openwall/john-packages
 RUN apt-get update -qq \
     && export DEBIAN_FRONTEND="noninteractive" \
     && apt-get install -y --no-install-recommends \
-         build-essential ca-certificates clang debhelper git libbz2-dev libgmp-dev \
-         libnet1-dev libomp-dev libpcap-dev libssl-dev llvm pkg-config wget yasm zlib1g-dev \
+        build-essential ca-certificates clang debhelper git libbz2-dev libgmp-dev \
+        libnet1-dev libomp-dev libpcap-dev libssl-dev llvm pkg-config wget yasm zlib1g-dev \
     && useradd -U -m tester \
 # ==================================================================
 # Clean up the image (shrink the Docker image)
