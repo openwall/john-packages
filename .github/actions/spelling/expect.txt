@@ -1,5 +1,6 @@
 aarch
 Acked
+adxcrypt
 AESNI
 afl
 AKIAIOSFODNN
@@ -26,6 +27,7 @@ aws
 basekit
 bestpractices
 bigfiles
+bitlocker
 bugtracker
 BUILDID
 buildlog
@@ -43,6 +45,7 @@ clinfo
 cloudflare
 cloudfront
 clusterfuzzlite
+cmp
 codeql
 commitlint
 committers
@@ -66,6 +69,7 @@ cyggomp
 cygz
 davidanson
 debhelper
+descrypt
 devcontainer
 distro
 dmg
@@ -103,6 +107,7 @@ Gnomovision
 gnueabi
 gnupg
 google
+gost
 gpg
 GPUs
 hashicorp
@@ -118,10 +123,13 @@ ipc
 jscpd
 JTR
 jtrcrackers
+jtrts
+KDFAES
 keepass
 Keplr
 keygen
 keyring
+krb
 kvm
 LASTEXITCODE
 Lauchpad
@@ -142,6 +150,7 @@ libpocl
 libtsan
 libubsan
 libusb
+logon
 lsb
 LWS
 lzma
@@ -152,7 +161,12 @@ mfb
 misconfig
 mktemp
 mrsp
+mscash
+nethalflm
+netlm
+noprelims
 nproc
+ntlm
 nvidia
 nvopencl
 nxcompat
@@ -169,6 +183,7 @@ passphrase
 pdf
 peflags
 PGP
+pgpdisk
 pocl
 ppc
 prismacloud
@@ -187,9 +202,11 @@ rekor
 rootfs
 rsa
 runtimes
+rvary
 saltstring
 sandboxing
 sanitizers
+sapb
 sbom
 scanfs
 seccomp
@@ -212,6 +229,7 @@ ssd
 SSSE
 stdlib
 strderr
+streebog
 subdir
 sys
 tarball
@@ -219,10 +237,12 @@ tcp
 templatefile
 terraform
 tfstate
+tgs
 tld
 tls
 tmp
 tmpl
+tripcode
 trivy
 tzip
 uabbnd
@@ -236,6 +256,7 @@ vcs
 Veyor
 virustotal
 vmactions
+vnc
 vncpcap
 vpc
 wordlist
@@ -244,6 +265,7 @@ woria
 workdir
 workspaces
 wpapcap
+wpapsk
 xcode
 xcopy
 xlarge
