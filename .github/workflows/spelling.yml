@@ -21,23 +21,11 @@
 # More info at https://github.com/openwall/john-packages
 
 ---
-name: Check Spelling
+name: Spelling
+
 "on":
-  push:
-    branches:
-      - "**"
-    tags-ignore:
-      - "**"
   pull_request_target:
-    branches:
-      - "**"
-    types:
-      - "opened"
-      - "reopened"
-      - "synchronize"
-  issue_comment:
-    types:
-      - "created"
+  push:
 
 permissions:
   contents: read
@@ -77,14 +65,8 @@ jobs:
           spell_check_this: check-spelling/spell-check-this@prerelease
           post_comment: 0
           use_magic_file: 1
-          report-timing: 1
-          warnings: >
-            bad-regex,binary-file,deprecated-feature,large-file,limited-references,no-newline-at-eof,noisy-file,non-alpha-in-dictionary,
-            token-is-substring,unexpected-line-ending,whitespace-in-dictionary,minified-file,unsupported-configuration,no-files-to-check
           experimental_apply_changes_via_bot: 1
-          use_sarif: ${{
-            (!github.event.pull_request || (github.event.pull_request.head.repo.full_name == github.repository)) && 1
-            }}
+          use_sarif: 1
           extra_dictionary_limit: 20
           extra_dictionaries: cspell:software-terms/dict/softwareTerms.txt
             cspell:cpp/src/stdlib-c.txt
@@ -150,32 +132,3 @@ jobs:
           checkout: true
           spell_check_this: check-spelling/spell-check-this@prerelease
           task: ${{ needs.spelling.outputs.followup }}
-          experimental_apply_changes_via_bot: 1
-
-  update:
-    name: Update PR
-    permissions:
-      contents: write
-      pull-requests: write
-      actions: read
-    runs-on: ubuntu-latest
-    if: ${{
-      github.event_name == 'issue_comment' &&
-      github.event.issue.pull_request &&
-      contains(github.event.comment.body, '@check-spelling-bot apply')
-      }}
-    concurrency:
-      group: spelling-update-${{ github.event.issue.number }}
-      cancel-in-progress: false
-    steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
-        with:
-          egress-policy: audit
-
-      - name: apply spelling updates
-        uses: check-spelling/check-spelling@b365ac888c4713bf3a082b07b342feed0f3438fe # main
-        with:
-          experimental_apply_changes_via_bot: 1
-          checkout: true
-          ssh_key: "${{ secrets.CHECK_SPELLING }}"
