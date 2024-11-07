@@ -27,7 +27,6 @@ name: Linter
   push:
     branches-ignore: [main]
   pull_request:
-    branches: [main]
 
 permissions:
   contents: read
