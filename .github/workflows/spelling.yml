@@ -26,6 +26,7 @@ name: Spelling
 "on":
   pull_request_target:
   push:
+    branches-ignore: [main]
 
 permissions:
   contents: read
