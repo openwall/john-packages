@@ -41,6 +41,7 @@ claudio
 claudioandre
 clinfo
 cloudflare
+cloudfront
 clusterfuzzlite
 codeql
 commitlint
@@ -95,6 +96,7 @@ gdb
 GFDL
 gitattributes
 gitleaks
+glxqk
 gmake
 gmp
 Gnomovision
@@ -223,6 +225,7 @@ tmp
 tmpl
 trivy
 tzip
+uabbnd
 uaf
 ubsan
 uid
