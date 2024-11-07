@@ -21,7 +21,7 @@
 # More info at https://github.com/openwall/john-packages
 
 ---
-name: Approve PR
+name: Approve bot
 
 "on":
   pull_request_target:
