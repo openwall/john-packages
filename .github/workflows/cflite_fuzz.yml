@@ -26,8 +26,7 @@ name: ClusterFuzzLite fuzzing
   schedule:
     - cron: "0 4 * * MON"
   push:
-    branches:
-      - "fuzz"
+    branches: [fuzz]
 
 permissions:
   contents: read
