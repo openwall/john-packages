@@ -24,6 +24,7 @@
 name: Trivy Scan fs
 "on":
   pull_request:
+  push:
 
 permissions:
   contents: read
