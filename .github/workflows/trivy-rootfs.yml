@@ -26,7 +26,6 @@ name: Trivy Scan rootfs
 "on":
   push:
     branches: [main]
-  pull_request:
 
 permissions:
   contents: read
