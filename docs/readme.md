@@ -13,6 +13,6 @@ Please, also check the [Wiki](https://github.com/openwall/john-packages/wiki) fo
 
 ## Developer Documentation
 
-1. [How a commit message should be?](commit-messages.md)
+1. [How a commit message should be?](commit-message.md)
 2. [How to become a maintainer?](become-maintainer.md)
 3. [Our release process](release-process.md)
