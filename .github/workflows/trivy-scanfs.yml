@@ -56,7 +56,7 @@ jobs:
         uses: aquasecurity/trivy-action@915b19bbe73b92a6cf82a1bc12b087c9a19a5fe2 # 0.28.0
         with:
           scan-type: "fs"
-          scanners: vuln,secret # misconfig,license
+          scanners: vuln,secret,license # misconfig
           exit-code: 1
           ignore-unfixed: true
         env:

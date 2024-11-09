@@ -59,6 +59,7 @@ jobs:
         uses: aquasecurity/trivy-action@915b19bbe73b92a6cf82a1bc12b087c9a19a5fe2 # 0.28.0
         with:
           scan-type: "fs"
+          scanners: vuln,secret,license
           format: "github"
           output: "dependency-results.sbom.json"
           image-ref: "."
