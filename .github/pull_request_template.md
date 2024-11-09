@@ -1,24 +1,24 @@
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable-next-line MD041 -->
 ## Describe your changes
+<!-- prettier-ignore-end -->
 
 Add your text here.
 
-## Issue ticket number and link
+### Issue ticket number and link
 
 Add your text here.
 
-## Checklist before requesting a review
+### Checklist before requesting a review
 
-- [ ] I have performed a self-review of my code
-- [ ] Will this be part of a product update? If yes, please write one phrase about this update.
-- [ ] I have added tests that prove my fix is effective or that my feature works
-- [ ] New and existing unit tests pass locally with my changes
-- [ ] If it is a core feature, I have added comprehensive tests.
-- [ ] If the issue this PR refers to is a bug report, add the following text to each of the commits
-      that make it up:
-  - Fix: #VALUE.
-- [ ] If the issue this PR refers to is a feature request, add the following text to each of the
-      commits that make it up:
-  - Close: #VALUE.
-- [ ] Commits may not be exactly a fix or implementation of a feature, but they can be related
-      to any issue, in this case, add the following text to each of the commits that make it up:
-  - See: #VALUE.
+- [ ] I checked that all workflows return a success.
+- [ ] I have performed a self-review of my code.
+- [ ] I have added tests that prove my fix is effective or that my feature works.
+- [ ] I followed the [Conventional Commit spec][commitMessage].
+
+### Maintainer tasks
+
+- [ ] Label as either: `bug`, `ci`, `docker`, `documentation`, `enhancement`.
+- [ ] Sign unsigned commits.
+
+[commitMessage]: https://github.com/openwall/john-packages/blob/main/docs/commit-messages.md#how-a-commit-message-should-be
