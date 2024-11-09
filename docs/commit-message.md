@@ -119,3 +119,9 @@ Types are used to automatically classify commits and place them into categories:
 ```text
 feat(obscure-resource.pl): augment incremental mode
 ```
+
+- If you have any doubts or would like to see more examples, at [1] and [2] you can find goals and examples that
+  explain the reasons behind this effort to standardize.
+
+[1] <https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/>\
+[2] <https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type>
