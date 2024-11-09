@@ -98,6 +98,8 @@ Types are used to automatically classify commits and place them into categories:
 
 ## Commit Scopes
 
+<!-- textlint-disable -->
+
 |  Scope  | Meaning                                   |
 | :-----: | :---------------------------------------- |
 |   ci    | Related to CI/CD features.                |
@@ -108,6 +110,8 @@ Types are used to automatically classify commits and place them into categories:
 |  repo   | Related to Git or GitHub's own material.  |
 |  snap   | Changes to the snap recipe or package.    |
 | windows | Changes to the Windows recipe or package. |
+
+<!-- textlint-enable -->
 
 ## Final thoughts
 
