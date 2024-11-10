@@ -38,7 +38,7 @@ permissions:
 
 jobs:
   dependency-review:
-    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+    if: ${{ github.repository == 'openwall/john-packages' }}
     runs-on: ubuntu-latest
     steps:
       - name: Harden Runner
