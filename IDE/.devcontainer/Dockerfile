@@ -35,7 +35,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         pocl-opencl-icd=* pre-commit=* shellcheck=* yasm=* zlib1g-dev=* \
     #
     && TMPFILE=$(mktemp /tmp/node-XXXXX) \
-    && curl -fsSL https://deb.nodesource.com/setup_20.x | \
+    && curl -sSf --proto '=https' --tlsv1.3 https://deb.nodesource.com/setup_20.x | \
         tee "$TMPFILE" | bash - \
     && echo "$NODE_DOWNLOAD_SHA256  $TMPFILE" | sha256sum -c - \
     && apt-get -y install --no-install-recommends nodejs=* \
@@ -45,7 +45,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN TMPFILE=$(mktemp /tmp/node-XXXXX) \
-    && curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | \
+    && curl -sSf --proto '=https' --tlsv1.3 https://sh.rustup.rs | \
         tee "$TMPFILE" | bash -s -- -y \
     && echo "$RUST_DOWNLOAD_SHA256  $TMPFILE" | sha256sum -c -
 

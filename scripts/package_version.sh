@@ -21,7 +21,8 @@
 ###############################################################################
 
 git_tag=$(git rev-parse --short=7 HEAD 2>/dev/null)
-ID=$(curl -s https://raw.githubusercontent.com/openwall/john-packages/release/deploy/Release.ID 2>/dev/null | tr -d '\n')
+release_id="https://raw.githubusercontent.com/openwall/john-packages/release/deploy/Release.ID"
+ID=$(curl -sSf --proto '=https' --tlsv1.3 "$release_id" 2>/dev/null | tr -d '\n')
 
 if [[ -z "$ID" || "$ID" == "404: Not Found" ]]; then
 
