@@ -30,7 +30,38 @@ permissions:
   contents: read
 
 jobs:
+  fork:
+    runs-on: ubuntu-latest
+
+    outputs:
+      commit: ${{ steps.context.outputs.commit }}
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
+        with:
+          disable-sudo: true
+          egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            github.com:443
+
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        if: ${{ github.event.pull_request.head.repo.full_name != 'openwall/john-packages' }}
+        with:
+          fetch-depth: 0
+          repository: "${{ github.event.pull_request.head.repo.full_name }}"
+
+      - name: Get fork context
+        id: context
+        if: ${{ github.event.pull_request.head.repo.full_name != 'openwall/john-packages' }}
+        run: |
+          BASE_COMMIT=$(git merge-base --fork-point origin/main "${{ github.event.pull_request.head.sha }}" || true)
+          echo "commit=$BASE_COMMIT" >> "$GITHUB_OUTPUT"
+
   auto-approve:
+    needs: [fork]
     runs-on: ubuntu-latest
 
     steps:
@@ -49,10 +80,24 @@ jobs:
 
       - name: Validate
         run: |
-          git diff-index origin/main
-          IS_UPDATED=$(git merge-base --is-ancestor origin/main ${{ github.event.pull_request.head.sha }})
+          ANCESTOR=1
 
-          if [[ "IS_UPDATED" -ne 0 ]]; then
+          if [[ "${{ github.event.pull_request.head.repo.full_name }}" == 'openwall/john-packages' ]]; then
+            BASE_COMMIT="${{ github.event.pull_request.head.sha }}"
+          else
+            BASE_COMMIT="${{ needs.fork.outputs.commit }}"
+          fi
+          echo "----------- The difference between working tree and index ------------"
+          git diff-index origin/main
+          echo "----------------------------------------------------------------------"
+          echo "The downward commit is: '$BASE_COMMIT'"
+          echo "----------------------------------------------------------------------"
+
+          if [[ -n "$BASE_COMMIT" ]]; then
+            ANCESTOR=$(git merge-base --is-ancestor origin/main "$BASE_COMMIT"; echo $?)
+          fi
+
+          if [[ "ANCESTOR" -ne 0 ]]; then
             echo "This branch is not up to date with main. Please, update!"
             exit 1
           fi
