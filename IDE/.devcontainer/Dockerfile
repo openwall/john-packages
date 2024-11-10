@@ -25,13 +25,14 @@
 FROM mcr.microsoft.com/vscode/devcontainers/base:noble@sha256:436147909915f53a19b33104ac9d3055ae54782f7e236920852c2c4443d516ac
 
 ENV NODE_DOWNLOAD_SHA256="dd3bc508520fcdfdc8c4360902eac90cba411a7e59189a80fb61fcbea8f4199c"
+ENV RUST_DOWNLOAD_SHA256="32a680a84cf76014915b3f8aa44e3e40731f3af92cd45eb0fcc6264fd257c428"
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
-        build-essential=* cpio=* gdb=* golang=* libbz2-dev=* libgmp-dev=* libpcap-dev=* \
-        libpocl-dev=* libssl-dev=* ocl-icd-opencl-dev=* pkg-config=* pocl-opencl-icd=* \
-        pre-commit=* shellcheck=* yasm=* zlib1g-dev=* \
+        build-essential=* ca-certificates=* cpio=* gdb=* golang=* libbz2-dev=* libgmp-dev=* \
+        libpcap-dev=* libpocl-dev=* libssl-dev=* ocl-icd-opencl-dev=* pkg-config=* \
+        pocl-opencl-icd=* pre-commit=* shellcheck=* yasm=* zlib1g-dev=* \
     #
     && TMPFILE=$(mktemp /tmp/node-XXXXX) \
     && curl -fsSL https://deb.nodesource.com/setup_20.x | \
@@ -43,7 +44,10 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-RUN curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | bash -s -- -y
+RUN TMPFILE=$(mktemp /tmp/node-XXXXX) \
+    && curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | \
+        tee "$TMPFILE" | bash -s -- -y \
+    && echo "$RUST_DOWNLOAD_SHA256  $TMPFILE" | sha256sum -c -
 
 USER vscode
 HEALTHCHECK NONE
