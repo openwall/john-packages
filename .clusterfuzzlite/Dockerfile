@@ -27,6 +27,8 @@ RUN git clone --depth 1 https://github.com/openwall/john.git /upstream \
     && apt-get install -y --no-install-recommends \
         libbz2-dev=* libgmp-dev=* libpcap-dev=* \
         libssl-dev=* zlib1g-dev=* \
+    # libFuzzingEngine requires a root user
+    && useradd --uid 0 --non-unique --gid 0 -m tester \
 # ==================================================================
 # Clean up the image (shrink the Docker image)
 # ------------------------------------------------------------------
