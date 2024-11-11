@@ -21,7 +21,7 @@
 # More info at https://github.com/openwall/john-packages
 
 ---
-name: Check if updated with main
+name: Branch updated
 
 "on":
   pull_request_target:
@@ -32,6 +32,7 @@ permissions:
 jobs:
   fork:
     runs-on: ubuntu-latest
+    name: check-fork
 
     outputs:
       commit: ${{ steps.context.outputs.commit }}
@@ -60,9 +61,10 @@ jobs:
           BASE_COMMIT=$(git merge-base --fork-point origin/main "${{ github.event.pull_request.head.sha }}" || true)
           echo "commit=$BASE_COMMIT" >> "$GITHUB_OUTPUT"
 
-  auto-approve:
+  validate:
     needs: [fork]
     runs-on: ubuntu-latest
+    name: check-updated
 
     steps:
       - name: Harden Runner

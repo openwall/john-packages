@@ -21,7 +21,7 @@
 # More info at https://github.com/openwall/john-packages
 
 ---
-name: Trivy Scan rootfs
+name: Trivy rootfs
 
 "on":
   push:
@@ -32,8 +32,9 @@ permissions:
 
 jobs:
   trivy-code-security-scan:
-    name: Scan rootfs
     runs-on: ubuntu-latest
+    name: scan-rootfs
+
     permissions:
       security-events: write
       id-token: write

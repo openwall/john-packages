@@ -28,7 +28,7 @@
 # Contributors donate free time to work on the project because they enjoy it.
 # Discussing things that nobody cares about is not pleasant and takes a lot of time.
 # And we can't force them to do it either. The issue will most likely remain open forever.
-name: Close inactive issues
+name: Close issues
 "on":
   schedule:
     - cron: "30 1 * * *"
@@ -39,6 +39,8 @@ permissions:
 jobs:
   close-issues:
     runs-on: ubuntu-latest
+    name: stale
+
     permissions:
       issues: write
       pull-requests: write

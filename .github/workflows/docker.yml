@@ -57,8 +57,8 @@ permissions:
 
 jobs:
   build:
-    name: Build Docker image
     runs-on: ubuntu-latest
+    name: build-image
 
     permissions:
       attestations: write

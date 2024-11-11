@@ -34,8 +34,8 @@ permissions:
 
 jobs:
   build:
-    name: Build image
     runs-on: ubuntu-latest
+    name: build-ci
     continue-on-error: true
 
     strategy:

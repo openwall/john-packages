@@ -32,8 +32,9 @@ permissions:
 
 jobs:
   virustotal:
-    name: Virus Scan
     runs-on: ubuntu-latest
+    name: virus-scan
+
     permissions:
       # required to update the release. But it is a security issue.
       contents: write

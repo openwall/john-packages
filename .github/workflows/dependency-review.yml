@@ -29,7 +29,7 @@
 # PRs introducing known-vulnerable packages will be blocked from merging.
 #
 # Source repository: https://github.com/actions/dependency-review-action
-name: "Dependency Review"
+name: Dependency review
 "on":
   pull_request:
 
@@ -40,6 +40,8 @@ jobs:
   dependency-review:
     if: ${{ github.repository == 'openwall/john-packages' }}
     runs-on: ubuntu-latest
+    name: dependency-review
+
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1

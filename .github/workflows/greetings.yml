@@ -35,6 +35,8 @@ permissions:
 jobs:
   greeting:
     runs-on: ubuntu-latest
+    name: greetings
+
     permissions:
       issues: write
       pull-requests: write

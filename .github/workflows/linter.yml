@@ -33,8 +33,8 @@ permissions:
 
 jobs:
   build:
-    name: Lint Code Base
     runs-on: ubuntu-latest
+    name: linter
 
     steps:
       - name: Harden Runner

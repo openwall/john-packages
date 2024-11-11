@@ -32,6 +32,8 @@ permissions:
 jobs:
   auto-approve:
     runs-on: ubuntu-latest
+    name: approve-bot
+
     permissions:
       pull-requests: write
 

@@ -33,7 +33,8 @@ permissions:
 
 jobs:
   spelling:
-    name: Check Spelling
+    name: spelling
+
     permissions:
       pull-requests: read
       actions: read
