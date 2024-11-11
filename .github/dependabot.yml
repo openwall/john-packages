@@ -38,7 +38,7 @@ updates:
       day: "saturday"
 
   - package-ecosystem: devcontainers
-    directory: /
+    directory: /IDE
     schedule:
       interval: "weekly"
       day: "saturday"
