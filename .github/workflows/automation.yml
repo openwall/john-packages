@@ -58,12 +58,15 @@ jobs:
         run: |
           gh pr checkout "$PR_URL"
 
-          APPROVALS="$(gh pr status --json latestReviews --jq '.currentBranch.latestReviews[].state == "APPROVED"' | grep -c 'true')"
+          DATA="$(gh pr status --json latestReviews --jq '.currentBranch.latestReviews[].state == "APPROVED"')"
+          APPROVALS="$(echo "$DATA" | grep -c 'true' || true)"
           echo "Approvals: $APPROVALS"
 
           if [[ "$APPROVALS" -ge 2 ]]; then
-            echo "Auto-merge Dependabot PRs.";
+            echo "Auto-merge Dependabot PRs."
             gh pr merge --auto --squash "$PR_URL"
+          else
+            echo "Nothing to do."
           fi
 
         env:
