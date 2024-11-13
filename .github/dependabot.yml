@@ -7,38 +7,50 @@ updates:
       interval: "weekly"
       day: "saturday"
 
-  - package-ecosystem: docker
-    directory: /IDE/.devcontainer
+  - package-ecosystem: devcontainers
+    directory: /IDE
     schedule:
       interval: "weekly"
       day: "saturday"
 
+  # ********** Docker **********
+  # Ubuntu
   - package-ecosystem: docker
-    directory: /cloud-tool
+    directories:
+      - /CI/Dockerfiles
+      - /cloud-tool
     schedule:
       interval: "weekly"
       day: "saturday"
+    groups:
+      ubuntu:
+        patterns:
+          - "ubuntu*"
 
-  - package-ecosystem: docker
-    directory: /deploy/docker
-    schedule:
-      interval: "weekly"
-      day: "saturday"
-
+  # If it's not Ubuntu
   - package-ecosystem: docker
     directory: /CI/Dockerfiles
     schedule:
       interval: "weekly"
       day: "saturday"
 
+  # nvidia/cuda
   - package-ecosystem: docker
-    directory: /.clusterfuzzlite
+    directory: /deploy/docker
     schedule:
       interval: "weekly"
       day: "saturday"
 
-  - package-ecosystem: devcontainers
-    directory: /IDE
+  # vscode/devcontainers/base
+  - package-ecosystem: docker
+    directory: /IDE/.devcontainer
+    schedule:
+      interval: "weekly"
+      day: "saturday"
+
+  # oss-fuzz-base/base-builder
+  - package-ecosystem: docker
+    directory: /.clusterfuzzlite
     schedule:
       interval: "weekly"
       day: "saturday"
