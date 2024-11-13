@@ -26,13 +26,13 @@ LABEL description="Automation for John the Ripper (1.0.Cloud Tools)"
 
 ENV HC_DOWNLOAD_SHA256="cafb01beac341bf2a9ba89793e6dd2468110291adfbb6c62ed11a0cde6c09029"
 
+ADD https://apt.releases.hashicorp.com/gpg gpg.key
+
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update -qq \
     && export DEBIAN_FRONTEND="noninteractive" \
     && apt-get install -y --no-install-recommends \
-        gnupg=* software-properties-common=* ca-certificates=* \
-        wget=* git=* nano=* \
-    && wget --progress=dot:giga https://apt.releases.hashicorp.com/gpg -O gpg.key \
+        ca-certificates=* git=* gnupg=* nano=* software-properties-common=*  \
     && echo "$HC_DOWNLOAD_SHA256  gpg.key" | sha256sum -c - \
     && gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg < gpg.key \
     && echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | \
