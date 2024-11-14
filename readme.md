@@ -9,7 +9,6 @@
 
 [![OpenSSF Scorecard][shieldScore]](https://api.securityscorecards.dev/projects/github.com/openwall/john-packages)
 [![Best Practices][shieldPractices]](https://bestpractices.coreinfrastructure.org/projects/7525)
-[![CodeFactor Grade][shieldCodeFactor]](https://www.codefactor.io/repository/github/openwall/john-packages)
 
 </div>
 
@@ -674,4 +673,3 @@ GNU General Public License v2.0.
 [shieldLicense]: https://img.shields.io/badge/License-GPL%20v2-blue.svg
 [shieldScore]: https://api.securityscorecards.dev/projects/github.com/openwall/john-packages/badge
 [shieldPractices]: https://bestpractices.coreinfrastructure.org/projects/7525/badge
-[shieldCodeFactor]: https://img.shields.io/codefactor/grade/github/openwall/john-packages?label=Grade&logo=codefactor&logoColor=ffffff&style=flat-square "CodeFactor Grade"
