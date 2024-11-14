@@ -1,0 +1,119 @@
+###############################################################################
+#        _       _             _   _            _____  _
+#       | |     | |           | | | |          |  __ \(_)
+#       | | ___ | |__  _ __   | |_| |__   ___  | |__) |_ _ __  _ __   ___ _ __
+#   _   | |/ _ \| '_ \| '_ \  | __| '_ \ / _ \ |  _  /| | '_ \| '_ \ / _ \ '__|
+#  | |__| | (_) | | | | | | | | |_| | | |  __/ | | \ \| | |_) | |_) |  __/ |
+#   \____/ \___/|_| |_|_| |_|  \__|_| |_|\___| |_|  \_\_| .__/| .__/ \___|_|
+#                                                       | |   | |
+#                                                       |_|   |_|
+#
+# Copyright (c) 2024 Claudio André <dev@claudioandre.slmail.me>
+#
+# This program comes with ABSOLUTELY NO WARRANTY; express or implied.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, as expressed in version 2, seen at
+# http://www.gnu.org/licenses/gpl-2.0.html
+###############################################################################
+# GitHub Action to merge PRs on demand
+# More info at https://github.com/openwall/john-packages
+
+---
+name: Merge PR
+
+"on":
+  workflow_dispatch:
+    inputs:
+      pullRequestNumber:
+        description: Pull request number
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    name: merge-pr
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    if: github.actor == 'claudioandre-br' || github.actor == 'solardiz'
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
+        with:
+          disable-sudo: true
+          egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            github.com:443
+
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          path: working
+
+      - name: Get PR info
+        id: data
+        run: |
+          cd "$GITHUB_WORKSPACE/working" || exit 1
+          git branch
+          gh pr checkout "$PR_URL"
+
+          BRANCH="$(gh pr view --json headRefName        --jq '.headRefName')"
+          OWNER="$(gh pr view --json headRepositoryOwner --jq '.headRepositoryOwner.login')"
+          REPO="$(gh pr view --json headRepository       --jq '.headRepository.name')"
+
+          # Check if PR is ready
+          DATA="$(gh pr status --json mergeStateStatus --jq '.currentBranch.mergeStateStatus == "CLEAN"')"
+          STATUS="$(echo "$DATA" | grep -c 'true' || true)"
+
+          echo "Status: $STATUS"
+          {
+            echo "branch=$BRANCH"
+            echo "owner=$OWNER"
+            echo "repo=$REPO"
+            echo "status=$STATUS"
+          } >> "$GITHUB_OUTPUT"
+
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_URL: ${{ github.event.inputs.pullRequestNumber }}
+
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - name: Auto-merge PRs
+        run: |
+          git config --global user.name "Continuous Integration"
+          git config --global user.email "username@users.noreply.github.com"
+          MERGE="${{ steps.data.outputs.branch }}"
+
+          if [[ $(("${{ steps.data.outputs.status }}")) -ge 1 ]]; then
+            if [[ "${{ steps.data.outputs.owner }}" != "openwall" ]]; then
+              echo "From a fork."
+              MERGE="${{ steps.data.outputs.owner }}-${{ steps.data.outputs.branch }}"
+              git checkout -b "$MERGE" main
+              git pull "https://github.com/${{ steps.data.outputs.owner }}/${{ steps.data.outputs.repo }}.git" "${{ steps.data.outputs.branch }}"
+            else
+              git checkout "$MERGE"
+            fi
+            echo "Merging the PR."
+            git checkout main
+            git merge --ff-only "$MERGE" || exit 1
+
+            git push origin main
+            git log -1
+          else
+            echo "PR is not ready for merging! Nothing to do."
+            exit 1
+          fi
+
+        env:
+          GH_TOKEN: ${{ github.token }}

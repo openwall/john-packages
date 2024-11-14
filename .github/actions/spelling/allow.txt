@@ -30,6 +30,7 @@ sandboxed
 screenshot
 screenshots
 SLSA
+solardiz
 ssh
 ssl
 ubuntu
