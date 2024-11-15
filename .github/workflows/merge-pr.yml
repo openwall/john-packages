@@ -34,7 +34,7 @@ permissions:
   contents: read
 
 jobs:
-  auto-merge:
+  merge-pr:
     runs-on: ubuntu-latest
     name: merge-pr
 

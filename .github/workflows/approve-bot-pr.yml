@@ -30,7 +30,7 @@ permissions:
   contents: read
 
 jobs:
-  auto-approve:
+  approve-bot:
     runs-on: ubuntu-latest
     name: approve-bot
 
