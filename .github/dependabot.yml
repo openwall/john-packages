@@ -14,7 +14,7 @@ updates:
       day: "saturday"
 
   # ********** Docker **********
-  # Ubuntu
+  # Base OSes
   - package-ecosystem: docker
     directories:
       - /CI/Dockerfiles
@@ -25,14 +25,7 @@ updates:
     groups:
       ubuntu:
         patterns:
-          - "ubuntu*"
-
-  # If it's not Ubuntu
-  - package-ecosystem: docker
-    directory: /CI/Dockerfiles
-    schedule:
-      interval: "weekly"
-      day: "saturday"
+          - "*"
 
   # nvidia/cuda
   - package-ecosystem: docker
