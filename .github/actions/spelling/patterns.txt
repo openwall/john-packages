@@ -100,6 +100,3 @@ index [0-9a-z]{7,40}\.\.[0-9a-z]{7,40}
 # hit-count: 1 file-count: 1
 # curl arguments
 \b(?:\\n|)curl(?:\s+-[a-zA-Z]{1,2}\b)*(?:\s+-[a-zA-Z]{3,})(?:\s+-[a-zA-Z]+)*
-
-# SSH information
-SHA256:ok.{42}username@users.noreply.github.com
