@@ -58,8 +58,8 @@ jobs:
         with:
           days-before-issue-stale: 14
           days-before-issue-close: 7
-          exempt-issue-labels: "keep open"
-          stale-issue-label: "stale"
+          exempt-issue-labels: "keep open,O: backlog"
+          stale-issue-label: "O: stale"
           stale-issue-message: "This issue is stale because it has been open for 14 days with no activity."
           close-issue-message: >
             "This issue was closed because it has been inactive for 7 days since being marked as stale."
