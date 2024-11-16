@@ -60,9 +60,16 @@ jobs:
           days-before-issue-close: 7
           exempt-issue-labels: "keep open,O: backlog"
           stale-issue-label: "O: stale"
-          stale-issue-message: "This issue is stale because it has been open for 14 days with no activity."
-          close-issue-message: >
+          stale-issue-message: |
+            "This issue is stale because it has been open for 14 days with no activity."
+          close-issue-message: |
             "This issue was closed because it has been inactive for 7 days since being marked as stale."
-          days-before-pr-stale: -1
+
+          days-before-pr-stale: 14
           days-before-pr-close: -1
+          exempt-pr-labels: "keep open"
+          stale-pr-label: "O: stale"
+          stale-pr-message: |
+            "This PR is stale because it has been open for 14 days with no activity."
+
           repo-token: ${{ secrets.GITHUB_TOKEN }}
