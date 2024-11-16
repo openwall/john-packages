@@ -17,7 +17,7 @@
 # the Free Software Foundation, as expressed in version 2, seen at
 # http://www.gnu.org/licenses/gpl-2.0.html
 ###############################################################################
-# GitHub Action to automatically merge PRs
+# GitHub Action to react to PR reviews and merge PRs on request
 # More info at https://github.com/openwall/john-packages
 
 ---
@@ -28,69 +28,17 @@ name: Merge bot
     types:
       - submitted
 
-permissions:
-  contents: read
-
 jobs:
-  merge-bot:
-    runs-on: ubuntu-latest
-    name: merge-bot
-
+  call-merge-pr:
     permissions:
       contents: write
       pull-requests: write
 
-    if: github.actor == 'claudioandre-br' || github.actor == 'solardiz'
-    steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
-        with:
-          disable-sudo: true
-          egress-policy: block
-          allowed-endpoints: >
-            api.github.com:443
-            github.com:443
-            raw.githubusercontent.com:443
-
-      - name: GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run: echo "$GITHUB_CONTEXT"
-
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-        with:
-          fetch-depth: 0
-          ref: main
-
-      - name: Auto-merge PRs
-        run: |
-          if [[ "$REQUEST" != "bot: MERGE"* ]]; then
-            echo "There is no need for a merge! Nothing to do."
-            exit 0
-          fi
-
-          if [[ "$REQUEST" == "bot: MERGE skip" ]]; then
-            echo "Do not perform workflow validation."
-            echo "All GitHub rules still apply."
-            SKIP="true"
-          fi
-          gh pr checkout "$PR_URL"
-
-          DATA="$(gh pr status --json latestReviews --jq '.currentBranch.latestReviews[].state == "APPROVED"')"
-          APPROVALS="$(echo "$DATA" | grep -c 'true' || true)"
-          echo "Approvals: $APPROVALS"
-
-          # Set up the merge-procedures.sh
-          export APPROVALS
-          export SKIP
-
-          wget https://raw.githubusercontent.com/openwall/john-packages/release/scripts/merge_procedures.sh -O merge-procedures.sh
-          source merge-procedures.sh
-
-        env:
-          GH_TOKEN: ${{ github.token }}
-          PR_URL: ${{ github.event.pull_request.html_url }}
-          BRANCH: ${{ github.event.pull_request.head.ref }}
-          OWNER: ${{ github.event.pull_request.head.repo.owner.login }}
-          REPO: ${{ github.event.pull_request.head.repo.name }}
-          REQUEST: ${{ github.event.review.body }}
+    name: merge-bot-run
+    uses: openwall/john-packages/.github/workflows/merge-pr.yml@main
+    with:
+      branch: ${{ github.event.pull_request.head.ref }}
+      owner: ${{ github.event.pull_request.head.repo.owner.login }}
+      repo: ${{ github.event.pull_request.head.repo.name }}
+      pr-url: ${{ github.event.pull_request.html_url }}
+      request: ${{ github.event.review.body }}

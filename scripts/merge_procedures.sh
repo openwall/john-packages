@@ -22,28 +22,67 @@
 # Script to control the automatic merge process
 # More info at https://github.com/openwall/john-packages
 
-echo "Environment"
-env
-echo "Done"
+MY_MESSAGE=""
 
+if [[ "$REQUEST" != "bot: MERGE"* ]]; then
+	echo "There is no need for a merge! Nothing to do."
+	exit 0
+fi
+
+if [[ "$REQUEST" == "bot: MERGE skip" || "$REQUEST" == "bot: MERGE trial" ]]; then
+	echo "I'm not validating the PR data in this workflow."
+	echo "All GitHub rules still apply."
+	MY_MESSAGE="I'm not validating the PR data in this workflow.\n"
+	SKIP="true"
+fi
+
+if [[ "$REQUEST" == "bot: MERGE trial" ]]; then
+	echo "Trial mode: I'm pretending to create a merge."
+	MY_MESSAGE+="No changes will be submitted to GitHub."
+	TRIAL="true"
+fi
+gh pr checkout "$PR_URL"
+
+REVIEWS_STATUS="$(gh pr status --json latestReviews --jq '.currentBranch.latestReviews[].state == "APPROVED"')"
+APPROVALS="$(echo "$REVIEWS_STATUS" | grep -c 'true' || true)"
+MERGE_STATUS="$(gh pr status --json mergeStateStatus --jq '.currentBranch.mergeStateStatus == "CLEAN"')"
+STATUS="$(echo "$MERGE_STATUS" | grep -c 'true' || true)"
+
+echo "**********************************************************************"
+echo -e "Approvals: $APPROVALS"
+echo -e "Mergeable: $MERGE_STATUS"
+echo -e "$MY_MESSAGE"
+echo -e "---------------"
+echo -e "Reviews: $REVIEWS_STATUS"
+echo "**********************************************************************"
+
+if [[ "$TRIAL" == 'true' ]]; then
+	echo "latestReviews: $(gh pr status --json latestReviews)"
+	echo "mergeStateStatus: $(gh pr status --json mergeStateStatus)"
+	echo "**********************************************************************"
+fi
 git config --global user.name "Continuous Integration"
 git config --global user.email "username@users.noreply.github.com"
-MERGE="$BRANCH"
+DEST_BRANCH="$BRANCH"
 
-if [[ "$APPROVALS" -ge 1 || "$SKIP" == 'true' ]]; then
+if [[ ("$APPROVALS" -ge 1 && "$STATUS" -eq 1) || "$SKIP" == 'true' ]]; then
 	if [[ "$OWNER" != "openwall" ]]; then
-		echo "From a fork."
-		MERGE="$OWNER-$BRANCH"
-		git checkout -b "$MERGE" main
+		echo "The PR comes from a fork."
+		DEST_BRANCH="$OWNER-$BRANCH"
+		git checkout -b "$DEST_BRANCH" main
 		git pull "https://github.com/$OWNER/$REPO.git" "$BRANCH"
 	else
-		git checkout "$MERGE"
+		git checkout "$DEST_BRANCH"
 	fi
 	echo "Merging the PR."
 	git checkout main
-	git merge --ff-only "$MERGE" || exit 1
+	git merge --ff-only "$DEST_BRANCH" || exit 1
 
-	git push origin main
+	if [[ "$TRIAL" != 'true' ]]; then
+		git push origin main
+	else
+		echo "No new data has been submitted to be saved on GitHub."
+	fi
 	git log -1
 else
 	echo "PR is not ready for merging! Nothing to do."
