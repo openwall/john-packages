@@ -72,4 +72,8 @@ jobs:
           stale-pr-message: |
             "This PR is stale because it has been open for 14 days with no activity."
 
+          # Avoid stale for specific milestones
+          exempt-issue-milestones: "future"
+          exempt-pr-milestones: "future"
+
           repo-token: ${{ secrets.GITHUB_TOKEN }}
