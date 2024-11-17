@@ -28,6 +28,9 @@ name: Merge bot
     types:
       - submitted
 
+permissions:
+  contents: read
+
 jobs:
   call-merge-pr:
     permissions:
