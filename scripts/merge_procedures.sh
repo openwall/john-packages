@@ -63,6 +63,11 @@ git config --global user.name "Continuous Integration"
 git config --global user.email "username@users.noreply.github.com"
 DEST_BRANCH="$BRANCH"
 
+if [[ "$OWNER" != "openwall" || "$GITHUB_EVENT_NAME" == "pull_request_review" ]]; then
+	echo "On forks or reviews, I can't see the status of a PR, so ignore it."
+	STATUS=1
+fi
+
 if [[ ("$APPROVALS" -ge 1 && "$STATUS" -ge 1) || "$SKIP" == 'true' ]]; then
 	if [[ "$OWNER" != "openwall" ]]; then
 		echo "The PR comes from a fork."
