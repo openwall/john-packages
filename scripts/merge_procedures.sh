@@ -59,8 +59,8 @@ if [[ "$TRIAL" == 'true' ]]; then
 	echo "mergeStateStatus: $(gh pr view "$PR_URL" --json mergeStateStatus)"
 	echo "**********************************************************************"
 fi
-git config --global user.name "Continuous Integration"
-git config --global user.email "username@users.noreply.github.com"
+git config --global user.name "github-actions[bot]"
+git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 DEST_BRANCH="$BRANCH"
 
 if [[ "$OWNER" != "openwall" || "$GITHUB_EVENT_NAME" == "pull_request_review" ]]; then
