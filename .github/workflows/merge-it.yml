@@ -63,17 +63,13 @@ jobs:
             api.github.com:443
             github.com:443
 
-      - name: Checkout code
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-
       - name: Get PR info
         id: context
         run: |
-          gh pr checkout "$PR_URL"
-
-          BRANCH="$(gh pr view --json headRefName        --jq '.headRefName')"
-          OWNER="$(gh pr view --json headRepositoryOwner --jq '.headRepositoryOwner.login')"
-          REPO="$(gh pr view --json headRepository       --jq '.headRepository.name')"
+          URL_ID="https://github.com/openwall/john-packages/pull/$PR_URL"
+          BRANCH="$(gh pr view "$URL_ID" --json headRefName        --jq '.headRefName')"
+          OWNER="$(gh pr view "$URL_ID" --json headRepositoryOwner --jq '.headRepositoryOwner.login')"
+          REPO="$(gh pr view "$URL_ID" --json headRepository       --jq '.headRepository.name')"
 
           if [[ ${{ github.event.inputs.trial }}  == "true" ]]; then
             REQUEST="bot: MERGE trial"
