@@ -36,10 +36,11 @@ buildsystem
 CCO
 CFLAGS
 cflite
-CHECKOV
+checkov
 cidr
 circleci
 cirruslabs
+CKV
 claudio
 claudioandre
 clinfo

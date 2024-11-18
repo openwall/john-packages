@@ -25,6 +25,7 @@ name: Merge it
 
 "on":
   workflow_dispatch:
+    #checkov:skip=CKV_GHA_7:This is automation, not a real build
     inputs:
       pullRequestNumber:
         description: Pull request number

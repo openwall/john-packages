@@ -37,6 +37,8 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "worker" {
+  #checkov:skip=CKV2_AWS_41:IAM role is NOT attached to EC2 instance. Keep simple
+  #checkov:skip=CKV_AWS_135:EC2 EBS is NOT optimized. Keep simple and CHEAP
   ami                    = data.aws_ami.ubuntu.id
   vpc_security_group_ids = [aws_security_group.jtrcrackers-sg.id]
   key_name               = aws_key_pair.deployer.key_name
