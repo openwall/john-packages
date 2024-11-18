@@ -57,6 +57,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      workflows: write
 
     if: github.actor == 'claudioandre-br' || github.actor == 'solardiz'
     steps:

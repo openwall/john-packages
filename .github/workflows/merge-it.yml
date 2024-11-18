@@ -43,6 +43,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      workflows: write
 
     name: merge-it-run
     uses: openwall/john-packages/.github/workflows/merge-pr.yml@main
