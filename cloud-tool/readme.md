@@ -52,7 +52,7 @@ You need to open and edit the file `variables.tf`.
 
 ## Key and server
 
-You can use your own ssh keys or create new ones. You will use the ssh keys only during your cracking session, so it can be disposable. Do NOT use a passphrase to create it.
+You can use your own SSH keys or create new ones. You will use the SSH keys only during your cracking session, so it can be disposable. Do NOT use a passphrase to create it.
 
 ```bash
 ssh-keygen -t rsa -f workerKey
