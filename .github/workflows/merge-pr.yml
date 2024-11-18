@@ -21,36 +21,42 @@
 # More info at https://github.com/openwall/john-packages
 
 ---
-name: MergePR
+name: doMerge
 
-on:
+"on":
   workflow_call:
     inputs:
       branch:
         description: "The name of the branch to be merged."
-        required: true
+        required: false
         type: string
       owner:
         description: "The owner of the repository the PR comes from"
-        required: true
+        required: false
         type: string
       repo:
         description: "The name of the repository the PR comes from"
-        required: true
-        type: string
-      pr-url:
-        description: "The number of the PR to merge"
-        required: true
-        type: string
-      request:
-        description: "The command to be executed"
         required: false
         type: string
-        default: "bot: MERGE"
+      pr-number:
+        description: "The number of the PR to merge"
+        required: true
+        type: number
+      request:
+        description: "The command to be executed"
+        required: true
+        type: string
+
+permissions:
+  contents: read
 
 jobs:
   merger:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
 
     if: github.actor == 'claudioandre-br' || github.actor == 'solardiz'
     steps:
@@ -74,15 +80,49 @@ jobs:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
         run: echo "$GITHUB_CONTEXT"
 
+      - name: Get PR info
+        id: context
+        run: |
+          PR_URL="https://github.com/openwall/john-packages/pull/$PR_NUMBER"
+
+          if [[ -z "${{ inputs.branch }}" ]]; then
+            BRANCH="$(gh pr view "$PR_URL" --json headRefName        --jq '.headRefName')"
+            OWNER="$(gh pr view "$PR_URL" --json headRepositoryOwner --jq '.headRepositoryOwner.login')"
+            REPO="$(gh pr view "$PR_URL" --json headRepository       --jq '.headRepository.name')"
+          else
+            BRANCH="${{ inputs.branch }}"
+            OWNER="${{ inputs.owner }}"
+            REPO="${{ inputs.repo }}"
+          fi
+
+          if [[ "${{ inputs.request }}"  == "true" ]]; then
+            REQUEST="bot: MERGE trial"
+          elif [[ "${{ inputs.request }}"  == "false" ]]; then
+            REQUEST="bot: MERGE"
+          else
+            REQUEST="${{ inputs.request }}"
+          fi
+          {
+            echo "branch=$BRANCH"
+            echo "owner=$OWNER"
+            echo "repo=$REPO"
+            echo "pr-url=$PR_URL"
+            echo "request=$REQUEST"
+          } >> "$GITHUB_OUTPUT"
+
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ inputs.pr-number }}
+
       - name: Auto-merge PRs
         run: |
-          export BRANCH="${{ inputs.branch }}"
-          export OWNER="${{ inputs.owner }}"
-          export REPO="${{ inputs.repo }}"
-          export PR_URL="${{ inputs.pr-url }}"
-          export REQUEST="${{ inputs.request }}"
+          export BRANCH="${{ steps.context.outputs.branch }}"
+          export OWNER="${{ steps.context.outputs.owner }}"
+          export REPO="${{ steps.context.outputs.repo }}"
+          export PR_URL="${{ steps.context.outputs.pr-url }}"
+          export REQUEST="${{ steps.context.outputs.request }}"
 
           source "./scripts/merge_procedures.sh" # @main
 
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

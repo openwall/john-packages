@@ -28,6 +28,7 @@ name: Merge it
     inputs:
       pullRequestNumber:
         description: Pull request number
+        type: string
         required: true
       trial:
         description: Run in trial mode
@@ -38,66 +39,13 @@ permissions:
   contents: read
 
 jobs:
-  pr-data:
-    runs-on: ubuntu-latest
-    name: merge-it-data
-
+  call-merge-pr:
     permissions:
       contents: write
       pull-requests: write
 
-    outputs:
-      branch: ${{ steps.context.outputs.branch }}
-      owner: ${{ steps.context.outputs.owner }}
-      repo: ${{ steps.context.outputs.repo }}
-      request: ${{ steps.context.outputs.request }}
-
-    if: github.actor == 'claudioandre-br' || github.actor == 'solardiz'
-    steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
-        with:
-          disable-sudo: true
-          egress-policy: block
-          allowed-endpoints: >
-            api.github.com:443
-            github.com:443
-
-      - name: Checkout code
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-
-      - name: Get PR info
-        id: context
-        run: |
-          gh pr checkout "$PR_URL"
-
-          BRANCH="$(gh pr view --json headRefName        --jq '.headRefName')"
-          OWNER="$(gh pr view --json headRepositoryOwner --jq '.headRepositoryOwner.login')"
-          REPO="$(gh pr view --json headRepository       --jq '.headRepository.name')"
-
-          if [[ ${{ github.event.inputs.trial }}  == "true" ]]; then
-            REQUEST="bot: MERGE trial"
-          else
-            REQUEST="bot: MERGE"
-          fi
-          {
-            echo "branch=$BRANCH"
-            echo "owner=$OWNER"
-            echo "repo=$REPO"
-            echo "request=$REQUEST"
-          } >> "$GITHUB_OUTPUT"
-
-        env:
-          GH_TOKEN: ${{ github.token }}
-          PR_URL: ${{ github.event.inputs.pullRequestNumber }}
-
-  call-merge-pr:
-    needs: [pr-data]
     name: merge-it-run
     uses: openwall/john-packages/.github/workflows/merge-pr.yml@main
     with:
-      branch: ${{ needs.pr-data.outputs.branch }}
-      owner: ${{ needs.pr-data.outputs.owner }}
-      repo: ${{ needs.pr-data.outputs.repo }}
-      pr-url: ${{ github.event.inputs.pullRequestNumber }}
-      request: "${{ needs.pr-data.outputs.request }}"
+      pr-number: ${{ fromJSON(github.event.inputs.pullRequestNumber) }}
+      request: "${{ github.event.inputs.trial }}"

@@ -50,21 +50,17 @@ echo "**********************************************************************"
 echo -e "Approved: $REVIEWS_STATUS"
 echo -e "Mergeable: $MERGE_STATUS"
 echo -e "$MY_MESSAGE"
-echo -e "---------------"
-echo -e "Reviews: $REVIEWS_STATUS"
+echo "**********************************************************************"
+echo "reviewDecision: $(gh pr view "$PR_URL" --json reviewDecision)"
+echo "mergeStateStatus: $(gh pr view "$PR_URL" --json mergeStateStatus)"
 echo "**********************************************************************"
 
-if [[ "$TRIAL" == 'true' ]]; then
-	echo "reviewDecision: $(gh pr view "$PR_URL" --json reviewDecision)"
-	echo "mergeStateStatus: $(gh pr view "$PR_URL" --json mergeStateStatus)"
-	echo "**********************************************************************"
-fi
 git config --global user.name "github-actions[bot]"
 git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 DEST_BRANCH="$BRANCH"
 
-if [[ "$OWNER" != "openwall" || "$GITHUB_EVENT_NAME" == "pull_request_review" ]]; then
-	echo "On forks or reviews, I can't see the status of a PR, so ignore it."
+if [[ "$GITHUB_EVENT_NAME" == "pull_request_review" ]]; then
+	echo "In a code review I can't see the status of the PR, so ignore it."
 	STATUS=1
 fi
 
