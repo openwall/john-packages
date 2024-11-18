@@ -47,3 +47,8 @@ updates:
     schedule:
       interval: "weekly"
       day: "saturday"
+
+  - package-ecosystem: docker
+    directory: /cloud-tool
+    schedule:
+      interval: daily
