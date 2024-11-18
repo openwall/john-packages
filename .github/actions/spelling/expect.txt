@@ -29,9 +29,11 @@ bestpractices
 bigfiles
 bitlocker
 bugtracker
+builddir
 BUILDID
 buildlog
 buildsystem
+ccache
 CCO
 CFLAGS
 cflite
@@ -39,6 +41,7 @@ CHECKOV
 cidr
 circleci
 cirruslabs
+ciscobinary
 claudio
 claudioandre
 clinfo
@@ -133,6 +136,7 @@ krb
 kvm
 LASTEXITCODE
 Lauchpad
+launchpadcontent
 LDFLAGS
 len
 libasan
@@ -159,6 +163,7 @@ markdownlint
 metainfo
 mfb
 misconfig
+microsoft
 mktemp
 mrsp
 mscash
@@ -176,6 +181,7 @@ ocl
 oidc
 omp
 oneapi
+openh
 openmp
 oss
 osv
@@ -235,6 +241,7 @@ subdir
 sys
 tarball
 tcp
+tcpdump
 templatefile
 terraform
 textlint
