@@ -22,7 +22,9 @@
 # Script to control the automatic merge process
 # More info at https://github.com/openwall/john-packages
 
+APPROVALS=0
 MY_MESSAGE=""
+STATUS=0
 
 if [[ "$REQUEST" != "bot: MERGE"* ]]; then
 	echo "There is no need for a merge! Nothing to do."
@@ -41,10 +43,10 @@ if [[ "$REQUEST" == "bot: MERGE trial" ]]; then
 	MY_MESSAGE+="No changes will be submitted to GitHub."
 	TRIAL="true"
 fi
-REVIEWS_STATUS="$(gh pr view "$PR_URL" --json reviewDecision --jq '.reviewDecision == "APPROVED"')"
-APPROVALS="$(echo "$REVIEWS_STATUS" | grep -c 'true' || true)"
-MERGE_STATUS="$(gh pr view "$PR_URL" --json mergeStateStatus --jq '.mergeStateStatus == "CLEAN"')"
-STATUS="$(echo "$MERGE_STATUS" | grep -c 'true' || true)"
+REVIEWS_STATUS="$(gh pr view "$PR_URL" --json reviewDecision --jq '.reviewDecision')"
+MERGE_STATUS="$(gh pr view "$PR_URL" --json mergeStateStatus --jq '.mergeStateStatus')"
+test "$REVIEWS_STATUS" == "APPROVED" && APPROVALS=1
+test "$MERGE_STATUS" == "CLEAN" && STATUS=1
 
 echo "**********************************************************************"
 echo -e "Approved: $REVIEWS_STATUS"
@@ -55,6 +57,15 @@ echo "reviewDecision: $(gh pr view "$PR_URL" --json reviewDecision)"
 echo "mergeStateStatus: $(gh pr view "$PR_URL" --json mergeStateStatus)"
 echo "**********************************************************************"
 
+if [[ "$REQUEST" == "bot: MERGE skip" ]]; then
+	test "$REVIEWS_STATUS" == "APPROVED" && MARK_1="✔"
+	test "$MERGE_STATUS" == "CLEAN" && MARK_2="✔"
+	gh pr comment "$PR_URL" --body "
+	🤖: status
+	- reviewDecision: $REVIEWS_STATUS $MARK_1
+	- mergeStateStatus: $MERGE_STATUS $MARK_2
+	"
+fi
 git config --global user.name "github-actions[bot]"
 git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 DEST_BRANCH="$BRANCH"
