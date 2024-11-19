@@ -44,14 +44,13 @@ FROM nvidia/cuda:12.6.2-base-ubuntu24.04@sha256:631ec7090c36ab846cf021073ff4a64f
 COPY --from=build /build /john
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN mkdir -p /usr/share/ \
-    && ln -s /john/run /usr/share/john
-
-RUN useradd -U -m JtR \
+    && ln -s /john/run /usr/share/john \
+    && useradd -U -m JtR \
     && export DEBIAN_FRONTEND="noninteractive" \
     && apt-get update -qq \
     && apt-get install -y --no-install-recommends \
-        libssl3t64=3.0* \
         libgomp1=14* \
+        libssl3t64=3.0* \
         ocl-icd-libopencl1=2.3* \
 # ==================================================================
 # Clean up the image (shrink the Docker image)
@@ -66,4 +65,4 @@ USER JtR
 ENV BASE=ubuntu
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["best"]
-HEALTHCHECK --interval=1m CMD docker-entrypoint.sh
+HEALTHCHECK --interval=1m CMD ["docker-entrypoint.sh"]
