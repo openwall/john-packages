@@ -28,6 +28,7 @@ disable_list="
     argon2-opencl
     bcrypt-opencl
     descrypt-opencl
+    keepass-argon2-opencl
     krb5tgs-opencl
     lm-opencl
     o5logon-opencl
@@ -113,4 +114,8 @@ Platform #0 name: Intel(R) OpenCL, version: OpenCL 3.0 LINUX\
 'streebog256crypt-opencl'
 'streebog512crypt-opencl'
 'gost94crypt-opencl'
+
+# Testing: KeePass-Argon2-opencl [BlaMka OpenCL]...
+# run_tests.sh: line 304:  6619 Segmentation fault      (core dumped) "$JTR_BIN" -test-full=0 --format=opencl
+'keepass-argon2-opencl'
 ```
