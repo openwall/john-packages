@@ -34,14 +34,6 @@ Hint: create an alias for the command.
 
 Create your [AWS profile](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html).
 
-Example `~/.aws/credentials`
-
-```text
-[usr]
-aws_access_key_id=AKIAIOSFODNN7EXAMPLE
-aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-```
-
 ### Adjust it to your use case
 
 You need to open and edit the file `variables.tf`.
