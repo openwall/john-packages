@@ -62,6 +62,5 @@ jobs:
           ENABLE_COMMITLINT_STRICT_MODE: true
           ENFORCE_COMMITLINT_CONFIGURATION_CHECK: true
           VALIDATE_ALL_CODEBASE: false
-          VALIDATE_GIT_COMMITLINT: true
           DEFAULT_BRANCH: "main"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
