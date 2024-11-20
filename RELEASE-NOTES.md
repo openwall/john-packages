@@ -55,8 +55,8 @@ All the features we were interested in implementing were implemented. We conside
 
 Therefore, the repository now enters a **frozen stage**. Nothing new will be developed.
 
-The bots will continue to select and submit updates for all dependencies, and a human will
-evaluate and integrate them. But only this.
+The bots will continue to select and submit updates for all dependencies, and a human will evaluate and integrate them.
+But only this.
 
-Rolling releases will no longer be published: it is not correct to choose a version at random;
-this kind of thing needs to happen in the upstream repository.
+Rolling releases will no longer be published: it is not correct to choose a version at random; this kind of thing needs
+to happen in the upstream repository.

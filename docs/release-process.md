@@ -14,20 +14,19 @@
 
 ## The Bleeding Release
 
-We emphasize that the bleeding version is a trial version. Whenever a new "bleeding" release is created,
-all logs and binaries previously called "bleeding" are erased and lost. Therefore, there is an obvious
-traceability problem; in addition, it is necessary to highlight the possibility that the bleeding
-package is based on commits not suitable for use in production.
+We emphasize that the bleeding version is a trial version. Whenever a new "bleeding" release is created, all logs and
+binaries previously called "bleeding" are erased and lost. Therefore, there is an obvious traceability problem; in
+addition, it is necessary to highlight the possibility that the bleeding package is based on commits not suitable for
+use in production.
 
-Thus, using the bleeding package in temporary test environments is fine, but the end user should
-not use it for day by day tasks, which, by the way, is exactly what is happening in the Windows version.
+Thus, using the bleeding package in temporary test environments is fine, but the end user should not use it for day by
+day tasks, which, by the way, is exactly what is happening in the Windows version.
 
 ## Tasks for Creating a Release
 
 - [ ] Ensure the `release` branch is up to date and clean;
   - The `release` branch is a copy of the `main` branch;
-  - From this point onwards, changes to the source code that are not listed must cause a restart from
-    the beginning.
+  - From this point onwards, changes to the source code that are not listed must cause a restart from the beginning.
 - [ ] Add a new commit to the `release` branch;
   - This is the "pin upstream commit".
 - [ ] Update the commit that will be used to build;
@@ -61,12 +60,12 @@ The "release commit" is almost ready.
 - [ ] Build the snap (use Launchpad); [3]
   - Confirm that all builds are OK.
 
-If you are creating a "real release", perform a cherry-pick, merge, and push the "pin upstream commit"
-into the main branch. See note [*].
+If you are creating a "real release", perform a cherry-pick, merge, and push the "pin upstream commit" into the main
+branch. See note [*].
 
 - [ ] Build the Docker image (bleeding or latest); [4]
-  - If you are creating a bleeding version, run the workflow from the `release` branch
-    (`main` doesn't know the proper commit hash). See note [*];
+  - If you are creating a bleeding version, run the workflow from the `release` branch (`main` doesn't know the proper
+    commit hash). See note [*];
   - Confirm that all builds are OK.
 - [ ] Release to snap store and flathub;
 
@@ -104,18 +103,16 @@ Footnotes:
 4. the Docker image will be automatically deployed;
 5. manual task of accessing logs and copying information;
 6. update and run get-files.sh;
-7. the release itself is based on the last commit and its Git tag;
-   naturally, you will only merge if you are working in a "real release".
+7. the release itself is based on the last commit and its Git tag; naturally, you will only merge if you are working in
+   a "real release".
 8. e.g., for a rolling release in Oct 2023, the `<tag>` value should be rolling-2310.
 
 > [!NOTE]
 >
-> [*]:
-> we use the `release` branch as a staging area, so that we can build development packages
-> without polluting the `main` branch. In case of real releases, the maintainer is free to
-> merge the changes as soon as they are ready, on the other hand, incomplete and staging
-> release changes cannot be added to the main branch.
+> [*]: we use the `release` branch as a staging area, so that we can build development packages without polluting the
+> `main` branch. In case of real releases, the maintainer is free to merge the changes as soon as they are ready, on the
+> other hand, incomplete and staging release changes cannot be added to the main branch.
 >
-> Of course, you can release an official version without relying on a working branch
-> like the `release` branch. Note, however, that the lack of a `release` branch would make it
-> impossible to create a development and test version of the package (the bleeding release).
+> Of course, you can release an official version without relying on a working branch like the `release` branch. Note,
+> however, that the lack of a `release` branch would make it impossible to create a development and test version of the
+> package (the bleeding release).

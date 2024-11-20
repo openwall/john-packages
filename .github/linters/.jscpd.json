@@ -1,10 +1,10 @@
 {
-    "threshold":0,
-    "noSymlinks":true,
-    "ignore":[
-       "**/.git/**",
-       "**/build_CI.yml",
-       "**/Releases/**",
-       "**/spelling.yml"
-    ]
+  "threshold": 0,
+  "noSymlinks": true,
+  "ignore": [
+    "**/.git/**",
+    "**/build_CI.yml",
+    "**/Releases/**",
+    "**/spelling.yml"
+  ]
 }

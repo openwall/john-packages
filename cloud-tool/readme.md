@@ -2,13 +2,16 @@
 
 Get the tool (Terraform code, scripts, etc). Via `git clone`, for example.
 
-The default settings of this tool perform actions on AWS that are eligible for the free tier. Therefore, you can try it out on a new AWS account for free.
+The default settings of this tool perform actions on AWS that are eligible for the free tier. Therefore, you can try it
+out on a new AWS account for free.
 
 Note that you may create resources which cost money. Run `terraform destroy` when you no longer need those resources.
 
 ## Use Cases
 
-It is useful for provisioning and destroying instances: it is fast, repeatable and reduces the risk of human error. There is no possibility to forget to delete an instance or the EBS disk. It makes sense if someone wants to start a few instances and try a wordlist here, or a mask there, maybe incremental over there.
+It is useful for provisioning and destroying instances: it is fast, repeatable and reduces the risk of human error.
+There is no possibility to forget to delete an instance or the EBS disk. It makes sense if someone wants to start a few
+instances and try a wordlist here, or a mask there, maybe incremental over there.
 
 - you provision all instances at once;
 - use can use SSH to perform your intended test on each instance;
@@ -17,11 +20,14 @@ It is useful for provisioning and destroying instances: it is fast, repeatable a
 
 With the tool, it is feasible that someone can safely run a cracking session that lasts for weeks on the free tier.
 
-IMPORTANT: The total cost of your cracking sessions on AWS will vary depending on your usage and whether you are outside the AWS Free Tier limits.
+IMPORTANT: The total cost of your cracking sessions on AWS will vary depending on your usage and whether you are outside
+the AWS Free Tier limits.
 
 ### Dependencies
 
-[Terraform](http://www.terraform.io/downloads.html) and [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html). The following docker image has all dependencies installed:
+[Terraform](http://www.terraform.io/downloads.html) and
+[Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html). The following docker
+image has all dependencies installed:
 
 ```bash
 cd PROJECT_FOLDER && \
@@ -38,13 +44,14 @@ Create your [AWS profile](https://docs.aws.amazon.com/cli/latest/userguide/cli-c
 
 You need to open and edit the file `variables.tf`.
 
-1. Find your public IP address using, for instance, [https://www.myip.com/](https://www.myip.com/).
-   Update the `cidr_blocks inside` session `variable "ingress_data"` in `variable.tf`.
+1. Find your public IP address using, for instance, [https://www.myip.com/](https://www.myip.com/). Update the
+   `cidr_blocks inside` session `variable "ingress_data"` in `variable.tf`.
 2. You can also make adjustments to `variable "regions_list"`.
 
 ## Key and server
 
-You can use your own SSH keys or create new ones. You will use the SSH keys only during your cracking session, so it can be disposable. Do NOT use a passphrase to create it.
+You can use your own SSH keys or create new ones. You will use the SSH keys only during your cracking session, so it can
+be disposable. Do NOT use a passphrase to create it.
 
 ```bash
 ssh-keygen -t rsa -f workerKey
@@ -124,7 +131,8 @@ terraform destroy
 
 ## Usage of Spot Instances
 
-If you want to run cheaper Spot instances, you should specify this on your command-line (or edit the `variables.tf` file, of course).
+If you want to run cheaper Spot instances, you should specify this on your command-line (or edit the `variables.tf`
+file, of course).
 
 ```bash
 $ terraform plan  --var "spot=yes" --var "spot_price=0.23"  # today's price for a g3s.xlarge
@@ -137,6 +145,8 @@ $ terraform apply --var "spot=yes" --var "spot_price=0.23"
 If you need information about Spot pricing, please visit:
 
 - [https://aws.amazon.com/ec2/spot/pricing/?nc1=h_ls](https://aws.amazon.com/ec2/spot/pricing/?nc1=h_ls)
-- Also, there is a Pricing history button at [https://console.aws.amazon.com/ec2sp/v2/home?region=us-east-1#/spot](https://console.aws.amazon.com/ec2sp/v2/home?region=us-east-1#/spot) where you can see a nice "Spot Instance pricing history" graphic.
+- Also, there is a Pricing history button at
+  [https://console.aws.amazon.com/ec2sp/v2/home?region=us-east-1#/spot](https://console.aws.amazon.com/ec2sp/v2/home?region=us-east-1#/spot)
+  where you can see a nice "Spot Instance pricing history" graphic.
 
 Remember that your instance can be stopped by Amazon at any time.

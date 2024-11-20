@@ -48,8 +48,8 @@ This is the `john-packages` (itself) 0.9 release 'v0.9.0'. October 2023 (version
 
 ### Breaking Changes (2310)
 
-- Due to changes in Cygwin, plus OS and hardware unavailability in common cloud build environments,
-  we deprecate 32 bits architectures.
+- Due to changes in Cygwin, plus OS and hardware unavailability in common cloud build environments, we deprecate 32 bits
+  architectures.
   - For now, Canonical snap packages for armhf can still be created.
 - Intel-based macOS resources are sunsetting everywhere.
   - Probably the rolling-2310 will be the last release for this architecture.
@@ -67,7 +67,9 @@ This is the `john-packages` (itself) 0.9 release 'v0.9.0'. October 2023 (version
   - Make it compliant with OpenSSF SLSA 3.
 - Add a macOS package;
 - Add OpenCL support to the John the Ripper Docker image;
-- Add extensive use of Continuous Integration (CI). See [the CI and CD](https://github.com/openwall/john-packages/tree/main/CI#continuous-integration-and-continuous-delivery) procedures;
+- Add extensive use of Continuous Integration (CI). See
+  [the CI and CD](https://github.com/openwall/john-packages/tree/main/CI#continuous-integration-and-continuous-delivery)
+  procedures;
 - Add a lot of automatic QA checking to the john-packages repository;
 - Add new formats and/or implementations;
 - Improve formats detection and valid() implementations;

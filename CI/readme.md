@@ -1,14 +1,13 @@
 # Continuous Integration and Continuous Delivery
 
-The usage of Continuous Integration and Continuous Delivery is a method to frequently deliver
-software to users by introducing automation into the stages of application development.
+The usage of Continuous Integration and Continuous Delivery is a method to frequently deliver software to users by
+introducing automation into the stages of application development.
 
 ## Testing
 
-Using multiple providers, we've created a DevOps infrastructure. We are mostly interested
-in quality assurance, CI (continuous integration), and CD (continuous delivery). To achieve
-this goal, our testing scheme builds and inspects the source code of John the Ripper
-using:
+Using multiple providers, we've created a DevOps infrastructure. We are mostly interested in quality assurance, CI
+(continuous integration), and CD (continuous delivery). To achieve this goal, our testing scheme builds and inspects the
+source code of John the Ripper using:
 
 ### Operating Systems (OS)
 
@@ -59,14 +58,12 @@ using:
   - Cygwin on Windows Server;
   - OpenCL on CPU using Intel, and POCL (<http://portablecl.org/>) runtimes;
   - OpenCL on GPU using Azure cloud (_work in progress_);
-  - And a final assessment using ARMv8 (aarch64), PowerPC64 Little-Endian,
-    RISC-V 64-bit, and IBM System z.
+  - And a final assessment using ARMv8 (aarch64), PowerPC64 Little-Endian, RISC-V 64-bit, and IBM System z.
 
 - Plans and future vision:
-  - Develop a fully automated build and release pipeline using Azure DevOps Services
-    to create the CI/CD pipeline and Azure Services for deploying to development/staging and
-    production.
-    See the [release workflow here](https://github.com/openwall/john-packages/blob/main/CI/workflow.pdf);
+  - Develop a fully automated build and release pipeline using Azure DevOps Services to create the CI/CD pipeline and
+    Azure Services for deploying to development/staging and production. See the
+    [release workflow here](https://github.com/openwall/john-packages/blob/main/CI/workflow.pdf);
   - Add support to ClusterFuzz (OSS-Fuzz);
   - Add support to static code quality analyzer.
 
@@ -111,6 +108,7 @@ using:
 ## Obsolete Architectures
 
 > [!IMPORTANT]
+>
 > We can no longer build and package for these environments:
 
 - Any 32-bit build (e.g. i386, ARM v7, and powerpc);

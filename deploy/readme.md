@@ -24,13 +24,13 @@ In previous versions `john` is also known to build and work on:
 
 ## Builders and Stores
 
-We deploy to Linux app stores like [Canonical Snapcraft](https://snapcraft.io/john-the-ripper)
-and [Flathub](https://flathub.org/apps/com.openwall.John). Some information needs to be kept
-specifically there, and in most cases a simple copy of the files is not possible. In any case,
-we do our best to ensure that the integration uses the same scripts and files contained in this repository.
+We deploy to Linux app stores like [Canonical Snapcraft](https://snapcraft.io/john-the-ripper) and
+[Flathub](https://flathub.org/apps/com.openwall.John). Some information needs to be kept specifically there, and in most
+cases a simple copy of the files is not possible. In any case, we do our best to ensure that the integration uses the
+same scripts and files contained in this repository.
 
-Unfortunately, some details only reside in the profile of each store. The same rule applies
-to the release process powered by Azure.
+Unfortunately, some details only reside in the profile of each store. The same rule applies to the release process
+powered by Azure.
 
 See also [how to become a maintainer](../docs/become-maintainer.md).
 
@@ -84,6 +84,7 @@ Cygwin 3.5.1
 ## Deprecation Note (Obsolete Software or Hardware)
 
 > [!IMPORTANT]
+>
 > We can no longer build and package for these environments:
 
 - Any 32-bit build (e.g. i386, ARM v7, and powerpc);
@@ -98,7 +99,6 @@ If you need such a build, use a previous stable or rolling release.
 // jscpd:ignore-end
 -->
 
-One of the most attractive things about running an application in a container
-(like Flatpak, Snap or Docker) is that once it’s built successfully, you can expect
-it to keep working for a long time, even as you upgrade your OS. Obviously there are
-limits to that.
+One of the most attractive things about running an application in a container (like Flatpak, Snap or Docker) is that
+once it’s built successfully, you can expect it to keep working for a long time, even as you upgrade your OS. Obviously
+there are limits to that.

@@ -8,5 +8,5 @@
 
 ## OpenCL compilation errors
 
-- if you get errors like `Error building kernel /run/opencl/cryptsha512_kernel_GPU.cl`
-  try running john from the subdirectory `opencl` (e.g. from `JtR\run\opencl` run `..\john.exe`).
+- if you get errors like `Error building kernel /run/opencl/cryptsha512_kernel_GPU.cl` try running john from the
+  subdirectory `opencl` (e.g. from `JtR\run\opencl` run `..\john.exe`).

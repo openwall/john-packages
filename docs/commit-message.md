@@ -1,7 +1,7 @@
 # How a commit message should be
 
-[Conventional Commits](https://www.conventionalcommits.org/) is a specification that aims to
-improve commit messages in general. It defines a standard format for commit messages.
+[Conventional Commits](https://www.conventionalcommits.org/) is a specification that aims to improve commit messages in
+general. It defines a standard format for commit messages.
 
 Our Conventional Commits should have the following format:
 
@@ -22,9 +22,8 @@ Our Conventional Commits should have the following format:
   - There may have been some discussion that needs to be easily referenced in each commit.
 - The body or description should be restricted to 72 characters per line.
   - It should explain the motivation for the change.
-- Footers can provide additional metadata for a commit; it can be used to alert readers and
-  tools to significant changes such as breaking changes; or can link commits to issues or pull
-  requests. They are written using the format:
+- Footers can provide additional metadata for a commit; it can be used to alert readers and tools to significant changes
+  such as breaking changes; or can link commits to issues or pull requests. They are written using the format:
 
 ```text
 <token>: <value>
@@ -32,14 +31,12 @@ Our Conventional Commits should have the following format:
 
 A commit message must refer to its purpose and to the problem that motivated its development:
 
-- If the issue a commit refers to is a bug report, add the following text to the
-  commit message:
+- If the issue a commit refers to is a bug report, add the following text to the commit message:
   - Fix: #VALUE.
-- If the issue a commit refers to is a feature request, add the following text to
-  the commit message:
+- If the issue a commit refers to is a feature request, add the following text to the commit message:
   - Close: #VALUE.
-- Commits may not be exactly a fix or implementation of a feature, but they can be
-  related to any issue, in this case, add the following text to the commit message:
+- Commits may not be exactly a fix or implementation of a feature, but they can be related to any issue, in this case,
+  add the following text to the commit message:
   - See: #VALUE.
 
 Examples:
@@ -64,11 +61,10 @@ feat(lang): add french language
 
 ## Commit Types
 
-The type of a commit message specifies that the change was made for a specific issue or
-subsystem. For example, we fixed a bug or added a feature, or perhaps documentation.
+The type of a commit message specifies that the change was made for a specific issue or subsystem. For example, we fixed
+a bug or added a feature, or perhaps documentation.
 
-To automate the release note or changelog production process we need to ensure rules
-are applied. For example:
+To automate the release note or changelog production process we need to ensure rules are applied. For example:
 
 - A fix commit can increase the patch version number.
 - A feat commit can increment the minor version number and reset the patch number.
@@ -117,15 +113,15 @@ Types are used to automatically classify commits and place them into categories:
 
 - It is mandatory to use only the **types** seen in the list;
   - Never use a text like `obscure-resource: [MESSAGE]` as the classes/subsystems are only those listed above.
-- Other scopes are possible, especially when someone is very interested in citing an `obscure-resource`
-  as in the example:
+- Other scopes are possible, especially when someone is very interested in citing an `obscure-resource` as in the
+  example:
 
 ```text
 feat(obscure-resource.pl): augment incremental mode
 ```
 
-- If you have any doubts or would like to see more examples, at [1] and [2] you can find goals and examples that
-  explain the reasons behind this effort to standardize.
+- If you have any doubts or would like to see more examples, at [1] and [2] you can find goals and examples that explain
+  the reasons behind this effort to standardize.
 
 [1] <https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/>\
 [2] <https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type>

@@ -12,15 +12,12 @@
 
 </div>
 
-[Openwall's](https://openwall.com/) John the Ripper (JtR) is a fast password cracker,
-currently available for many flavors of Unix and for Windows. Its primary
-purpose is to detect weak Unix passwords. Besides several crypt(3) password hash
-types most commonly found on various Unix systems, supported out of the box are
-Windows LM hashes, various macOS password hashes, as well as many
-non-hashes such as SSH private keys, encrypted filesystems such as macOS .dmg files
-and "sparse bundles", encrypted archives such as ZIP, RAR, and 7z,
-encrypted document files such as PDF and Microsoft Office's, plus lots of
-other hashes and ciphers.
+[Openwall's](https://openwall.com/) John the Ripper (JtR) is a fast password cracker, currently available for many
+flavors of Unix and for Windows. Its primary purpose is to detect weak Unix passwords. Besides several crypt(3) password
+hash types most commonly found on various Unix systems, supported out of the box are Windows LM hashes, various macOS
+password hashes, as well as many non-hashes such as SSH private keys, encrypted filesystems such as macOS .dmg files and
+"sparse bundles", encrypted archives such as ZIP, RAR, and 7z, encrypted document files such as PDF and Microsoft
+Office's, plus lots of other hashes and ciphers.
 
 ## Table of Contents
 
@@ -51,8 +48,8 @@ other hashes and ciphers.
 
 ### Continuous Delivery Status
 
-We produce software in short cycles, ensuring that the software can be reliably released at any time,
-following a pipeline through a "production-like environment".
+We produce software in short cycles, ensuring that the software can be reliably released at any time, following a
+pipeline through a "production-like environment".
 
 <div id="CD" align="center">
 
@@ -87,25 +84,26 @@ Click on the link to learn more about our packages [Building Environments](deplo
 ### Testing and Continuous Integration
 
 All continuous integration (CI) and continuous delivery (CD) procedures are fully automated, builds and tests are
-performed whenever requested by the packager. Manual procedures are required just to
-start the process.
+performed whenever requested by the packager. Manual procedures are required just to start the process.
 
-Click on the link to learn more about our [Continuous Integration and Continuous Delivery](CI/readme.md#continuous-integration-and-continuous-delivery) procedures.
+Click on the link to learn more about our
+[Continuous Integration and Continuous Delivery](CI/readme.md#continuous-integration-and-continuous-delivery)
+procedures.
 
 [![Graph][linkProcedureCI]](CI/readme.md#continuous-integration-and-continuous-delivery)
 
 ### Packaging and Application Distribution
 
-[Snap][linkSnapcraftSite] and [Flatpak][linkFlatpakSite] are cool new ways
-of distributing Linux applications among a wide range of different distros. They
-are technologies to deploy applications in a secure, sandboxed and containerized way.
+[Snap][linkSnapcraftSite] and [Flatpak][linkFlatpakSite] are cool new ways of distributing Linux applications among a
+wide range of different distros. They are technologies to deploy applications in a secure, sandboxed and containerized
+way.
 
-A [Docker](https://www.docker.com/) image is a read-only template used to execute code in a Docker container.
-An image is an immutable file that contains the binaries, configuration files, libraries, dependencies, tools,
-and other files needed for John the Ripper application to run.
+A [Docker](https://www.docker.com/) image is a read-only template used to execute code in a Docker container. An image
+is an immutable file that contains the binaries, configuration files, libraries, dependencies, tools, and other files
+needed for John the Ripper application to run.
 
-When the Docker user runs an image, it becomes one instance (it becomes a container, in other words, a running
-instance of the application).
+When the Docker user runs an image, it becomes one instance (it becomes a container, in other words, a running instance
+of the application).
 
 <p align="right">(<a href="#header">back to top</a>)</p>
 
@@ -114,13 +112,11 @@ instance of the application).
 <!-- markdownlint-disable MD042 -->
 
 > Delivered using Microsoft-hosted Windows 2022 Server in Azure \
-> Supported architecture:
-> [amd64](# "[ backed by AVX, AVX2, and AVX512BW ]")
+> Supported architecture: [amd64](# "[ backed by AVX, AVX2, and AVX512BW ]")
 
 <!-- markdownlint-enable MD042 -->
 
-To install John the Ripper by downloading the .7z file and installing it manually,
-follow these steps:
+To install John the Ripper by downloading the .7z file and installing it manually, follow these steps:
 
 - Download the compressed file to your machine.
 - Navigate to where you downloaded the file and double-click the compressed file.
@@ -141,7 +137,8 @@ follow these steps:
  C:\john-the-ripper\run>john --test --format=SHA512crypt
 ```
 
-| 📑 **More examples of** [running John The Ripper on Windows](docs/examples-windows.md#more-examples-of-running-john-the-ripper-on-windows).
+| 📑 **More examples of**
+[running John The Ripper on Windows](docs/examples-windows.md#more-examples-of-running-john-the-ripper-on-windows).
 
 The highlights (👀):
 
@@ -151,18 +148,16 @@ The highlights (👀):
 - security feature Address Space Layout Randomisation (ASLR) enabled;
 - security feature Data Execution Prevention (DEP) enabled.
 
-[*] John the Ripper runs using the best SIMD instructions available on the host
-it's running on.
+[*] John the Ripper runs using the best SIMD instructions available on the host it's running on.
 
 ### Windows Deployments
 
 [![Windows Downloads][linkBadgeDownloadWindows]][linkReleases]
 
-Using the instructions above, you can install the released version of `john`,
-or the bleeding development version, or an earlier stable version on your system.
+Using the instructions above, you can install the released version of `john`, or the bleeding development version, or an
+earlier stable version on your system.
 
-The package contains all the executables and libraries needed to run a fresh
-John the Ripper installation.
+The package contains all the executables and libraries needed to run a fresh John the Ripper installation.
 
 <!--
 // jscpd:ignore-start
@@ -170,9 +165,8 @@ John the Ripper installation.
 <details>
   <summary>OpenSSF SLSA</summary>
 
-SLSA is a framework intended to codify and promote secure software supply-chain practices,
-it helps trace software artifacts back to the build and source control systems that
-produced them.
+SLSA is a framework intended to codify and promote secure software supply-chain practices, it helps trace software
+artifacts back to the build and source control systems that produced them.
 
 > :warning: **NOTE:** the release assets from our GitHub Releases are level 1 compliant.
 
@@ -189,9 +183,9 @@ produced them.
 
 ### Running a non-OpenMP build on Windows
 
-In some situations a non-OpenMP build may be faster. You can ask to fallback to
-a non-OpenMP build specifying the value of OMP_NUM_THREADS in the command-line.
-You avail the best SIMD instructions at one's disposal without any OpenMP stuff. E.g.:
+In some situations a non-OpenMP build may be faster. You can ask to fallback to a non-OpenMP build specifying the value
+of OMP_NUM_THREADS in the command-line. You avail the best SIMD instructions at one's disposal without any OpenMP stuff.
+E.g.:
 
 ```powershell
  PS C:\john-the-ripper\run> set OMP_NUM_THREADS=1
@@ -212,21 +206,16 @@ If John the Ripper is not recognizing your GPU card:
 <!-- markdownlint-disable MD042 -->
 
 > Delivered using Launchpad \
-> Supported architectures:
-> [amd64](# "[ backed by AVX, AVX2, and AVX512BW ]"),
-> [arm64v8](# "[ backed by ASIMD ]"),
-> [ppc64le](# "[ backed by Altivec ]"),
-> riscv64, and s390x
+> Supported architectures: [amd64](# "[ backed by AVX, AVX2, and AVX512BW ]"), [arm64v8](# "[ backed by ASIMD ]"),
+> [ppc64le](# "[ backed by Altivec ]"), riscv64, and s390x
 
 <!-- markdownlint-enable MD042 -->
 
-[**A Snap**][linkSnapcraftSite] is a gpg signed squashfs file containing an application
-together with its dependencies, and a description of how it should safely be run
-on your system.
+[**A Snap**][linkSnapcraftSite] is a gpg signed squashfs file containing an application together with its dependencies,
+and a description of how it should safely be run on your system.
 
-You can install `john` by following the instructions at <https://snapcraft.io/john-the-ripper>.
-For distributions without snap pre-installed, users should
-[enable snap support](https://docs.snapcraft.io/core/install), then install:
+You can install `john` by following the instructions at <https://snapcraft.io/john-the-ripper>. For distributions
+without snap pre-installed, users should [enable snap support](https://docs.snapcraft.io/core/install), then install:
 
 ```bash
  sudo snap install john-the-ripper
@@ -249,8 +238,8 @@ You can also run the software using the official `john` alias:
  john -list=build-info
 ```
 
-John runs confined under a restrictive security sandbox by default. Nevertheless,
-you can access and audit any file located in your home. Below, an usage example:
+John runs confined under a restrictive security sandbox by default. Nevertheless, you can access and audit any file
+located in your home. Below, an usage example:
 
 ```bash
  john -list=format-tests | cut -f3 > ~/allTests.in
@@ -258,8 +247,7 @@ you can access and audit any file located in your home. Below, an usage example:
 ```
 
 For your convenience, the snap installed on your system contains the file
-`/snap/john-the-ripper/current/snap/manifest.yaml` which field `build_url`
-points to its build log.
+`/snap/john-the-ripper/current/snap/manifest.yaml` which field `build_url` points to its build log.
 
 The highlights (👀):
 
@@ -275,8 +263,7 @@ The highlights (👀):
 - a development version is also available:
   - install from the Snapcraft `edge` channel.
 
-[*] John the Ripper runs using the best SIMD instructions available on the host
-it's running on.
+[*] John the Ripper runs using the best SIMD instructions available on the host it's running on.
 
 ```Text
 John the Ripper snap package has approximately eight thousand active users [*].
@@ -286,24 +273,25 @@ John the Ripper snap package has approximately eight thousand active users [*].
 
 ### Enabling Aliases
 
-You are free to pick and set up aliases. To enable the usage of aliases with John
-the Ripper snap, run `sudo snap alias john-the-ripper <alias>`. For example:
+You are free to pick and set up aliases. To enable the usage of aliases with John the Ripper snap, run
+`sudo snap alias john-the-ripper <alias>`. For example:
 
 ```bash
  sudo snap alias john-the-ripper john-snap
  sudo snap alias john-the-ripper.dmg2john dmg2john
 ```
 
-Once enabled, John itself plus the \*2john tools can be invoked using the aliases.
-In the example, to run John type `john-snap`.
+Once enabled, John itself plus the \*2john tools can be invoked using the aliases. In the example, to run John type
+`john-snap`.
 
-| 📑 **More examples of** [enabling alias for John The Ripper snap](docs/examples-snap-alias.md#more-examples-of-enabling-alias-for-john-the-ripper-snap).
+| 📑 **More examples of**
+[enabling alias for John The Ripper snap](docs/examples-snap-alias.md#more-examples-of-enabling-alias-for-john-the-ripper-snap).
 
 ### Running a non-OpenMP build
 
-In some situations a non-OpenMP build may be faster. You can ask to fallback to a
-non-OpenMP build specifying `OMP_NUM_THREADS=1 john <options>` in the command-line.
-You avail the best SIMD instructions at one's disposal without any OpenMP stuff. E.g.:
+In some situations a non-OpenMP build may be faster. You can ask to fallback to a non-OpenMP build specifying
+`OMP_NUM_THREADS=1 john <options>` in the command-line. You avail the best SIMD instructions at one's disposal without
+any OpenMP stuff. E.g.:
 
 ```bash
  OMP_NUM_THREADS=1 john --list=build-info
@@ -311,19 +299,18 @@ You avail the best SIMD instructions at one's disposal without any OpenMP stuff.
 
 ### Accessing OpenCL on Snap
 
-As noted at <https://forum.snapcraft.io/t/snaps-and-opencl/8509/17>, the use of
-OpenCL by snaps is a problem. Support for NVIDIA cards is under development.
+As noted at <https://forum.snapcraft.io/t/snaps-and-opencl/8509/17>, the use of OpenCL by snaps is a problem. Support
+for NVIDIA cards is under development.
 
-As a "general" solution (or in the case of AMD hardware), the user can run john
-out of the sandbox, unconfined (e.g., run `/snap/john-the-ripper/current/bin/john`).
+As a "general" solution (or in the case of AMD hardware), the user can run john out of the sandbox, unconfined (e.g.,
+run `/snap/john-the-ripper/current/bin/john`).
 
 ### Snap Deployments
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)][linkSnapcraftJohn]
 
-If you followed the instructions above, you have installed the released version of `john`
-on your system. If you want to access the hot and bleeding development version of JtR,
-you must follow the edge channel. For a clean install:
+If you followed the instructions above, you have installed the released version of `john` on your system. If you want to
+access the hot and bleeding development version of JtR, you must follow the edge channel. For a clean install:
 
 ```bash
  sudo snap install --channel=edge john-the-ripper
@@ -344,13 +331,11 @@ If you do so, you will be running the development version available on GitHub.
 <!-- markdownlint-disable MD042 -->
 
 > Delivered using Cirrus CI \
-> Supported architecture:
-> [arm64](# "[ backed by ASIMD ]")
+> Supported architecture: [arm64](# "[ backed by ASIMD ]")
 
 <!-- markdownlint-enable MD042 -->
 
-To install John the Ripper by downloading the .7z file and installing it manually,
-follow these steps:
+To install John the Ripper by downloading the .7z file and installing it manually, follow these steps:
 
 - Download the compressed file to your machine.
 - Extract it to a directory such as `/Users/Me/bleeding`.
@@ -382,18 +367,17 @@ The highlights (👀):
 - has OpenCL available;
 - built using clang from the official Xcode toolchain plus non-system libraries from Homebrew.
 
-[*] John the Ripper runs using the best SIMD instructions available on the host
-it's running on.
+[*] John the Ripper runs using the best SIMD instructions available on the host it's running on.
 
 ### macOS Deployments
 
 [![macOS Downloads][linkBadgeDownloadMac]][linkReleases]
 
-Using the instructions above, you can install the released version of `john`,
-or the bleeding development version, or an earlier stable version on your system.
+Using the instructions above, you can install the released version of `john`, or the bleeding development version, or an
+earlier stable version on your system.
 
-The package contains the necessary executables to run a fresh install of John the Ripper.
-You must install required Homebrew libraries.
+The package contains the necessary executables to run a fresh install of John the Ripper. You must install required
+Homebrew libraries.
 
 <!--
 // jscpd:ignore-start
@@ -401,9 +385,8 @@ You must install required Homebrew libraries.
 <details>
   <summary>OpenSSF SLSA</summary>
 
-SLSA is a framework intended to codify and promote secure software supply-chain practices,
-it helps trace software artifacts back to the build and source control systems that
-produced them.
+SLSA is a framework intended to codify and promote secure software supply-chain practices, it helps trace software
+artifacts back to the build and source control systems that produced them.
 
 > :warning: **NOTE:** the release assets from our GitHub Releases are level 1 compliant.
 
@@ -420,9 +403,9 @@ produced them.
 
 ### Running a non-OpenMP build on macOS
 
-In some situations a non-OpenMP build may be faster. You can ask to fallback to
-a non-OpenMP build specifying the value of OMP_NUM_THREADS in the command-line.
-You avail the best SIMD instructions at one's disposal without any OpenMP stuff. E.g.:
+In some situations a non-OpenMP build may be faster. You can ask to fallback to a non-OpenMP build specifying the value
+of OMP_NUM_THREADS in the command-line. You avail the best SIMD instructions at one's disposal without any OpenMP stuff.
+E.g.:
 
 ```bash
 OMP_NUM_THREADS=1 run/john --list=build-info
@@ -435,15 +418,12 @@ OMP_NUM_THREADS=1 run/john --list=build-info
 <!-- markdownlint-disable MD042 -->
 
 > Delivered using GitLab CI \
-> Supported architectures:
-> [amd64](# "[ backed by AVX, AVX2, and AVX512BW ]") and
-> [arm64v8](# "[ backed by ASIMD ]")
+> Supported architectures: [amd64](# "[ backed by AVX, AVX2, and AVX512BW ]") and [arm64v8](# "[ backed by ASIMD ]")
 
 <!-- markdownlint-enable MD042 -->
 
-[**Flatpak**][linkFlatpakSite] is a new framework for desktop applications
-on Linux, built to be distribution agnostic and allow deployment on any Linux
-operating system out there.
+[**Flatpak**][linkFlatpakSite] is a new framework for desktop applications on Linux, built to be distribution agnostic
+and allow deployment on any Linux operating system out there.
 
 Flatpak is available for the [most common Linux distributions](http://flatpak.org/getting.html).
 
@@ -457,8 +437,8 @@ To install JtR download the john.flatpak file and run:
  flatpak --user install --bundle john.flatpak # per-user installation (not system wide)
 ```
 
-John runs confined under a restrictive security sandbox by default. Nevertheless,
-you can access and audit any file located in your home. Below, an usage example:
+John runs confined under a restrictive security sandbox by default. Nevertheless, you can access and audit any file
+located in your home. Below, an usage example:
 
 ```bash
  flatpak run com.openwall.John -list=build-info
@@ -471,8 +451,7 @@ The highlights (👀):
 - has fallback for CPU[*] and OMP;
 - also available via FlatHub at <https://flathub.org/apps/com.openwall.John>.
 
-[*] John the Ripper runs using the best SIMD instructions available on the host
-it's running on.
+[*] John the Ripper runs using the best SIMD instructions available on the host it's running on.
 
 ### Flatpak Deployments
 
@@ -482,15 +461,14 @@ it's running on.
 // jscpd:ignore-start
 -->
 
-Using the instructions above, you can install the released version of `john`,
-or the bleeding development version, or an earlier stable version on your system.
+Using the instructions above, you can install the released version of `john`, or the bleeding development version, or an
+earlier stable version on your system.
 
 <details>
   <summary>OpenSSF SLSA</summary>
 
-SLSA is a framework intended to codify and promote secure software supply-chain practices,
-it helps trace software artifacts back to the build and source control systems that
-produced them.
+SLSA is a framework intended to codify and promote secure software supply-chain practices, it helps trace software
+artifacts back to the build and source control systems that produced them.
 
 > :warning: **NOTE:** the release assets from our GitHub Releases are level 1 compliant.
 
@@ -512,14 +490,12 @@ produced them.
 <!-- markdownlint-disable MD042 -->
 
 > Delivered using GitHub Actions \
-> Supported architectures:
-> [amd64](# "[ backed by AVX, AVX2, and AVX512BW ]") and
-> [arm64v8](# "[ backed by ASIMD ]")
+> Supported architectures: [amd64](# "[ backed by AVX, AVX2, and AVX512BW ]") and [arm64v8](# "[ backed by ASIMD ]")
 
 <!-- markdownlint-enable MD042 -->
 
-[**Docker**](https://www.docker.com/) provides the ability to package and run an application
-in a loosely isolated environment called a container.
+[**Docker**](https://www.docker.com/) provides the ability to package and run an application in a loosely isolated
+environment called a container.
 
 To use it:
 
@@ -539,7 +515,8 @@ Run John the Ripper and check if it is working:
  docker run ghcr.io/openwall/john:latest best # => uses the best SIMD available
 ```
 
-| 📑 **More examples of** [running John The Ripper on Docker](docs/examples-docker.md#more-examples-of-running-john-the-ripper-on-docker).
+| 📑 **More examples of**
+[running John The Ripper on Docker](docs/examples-docker.md#more-examples-of-running-john-the-ripper-on-docker).
 
 The highlights (👀):
 
@@ -560,15 +537,14 @@ The highlights (👀):
 // jscpd:ignore-start
 -->
 
-Using the instructions above, you can install the released version of `john`,
-or the bleeding development version, or an earlier stable version on your system.
+Using the instructions above, you can install the released version of `john`, or the bleeding development version, or an
+earlier stable version on your system.
 
 <details>
   <summary>OpenSSF SLSA</summary>
 
-SLSA is a framework intended to codify and promote secure software supply-chain practices,
-it helps trace software artifacts back to the build and source control systems that
-produced them.
+SLSA is a framework intended to codify and promote secure software supply-chain practices, it helps trace software
+artifacts back to the build and source control systems that produced them.
 
 > :warning: **NOTE:** the Docker images from our GitHub Packages are level 3 compliant.
 
@@ -589,24 +565,21 @@ produced them.
 
 > Released packages checksums computed by Build Servers
 
-File verification is the process of using an algorithm for verifying the integrity
-of a computer file. A popular approach is to store checksums (hashes) of files,
-also known as message digests, for later comparison. All john packages checksums (hashes)
-are computed by the CI servers.
+File verification is the process of using an algorithm for verifying the integrity of a computer file. A popular
+approach is to store checksums (hashes) of files, also known as message digests, for later comparison. All john packages
+checksums (hashes) are computed by the CI servers.
 
-By accessing the build logs for each release on GitHub releases you can view the hashes of all
-relevant files.
+By accessing the build logs for each release on GitHub releases you can view the hashes of all relevant files.
 
-You can also go to <https://github.com/openwall/john-packages/attestations> for a list of our
-named artifacts along with their digest.
+You can also go to <https://github.com/openwall/john-packages/attestations> for a list of our named artifacts along with
+their digest.
 
 <p align="right">(<a href="#header">back to top</a>)</p>
 
 ## ⚠ Security
 
-Please inspect all packages prior to running any of them to ensure safety.
-We already know they're safe, but you should verify the security and contents of any
-binary from the internet you are not familiar with.
+Please inspect all packages prior to running any of them to ensure safety. We already know they're safe, but you should
+verify the security and contents of any binary from the internet you are not familiar with.
 
 We take security very seriously.
 
@@ -616,22 +589,23 @@ We take security very seriously.
 
 ## About This Project
 
-This project aims to create tools and procedures to automate the creation and enable
-traceability of packages for John the Ripper software, developing a CI and CD pipeline.
+This project aims to create tools and procedures to automate the creation and enable traceability of packages for John
+the Ripper software, developing a CI and CD pipeline.
 
 <p align="right">(<a href="#header">back to top</a>)</p>
 
 ## Contribute
 
-We love contributions in the form of issues and pull requests. Read the [Contributor Guide](CONTRIBUTING.md) before contributing.
+We love contributions in the form of issues and pull requests. Read the [Contributor Guide](CONTRIBUTING.md) before
+contributing.
 
 [![GitHub issues by-label](https://img.shields.io/github/issues/openwall/john-packages/good%20first%20issue)](https://github.com/openwall/john-packages/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 
-If you intend to report or contribute a fix related to security vulnerabilities, please
-first consult our [Security Policy](SECURITY.md).
+If you intend to report or contribute a fix related to security vulnerabilities, please first consult our
+[Security Policy](SECURITY.md).
 
-Upstream `john` project has a big backlog! If you're new to the project, maybe you'd
-like to open a pull request to address one of them.
+Upstream `john` project has a big backlog! If you're new to the project, maybe you'd like to open a pull request to
+address one of them.
 
 <p align="right">(<a href="#header">back to top</a>)</p>
 
@@ -651,24 +625,38 @@ GNU General Public License v2.0.
 
 <!-- markdownlint-enable MD033 -->
 
-[bleedingDocker]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fopenwall%2Fjohn-packages%2Frelease%2Fdeploy%2Fdocker.json
-[bleedingSnap]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fopenwall%2Fjohn-packages%2Frelease%2Fdeploy%2Fsnap.json
+[bleedingDocker]:
+  https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fopenwall%2Fjohn-packages%2Frelease%2Fdeploy%2Fdocker.json
+[bleedingSnap]:
+  https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fopenwall%2Fjohn-packages%2Frelease%2Fdeploy%2Fsnap.json
 [linkBadgeDownloadDocker]: https://img.shields.io/badge/Download-Docker%20Image-blue.svg?style=for-the-badge
 [linkBadgeDownloadFlatpak]: https://img.shields.io/badge/Download-Flatpak%20Package-blue?style=for-the-badge
 [linkBadgeDownloadMac]: https://img.shields.io/badge/Download-macOS%20Package-blue.svg?style=for-the-badge
 [linkBadgeDownloadWindows]: https://img.shields.io/badge/Download-Windows%20Package-blue.svg?style=for-the-badge
 [linkFeedIcon]: https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Feed-icon.svg/16px-Feed-icon.svg.png
 [linkFlatpakSite]: https://flatpak.org/
-[linkLatestPrereleaseDate]: https://img.shields.io/github/release-date-pre/openwall/john-packages?label=when&color=green "Latest Prerelease Date"
-[linkLatestPrereleaseVersion]: https://img.shields.io/github/release/openwall/john-packages?include_prereleases&sort=date&label=&style=flat-square&color=blue "Latest Prerelease Version"
-[linkLatestReleaseDate]: https://img.shields.io/github/release-date/openwall/john-packages?label=when&color=green "Latest Release Date"
-[linkLatestReleaseVersion]: https://img.shields.io/github/release/openwall/john-packages?sort=date&label=&style=flat-square&color=blue "Latest Release Version"
+[linkLatestPrereleaseDate]:
+  https://img.shields.io/github/release-date-pre/openwall/john-packages?label=when&color=green
+  "Latest Prerelease Date"
+[linkLatestPrereleaseVersion]:
+  https://img.shields.io/github/release/openwall/john-packages?include_prereleases&sort=date&label=&style=flat-square&color=blue
+  "Latest Prerelease Version"
+[linkLatestReleaseDate]:
+  https://img.shields.io/github/release-date/openwall/john-packages?label=when&color=green
+  "Latest Release Date"
+[linkLatestReleaseVersion]:
+  https://img.shields.io/github/release/openwall/john-packages?sort=date&label=&style=flat-square&color=blue
+  "Latest Release Version"
 [linkRegistry]: https://github.com/openwall/john-packages/pkgs/container/john "Our Docker image registry"
 [linkReleases]: https://github.com/openwall/john-packages/releases "The Release List"
 [linkSnapcraftJohn]: https://snapcraft.io/john-the-ripper "John Snap Package"
 [linkSnapcraftSite]: https://snapcraft.io/ "Snapcraft Main Site"
-[linkTotalDownloads]: https://img.shields.io/github/downloads/openwall/john-packages/total?label=downloads&color=white "Total Downloads"
-[linkProcedureCI]: https://mermaid.ink/img/pako:eNqVk99u2jAUxl_lyFetVvoAaKoUknWtug4ETKsEvTg4h2Dh2JbtsAHm3WcnTNApN8tFlD_-fd_x53OOjOuS2JBVFs0G5sVSQbyyxQ_jvCWsIdd1Lfw7DAYPgW-Ib8E1wuNKSOH3AUY300YBQql_qTNhaYWOwGuoyIPfEEj05DzwDaqK3G3nMUqSkB8TL9TnlX2ACVqUkuSpW5G3ppkxO9prC_lzgGKxxuEaByW5rdcGEvZTqOju4v_3ay4XlktqqS89VKH5lmwPZBvXQo890KMlGs2Kf6ns0FiCgnbjySzAUx_YHA5CVTCPOaT3T-n2rJwh7iNopN6nLxPkW6zoIn5_HzMKQu0iJyr0QqsALwv6bciKmpRHeV780sYZRsJb4SiJvep4SF1ZxgX41lNWpkqrRXnZz1nlKobvPViNfDyDbPr6kfoq_FOzgoynMqPjuAedaYmxwIvj_6YVpUGv23bpckspXGfXnkiNqkEJaIzVO5QB3m7-HlJiXAJSZ05JUmzW2w-Bh5J46nrnohmVASY9Nc4t7rp9sDtWk61RlHGOjklpyaJ2TUs2jI8l2u2SLdUprsPG69lecTb0tqE71pgyjkYhMI5fzaKFdHT6A-rVMuQ?type=png "CI and CD Procedures"
+[linkTotalDownloads]:
+  https://img.shields.io/github/downloads/openwall/john-packages/total?label=downloads&color=white
+  "Total Downloads"
+[linkProcedureCI]:
+  https://mermaid.ink/img/pako:eNqVk99u2jAUxl_lyFetVvoAaKoUknWtug4ETKsEvTg4h2Dh2JbtsAHm3WcnTNApN8tFlD_-fd_x53OOjOuS2JBVFs0G5sVSQbyyxQ_jvCWsIdd1Lfw7DAYPgW-Ib8E1wuNKSOH3AUY300YBQql_qTNhaYWOwGuoyIPfEEj05DzwDaqK3G3nMUqSkB8TL9TnlX2ACVqUkuSpW5G3ppkxO9prC_lzgGKxxuEaByW5rdcGEvZTqOju4v_3ay4XlktqqS89VKH5lmwPZBvXQo890KMlGs2Kf6ns0FiCgnbjySzAUx_YHA5CVTCPOaT3T-n2rJwh7iNopN6nLxPkW6zoIn5_HzMKQu0iJyr0QqsALwv6bciKmpRHeV780sYZRsJb4SiJvep4SF1ZxgX41lNWpkqrRXnZz1nlKobvPViNfDyDbPr6kfoq_FOzgoynMqPjuAedaYmxwIvj_6YVpUGv23bpckspXGfXnkiNqkEJaIzVO5QB3m7-HlJiXAJSZ05JUmzW2w-Bh5J46nrnohmVASY9Nc4t7rp9sDtWk61RlHGOjklpyaJ2TUs2jI8l2u2SLdUprsPG69lecTb0tqE71pgyjkYhMI5fzaKFdHT6A-rVMuQ?type=png
+  "CI and CD Procedures"
 [shieldSnap]: https://snapcraft.io/john-the-ripper/badge.svg
 [shieldLicense]: https://img.shields.io/badge/License-GPL%20v2-blue.svg
 [shieldScore]: https://api.securityscorecards.dev/projects/github.com/openwall/john-packages/badge

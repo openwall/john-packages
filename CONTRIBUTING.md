@@ -1,7 +1,7 @@
 # Contributing
 
-When contributing to this repository, please first discuss the change you wish to make via issue, email,
-or any other method with the owners of this repository before making a change.
+When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other
+method with the owners of this repository before making a change.
 
 - If you have questions, please ask them first in the mailing list john-users at lists.openwall.com;
 - Use GitHub issues to keep track of ideas, enhancements, tasks, and bugs. NEVER as a support forum;
@@ -11,44 +11,41 @@ or any other method with the owners of this repository before making a change.
 
 Please note we have a code of conduct, please follow it in all your interactions with the project.
 
-By the way, we have a bot that automatically closes issues after a certain amount of time unless someone
-specifically mark them "keep open". Reopened issues will receive attention.
+By the way, we have a bot that automatically closes issues after a certain amount of time unless someone specifically
+mark them "keep open". Reopened issues will receive attention.
 
-Contributors donate their free time to work on the project because they enjoy it. If nobody cares about
-a problem it will likely remain open forever, lost in a list of issues that no one minds. The
-contributors have other things to do, like live their lives.
+Contributors donate their free time to work on the project because they enjoy it. If nobody cares about a problem it
+will likely remain open forever, lost in a list of issues that no one minds. The contributors have other things to do,
+like live their lives.
 
 I think it's reasonable to expect users to try a little harder to help, if they care about something.
 
 ## Bug Reports
 
-Try to be clear about your environment and what you are doing. Do your best and share a sample hash or
-file that can be used to reproduce.
+Try to be clear about your environment and what you are doing. Do your best and share a sample hash or file that can be
+used to reproduce.
 
 ## Scope and Goals
 
-The project aims to create and maintain packages for John the Ripper executables. Also, maintain tools to
-support the development and use of John the Ripper software.
+The project aims to create and maintain packages for John the Ripper executables. Also, maintain tools to support the
+development and use of John the Ripper software.
 
-The `*2john` tools need a Docker image containing Python 2 and Python 3 and other dependencies
-properly installed and configured; however, this repository is not suitable for that.
+The `*2john` tools need a Docker image containing Python 2 and Python 3 and other dependencies properly installed and
+configured; however, this repository is not suitable for that.
 
 The keywords are: cloud, Docker, hardening, sandboxing, IDE, Continuous Delivery.
 
 ## Our Responsibilities
 
-We assume good faith and that's the only way we can interact in Open Source,
-but we must have rules to protect the community.
+We assume good faith and that's the only way we can interact in Open Source, but we must have rules to protect the
+community.
 
-Project maintainers are responsible for clarifying the standards of acceptable
-behavior and are expected to take appropriate and fair corrective action in
-response to any instances of unacceptable behavior.
+Project maintainers are responsible for clarifying the standards of acceptable behavior and are expected to take
+appropriate and fair corrective action in response to any instances of unacceptable behavior.
 
-Project maintainers have the right and responsibility to remove, edit, or
-reject comments, commits, code, wiki edits, issues, and other contributions
-that are not aligned to the Code of Conduct, or to ban temporarily or
-permanently any contributor for other behaviors that they deem inappropriate,
-threatening, offensive, or harmful.
+Project maintainers have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits,
+issues, and other contributions that are not aligned to the Code of Conduct, or to ban temporarily or permanently any
+contributor for other behaviors that they deem inappropriate, threatening, offensive, or harmful.
 
 ## Other sources of information
 
@@ -59,12 +56,12 @@ For various tips and tricks, also see [the docs folder](https://github.com/openw
 
 We adhere to standards used by the community.
 
-We use linters and static code analyzers that will complain about rule violations. Furthermore, we recommend
-that, if possible, before submitting your contribution, you perform all the steps listed in the "create a
-suitable PR" topic below.
+We use linters and static code analyzers that will complain about rule violations. Furthermore, we recommend that, if
+possible, before submitting your contribution, you perform all the steps listed in the "create a suitable PR" topic
+below.
 
-The row length should be between 80 and 120 columns, which is good for use on modern monitors, including
-laptops. However, there are some cases where the rule must be overcome by common sense.
+The row length should be between 80 and 120 columns, which is good for use on modern monitors, including laptops.
+However, there are some cases where the rule must be overcome by common sense.
 
 ## Create a suitable PR
 
@@ -90,7 +87,8 @@ After you open a pull request, you as the author are responsible for resolving:
 - Be patient during the review process.
 - Don't reopen closed pull requests. If you must create a new pull request, it can reference the closed one.
 
-We are going to do our best to follow [these advices.](https://phauer.com/2018/code-review-guidelines/#code-reviews-guidelines-for-the-reviewer)
+We are going to do our best to follow
+[these advices.](https://phauer.com/2018/code-review-guidelines/#code-reviews-guidelines-for-the-reviewer)
 
 ## PR acceptance criteria
 
@@ -113,13 +111,13 @@ We are going to do our best to follow [these advices.](https://phauer.com/2018/c
   - Any and all breaking changes have been described in the PR body.
   - Any and all deprecations have been described in the code and in the PR body.
   - The changes are covered by automated tests (where possible), and those tests cover all relevant edge cases.
-  - The changes don’t introduce evident regressions nor degrade the software quality in any way. If a
-    compromise is being done, it has been documented.
+  - The changes don’t introduce evident regressions nor degrade the software quality in any way. If a compromise is
+    being done, it has been documented.
 
 ## Merging procedures
 
-We prefer signed (and verified) commits and fast-forward merges. On GitHub this requires the CLI, however,
-for now, **there are no restrictions** on using merges through the GitHub GUI.
+We prefer signed (and verified) commits and fast-forward merges. On GitHub this requires the CLI, however, for now,
+**there are no restrictions** on using merges through the GitHub GUI.
 
 The author and the approver should run these commands. The PR on GitHub will close automatically.
 

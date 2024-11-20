@@ -1,26 +1,26 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "type": "shell",
-            "label": "Configure",
-            "command": "./configure",
-            "options": {
-                "cwd": "${workspaceFolder}/src"
-            }
-        },
-        {
-            "type": "shell",
-            "label": "Make",
-            "command": "make -sj4",
-            "options": {
-                "cwd": "${workspaceFolder}/src"
-            },
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "problemMatcher": []
-        }
-    ]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "Configure",
+      "command": "./configure",
+      "options": {
+        "cwd": "${workspaceFolder}/src"
+      }
+    },
+    {
+      "type": "shell",
+      "label": "Make",
+      "command": "make -sj4",
+      "options": {
+        "cwd": "${workspaceFolder}/src"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
 }

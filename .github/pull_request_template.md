@@ -21,4 +21,5 @@ Add your text here.
 - [ ] Label as either: `bug`, `ci`, `docker`, `documentation`, `enhancement`.
 - [ ] Sign unsigned commits.
 
-[commitMessage]: https://github.com/openwall/john-packages/blob/main/docs/commit-messages.md#how-a-commit-message-should-be
+[commitMessage]:
+  https://github.com/openwall/john-packages/blob/main/docs/commit-messages.md#how-a-commit-message-should-be

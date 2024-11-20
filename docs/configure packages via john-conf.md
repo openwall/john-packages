@@ -1,6 +1,7 @@
 # Configuring packages via john.conf
 
-Some John packages file systems are intentionally read-only. So, in order to adjust the `john` settings file `john.conf`, you will need to:
+Some John packages file systems are intentionally read-only. So, in order to adjust the `john` settings file
+`john.conf`, you will need to:
 
 ## Snap
 
@@ -8,7 +9,8 @@ You just have to think about how the upstream itself works:
 
 1. you cannot use `john-local.conf` (at least I haven't found a way to use it since `john` doesn't have a built-in
    variable that points to your runtime `Private home`);
-2. so, you must have a full `john.conf` in the snap (environment) proper HOME folder. It is `$HOME/snap/john-the-ripper`;
+2. so, you must have a full `john.conf` in the snap (environment) proper HOME folder. It is
+   `$HOME/snap/john-the-ripper`;
 
 So let's see how it works using an example:
 
