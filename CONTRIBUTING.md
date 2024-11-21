@@ -65,17 +65,22 @@ However, there are some cases where the rule must be overcome by common sense.
 
 ## Create a suitable PR
 
-- Run the `pre-commit run --all-files` command.
-- Format all edited or new shell scripts using shfmt.
-- Fix all issues detected by markdownlint Visual Studio Code extension (davidanson.vscode-markdownlint).
-- Format all edited YAML or Markdown files using "Prettier (esbenp.prettier-vscode).
-- Verify to see if PR checks have passed, or if there are any new or attention-worthy warning;
+- Use the linter to check for issues and correct them:
+
+```bash
+docker run --rm -e DEFAULT_BRANCH=main -e RUN_LOCAL=true -e USE_FIND_ALGORITHM=true \
+  -e FIX_JSON_PRETTIER=true -e FIX_MARKDOWN_PRETTIER=true -e FIX_JAVASCRIPT_PRETTIER=true \
+  -v $(pwd):/tmp/lint ghcr.io/super-linter/super-linter
+```
+
 - Update checksums using the command:
 
 ```bash
 cd scripts && sha256sum ./*.sh > ../requirements.hash  && cd - && \
 cd patches && sha256sum ./* >> ../requirements.hash && cd -
 ```
+
+- Submit your change and then check if the PR checks have passed, or if there are any new or attention-worthy warnings.
 
 ## The PR review process
 

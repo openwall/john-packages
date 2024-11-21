@@ -3,7 +3,6 @@ Acked
 adxcrypt
 AESNI
 afl
-AKIAIOSFODNN
 Altivec
 amazonaws
 amd
@@ -122,6 +121,7 @@ img
 IMO
 intrinsics
 ipc
+JAVASCRIPT
 jscpd
 JTR
 jtrcrackers
