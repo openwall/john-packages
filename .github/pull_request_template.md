@@ -22,4 +22,4 @@ Add your text here.
 - [ ] Sign unsigned commits.
 
 [commitMessage]:
-  https://github.com/openwall/john-packages/blob/main/docs/commit-messages.md#how-a-commit-message-should-be
+  https://github.com/openwall/john-packages/blob/main/docs/commit-message.md#how-a-commit-message-should-be
