@@ -57,7 +57,7 @@ jobs:
         uses: aquasecurity/trivy-action@915b19bbe73b92a6cf82a1bc12b087c9a19a5fe2 # 0.28.0
         with:
           scan-type: "fs"
-          scanners: vuln,misconfig,license
+          scanners: vuln,secret,misconfig,license
           skip-files: cloud-tool/security-group.tf # See #577
           exit-code: 1
         env:
