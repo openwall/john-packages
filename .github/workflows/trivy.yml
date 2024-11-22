@@ -32,7 +32,7 @@ permissions:
 jobs:
   trivy-code-security-scan:
     runs-on: ubuntu-latest
-    name: scan-sbom
+    name: scan
 
     permissions:
       contents: write
