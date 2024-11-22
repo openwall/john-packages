@@ -12,7 +12,6 @@ name: Supply chain
   schedule:
     - cron: "43 15 * * 2"
   push:
-    branches: [main]
 
 permissions:
   contents: read
@@ -31,6 +30,9 @@ jobs:
       # contents: read
       # actions: read
 
+    if:
+      github.repository == 'openwall/john-packages' && github.ref == 'refs/heads/main' &&
+      (github.event_name == 'push' || github.event_name == 'schedule')
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
