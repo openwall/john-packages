@@ -57,14 +57,23 @@ echo "reviewDecision: $(gh pr view "$PR_URL" --json reviewDecision)"
 echo "mergeStateStatus: $(gh pr view "$PR_URL" --json mergeStateStatus)"
 echo "**********************************************************************"
 
-if [[ "$REQUEST" == "bot: MERGE skip" ]]; then
+if [[ "$REQUEST" == "bot: MERGE status" || "$SKIP" == "true" ]]; then
 	test "$REVIEWS_STATUS" == "APPROVED" && MARK_1="✔"
-	test "$MERGE_STATUS" == "CLEAN" && MARK_2="✔"
+
+	if [[ "$MERGE_STATUS" == "CLEAN" ]]; then
+		MARK_2="✔"
+	else
+		MARK_2="❌"
+	fi
 	gh pr comment "$PR_URL" --body "
 	🤖: status
 	- reviewDecision: $REVIEWS_STATUS $MARK_1
 	- mergeStateStatus: $MERGE_STATUS $MARK_2
 	"
+
+	if [[ "$REQUEST" == "bot: MERGE status" ]]; then
+		exit 0
+	fi
 fi
 git config --global user.name "github-actions[bot]"
 git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
