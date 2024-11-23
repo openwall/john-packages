@@ -38,9 +38,6 @@ jobs:
       contents: write
       security-events: write
 
-    if:
-      github.repository == 'openwall/john-packages' && github.ref == 'refs/heads/main' &&
-      (github.event_name == 'push')
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
@@ -59,8 +56,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
+      - name: GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: |
+          echo ${{ github.repository }}
+          echo ${{ github.ref }}
+          echo ${{ github.event_name }}
+          echo "--------------------------------------------------"
+          echo "$GITHUB_CONTEXT"
+
       - name: Run Trivy in GitHub SBOM mode and submit results to Dependency Graph
         uses: aquasecurity/trivy-action@18f2510ee396bbf400402947b394f2dd8c87dbb0 # 0.29.0
+        if:
+          github.repository == 'openwall/john-packages' && github.ref == 'refs/heads/main' &&
+          (github.event_name == 'push' || github.event_name == 'schedule')
         with:
           scan-type: "fs"
           format: "github"
@@ -74,6 +84,9 @@ jobs:
 
       - name: Run Trivy vulnerability scanner with rootfs command
         uses: aquasecurity/trivy-action@18f2510ee396bbf400402947b394f2dd8c87dbb0 # 0.29.0
+        if:
+          github.repository == 'openwall/john-packages' && github.ref == 'refs/heads/main' &&
+          (github.event_name == 'push' || github.event_name == 'schedule')
         with:
           skip-setup-trivy: true
           scan-type: "rootfs"
@@ -88,5 +101,8 @@ jobs:
 
       - name: Upload Trivy scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@f09c1c0a94de965c15400f5634aa42fac8fb8f88 # v3.27.5
+        if:
+          github.repository == 'openwall/john-packages' && github.ref == 'refs/heads/main' &&
+          (github.event_name == 'push' || github.event_name == 'schedule')
         with:
           sarif_file: "trivy-results.sarif"
