@@ -30,6 +30,9 @@ jobs:
       # contents: read
       # actions: read
 
+    if:
+      github.repository == 'openwall/john-packages' && github.ref == 'refs/heads/main' &&
+      (github.event_name == 'push' || github.event_name == 'schedule')
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
@@ -55,21 +58,8 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run: |
-          echo ${{ github.repository }}
-          echo ${{ github.ref }}
-          echo ${{ github.event_name }}
-          echo "--------------------------------------------------"
-          echo "$GITHUB_CONTEXT"
-
       - name: "Run analysis"
         uses: ossf/scorecard-action@62b2cac7ed8198b15735ed49ab1e5cf35480ba46 # v2.4.0
-        if:
-          github.repository == 'openwall/john-packages' && github.ref == 'refs/heads/main' &&
-          (github.event_name == 'push' || github.event_name == 'schedule')
         with:
           results_file: results.sarif
           results_format: sarif
@@ -92,9 +82,6 @@ jobs:
       # format to the repository Actions tab.
       - name: "Upload artifact"
         uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
-        if:
-          github.repository == 'openwall/john-packages' && github.ref == 'refs/heads/main' &&
-          (github.event_name == 'push' || github.event_name == 'schedule')
         with:
           name: SARIF file
           path: results.sarif
@@ -103,8 +90,5 @@ jobs:
       # Upload the results to GitHub's code scanning dashboard.
       - name: "Upload to code-scanning"
         uses: github/codeql-action/upload-sarif@f09c1c0a94de965c15400f5634aa42fac8fb8f88 # v3.27.5
-        if:
-          github.repository == 'openwall/john-packages' && github.ref == 'refs/heads/main' &&
-          (github.event_name == 'push' || github.event_name == 'schedule')
         with:
           sarif_file: results.sarif
