@@ -118,6 +118,7 @@ parts:
       - wget
       - curl
       - patch
+      - yasm
       # OpenCL stuff is available only in X86 architecture
       - on amd64:
           - libpocl-dev

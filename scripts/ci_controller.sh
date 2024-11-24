@@ -40,7 +40,7 @@ if [[ "$EXTRA" == "SIMD" ]]; then
 fi
 
 if [[ $TARGET_ARCH == *"SOLARIS"* && $2 == "BUILD" ]]; then
-	pkg install --accept gcc
+	pkg install --accept gcc yasm
 fi
 
 if [[ "$TARGET_ARCH" == *"macOS"* && $2 == "INFO" ]]; then

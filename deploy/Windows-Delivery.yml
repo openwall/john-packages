@@ -45,7 +45,7 @@ steps:
           Write-Host "             =====  Installing Cygwin  =====            " -ForegroundColor White
           Write-Host "--------------------------------------------------------"
           choco install -y cygwin cyg-get
-          cyg-get libssl-devel libbz2-devel libgmp-devel zlib-devel gcc-core libOpenCL-devel libcrypt-devel make wget rebase perl
+          cyg-get libssl-devel libbz2-devel libgmp-devel zlib-devel gcc-core libOpenCL-devel libcrypt-devel make wget rebase perl yasm
       }
 
       # Powershell shell "Bash" run ##########################################
