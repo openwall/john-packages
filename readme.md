@@ -74,6 +74,7 @@ pipeline through a "production-like environment".
 | ------------------------------------ | ---------------------------------------------------- |
 | Docker image with the tag `bleeding` | [![Endpoint Badge][bleedingDocker]][linkRegistry]    |
 | Snap package from the `edge` channel | [![Endpoint Badge][bleedingSnap]][linkSnapcraftJohn] |
+| Windows 64bits package               | [![Endpoint Badge][bleedingWindows]][linkWindowsPkg] |
 
 </div>
 
@@ -629,6 +630,8 @@ GNU General Public License v2.0.
   https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fopenwall%2Fjohn-packages%2Frelease%2Fdeploy%2Fdocker.json
 [bleedingSnap]:
   https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fopenwall%2Fjohn-packages%2Frelease%2Fdeploy%2Fsnap.json
+[bleedingWindows]:
+  https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fopenwall%2Fjohn-packages%2Frelease%2Fdeploy%2Fwindows.json
 [linkBadgeDownloadDocker]: https://img.shields.io/badge/Download-Docker%20Image-blue.svg?style=for-the-badge
 [linkBadgeDownloadFlatpak]: https://img.shields.io/badge/Download-Flatpak%20Package-blue?style=for-the-badge
 [linkBadgeDownloadMac]: https://img.shields.io/badge/Download-macOS%20Package-blue.svg?style=for-the-badge
@@ -657,6 +660,7 @@ GNU General Public License v2.0.
 [linkProcedureCI]:
   https://mermaid.ink/img/pako:eNqVk99u2jAUxl_lyFetVvoAaKoUknWtug4ETKsEvTg4h2Dh2JbtsAHm3WcnTNApN8tFlD_-fd_x53OOjOuS2JBVFs0G5sVSQbyyxQ_jvCWsIdd1Lfw7DAYPgW-Ib8E1wuNKSOH3AUY300YBQql_qTNhaYWOwGuoyIPfEEj05DzwDaqK3G3nMUqSkB8TL9TnlX2ACVqUkuSpW5G3ppkxO9prC_lzgGKxxuEaByW5rdcGEvZTqOju4v_3ay4XlktqqS89VKH5lmwPZBvXQo890KMlGs2Kf6ns0FiCgnbjySzAUx_YHA5CVTCPOaT3T-n2rJwh7iNopN6nLxPkW6zoIn5_HzMKQu0iJyr0QqsALwv6bciKmpRHeV780sYZRsJb4SiJvep4SF1ZxgX41lNWpkqrRXnZz1nlKobvPViNfDyDbPr6kfoq_FOzgoynMqPjuAedaYmxwIvj_6YVpUGv23bpckspXGfXnkiNqkEJaIzVO5QB3m7-HlJiXAJSZ05JUmzW2w-Bh5J46nrnohmVASY9Nc4t7rp9sDtWk61RlHGOjklpyaJ2TUs2jI8l2u2SLdUprsPG69lecTb0tqE71pgyjkYhMI5fzaKFdHT6A-rVMuQ?type=png
   "CI and CD Procedures"
+[linkWindowsPkg]: https://ci.appveyor.com/project/claudioandre-br/johntheripper/build/artifacts "John Windows Package"
 [shieldSnap]: https://snapcraft.io/john-the-ripper/badge.svg
 [shieldLicense]: https://img.shields.io/badge/License-GPL%20v2-blue.svg
 [shieldScore]: https://api.securityscorecards.dev/projects/github.com/openwall/john-packages/badge
