@@ -21,7 +21,7 @@
 # More info at https://github.com/openwall/john-packages
 
 ---
-name: Branch updated
+name: Validate tree
 
 "on":
   pull_request_target:
@@ -37,6 +37,7 @@ jobs:
     outputs:
       commit: ${{ steps.context.outputs.commit }}
 
+    if: github.actor != 'dependabot[bot]'
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
@@ -64,7 +65,7 @@ jobs:
   validate:
     needs: [fork]
     runs-on: ubuntu-latest
-    name: check-updated
+    name: check-pr
 
     steps:
       - name: Harden Runner
@@ -80,7 +81,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Validate
+      - name: Branch updated
         run: |
           ANCESTOR=1
 
@@ -103,3 +104,18 @@ jobs:
             echo "This branch is not up to date with main. Please, update!"
             exit 1
           fi
+
+      - name: If '(#999)' matches PR number
+        run: |
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          COMMITS="$(git log --oneline origin/main.."${{ github.event.pull_request.head.sha }}" --)"
+          echo "HEAD: ${{ github.event.pull_request.head.sha }}"
+          echo "$COMMITS" | while read -r COMMIT ; do
+              MESSAGE_PR_NUMBER=$(echo "$COMMIT" | grep -oE "\(#[0-9]{3,4}\)$" | cut -d'#' -f 2 | cut -d')' -f 1)
+              echo "Found: '$MESSAGE_PR_NUMBER'"
+
+              if [[ "$MESSAGE_PR_NUMBER" != "$PR_NUMBER" ]]; then
+                echo "Commit message should reference (#$PR_NUMBER)"
+                exit 1
+              fi
+          done

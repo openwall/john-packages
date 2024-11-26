@@ -179,6 +179,7 @@ ocl
 oidc
 omp
 oneapi
+oneline
 openmp
 oss
 osv
