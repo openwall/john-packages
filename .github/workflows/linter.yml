@@ -62,6 +62,18 @@ jobs:
           ENABLE_COMMITLINT_STRICT_MODE: true
           ENFORCE_COMMITLINT_CONFIGURATION_CHECK: true
           FILTER_REGEX_EXCLUDE: "^/github/workspace/snapcraft.yaml$" # Workaround for Prettier itself
+          FIX_JAVASCRIPT_PRETTIER: true
+          FIX_JSON_PRETTIER: true
+          FIX_MARKDOWN_PRETTIER: true
+          FIX_YAML_PRETTIER: true
           VALIDATE_GIT_MERGE_CONFLICT_MARKERS: false # See https://github.com/super-linter/super-linter/pull/6374
           DEFAULT_BRANCH: "main"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check
+        run: |
+          echo "You should format source code properly!"
+          echo "**********************************************************************"
+          git diff
+          echo "**********************************************************************"
+          git diff --quiet
