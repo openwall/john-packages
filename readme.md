@@ -602,8 +602,8 @@ contributing.
 
 [![GitHub issues by-label](https://img.shields.io/github/issues/openwall/john-packages/good%20first%20issue)](https://github.com/openwall/john-packages/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 
-If you intend to report or contribute a fix related to security vulnerabilities, please first consult our
-[Security Policy](SECURITY.md).
+Please first consult our [Security Policy](SECURITY.md) if you intend to report or contribute a fix related to security
+vulnerabilities.
 
 Upstream `john` project has a big backlog! If you're new to the project, maybe you'd like to open a pull request to
 address one of them.
