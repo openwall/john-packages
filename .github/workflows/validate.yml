@@ -120,3 +120,14 @@ jobs:
                 exit 1
               fi
           done
+
+      - name: Check signoff
+        run: |
+          COMMITS="$(git log --pretty=format:%H origin/main..)"
+          echo "$COMMITS" | while read -r COMMIT ; do
+            COMMIT_MSG=$(git show -s --format=%B "$COMMIT")
+            if ! echo "$COMMIT_MSG" | grep -q '^Signed-off-by:'; then
+              echo "Commit message missing 'Signed-off-by' trailer"
+              exit 1
+            fi
+          done
