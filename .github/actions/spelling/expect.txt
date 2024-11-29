@@ -15,6 +15,7 @@ aquasecurity
 asan
 ASLR
 ath
+autobuild
 autodelete
 autodownload
 autogen
@@ -31,6 +32,7 @@ Bla
 bugtracker
 BUILDID
 buildlog
+buildscript
 buildsystem
 CCO
 CFLAGS
@@ -121,7 +123,6 @@ img
 IMO
 intrinsics
 ipc
-JAVASCRIPT
 jscpd
 JTR
 jtrcrackers

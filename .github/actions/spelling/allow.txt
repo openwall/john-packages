@@ -12,6 +12,7 @@ freedesktop
 gcc
 github
 https
+javascript
 Khronos
 listconf
 mergeable
