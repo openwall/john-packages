@@ -131,3 +131,13 @@ jobs:
               exit 1
             fi
           done
+
+      - name: Check checksums
+        run: |
+          cd scripts && sha256sum ./*.sh > ../requirements.hash  && cd -
+          cd patches && sha256sum ./* >> ../requirements.hash && cd -
+          echo "You should keep checksums updated!"
+          echo "**********************************************************************"
+          git diff
+          echo "**********************************************************************"
+          git diff --quiet
