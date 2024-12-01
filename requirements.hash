@@ -5,5 +5,5 @@ e25fca925ee687bc46f5be6487c48ee977b697d05df97ccaca86d36ee8d213dc  ./clean_packag
 9e0f8478bb6568b6defc647080637b2944d68e8372655031750849aa77686812  ./package_version.sh
 ad0a8ec80ac460df49a2643a5ea75c98ebe55e6039515ff3b8fc581c974ba698  ./run_tests.sh
 94b462117f4a77f14703c5774a8477dcf6644bfee75bec158c0407e69ba58c73  ./show_info.sh
-eb7b87055dc1c1e8d7d9ee9c096ce7e9cef7159854efc3818749438455a22e78  ./Handle-self-confined-system-wide-build.patch
-749d63bd3ce98969a5422e6edf54af30541033195d431a817f8da320cb91c3c9  ./Remove-peflags-from-the-default-target.patch
+9adb8d143854bf59b5dc61fc404513984e6c894f5448a1b31e54d43ca4e80b6b  ./Handle-self-confined-system-wide-build.patch
+3712c35cba3ada6a6df90e19bcfe70f2ed5fb0c62dabe0f4442ca52522ddbf2e  ./Remove-peflags-from-the-default-target.patch
