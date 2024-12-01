@@ -1,7 +1,10 @@
-From a323a4bd1e72eea54b14291f409e8772bd9b7902 Mon Sep 17 00:00:00 2001
+From a9decfba68ed95aa2884041675e1b0e2d2f9d905 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Claudio=20Andr=C3=A9?= <dev@claudioandre.slmail.me>
 Date: Sat, 15 Dec 2018 23:35:51 -0200
 Subject: [PATCH] Handle self confined system wide build.
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 
 ---
  src/listconf.c | 12 ++++++++++++
@@ -9,12 +12,12 @@ Subject: [PATCH] Handle self confined system wide build.
  2 files changed, 22 insertions(+), 2 deletions(-)
 
 diff --git a/src/listconf.c b/src/listconf.c
-index 319288ca7b..cc958100b9 100644
+index 9f3abf285..76409c580 100644
 --- a/src/listconf.c
 +++ b/src/listconf.c
-@@ -155,6 +155,18 @@ static void listconf_list_build_info(void)
- 	       SIMD_PARA_SHA256, SIMD_PARA_SHA512);
- #endif
+@@ -172,6 +172,18 @@ static void listconf_list_build_info(void)
+ 	       "no");
+
  #if JOHN_SYSTEMWIDE
 +#if defined(_BOXED)
 +{
@@ -32,7 +35,7 @@ index 319288ca7b..cc958100b9 100644
  	puts("System-wide home: " JOHN_SYSTEMWIDE_HOME);
  	puts("Private home: " JOHN_PRIVATE_HOME);
 diff --git a/src/params.h b/src/params.h
-index 74726debd1..711b13dd21 100644
+index 74726debd..711b13dd2 100644
 --- a/src/params.h
 +++ b/src/params.h
 @@ -104,10 +104,18 @@
