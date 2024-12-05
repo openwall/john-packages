@@ -95,7 +95,7 @@ parts:
     plugin: nil
     after: [john-packages]
     source: https://github.com/openwall/john.git
-    source-commit: f9fedd238b0b1d69181c1fef033b85c787e96e57
+    source-commit: 7c8b5e3de5d228c8ca91aa03c746cead2cfd4b60
     source-depth: 10
 
     override-build: |
