@@ -20,7 +20,7 @@
 # Dockerfile for a cloud helper tool
 # More info at https://github.com/openwall/john-packages
 
-FROM ubuntu:latest@sha256:278628f08d4979fb9af9ead44277dbc9c92c2465922310916ad0c46ec9999295
+FROM ubuntu:latest@sha256:80dd3c3b9c6cecb9f1667e9290b3bc61b78c2678c02cbdae5f0fea92cc6734ab
 LABEL org.opencontainers.image.authors="Claudio André <dev@claudioandre.slmail.me>"
 LABEL description="Automation for John the Ripper (1.0.Cloud Tools)"
 

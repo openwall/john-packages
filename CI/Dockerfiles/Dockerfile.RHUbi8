@@ -20,7 +20,7 @@
 # Dockerfile for Continuous Integration
 # More info at https://github.com/openwall/john-packages
 
-FROM registry.access.redhat.com/ubi8/ubi:latest@sha256:d497966ce214138de5271eef321680639e18daf105ae94a6bff54247d8a191a3
+FROM registry.access.redhat.com/ubi8/ubi:latest@sha256:79d46e7029c2b13a713b2089650fd235aadb3e6e449c79f6741d6c9381ab41a1
 LABEL org.opencontainers.image.authors="Claudio André <dev@claudioandre.slmail.me>"
 LABEL description="Docker images for John the Ripper CI (1.0.Red Hat 8)"
 LABEL org.opencontainers.image.source="https://github.com/openwall/john-packages"
