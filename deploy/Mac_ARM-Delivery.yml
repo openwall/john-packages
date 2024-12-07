@@ -29,7 +29,7 @@ macOS_task:
 
   env:
     CIRRUS_CLONE_DEPTH: "10"
-    BUILD_OPS: "--build=aarch64-apple-darwin"
+    BUILD_OPS: "--build=aarch64-apple-darwin --enable-werror"
     CC: "clang"
     MAKE_FLAGS: "-sj4"
     TARGET_ARCH: "macOS ARM"

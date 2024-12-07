@@ -87,8 +87,8 @@ steps:
       #    + CategoryInfo          : NotSpecified: (ar: creating aes.a:String) [], RemoteException
       #    + FullyQualifiedErrorId : NativeCommandError
       # ####
-      $EXE_NORMAL = "--disable-native-tests"
-      $EXE_NO_OMP = "--disable-native-tests --disable-openmp"
+      $EXE_NORMAL = "--enable-werror --disable-native-tests"
+      $EXE_NO_OMP = "--enable-werror --disable-native-tests --disable-openmp"
 
       # CPU (OMP and extensions fallback)
       shell "./configure $EXE_NO_OMP --enable-simd=avx                                                                                                                                                   && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-avx"

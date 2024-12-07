@@ -29,7 +29,7 @@ source ../helper.sh
 
 if [[ "$SANITIZER" == "address" ]]; then
 	# Asan
-	./configure --enable-asan
+	./configure --enable-werror --enable-asan
 	make -sj4
 	cp ../run/john "$OUT"/
 
@@ -44,7 +44,7 @@ fi
 
 if [[ "$SANITIZER" == "undefined" ]]; then
 	# Ubsan
-	./configure --enable-ubsan
+	./configure --enable-werror --enable-ubsan
 	make -sj4
 	cp ../run/john "$OUT"/
 
