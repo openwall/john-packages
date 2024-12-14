@@ -22,7 +22,7 @@
 
 # See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/master/containers
 
-FROM mcr.microsoft.com/vscode/devcontainers/base:noble@sha256:436147909915f53a19b33104ac9d3055ae54782f7e236920852c2c4443d516ac
+FROM mcr.microsoft.com/vscode/devcontainers/base:noble@sha256:167e522ad50971b29dda8c09faac30562fce5a7596f1aba765995728985184b8
 
 ENV NODE_DOWNLOAD_SHA256="dd3bc508520fcdfdc8c4360902eac90cba411a7e59189a80fb61fcbea8f4199c"
 ENV RUST_DOWNLOAD_SHA256="32a680a84cf76014915b3f8aa44e3e40731f3af92cd45eb0fcc6264fd257c428"
