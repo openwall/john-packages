@@ -69,7 +69,6 @@ jobs:
           FIX_JSON_PRETTIER: true
           FIX_MARKDOWN_PRETTIER: true
           FIX_YAML_PRETTIER: true
-          VALIDATE_GIT_MERGE_CONFLICT_MARKERS: false # See https://github.com/super-linter/super-linter/pull/6374
           DEFAULT_BRANCH: "main"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
