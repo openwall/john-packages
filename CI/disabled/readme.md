@@ -118,4 +118,11 @@ Platform #0 name: Intel(R) OpenCL, version: OpenCL 3.0 LINUX\
 # Testing: KeePass-Argon2-opencl [BlaMka OpenCL]...
 # run_tests.sh: line 304:  6619 Segmentation fault      (core dumped) "$JTR_BIN" -test-full=0 --format=opencl
 'keepass-argon2-opencl'
+
+# Affected by https://github.com/openwall/john/pull/5613 and openwall/john#5615
+# Testing: raw-SHA512-free-opencl [SHA512 OpenCL (inefficient, development use mostly)]... FAILED (cmp_all(49))
+# [...]
+# 1 out of 86 tests have FAILED
+
+'raw-SHA512-free-opencl'
 ```
