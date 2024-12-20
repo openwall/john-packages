@@ -30,8 +30,8 @@ day tasks, which, by the way, is exactly what is happening in the Windows versio
 - [ ] Add a new commit to the `release` branch;
   - This is the "pin upstream commit".
 - [ ] Update the commit that will be used to build;
-  - Replace all occurrences of `f9fedd238b0b1d69181c1fef033b85c787e96e57` with the proper commit hash;
-  - Replace all occurrences of `f9fedd2` with the proper short commit hash;
+  - Replace all occurrences of `07110d82d23d5253305861f85eaf86e56b0c833b` with the proper commit hash;
+  - Replace all occurrences of `07110d8` with the proper short commit hash;
   - Update bash script [file hashes](../CONTRIBUTING.md#create-a-suitable-pr);
   - Amend and push the "pin upstream commit".
 
