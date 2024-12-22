@@ -109,11 +109,6 @@ Platform #0 name: Intel(R) OpenCL, version: OpenCL 3.0 LINUX\
 'SunMD5'
 
 # OpenCL Intel CPU on Azure
-# Testing: streebog256crypt-opencl, Astra Linux $gost12256hash$ (rounds=5000) [GOST R 34.11-2012 OpenCL]...
-# run_tests.sh: line 304:  6476 Killed                  "$JTR_BIN" -test-full=0 --format=opencl
-'streebog256crypt-opencl'
-'streebog512crypt-opencl'
-'gost94crypt-opencl'
 
 # Testing: KeePass-Argon2-opencl [BlaMka OpenCL]...
 # run_tests.sh: line 304:  6619 Segmentation fault      (core dumped) "$JTR_BIN" -test-full=0 --format=opencl
