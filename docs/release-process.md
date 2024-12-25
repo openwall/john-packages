@@ -55,7 +55,7 @@ The "pin upstream commit" is ready.
 
 The "release commit" is almost ready.
 
-- [ ] Run all CI (standard, macOS, GitLab, Solaris and Android); [2]
+- [ ] Run all CI (standard, macOS, GitLab, and Solaris); [2]
   - Confirm that all builds are OK.
 - [ ] Build the snap (use Launchpad); [3]
   - Confirm that all builds are OK.

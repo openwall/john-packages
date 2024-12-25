@@ -4,7 +4,6 @@ We use premium build providers like Azure Cloud, Launchpad, and GitLab.
 
 At the time of this writing, `john` is known to build and work on:
 
-- Android NDK r23b (on ARM and X86)
 - FreeBSD (tested with 13 and later on X86)
 - Linux (kernel 6 or later recommended)
 - macOS (on ARM)

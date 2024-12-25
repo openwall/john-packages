@@ -6,7 +6,8 @@ graph TD
     C -->|Cirrus CI| F[fa:fa-desktop <br>FreeBSD CI]
     C -->|Azure DevOPS| H[fa:fa-desktop <br>Fuzzing Test<br>+<br>Inspect Deploy<br>Package]
     C -..-> |investigation| K[experimental]
-    K --> |Bitrise<br>Mobile DevOps| L[fa:fa-desktop <br>Android CI]
+    K -..->|decommissioned| W(Bitrise<br>Mobile DevOps)
+    W --> L[fa:fa-desktop <br>Android CI]
     K --> |Cirrus CI| N[fa:fa-desktop <br>macOS ARM]
     K --> |GitHub Actions| O[fa:fa-desktop <br>Solaris CI]
     H[fa:fa-desktop <br>Fuzzing Test<br>+<br>Inspection of<br> Deployment<br>Package] -->|manual approval| X(Azure Deploys<br>the Release)

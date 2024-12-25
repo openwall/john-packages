@@ -26,7 +26,6 @@ source code of John the Ripper using:
   - Ubuntu 22.04, Ubuntu 24.04, and Ubuntu devel (the under development version);
   - flatpak (runtime: org.freedesktop.Platform 24.08);
   - snap (runtime: core24);
-  - Android SDK 34 (on ARM and X86);
 - macOS:
   - macOS 14.6 23G80:
     - Darwin 23.6.0 arm64 arm;
@@ -39,7 +38,7 @@ source code of John the Ripper using:
 
 - Compilers:
   - gcc 7.4 (Win 2016), gcc 8.5 (Red Hat Enterprise Linux 8);
-  - gcc 11.4 (Android), gcc 11.4 (Ubuntu 22 - Intel CPU);
+  - gcc 11.4 (Ubuntu 22 - Intel CPU);
   - gcc 12.4 (Win 2019/2022);
   - gcc 13.2 (Ubuntu 24, snap, fuzzing);
   - gcc 14.2 (Fedora 41, Ubuntu Dev), gcc 14.2 (Flatpak);
@@ -84,16 +83,15 @@ source code of John the Ripper using:
 
 #### CI Builds and Artifacts
 
-| Provider              | OS            | Artifacts                   |
-| --------------------- | ------------- | --------------------------- |
-| AppVeyor CI           | Windows       | ✓ Build artifacts available |
-| Azure                 | Linux         | ✗ No build artifacts        |
-| Azure                 | Windows       | ✗ No build artifacts        |
-| Azure                 | OpenCL on GPU | ∅ Under development         |
-| Bitrise Mobile DevOps | Android       | ✓ Build artifacts available |
-| Circle CI             | Linux         | ✗ No build artifacts        |
-| Cirrus CI             | FreeBSD       | ✗ No build artifacts        |
-| GitHub Actions        | Solaris       | ✗ No build artifacts        |
+| Provider       | OS            | Artifacts                   |
+| -------------- | ------------- | --------------------------- |
+| AppVeyor CI    | Windows       | ✓ Build artifacts available |
+| Azure          | Linux         | ✗ No build artifacts        |
+| Azure          | Windows       | ✗ No build artifacts        |
+| Azure          | OpenCL on GPU | ∅ Under development         |
+| Circle CI      | Linux         | ✗ No build artifacts        |
+| Cirrus CI      | FreeBSD       | ✗ No build artifacts        |
+| GitHub Actions | Solaris       | ✗ No build artifacts        |
 
 #### Delivery Builds and Artifacts
 
