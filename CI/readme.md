@@ -38,7 +38,7 @@ source code of John the Ripper using:
 
 - Compilers:
   - gcc 7.4 (Win 2016), gcc 8.5 (Red Hat Enterprise Linux 8);
-  - gcc 11.4 (Ubuntu 22 - Intel CPU);
+  - gcc 11.4 (Ubuntu 22 with OpenCL SDK for Intel Processors);
   - gcc 12.4 (Win 2019/2022);
   - gcc 13.2 (Ubuntu 24, snap, fuzzing);
   - gcc 14.2 (Fedora 41, Ubuntu Dev), gcc 14.2 (Flatpak);
