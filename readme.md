@@ -46,6 +46,13 @@ Office's, plus lots of other hashes and ciphers.
 
 ## Introduction
 
+> [!IMPORTANT]
+>
+> Some relevant fixes have been committed to the main john repository: office, zip, PDF, ...
+>
+> IF YOU USE OUTDATED SOFTWARE, FALSE NEGATIVES ARE POSSIBLE AND YOU WILL BE WASTING YOUR TIME AND CPU CYCLES.\
+> IT IS MANDATORY TO STOP USING PREVIOUS VERSIONS, AS THEY ARE KNOWN TO HAVE ERRORS.
+
 ### Continuous Delivery Status
 
 We produce software in short cycles, ensuring that the software can be reliably released at any time, following a
