@@ -8,7 +8,7 @@
 #                                                       | |   | |
 #                                                       |_|   |_|
 #
-# Copyright (c) 2019-2024 Claudio André <dev at claudioandre.slmail.me>
+# Copyright (c) 2019-2025 Claudio André <dev at claudioandre.slmail.me>
 #
 # This program comes with ABSOLUTELY NO WARRANTY; express or implied.
 #
@@ -118,8 +118,12 @@ parts:
       - wget
       - curl
       - patch
-      # OpenCL stuff is available only in X86 architecture
+      # OpenCL stuff
       - on amd64:
+          - libpocl-dev
+          - ocl-icd-opencl-dev
+          - pocl-opencl-icd
+      - on arm64:
           - libpocl-dev
           - ocl-icd-opencl-dev
           - pocl-opencl-icd
@@ -136,6 +140,8 @@ parts:
       - libgomp1
       - libpcap0.8
       - on amd64:
+          - ocl-icd-libopencl1
+      - on arm64:
           - ocl-icd-libopencl1
 
   john-packages:

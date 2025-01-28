@@ -85,7 +85,11 @@ else
 	do_configure "$OTHER_NO_OPENMP" CPPFLAGS="-D_SNAP -D_BOXED" && do_build "../run/john-$arch"
 	do_configure "$OTHER_REGULAR" CPPFLAGS="-D_SNAP -D_BOXED -DOMP_FALLBACK_BINARY=\"\\\"john-$arch\\\"\"" && do_build ../run/john-omp
 	BINARY="john-omp"
-	OPENCL_SUPPORT="No"
+	if [[ "$arch" == "aarch64" ]]; then
+		OPENCL_SUPPORT="Yes"
+	else
+		OPENCL_SUPPORT="No"
+	fi
 fi
 do_release "Yes" "$OPENCL_SUPPORT" "$BINARY" # --system-wide, --support-opencl, --binary-name
 
