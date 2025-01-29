@@ -634,11 +634,11 @@ GNU General Public License v2.0.
 <!-- markdownlint-enable MD033 -->
 
 [bleedingDocker]:
-  https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fopenwall%2Fjohn-packages%2Frelease%2Fdeploy%2Fdocker.json
+  https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fwiki%2Fopenwall%2Fjohn-packages%2Fdeploy%2Fdocker.json
 [bleedingSnap]:
-  https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fopenwall%2Fjohn-packages%2Frelease%2Fdeploy%2Fsnap.json
+  https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fwiki%2Fopenwall%2Fjohn-packages%2Fdeploy%2Fsnap.json
 [bleedingWindows]:
-  https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fopenwall%2Fjohn-packages%2Frelease%2Fdeploy%2Fwindows.json
+  https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fwiki%2Fopenwall%2Fjohn-packages%2Fdeploy%2Fwindows.json
 [linkBadgeDownloadDocker]: https://img.shields.io/badge/Download-Docker%20Image-blue.svg?style=for-the-badge
 [linkBadgeDownloadFlatpak]: https://img.shields.io/badge/Download-Flatpak%20Package-blue?style=for-the-badge
 [linkBadgeDownloadMac]: https://img.shields.io/badge/Download-macOS%20Package-blue.svg?style=for-the-badge
