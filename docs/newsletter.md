@@ -48,4 +48,4 @@ Also:
 ## Recommendation
 
 Install (or update your installation to) `1.9J1+2404` (**rolling-2404**) or to the upstream commit
-[f9fedd2](https://github.com/openwall/john/commit/f9fedd238b0b1d69181c1fef033b85c787e96e57).
+[126b2a4](https://github.com/openwall/john/commit/126b2a4814f24f2ff6486e2c050ecb17072be7ba).
