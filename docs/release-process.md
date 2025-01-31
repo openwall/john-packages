@@ -55,30 +55,28 @@ The "pin upstream commit" is ready.
 
 The "release commit" is almost ready.
 
+- [ ] Update versions of the software used for packaging (in CI/readme); [5]
+  - You may have to run the CI just to get the current version of the software;
+  - Ensure that the "release commit" is ready (don't change it from now on);
+  - Amend and push the "release commit".
 - [ ] Run all CI (standard, macOS, GitLab, and Solaris); [2]
   - Confirm that all builds are OK.
 - [ ] Build the snap (use Launchpad); [3]
   - Confirm that all builds are OK.
-
-If you are creating a "real release", perform a cherry-pick, merge, and push the "pin upstream commit" into the main
-branch. See note [*].
-
 - [ ] Build the Docker image (bleeding or latest); [4]
-  - If you are creating a bleeding version, run the workflow from the `release` branch (`main` doesn't know the proper
-    commit hash). See note [*];
+  - Run the workflow from the `release` branch (`main` doesn't know the proper commit hash). See note [*];
   - Confirm that all builds are OK.
 - [ ] Release to snap store and flathub;
 
 All binaries are ready.
 
-- [ ] Update versions of the software used for packaging (in deploy/readme and CI/readme); [5]
-  - Amend and push the "release commit";
-  - This is also a valid point for performing the merge. See note [*].
+- This is also a valid point for performing the merge. See note [*].
 
 The "release commit" is ready.
 
 - [ ] Add a new commit to the `release` branch;
   - This is the "logs commit".
+- [ ] Update versions of the software used for packaging (in /Releases/[RELEASE]/readme); [5]
 - [ ] Update all logs in /Releases/[RELEASE]; [6]
   - Amend and push the "logs commit".
 
