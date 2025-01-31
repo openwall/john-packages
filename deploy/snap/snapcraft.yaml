@@ -21,7 +21,7 @@
 # More info at https://github.com/openwall/john-packages
 ---
 name: john-the-ripper
-version: bleeding
+version: 1.9.2-ce
 
 base: core24
 confinement: strict

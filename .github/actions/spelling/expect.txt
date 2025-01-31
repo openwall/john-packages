@@ -99,7 +99,6 @@ flapak
 fulcio
 fullname
 fuzzer
-fvde
 galarius
 gcr
 gdb
@@ -112,7 +111,6 @@ gmp
 Gnomovision
 gnupg
 google
-GOST
 gpg
 GPUs
 hashicorp
@@ -128,7 +126,6 @@ jscpd
 JTR
 jtrcrackers
 jtrts
-KDBX
 KDFAES
 keepass
 keygen
@@ -162,13 +159,13 @@ LWS
 lzma
 machdep
 markdownlint
-mbed
 metainfo
 mfb
 microsoft
 misconfig
 Mka
 mktemp
+Monero
 mrsp
 mscash
 nethalflm

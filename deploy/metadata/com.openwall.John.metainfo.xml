@@ -73,7 +73,7 @@
   </provides>
 
   <releases>
-    <release type="stable" version="bleeding" date="2025-01-01" urgency="high">
+    <release type="stable" version="1.9.2-ce" date="2025-02-99" urgency="high">
       <description>
         <p>
           This is a maintenance release. Based on upstream bleeding.

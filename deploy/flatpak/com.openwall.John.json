@@ -5,7 +5,7 @@
   "runtime-version": "24.08",
   "sdk": "org.freedesktop.Sdk",
   "command": "john",
-  "tags": ["bleeding"],
+  "tags": ["1.9.2-ce"],
   "finish-args": ["--filesystem=home", "--share=ipc", "--device=dri"],
   "add-extensions": {
     "org.freedesktop.Platform.GL": {
