@@ -138,7 +138,7 @@ parts:
 
     stage-packages:
       - libgomp1
-      - libpcap0.8
+      - libpcap0.8t64
       - on amd64:
           - ocl-icd-libopencl1
       - on arm64:
