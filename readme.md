@@ -345,18 +345,19 @@ If you do so, you will be running the development version available on GitHub.
 
 To install John the Ripper by downloading the .7z file and installing it manually, follow these steps:
 
-- Download the compressed file to your machine.
-- Extract it to a directory such as `/Users/Me/bleeding`.
-- Start a command prompt.
-- Navigate to the directory you extracted the compressed file, e.g., `cd /Users/Me/bleeding`.
-- Run the software:
-
-Install required Homebrew packages (if not already installed):
+Install required packages from Homebrew (if not already installed):
 
 ```bash
  brew update
  brew install libomp openssl gmp
 ```
+
+Then:
+
+- Download the compressed file to your machine.
+- Extract it to a directory such as `/Users/Me/bleeding`.
+- Start a command prompt.
+- Navigate to the directory you extracted the compressed file, e.g., `cd /Users/Me/bleeding`.
 
 Execute John the Ripper:
 
