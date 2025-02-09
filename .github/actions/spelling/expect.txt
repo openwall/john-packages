@@ -84,6 +84,7 @@ dri
 drwx
 drwxr
 drwxrwxr
+dylib
 dynamicbase
 ecr
 editorconfig
@@ -142,6 +143,7 @@ len
 libasan
 libbz
 libcrypt
+libcrypto
 libexec
 libfuzzer
 libgmp
@@ -188,6 +190,7 @@ openh
 openmp
 oss
 osv
+otool
 Pak
 passphrase
 peflags

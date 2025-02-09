@@ -10,7 +10,7 @@
 #                                                       | |   | |
 #                                                       |_|   |_|
 #
-# Copyright (c) 2019-2024 Claudio André <dev at claudioandre.slmail.me>
+# Copyright (c) 2019-2025 Claudio André <dev at claudioandre.slmail.me>
 #
 # This program comes with ABSOLUTELY NO WARRANTY; express or implied.
 #
@@ -45,7 +45,7 @@ fi
 
 if [[ "$TARGET_ARCH" == *"macOS"* && $2 == "INFO" ]]; then
 	brew update
-	brew install openssl libpcap libomp gmp coreutils p7zip
+	brew install gmp coreutils p7zip
 fi
 
 # Download the required and missing file
@@ -87,10 +87,6 @@ if [[ "$2" == "BUILD" ]]; then
 		CFLAGS_ssl="-I/$MAC_LOCAL_PATH/openssl/include"
 		CFLAGS_gmp="-I/$MAC_LOCAL_PATH/gmp/include"
 		CFLAGS_omp="-I/$MAC_LOCAL_PATH/libomp/include"
-
-		if [[ $TARGET_ARCH == *"macOS ARM"* ]]; then
-			brew link openssl --force
-		fi
 
 		if [[ $TARGET_ARCH == *"macOS X86"* ]]; then
 			do_configure "$NO_OPENMP" --enable-simd=avx && do_build ../run/john-avx
