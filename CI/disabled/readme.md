@@ -118,6 +118,9 @@ Platform #0 name: Intel(R) OpenCL, version: OpenCL 3.0 LINUX\
 # Testing: raw-SHA512-free-opencl [SHA512 OpenCL (inefficient, development use mostly)]... FAILED (cmp_all(49))
 # [...]
 # 1 out of 86 tests have FAILED
+# Also
+# Testing: XSHA512-free-opencl, Mac OS X 10.7+ [SHA512 OpenCL (efficient at "many salts" only)]... FAILED (cmp_all(49))
 
 'raw-SHA512-free-opencl'
+'XSHA512-free-opencl'
 ```
