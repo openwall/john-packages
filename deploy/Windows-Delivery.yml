@@ -33,7 +33,7 @@ steps:
       cd $env:BUILD_FOLDER
 
       # Force the build to be repeatable
-      git checkout "126b2a4814f24f2ff6486e2c050ecb17072be7ba"
+      git checkout "104781db9bb87df8d2bc75ad69a013d9dfe470bd"
 
       Write-Host "--------------------------------------------------------"
       Write-Host "   =====  Deploying the release $RELEASE_COMMIT  =====  " -ForegroundColor White
@@ -125,7 +125,7 @@ steps:
       shell "echo '#' >> ../run/Defaults"
       shell "echo '#   The john (upstream) repository reference' >> ../run/Defaults"
       shell "echo '[Repository john]' >> ../run/Defaults"
-      shell "echo 'Commit=126b2a4814f24f2ff6486e2c050ecb17072be7ba' >> ../run/Defaults"
+      shell "echo 'Commit=104781db9bb87df8d2bc75ad69a013d9dfe470bd' >> ../run/Defaults"
 
       # Use symlink.c to produce a tiny john.exe that executes the best SIMD
       shell "make windows-tiny-link-to-john MAIN_NAME=$EXE_NAME "

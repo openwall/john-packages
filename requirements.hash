@@ -7,3 +7,4 @@ ad0a8ec80ac460df49a2643a5ea75c98ebe55e6039515ff3b8fc581c974ba698  ./run_tests.sh
 94b462117f4a77f14703c5774a8477dcf6644bfee75bec158c0407e69ba58c73  ./show_info.sh
 9adb8d143854bf59b5dc61fc404513984e6c894f5448a1b31e54d43ca4e80b6b  ./Handle-self-confined-system-wide-build.patch
 3712c35cba3ada6a6df90e19bcfe70f2ed5fb0c62dabe0f4442ca52522ddbf2e  ./Remove-peflags-from-the-default-target.patch
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ./run-CI.patch
