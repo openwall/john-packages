@@ -115,6 +115,7 @@ google
 GOST
 gpg
 GPUs
+gui
 hashicorp
 hccap
 hicolor
@@ -238,6 +239,7 @@ sonarsource
 sonoma
 squashfs
 ssd
+sse
 SSSE
 stdlib
 strderr
