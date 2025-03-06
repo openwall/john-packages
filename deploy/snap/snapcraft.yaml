@@ -21,14 +21,13 @@
 # More info at https://github.com/openwall/john-packages
 ---
 name: john-the-ripper
-version: bleeding
+version: 1.9J1+3bd67e4 # v2.0.0 TODO:
 
-base: core24
+base: core18
 confinement: strict
 grade: stable #TODO: [stable or devel] edit before release (BLEEDING_RELEASE)
 
-assumes: [snapd2.65]
-adopt-info: john-the-ripper
+assumes: [snapd2.41]
 
 license: GPL-2.0
 title: John the Ripper CE Auditing Tool
@@ -100,12 +99,18 @@ parts:
 
     override-build: |
       cp "$SNAPCRAFT_STAGE"/build.sh .
+      cp "$SNAPCRAFT_STAGE"/com.openwall.John.png ./icon.png
+      cp "$SNAPCRAFT_STAGE"/com.openwall.John.png ./com.openwall.John.png
       ./build.sh
 
-      craftctl set version="$(cat version.txt)"
+      # craftctl set version="$(cat version.txt)"
 
       mkdir -p ../install/etc/bash_completion
       cp run/john.*_completion ../install/etc/bash_completion/
+
+      mkdir -p ../install/share/icons
+      cp icon.png ../install/share/icons/icon.png
+      cp icon.png ../install/share/icons/com.openwall.John.png
 
     build-packages:
       - build-essential
@@ -119,30 +124,24 @@ parts:
       - curl
       - patch
       # OpenCL stuff
-      - on amd64:
-          - libpocl-dev
-          - ocl-icd-opencl-dev
-          - pocl-opencl-icd
+      - libpocl-dev
+      - ocl-icd-opencl-dev
+      - pocl-opencl-icd
       - on arm64:
           - libpocl-dev
           - ocl-icd-opencl-dev
           - pocl-opencl-icd
+
+    stage-packages:
+      - libgomp1
+      - libpcap0.8
+      - ocl-icd-libopencl1
 
     organize:
       ../build/run/: bin/
       ../build/doc/: doc/
       ../build/README.md: README.md
-
-  libs:
-    plugin: nil
-
-    stage-packages:
-      - libgomp1
-      - libpcap0.8t64
-      - on amd64:
-          - ocl-icd-libopencl1
-      - on arm64:
-          - ocl-icd-libopencl1
+      ../build/com.openwall.John.png: com.openwall.John.png
 
   john-packages:
     plugin: nil
@@ -152,6 +151,7 @@ parts:
       cp deploy/metadata/com.openwall.John.desktop .
       cp deploy/metadata/run-john.sh .
       cp deploy/snap/build.sh $SNAPCRAFT_STAGE
+      cp deploy/metadata/com.openwall.John.png $SNAPCRAFT_STAGE
 
     organize:
       ../build/com.openwall.John.desktop: com.openwall.John.desktop
