@@ -161,7 +161,7 @@ jobs:
             annotation-index.org.opencontainers.image.description=John the Ripper is an Open Source password security auditing and password recovery tool. See https://www.openwall.com/john/"
 
       - name: Upload attestation
-        uses: actions/attest-build-provenance@bd77c077858b8d561b7a36cbe48ef4cc642ca39d # v2.2.2
+        uses: actions/attest-build-provenance@c074443f1aee8d4aeeae555aebba3282517141b2 # v2.2.3
         if: ${{ github.event.inputs.push == 'true' }}
         with:
           subject-name: ${{ env.REPO }}:${{ github.event.inputs.tag }}
