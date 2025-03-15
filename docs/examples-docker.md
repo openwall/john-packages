@@ -57,6 +57,23 @@ Using the `--rm` flag to clean up the container and remove the file system after
  -rw------- 1 claudio users  246 jun 20 08:59 john.rec
 ```
 
+## Execute compiled 2john tools
+
+It is possible to run some 2john tools directly from the Docker image. Example:
+
+```bash
+# If necessary, update the local Docker image
+docker pull ghcr.io/openwall/john:bleeding
+
+# To extract the relevant information from (e.g.) a zip file
+docker run -v $(pwd):/host --rm -w /host --entrypoint /john/run/zip2john ghcr.io/openwall/john:bleeding /host/file.zip
+
+# Or
+docker run -v $(pwd):/host --rm -w /host --entrypoint /john/run/zip2john ghcr.io/openwall/john:bleeding /host/file.zip > zip.hash
+```
+
+The Docker image does not have Python or Lua installed, so it is not possible to run scripts using this approach.
+
 ## Compare the performance of SIMD extensions
 
 ```bash
