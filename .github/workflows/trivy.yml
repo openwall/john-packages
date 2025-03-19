@@ -24,6 +24,8 @@
 name: Trivy
 
 "on":
+  schedule:
+    - cron: "23 5 * * MON"
   push:
 
 permissions:
