@@ -101,7 +101,7 @@ Platform #0 name: Intel(R) OpenCL, version: OpenCL 3.0 LINUX\
 #      (core dumped) "$JTR_BIN" -test-full=0 --format=opencl
 'mscash2-opencl'
 
-# SunMD5 on aarch64 and M1
+# SunMD5 on aarch64, armhf, ppc64el, and Apple Silicon
 # :: Testing: SunMD5 [MD5 128/128 ASIMD 4x2]... (4xOMP) *** stack smashing detected ***: terminated
 # :: *** stack smashing detected ***: terminated
 # :: *** stack smashing detected ***: terminated
