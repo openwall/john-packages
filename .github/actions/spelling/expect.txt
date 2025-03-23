@@ -235,7 +235,6 @@ socio
 solucao
 sonarlint
 sonarsource
-sonoma
 squashfs
 ssd
 SSSE

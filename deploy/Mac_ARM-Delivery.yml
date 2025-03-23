@@ -25,7 +25,7 @@ macOS_task:
   name: macOS M2
   trigger_type: manual
   macos_instance:
-    image: ghcr.io/cirruslabs/macos-sonoma-xcode:latest
+    image: ghcr.io/cirruslabs/macos-sequoia-xcode:latest
 
   env:
     CIRRUS_CLONE_DEPTH: "10"
