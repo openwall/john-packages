@@ -45,8 +45,6 @@ COPY --from=build /build /john
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN mkdir -p /usr/share/ \
     && ln -s /john/run /usr/share/john \
-    && useradd -U -m JtR \
-    && export DEBIAN_FRONTEND="noninteractive" \
     && apt-get update -qq \
     && apt-get install -y --no-install-recommends \
         libgomp1=14* \
@@ -61,7 +59,13 @@ RUN mkdir -p /usr/share/ \
 # ==================================================================
 # Default startup
 # ------------------------------------------------------------------
-USER JtR
+ARG GID=1000
+ARG UID=1000
+ARG USERNAME=john
+RUN groupadd -g ${GID} -o "${USERNAME}" \
+    && useradd -m -u ${UID} -g ${GID} -o -s /bin/bash -l "${USERNAME}"
+USER $USERNAME
+
 ENV BASE=ubuntu
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["best"]
