@@ -46,6 +46,7 @@ jobs:
             d2glxqk2uabbnd.cloudfront.net:443
             ghcr.io:443
             github.com:443
+            mirror.gcr.io:443
             objects.githubusercontent.com:443
             pkg-containers.githubusercontent.com:443
             public.ecr.aws:443
