@@ -64,7 +64,6 @@ jobs:
         env:
           ENABLE_COMMITLINT_STRICT_MODE: true
           ENFORCE_COMMITLINT_CONFIGURATION_CHECK: true
-          FILTER_REGEX_EXCLUDE: "^/github/workspace/snapcraft.yaml$" # Workaround for Prettier itself
           FIX_JAVASCRIPT_PRETTIER: true
           FIX_JSON_PRETTIER: true
           FIX_MARKDOWN_PRETTIER: true
