@@ -198,6 +198,41 @@ if [[ -z "${TEST##*;crack;*}" ]]; then
 	total=$((total + 4))
 fi
 
+if [[ -z "${TEST##*;formats-crack-themselves;*}" ]]; then
+	list=$("$JTR_BIN" -list=formats --format=cpu 2>/dev/null | tr "," "\n")
+
+	for format in $list; do
+		if [[ "$format" != "dynamic_n" ]]; then
+			echo "--------------------------- $format ---------------------------"
+			"$JTR_BIN" -list=format-tests --format="$format" 2>/dev/null | LC_ALL=C cut -f3 >allTests.in
+			"$JTR_BIN" -list=format-tests --format="$format" 2>/dev/null | LC_ALL=C cut -f4 >allSolution.in
+
+			# For some reason these formats do NOT work
+			if [[ "$format" == "oldoffice" ]]; then
+				# Because of the string ':f2ab1219ae' from the 4th oldoffice self-test example, `john` is unable to
+				# detect that the hash in question has been cracked. Therefore, remove it.
+				sed -i "s/:f2ab1219ae//g" allTests.in
+			fi
+
+			if [[ "$format" == "LM" ]]; then
+				# One really needs to specify “something” encoding related to be able to crack all the hashes.
+				"$JTR_BIN" allTests.in --format="$format" --input-encoding=cp850 --wordlist=allSolution.in --pot=my-test.pot
+			else
+				"$JTR_BIN" allTests.in --format="$format" --wordlist=allSolution.in --pot=my-test.pot
+			fi
+
+			if ! "$JTR_BIN" allTests.in --format="$format" --show=left --pot=my-test.pot 2>&1 | grep -q "0 left"; then
+				echo "--------------------------- Error found ---------------------------"
+				"$JTR_BIN" allTests.in --format="$format" --show=left --pot=my-test.pot
+				echo "------------------------------------------------------------------"
+				error=$((error + 1))
+			fi
+			total=$((total + 1))
+			rm -f my-test.pot
+		fi
+	done
+fi
+
 if [[ -z "${TEST##*CHECK*}" ]]; then
 
 	if [[ -n "$MAKE_CMD" ]]; then
