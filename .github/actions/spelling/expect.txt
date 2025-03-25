@@ -104,6 +104,7 @@ galarius
 gcr
 gdb
 GFDL
+gha
 gitattributes
 gitleaks
 glxqk

@@ -2,12 +2,16 @@
 version: 2
 updates:
   - package-ecosystem: github-actions
+    commit-message:
+      prefix: "ci(gha)"
     directory: /
     schedule:
       interval: "weekly"
       day: "saturday"
 
   - package-ecosystem: devcontainers
+    commit-message:
+      prefix: "chore(devcontainer)"
     directory: /IDE
     schedule:
       interval: "weekly"
@@ -16,6 +20,8 @@ updates:
   # ********** Docker **********
   # Base OSes
   - package-ecosystem: docker
+    commit-message:
+      prefix: "build(ci)"
     directories:
       - /CI/Dockerfiles
       - /cloud-tool
@@ -29,6 +35,8 @@ updates:
 
   # nvidia/cuda
   - package-ecosystem: docker
+    commit-message:
+      prefix: "build(docker)"
     directory: /deploy/docker
     schedule:
       interval: "weekly"
@@ -36,6 +44,8 @@ updates:
 
   # vscode/devcontainers/base
   - package-ecosystem: docker
+    commit-message:
+      prefix: "chore(IDE)"
     directory: /IDE/.devcontainer
     schedule:
       interval: "weekly"
@@ -43,6 +53,8 @@ updates:
 
   # oss-fuzz-base/base-builder
   - package-ecosystem: docker
+    commit-message:
+      prefix: "build(ci)"
     directory: /.clusterfuzzlite
     schedule:
       interval: "weekly"
