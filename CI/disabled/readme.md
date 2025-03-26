@@ -86,7 +86,6 @@ Platform #0 name: Intel(R) OpenCL, version: OpenCL 3.0 LINUX\
 'bitlocker-opencl'        #SLOW
 
 # Let's say these are fragile
-'krb5pa-md5-opencl'
 'o5logon-opencl'
 'mscash-opencl'
 'salted_sha-opencl'
