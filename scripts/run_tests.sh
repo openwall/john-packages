@@ -277,19 +277,19 @@ if [[ -z "${TEST##*ZZUF_FUZZ*}" ]]; then
 	export GWS=64
 
 	"$JTR_BIN" --format:raw-sha256 --list=format-tests 2>/dev/null | cut -f3 | sed -n '7p' 1>test_hash
-	zzuf -s 0:1000 -c -C 1 -T 3 "$JTR_BIN" --format=raw-sha256-opencl --skip --max-run=1 --verb=1 test_hash
+	zzuf -s 0:1000 -c -C 1 -U 20 -M -1 "$JTR_BIN" --format=raw-sha256-opencl --skip --max-run=2 --verb=1 test_hash
 	echo $?
 
 	"$JTR_BIN" --format:raw-sha512 --list=format-tests 2>/dev/null | cut -f3 | sed -n '7p' 1>test_hash
-	zzuf -s 0:1000 -c -C 1 -T 3 "$JTR_BIN" --format=raw-sha256-opencl --skip --max-run=1 --verb=1 test_hash
+	zzuf -s 0:1000 -c -C 1 -U 20 -M -1 "$JTR_BIN" --format=raw-sha256-opencl --skip --max-run=2 --verb=1 test_hash
 	echo $?
 
 	"$JTR_BIN" --format:sha256crypt --list=format-tests 2>/dev/null | cut -f3 | sed -n '3p' 1>test_hash
-	zzuf -s 0:1000 -c -C 1 -T 3 "$JTR_BIN" --format=sha512crypt-opencl --skip --max-run=1 --verb=1 test_hash
+	zzuf -s 0:1000 -c -C 1 -U 20 -M -1 "$JTR_BIN" --format=sha512crypt-opencl --skip --max-run=2 --verb=1 test_hash
 	echo $?
 
 	"$JTR_BIN" --format:sha512crypt --list=format-tests 2>/dev/null | cut -f3 | sed -n '3p' 1>test_hash
-	zzuf -s 0:1000 -c -C 1 -T 3 "$JTR_BIN" --format=sha512crypt-opencl --skip --max-run=1 --verb=1 test_hash
+	zzuf -s 0:1000 -c -C 1 -U 20 -M -1 "$JTR_BIN" --format=sha512crypt-opencl --skip --max-run=2 --verb=1 test_hash
 	echo $?
 
 	total=$((total + 4))

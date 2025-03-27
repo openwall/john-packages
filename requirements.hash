@@ -3,7 +3,7 @@ e25fca925ee687bc46f5be6487c48ee977b697d05df97ccaca86d36ee8d213dc  ./clean_packag
 829470da958b5afce3b2023d66eeac9b41d493e9ad8c20fca25109e156312cf0  ./helper.sh
 75de2f0f7c4c02dd16baab447492de281e90e8413f276f86d6a5faeec9dc9025  ./merge_procedures.sh
 9e0f8478bb6568b6defc647080637b2944d68e8372655031750849aa77686812  ./package_version.sh
-920e962f87bb50a4d8220dc9cde49c6cc58c30f915b4fd54b4f797d5372cc7eb  ./run_tests.sh
+90a83256bd9b81d9761a57514e2e39102f1923cf863014f43e88fe8e327889cb  ./run_tests.sh
 94b462117f4a77f14703c5774a8477dcf6644bfee75bec158c0407e69ba58c73  ./show_info.sh
 9adb8d143854bf59b5dc61fc404513984e6c894f5448a1b31e54d43ca4e80b6b  ./Handle-self-confined-system-wide-build.patch
 3712c35cba3ada6a6df90e19bcfe70f2ed5fb0c62dabe0f4442ca52522ddbf2e  ./Remove-peflags-from-the-default-target.patch
