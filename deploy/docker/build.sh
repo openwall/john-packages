@@ -89,8 +89,8 @@ if [ "$arch" == "x86_64" ]; then
 	do_configure "$X86_REGULAR" --enable-simd=avx && do_build ../run/john-avx-omp
 	do_configure "$X86_NO_OPENMP" --enable-simd=avx2 && do_build ../run/john-avx2
 	do_configure "$X86_REGULAR" --enable-simd=avx2 && do_build ../run/john-avx2-omp
-	do_configure "$X86_NO_OPENMP" --enable-simd=avx512bw && do_build ../run/john-avx512bw
-	do_configure "$X86_REGULAR" --enable-simd=avx512bw && do_build ../run/john-avx512bw-omp
+	do_configure "$X86_NO_OPENMP" --enable-simd=avx512 && do_build ../run/john-avx512bw
+	do_configure "$X86_REGULAR" --enable-simd=avx512 && do_build ../run/john-avx512bw-omp
 	BINARY="john-avx-omp"
 else
 	# Non X86 CPU (OMP fallback)
