@@ -51,7 +51,7 @@ jobs:
             dockerfile: Dockerfile.UbuntuDevel
           - image-tag: ubuntu.rolling
             dockerfile: Dockerfile.UbuntuRolling
-          - image-tag: redhat.ubi8
+          - image-tag: enterprise
             dockerfile: Dockerfile.RHUbi8
 
     permissions:

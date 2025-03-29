@@ -22,7 +22,7 @@ source code of John the Ripper using:
 - Solaris:
   - SunOS solaris 5.11 11.4.42.111.0 i86pc i386 i86pc kvm;
 - Linux:
-  - Red Hat Enterprise Linux 8 and Fedora 41;
+  - Rocky Linux Enterprise Linux 8 and Fedora 41;
   - Ubuntu 22.04, Ubuntu 24.04, and Ubuntu devel (the under development version);
   - flatpak (runtime: org.freedesktop.Platform 24.08);
   - snap (runtime: core24);
@@ -37,7 +37,7 @@ source code of John the Ripper using:
 ### Toolchains
 
 - Compilers:
-  - gcc 7.4 (Win 2016), gcc 8.5 (Red Hat Enterprise Linux 8);
+  - gcc 7.4 (Win 2016), gcc 8.5 (Rocky Linux Enterprise Linux 8);
   - gcc 11.4 (Ubuntu 22 with OpenCL SDK for Intel Processors);
   - gcc 12.4 (Win 2019/2022);
   - gcc 13.3 (Ubuntu 24, snap, fuzzing);

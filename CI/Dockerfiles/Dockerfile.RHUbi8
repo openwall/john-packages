@@ -8,7 +8,7 @@
 #                                                       | |   | |
 #                                                       |_|   |_|
 #
-# Copyright (c) 2024 Claudio André <dev@claudioandre.slmail.me>
+# Copyright (c) 2024-2025 Claudio André <dev@claudioandre.slmail.me>
 #
 # This program comes with ABSOLUTELY NO WARRANTY; express or implied.
 #
@@ -20,19 +20,20 @@
 # Dockerfile for Continuous Integration
 # More info at https://github.com/openwall/john-packages
 
-FROM registry.access.redhat.com/ubi8/ubi:latest@sha256:8bd1b6306f8164de7fb0974031a0f903bd3ab3e6bcab835854d3d9a1a74ea5db
+FROM rockylinux:8@sha256:9794037624aaa6212aeada1d28861ef5e0a935adaf93e4ef79837119f2a2d04c
 LABEL org.opencontainers.image.authors="Claudio André <dev@claudioandre.slmail.me>"
-LABEL description="Docker images for John the Ripper CI (1.0.Red Hat 8)"
+LABEL description="Docker images for John the Ripper CI (2.0.Enterprise Linux)"
 LABEL org.opencontainers.image.source="https://github.com/openwall/john-packages"
 
-RUN yum -y -q update \
-    && yum -y install \
-        openssl-devel gmp-devel libpcap-devel bzip2-devel wget gcc git perl \
-    && yum clean all \
+RUN dnf -y -q update \
+    && dnf -y install \
+        openssl-devel gmp-devel bzip2-devel wget gcc git perl \
+    && dnf install libpcap-devel -y --enablerepo=powertools \
+    && dnf clean all \
     # Azure DevOps requires a root user
     && useradd --uid 0 --non-unique --gid 0 -m tester
 
-ENV BASE RedHat-UBI
+ENV BASE="Enterprise Linux"
 CMD [ "/bin/bash" ]
 
 USER tester

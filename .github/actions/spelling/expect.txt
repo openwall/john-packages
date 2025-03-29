@@ -89,6 +89,7 @@ dynamicbase
 ecr
 editorconfig
 elfutils
+enablerepo
 endfor
 esbenp
 esm
@@ -199,6 +200,7 @@ peflags
 PGP
 pgpdisk
 pocl
+powertools
 ppc
 prismacloud
 PROJ
@@ -210,7 +212,6 @@ Randomisation
 rar
 RCracker
 realpath
-redhat
 redistributors
 rekor
 rootfs
