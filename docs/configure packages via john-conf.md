@@ -93,17 +93,17 @@ $ cp YOUR-FILE/john.conf $(pwd)/.john/john.conf
 # Use your personal/edited `john.conf`
 ```
 
-Then connect the 'host' file system to the running container (linking the host current folder to `/home/JtR`).
+Then connect the 'host' file system to the running container (linking the host current folder to `/home/john`).
 
 You will need add the following option to the `docker run` command-line:
 
 ```bash
--v "$(pwd)":/home/JtR
+-v "$(pwd)":/home/john
 ```
 
 Example:
 
 ```bash
-$ docker run -v "$(pwd)":/home/JtR ghcr.io/openwall/john best --format=SHA512crypt --incremental:digits /home/JtR/allTests.in --max-run=20
+$ docker run -v "$(pwd)":/home/john ghcr.io/openwall/john best --format=SHA512crypt --incremental:digits /home/john/allTests.in --max-run=20
 # john is executed in a Docker container
 ```
