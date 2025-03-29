@@ -37,7 +37,7 @@ macOS_task:
     TEST: "macOS;"
     BASE: "Apple macOS M2"
     DEPLOY_PAK: "Yes"
-    RELEASE_COMMIT: "126b2a4814f24f2ff6486e2c050ecb17072be7ba"
+    RELEASE_COMMIT: "8bce7453f45fe334877013a362b2a5b6a6e8f74d"
 
   info_script: |
     git clone --depth 10 https://github.com/openwall/john.git ~/tmp
