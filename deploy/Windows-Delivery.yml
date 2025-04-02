@@ -96,9 +96,9 @@ steps:
       shell "./configure $EXE_NO_OMP --enable-simd=avx2                                                                                                                                                  && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-avx2"
       shell "./configure $EXE_NORMAL --enable-simd=avx2  CPPFLAGS='-DOMP_FALLBACK_BINARY=\`"\\\`"john-avx2\\\`"\`"  -DCPU_FALLBACK_BINARY=\`"\\\`"john-avx-omp\\\`"\`" '   && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-avx2-omp"
 
-      shell "./configure $EXE_NO_OMP --enable-simd=avx512 CPPFLAGS='-fno-asynchronous-unwind-tables '                                                                                                                                          && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-avx512bw"
-      shell "./configure $EXE_NORMAL --enable-simd=avx512 CPPFLAGS='-fno-asynchronous-unwind-tables -DOMP_FALLBACK_BINARY=\`"\\\`"john-avx512bw\\\`"\`" -DCPU_FALLBACK_BINARY=\`"\\\`"john-avx2-omp\\\`"\`" ' && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-avx512bw-omp"
-      $EXE_NAME = "john-avx512bw-omp.exe"
+      shell "./configure $EXE_NO_OMP --enable-simd=avx512 CPPFLAGS='-fno-asynchronous-unwind-tables '                                                                                                                                          && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-avx512"
+      shell "./configure $EXE_NORMAL --enable-simd=avx512 CPPFLAGS='-fno-asynchronous-unwind-tables -DOMP_FALLBACK_BINARY=\`"\\\`"john-avx512\\\`"\`" -DCPU_FALLBACK_BINARY=\`"\\\`"john-avx2-omp\\\`"\`" ' && make -s clean && make -sj2 2>&1 && make -s strip && mv ../run/john ../run/john-avx512-omp"
+      $EXE_NAME = "john-avx512-omp.exe"
 
       # Configure OpenCL ICD
       shell "mkdir -p ../etc/OpenCL/vendors"
@@ -168,6 +168,11 @@ steps:
 
       c:\%cygwinPath%\peflags --dynamicbase=true --nxcompat=true *.exe 2>&1
     displayName: "Enable ASLR and DEP for the binaries"
+
+  - powershell: |
+      Set-ItemProperty -path "$env:JTR_FOLDER\run\*.dll" -name IsReadOnly $true
+      Set-ItemProperty -path "$env:JTR_FOLDER\run\*.exe" -name IsReadOnly $true
+    displayName: "Enable read-only for the binaries"
 
   # Clean up #################################################################
   - script: |

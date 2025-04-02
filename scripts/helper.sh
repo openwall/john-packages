@@ -46,9 +46,12 @@ function do_build() {
 
 	if [[ -n "$1" ]]; then
 		$MAKE -s clean && $MAKE "$MAKE_FLAGS" && mv ../run/john "$1"
+		JOHN_BINARY="$1"
 	else
 		$MAKE -s clean && $MAKE "$MAKE_FLAGS"
+		JOHN_BINARY="../run/john"
 	fi
+	chmod 555 "$JOHN_BINARY"
 	set +e
 }
 
