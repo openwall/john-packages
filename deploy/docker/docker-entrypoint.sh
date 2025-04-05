@@ -28,7 +28,7 @@ ids="avx-omp avx avx2-omp avx2
           ztex-omp ztex best
           omp aarch64
           "
-binaries="/john/run/john-avx512bw-omp /john/run/john-avx2-omp
+binaries="/john/run/john-avx512-omp /john/run/john-avx2-omp
           /john/run/john-avx-omp
           /john/run/john-omp
           "
