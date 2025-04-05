@@ -20,7 +20,7 @@
 # Dockerfile for building John the Ripper (for fuzzing)
 # More info at https://github.com/openwall/john-packages
 
-FROM gcr.io/oss-fuzz-base/base-builder:v1@sha256:42c5348cbd0126bed0828669b36dccec2282a9a3c53942e14a52c98613002d2b
+FROM gcr.io/oss-fuzz-base/base-builder:v1@sha256:d39e1afcb8d46fceff2e02b81ccc910687574eb70bc9ece774174e24525557fd
 
 RUN git clone --depth 1 https://github.com/openwall/john.git /upstream \
     && apt-get update -qq \
