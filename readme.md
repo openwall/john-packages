@@ -106,6 +106,10 @@ procedures.
 wide range of different distros. They are technologies to deploy applications in a secure, sandboxed and containerized
 way.
 
+Both package management systems are designed to provide a consistent way of distributing applications across various
+Linux distributions. They allow applications to be packaged with all their dependencies, making installations easier and
+reducing compatibility issues.
+
 A [Docker](https://www.docker.com/) image is a read-only template used to execute code in a Docker container. An image
 is an immutable file that contains the binaries, configuration files, libraries, dependencies, tools, and other files
 needed for John the Ripper application to run.
