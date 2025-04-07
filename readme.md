@@ -374,6 +374,18 @@ Execute John the Ripper:
  [...]
 ```
 
+If you have problems using Homebrew libraries, you can add a backup search path for dynamic libraries. It will be used
+when symbols are not found in the default paths. Point it to the directory where the `john` binaries are installed.
+E.g.:
+
+```bash
+DYLD_FALLBACK_LIBRARY_PATH=/Users/Me/bleeding/run run/john --list=build-info
+
+# Or if you prefer to use bundled libraries:
+# - DYLD_LIBRARY_PATH specify a list of directories to search for dynamic libraries before the default locations.
+DYLD_LIBRARY_PATH=/Users/Me/bleeding/run run/john --list=build-info
+```
+
 The highlights (👀):
 
 - has fallback for CPU[*] (if that makes sense) and OMP;
