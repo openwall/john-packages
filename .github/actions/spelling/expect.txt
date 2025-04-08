@@ -84,6 +84,7 @@ dri
 drwx
 drwxr
 drwxrwxr
+DYLD
 dylib
 dynamicbase
 ecr

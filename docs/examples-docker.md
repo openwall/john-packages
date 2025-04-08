@@ -36,9 +36,9 @@ Using the `--rm` flag to clean up the container and remove the file system after
  # I'm using a demo hashes file:
  docker run ghcr.io/openwall/john:latest -list=format-tests | cut -f3 > allTests.in
 
- docker run -v "$(pwd)":/home/JtR ghcr.io/openwall/john best --format=SHA512crypt /home/JtR/allTests.in --max-run=30
- docker run -v "$(pwd)":/home/JtR ghcr.io/openwall/john best --format=SHA512crypt --wordlist --rules /home/JtR/allTests.in --max-run=20
- docker run -v "$(pwd)":/home/JtR ghcr.io/openwall/john best --format=SHA512crypt --incremental:digits /home/JtR/allTests.in --max-run=20
+ docker run -v "$(pwd)":/home/john ghcr.io/openwall/john best --format=SHA512crypt /home/john/allTests.in --max-run=30
+ docker run -v "$(pwd)":/home/john ghcr.io/openwall/john best --format=SHA512crypt --wordlist --rules /home/john/allTests.in --max-run=20
+ docker run -v "$(pwd)":/home/john ghcr.io/openwall/john best --format=SHA512crypt --incremental:digits /home/john/allTests.in --max-run=20
 
  # On the host (inside the current folder) I can find the session files:
  $ ls -lahR

@@ -106,6 +106,10 @@ procedures.
 wide range of different distros. They are technologies to deploy applications in a secure, sandboxed and containerized
 way.
 
+Both package management systems are designed to provide a consistent way of distributing applications across various
+Linux distributions. They allow applications to be packaged with all their dependencies, making installations easier and
+reducing compatibility issues.
+
 A [Docker](https://www.docker.com/) image is a read-only template used to execute code in a Docker container. An image
 is an immutable file that contains the binaries, configuration files, libraries, dependencies, tools, and other files
 needed for John the Ripper application to run.
@@ -368,6 +372,18 @@ Execute John the Ripper:
  SIMD: ASIMD, interleaving: MD4:2 MD5:2 SHA1:1 SHA256:1 SHA512:1
  OMP fallback binary: john-arm64
  [...]
+```
+
+If you have problems using Homebrew libraries, you can add a backup search path for dynamic libraries. It will be used
+when symbols are not found in the default paths. Point it to the directory where the `john` binaries are installed.
+E.g.:
+
+```bash
+DYLD_FALLBACK_LIBRARY_PATH=/Users/Me/bleeding/run run/john --list=build-info
+
+# Or if you prefer to use bundled libraries:
+# - DYLD_LIBRARY_PATH specify a list of directories to search for dynamic libraries before the default locations.
+DYLD_LIBRARY_PATH=/Users/Me/bleeding/run run/john --list=build-info
 ```
 
 The highlights (👀):
