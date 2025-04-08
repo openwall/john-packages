@@ -49,7 +49,7 @@ if [[ "$TARGET_ARCH" == *"macOS"* && $2 == "INFO" ]]; then
 fi
 
 # Download the required and missing file
-wget https://raw.githubusercontent.com/openwall/john-packages/main/scripts/helper.sh \
+wget https://raw.githubusercontent.com/openwall/john-packages/release/scripts/helper.sh \
 	-O helper.sh
 cd src || exit 1
 

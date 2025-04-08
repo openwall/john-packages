@@ -44,7 +44,7 @@ OTHER_REGULAR="$SYSTEM_WIDE"
 OTHER_NO_OPENMP="$SYSTEM_WIDE --disable-openmp"
 
 # Download the required and missing file
-wget https://raw.githubusercontent.com/openwall/john-packages/main/scripts/helper.sh \
+wget https://raw.githubusercontent.com/openwall/john-packages/release/scripts/helper.sh \
 	-O helper.sh
 mkdir -p src
 cd src || exit 1
